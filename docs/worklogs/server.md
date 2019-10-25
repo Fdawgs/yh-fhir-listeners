@@ -17,7 +17,7 @@ The Systems Administrator (James Pardon) on the IT services team requested the [
 ### Test end points
 [Black Pear’s reference implementation](https://github.com/BlackPearSw/fhir-stu3-subscription-resthook) of a REST hook for the SIDeR project was being built upon in the beginning but was replaced by [Asymmetrik’s FHIR server](https://github.com/Asymmetrik/node-fhir-server-core) on the SIDeR development server on 2018-10-05. Black Pear’s reference implementation provided a good sandbox to refresh knowledge of JavaScript and RESTful API practices but continuing to work on that would be reinventing the wheel.
 
-With the server in place, test end points were set up using a fork of Asymmetrik's FHIR server and their reference implementation. It supports the Patient and Organization resources out of the box, and the fork includes support for the use of API keys, HTTPS, and the additional Care Connect FHIR profiles needed for the SIDeR project.
+With the server in place, test end points were set up using a fork of Asymmetrik's FHIR server and their reference implementation. It supports the Patient and Organization resources out of the box, and the fork included support for the use of API keys, HTTPS, and the additional Care Connect FHIR profiles needed for the SIDeR project.
 
 Asymmetrik’s server was chosen over HAPI FHIR (that NHS Digital are using for their FHIR Server reference implementation for Care Connect) due to it being built in JavaScript as opposed to Java. Time would have to be spent relearning Java, and JavaScript is now more prevalent, allowing the project to be taken up and maintained by someone else with relative ease.
 

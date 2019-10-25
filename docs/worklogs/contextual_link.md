@@ -10,15 +10,15 @@ Deploy contextual link obfuscator service | Completed | 2019-09-25 | Frazer Smit
 Choose logo for link | Completed | 2019-03-19 | Anthony Smith
 Add contextual link to live environment | Awaiting third party | | 
 
-# Work log
-## Test Records
+## Work log
+### Test Records
 Test records were provided by Will from Black Pear on 2018-11-28, which were then passed onto the Application Support Manager (David Suckling) to be added to the test environment of our PAS, TrakCare.
 
+### Contextual Link in PAS
 An existing contextual link in the test env was repurposed to test the contextual link for the test records, which had some issues due to Trakcare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
 
 This was eventually resolved on 2019-02-05, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
-## Contextual Link in PAS
 A ticket was raised with InterSystems on 2019-03-06, with InterSystems confirming on 2019-03-15 that they can create a fix for this for just the SIDeR link, and that a new request will need to be made with the final logo for the icon and link expression. A new request was made on 2019-03-23.
 
 It wasn't until 2019-09-13 that this was finally added to our test environment of TrakCare, but still wasn't working as intended.
@@ -34,8 +34,8 @@ Link expression: `
 "&"_##class(Custom.ENYH.Integration.ContextualLink.GenericPatientLink).BuildURLVars("patient=https://fhir.nhs.uk/Id/nhs-number|{NHSNumber}&birthdate={DateOfBirthISO8601}&location=https://fhir.nhs.uk/Id/ods-organization-code|RA4&practitioner=https://sider.nhs.uk/auth|{UserName}@ydh.nhs.uk")
 `
 
-## Contextual link icon
-The icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH, whilst this was ongoing, with the final icon seen in the mockup below (the S with a stalk, in a circle):
+### Contextual link icon
+The icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH at the time, whilst this was ongoing, with the final icon seen in the mockup below (the S with a stalk, in a circle):
 
 <img src="https://raw.githubusercontent.com/Fdawgs/ydh-fhir-listeners/master/docs/images/YDH-TrakCare-SIDeR-Contextual-Link-Icon.png" width="800">
 
