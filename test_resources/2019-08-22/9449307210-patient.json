@@ -1,0 +1,114 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "total": 1,
+    "link": [
+        {
+            "relation": "self",
+            "url": "https://sider.ydh.nhs.uk/3_0_1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7C9449307210"
+        }
+    ],
+    "entry": [
+        {
+            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999",
+            "resource": {
+                "resourceType": "Patient",
+                "id": "9999999",
+                "meta": {
+                    "lastUpdated": "2019-04-16T09:58:34",
+                    "profile": [
+                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1"
+                    ]
+                },
+                "language": "English (Great Britain)",
+                "text": {
+                    "status": "generated",
+                    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><div class=\"hapiHeaderText\">Mrs Rajshri <b>TARANG </b></div><table class=\"hapiPropertyTable\"><tbody><tr><td>Identifier</td><td>9999999</td></tr><tr><td>Address</td><td><span>2 Simons Court </span><br/><span>Randalls Road </span><br/><span>Leatherhead </span></td></tr><tr><td>Date of birth</td><td><span>30 May 1930</span></td></tr></tbody></table></div>"
+                },
+                "contained": [
+                    {
+                        "resourceType": "Organization",
+                        "id": "L85066",
+                        "meta": {
+                            "profile": [
+                                "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1"
+                            ]
+                        },
+                        "name": "Buttercross Health Centre",
+                        "address": [
+                            {
+                                "use": "work",
+                                "type": "both",
+                                "line": [
+                                    "Buttercross Health Centre,Behind Berry,Somerton,Somerset"
+                                ],
+                                "city": "Somerton",
+                                "postalCode": "TA11 7PB"
+                            }
+                        ]
+                    }
+                ],
+                "identifier": [
+                    {
+                        "use": "usual",
+                        "system": "https://fhir.ydh.nhs.uk/Id/local-patient-identifier",
+                        "value": "9999999"
+                    },
+                    {
+                        "extension": [
+                            {
+                                "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1",
+                                "valueCodeableConcept": {
+                                    "coding": [
+                                        {
+                                            "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
+                                            "code": "1",
+                                            "display": "Number present and verified"
+                                        }
+                                    ]
+                                }
+                            }
+                        ],
+                        "use": "official",
+                        "system": "https://fhir.nhs.uk/Id/nhs-number",
+                        "value": "9449307210"
+                    }
+                ],
+                "name": [
+                    {
+                        "use": "usual",
+                        "family": "Tarang",
+                        "given": [
+                            "Rajshri"
+                        ],
+                        "prefix": [
+                            "Mrs"
+                        ]
+                    }
+                ],
+                "gender": "female",
+                "birthDate": "1930-05-30",
+                "deceasedBoolean": true,
+                "address": [
+                    {
+                        "use": "home",
+                        "type": "postal",
+                        "line": [
+                            "2 Simon Court",
+                            "Randalls Road"
+                        ],
+                        "city": "Leatherhead",
+                        "district": "Surrey",
+                        "postalCode": "KT22 7TE"
+                    }
+                ],
+                "generalPractitioner": [
+                    {
+                        "reference": "#L85066",
+                        "display": "Buttercross Health Centre"
+                    }
+                ]
+            }
+        }
+    ]
+}

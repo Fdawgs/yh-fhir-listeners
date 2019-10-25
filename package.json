@@ -1,0 +1,27 @@
+{
+  "name": "ydh-fhir-listeners",
+  "version": "1.0.0",
+  "description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
+  "main": "index.js",
+  "scripts": {
+    "lint": "eslint \"src/*/*.js\" --fix",
+    "test": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git"
+  },
+  "author": "Frazer Smith",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
+  },
+  "homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
+  "devDependencies": {
+    "eslint": "^6.5.1",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-config-nhsuk": "^1.0.0",
+    "eslint-plugin-import": "^2.18.2",
+    "eslint-plugin-json": "^2.0.1"
+  }
+}
