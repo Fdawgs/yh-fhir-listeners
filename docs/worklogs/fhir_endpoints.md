@@ -16,3 +16,5 @@ Mirth Connect provides official FHIR support through a [FHIR Connector Extension
 
 SSL/HTTPS support isn't available out of the box and there was no apparent way to add an api key requirement to the listener.
 A [Node.js application using the Express framework, running as a Windows service](https://github.com/Fdawgs/ydh-sider-authentication-service), was developed and deployed to provide this. 
+
+TrakCare does not hold either conditions or documents (which are held in PatientCentre), so these will not be available at launch.

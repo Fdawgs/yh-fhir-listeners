@@ -40,14 +40,13 @@ Black Pear need to be able to make GET requests to a RESTful FHIR API endpoints 
 A contextual link needs to be added to our PAS to allow care providers access to the shared record. Refer to [Interoperability patterns - Contextual launch](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/contextual-launch) in the SIDeR wiki for more information.
 
 # Prerequisites
-- Latest Current version of [Node.js](https://nodejs.org/en/) (if you plan on using ESLint and other dev dependencies to extend it)
+- Latest Current/LTS version of [Node.js](https://nodejs.org/en/) (if you plan on using ESLint and other dev dependencies to extend it)
 - Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
-- Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
+- Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr) (for securing endpoints with HTTPs and bearer tokens)
 - Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service)
-- Latest release of [ydh-sider-obfuscation-service](https://github.com/Somerset-SIDeR-Programme/ydh-sider-obfuscation-service)
 
 # Deployment
-This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running Windows 10 and Windows Server 2019.
+This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019.
 
 ## Setting up Mirth Connect Channel
 1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
