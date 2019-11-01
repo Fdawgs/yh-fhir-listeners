@@ -9,31 +9,31 @@ try {
 	// Build up WHERE clause then pass to buildResourceQuery to be called
 	var wherePredicate;
 	switch (type + '') {
-	case 'allergyintolerance':
-		wherePredicate = ['(REPLACE(alle.ALG_RowId, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')'];
-		break;
-	case 'condition':
+		case 'allergyintolerance':
+			wherePredicate = ['(REPLACE(alle.ALG_RowId, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')'];
+			break;
+		case 'condition':
 
-		break;
-	case 'documentreference':
+			break;
+		case 'documentreference':
 
-		break;
-	case 'encounter':
-		wherePredicate = [
-			'(REPLACE(app.APPT_RowId, \'\'||\'\', \'\'-\'\')  = \'\'' + id + '\'\')',
-			'(REPLACE(PAADM_ADMNo, \'\'/\'\', \'\'-\'\') = \'\'' + id + '\'\')'
-		];
-		break;
-	case 'medicationstatement':
-		wherePredicate = ['(REPLACE(oi.OEORI_RowID, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')'];
+			break;
+		case 'encounter':
+			wherePredicate = [
+				'(REPLACE(app.APPT_RowId, \'\'||\'\', \'\'-\'\')  = \'\'' + id + '\'\')',
+				'(REPLACE(PAADM_ADMNo, \'\'/\'\', \'\'-\'\') = \'\'' + id + '\'\')'
+			];
+			break;
+		case 'medicationstatement':
+			wherePredicate = ['(REPLACE(oi.OEORI_RowID, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')'];
 
-		break;
-	case 'patient':
-		wherePredicate = ['(patmas.PAPMI_No = \'\'' + id + '\'\')'];
-		break;
+			break;
+		case 'patient':
+			wherePredicate = ['(patmas.PAPMI_No = \'\'' + id + '\'\')'];
+			break;
 
-	default:
-		break;
+		default:
+			break;
 	}
 	var result = buildResourceQuery(type, wherePredicate);
 
@@ -42,27 +42,27 @@ try {
 		// Care Connect FHIR Resource and return
 		var data;
 		switch (type + '') {
-		case 'allergyintolerance':
-			data = buildAllergyIntoleranceResource(result);
-			break;
-		case 'condition':
+			case 'allergyintolerance':
+				data = buildAllergyIntoleranceResource(result);
+				break;
+			case 'condition':
 			// data = buildConditionResource(result);
-			break;
-		case 'documentreference':
+				break;
+			case 'documentreference':
 			// data = buildDocumentReferenceResource(result);
-			break;
-		case 'encounter':
-			data = buildEncounterResource(result);
-			break;
-		case 'medicationstatement':
+				break;
+			case 'encounter':
+				data = buildEncounterResource(result);
+				break;
+			case 'medicationstatement':
 			// data = buildMedicationStatementResource(result);
-			break;
-		case 'patient':
-			data = buildPatientResource(result);
-			break;
+				break;
+			case 'patient':
+				data = buildPatientResource(result);
+				break;
 
-		default:
-			break;
+			default:
+				break;
 		}
 
 		// Hard coded version as we don't keep past versions of records, only one
