@@ -42,8 +42,8 @@ A contextual link needs to be added to our PAS to allow care providers access to
 # Prerequisites
 - Latest Current/LTS version of [Node.js](https://nodejs.org/en/) (if you plan on using ESLint and other dev dependencies to extend it)
 - Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
-- Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr) (for securing endpoints with HTTPs and bearer tokens)
-- Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service)
+- Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
+- Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
 
 # Deployment
 This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019.
