@@ -9,9 +9,11 @@ Yeovil District Hospital - SIDeR FHIR Listener Endpoints
 ## Purpose
 This repo outlines the steps that have been taken to provide the technical deliverables required by the SIDeR programme, alongside the issues that were encountered during development, and how to deploy the resulting Mirth Connect channel.
 
-Worklogs and issues can be found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
+Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital NHSFT have successfully taken this and refactored it for use with their PAS, Maxims.
+
+This documentation has been written under the assumption that the reader has prior experience using Mirth Connect.
 
 ## Background
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/your-health/sharing-your-information/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
@@ -46,13 +48,13 @@ A contextual link needs to be added to our PAS to allow care providers access to
 - Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
 
 # Deployment
-This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019.
+This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2017 being used as the database backend.
 
 ## Setting up Mirth Connect Channel
 1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
 2. Install the FHIR Connector extension from the file system
 3. Import the FHIR Listener channel from [src](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/src) into Mirth Connect
-4. Declare variables listed in the channel description in the configuration map
+4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
 
