@@ -6,7 +6,7 @@ Resource Name | SQL Query Status | Resource Builder Status | Read Functionality 
 [AllergyIntolerance](https://nhsconnect.github.io/CareConnectAPI/api_clinical_allergyintolerance.html)|Completed 2019-05-02|Completed 2019-05-02|Completed 2019-04-05|Completed 2019-05-02|Frazer Smith, David Suckling
 [Condition](https://nhsconnect.github.io/CareConnectAPI/api_clinical_condition.html)|N/A|N/A|N/A|N/A|N/A
 [DocumentReference](https://nhsconnect.github.io/CareConnectAPI/api_documents_documentreference.html)|N/A|N/A|N/A|N/A|N/A
-[Encounter](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html)|Completed 2019-04-29|Completed 2019-04-29|Completed 2019-04-16|Completed 2019-05-03|Frazer Smith, David Suckling
+[Encounter](https://nhsconnect.github.io/CareConnectAPI/api_workflow_encounter.html)|Completed 2019-04-29|Completed 2019-04-29|Completed 2019-04-16|Completed 2019-05-03|Frazer Smith, David Suckling, Jessica Male
 [MedicationStatement](https://nhsconnect.github.io/CareConnectAPI/api_medication_medicationstatement.html)|In Progress||Completed 2019-05-02|In Progress|Frazer Smith, David Suckling, George Dampier
 [Patient](https://nhsconnect.github.io/CareConnectAPI/api_entity_patient.html)|Completed 2019-04-04|Completed 2019-04-08|Completed 2019-04-04|Completed 2019-04-04|Frazer Smith, David Suckling, Nicolas Noblet
 
