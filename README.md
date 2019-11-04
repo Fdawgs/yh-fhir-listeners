@@ -11,7 +11,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital NHSFT have successfully taken this and refactored it for use with their PAS, Maxims.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (TST) have successfully taken this and refactored it for use with their PAS, Maxims.
 
 This documentation has been written under the assumption that the reader has prior experience using Mirth Connect.
 
