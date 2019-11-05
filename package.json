@@ -1,6 +1,6 @@
 {
   "name": "ydh-fhir-listeners",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
   "main": "index.js",
   "scripts": {
