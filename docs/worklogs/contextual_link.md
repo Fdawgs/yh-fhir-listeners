@@ -12,21 +12,19 @@ Add contextual link to live environment | Awaiting third party | |
 
 ## Work log
 ### Test Records
-Test records were provided by Will from Black Pear on 2018-11-28, which were then passed onto the Application Support Manager (David Suckling) to be added to the test environment of our PAS, TrakCare.
+Will Jehring provided test records from Black Pear on 2018-11-28, which were then passed onto the Application Support Manager (David Suckling) to be added to the test environment of our PAS, TrakCare.
 
 ### Contextual Link in PAS
-An existing contextual link in the test env was repurposed to test the contextual link for the test records, which had some issues due to Trakcare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
+An existing contextual link in the test env was repurposed to test the contextual link for the test records but had some issues due to Trakcare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
 
-This was eventually resolved on 2019-02-05, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
+This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
-A ticket was raised with InterSystems on 2019-03-06, with InterSystems confirming on 2019-03-15 that they can create a fix for this for just the SIDeR link, and that a new request will need to be made with the final logo for the icon and link expression. A new request was made on 2019-03-23.
-
-It wasn't until 2019-09-13 that this was finally added to our test environment of TrakCare, but still wasn't working as intended.
+It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still wasn't working as intended.
 On 2019-10-11 this was fixed.
 
 The contextual link's icon profile values in TrakCare looks like so:
 
-Link url: `
+Link URL: `
 <location of contextual link obfuscation service>
 `
 
@@ -35,12 +33,12 @@ Link expression: `
 `
 
 ### Contextual link icon
-The icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH at the time, whilst this was ongoing, with the final icon seen in the mockup below (the S with a stalk, in a circle):
+Whilst this was ongoing, the icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH at the time, with the final icon seen in the mock-up below (the S with a stalk, in a circle):
 
 <img src="https://raw.githubusercontent.com/Fdawgs/ydh-fhir-listeners/master/docs/images/YDH-TrakCare-SIDeR-Contextual-Link-Icon.png" width="800">
 
 ## Contextual link obfuscation
-Refer to the the following pages in the SIDeR programme wiki for more information:
+Refer to the following pages in the SIDeR programme wiki for more information:
 - [Interoperability patterns - Contextual launch](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/contextual-launch)
 - [Security patterns - Query string obfuscation](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/query-string-obfuscation)
 
