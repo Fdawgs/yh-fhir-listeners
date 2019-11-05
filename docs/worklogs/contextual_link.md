@@ -19,7 +19,7 @@ An existing contextual link in the test env was repurposed to test the contextua
 
 This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
-It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still wasn't working as intended.
+It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still was not working as intended.
 On 2019-10-11 this was fixed.
 
 The contextual link's icon profile values in TrakCare looks like so:
