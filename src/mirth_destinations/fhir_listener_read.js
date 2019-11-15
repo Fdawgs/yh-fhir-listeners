@@ -25,7 +25,9 @@ try {
 			];
 			break;
 		case 'medicationstatement':
-			wherePredicate = ['(REPLACE(oi.OEORI_RowID, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')'];
+			wherePredicate = [
+				'(REPLACE(oi.OEORI_RowID, \'\'||\'\', \'\'-\'\') = \'\'' + id + '\'\')',
+				''];
 
 			break;
 		case 'patient':
