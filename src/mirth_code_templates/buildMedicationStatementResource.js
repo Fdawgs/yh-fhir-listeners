@@ -47,7 +47,7 @@ function buildMedicationStatementResource(data) {
 
 		if (getResultSetString(data, 'medicationCodeCodingCode') != undefined
 			&& getResultSetString(data, 'medicationCodeCodingDisplay') != undefined) {
-			containedMedication.code.coding[0].system = '';
+			containedMedication.code.coding[0].system = 'http://snomed.info/sct';
 		}
 	}
 
