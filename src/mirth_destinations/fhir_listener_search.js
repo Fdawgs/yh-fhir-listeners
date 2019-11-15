@@ -139,7 +139,6 @@ try {
 
 	// MedicationStatement search params
 	if (type == 'medicationstatement') {
-
 		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
 
