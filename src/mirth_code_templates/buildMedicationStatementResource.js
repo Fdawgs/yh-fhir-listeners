@@ -35,7 +35,7 @@ function buildMedicationStatementResource(data) {
 	}
 
 	resource.subject = {
-		reference: $cfg('apiUrl') + '/r3/patient/' + getResultSetString(data, 'medstatSubjectReference')
+		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'medstatSubjectReference')
 	};
 
 	return resource;

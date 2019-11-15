@@ -61,7 +61,7 @@ function buildEncounterResource(data) {
 	}
 
 	resource.subject = {
-		reference: $cfg('apiUrl') + '/r3/patient/' + getResultSetString(data, 'subjectReference')
+		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'subjectReference')
 	};
 
 	return resource;
