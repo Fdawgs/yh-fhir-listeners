@@ -18,7 +18,7 @@ Stopped	          Discontinued without entered in error
 On-hold	          N/A
 */
 
-WITH medicationStatement
+WITH medicationStatement_CTE
   AS (
 SELECT DISTINCT medstatId,
      CONCAT(COALESCE(medstatDateassertedDate, ''),'T', COALESCE(medstatDateassertedTime, '')) AS medstatDateasserted,
@@ -87,5 +87,5 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                      ')
   )
 SELECT *
-  FROM medicationStatement
+  FROM medicationStatement_CTE
  WHERE medstatStatusCode IS NOT NULL;
