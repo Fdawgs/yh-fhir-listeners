@@ -2,11 +2,11 @@
 MedicationStatement Resource
 
 oi.OEORI_Unit_DR->CTUOM_Desc dosage units:
-     DO = Dose(s)
-     M = Minute(s)
-     H = Hour(s)
-     D = Day(s)
-     W = Week(s)
+     DO = Dose(s) - ignore
+     M = Minute(s) - min
+     H = Hour(s) - h
+     D = Day(s) - d
+     W = Week(s) - map to wk
 
 Status value	|    TrakCare value to map 
 ============================================================================
@@ -26,7 +26,13 @@ SELECT DISTINCT medstatId,
      CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
      medstatSubjectReference,
      medstatDosageTimingRepeatDuration,
-     medstatDosageTimingRepeatDurationUnit,
+     CASE medstatDosageTimingRepeatDurationUnit
+     WHEN 'DO' THEN NULL
+     WHEN 'M' THEN 'min'
+     WHEN 'H' THEN 'h'
+     WHEN 'D' THEN 'd'
+     WHEN 'W' THEN 'wk'
+     END AS medstatDosageTimingRepeatDurationUnit,
      medstatDosagePatientinstruction,
      medstatDosageRouteText,
      medstatDosageDoseQuantityValue,
