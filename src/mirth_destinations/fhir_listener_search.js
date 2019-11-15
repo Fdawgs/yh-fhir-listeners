@@ -139,6 +139,9 @@ try {
 
 	// MedicationStatement search params
 	if (type == 'medicationstatement') {
+		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
+		whereArray = [[], []];
+
 		if ($('parameters').contains('effective')) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters').getParameterList('effective').toArray().forEach((paramDate) => {
@@ -148,24 +151,15 @@ try {
 				if (isNaN(date.substring(0, 2))) {
 					date = date.substring(2, date.length);
 				}
-				whereParts.push('(alle.ALG_Date ' + operator + ' \'\'' + date + '\'\')'); // TODO: replace alle.ALG_Date
+				whereArray[1].push('(medstatEffectiveStart ' + operator + ' \'\'' + date + '\'\')');
 			});
 		}
 		if ($('parameters').contains('patient')) {
-			whereParts.push('(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
+			whereArray[0].push('(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
 		}
 		if ($('parameters').contains('status')) {
 			var medicationStatus = $('parameters').getParameter('status');
-
-			var medicationStatusCode = {
-				active: 'A',
-				inactive: 'I',
-				resolved: 'R'
-			}; // TODO: replace codes with medication codes
-			medicationStatus = medicationStatusCode[medicationStatus.toLowerCase()];
-
-			whereParts.push('(alle.ALG_Status = \'\'' + medicationStatus + '\'\')'); // TODO: replace alle.ALG_Status
-			whereParts.push('');
+			whereArray[1].push('(medstatStatusCode = \'\'' + medicationStatus + '\'\')');
 		}
 	}
 
@@ -227,7 +221,7 @@ try {
 				data = buildEncounterResource(result);
 				break;
 			case 'medicationstatement':
-				// data = buildMedicationStatementResource(result);
+				data = buildMedicationStatementResource(result);
 				break;
 			case 'patient':
 				data = buildPatientResource(result);

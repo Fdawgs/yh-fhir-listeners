@@ -2,9 +2,9 @@
 ## Key tasks
 Task | Status | Date | By |
 -----|--------|------|----|
-Add test records to PAS test environment | Completed | 2018-12-12 | David Suckling, Will Jehring (Black Pear)
+Add test records to PAS test environment | Completed | 2018-12-12 | David Suckling, [Will Jehring](https://github.com/wjehring) (Black Pear)
 Add contextual link to PAS test environment | Completed | 2019-10-21 | Gary England (Intersystems), David Suckling, Frazer Smith
-Test contextual link | Completed | 2019-10-21 | Frazer Smith, Will Jehring (Black Pear)
+Test contextual link | Completed | 2019-10-21 | Frazer Smith, [Will Jehring](https://github.com/wjehring) (Black Pear)
 Build contextual link obfuscator service | Completed | 2019-03-04 | Frazer Smith
 Deploy contextual link obfuscator service | Completed | 2019-09-25 | Frazer Smith
 Choose logo for link | Completed | 2019-03-19 | Anthony Smith
@@ -19,7 +19,7 @@ An existing contextual link in the test env was repurposed to test the contextua
 
 This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
-It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still wasn't working as intended.
+It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still was not working as intended.
 On 2019-10-11 this was fixed.
 
 The contextual link's icon profile values in TrakCare looks like so:
