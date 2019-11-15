@@ -16,17 +16,14 @@ Entered in error 	Discontinued with reason entered in error
 Intended	          Current date before start date
 Stopped	          Discontinued without entered in error
 On-hold	          N/A
-
-
 */
 
+WITH medicationStatement
+  AS (
 SELECT DISTINCT medstatId,
-     medstatDateassertedDate,
-     medstatDateassertedTime,
-     medstatEffectiveStart_Datepart,
-     medstatEffectiveStart_Timepart,
-     medstatEffectiveEnd_Datepart,
-     medstatEffectiveEnd_Timepart,
+     CONCAT(COALESCE(medstatDateassertedDate, ''),'T', COALESCE(medstatDateassertedTime, '')) AS medstatDateasserted,
+     CONCAT(COALESCE(medstatEffectiveStart_Datepart, ''),'T', COALESCE(medstatEffectiveStart_Timepart, '')) AS medstatEffectiveStart,
+     CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
      medstatSubjectReference,
      medstatDosageTimingRepeatDuration,
      medstatDosageTimingRepeatDurationUnit,
@@ -34,7 +31,18 @@ SELECT DISTINCT medstatId,
      medstatDosageRouteText,
      medstatDosageDoseQuantityValue,
      medstatDosageDoseQuantityUnit,
-     medstatStatusCode,
+     CASE
+     WHEN (CURRENT_TIMESTAMP BETWEEN CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
+               AND CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME))
+          AND orderItemStatus != 'Discontinued' THEN 'active'
+     WHEN CURRENT_TIMESTAMP < CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
+          AND orderItemStatus != 'Discontinued' THEN 'intended'
+     WHEN CURRENT_TIMESTAMP > CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME)
+          AND orderItemStatus != 'Discontinued' THEN 'completed'
+     WHEN orderItemStatus = 'Discontinued'
+          AND orderItemVariance IN ('DATA', 'ERROR') THEN 'entered-in-error'
+     WHEN orderItemStatus = 'Discontinued' THEN 'stopped'
+     END AS medstatStatusCode,
      medicationId,
      medicationCodeText,
      medicationCodeCodingDisplay,
@@ -57,18 +65,8 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                          oi.OEORI_AdminRoute_DR->ADMR_Desc AS medstatDosageRouteText,
                          oi.OEORI_DoseQty AS medstatDosageDoseQuantityValue,
                          oi.OEORI_Unit_DR->CTUOM_Desc AS medstatDosageDoseQuantityUnit,
-                         CASE
-                         WHEN CURRENT_TIMESTAMP BETWEEN oi.OEORI_SttDat
-                              AND oi.OEORI_EndDate
-                              AND oi.OEORI_ItemStat_DR->OSTAT_Desc != ''Discontinued'' THEN ''active''
-                         WHEN CURRENT_TIMESTAMP < oi.OEORI_SttDat
-                              AND oi.OEORI_ItemStat_DR->OSTAT_Desc != ''Discontinued'' THEN ''intended''
-                         WHEN CURRENT_TIMESTAMP > oi.OEORI_EndDate
-                              AND oi.OEORI_ItemStat_DR->OSTAT_Desc != ''Discontinued'' THEN ''completed''
-                         WHEN oi.OEORI_ItemStat_DR->OSTAT_Desc = ''Discontinued''
-                              AND oi.OEORI_VarianceReason_DR->VR_Code IN (''DATA'', ''ERROR'') THEN ''entered-in-error''
-                         WHEN oi.OEORI_ItemStat_DR->OSTAT_Desc = ''Discontinued'' THEN ''stopped''
-                         END AS medstatStatusCode,
+                         oi.OEORI_ItemStat_DR->OSTAT_Desc AS orderItemStatus,
+                         oi.OEORI_VarianceReason_DR->VR_Code AS orderItemVariance,
                         NULL AS RESOURCE_LINEBREAK,
 
                          -- Contained inline Medication Resource Area
@@ -87,4 +85,7 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                    WHERE oi.OEORI_Categ_DR->ORCAT_Desc IN (''PHARMACY'', ''PHARM'')
                      AND oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No =''5484125''
                      ')
-WHERE medstatStatusCode IS NOT NULL;
+  )
+SELECT *
+  FROM medicationStatement
+ WHERE medstatStatusCode IS NOT NULL;
