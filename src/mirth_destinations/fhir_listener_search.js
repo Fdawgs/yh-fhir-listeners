@@ -54,8 +54,13 @@ try {
 		}
 	});
 
-	// AllergyIntolerance search params
+	/**
+	 * ================================
+	 * AllergyIntolerance search params
+	 * ================================
+	 */
 	if (type == 'allergyintolerance') {
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
 			var clinicalStatus = $('parameters').getParameter('clinical-status');
 
@@ -69,6 +74,7 @@ try {
 			whereParts.push('(alle.ALG_Status = \'\'' + clinicalStatus + '\'\')');
 		}
 
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
 		if ($('parameters').contains('date')) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters').getParameterList('date').toArray().forEach((paramDate) => {
@@ -81,33 +87,60 @@ try {
 				whereParts.push('(alle.ALG_Date ' + operator + ' \'\'' + date + '\'\')');
 			});
 		}
+
+		/**
+		 * GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code] TODO support this param
+		 * GET [baseUrl]/AllergyIntolerance?patient=[id]
+		 */
 		if ($('parameters').contains('patient')) {
 			whereParts.push('(alle.ALG_PAPMI_ParRef->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
 		}
 		whereArray.push(whereParts);
 	}
 
-	// Condition search params
+	/**
+	 * =======================
+	 * Condition search params
+	 * =======================
+	 */
 	if (type == 'condition') {
+		// GET [baseUrl]/Condition?patient=[id]&asserted-date=[date]
 		if ($('parameters').contains('asserted-date')) {
 			whereParts.push('');
 		}
 
+		// GET [baseUrl]/Condition?patient=[id]&category=[code]
 		if ($('parameters').contains('category')) {
 			whereParts.push('');
 		}
+
+		// GET [baseUrl]/Condition?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
 			whereParts.push('');
 		}
+
+		/**
+		 * GET [baseUrl]/Condition?patient.identifier=[system]|[code]
+		 * GET [baseUrl]/Condition?patient=[id]
+		 */
 		if ($('parameters').contains('patient')) {
 			whereParts.push('');
 		}
 	}
 
-	// Encounter search params
+	/**
+	 * =======================
+	 * Encounter search params
+	 * =======================
+	 */
 	if (type == 'encounter') {
 		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
+
+		/**
+		 * GET [baseUrl]/Encounter?patient.identifier=[system]|[code] TODO support this param
+		 * GET [baseUrl]/Encounter?patient=[id]
+		 */
 		if ($('parameters').contains('patient')) {
 			var patient = $('parameters').getParameter('patient');
 
@@ -118,6 +151,7 @@ try {
 			whereArray[1].push('(PAADM_PAPMI_DR->PAPMI_No = \'\'' + patient + '\'\')');
 		}
 
+		// GET [baseUrl]/Encounter?patient=[id]&date=[date]
 		if ($('parameters').contains('date')) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters').getParameterList('date').toArray().forEach((paramDate) => {
@@ -137,11 +171,16 @@ try {
 		}
 	}
 
-	// MedicationStatement search params
+	/**
+	 * =================================
+	 * MedicationStatement search params
+	 * =================================
+	 */
 	if (type == 'medicationstatement') {
 		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
 
+		// GET [baseUrl]/MedicationStatement?patient=[id]&effective=[date]
 		if ($('parameters').contains('effective')) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters').getParameterList('effective').toArray().forEach((paramDate) => {
@@ -154,38 +193,67 @@ try {
 				whereArray[1].push('(medstatEffectiveStart ' + operator + ' \'\'' + date + '\'\')');
 			});
 		}
+
+		/**
+		 * GET [baseUrl]/MedicationStatement?patient.identifier=[system]|[code] TODO support this param
+		 * GET [baseUrl]/MedicationStatement?patient=[id]
+		 */
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push('(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
 		}
+
+		// GET [baseUrl]/MedicationStatement?patient=[id]&status=[code]
 		if ($('parameters').contains('status')) {
 			var medicationStatus = $('parameters').getParameter('status');
 			whereArray[1].push('(medstatStatusCode = \'\'' + medicationStatus + '\'\')');
 		}
 	}
 
-	// Patient search params
+	/**
+	 * =====================
+	 * Patient search params
+	 * =====================
+	 */
 	if (type == 'patient') {
+		// GET [baseUrl]/Patient?birthdate=[date]
 		if ($('parameters').contains('birthdate')) {
 			whereParts.push('(patmas.PAPMI_DOB = \'\'' + $('parameters').getParameter('birthdate') + '\'\')');
 		}
+
+		// GET [baseUrl]/Patient?family=[family]
 		if ($('parameters').contains('family')) {
 			whereParts.push('(patmas.PAPMI_PAPER_DR->PAPER_Name = \'\'' + $('parameters').getParameter('family') + '\'\')');
 		}
+
+		// GET [baseUrl]/Patient?gender=[code]
 		if ($('parameters').contains('gender')) {
 			whereParts.push('(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = \'\'' + $('parameters').getParameter('gender') + '\'\')');
 		}
+
+		// GET [baseUrl]/Patient?given=[given]
 		if ($('parameters').contains('given')) {
 			whereParts.push('(patmas.PAPMI_PAPER_DR->PAPER_Name2 = \'\'' + $('parameters').getParameter('given') + '\'\')');
 		}
+
+		/**
+		 * GET [baseUrl]/Patient?identifier=[system]|[code]
+		 * GET [baseUrl]/Patient?identifier=[code]
+		 */
 		if ($('parameters').contains('identifier')) {
-			var identifierParam = String($('parameters').getParameter('identifier')).split('|');
-			if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
-				whereParts.push('(patmas.PAPMI_ID = \'\'' + identifierParam[1] + '\'\')');
-			}
-			if (identifierParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
-				whereParts.push('(patmas.PAPMI_No = \'\'' + identifierParam[1] + '\'\')');
+			if (String($('parameters').getParameter('identifier')).contains('|')) {
+				var identifierParam = String($('parameters').getParameter('identifier')).split('|');
+				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+					whereParts.push('(patmas.PAPMI_ID = \'\'' + identifierParam[1] + '\'\')');
+				}
+				if (identifierParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
+					whereParts.push('(patmas.PAPMI_No = \'\'' + identifierParam[1] + '\'\')');
+				}
+			} else {
+				whereParts.push('(patmas.PAPMI_No = \'\'' + $('parameters').getParameter('identifier') + '\'\')');
 			}
 		}
+
+		// GET [baseUrl]/Patient?name=[name]
 		if ($('parameters').contains('name')) {
 			var name = $('parameters').getParameter('name');
 			whereParts.push('(patmas.PAPMI_PAPER_DR->PAPER_Name = \'\'' + name + '\'\' OR patmas.PAPMI_PAPER_DR->PAPER_Name2  = \'\'' + name + '\'\')');
