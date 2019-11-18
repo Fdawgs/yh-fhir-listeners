@@ -240,7 +240,7 @@ try {
 		 * GET [baseUrl]/Patient?identifier=[code]
 		 */
 		if ($('parameters').contains('identifier')) {
-			if (String($('parameters').getParameter('identifier')).contains('|')) {
+			if ($('parameters').getParameter('identifier').contains('|')) {
 				var identifierParam = String($('parameters').getParameter('identifier')).split('|');
 				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
 					whereParts.push('(patmas.PAPMI_ID = \'\'' + identifierParam[1] + '\'\')');
