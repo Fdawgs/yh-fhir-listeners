@@ -1923,7 +1923,7 @@ if (interaction == &apos;operation&apos;) {
 	
 	responseMap.put(&apos;response&apos;, response);
 	return response.getMessage();
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error creating resource.&apos;, 500, e);
 }</script>
       </properties>
@@ -2065,7 +2065,7 @@ if (interaction == &apos;operation&apos;) {
 	}
 	responseMap.put(&apos;response&apos;, response);
 	return response.getMessage();
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error updating resource.&apos;, 500, e);
 }</script>
       </properties>
@@ -2179,7 +2179,7 @@ if (interaction == &apos;operation&apos;) {
 	}
 
 	responseMap.put(&apos;response&apos;, response);
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error deleting resource.&apos;, 500, e);
 }</script>
       </properties>
@@ -2356,7 +2356,7 @@ try {
 		return response.getMessage();
 	}
 	return createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, $(&apos;fhirType&apos;) + &apos; ID &apos; + id + &apos; not found.&apos;, 404);
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error reading resource.&apos;, 500, e);
 }</script>
       </properties>
@@ -2476,7 +2476,7 @@ try {
 	} else {
 		return createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, $(&apos;fhirType&apos;) + &apos; ID &apos; + id + &apos; at version &apos; + versionId + &apos; not found.&apos;, 404);
 	}
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error reading resource.&apos;, 500, e);
 }</script>
       </properties>
@@ -2592,7 +2592,7 @@ try {
 	if (_since) {
 		try {
 			_since = convertDate(_since, &apos;yyyy-MM-dd HH:mm:ss.SSSZZ&apos;);
-		} catch (e) {
+		} catch (error) {
 			return createOperationOutcome(&apos;error&apos;, &apos;invalid&apos;, &apos;Parameter _since formatted incorrectly: &apos; + _since);
 		}
 	}
@@ -2664,7 +2664,7 @@ try {
 	var response = FhirResponseFactory.getHistoryResponse(FhirUtil.toXML(bundle), 200, FhirUtil.getMIMETypeXML());
 	responseMap.put(&apos;response&apos;, response);
 	return response.getMessage();
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error retrieving resource history.&apos;, 500, e);
 }</script>
       </properties>
@@ -3398,7 +3398,7 @@ function getFHIRDBConnection(recreate) {
 		if (dbConn) {
 			try {
 				dbConn.close();
-			} catch (e) {}
+			} catch (error) {}
 		}
 		dbConn = createFHIRDBConnection();
 		$gc(&apos;dbConn&apos;, dbConn);
@@ -3437,7 +3437,7 @@ function executeOperation(operation, expression, parameters, dbConn) {
 			} else {
 				return dbConn[operation](expression);
 			}
-		} catch (e) {
+		} catch (error) {
 			logger.info(&apos;Error executing statement, checking if valid...&apos;);
 			var throwException = false;
 
@@ -3670,11 +3670,11 @@ function insertFhirDeletedResource(type, id, versionId, lastUpdated, method, url
 			dbConn.commit();
 			
 			return sequenceId;
-		} catch (e) {
+		} catch (error) {
 			try { dbConn.rollback() } catch (e2) {}
 			throw e;
 		} finally {
-			try { dbConn.close() } catch (e) {}
+			try { dbConn.close() } catch (error) {}
 		}
 	} else {
 		throw &apos;Unsupported DB type: &apos; + dbType;
@@ -3739,11 +3739,11 @@ function insertFhirResource(type, id, versionId, lastUpdated, data, contentType,
 			dbConn.commit();
 			
 			return sequenceId;
-		} catch (e) {
+		} catch (error) {
 			try { dbConn.rollback() } catch (e2) {}
 			throw e;
 		} finally {
-			try { dbConn.close() } catch (e) {}
+			try { dbConn.close() } catch (error) {}
 		}
 	} else {
 		throw &apos;Unsupported DB type: &apos; + dbType;

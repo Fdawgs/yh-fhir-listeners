@@ -75,6 +75,6 @@ try {
 		return response.getMessage();
 	}
 	return createOperationOutcome('error', 'processing', $('fhirType') + ' ID ' + id + ' not found.', 404);
-} catch (e) {
+} catch (error) {
 	return createOperationOutcome('error', 'transient', 'Error reading resource.', 500, e);
 }
