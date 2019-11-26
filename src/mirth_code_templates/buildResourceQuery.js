@@ -9,6 +9,9 @@
 	@return {Object} Java ResultSet object.
  */
 function buildResourceQuery(type, params) {
+	var firstParams = '';
+	var secondParams = '';
+
 	// type is Java object so has to be coerced to a JS object by adding an empty string
 	switch (type + '') {
 		case 'allergyintolerance':
@@ -19,9 +22,15 @@ function buildResourceQuery(type, params) {
 			return executeCachedQuery();
 		case 'encounter':
 			return executeCachedQuery("WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode, encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate, encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, subjectReference, encounterStatus, lastUpdateDate, lastUpdateTime) AS (SELECT DISTINCT * FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier, ''outpatient'' AS encounterClassDesc, NULL AS encounterClassCode, app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Desc AS encounterTypeDesc, app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code AS encounterTypeCode, COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) AS encounterPeriodStartDate, COALESCE(app.APPT_ArrivalTime, app.APPT_TimeComp) AS encounterPeriodStartTime, NULL AS encounterPeriodEndDate, NULL AS encounterPeriodEndTime, app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No AS subjectReference, app.APPT_Status AS encounterStatus, app.APPT_LastUpdateDate AS lastUpdateDate, NULL AS lastUpdateTime FROM RB_Appointment app WHERE " + params[0] + " AND app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No IS NOT NULL ') UNION SELECT DISTINCT * FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT REPLACE(PAADM_ADMNo, ''/'', ''-'') AS encounterIdentifier, CASE PAADM_Type WHEN ''I'' THEN ''inpatient'' WHEN ''E'' THEN ''emergency'' END as encounterClassDesc, CASE PAADM_Type WHEN ''I'' THEN ''IMP'' WHEN ''E'' THEN ''EMER'' END as encounterClassCode, PAADM_DepCode_DR->CTLOC_Desc AS encounterTypeDesc, PAADM_DepCode_DR->CTLOC_Code AS encounterTypeCode, PAADM_AdmDate AS encounterPeriodStartDate, PAADM_AdmTime AS encounterPeriodStartTime, PAADM_DischgDate AS encounterPeriodEndDate, PAADM_DischgTime AS encounterPeriodEndTime, PAADM_PAPMI_DR->PAPMI_No AS subjectReference, PAADM_VisitStatus AS encounterStatus, PAADM_UpdateDate AS lastUpdateDate, PAADM_UpdateTime AS lastUpdateTime FROM PA_Adm WHERE PAADM_Type IN (''I'', ''E'') AND " + params[1] + " AND PAADM_PAPMI_DR->PAPMI_No IS NOT NULL ')) SELECT encounterIdentifier, CASE WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled' WHEN encounterStatus IN ('D', 'R') OR (encounterStatus IN ('A') AND encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NOT NULL) THEN 'finished' WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP AND encounterPeriodStartDate IS NOT NULL) OR encounterStatus IN ('P') THEN 'planned' WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived' WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress' ELSE 'unknown' END AS encounterStatusMapped, encounterStatus, encounterClassDesc, encounterClassCode, CASE WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL ELSE UPPER(encounterTypeDesc) END AS encounterTypeDesc, CASE WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL ELSE encounterTypeCode END AS encounterTypeCode, CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) AS encounterPeriodStart, CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) AS encounterPeriodEnd, subjectReference, CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated FROM encounter_CTE;");
+		case 'flag':
+			if (params[0]) {
+				firstParams = 'AND ' + params[0];
+			}
+			if (params[1]) {
+				secondParams = 'AND ' + params[1];
+			}
+			return executeCachedQuery("WITH flag_CTE AS (SELECT DISTINCT flagId, CASE ALM_Status WHEN 'I' THEN 'inactive' WHEN 'A' THEN 'active' END AS  flagStatusCode, flagCategoryCodingDisplay, flagCategoryCodingCode, flagCodeCodingDisplay, flagCodeCodingCode, flagCodeText, flagSubjectReference, CONCAT(COALESCE(periodStartDate, ''),'T', COALESCE(periodStartTime, '')) AS periodStart, CONCAT(COALESCE(periodEndDate, ''),'T00:00:00') AS periodEnd FROM OPENQUERY( [ENYH-PRD-ANALYTICS], 'SELECT DISTINCT TOP 100 ALM_Status, COALESCE(ALM_OnsetDate, ALM_CreateDate) AS periodStartDate, COALESCE(ALM_OnsetTime, ALM_CreateTime) AS periodStartTime, COALESCE(ALM_ExpiryDate, ALM_ClosedDate) AS periodEndDate, ALM_ClosedTime AS periodEndTime,         REPLACE(alert.ALM_RowID, ''||'', ''-'') AS flagId, alert.ALM_Alert_DR->ALERT_Desc AS flagCodeCodingDisplay, alert.ALM_Alert_DR->ALERT_Code AS flagCodeCodingCode, alert.ALM_Message AS flagCodeText, alert.ALM_AlertCategory_DR->ALERTCAT_Desc AS flagCategoryCodingDisplay, alert.ALM_AlertCategory_DR->ALERTCAT_Code AS flagCategoryCodingCode, alert.ALM_PAPMI_ParRef->PAPMI_No AS flagSubjectReference FROM PA_AlertMsg alert WHERE alert.ALM_Alert_DR IS NOT NULL " + firstParams + "')) SELECT * FROM flag_CTE WHERE flagStatusCode IS NOT NULL " + secondParams + ";");
 		case 'medicationstatement':
-			var firstParams = '';
-			var secondParams = '';
 			if (params[0]) {
 				firstParams = 'AND ' + params[0];
 			}
