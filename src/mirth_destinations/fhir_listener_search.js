@@ -32,6 +32,11 @@ try {
 			'date',
 			'patient'
 		],
+		flag: [
+			'date',
+			'patient',
+			'status'
+		],
 		medicationstatement: [
 			'effective',
 			'patient',
@@ -193,6 +198,39 @@ try {
 	}
 
 	/**
+	 * =======================
+	 * Flag search params
+	 * =======================
+	 */
+	if (type == 'flag') {
+		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
+		whereArray = [[], []];
+
+		// GET [baseUrl]/Flag?patient=[id]
+		if ($('parameters').contains('patient')) {
+			whereArray[0].push('(alert.ALM_PAPMI_ParRef->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
+		}
+
+		// GET [baseUrl]/Flag?patient.identifier=[system]|[code]
+		if ($('parameters').contains('patient.identifier')) {
+			if ($('parameters').getParameter('patient.identifier').contains('|')) {
+				var flagPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
+				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+					whereArray[0].push('(alert.ALM_PAPMI_ParRef->PAPMI_Id = \'\'' + flagPatIdParam[1] + '\'\')');
+				}
+				if (flagPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
+					whereArray[0].push('(alert.ALM_PAPMI_ParRef->PAPMI_No = \'\'' + flagPatIdParam[1] + '\'\')');
+				}
+			}
+		}
+
+		// GET [baseUrl]/Flag?patient=[id]&status=[code]
+		if ($('parameters').contains('status')) {
+			whereArray[1].push('(flagStatusCode = \'\'' + $('parameters').getParameter('status') + '\'\')');
+		}
+	}
+
+	/**
 	 * =================================
 	 * MedicationStatement search params
 	 * =================================
@@ -235,8 +273,7 @@ try {
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]&status=[code]
 		if ($('parameters').contains('status')) {
-			var medicationStatus = $('parameters').getParameter('status');
-			whereArray[1].push('(medstatStatusCode = \'\'' + medicationStatus + '\'\')');
+			whereArray[1].push('(medstatStatusCode = \'\'' + $('parameters').getParameter('status') + '\'\')');
 		}
 	}
 
@@ -318,6 +355,9 @@ try {
 				break;
 			case 'encounter':
 				data = buildEncounterResource(result);
+				break;
+			case 'flag':
+				data = buildFlagResource(result);
 				break;
 			case 'medicationstatement':
 				data = buildMedicationStatementResource(result);
