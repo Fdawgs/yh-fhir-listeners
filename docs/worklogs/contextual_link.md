@@ -8,6 +8,8 @@ Test contextual link | Completed | 2019-10-21 | Frazer Smith, [Will Jehring](htt
 Build contextual link obfuscator service | Completed | 2019-03-04 | Frazer Smith
 Deploy contextual link obfuscator service | Completed | 2019-09-25 | Frazer Smith
 Choose logo for link | Completed | 2019-03-19 | Anthony Smith
+Integrate Keycloak token retrival middleware | Completed | 2019-11-21 | Frazer Smith
+Test Keycloak token retrival middleware | Completed | 2019-11-21 | Frazer Smith
 Add contextual link to live environment | Awaiting third party | | 
 
 ## Work log
