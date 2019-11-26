@@ -22,6 +22,27 @@ function buildFlagResource(data) {
 
 	resource.id = newStringOrUndefined(getResultSetString(data, 'flagId'));
 	resource.status = newStringOrUndefined(getResultSetString(data, 'flagStatusCode'));
+	resource.text = newStringOrUndefined(getResultSetString(data, 'flagCodeText'));
+
+	if (getResultSetString(data, 'flagCategoryCodingCode') != undefined) {
+		resource.category = {
+			coding: [{
+				system: 'https://trakcare.ydh.nhs.uk',
+				code: newStringOrUndefined(getResultSetString(data, 'flagCategoryCodingCode')),
+				display: newStringOrUndefined(getResultSetString(data, 'flagCategoryCodingDisplay'))
+			}]
+		};
+	}
+
+	if (getResultSetString(data, 'flagCodeCodingCode') != undefined) {
+		resource.code = {
+			coding: [{
+				system: 'https://trakcare.ydh.nhs.uk',
+				code: newStringOrUndefined(getResultSetString(data, 'flagCodeCodingCode')),
+				display: newStringOrUndefined(getResultSetString(data, 'flagCodeCodingDisplay'))
+			}]
+		};
+	}
 
 	resource.period = {};
 	if (getResultSetString(data, 'periodStart') != undefined
