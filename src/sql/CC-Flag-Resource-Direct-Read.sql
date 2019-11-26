@@ -4,9 +4,9 @@ WITH
   (
     SELECT DISTINCT flagId,
       CASE ALM_Status
-      WHEN 'I' THEN 'Inactive'
-      WHEN 'A' THEN 'Active'
-      END AS flagStatus,
+      WHEN 'I' THEN 'inactive'
+      WHEN 'A' THEN 'active'
+      END AS flagStatusCode,
       flagCategoryCodingDisplay,
       flagCategoryCodingCode,
       flagCodeCodingDisplay,
@@ -36,4 +36,4 @@ WITH
   )
 SELECT *
 FROM flag_CTE
-WHERE flagStatus IS NOT NULL;
+WHERE flagStatusCode IS NOT NULL;
