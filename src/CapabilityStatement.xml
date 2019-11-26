@@ -54,6 +54,30 @@
             </searchParam>
         </resource>
         <resource>
+            <type value="Flag"/>
+            <profile>
+                <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"/>
+            </profile>
+            <versioning value="no-version"/>
+            <readHistory value="false"/>
+            <updateCreate value="false"/>
+            <searchParam>
+                <name value="date"/>
+                <type value="date"/>
+                <documentation value="Time period when flag is active"/>
+            </searchParam>
+            <searchParam>
+                <name value="patient"/>
+                <type value="reference"/>
+                <documentation value="The identity of a subject to list flags for"/>
+            </searchParam>
+            <searchParam>
+                <name value="status"/>
+                <type value="token"/>
+                <documentation value="active | inactive"/>
+            </searchParam>
+        </resource>
+        <resource>
             <type value="MedicationStatement"/>
             <profile>
                 <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"/>
