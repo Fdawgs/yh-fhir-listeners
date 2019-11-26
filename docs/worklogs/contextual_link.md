@@ -8,8 +8,8 @@ Test contextual link | Completed | 2019-10-21 | Frazer Smith, [Will Jehring](htt
 Build contextual link obfuscator service | Completed | 2019-03-04 | Frazer Smith
 Deploy contextual link obfuscator service | Completed | 2019-09-25 | Frazer Smith
 Choose logo for link | Completed | 2019-03-19 | Anthony Smith
-Integrate Keycloak token retrival middleware | Completed | 2019-11-21 | Frazer Smith
-Test Keycloak token retrival middleware | Completed | 2019-11-21 | Frazer Smith
+Integrate Keycloak token retrieval middleware | Completed | 2019-11-21 | Frazer Smith
+Test Keycloak token retrieval middleware | Completed | 2019-11-21 | Frazer Smith
 Add contextual link to live environment | Awaiting third party | | 
 
 ## Work log
@@ -17,12 +17,12 @@ Add contextual link to live environment | Awaiting third party | |
 Will Jehring provided test records from Black Pear on 2018-11-28, which were then passed onto the Application Support Manager (David Suckling) to be added to the test environment of our PAS, TrakCare.
 
 ### Contextual Link in PAS
-An existing contextual link in the test env was repurposed to test the contextual link for the test records but had some issues due to Trakcare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
+An existing contextual link in the test environment was repurposed to test the contextual link for the test records but had some issues due to TrakCare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
 
 This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
 It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still was not working as intended.
-On 2019-10-11 this was fixed.
+On 2019-10-11, this was fixed.
 
 The contextual link's icon profile values in TrakCare looks like so:
 
