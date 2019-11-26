@@ -56,13 +56,15 @@ try {
 			case 'encounter':
 				data = buildEncounterResource(result);
 				break;
+			case 'flag':
+				date = buildFlagResource(result);
+				break;
 			case 'medicationstatement':
-			// data = buildMedicationStatementResource(result);
+				data = buildMedicationStatementResource(result);
 				break;
 			case 'patient':
 				data = buildPatientResource(result);
 				break;
-
 			default:
 				break;
 		}
