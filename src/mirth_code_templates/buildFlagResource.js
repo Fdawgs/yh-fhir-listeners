@@ -22,7 +22,6 @@ function buildFlagResource(data) {
 
 	resource.id = newStringOrUndefined(getResultSetString(data, 'flagId'));
 	resource.status = newStringOrUndefined(getResultSetString(data, 'flagStatusCode'));
-	resource.text = newStringOrUndefined(getResultSetString(data, 'flagCodeText'));
 
 	if (getResultSetString(data, 'flagCategoryCodingCode') != undefined) {
 		resource.category = {
