@@ -63,9 +63,6 @@
         ],
         "vars-on-top": [
             "off"
-        ],
-        "prefer-destructuring": [
-            "off"
         ]
     }
 }
