@@ -1,13 +1,13 @@
 /*
 Encounter Resource
 Encounters types: inpatient | outpatient | ambulatory | emergency
-FHIR status types:  planned | arrived | triaged | in-progress | onleave | 
+FHIR status types:  planned | arrived | triaged | in-progress | onleave |
 					finished | cancelled | entered-in-error | unknown
 PA_Adm Visit status types: Admit (A) | Cancel (C) | Discharged (D) | Pre-Admission (P) |
 					 Released (R) | DNA (N)
 RB_Appointment APPT_status types : Inserted (I) | Admitted (A) | Transferred (T) | Cancelled (X) |
 							  Closed (C) | Booked (P) | NotAttended (N) | Hold(Postponed) (H) |
-							  Hold(Inserted) (J) | Could Not Wait (W) | Arrived Not Seen (S) | 
+							  Hold(Inserted) (J) | Could Not Wait (W) | Arrived Not Seen (S) |
 							  Departed (D)
 J and C not in use
 
@@ -35,10 +35,10 @@ Apparently they use the discharge date in outpatients as the 'time all admin com
 Converting this to NULL.
 */
 
-WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode, encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate, encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, subjectReference, encounterStatus, lastUpdateDate, lastUpdateTime) 
+WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode, encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate, encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, subjectReference, encounterStatus, lastUpdateDate, lastUpdateTime)
 AS (SELECT DISTINCT *
   	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
-  				'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier, 
+  				'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier,
 						''outpatient'' AS encounterClassDesc,
 						NULL AS encounterClassCode,
 						app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Desc AS encounterTypeDesc,
@@ -56,9 +56,9 @@ AS (SELECT DISTINCT *
 				   FROM RB_Appointment app
 				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 				  ')
-	 UNION 
+	 UNION
 	SELECT DISTINCT *
-  	  FROM OPENQUERY([ENYH-PRD-ANALYTICS], 
+  	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 				 'SELECT REPLACE(PAADM_ADMNo, ''/'', ''-'') AS encounterIdentifier,
 						 CASE PAADM_Type
 						 WHEN ''I'' THEN ''inpatient''
@@ -99,11 +99,11 @@ SELECT  encounterIdentifier,
 		encounterStatus,
 		encounterClassDesc,
 		encounterClassCode,
-		CASE 
+		CASE
 		WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL
 		ELSE UPPER(encounterTypeDesc)
 		END AS encounterTypeDesc,
-		CASE 
+		CASE
 		WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL
 		ELSE encounterTypeCode
 		END AS encounterTypeCode,

@@ -10,7 +10,7 @@ Deploy contextual link obfuscator service | Completed | 2019-09-25 | Frazer Smit
 Choose logo for link | Completed | 2019-03-19 | Anthony Smith
 Integrate Keycloak token retrieval middleware | Completed | 2019-11-21 | Frazer Smith
 Test Keycloak token retrieval middleware | Completed | 2019-11-21 | Frazer Smith
-Add contextual link to live environment | Awaiting third party | | 
+Add contextual link to live environment | Awaiting third party | |
 
 ## Work log
 ### Test Records
