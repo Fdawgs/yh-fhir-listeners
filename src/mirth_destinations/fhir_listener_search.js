@@ -86,6 +86,7 @@ try {
 				date = paramDate;
 				date += '';
 				var operator = convertFhirParameterOperator(date.substring(0, 2));
+				// eslint-disable-next-line no-restricted-globals
 				if (isNaN(date.substring(0, 2))) {
 					date = date.substring(2, date.length);
 				}
@@ -184,6 +185,7 @@ try {
 				date = paramDate;
 				date += '';
 				var operator = convertFhirParameterOperator(date.substring(0, 2));
+				// eslint-disable-next-line no-restricted-globals
 				if (isNaN(date.substring(0, 2))) {
 					date = date.substring(2, date.length);
 				}
@@ -246,6 +248,7 @@ try {
 				date = paramDate;
 				date += '';
 				var operator = convertFhirParameterOperator(date.substring(0, 2));
+				// eslint-disable-next-line no-restricted-globals
 				if (isNaN(date.substring(0, 2))) {
 					date = date.substring(2, date.length);
 				}
