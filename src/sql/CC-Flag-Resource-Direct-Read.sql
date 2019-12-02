@@ -21,7 +21,7 @@ WITH
             COALESCE(ALM_OnsetDate, ALM_CreateDate) AS periodStartDate,
             COALESCE(ALM_OnsetTime, ALM_CreateTime) AS periodStartTime,
             COALESCE(ALM_ExpiryDate, ALM_ClosedDate) AS periodEndDate,
-            ALM_ClosedTime AS periodEndTime,        
+            ALM_ClosedTime AS periodEndTime,
             REPLACE(alert.ALM_RowID, ''||'', ''-'') AS flagId,
             alert.ALM_Alert_DR->ALERT_Desc AS flagCodeCodingDisplay,
             alert.ALM_Alert_DR->ALERT_Code AS flagCodeCodingCode,
