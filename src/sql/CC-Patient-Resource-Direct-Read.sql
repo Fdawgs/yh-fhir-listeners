@@ -43,13 +43,13 @@ SELECT DISTINCT nhsNumber,
 	dnd.DND,
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY(
-		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT 
+		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT
 									patmas.PAPMI_PAPER_DR->PAPER_ID AS nhsNumber,
 									patmas.PAPMI_TraceStatus_DR->TRACE_Desc AS nhsNumberTraceStatusDesc,
 									patmas.PAPMI_TraceStatus_DR AS nhsNumberTraceStatusCode, -- TODO: Add leading zeros in transformer in Mirth
 									patmas.PAPMI_No AS PatientNo, -- MRN apparently
 									patmas.PAPMI_Active,	
-									CASE 
+									CASE
 									WHEN patmas.PAPMI_Active IS NULL THEN ''true''
 									WHEN patmas.PAPMI_Active = ''Y'' THEN ''true''
 									ELSE NULL
