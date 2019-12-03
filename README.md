@@ -1,6 +1,6 @@
 Yeovil District Hospital - SIDeR FHIR Listener Endpoints
 ==========================================
-[![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/)
+[![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=217485645)](https://dependabot.com)
 
 # Introduction
 
