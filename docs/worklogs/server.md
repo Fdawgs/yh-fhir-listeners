@@ -5,7 +5,7 @@ Task | Status | Date | By |
 Stand up dedicated server for SIDeR programme | Completed | 2018-08-20 | James Pardon
 Set up test FHIR REST endpoints | Completed | 2018-09-28 | Frazer Smith
 Request domain from IT Services for HTTPS support | Completed | 2018-10-19 | James Pardon, Frazer Smith
-Confirm Black Pear's calls are routed to server<br>and they can make request to end points | Completed | 2018-10-25 | Frazer Smith, [[Dunmail Hodkinson](https://github.com/Dunmail)](https://github.com/Dunmail) (Black Pear)
+Confirm Black Pear's calls are routed to server<br>and they can make request to end points | Completed | 2018-10-25 | Frazer Smith, [Dunmail Hodkinson](https://github.com/Dunmail) (Black Pear)
 
 ## Work log
 ### Server
