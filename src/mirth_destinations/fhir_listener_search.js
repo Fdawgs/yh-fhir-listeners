@@ -160,11 +160,13 @@ try {
         var encounterPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
         if (encounterPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
           whereArray[0].push("(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
-          whereArray[0].push("(PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
+          whereArray[1].push("(PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
+          whereArray[2].push("(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
         }
         if (encounterPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
           whereArray[0].push("(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
-          whereArray[0].push("(PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
+          whereArray[1].push("(PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
+          whereArray[2].push("(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
         }
       }
     }
