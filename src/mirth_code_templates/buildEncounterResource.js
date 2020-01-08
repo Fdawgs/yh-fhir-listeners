@@ -48,6 +48,80 @@ function buildEncounterResource(data) {
 		};
 	}
 
+	// Add participants
+	resource.participant = [];
+	if (getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined
+		&& getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined
+		&& getResultSetString(data, 'encounterParticipantIndividualCode_discharging') == getResultSetString(data, 'encounterParticipantIndividualCode_admitting')) {
+		var participantCombo = {
+			type: [
+				{
+					coding: [
+						{
+							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							code: 'ADM',
+							display: 'admitter'
+						}
+					]
+				},
+				{
+					coding: [
+						{
+							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							code: 'DIS',
+							display: 'discharger'
+						}
+					]
+				}
+			],
+			individual: {
+				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
+				display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
+			}
+		};
+		resource.participant.push(participantCombo);
+	} else if (getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined
+		&& getResultSetString(data, 'encounterParticipantIndividualDesc_admitting') != undefined) {
+		var participantAdmitter = {
+			type: [
+				{
+					coding: [
+						{
+							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							code: 'ADM',
+							display: 'admitter'
+						}
+					]
+				}
+			],
+			individual: {
+				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
+				display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
+			}
+		};
+		resource.participant.push(participantAdmitter);
+	} else if (getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined
+		&& getResultSetString(data, 'encounterParticipantIndividualDesc_discharging') != undefined) {
+		var participantDischarger = {
+			type: [
+				{
+					coding: [
+						{
+							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							code: 'DIS',
+							display: 'discharger'
+						}
+					]
+				}
+			],
+			individual: {
+				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_discharging'),
+				display: getResultSetString(data, 'encounterParticipantIndividualDesc_discharging')
+			}
+		};
+		resource.participant.push(participantDischarger);
+	}
+
 	resource.period = {};
 	if (getResultSetString(data, 'encounterPeriodStart') != undefined
 		&& getResultSetString(data, 'encounterPeriodStart').substring(0, 1) != 'T'
