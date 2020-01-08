@@ -4,6 +4,7 @@
   "description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
   "main": "index.js",
   "scripts": {
+    "prettier": "prettier ** -write",
     "lint": "eslint \"src/*/*.js\" --fix",
     "test": ""
   },
