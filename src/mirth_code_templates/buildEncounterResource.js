@@ -60,6 +60,48 @@ function buildEncounterResource(data) {
 		resource.period.end = getResultSetString(data, 'encounterPeriodEnd');
 	}
 
+	// Add admission and discharge inpatient details
+	resource.hospitalization = {};
+	resource.hospitalization.extension = [
+		{
+			url: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1'),
+			valueCodeableConcept: {
+				coding: [{
+					system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1'),
+					code: newStringOrUndefined(getResultSetString(data, 'encounterAdmissionmethodCodingCode')),
+					display: newStringOrUndefined(getResultSetString(data, 'encounterAdmissionmethodCodingDesc'))
+
+				}]
+			}
+		},
+		{
+			url: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1'),
+			valueCodeableConcept: {
+				coding: [{
+					system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1'),
+					code: newStringOrUndefined(getResultSetString(data, 'encounterDischargemethodCodingCode')),
+					display: newStringOrUndefined(getResultSetString(data, 'encounterDischargemethodCodingDesc'))
+
+				}]
+			}
+		}
+	];
+
+	resource.hospitalization.admitSource = {
+		coding: [{
+			system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1'),
+			code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode')),
+			display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc'))
+		}]
+	};
+	resource.hospitalization.dischargeDisposition = {
+		coding: [{
+			system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1'),
+			code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode')),
+			display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc'))
+		}]
+	};
+
 	resource.subject = {
 		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'subjectReference')
 	};
