@@ -19,7 +19,9 @@ try {
     case 'encounter':
       wherePredicate = [
         "(REPLACE(app.APPT_RowId, ''||'', ''-'')  = ''" + id + "'')",
-        "(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''" + id + "'')"
+        "(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''" + id + "'')",
+        "(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''" + id + "'')"
+
       ];
       break;
     case 'medicationstatement':
