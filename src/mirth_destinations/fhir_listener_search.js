@@ -151,8 +151,8 @@ try {
 	 * =======================
 	 */
 	if (type == 'encounter') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
+		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
+		whereArray = [[], [], []];
 
 		// GET [baseUrl]/Encounter?patient=[id]
 		if ($('parameters').contains('patient')) {
@@ -161,6 +161,9 @@ try {
 
 			// Build where clause for second query (inpats, emerg) in union
 			whereArray[1].push('(PAADM_PAPMI_DR->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
+
+			// Build where clause for subquery for inpat consultants
+			whereArray[2].push('(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = \'\'' + $('parameters').getParameter('patient') + '\'\')');
 		}
 
 		// GET [baseUrl]/Encounter?patient.identifier=[system]|[code]
