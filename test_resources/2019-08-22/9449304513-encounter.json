@@ -1,2196 +1,2070 @@
 {
-    "resourceType": "Bundle",
-    "type": "searchset",
-    "total": 63,
-    "link": [
-        {
-            "relation": "self",
-            "url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient=8888888"
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 63,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient=8888888"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1020-7346-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1020-7346-1",
+        "meta": {
+          "lastUpdated": "2016-07-29T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-07-29T10:49:14"
         }
-    ],
-    "entry": [
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1020-7346-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "1020-7346-1",
-                "meta": {
-                    "lastUpdated": "2016-07-29T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-07-29T10:49:14"
-                }
-            }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1636-144-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1636-144-1",
+        "meta": {
+          "lastUpdated": "2017-02-21T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
         },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1636-144-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "1636-144-1",
-                "meta": {
-                    "lastUpdated": "2017-02-21T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-02-21T09:58:00"
-                }
-            }
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
         },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1636-33-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "1636-33-1",
-                "meta": {
-                    "lastUpdated": "2017-01-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-01-10T14:21:51"
-                }
-            }
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
         },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1818-2751-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "1818-2751-1",
-                "meta": {
-                    "lastUpdated": "2018-09-27T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "658",
-                                "display": "ORTHOTICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2018-08-06T11:39:02"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2208346",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "2208346",
-                "meta": {
-                    "lastUpdated": "2016-06-11T01:44:27",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-09-18T14:59:00",
-                    "end": "2012-09-19T08:30:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2217112",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "2217112",
-                "meta": {
-                    "lastUpdated": "2016-06-11T01:44:27",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-12-18T15:00:00",
-                    "end": "2012-12-21T18:20:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/232-45275-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "232-45275-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-07-21T16:30:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/232-45276-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "232-45276-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-04-10T14:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2329148",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "2329148",
-                "meta": {
-                    "lastUpdated": "2016-06-11T01:44:27",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-08-11T14:45:00",
-                    "end": "2013-08-17T17:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2491780",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "2491780",
-                "meta": {
-                    "lastUpdated": "2016-06-11T01:44:27",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-04-30T07:30:00",
-                    "end": "2015-05-05T22:25:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/297-12872-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "297-12872-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-05-23T15:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-5891-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-5891-1",
-                "meta": {
-                    "lastUpdated": "2017-03-01T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-03-01T13:54:06"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6221-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-6221-1",
-                "meta": {
-                    "lastUpdated": "2017-03-01T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-05-10T14:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6485-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-6485-1",
-                "meta": {
-                    "lastUpdated": "2017-06-06T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-07-05T14:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6502-2",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-6502-2",
-                "meta": {
-                    "lastUpdated": "2017-07-05T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-07-05T15:41:07"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8444-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-8444-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-12-10T14:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8445-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-8445-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-12-10T16:05:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8446-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "300-8446-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-10-07T14:25:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/304-6989-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "304-6989-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-03-16T13:55:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/305-4109-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "305-4109-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "107",
-                                "display": "VASCULAR SURGERY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-12-15T15:20:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/32-5035-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "32-5035-1",
-                "meta": {
-                    "lastUpdated": "2017-04-28T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "651",
-                                "display": "OCCUPATIONAL THERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-04-26T11:55:35"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/32-5039-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "32-5039-1",
-                "meta": {
-                    "lastUpdated": "2017-04-25T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "651",
-                                "display": "OCCUPATIONAL THERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-04-26T11:30:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-2945-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-2945-1",
-                "meta": {
-                    "lastUpdated": "2016-08-16T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-08-16T14:09:20"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-3047-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-3047-1",
-                "meta": {
-                    "lastUpdated": "2016-09-27T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-09-27T15:00:24"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-3098-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-3098-1",
-                "meta": {
-                    "lastUpdated": "2016-10-18T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-10-18T14:07:02"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-734-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-734-1",
-                "meta": {
-                    "lastUpdated": "2016-09-05T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-09-05T14:20:51"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13432-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "548-13432-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-12-04T14:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13433-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "548-13433-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-08-06T11:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13434-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "548-13434-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-08-13T09:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13435-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "548-13435-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "330",
-                                "display": "DERMATOLOGY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-08-13T11:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-909-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-909-1",
-                "meta": {
-                    "lastUpdated": "2016-11-14T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-11-14T11:30:10"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-980-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "54-980-1",
-                "meta": {
-                    "lastUpdated": "2016-12-12T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-12-12T11:21:13"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/663-10802-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "663-10802-1",
-                "meta": {
-                    "lastUpdated": "2017-11-01T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "658",
-                                "display": "ORTHOTICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-10-31T09:36:31"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/726-15727-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "726-15727-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-11-05T14:20:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-1948-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "730-1948-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-05-22T14:27:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-1949-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "730-1949-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-07-22T14:40:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-553-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "730-553-1",
-                "meta": {
-                    "lastUpdated": "2016-09-14T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-09-02T13:52:16"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-699-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "730-699-1",
-                "meta": {
-                    "lastUpdated": "2016-11-04T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-11-04T14:18:04"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22990-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "731-22990-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-04-05T10:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22991-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "731-22991-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-08-23T11:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22992-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "731-22992-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-11-21T13:45:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22993-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "731-22993-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2015-04-20T14:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-49661-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "732-49661-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-05-23T09:45:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-49662-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "732-49662-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-04-16T13:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-942-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "732-942-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-05-13T14:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/735-1172-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "735-1172-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "190",
-                                "display": "ANAESTHETICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2012-10-27T10:40:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/749-126-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "749-126-1",
-                "meta": {
-                    "lastUpdated": "2016-07-27T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-07-27T14:06:03"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/789-77-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "789-77-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "650",
-                                "display": "PHYSIOTHERAPY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-08-01T16:00:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-17955-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "807-17955-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-07-30T00:01:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/919-71-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "919-71-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "007",
-                                "display": "Z -NON-CONSULTANT"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-08-06T15:20:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-157-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-157-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-02-05T14:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-158-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-158-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-05-07T15:12:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-159-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-159-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-08-06T13:52:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-160-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-160-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "cancelled",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-12-03T14:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-161-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-161-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2013-11-27T14:05:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-162-1",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "942-162-1",
-                "meta": {
-                    "lastUpdated": "2016-06-11T00:00:00",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "arrived",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "display": "outpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2014-05-07T16:15:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-012093",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "AE-2017-012093",
-                "meta": {
-                    "lastUpdated": "2017-04-08T18:23:13",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "EMER",
-                    "display": "emergency"
-                },
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-04-08T16:04:00",
-                    "end": "2017-04-08T18:23:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-016577",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "AE-2019-016577",
-                "meta": {
-                    "lastUpdated": "2019-04-17T02:04:56",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "EMER",
-                    "display": "emergency"
-                },
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2019-04-16T16:50:00",
-                    "end": "2019-04-16T20:50:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-021867",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "AE-2019-021867",
-                "meta": {
-                    "lastUpdated": "2019-05-19T02:30:56",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "EMER",
-                    "display": "emergency"
-                },
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2019-05-18T04:47:00",
-                    "end": "2019-05-18T08:45:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000000395",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "I0000000395",
-                "meta": {
-                    "lastUpdated": "2016-07-12T11:36:08",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "110",
-                                "display": "TRAUMA AND ORTHOPAEDICS"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2016-07-07T15:00:00",
-                    "end": "2016-07-12T14:13:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000047527",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "I0000047527",
-                "meta": {
-                    "lastUpdated": "2017-07-04T09:47:07",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "328",
-                                "display": "STROKE MEDICINE"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2017-04-08T18:23:00",
-                    "end": "2017-04-26T18:41:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000157327",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "I0000157327",
-                "meta": {
-                    "lastUpdated": "2019-05-03T16:25:34",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "100",
-                                "display": "GENERAL SURGERY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2019-04-16T20:50:00",
-                    "end": "2019-05-03T16:20:00"
-                }
-            }
-        },
-        {
-            "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000162176",
-            "resource": {
-                "resourceType": "Encounter",
-                "id": "I0000162176",
-                "meta": {
-                    "lastUpdated": "2019-05-19T23:52:39",
-                    "profile": [
-                        "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-                    ]
-                },
-                "status": "finished",
-                "class": {
-                    "system": "http://hl7.org/fhir/v3/ActEncounterCode",
-                    "code": "IMP",
-                    "display": "inpatient"
-                },
-                "type": [
-                    {
-                        "coding": [
-                            {
-                                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-                                "code": "100",
-                                "display": "GENERAL SURGERY"
-                            }
-                        ]
-                    }
-                ],
-                "subject": {
-                    "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
-                },
-                "period": {
-                    "start": "2019-05-18T08:45:00",
-                    "end": "2019-05-19T23:51:00"
-                }
-            }
+        "period": {
+          "start": "2017-02-21T09:58:00"
         }
-    ]
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1636-33-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1636-33-1",
+        "meta": {
+          "lastUpdated": "2017-01-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-01-10T14:21:51"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1818-2751-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "1818-2751-1",
+        "meta": {
+          "lastUpdated": "2018-09-27T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "658",
+                "display": "ORTHOTICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2018-08-06T11:39:02"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2208346",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2208346",
+        "meta": {
+          "lastUpdated": "2016-06-11T01:44:27",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-09-18T14:59:00",
+          "end": "2012-09-19T08:30:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2217112",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2217112",
+        "meta": {
+          "lastUpdated": "2016-06-11T01:44:27",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-12-18T15:00:00",
+          "end": "2012-12-21T18:20:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/232-45275-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "232-45275-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-07-21T16:30:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/232-45276-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "232-45276-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-04-10T14:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2329148",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2329148",
+        "meta": {
+          "lastUpdated": "2016-06-11T01:44:27",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-08-11T14:45:00",
+          "end": "2013-08-17T17:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2491780",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "2491780",
+        "meta": {
+          "lastUpdated": "2016-06-11T01:44:27",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-04-30T07:30:00",
+          "end": "2015-05-05T22:25:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/297-12872-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "297-12872-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-05-23T15:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-5891-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-5891-1",
+        "meta": {
+          "lastUpdated": "2017-03-01T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-03-01T13:54:06"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6221-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-6221-1",
+        "meta": {
+          "lastUpdated": "2017-03-01T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-05-10T14:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6485-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-6485-1",
+        "meta": {
+          "lastUpdated": "2017-06-06T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-07-05T14:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-6502-2",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-6502-2",
+        "meta": {
+          "lastUpdated": "2017-07-05T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-07-05T15:41:07"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8444-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-8444-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-12-10T14:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8445-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-8445-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-12-10T16:05:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/300-8446-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "300-8446-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-10-07T14:25:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/304-6989-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "304-6989-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-03-16T13:55:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/305-4109-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "305-4109-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "107",
+                "display": "VASCULAR SURGERY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-12-15T15:20:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/32-5035-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "32-5035-1",
+        "meta": {
+          "lastUpdated": "2017-04-28T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "651",
+                "display": "OCCUPATIONAL THERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-04-26T11:55:35"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/32-5039-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "32-5039-1",
+        "meta": {
+          "lastUpdated": "2017-04-25T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "651",
+                "display": "OCCUPATIONAL THERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-04-26T11:30:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-2945-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-2945-1",
+        "meta": {
+          "lastUpdated": "2016-08-16T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-08-16T14:09:20"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-3047-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-3047-1",
+        "meta": {
+          "lastUpdated": "2016-09-27T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-09-27T15:00:24"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-3098-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-3098-1",
+        "meta": {
+          "lastUpdated": "2016-10-18T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-10-18T14:07:02"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-734-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-734-1",
+        "meta": {
+          "lastUpdated": "2016-09-05T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-09-05T14:20:51"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13432-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "548-13432-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-12-04T14:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13433-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "548-13433-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-08-06T11:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13434-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "548-13434-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-08-13T09:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/548-13435-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "548-13435-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "330",
+                "display": "DERMATOLOGY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-08-13T11:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-909-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-909-1",
+        "meta": {
+          "lastUpdated": "2016-11-14T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-11-14T11:30:10"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/54-980-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "54-980-1",
+        "meta": {
+          "lastUpdated": "2016-12-12T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-12-12T11:21:13"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/663-10802-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "663-10802-1",
+        "meta": {
+          "lastUpdated": "2017-11-01T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "658",
+                "display": "ORTHOTICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-10-31T09:36:31"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/726-15727-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "726-15727-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-11-05T14:20:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-1948-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "730-1948-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-05-22T14:27:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-1949-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "730-1949-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-07-22T14:40:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-553-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "730-553-1",
+        "meta": {
+          "lastUpdated": "2016-09-14T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-09-02T13:52:16"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/730-699-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "730-699-1",
+        "meta": {
+          "lastUpdated": "2016-11-04T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-11-04T14:18:04"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22990-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "731-22990-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-04-05T10:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22991-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "731-22991-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-08-23T11:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22992-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "731-22992-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-11-21T13:45:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/731-22993-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "731-22993-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2015-04-20T14:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-49661-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "732-49661-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-05-23T09:45:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-49662-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "732-49662-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-04-16T13:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/732-942-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "732-942-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-05-13T14:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/735-1172-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "735-1172-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "190",
+                "display": "ANAESTHETICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2012-10-27T10:40:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/749-126-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "749-126-1",
+        "meta": {
+          "lastUpdated": "2016-07-27T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-07-27T14:06:03"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/789-77-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "789-77-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "650",
+                "display": "PHYSIOTHERAPY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-08-01T16:00:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-17955-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "807-17955-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-07-30T00:01:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/919-71-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "919-71-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "007",
+                "display": "Z -NON-CONSULTANT"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-08-06T15:20:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-157-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-157-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-02-05T14:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-158-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-158-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-05-07T15:12:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-159-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-159-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-08-06T13:52:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-160-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-160-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "cancelled",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-12-03T14:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-161-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-161-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2013-11-27T14:05:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/942-162-1",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "942-162-1",
+        "meta": {
+          "lastUpdated": "2016-06-11T00:00:00",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "arrived",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "display": "outpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2014-05-07T16:15:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-012093",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "AE-2017-012093",
+        "meta": {
+          "lastUpdated": "2017-04-08T18:23:13",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-04-08T16:04:00",
+          "end": "2017-04-08T18:23:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-016577",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "AE-2019-016577",
+        "meta": {
+          "lastUpdated": "2019-04-17T02:04:56",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2019-04-16T16:50:00",
+          "end": "2019-04-16T20:50:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-021867",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "AE-2019-021867",
+        "meta": {
+          "lastUpdated": "2019-05-19T02:30:56",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "EMER",
+          "display": "emergency"
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2019-05-18T04:47:00",
+          "end": "2019-05-18T08:45:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000000395",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "I0000000395",
+        "meta": {
+          "lastUpdated": "2016-07-12T11:36:08",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "110",
+                "display": "TRAUMA AND ORTHOPAEDICS"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2016-07-07T15:00:00",
+          "end": "2016-07-12T14:13:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000047527",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "I0000047527",
+        "meta": {
+          "lastUpdated": "2017-07-04T09:47:07",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "328",
+                "display": "STROKE MEDICINE"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2017-04-08T18:23:00",
+          "end": "2017-04-26T18:41:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000157327",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "I0000157327",
+        "meta": {
+          "lastUpdated": "2019-05-03T16:25:34",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "100",
+                "display": "GENERAL SURGERY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2019-04-16T20:50:00",
+          "end": "2019-05-03T16:20:00"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000162176",
+      "resource": {
+        "resourceType": "Encounter",
+        "id": "I0000162176",
+        "meta": {
+          "lastUpdated": "2019-05-19T23:52:39",
+          "profile": ["https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"]
+        },
+        "status": "finished",
+        "class": {
+          "system": "http://hl7.org/fhir/v3/ActEncounterCode",
+          "code": "IMP",
+          "display": "inpatient"
+        },
+        "type": [
+          {
+            "coding": [
+              {
+                "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+                "code": "100",
+                "display": "GENERAL SURGERY"
+              }
+            ]
+          }
+        ],
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+        },
+        "period": {
+          "start": "2019-05-18T08:45:00",
+          "end": "2019-05-19T23:51:00"
+        }
+      }
+    }
+  ]
 }

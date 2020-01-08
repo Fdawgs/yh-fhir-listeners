@@ -1,11 +1,11 @@
 {
-    "resourceType": "Bundle",
-    "type": "searchset",
-    "total": 0,
-    "link": [
-        {
-            "relation": "self",
-            "url": "https://sider.ydh.nhs.uk/3_0_1/Condition?patient=9999999"
-        }
-    ]
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 0,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://sider.ydh.nhs.uk/3_0_1/Condition?patient=9999999"
+    }
+  ]
 }

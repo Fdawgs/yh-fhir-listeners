@@ -1,11 +1,11 @@
 {
-    "resourceType": "Bundle",
-    "type": "searchset",
-    "total": 0,
-    "link": [
-        {
-            "relation": "self",
-            "url": "https://sider.ydh.nhs.uk/3_0_1/DocumentReference?patient=8888888"
-        }
-    ]
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 0,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://sider.ydh.nhs.uk/3_0_1/DocumentReference?patient=8888888"
+    }
+  ]
 }

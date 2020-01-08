@@ -7,18 +7,16 @@
 	@return {Object} Condition FHIR resource.
  */
 function buildConditionResource(data) {
-	/**
-	 * Hard-coding meta profile and resourceType into resource as this should not
-	 * be changed for this resource, ever.
-	 */
-	var resource = {
-		meta: {
-			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1'
-			]
-		},
-		resourceType: 'Condition'
-	};
+  /**
+   * Hard-coding meta profile and resourceType into resource as this should not
+   * be changed for this resource, ever.
+   */
+  var resource = {
+    meta: {
+      profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1']
+    },
+    resourceType: 'Condition'
+  };
 
-	return resource;
+  return resource;
 }
