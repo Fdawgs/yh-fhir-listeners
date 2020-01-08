@@ -136,8 +136,15 @@ function buildEncounterResource(data) {
 
 	// Add admission and discharge inpatient details
 	resource.hospitalization = {};
-	resource.hospitalization.extension = [
-		{
+
+	if (getResultSetString(data, 'encounterAdmissionmethodCodingCode') != undefined
+	|| getResultSetString(data, 'encounterDischargemethodCodingCode') != undefined) {
+		resource.hospitalization.extension = [];
+	}
+
+	if (getResultSetString(data, 'encounterAdmissionmethodCodingCode') != undefined
+		&& getResultSetString(data, 'encounterAdmissionmethodCodingDesc') != undefined) {
+		var admissionMethod = {
 			url: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1'),
 			valueCodeableConcept: {
 				coding: [{
@@ -147,8 +154,13 @@ function buildEncounterResource(data) {
 
 				}]
 			}
-		},
-		{
+		};
+		resource.hospitalization.extension.push(admissionMethod);
+	}
+
+	if (getResultSetString(data, 'encounterDischargemethodCodingCode') != undefined
+	&& getResultSetString(data, 'encounterDischargemethodCodingDesc') != undefined) {
+		var dischargeMethod = {
 			url: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1'),
 			valueCodeableConcept: {
 				coding: [{
@@ -158,23 +170,30 @@ function buildEncounterResource(data) {
 
 				}]
 			}
-		}
-	];
+		};
+		resource.hospitalization.extension.push(dischargeMethod);
+	}
 
-	resource.hospitalization.admitSource = {
-		coding: [{
-			system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1'),
-			code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode')),
-			display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc'))
-		}]
-	};
-	resource.hospitalization.dischargeDisposition = {
-		coding: [{
-			system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1'),
-			code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode')),
-			display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc'))
-		}]
-	};
+	if (getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode') != undefined
+		&& getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc') != undefined) {
+		resource.hospitalization.admitSource = {
+			coding: [{
+				system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1'),
+				code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode')),
+				display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc'))
+			}]
+		};
+	}
+	if (getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode') != undefined
+		&& getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc') != undefined) {
+		resource.hospitalization.dischargeDisposition = {
+			coding: [{
+				system: newStringOrUndefined('https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1'),
+				code: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode')),
+				display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc'))
+			}]
+		};
+	}
 
 	resource.subject = {
 		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'subjectReference')
