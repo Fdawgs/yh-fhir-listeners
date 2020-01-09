@@ -37,7 +37,7 @@ Converting this to NULL.
 
 WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode,
 	encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate,
-	encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime,
+	encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, encounterParticipantIndividualCode_opattending, encounterParticipantIndividualDesc_opattending,
 	encounterHospitalizationAdmitsourceCodingCode, encounterHospitalizationAdmitsourceCodingDesc, encounterHospitalizationDischargedispositionCodingCode,
 	encounterHospitalizationDischargedispositionCodingDesc, encounterAdmissionmethodCodingCode, encounterAdmissionmethodCodingDesc,
 	encounterDischargemethodCodingCode, encounterDischargemethodCodingDesc, subjectReference,
@@ -51,10 +51,10 @@ AS (SELECT DISTINCT *
 						app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code AS encounterTypeCode,
 						COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) AS encounterPeriodStartDate,
 						COALESCE(app.APPT_ArrivalTime, app.APPT_TimeComp) AS encounterPeriodStartTime,
-						--app.APPT_DepartureDate AS encounterPeriodEndDate,
-						--app.APPT_DepartureTime AS encounterPeriodEndTime,
 						NULL AS encounterPeriodEndDate,
 						NULL AS encounterPeriodEndTime,
+                        app.APPT_SeenDoctor_DR->CTPCP_Code AS encounterParticipantIndividualCode_opattending,
+                        app.APPT_SeenDoctor_DR->CTPCP_Desc AS encounterParticipantIndividualDesc_opattending,
 						NULL AS encounterHospitalizationAdmitsourceCodingCode,
 						NULL AS encounterHospitalizationAdmitsourceCodingDesc,
 						NULL AS encounterHospitalizationDischargedispositionCodingCode,
@@ -68,7 +68,8 @@ AS (SELECT DISTINCT *
 						app.APPT_LastUpdateDate AS lastUpdateDate,
 						NULL AS lastUpdateTime
 				   FROM RB_Appointment app
-				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
+				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
+				  	AND app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 				  ')
 	 UNION
 	SELECT DISTINCT *
@@ -88,21 +89,38 @@ AS (SELECT DISTINCT *
 						 PAADM_AdmTime AS encounterPeriodStartTime,
 						 PAADM_DischgDate AS encounterPeriodEndDate,
 						 PAADM_DischgTime AS encounterPeriodEndTime,
+                         NULL AS encounterParticipantIndividualCode_opattending,
+                         NULL AS encounterParticipantIndividualDesc_opattending,
 						 PAADM_AdmSrc_DR->ADSOU_Code AS encounterHospitalizationAdmitsourceCodingCode,
 						 PAADM_AdmSrc_DR->ADSOU_Desc AS encounterHospitalizationAdmitsourceCodingDesc,
-						 PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Code AS encounterHospitalizationDischargedispositionCodingCode,
-						 PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Desc AS encounterHospitalizationDischargedispositionCodingDesc,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Code
+						 ELSE NULL
+						 END AS encounterHospitalizationDischargedispositionCodingCode,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Desc
+						 ELSE NULL
+						 END AS encounterHospitalizationDischargedispositionCodingDesc,
 						 PAADM_AdmMethod_DR->ADMETH_Code AS encounterAdmissionmethodCodingCode,
 						 PAADM_AdmMethod_DR->ADMETH_Desc AS encounterAdmissionmethodCodingDesc,
-						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Code AS encounterDischargemethodCodingCode,
-						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Desc AS encounterDischargemethodCodingDesc,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN
+						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Code
+						 ELSE NULL
+						 END AS encounterDischargemethodCodingCode,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN
+						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Desc
+						 ELSE NULL
+						 END AS encounterDischargemethodCodingDesc,
 						 PAADM_PAPMI_DR->PAPMI_No AS subjectReference,
 						 PAADM_VisitStatus AS encounterStatus,
 						 PAADM_UpdateDate AS lastUpdateDate,
 						 PAADM_UpdateTime AS lastUpdateTime
 				 	FROM PA_Adm
 				   WHERE PAADM_Type IN (''I'', ''E'')
-				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5484125''
+				   	 AND PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
+				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5035803''
 					  '))
 SELECT  encounterIdentifier,
 		CASE
@@ -131,6 +149,8 @@ SELECT  encounterIdentifier,
 		END AS encounterTypeCode,
 		CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) AS encounterPeriodStart,
 		CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) AS encounterPeriodEnd,
+ 		encounterParticipantIndividualCode_opattending,
+		encounterParticipantIndividualDesc_opattending,
 		consultants.dischargeConsultantCode AS encounterParticipantIndividualCode_discharging,
 		consultants.dischargeConsultantDesc AS encounterParticipantIndividualDisplay_discharging,
 		consultants.admissionConsultantCode AS encounterParticipantIndividualCode_admitting,
