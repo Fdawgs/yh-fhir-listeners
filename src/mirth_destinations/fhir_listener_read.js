@@ -10,7 +10,9 @@ try {
 	var wherePredicate;
 	switch (type + '') {
 		case 'allergyintolerance':
-			wherePredicate = ["(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''" + id + "'')"];
+			wherePredicate = [
+				"(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''" + id + "'')"
+			];
 			break;
 		case 'condition':
 			break;
@@ -20,11 +22,16 @@ try {
 			wherePredicate = [
 				"(REPLACE(app.APPT_RowId, ''||'', ''-'')  = ''" + id + "'')",
 				"(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''" + id + "'')",
-				"(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''" + id + "'')"
+				"(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''" +
+					id +
+					"'')"
 			];
 			break;
 		case 'medicationstatement':
-			wherePredicate = ["(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''" + id + "'')", ''];
+			wherePredicate = [
+				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''" + id + "'')",
+				''
+			];
 
 			break;
 		case 'patient':
@@ -79,7 +86,18 @@ try {
 		responseMap.put('response', response);
 		return response.getMessage();
 	}
-	return createOperationOutcome('error', 'processing', $('fhirType') + ' ID ' + id + ' not found.', 404);
+	return createOperationOutcome(
+		'error',
+		'processing',
+		$('fhirType') + ' ID ' + id + ' not found.',
+		404
+	);
 } catch (error) {
-	return createOperationOutcome('error', 'transient', 'Error reading resource.', 500, e);
+	return createOperationOutcome(
+		'error',
+		'transient',
+		'Error reading resource.',
+		500,
+		e
+	);
 }

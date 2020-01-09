@@ -10,8 +10,14 @@ function buildPatientResource(data) {
 	var result = {};
 	result.lastUpdated = getResultSetString(data, 'lastUpdated');
 	result.nhsNumber = getResultSetString(data, 'nhsNumber');
-	result.nhsNumberTraceStatusCode = getResultSetString(data, 'nhsNumberTraceStatusCode');
-	result.nhsNumberTraceStatusDesc = getResultSetString(data, 'nhsNumberTraceStatusDesc');
+	result.nhsNumberTraceStatusCode = getResultSetString(
+		data,
+		'nhsNumberTraceStatusCode'
+	);
+	result.nhsNumberTraceStatusDesc = getResultSetString(
+		data,
+		'nhsNumberTraceStatusDesc'
+	);
 	if (result.nhsNumberTraceStatusCode == undefined) {
 		result.nhsNumberTraceStatusCode = '2';
 		result.nhsNumberTraceStatusDesc = 'Number present but not traced';
@@ -31,9 +37,15 @@ function buildPatientResource(data) {
 	result.mobilePhone = getResultSetString(data, 'mobilePhone');
 	result.appointmentSMS = getResultSetString(data, 'appointmentSMS');
 	result.email = getResultSetString(data, 'email');
-	result.preferredContactMethod = getResultSetString(data, 'preferredContactMethod');
+	result.preferredContactMethod = getResultSetString(
+		data,
+		'preferredContactMethod'
+	);
 	result.preferredLanguage = getResultSetString(data, 'preferredLanguage');
-	result.interpreterRequired = getResultSetString(data, 'interpreterRequired');
+	result.interpreterRequired = getResultSetString(
+		data,
+		'interpreterRequired'
+	);
 	result.nameFamily = getResultSetString(data, 'nameFamily');
 	result.nameGiven1First = getResultSetString(data, 'nameGiven1First');
 	result.nameGiven2Middle = getResultSetString(data, 'nameGiven2Middle');
@@ -66,13 +78,17 @@ function buildPatientResource(data) {
 	var resource = {
 		fullUrl: $cfg('apiUrl') + $('contextPath') + '/' + result.patientNo,
 		meta: {
-			profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1']
+			profile: [
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1'
+			]
 		},
 		resourceType: newStringOrUndefined('Patient'),
 		identifier: [
 			{
 				use: newStringOrUndefined('usual'),
-				system: newStringOrUndefined('https://fhir.ydh.nhs.uk/Id/local-patient-identifier'),
+				system: newStringOrUndefined(
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				),
 				value: newStringOrUndefined(result.patientNo)
 			}
 		],
@@ -91,7 +107,10 @@ function buildPatientResource(data) {
 			{
 				use: newStringOrUndefined('home'),
 				type: newStringOrUndefined('postal'),
-				line: [newStringOrUndefined(result.addressLine1), newStringOrUndefined(result.addressLine2)],
+				line: [
+					newStringOrUndefined(result.addressLine1),
+					newStringOrUndefined(result.addressLine2)
+				],
 				city: newStringOrUndefined(result.city),
 				district: newStringOrUndefined(result.district),
 				postalCode: newStringOrUndefined(result.postalCode)
@@ -127,8 +146,12 @@ function buildPatientResource(data) {
 								system: newStringOrUndefined(
 									'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1'
 								),
-								code: newStringOrUndefined(result.nhsNumberTraceStatusCode),
-								display: newStringOrUndefined(result.nhsNumberTraceStatusDesc)
+								code: newStringOrUndefined(
+									result.nhsNumberTraceStatusCode
+								),
+								display: newStringOrUndefined(
+									result.nhsNumberTraceStatusDesc
+								)
 							}
 						]
 					}
@@ -232,14 +255,19 @@ function buildPatientResource(data) {
 			resourceType: 'Organization',
 			id: newStringOrUndefined(result.gpIdentifier),
 			meta: {
-				profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1']
+				profile: [
+					'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1'
+				]
 			},
 			name: newStringOrUndefined(result.gpName),
 			address: [
 				{
 					use: newStringOrUndefined('work'),
 					type: newStringOrUndefined('both'),
-					line: [newStringOrUndefined(result.gpAddressLine1), newStringOrUndefined(result.gpAddressLine2)],
+					line: [
+						newStringOrUndefined(result.gpAddressLine1),
+						newStringOrUndefined(result.gpAddressLine2)
+					],
 					city: newStringOrUndefined(result.gpCity),
 					postalCode: newStringOrUndefined(result.gpPostalCode)
 				}
@@ -266,11 +294,16 @@ function buildPatientResource(data) {
 	}
 
 	// Add Marital Status
-	if (result.maritalStatusCode != undefined && result.maritalStatusDesc != undefined) {
+	if (
+		result.maritalStatusCode != undefined &&
+		result.maritalStatusDesc != undefined
+	) {
 		resource.maritalStatus = {
 			coding: [
 				{
-					system: newStringOrUndefined('http://hl7.org/fhir/stu3/v3/MaritalStatus'),
+					system: newStringOrUndefined(
+						'http://hl7.org/fhir/stu3/v3/MaritalStatus'
+					),
 					code: newStringOrUndefined(result.maritalStatusCode),
 					display: newStringOrUndefined(result.maritalStatusDesc)
 				}

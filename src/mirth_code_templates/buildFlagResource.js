@@ -13,21 +13,29 @@ function buildFlagResource(data) {
 	 */
 	var resource = {
 		meta: {
-			profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1']
+			profile: [
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1'
+			]
 		},
 		resourceType: 'Flag'
 	};
 
 	resource.id = newStringOrUndefined(getResultSetString(data, 'flagId'));
-	resource.status = newStringOrUndefined(getResultSetString(data, 'flagStatusCode'));
+	resource.status = newStringOrUndefined(
+		getResultSetString(data, 'flagStatusCode')
+	);
 
 	if (getResultSetString(data, 'flagCategoryCodingCode') != undefined) {
 		resource.category = {
 			coding: [
 				{
 					system: 'https://trakcare.ydh.nhs.uk',
-					code: newStringOrUndefined(getResultSetString(data, 'flagCategoryCodingCode')),
-					display: newStringOrUndefined(getResultSetString(data, 'flagCategoryCodingDisplay'))
+					code: newStringOrUndefined(
+						getResultSetString(data, 'flagCategoryCodingCode')
+					),
+					display: newStringOrUndefined(
+						getResultSetString(data, 'flagCategoryCodingDisplay')
+					)
 				}
 			]
 		};
@@ -38,8 +46,12 @@ function buildFlagResource(data) {
 			coding: [
 				{
 					system: 'https://trakcare.ydh.nhs.uk',
-					code: newStringOrUndefined(getResultSetString(data, 'flagCodeCodingCode')),
-					display: newStringOrUndefined(getResultSetString(data, 'flagCodeCodingDisplay'))
+					code: newStringOrUndefined(
+						getResultSetString(data, 'flagCodeCodingCode')
+					),
+					display: newStringOrUndefined(
+						getResultSetString(data, 'flagCodeCodingDisplay')
+					)
 				}
 			]
 		};
@@ -62,7 +74,10 @@ function buildFlagResource(data) {
 	}
 
 	resource.subject = {
-		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'flagSubjectReference')
+		reference:
+			$cfg('apiUrl') +
+			'/r3/Patient/' +
+			getResultSetString(data, 'flagSubjectReference')
 	};
 
 	return resource;

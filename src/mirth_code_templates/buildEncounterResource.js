@@ -13,13 +13,19 @@ function buildEncounterResource(data) {
 	 */
 	var resource = {
 		meta: {
-			profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1']
+			profile: [
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1'
+			]
 		},
 		resourceType: 'Encounter'
 	};
 
-	resource.id = newStringOrUndefined(getResultSetString(data, 'encounterIdentifier'));
-	resource.status = newStringOrUndefined(getResultSetString(data, 'encounterStatusMapped'));
+	resource.id = newStringOrUndefined(
+		getResultSetString(data, 'encounterIdentifier')
+	);
+	resource.status = newStringOrUndefined(
+		getResultSetString(data, 'encounterStatusMapped')
+	);
 
 	// Add meta data
 	if (
@@ -33,8 +39,12 @@ function buildEncounterResource(data) {
 	if (getResultSetString(data, 'encounterClassDesc') != undefined) {
 		resource.class = {
 			system: 'http://hl7.org/fhir/v3/ActEncounterCode',
-			code: newStringOrUndefined(getResultSetString(data, 'encounterClassCode')),
-			display: newStringOrUndefined(getResultSetString(data, 'encounterClassDesc'))
+			code: newStringOrUndefined(
+				getResultSetString(data, 'encounterClassCode')
+			),
+			display: newStringOrUndefined(
+				getResultSetString(data, 'encounterClassDesc')
+			)
 		};
 	}
 
@@ -42,9 +52,14 @@ function buildEncounterResource(data) {
 		resource.type = {
 			coding: [
 				{
-					system: 'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
-					code: newStringOrUndefined(getResultSetString(data, 'encounterTypeCode')),
-					display: newStringOrUndefined(getResultSetString(data, 'encounterTypeDesc'))
+					system:
+						'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
+					code: newStringOrUndefined(
+						getResultSetString(data, 'encounterTypeCode')
+					),
+					display: newStringOrUndefined(
+						getResultSetString(data, 'encounterTypeDesc')
+					)
 				}
 			]
 		};
@@ -53,10 +68,22 @@ function buildEncounterResource(data) {
 	// Add participants
 	resource.participant = [];
 	if (
-		getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined &&
-		getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined &&
-		getResultSetString(data, 'encounterParticipantIndividualCode_discharging') ==
-			getResultSetString(data, 'encounterParticipantIndividualCode_admitting')
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_admitting'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_discharging'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_discharging'
+		) ==
+			getResultSetString(
+				data,
+				'encounterParticipantIndividualCode_admitting'
+			)
 	) {
 		var participantCombo = {
 			type: [
@@ -80,14 +107,26 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
-				display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
+				identifier: getResultSetString(
+					data,
+					'encounterParticipantIndividualCode_admitting'
+				),
+				display: getResultSetString(
+					data,
+					'encounterParticipantIndividualDesc_admitting'
+				)
 			}
 		};
 		resource.participant.push(participantCombo);
 	} else if (
-		getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined &&
-		getResultSetString(data, 'encounterParticipantIndividualDesc_admitting') != undefined
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_admitting'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualDesc_admitting'
+		) != undefined
 	) {
 		var participantAdmitter = {
 			type: [
@@ -102,14 +141,26 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
-				display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
+				identifier: getResultSetString(
+					data,
+					'encounterParticipantIndividualCode_admitting'
+				),
+				display: getResultSetString(
+					data,
+					'encounterParticipantIndividualDesc_admitting'
+				)
 			}
 		};
 		resource.participant.push(participantAdmitter);
 	} else if (
-		getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined &&
-		getResultSetString(data, 'encounterParticipantIndividualDesc_discharging') != undefined
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_discharging'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualDesc_discharging'
+		) != undefined
 	) {
 		var participantDischarger = {
 			type: [
@@ -124,14 +175,26 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_discharging'),
-				display: getResultSetString(data, 'encounterParticipantIndividualDesc_discharging')
+				identifier: getResultSetString(
+					data,
+					'encounterParticipantIndividualCode_discharging'
+				),
+				display: getResultSetString(
+					data,
+					'encounterParticipantIndividualDesc_discharging'
+				)
 			}
 		};
 		resource.participant.push(participantDischarger);
 	} else if (
-		getResultSetString(data, 'encounterParticipantIndividualCode_opattending') != undefined &&
-		getResultSetString(data, 'encounterParticipantIndividualDesc_opattending') != undefined
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualCode_opattending'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterParticipantIndividualDesc_opattending'
+		) != undefined
 	) {
 		var participantConsultant = {
 			type: [
@@ -146,8 +209,14 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_opattending'),
-				display: getResultSetString(data, 'encounterParticipantIndividualDesc_opattending')
+				identifier: getResultSetString(
+					data,
+					'encounterParticipantIndividualCode_opattending'
+				),
+				display: getResultSetString(
+					data,
+					'encounterParticipantIndividualDesc_opattending'
+				)
 			}
 		};
 		resource.participant.push(participantConsultant);
@@ -156,10 +225,15 @@ function buildEncounterResource(data) {
 	resource.period = {};
 	if (
 		getResultSetString(data, 'encounterPeriodStart') != undefined &&
-		getResultSetString(data, 'encounterPeriodStart').substring(0, 1) != 'T' &&
-		getResultSetString(data, 'encounterPeriodStart').substring(0, 4) != '1900'
+		getResultSetString(data, 'encounterPeriodStart').substring(0, 1) !=
+			'T' &&
+		getResultSetString(data, 'encounterPeriodStart').substring(0, 4) !=
+			'1900'
 	) {
-		resource.period.start = getResultSetString(data, 'encounterPeriodStart');
+		resource.period.start = getResultSetString(
+			data,
+			'encounterPeriodStart'
+		);
 	}
 	if (
 		getResultSetString(data, 'encounterPeriodEnd') != undefined &&
@@ -173,15 +247,19 @@ function buildEncounterResource(data) {
 	resource.hospitalization = {};
 
 	if (
-		getResultSetString(data, 'encounterAdmissionmethodCodingCode') != undefined ||
-		getResultSetString(data, 'encounterDischargemethodCodingCode') != undefined
+		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
+			undefined ||
+		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
+			undefined
 	) {
 		resource.hospitalization.extension = [];
 	}
 
 	if (
-		getResultSetString(data, 'encounterAdmissionmethodCodingCode') != undefined &&
-		getResultSetString(data, 'encounterAdmissionmethodCodingDesc') != undefined
+		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
+			undefined &&
+		getResultSetString(data, 'encounterAdmissionmethodCodingDesc') !=
+			undefined
 	) {
 		var admissionMethod = {
 			url: newStringOrUndefined(
@@ -193,8 +271,18 @@ function buildEncounterResource(data) {
 						system: newStringOrUndefined(
 							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1'
 						),
-						code: newStringOrUndefined(getResultSetString(data, 'encounterAdmissionmethodCodingCode')),
-						display: newStringOrUndefined(getResultSetString(data, 'encounterAdmissionmethodCodingDesc'))
+						code: newStringOrUndefined(
+							getResultSetString(
+								data,
+								'encounterAdmissionmethodCodingCode'
+							)
+						),
+						display: newStringOrUndefined(
+							getResultSetString(
+								data,
+								'encounterAdmissionmethodCodingDesc'
+							)
+						)
 					}
 				]
 			}
@@ -203,8 +291,10 @@ function buildEncounterResource(data) {
 	}
 
 	if (
-		getResultSetString(data, 'encounterDischargemethodCodingCode') != undefined &&
-		getResultSetString(data, 'encounterDischargemethodCodingDesc') != undefined
+		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
+			undefined &&
+		getResultSetString(data, 'encounterDischargemethodCodingDesc') !=
+			undefined
 	) {
 		var dischargeMethod = {
 			url: newStringOrUndefined(
@@ -216,8 +306,18 @@ function buildEncounterResource(data) {
 						system: newStringOrUndefined(
 							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1'
 						),
-						code: newStringOrUndefined(getResultSetString(data, 'encounterDischargemethodCodingCode')),
-						display: newStringOrUndefined(getResultSetString(data, 'encounterDischargemethodCodingDesc'))
+						code: newStringOrUndefined(
+							getResultSetString(
+								data,
+								'encounterDischargemethodCodingCode'
+							)
+						),
+						display: newStringOrUndefined(
+							getResultSetString(
+								data,
+								'encounterDischargemethodCodingDesc'
+							)
+						)
 					}
 				]
 			}
@@ -226,8 +326,14 @@ function buildEncounterResource(data) {
 	}
 
 	if (
-		getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode') != undefined &&
-		getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc') != undefined
+		getResultSetString(
+			data,
+			'encounterHospitalizationAdmitsourceCodingCode'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterHospitalizationAdmitsourceCodingDesc'
+		) != undefined
 	) {
 		resource.hospitalization.admitSource = {
 			coding: [
@@ -236,18 +342,30 @@ function buildEncounterResource(data) {
 						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1'
 					),
 					code: newStringOrUndefined(
-						getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingCode')
+						getResultSetString(
+							data,
+							'encounterHospitalizationAdmitsourceCodingCode'
+						)
 					),
 					display: newStringOrUndefined(
-						getResultSetString(data, 'encounterHospitalizationAdmitsourceCodingDesc')
+						getResultSetString(
+							data,
+							'encounterHospitalizationAdmitsourceCodingDesc'
+						)
 					)
 				}
 			]
 		};
 	}
 	if (
-		getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode') != undefined &&
-		getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc') != undefined
+		getResultSetString(
+			data,
+			'encounterHospitalizationDischargedispositionCodingCode'
+		) != undefined &&
+		getResultSetString(
+			data,
+			'encounterHospitalizationDischargedispositionCodingDesc'
+		) != undefined
 	) {
 		resource.hospitalization.dischargeDisposition = {
 			coding: [
@@ -256,10 +374,16 @@ function buildEncounterResource(data) {
 						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1'
 					),
 					code: newStringOrUndefined(
-						getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingCode')
+						getResultSetString(
+							data,
+							'encounterHospitalizationDischargedispositionCodingCode'
+						)
 					),
 					display: newStringOrUndefined(
-						getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc')
+						getResultSetString(
+							data,
+							'encounterHospitalizationDischargedispositionCodingDesc'
+						)
 					)
 				}
 			]
@@ -267,7 +391,10 @@ function buildEncounterResource(data) {
 	}
 
 	resource.subject = {
-		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'subjectReference')
+		reference:
+			$cfg('apiUrl') +
+			'/r3/Patient/' +
+			getResultSetString(data, 'subjectReference')
 	};
 
 	return resource;

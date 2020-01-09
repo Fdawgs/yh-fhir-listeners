@@ -22,13 +22,28 @@ try {
 		encounter: ['date', 'patient'],
 		flag: ['date', 'patient', 'status'],
 		medicationstatement: ['effective', 'patient', 'status'],
-		patient: ['birthdate', 'family', 'gender', 'given', 'identifier', 'name']
+		patient: [
+			'birthdate',
+			'family',
+			'gender',
+			'given',
+			'identifier',
+			'name'
+		]
 	};
 
 	// If any param not supported, reject request
 	Object.keys($('parameters')).forEach((key) => {
-		if (supportedTypeParams[type.toLowerCase()].indexOf(key.toLowerCase() + '') < 0) {
-			return createOperationOutcome('error', 'invalid', 'Unknown or unsupported parameter ' + key + '.');
+		if (
+			supportedTypeParams[type.toLowerCase()].indexOf(
+				key.toLowerCase() + ''
+			) < 0
+		) {
+			return createOperationOutcome(
+				'error',
+				'invalid',
+				'Unknown or unsupported parameter ' + key + '.'
+			);
 		}
 	});
 
@@ -40,7 +55,9 @@ try {
 	if (type == 'allergyintolerance') {
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
-			var clinicalStatus = $('parameters').getParameter('clinical-status');
+			var clinicalStatus = $('parameters').getParameter(
+				'clinical-status'
+			);
 
 			var clinicalStatusCode = {
 				active: 'A',
@@ -61,18 +78,26 @@ try {
 				.forEach((paramDate) => {
 					date = paramDate;
 					date += '';
-					var operator = convertFhirParameterOperator(date.substring(0, 2));
+					var operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
 					// eslint-disable-next-line no-restricted-globals
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
 					}
-					whereParts.push('(alle.ALG_Date ' + operator + " ''" + date + "'')");
+					whereParts.push(
+						'(alle.ALG_Date ' + operator + " ''" + date + "'')"
+					);
 				});
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
 		if ($('parameters').contains('patient')) {
-			whereParts.push("(alle.ALG_PAPMI_ParRef->PAPMI_No = ''" + $('parameters').getParameter('patient') + "'')");
+			whereParts.push(
+				"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''" +
+					$('parameters').getParameter('patient') +
+					"'')"
+			);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code]
@@ -82,12 +107,27 @@ try {
 					.getParameter('patient.identifier')
 					.contains('|')
 			) {
-				var allergyPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
-				if (allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
-					whereArray[0].push("(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''" + allergyPatIdParam[1] + "'')");
+				var allergyPatIdParam = String(
+					$('parameters').getParameter('patient.identifier')
+				).split('|');
+				if (
+					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
+				) {
+					whereArray[0].push(
+						"(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''" +
+							allergyPatIdParam[1] +
+							"'')"
+					);
 				}
-				if (allergyPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
-					whereArray[0].push("(alle.ALG_PAPMI_ParRef->PAPMI_No = ''" + allergyPatIdParam[1] + "'')");
+				if (
+					allergyPatIdParam[0] ==
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
+					whereArray[0].push(
+						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''" +
+							allergyPatIdParam[1] +
+							"'')"
+					);
 				}
 			}
 		}
@@ -138,15 +178,23 @@ try {
 		if ($('parameters').contains('patient')) {
 			// Build where clause for first query (outpats) in union
 			whereArray[0].push(
-				"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" + $('parameters').getParameter('patient') + "'')"
+				"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" +
+					$('parameters').getParameter('patient') +
+					"'')"
 			);
 
 			// Build where clause for second query (inpats, emerg) in union
-			whereArray[1].push("(PAADM_PAPMI_DR->PAPMI_No = ''" + $('parameters').getParameter('patient') + "'')");
+			whereArray[1].push(
+				"(PAADM_PAPMI_DR->PAPMI_No = ''" +
+					$('parameters').getParameter('patient') +
+					"'')"
+			);
 
 			// Build where clause for subquery for inpat consultants
 			whereArray[2].push(
-				"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''" + $('parameters').getParameter('patient') + "'')"
+				"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''" +
+					$('parameters').getParameter('patient') +
+					"'')"
 			);
 		}
 
@@ -157,20 +205,48 @@ try {
 					.getParameter('patient.identifier')
 					.contains('|')
 			) {
-				var encounterPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
-				if (encounterPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+				var encounterPatIdParam = String(
+					$('parameters').getParameter('patient.identifier')
+				).split('|');
+				if (
+					encounterPatIdParam[0] ==
+					'https://fhir.nhs.uk/Id/nhs-number'
+				) {
 					whereArray[0].push(
-						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')"
+						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''" +
+							encounterPatIdParam[1] +
+							"'')"
 					);
-					whereArray[1].push("(PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
-					whereArray[2].push("(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''" + encounterPatIdParam[1] + "'')");
+					whereArray[1].push(
+						"(PAADM_PAPMI_DR->PAPMI_ID = ''" +
+							encounterPatIdParam[1] +
+							"'')"
+					);
+					whereArray[2].push(
+						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''" +
+							encounterPatIdParam[1] +
+							"'')"
+					);
 				}
-				if (encounterPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
+				if (
+					encounterPatIdParam[0] ==
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
 					whereArray[0].push(
-						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')"
+						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" +
+							encounterPatIdParam[1] +
+							"'')"
 					);
-					whereArray[1].push("(PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
-					whereArray[2].push("(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''" + encounterPatIdParam[1] + "'')");
+					whereArray[1].push(
+						"(PAADM_PAPMI_DR->PAPMI_No = ''" +
+							encounterPatIdParam[1] +
+							"'')"
+					);
+					whereArray[2].push(
+						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''" +
+							encounterPatIdParam[1] +
+							"'')"
+					);
 				}
 			}
 		}
@@ -184,7 +260,9 @@ try {
 				.forEach((paramDate) => {
 					date = paramDate;
 					date += '';
-					var operator = convertFhirParameterOperator(date.substring(0, 2));
+					var operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
 					// eslint-disable-next-line no-restricted-globals
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
@@ -192,11 +270,17 @@ try {
 
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
-						'(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) ' + operator + " ''" + date + "'')"
+						'(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) ' +
+							operator +
+							" ''" +
+							date +
+							"'')"
 					);
 
 					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push('(PAADM_AdmDate' + operator + " ''" + date + "'')");
+					whereArray[1].push(
+						'(PAADM_AdmDate' + operator + " ''" + date + "'')"
+					);
 				});
 		}
 	}
@@ -213,7 +297,9 @@ try {
 		// GET [baseUrl]/Flag?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
-				"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''" + $('parameters').getParameter('patient') + "'')"
+				"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''" +
+					$('parameters').getParameter('patient') +
+					"'')"
 			);
 		}
 
@@ -224,19 +310,36 @@ try {
 					.getParameter('patient.identifier')
 					.contains('|')
 			) {
-				var flagPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
+				var flagPatIdParam = String(
+					$('parameters').getParameter('patient.identifier')
+				).split('|');
 				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
-					whereArray[0].push("(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''" + flagPatIdParam[1] + "'')");
+					whereArray[0].push(
+						"(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''" +
+							flagPatIdParam[1] +
+							"'')"
+					);
 				}
-				if (flagPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
-					whereArray[0].push("(alert.ALM_PAPMI_ParRef->PAPMI_No = ''" + flagPatIdParam[1] + "'')");
+				if (
+					flagPatIdParam[0] ==
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
+					whereArray[0].push(
+						"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''" +
+							flagPatIdParam[1] +
+							"'')"
+					);
 				}
 			}
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
 		if ($('parameters').contains('status')) {
-			whereArray[1].push("(flagStatusCode = ''" + $('parameters').getParameter('status') + "'')");
+			whereArray[1].push(
+				"(flagStatusCode = ''" +
+					$('parameters').getParameter('status') +
+					"'')"
+			);
 		}
 	}
 
@@ -258,12 +361,20 @@ try {
 				.forEach((paramDate) => {
 					date = paramDate;
 					date += '';
-					var operator = convertFhirParameterOperator(date.substring(0, 2));
+					var operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
 					// eslint-disable-next-line no-restricted-globals
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
 					}
-					whereArray[1].push('(medstatEffectiveStart ' + operator + " ''" + date + "'')");
+					whereArray[1].push(
+						'(medstatEffectiveStart ' +
+							operator +
+							" ''" +
+							date +
+							"'')"
+					);
 				});
 		}
 
@@ -283,15 +394,22 @@ try {
 					.getParameter('patient.identifier')
 					.contains('|')
 			) {
-				var medStatPatIdParam = String($('parameters').getParameter('patient.identifier')).split('|');
-				if (medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+				var medStatPatIdParam = String(
+					$('parameters').getParameter('patient.identifier')
+				).split('|');
+				if (
+					medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
+				) {
 					whereArray[0].push(
 						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''" +
 							medStatPatIdParam[1] +
 							"'')"
 					);
 				}
-				if (medStatPatIdParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
+				if (
+					medStatPatIdParam[0] ==
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
 					whereArray[0].push(
 						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''" +
 							medStatPatIdParam[1] +
@@ -303,7 +421,11 @@ try {
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]&status=[code]
 		if ($('parameters').contains('status')) {
-			whereArray[1].push("(medstatStatusCode = ''" + $('parameters').getParameter('status') + "'')");
+			whereArray[1].push(
+				"(medstatStatusCode = ''" +
+					$('parameters').getParameter('status') +
+					"'')"
+			);
 		}
 	}
 
@@ -315,24 +437,38 @@ try {
 	if (type == 'patient') {
 		// GET [baseUrl]/Patient?birthdate=[date]
 		if ($('parameters').contains('birthdate')) {
-			whereParts.push("(patmas.PAPMI_DOB = ''" + $('parameters').getParameter('birthdate') + "'')");
+			whereParts.push(
+				"(patmas.PAPMI_DOB = ''" +
+					$('parameters').getParameter('birthdate') +
+					"'')"
+			);
 		}
 
 		// GET [baseUrl]/Patient?family=[family]
 		if ($('parameters').contains('family')) {
-			whereParts.push("(patmas.PAPMI_PAPER_DR->PAPER_Name = ''" + $('parameters').getParameter('family') + "'')");
+			whereParts.push(
+				"(patmas.PAPMI_PAPER_DR->PAPER_Name = ''" +
+					$('parameters').getParameter('family') +
+					"'')"
+			);
 		}
 
 		// GET [baseUrl]/Patient?gender=[code]
 		if ($('parameters').contains('gender')) {
 			whereParts.push(
-				"(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''" + $('parameters').getParameter('gender') + "'')"
+				"(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''" +
+					$('parameters').getParameter('gender') +
+					"'')"
 			);
 		}
 
 		// GET [baseUrl]/Patient?given=[given]
 		if ($('parameters').contains('given')) {
-			whereParts.push("(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''" + $('parameters').getParameter('given') + "'')");
+			whereParts.push(
+				"(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''" +
+					$('parameters').getParameter('given') +
+					"'')"
+			);
 		}
 
 		/**
@@ -345,15 +481,28 @@ try {
 					.getParameter('identifier')
 					.contains('|')
 			) {
-				var identifierParam = String($('parameters').getParameter('identifier')).split('|');
+				var identifierParam = String(
+					$('parameters').getParameter('identifier')
+				).split('|');
 				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
-					whereParts.push("(patmas.PAPMI_ID = ''" + identifierParam[1] + "'')");
+					whereParts.push(
+						"(patmas.PAPMI_ID = ''" + identifierParam[1] + "'')"
+					);
 				}
-				if (identifierParam[0] == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier') {
-					whereParts.push("(patmas.PAPMI_No = ''" + identifierParam[1] + "'')");
+				if (
+					identifierParam[0] ==
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
+					whereParts.push(
+						"(patmas.PAPMI_No = ''" + identifierParam[1] + "'')"
+					);
 				}
 			} else {
-				whereParts.push("(patmas.PAPMI_No = ''" + $('parameters').getParameter('identifier') + "'')");
+				whereParts.push(
+					"(patmas.PAPMI_No = ''" +
+						$('parameters').getParameter('identifier') +
+						"'')"
+				);
 			}
 		}
 
@@ -380,7 +529,9 @@ try {
 		}
 	}
 
-	logger.debug('SQL WHERE clause predicate(s): ' + wherePredicates.toString());
+	logger.debug(
+		'SQL WHERE clause predicate(s): ' + wherePredicates.toString()
+	);
 
 	var result = buildResourceQuery(type, wherePredicates);
 	while (result.next()) {
@@ -414,7 +565,8 @@ try {
 		// Add returned FHIR resources to bundle resource
 		var resourceOuter = {};
 		resourceOuter.resource = data;
-		resourceOuter.fullUrl = $cfg('apiUrl') + $('contextPath') + '/' + data.id;
+		resourceOuter.fullUrl =
+			$cfg('apiUrl') + $('contextPath') + '/' + data.id;
 		bundle.entry.push(resourceOuter);
 	}
 
@@ -422,9 +574,19 @@ try {
 	bundle.link[0].url = $cfg('apiUrl') + $('uri');
 	logger.debug(JSON.stringify(bundle));
 
-	var response = FhirResponseFactory.getSearchResponse(JSON.stringify(bundle), 200, 'application/fhir+json');
+	var response = FhirResponseFactory.getSearchResponse(
+		JSON.stringify(bundle),
+		200,
+		'application/fhir+json'
+	);
 	responseMap.put('response', response);
 	return response.getMessage();
 } catch (error) {
-	return createOperationOutcome('error', 'transient', 'Error searching resources.', 500, error);
+	return createOperationOutcome(
+		'error',
+		'transient',
+		'Error searching resources.',
+		500,
+		error
+	);
 }

@@ -13,7 +13,9 @@ function buildAllergyIntoleranceResource(data) {
 	 */
 	var resource = {
 		meta: {
-			profile: ['https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1']
+			profile: [
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1'
+			]
 		},
 		resourceType: 'AllergyIntolerance'
 	};
@@ -28,19 +30,41 @@ function buildAllergyIntoleranceResource(data) {
 	}
 
 	resource.id = newStringOrUndefined(getResultSetString(data, 'id'));
-	resource.assertedDate = newStringOrUndefined(getResultSetString(data, 'assertedDate'));
+	resource.assertedDate = newStringOrUndefined(
+		getResultSetString(data, 'assertedDate')
+	);
 
 	// Very unlikely that an allergy record will have multiple components like this
 	// but better to be safe than sorry
 	var result = [];
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyGroupDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyCodingDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyDrugDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyDrugGenericDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyDrugCategoryDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyDrugFormDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyDrugIngredientDesc')));
-	result.push(newStringOrUndefined(getResultSetString(data, 'allergyComment')));
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyGroupDesc'))
+	);
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyCodingDesc'))
+	);
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyDrugDesc'))
+	);
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyDrugGenericDesc'))
+	);
+	result.push(
+		newStringOrUndefined(
+			getResultSetString(data, 'allergyDrugCategoryDesc')
+		)
+	);
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyDrugFormDesc'))
+	);
+	result.push(
+		newStringOrUndefined(
+			getResultSetString(data, 'allergyDrugIngredientDesc')
+		)
+	);
+	result.push(
+		newStringOrUndefined(getResultSetString(data, 'allergyComment'))
+	);
 	result = result.filter((el) => el != null);
 	if (result.length > 0) {
 		resource.code = {
@@ -49,13 +73,22 @@ function buildAllergyIntoleranceResource(data) {
 	}
 
 	resource.patient = {
-		reference: $cfg('apiUrl') + '/r3/Patient/' + getResultSetString(data, 'patientReference')
+		reference:
+			$cfg('apiUrl') +
+			'/r3/Patient/' +
+			getResultSetString(data, 'patientReference')
 	};
 
-	resource.clinicalStatus = newStringOrUndefined(getResultSetString(data, 'clinicalStatusCode'));
-	resource.verificationStatus = newStringOrUndefined(getResultSetString(data, 'verificationStatusCode'));
+	resource.clinicalStatus = newStringOrUndefined(
+		getResultSetString(data, 'clinicalStatusCode')
+	);
+	resource.verificationStatus = newStringOrUndefined(
+		getResultSetString(data, 'verificationStatusCode')
+	);
 	resource.type = newStringOrUndefined(getResultSetString(data, 'typeCode'));
-	resource.criticality = newStringOrUndefined(getResultSetString(data, 'criticalityCode'));
+	resource.criticality = newStringOrUndefined(
+		getResultSetString(data, 'criticalityCode')
+	);
 
 	return resource;
 }
