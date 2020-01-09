@@ -90,19 +90,33 @@ AS (SELECT DISTINCT *
 						 PAADM_DischgTime AS encounterPeriodEndTime,
 						 PAADM_AdmSrc_DR->ADSOU_Code AS encounterHospitalizationAdmitsourceCodingCode,
 						 PAADM_AdmSrc_DR->ADSOU_Desc AS encounterHospitalizationAdmitsourceCodingDesc,
-						 PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Code AS encounterHospitalizationDischargedispositionCodingCode,
-						 PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Desc AS encounterHospitalizationDischargedispositionCodingDesc,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Code
+						 ELSE NULL
+						 END AS encounterHospitalizationDischargedispositionCodingCode,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN PAADM_MainMRADM_DR->MRADM_DischDestin_DR->DDEST_Desc
+						 ELSE NULL
+						 END AS encounterHospitalizationDischargedispositionCodingDesc,
 						 PAADM_AdmMethod_DR->ADMETH_Code AS encounterAdmissionmethodCodingCode,
 						 PAADM_AdmMethod_DR->ADMETH_Desc AS encounterAdmissionmethodCodingDesc,
-						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Code AS encounterDischargemethodCodingCode,
-						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Desc AS encounterDischargemethodCodingDesc,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN
+						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Code
+						 ELSE NULL
+						 END AS encounterDischargemethodCodingCode,
+						 CASE PAADM_Type
+						 WHEN ''I'' THEN
+						 PAADM_MainMRADM_DR->MRADM_ConditAtDisch_DR->DISCON_Desc
+						 ELSE NULL
+						 END AS encounterDischargemethodCodingDesc,
 						 PAADM_PAPMI_DR->PAPMI_No AS subjectReference,
 						 PAADM_VisitStatus AS encounterStatus,
 						 PAADM_UpdateDate AS lastUpdateDate,
 						 PAADM_UpdateTime AS lastUpdateTime
 				 	FROM PA_Adm
 				   WHERE PAADM_Type IN (''I'', ''E'')
-				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5484125''
+				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5035803''
 					  '))
 SELECT  encounterIdentifier,
 		CASE
