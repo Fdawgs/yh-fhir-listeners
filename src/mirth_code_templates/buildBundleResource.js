@@ -7,22 +7,22 @@
 	@return {Object} Bundle FHIR resource.
  */
 function buildBundleResource(requestUrl) {
-  var resource = {
-    resourceType: newStringOrUndefined('Bundle'),
-    type: newStringOrUndefined('searchset'),
-    total: 0,
-    link: [],
-    entry: []
-  };
-  // Add link URL
-  if (requestUrl) {
-    var linkEntry = {
-      relation: newStringOrUndefined('self'),
-      url: newStringOrUndefined(requestUrl)
-    };
+	var resource = {
+		resourceType: newStringOrUndefined('Bundle'),
+		type: newStringOrUndefined('searchset'),
+		total: 0,
+		link: [],
+		entry: []
+	};
+	// Add link URL
+	if (requestUrl) {
+		var linkEntry = {
+			relation: newStringOrUndefined('self'),
+			url: newStringOrUndefined(requestUrl)
+		};
 
-    resource.link.push(linkEntry);
-  }
+		resource.link.push(linkEntry);
+	}
 
-  return resource;
+	return resource;
 }

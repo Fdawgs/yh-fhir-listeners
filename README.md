@@ -20,16 +20,16 @@ This documentation has been written under the assumption that the reader has pri
 
 Shareholders (as of 2019-04-03) are:
 
-- [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
-- [Taunton and Somerset NHS Foundation Trust](https://www.tsft.nhs.uk/) (TST)
-- [Somerset Partnership NHS Foundation Trust](http://www.sompar.nhs.uk/) (SOMPAR)
-- [Somerset County Council](http://www.somerset.gov.uk/) (SCC)
-- [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
-- [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
-- [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
-- [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
-- [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
-- GP practices within Somerset (GPs)
+-   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
+-   [Taunton and Somerset NHS Foundation Trust](https://www.tsft.nhs.uk/) (TST)
+-   [Somerset Partnership NHS Foundation Trust](http://www.sompar.nhs.uk/) (SOMPAR)
+-   [Somerset County Council](http://www.somerset.gov.uk/) (SCC)
+-   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
+-   [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
+-   [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
+-   [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
+-   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
+-   GP practices within Somerset (GPs)
 
 ## Deliverables
 
@@ -45,10 +45,10 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 # Prerequisites
 
-- Latest Current/LTS version of [Node.js](https://nodejs.org/en/) (if you plan on using ESLint and other dev dependencies to extend it)
-- Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
-- Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
-- Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
+-   Latest Current/LTS version of [Node.js](https://nodejs.org/en/) (if you plan on using ESLint and other dev dependencies to extend it)
+-   Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
+-   Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
+-   Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
 
 # Deployment
 
