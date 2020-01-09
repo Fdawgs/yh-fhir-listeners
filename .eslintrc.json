@@ -12,7 +12,7 @@
 		}
 	},
 	"rules": {
-		"no-console": ["off"],
+		"no-console": "off",
 		"lines-between-class-members": "error",
 		"no-multiple-empty-lines": [
 			"error",
@@ -23,14 +23,14 @@
 			}
 		],
 		// Mirth specific settings
-		"no-var": ["off"],
-		"no-unused-vars": ["off"],
-		"prefer-template": ["off"],
-		"no-undef": ["off"],
+		"no-var": "off",
+		"no-unused-vars": "off",
+		"prefer-template": "off",
+		"no-undef": "off",
 		// Mirth has global returns
-		"consistent-return": ["off"],
-		"eqeqeq": ["off"],
-		"vars-on-top": ["off"],
-		"prefer-destructuring": ["off"]
+		"consistent-return": "off",
+		"eqeqeq": "off",
+		"vars-on-top": "off",
+		"prefer-destructuring": "off"
 	}
 }
