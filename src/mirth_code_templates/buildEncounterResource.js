@@ -129,6 +129,28 @@ function buildEncounterResource(data) {
 			}
 		};
 		resource.participant.push(participantDischarger);
+	} else if (
+		getResultSetString(data, 'encounterParticipantIndividualCode_opattending') != undefined &&
+		getResultSetString(data, 'encounterParticipantIndividualDesc_opattending') != undefined
+	) {
+		var participantConsultant = {
+			type: [
+				{
+					coding: [
+						{
+							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							code: 'CON',
+							display: 'consultant'
+						}
+					]
+				}
+			],
+			individual: {
+				identifier: getResultSetString(data, 'encounterParticipantIndividualCode_opattending'),
+				display: getResultSetString(data, 'encounterParticipantIndividualDesc_opattending')
+			}
+		};
+		resource.participant.push(participantConsultant);
 	}
 
 	resource.period = {};

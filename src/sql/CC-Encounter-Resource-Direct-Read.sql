@@ -51,8 +51,6 @@ AS (SELECT DISTINCT *
 						app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code AS encounterTypeCode,
 						COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) AS encounterPeriodStartDate,
 						COALESCE(app.APPT_ArrivalTime, app.APPT_TimeComp) AS encounterPeriodStartTime,
-						--app.APPT_DepartureDate AS encounterPeriodEndDate,
-						--app.APPT_DepartureTime AS encounterPeriodEndTime,
 						NULL AS encounterPeriodEndDate,
 						NULL AS encounterPeriodEndTime,
                         app.APPT_SeenDoctor_DR->CTPCP_Code AS encounterParticipantIndividualCode_opattending,
@@ -70,7 +68,8 @@ AS (SELECT DISTINCT *
 						app.APPT_LastUpdateDate AS lastUpdateDate,
 						NULL AS lastUpdateTime
 				   FROM RB_Appointment app
-				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
+				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
+				  	AND app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 				  ')
 	 UNION
 	SELECT DISTINCT *
@@ -120,6 +119,7 @@ AS (SELECT DISTINCT *
 						 PAADM_UpdateTime AS lastUpdateTime
 				 	FROM PA_Adm
 				   WHERE PAADM_Type IN (''I'', ''E'')
+				   	 AND PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
 				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5035803''
 					  '))
 SELECT  encounterIdentifier,
