@@ -1,28 +1,28 @@
 {
-  "env": {
-    "es6": true,
-    "node": true
-  },
-  "extends": ["eslint:recommended", "prettier"],
-  "parserOptions": {
-    "ecmaVersion": 2015, // Rhino Engine uses ES6
-    "sourceType": "script",
-    "ecmaFeatures": {
-      "globalReturn": true
-    }
-  },
-  "rules": {
-    "no-console": ["off"],
+	"env": {
+		"es6": true,
+		"node": true
+	},
+	"extends": ["eslint:recommended", "prettier"],
+	"parserOptions": {
+		"ecmaVersion": 2015, // Rhino Engine uses ES6
+		"sourceType": "script",
+		"ecmaFeatures": {
+			"globalReturn": true
+		}
+	},
+	"rules": {
+		"no-console": ["off"],
 
-    // Mirth specific settings
-    "no-var": ["off"],
-    "no-unused-vars": ["off"],
-    "prefer-template": ["off"],
-    "no-undef": ["off"],
-    // Mirth has global returns
-    "consistent-return": ["off"],
-    "eqeqeq": ["off"],
-    "vars-on-top": ["off"],
-    "prefer-destructuring": ["off"]
-  }
+		// Mirth specific settings
+		"no-var": ["off"],
+		"no-unused-vars": ["off"],
+		"prefer-template": ["off"],
+		"no-undef": ["off"],
+		// Mirth has global returns
+		"consistent-return": ["off"],
+		"eqeqeq": ["off"],
+		"vars-on-top": ["off"],
+		"prefer-destructuring": ["off"]
+	}
 }

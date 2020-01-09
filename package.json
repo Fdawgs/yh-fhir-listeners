@@ -1,37 +1,39 @@
 {
-  "name": "ydh-fhir-listeners",
-  "version": "1.4.2",
-  "description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
-  "main": "index.js",
-  "scripts": {
-    "prettier": "prettier ** -write",
-    "lint": "eslint \"src/*/*.js\" --fix",
-    "test": ""
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git"
-  },
-  "author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
-  "license": "MIT",
-  "prettier": {
-    "arrowParens": "always",
-    "bracketSpacing": true,
-    "endOfLine": "lf",
-    "printWidth": 120,
-    "semi": true,
-    "singleQuote": true,
-    "trailingComma": "none"
-  },
-  "bugs": {
-    "url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
-  },
-  "homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
-  "devDependencies": {
-    "eslint": "^6.8.0",
-    "eslint-config-prettier": "^6.9.0",
-    "eslint-plugin-import": "^2.19.1",
-    "eslint-plugin-json": "^2.0.1",
-    "prettier": "1.19.1"
-  }
+	"name": "ydh-fhir-listeners",
+	"version": "1.4.2",
+	"description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
+	"main": "index.js",
+	"scripts": {
+		"prettier": "prettier ** -write",
+		"lint": "eslint \"src/*/*.js\" --fix",
+		"test": ""
+	},
+	"repository": {
+		"type": "git",
+		"url": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git"
+	},
+	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
+	"license": "MIT",
+	"prettier": {
+		"arrowParens": "always",
+		"bracketSpacing": true,
+		"endOfLine": "lf",
+		"printWidth": 120,
+		"semi": true,
+		"singleQuote": true,
+		"tabWidth": 4,
+		"trailingComma": "none",
+		"useTabs": true
+	},
+	"bugs": {
+		"url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
+	},
+	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
+	"devDependencies": {
+		"eslint": "^6.8.0",
+		"eslint-config-prettier": "^6.9.0",
+		"eslint-plugin-import": "^2.19.1",
+		"eslint-plugin-json": "^2.0.1",
+		"prettier": "1.19.1"
+	}
 }

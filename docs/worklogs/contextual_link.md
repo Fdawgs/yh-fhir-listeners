@@ -45,7 +45,7 @@ Whilst this was ongoing, the icon to be used for the SIDeR contextual link was d
 
 Refer to the following pages in the SIDeR programme wiki for more information:
 
-- [Interoperability patterns - Contextual launch](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/contextual-launch)
-- [Security patterns - Query string obfuscation](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/query-string-obfuscation)
+-   [Interoperability patterns - Contextual launch](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/contextual-launch)
+-   [Security patterns - Query string obfuscation](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/query-string-obfuscation)
 
 Source code and setup guidance for YDH's contextual link obfuscation service can be found here: [ydh-sider-obfuscation-service repo](https://github.com/Somerset-SIDeR-Programme/ydh-sider-obfuscation-service)
