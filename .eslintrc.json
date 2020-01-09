@@ -13,7 +13,15 @@
 	},
 	"rules": {
 		"no-console": ["off"],
-
+		"lines-between-class-members": "error",
+		"no-multiple-empty-lines": [
+			"error",
+			{
+				"max": 1,
+				"maxBOF": 0,
+				"maxEOF": 0
+			}
+		],
 		// Mirth specific settings
 		"no-var": ["off"],
 		"no-unused-vars": ["off"],
