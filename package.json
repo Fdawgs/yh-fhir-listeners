@@ -5,7 +5,7 @@
 	"main": "index.js",
 	"scripts": {
 		"prettier": "prettier src/**/*.js --write",
-		"lint": "eslint \"src/*/*.js\" --fix",
+		"lint": "eslint src/**/*.js",
 		"test": ""
 	},
 	"repository": {
@@ -30,6 +30,7 @@
 	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
 	"devDependencies": {
 		"eslint": "^6.8.0",
+		"eslint-config-airbnb-base": "^14.0.0",
 		"eslint-config-prettier": "^6.9.0",
 		"eslint-plugin-import": "^2.19.1",
 		"eslint-plugin-json": "^2.0.1",
