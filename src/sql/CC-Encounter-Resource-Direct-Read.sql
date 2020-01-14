@@ -120,7 +120,7 @@ AS (SELECT DISTINCT *
 				 	FROM PA_Adm
 				   WHERE PAADM_Type IN (''I'', ''E'')
 				   	 AND PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
-				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5035803''
+				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 					  '))
 SELECT  encounterIdentifier,
 		CASE
