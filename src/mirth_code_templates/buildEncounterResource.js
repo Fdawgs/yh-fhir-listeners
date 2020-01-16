@@ -245,23 +245,19 @@ function buildEncounterResource(data) {
 
 	if (
 		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
-			undefined
+		undefined
 	) {
 		var admissionMethod = {
-			url: newStringOrUndefined(
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1'
-			),
+			url:
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1',
 			valueCodeableConcept: {
 				coding: [
 					{
-						system: newStringOrUndefined(
-							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1'
-						),
-						code: newStringOrUndefined(
-							getResultSetString(
-								data,
-								'encounterAdmissionmethodCodingCode'
-							)
+						system:
+							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1',
+						code: getResultSetString(
+							data,
+							'encounterAdmissionmethodCodingCode'
 						),
 						display: newStringOrUndefined(
 							getResultSetString(
@@ -278,23 +274,19 @@ function buildEncounterResource(data) {
 
 	if (
 		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
-			undefined
+		undefined
 	) {
 		var dischargeMethod = {
-			url: newStringOrUndefined(
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1'
-			),
+			url:
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1',
 			valueCodeableConcept: {
 				coding: [
 					{
-						system: newStringOrUndefined(
-							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1'
-						),
-						code: newStringOrUndefined(
-							getResultSetString(
-								data,
-								'encounterDischargemethodCodingCode'
-							)
+						system:
+							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1',
+						code: getResultSetString(
+							data,
+							'encounterDischargemethodCodingCode'
 						),
 						display: newStringOrUndefined(
 							getResultSetString(
@@ -318,14 +310,11 @@ function buildEncounterResource(data) {
 		resource.hospitalization.admitSource = {
 			coding: [
 				{
-					system: newStringOrUndefined(
-						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1'
-					),
-					code: newStringOrUndefined(
-						getResultSetString(
-							data,
-							'encounterHospitalizationAdmitsourceCodingCode'
-						)
+					system:
+						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1',
+					code: getResultSetString(
+						data,
+						'encounterHospitalizationAdmitsourceCodingCode'
 					),
 					display: newStringOrUndefined(
 						getResultSetString(
@@ -346,14 +335,11 @@ function buildEncounterResource(data) {
 		resource.hospitalization.dischargeDisposition = {
 			coding: [
 				{
-					system: newStringOrUndefined(
-						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1'
-					),
-					code: newStringOrUndefined(
-						getResultSetString(
-							data,
-							'encounterHospitalizationDischargedispositionCodingCode'
-						)
+					system:
+						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1',
+					code: getResultSetString(
+						data,
+						'encounterHospitalizationDischargedispositionCodingCode'
 					),
 					display: newStringOrUndefined(
 						getResultSetString(
