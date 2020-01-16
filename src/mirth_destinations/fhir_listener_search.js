@@ -54,7 +54,11 @@ try {
 	 */
 	if (type == 'allergyintolerance') {
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
-		if ($('parameters').contains('clinical-status')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('clinical-status')
+		) {
 			var clinicalStatus = $('parameters').getParameter(
 				'clinical-status'
 			);
@@ -252,7 +256,11 @@ try {
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&date=[date]
-		if ($('parameters').contains('date')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters')
 				.getParameterList('date')
@@ -285,29 +293,44 @@ try {
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
-		if ($('parameters').contains('class')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('class')
+		) {
 			// Loop through each class param and build SQL WHERE clause
 			$('parameters')
 				.getParameterList('class')
 				.toArray()
 				.forEach((paramclass) => {
-		
 					var classCode = {
 						inpatient: 'I',
 						outpatient: 'AMB',
 						emergency: 'E'
 					};
-					
+
 					// Build where clause for first query (outpats) in union
-					whereArray[0].push("(''AMB'' = ''" + classCode[paramclass.toLowerCase()] + "'')");
+					whereArray[0].push(
+						"(''AMB'' = ''" +
+							classCode[paramclass.toLowerCase()] +
+							"'')"
+					);
 
 					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push("(PAADM_Type = ''" + classCode[paramclass.toLowerCase()] + "'')");
+					whereArray[1].push(
+						"(PAADM_Type = ''" +
+							classCode[paramclass.toLowerCase()] +
+							"'')"
+					);
 				});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
-		if ($('parameters').contains('type')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('type')
+		) {
 			// Loop through each type param and build SQL WHERE clause
 			$('parameters')
 				.getParameterList('type')
@@ -377,7 +400,11 @@ try {
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
-		if ($('parameters').contains('status')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('status')
+		) {
 			whereArray[1].push(
 				"(flagStatusCode = ''" +
 					$('parameters').getParameter('status') +
@@ -396,7 +423,11 @@ try {
 		whereArray = [[], []];
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]&effective=[date]
-		if ($('parameters').contains('effective')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('effective')
+		) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters')
 				.getParameterList('effective')
@@ -463,7 +494,11 @@ try {
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]&status=[code]
-		if ($('parameters').contains('status')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('status')
+		) {
 			whereArray[1].push(
 				"(medstatStatusCode = ''" +
 					$('parameters').getParameter('status') +
@@ -570,6 +605,16 @@ try {
 		if (element.length > 0) {
 			wherePredicates[index] = element.join(' AND ');
 		}
+	}
+
+	if (wherePredicates.length == 0) {
+		return createOperationOutcome(
+			'error',
+			'transient',
+			'Error searching resources.',
+			500,
+			''
+		);
 	}
 
 	logger.debug(
