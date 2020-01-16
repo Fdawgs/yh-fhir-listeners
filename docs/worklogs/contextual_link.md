@@ -12,7 +12,9 @@
 | Choose logo for link                          | Completed            | 2019-03-19 | Anthony Smith                                                            |
 | Integrate Keycloak token retrieval middleware | Completed            | 2019-11-21 | Frazer Smith                                                             |
 | Test Keycloak token retrieval middleware      | Completed            | 2019-11-21 | Frazer Smith                                                             |
-| Add contextual link to live environment       | Awaiting third party |            |
+| Test contextual link in test environment      | Completed            | 2020-01-15 | Frazer Smith, David Suckling
+                    |
+| Add contextual link to live environment       | Completed            | 2020-01-16 | Gary England (InterSystems)
 
 ## Work log
 
