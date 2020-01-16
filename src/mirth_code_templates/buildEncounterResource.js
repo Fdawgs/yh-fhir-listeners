@@ -122,10 +122,6 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterParticipantIndividualCode_admitting'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualDesc_admitting'
 		) != undefined
 	) {
 		var participantAdmitter = {
@@ -156,10 +152,6 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterParticipantIndividualCode_discharging'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualDesc_discharging'
 		) != undefined
 	) {
 		var participantDischarger = {
@@ -190,10 +182,6 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterParticipantIndividualCode_opattending'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualDesc_opattending'
 		) != undefined
 	) {
 		var participantConsultant = {
@@ -257,8 +245,6 @@ function buildEncounterResource(data) {
 
 	if (
 		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
-			undefined &&
-		getResultSetString(data, 'encounterAdmissionmethodCodingDesc') !=
 			undefined
 	) {
 		var admissionMethod = {
@@ -292,8 +278,6 @@ function buildEncounterResource(data) {
 
 	if (
 		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
-			undefined &&
-		getResultSetString(data, 'encounterDischargemethodCodingDesc') !=
 			undefined
 	) {
 		var dischargeMethod = {
@@ -329,10 +313,6 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterHospitalizationAdmitsourceCodingCode'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterHospitalizationAdmitsourceCodingDesc'
 		) != undefined
 	) {
 		resource.hospitalization.admitSource = {
@@ -361,10 +341,6 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterHospitalizationDischargedispositionCodingCode'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterHospitalizationDischargedispositionCodingDesc'
 		) != undefined
 	) {
 		resource.hospitalization.dischargeDisposition = {
