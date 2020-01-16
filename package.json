@@ -4,8 +4,9 @@
 	"description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
 	"main": "index.js",
 	"scripts": {
-		"prettier": "prettier src/**/*.js --write",
+		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
 		"lint": "eslint src/**/*.js",
+		"prettier": "prettier src/**/*.js --write",
 		"test": ""
 	},
 	"repository": {
@@ -29,6 +30,8 @@
 	},
 	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
 	"devDependencies": {
+		"@commitlint/config-conventional": "^8.3.4",
+		"conventional-changelog-cli": "^2.0.31",
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-base": "^14.0.0",
 		"eslint-config-prettier": "^6.9.0",
