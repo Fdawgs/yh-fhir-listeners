@@ -283,6 +283,29 @@ try {
 					);
 				});
 		}
+
+		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
+		if ($('parameters').contains('class')) {
+			// Loop through each class param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('class')
+				.toArray()
+				.forEach((paramclass) => {
+		
+					var classCode = {
+						inpatient: 'I',
+						outpatient: 'AMB',
+						emergency: 'E'
+					};
+					
+					// Build where clause for first query (outpats) in union
+					whereArray[0].push("(''AMB'' = ''" + classCode[paramclass.toLowerCase()] + "'')");
+
+					// Build where clause for second query (inpats, emerg) in union
+					whereArray[1].push("(PAADM_Type = ''" + classCode[paramclass.toLowerCase()] + "'')");
+				});
+		}
+		}
 	}
 
 	/**
