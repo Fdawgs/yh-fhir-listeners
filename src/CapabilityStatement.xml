@@ -43,6 +43,11 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
+                <name value="class"/>
+                <type value="token"/>
+                <documentation value="inpatient | outpatient | emergency"/>
+            </searchParam>
+            <searchParam>
                 <name value="date"/>
                 <type value="date"/>
                 <documentation value="A date within the period the Encounter lasted"/>
@@ -51,6 +56,11 @@
                 <name value="patient"/>
                 <type value="reference"/>
                 <documentation value="The patient or group present at the encounter"/>
+            </searchParam>
+            <searchParam>
+                <name value="type"/>
+                <type value="token"/>
+                <documentation value="Specific type of encounter using codes defined by DCH Specialty"/>
             </searchParam>
         </resource>
         <resource>
