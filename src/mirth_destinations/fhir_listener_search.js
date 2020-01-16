@@ -305,6 +305,26 @@ try {
 					whereArray[1].push("(PAADM_Type = ''" + classCode[paramclass.toLowerCase()] + "'')");
 				});
 		}
+
+		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
+		if ($('parameters').contains('type')) {
+			// Loop through each type param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('type')
+				.toArray()
+				.forEach((paramType) => {
+					// Build where clause for first query (outpats) in union
+					whereArray[0].push(
+						"(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''" +
+							paramType +
+							"'')"
+					);
+
+					// Build where clause for second query (inpats, emerg) in union
+					whereArray[1].push(
+						"(PAADM_DepCode_DR->CTLOC_Code = ''" + paramType + "'')"
+					);
+				});
 		}
 	}
 
