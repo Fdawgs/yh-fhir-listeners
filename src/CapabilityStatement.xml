@@ -1,5 +1,6 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <version value="1.3.0"/>
+    <version value="2.0.0"/>
+    <status value="active"/>
     <publisher value="Yeovil District NHS Foundation Trust"/>
     <contact>
         <name value="Frazer Smith"/>
@@ -8,6 +9,7 @@
             <value value="frazer.smith@ydh.nhs.uk"/>
         </telecom>
     </contact>
+    <implementationGuide value="https://nhsconnect.github.io/CareConnectAPI/"/>
     <rest>
         <mode value="server"/>
         <resource>
@@ -151,4 +153,7 @@
             </searchParam>
         </resource>
     </rest>
+    <document>
+        <mode value="producer"/>
+    </document>
 </CapabilityStatement>
