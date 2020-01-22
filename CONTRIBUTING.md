@@ -15,13 +15,22 @@ Other processes and specifications that are in use in this repository are:
 
 ## Getting Started
 
-As noted in the prerequisites section of the readme file, this project requires that you have Node.js, Yarn, and Mirth Connect installed.
+As noted in the prerequisites section of the readme file, this project requires that you have Node.js, Yarn, and Mirth Connect installed for development.
 
 With those in place you can fork the repo and clone it, and then run `yarn install` to install all dependencies.
 
 ### Development Workflow
 
 The development workflow requires that you write all the code seperate of Mirth, then add to a channel in Mirth Connect and test there.
+
+Mirth Connect uses the [Rhino Engine](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) which supports a number of EcmaScript ES6/ES2015 features.
+Mirth Connect however, does not support the following features:
+
+-   template literals
+-   global returns
+-   let and const
+
+`.eslintrc.json` has ESLint rules relating to the features that Mirth Connect doesn't support turned off.
 
 ## Pull Request Checklist
 
