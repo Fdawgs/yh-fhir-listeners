@@ -3,18 +3,15 @@
 	"version": "2.0.0",
 	"description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
 	"main": "index.js",
+	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
+	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
+	"license": "MIT",
 	"scripts": {
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
 		"lint": "eslint src/**/*.js",
 		"prettier": "prettier src/**/*.js --write",
 		"test": ""
 	},
-	"repository": {
-		"type": "git",
-		"url": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git"
-	},
-	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
-	"license": "MIT",
 	"prettier": {
 		"arrowParens": "always",
 		"bracketSpacing": true,
@@ -25,10 +22,6 @@
 		"trailingComma": "none",
 		"useTabs": true
 	},
-	"bugs": {
-		"url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
-	},
-	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners#readme",
 	"devDependencies": {
 		"@commitlint/config-conventional": "^8.3.4",
 		"conventional-changelog-cli": "^2.0.31",
