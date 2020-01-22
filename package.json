@@ -9,7 +9,7 @@
 	"scripts": {
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
 		"lint": "eslint src/**/*.js",
-		"prettier": "prettier src/**/*.js --write",
+		"prettier": "prettier ** --write",
 		"test": ""
 	},
 	"prettier": {
