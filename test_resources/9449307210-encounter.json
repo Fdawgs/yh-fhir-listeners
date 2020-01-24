@@ -3,2942 +3,2942 @@
 	"type": "searchset",
 	"total": 55,
 	"link": [
-	  {
-		"relation": "self",
-		"url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
-	  }
+		{
+			"relation": "self",
+			"url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+		}
 	],
 	"entry": [
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-399-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "1372-399-1",
-		  "meta": {
-			"lastUpdated": "2016-08-12T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-08-12T11:27:48"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-835-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "1372-835-1",
-		  "meta": {
-			"lastUpdated": "2016-09-12T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-09-12T14:08:50"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1641-22024-2",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "1641-22024-2",
-		  "meta": {
-			"lastUpdated": "2019-01-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "330",
-				  "display": "DERMATOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2019-01-11T09:42:39"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8625-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "177-8625-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "502",
-				  "display": "GYNAECOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr L. Osoba"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-05-09T09:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8626-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "177-8626-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "502",
-				  "display": "GYNAECOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr L. Osoba"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-05-23T11:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-1604-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "189-1604-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Eltoum"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2015-11-10T11:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-221-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "189-221-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Eltoum"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2016-05-03T10:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-31-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "189-31-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Eltoum"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2016-01-12T10:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-319-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "189-319-1",
-		  "meta": {
-			"lastUpdated": "2016-06-28T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Eltoum"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2016-06-28T10:22:43"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-72-2",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "189-72-2",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Eltoum"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2016-02-02T11:45:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1990177",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "1990177",
-		  "meta": {
-			"lastUpdated": "2016-06-11T01:44:27",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "110",
-				  "display": "TRAUMA AND ORTHOPAEDICS"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2011-02-02T00:01:00",
-			"end": "2011-02-02T23:59:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "12",
-					  "display": "Elective Booked"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2051-546-2",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "2051-546-2",
-		  "meta": {
-			"lastUpdated": "2019-01-09T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "330",
-				  "display": "DERMATOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2019-01-09T14:40:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2085934",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "2085934",
-		  "meta": {
-			"lastUpdated": "2016-06-11T01:44:27",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "100",
-				  "display": "GENERAL SURGERY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2011-10-12T00:01:00",
-			"end": "2011-10-12T23:59:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "12",
-					  "display": "Elective Booked"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2139806",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "2139806",
-		  "meta": {
-			"lastUpdated": "2016-06-11T01:44:27",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "130",
-				  "display": "OPHTHALMOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2012-07-05T00:01:00",
-			"end": "2012-07-05T23:59:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "12",
-					  "display": "Elective Booked"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2141924",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "2141924",
-		  "meta": {
-			"lastUpdated": "2016-06-11T01:44:27",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "101",
-				  "display": "UROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2012-04-17T00:01:00",
-			"end": "2012-04-17T23:59:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "12",
-					  "display": "Elective Booked"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/216-2071-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "216-2071-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "400",
-				  "display": "NEUROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr E. Fathers"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2015-12-07T10:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/248-12122-2",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "248-12122-2",
-		  "meta": {
-			"lastUpdated": "2016-11-09T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "301",
-				  "display": "GASTROENTEROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-11-09T10:31:07"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/251-4105-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "251-4105-1",
-		  "meta": {
-			"lastUpdated": "2016-11-15T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "301",
-				  "display": "GASTROENTEROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-11-18T10:20:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-274-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "278-274-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "190",
-				  "display": "ANAESTHETICS"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr S Hunter"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-03-28T14:15:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-275-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "278-275-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "190",
-				  "display": "ANAESTHETICS"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr S Hunter"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-10-06T10:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-276-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "278-276-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "190",
-				  "display": "ANAESTHETICS"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr S Hunter"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-11-03T11:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/309-22374-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "309-22374-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "104",
-				  "display": "COLORECTAL SURGERY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr J Ockrim"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-01-16T15:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/313-8519-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "313-8519-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "101",
-				  "display": "UROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr CJ Parker"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-07-04T11:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9501-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "314-9501-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "101",
-				  "display": "UROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr P Foster"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-02-21T11:15:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9502-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "314-9502-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "101",
-				  "display": "UROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr P Foster"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-03-20T11:10:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9503-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "314-9503-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "101",
-				  "display": "UROLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr P Foster"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-05-21T12:10:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/674-231-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "674-231-1",
-		  "meta": {
-			"lastUpdated": "2016-06-21T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "planned",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "650",
-				  "display": "PHYSIOTHERAPY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-06-20T11:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-103174-2",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "692-103174-2",
-		  "meta": {
-			"lastUpdated": "2016-10-20T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-10-20T09:45:25"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-106656-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "692-106656-1",
-		  "meta": {
-			"lastUpdated": "2018-04-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2017-06-30T11:55:07"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-115756-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "692-115756-1",
-		  "meta": {
-			"lastUpdated": "2018-11-02T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2018-11-02T13:54:26"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/695-59571-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "695-59571-1",
-		  "meta": {
-			"lastUpdated": "2016-08-02T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-08-02T10:15:21"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/708-166-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "708-166-1",
-		  "meta": {
-			"lastUpdated": "2016-10-03T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "840",
-				  "display": "AUDIOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-10-03T13:45:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-20905-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "807-20905-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "eRS 2WW Referrals"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-10-20T00:09:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-34155-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "807-34155-1",
-		  "meta": {
-			"lastUpdated": "2019-01-08T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2019-01-07T00:25:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-5808-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "807-5808-1",
-		  "meta": {
-			"lastUpdated": "2016-10-21T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-11-03T00:10:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/822-309-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "822-309-1",
-		  "meta": {
-			"lastUpdated": "2016-10-26T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "planned",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-10-26T14:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-25-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "930-25-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "007",
-				  "display": "Z -NON-CONSULTANT"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "TENS Nurse Ld"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-04-27T14:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-26-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "930-26-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "cancelled",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "007",
-				  "display": "Z -NON-CONSULTANT"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "TENS Nurse Ld"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-05-04T12:00:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-27-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "930-27-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "007",
-				  "display": "Z -NON-CONSULTANT"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "TENS Nurse Ld"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-05-25T11:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/941-1728-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "941-1728-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "110",
-				  "display": "TRAUMA AND ORTHOPAEDICS"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr A. Chambler"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-01-12T10:20:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/946-3687-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "946-3687-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "130",
-				  "display": "OPHTHALMOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Mr A. Tadros"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2012-07-20T09:30:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/947-2446-1",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "947-2446-1",
-		  "meta": {
-			"lastUpdated": "2016-06-11T00:00:00",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "arrived",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "AMB",
-			"display": "ambulatory"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "130",
-				  "display": "OPHTHALMOLOGY"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "CON",
-					  "display": "consultant"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Miss L. Howe"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2011-12-19T09:45:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029408",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2017-029408",
-		  "meta": {
-			"lastUpdated": "2017-08-17T01:15:27",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2017-08-16T07:31:00",
-			"end": "2017-08-16T11:29:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029783",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2017-029783",
-		  "meta": {
-			"lastUpdated": "2017-08-20T01:22:12",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2017-08-19T09:25:00",
-			"end": "2017-08-19T13:17:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-035398",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2017-035398",
-		  "meta": {
-			"lastUpdated": "2017-09-30T03:35:26",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2017-09-29T16:13:00",
-			"end": "2017-09-29T20:12:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2018-012296",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2018-012296",
-		  "meta": {
-			"lastUpdated": "2018-04-26T11:18:53",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2018-03-29T20:46:00",
-			"end": "2018-03-30T00:46:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-007821",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2019-007821",
-		  "meta": {
-			"lastUpdated": "2019-02-21T05:03:06",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2019-02-20T20:26:00",
-			"end": "2019-02-21T00:22:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-010133",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "AE-2019-010133",
-		  "meta": {
-			"lastUpdated": "2019-03-08T04:57:06",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "EMER",
-			"display": "emergency"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2019-03-07T11:07:00",
-			"end": "2019-03-07T14:59:00"
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000022248",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000022248",
-		  "meta": {
-			"lastUpdated": "2016-10-27T17:13:02",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "period": {
-			"start": "2016-10-26T14:30:00",
-			"end": "2016-10-27T17:12:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "11",
-					  "display": "Elective Waiting list"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "29",
-				  "display": "Temporary place of residence"
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000066790",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000066790",
-		  "meta": {
-			"lastUpdated": "2017-08-18T15:36:19",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "430",
-				  "display": "GERIATRIC MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-399-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "1372-399-1",
+				"meta": {
+					"lastUpdated": "2016-08-12T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
 				},
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "DIS",
-					  "display": "discharger"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr R Sophia"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2017-08-16T11:29:00",
-			"end": "2017-08-16T17:45:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "21",
-					  "display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "54",
-				  "display": "NHS run Care Home"
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000067286",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000067286",
-		  "meta": {
-			"lastUpdated": "2017-08-28T16:52:35",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "300",
-				  "display": "GENERAL MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr K H Smith"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2017-08-19T13:17:00",
-			"end": "2017-08-28T14:51:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "21",
-					  "display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "50",
-				  "display": "NHS other hospital provider - medium secure unit"
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000073231",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000073231",
-		  "meta": {
-			"lastUpdated": "2017-11-01T15:44:29",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "300",
-				  "display": "GENERAL MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr M. Qadiri"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2017-09-29T20:12:00",
-			"end": "2017-10-10T20:48:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "21",
-					  "display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "51",
-				  "display": "NHS other hospital provider - ward for general patients or the younger physically disabled"
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000099577",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000099577",
-		  "meta": {
-			"lastUpdated": "2018-04-01T19:40:48",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "300",
-				  "display": "GENERAL MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
 				},
-				{
-				  "coding": [
+				"type": [
 					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "DIS",
-					  "display": "discharger"
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
 					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr S Pramodh"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2018-03-30T00:46:00",
-			"end": "2018-04-01T19:39:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "21",
-					  "display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000148517",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000148517",
-		  "meta": {
-			"lastUpdated": "2019-03-04T13:44:42",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "300",
-				  "display": "GENERAL MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
 				},
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "DIS",
-					  "display": "discharger"
-					}
-				  ]
+				"period": {
+					"start": "2016-08-12T11:27:48"
 				}
-			  ],
-			  "individual": {
-				"display": "Dr Z. Khan"
-			  }
 			}
-		  ],
-		  "period": {
-			"start": "2019-02-21T00:22:00",
-			"end": "2019-03-04T13:44:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-835-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "1372-835-1",
+				"meta": {
+					"lastUpdated": "2016-09-12T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
 					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "2D",
-					  "display": "Other emergency admission"
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
 					}
-				  ]
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-09-12T14:08:50"
 				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
 			}
-		  }
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1641-22024-2",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "1641-22024-2",
+				"meta": {
+					"lastUpdated": "2019-01-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "330",
+								"display": "DERMATOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2019-01-11T09:42:39"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8625-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "177-8625-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "502",
+								"display": "GYNAECOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr L. Osoba"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-05-09T09:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8626-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "177-8626-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "502",
+								"display": "GYNAECOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr L. Osoba"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-05-23T11:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-1604-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "189-1604-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Eltoum"
+						}
+					}
+				],
+				"period": {
+					"start": "2015-11-10T11:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-221-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "189-221-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Eltoum"
+						}
+					}
+				],
+				"period": {
+					"start": "2016-05-03T10:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-31-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "189-31-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Eltoum"
+						}
+					}
+				],
+				"period": {
+					"start": "2016-01-12T10:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-319-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "189-319-1",
+				"meta": {
+					"lastUpdated": "2016-06-28T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Eltoum"
+						}
+					}
+				],
+				"period": {
+					"start": "2016-06-28T10:22:43"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-72-2",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "189-72-2",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Eltoum"
+						}
+					}
+				],
+				"period": {
+					"start": "2016-02-02T11:45:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1990177",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "1990177",
+				"meta": {
+					"lastUpdated": "2016-06-11T01:44:27",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "110",
+								"display": "TRAUMA AND ORTHOPAEDICS"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2011-02-02T00:01:00",
+					"end": "2011-02-02T23:59:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2051-546-2",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "2051-546-2",
+				"meta": {
+					"lastUpdated": "2019-01-09T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "330",
+								"display": "DERMATOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2019-01-09T14:40:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2085934",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "2085934",
+				"meta": {
+					"lastUpdated": "2016-06-11T01:44:27",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "100",
+								"display": "GENERAL SURGERY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2011-10-12T00:01:00",
+					"end": "2011-10-12T23:59:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2139806",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "2139806",
+				"meta": {
+					"lastUpdated": "2016-06-11T01:44:27",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "130",
+								"display": "OPHTHALMOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2012-07-05T00:01:00",
+					"end": "2012-07-05T23:59:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2141924",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "2141924",
+				"meta": {
+					"lastUpdated": "2016-06-11T01:44:27",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "101",
+								"display": "UROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2012-04-17T00:01:00",
+					"end": "2012-04-17T23:59:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/216-2071-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "216-2071-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "400",
+								"display": "NEUROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr E. Fathers"
+						}
+					}
+				],
+				"period": {
+					"start": "2015-12-07T10:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/248-12122-2",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "248-12122-2",
+				"meta": {
+					"lastUpdated": "2016-11-09T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "301",
+								"display": "GASTROENTEROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-11-09T10:31:07"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/251-4105-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "251-4105-1",
+				"meta": {
+					"lastUpdated": "2016-11-15T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "301",
+								"display": "GASTROENTEROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-11-18T10:20:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-274-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "278-274-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "190",
+								"display": "ANAESTHETICS"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr S Hunter"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-03-28T14:15:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-275-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "278-275-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "190",
+								"display": "ANAESTHETICS"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr S Hunter"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-10-06T10:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-276-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "278-276-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "190",
+								"display": "ANAESTHETICS"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr S Hunter"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-11-03T11:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/309-22374-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "309-22374-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "104",
+								"display": "COLORECTAL SURGERY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr J Ockrim"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-01-16T15:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/313-8519-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "313-8519-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "101",
+								"display": "UROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr CJ Parker"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-07-04T11:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9501-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "314-9501-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "101",
+								"display": "UROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr P Foster"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-02-21T11:15:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9502-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "314-9502-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "101",
+								"display": "UROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr P Foster"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-03-20T11:10:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9503-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "314-9503-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "101",
+								"display": "UROLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr P Foster"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-05-21T12:10:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/674-231-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "674-231-1",
+				"meta": {
+					"lastUpdated": "2016-06-21T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "planned",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "650",
+								"display": "PHYSIOTHERAPY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-06-20T11:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-103174-2",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "692-103174-2",
+				"meta": {
+					"lastUpdated": "2016-10-20T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-10-20T09:45:25"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-106656-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "692-106656-1",
+				"meta": {
+					"lastUpdated": "2018-04-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2017-06-30T11:55:07"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-115756-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "692-115756-1",
+				"meta": {
+					"lastUpdated": "2018-11-02T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2018-11-02T13:54:26"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/695-59571-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "695-59571-1",
+				"meta": {
+					"lastUpdated": "2016-08-02T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-08-02T10:15:21"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/708-166-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "708-166-1",
+				"meta": {
+					"lastUpdated": "2016-10-03T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "840",
+								"display": "AUDIOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-10-03T13:45:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-20905-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "807-20905-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "eRS 2WW Referrals"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-10-20T00:09:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-34155-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "807-34155-1",
+				"meta": {
+					"lastUpdated": "2019-01-08T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2019-01-07T00:25:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-5808-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "807-5808-1",
+				"meta": {
+					"lastUpdated": "2016-10-21T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-11-03T00:10:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/822-309-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "822-309-1",
+				"meta": {
+					"lastUpdated": "2016-10-26T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "planned",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-10-26T14:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-25-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "930-25-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "007",
+								"display": "Z -NON-CONSULTANT"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "TENS Nurse Ld"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-04-27T14:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-26-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "930-26-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "cancelled",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "007",
+								"display": "Z -NON-CONSULTANT"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "TENS Nurse Ld"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-05-04T12:00:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-27-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "930-27-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "007",
+								"display": "Z -NON-CONSULTANT"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "TENS Nurse Ld"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-05-25T11:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/941-1728-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "941-1728-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "110",
+								"display": "TRAUMA AND ORTHOPAEDICS"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr A. Chambler"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-01-12T10:20:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/946-3687-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "946-3687-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "130",
+								"display": "OPHTHALMOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr A. Tadros"
+						}
+					}
+				],
+				"period": {
+					"start": "2012-07-20T09:30:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/947-2446-1",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "947-2446-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T00:00:00",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "arrived",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "AMB",
+					"display": "ambulatory"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "130",
+								"display": "OPHTHALMOLOGY"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Miss L. Howe"
+						}
+					}
+				],
+				"period": {
+					"start": "2011-12-19T09:45:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029408",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2017-029408",
+				"meta": {
+					"lastUpdated": "2017-08-17T01:15:27",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2017-08-16T07:31:00",
+					"end": "2017-08-16T11:29:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029783",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2017-029783",
+				"meta": {
+					"lastUpdated": "2017-08-20T01:22:12",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2017-08-19T09:25:00",
+					"end": "2017-08-19T13:17:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-035398",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2017-035398",
+				"meta": {
+					"lastUpdated": "2017-09-30T03:35:26",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2017-09-29T16:13:00",
+					"end": "2017-09-29T20:12:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2018-012296",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2018-012296",
+				"meta": {
+					"lastUpdated": "2018-04-26T11:18:53",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2018-03-29T20:46:00",
+					"end": "2018-03-30T00:46:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-007821",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2019-007821",
+				"meta": {
+					"lastUpdated": "2019-02-21T05:03:06",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2019-02-20T20:26:00",
+					"end": "2019-02-21T00:22:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-010133",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "AE-2019-010133",
+				"meta": {
+					"lastUpdated": "2019-03-08T04:57:06",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "EMER",
+					"display": "emergency"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2019-03-07T11:07:00",
+					"end": "2019-03-07T14:59:00"
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000022248",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000022248",
+				"meta": {
+					"lastUpdated": "2016-10-27T17:13:02",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"period": {
+					"start": "2016-10-26T14:30:00",
+					"end": "2016-10-27T17:12:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "11",
+										"display": "Elective Waiting list"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "29",
+								"display": "Temporary place of residence"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000066790",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000066790",
+				"meta": {
+					"lastUpdated": "2017-08-18T15:36:19",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr R Sophia"
+						}
+					}
+				],
+				"period": {
+					"start": "2017-08-16T11:29:00",
+					"end": "2017-08-16T17:45:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "54",
+								"display": "NHS run Care Home"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000067286",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000067286",
+				"meta": {
+					"lastUpdated": "2017-08-28T16:52:35",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr K H Smith"
+						}
+					}
+				],
+				"period": {
+					"start": "2017-08-19T13:17:00",
+					"end": "2017-08-28T14:51:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "50",
+								"display": "NHS other hospital provider - medium secure unit"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000073231",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000073231",
+				"meta": {
+					"lastUpdated": "2017-11-01T15:44:29",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr M. Qadiri"
+						}
+					}
+				],
+				"period": {
+					"start": "2017-09-29T20:12:00",
+					"end": "2017-10-10T20:48:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "51",
+								"display": "NHS other hospital provider - ward for general patients or the younger physically disabled"
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000099577",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000099577",
+				"meta": {
+					"lastUpdated": "2018-04-01T19:40:48",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr S Pramodh"
+						}
+					}
+				],
+				"period": {
+					"start": "2018-03-30T00:46:00",
+					"end": "2018-04-01T19:39:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000148517",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000148517",
+				"meta": {
+					"lastUpdated": "2019-03-04T13:44:42",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr Z. Khan"
+						}
+					}
+				],
+				"period": {
+					"start": "2019-02-21T00:22:00",
+					"end": "2019-03-04T13:44:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "2D",
+										"display": "Other emergency admission"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000150906",
+			"resource": {
+				"resourceType": "Encounter",
+				"id": "I0000150906",
+				"meta": {
+					"lastUpdated": "2019-03-18T17:52:42",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					]
+				},
+				"status": "finished",
+				"class": {
+					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"code": "IMP",
+					"display": "inpatient"
+				},
+				"type": [
+					{
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					}
+				],
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr J Almaraz Marroquin"
+						}
+					}
+				],
+				"period": {
+					"start": "2019-03-07T14:59:00",
+					"end": "2019-03-18T17:52:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
+				}
+			}
 		}
-	  },
-	  {
-		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000150906",
-		"resource": {
-		  "resourceType": "Encounter",
-		  "id": "I0000150906",
-		  "meta": {
-			"lastUpdated": "2019-03-18T17:52:42",
-			"profile": [
-			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
-			]
-		  },
-		  "status": "finished",
-		  "class": {
-			"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-			"code": "IMP",
-			"display": "inpatient"
-		  },
-		  "type": [
-			{
-			  "coding": [
-				{
-				  "system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-				  "code": "300",
-				  "display": "GENERAL MEDICINE"
-				}
-			  ]
-			}
-		  ],
-		  "subject": {
-			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
-		  },
-		  "participant": [
-			{
-			  "type": [
-				{
-				  "coding": [
-					{
-					  "system": "http://hl7.org/fhir/v3/ParticipationType",
-					  "code": "ADM",
-					  "display": "admitter"
-					}
-				  ]
-				}
-			  ],
-			  "individual": {
-				"display": "Dr J Almaraz Marroquin"
-			  }
-			}
-		  ],
-		  "period": {
-			"start": "2019-03-07T14:59:00",
-			"end": "2019-03-18T17:52:00"
-		  },
-		  "hospitalization": {
-			"extension": [
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
-					  "code": "21",
-					  "display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
-					}
-				  ]
-				}
-			  },
-			  {
-				"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
-				"valueCodeableConcept": {
-				  "coding": [
-					{
-					  "system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
-					  "code": "1",
-					  "display": "Discharged on clinical advice or with clinical consent"
-					}
-				  ]
-				}
-			  }
-			],
-			"admitSource": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
-				  "code": "19",
-				  "display": "Usual place of residence"
-				}
-			  ]
-			},
-			"dischargeDisposition": {
-			  "coding": [
-				{
-				  "system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-				  "code": "19",
-				  "display": "A Usual place of residence includes patients with no fixed abode."
-				}
-			  ]
-			}
-		  }
-		}
-	  }
 	]
-  }
+}

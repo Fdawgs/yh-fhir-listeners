@@ -1,3 +1,28 @@
+## 2.1.0 (2020-01-24)
+
+* chore: add prettierignore file ([0d99767](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0d99767))
+* chore: move test patients into test_resources route ([e0654ea](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e0654ea))
+* chore: remove live_backups ([b5cfab5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b5cfab5))
+* chore: tidy config structure ([9c8c5da](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9c8c5da))
+* chore(test-patient): add flag resource for 9449304513 ([96c83a5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/96c83a5))
+* chore(test-patient): add flag resource for 9449307210 ([55b66af](https://github.com/Fdawgs/ydh-fhir-listeners/commit/55b66af))
+* chore(test-patient): update test patient 9449304513 example ([8b2ffce](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8b2ffce))
+* chore(test-patient): update test patient 9449307210 example ([cf747eb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/cf747eb))
+* docs: add contributing guide ([cda09b3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/cda09b3))
+* docs: add quote on purpose of repo ([98659c6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/98659c6))
+* docs: add src/CapabilityStatement to release steps ([3df7c52](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3df7c52))
+* docs: add version of TrakCare deployed against ([a7a2bae](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a7a2bae))
+* docs: clarify on what Mirth Connect doesn't support ([322faef](https://github.com/Fdawgs/ydh-fhir-listeners/commit/322faef))
+* docs(flag): tidy whitespace ([4b272f1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4b272f1))
+* docs(readme): add travis-ci button ([7d81984](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7d81984))
+* ci(travis): add build config ([a7ea735](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a7ea735))
+* feat: add documentation value ([bb86721](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bb86721))
+* feat: extend CapabilityStatement resource values ([5a853b1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5a853b1))
+* feat(flag): add snomed code support ([996393a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/996393a))
+* build: add basic test script ([de01c9f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/de01c9f))
+
+
+
 ## 2.0.0 (2020-01-16)
 
 -   chore: increment major release version ([5856aef](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5856aef))

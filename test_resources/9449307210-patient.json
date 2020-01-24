@@ -48,20 +48,20 @@
 						]
 					}
 				],
-		  "extension": [
-			{
-			  "url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1",
-			  "valueCodeableConcept": {
-				"coding": [
-				  {
-					"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1",
-					"code": "A",
-					"display": "White British"
-				  }
-				]
-			  }
-			}
-		  ],
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1",
+						"valueCodeableConcept": {
+							"coding": [
+								{
+									"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1",
+									"code": "A",
+									"display": "White British"
+								}
+							]
+						}
+					}
+				],
 				"identifier": [
 					{
 						"use": "usual",
@@ -111,11 +111,11 @@
 				],
 				"maritalStatus": {
 					"coding": [
-					  {
-						"system": "http://hl7.org/fhir/stu3/v3/MaritalStatus",
-						"code": "M",
-						"display": "Married"
-					  }
+						{
+							"system": "http://hl7.org/fhir/stu3/v3/MaritalStatus",
+							"code": "M",
+							"display": "Married"
+						}
 					]
 				},
 				"generalPractitioner": [
