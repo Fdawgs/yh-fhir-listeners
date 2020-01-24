@@ -5,7 +5,7 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient=8888888"
+			"url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
 		}
 	],
 	"entry": [
@@ -23,7 +23,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -37,7 +38,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-07-29T10:49:14"
@@ -58,7 +59,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -72,7 +74,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-02-21T09:58:00"
@@ -93,7 +95,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -107,7 +110,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-01-10T14:21:51"
@@ -128,7 +131,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -142,7 +146,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2018-08-06T11:39:02"
@@ -178,11 +182,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-09-18T14:59:00",
 					"end": "2012-09-19T08:30:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -215,11 +292,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-12-18T15:00:00",
 					"end": "2012-12-21T18:20:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -237,7 +387,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -251,8 +402,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr F.A.S. Edwards"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-07-21T16:30:00"
 				}
@@ -272,7 +441,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -286,8 +456,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr F.A.S. Edwards"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-04-10T14:00:00"
 				}
@@ -322,11 +510,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr D Shardlow"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-08-11T14:45:00",
 					"end": "2013-08-17T17:00:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "13",
+										"display": "Elective Planned"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -359,11 +620,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr OW Donaldson"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-04-30T07:30:00",
 					"end": "2015-05-05T22:25:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -381,7 +715,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -395,8 +730,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr D Shardlow"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-05-23T15:00:00"
 				}
@@ -416,7 +769,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -430,7 +784,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-03-01T13:54:06"
@@ -451,7 +805,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -465,7 +820,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-05-10T14:15:00"
@@ -486,7 +841,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -500,7 +856,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-07-05T14:15:00"
@@ -521,7 +877,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -535,7 +892,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-07-05T15:41:07"
@@ -556,7 +913,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -570,8 +928,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr OW Donaldson"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-12-10T14:15:00"
 				}
@@ -591,7 +967,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -605,8 +982,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr OW Donaldson"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-12-10T16:05:00"
 				}
@@ -626,7 +1021,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -640,8 +1036,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr OW Donaldson"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-10-07T14:25:00"
 				}
@@ -661,7 +1075,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -675,8 +1090,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr T.A.R. El Bouni"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-03-16T13:55:00"
 				}
@@ -696,7 +1129,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -710,8 +1144,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr A. Stewart"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-12-15T15:20:00"
 				}
@@ -731,7 +1183,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -745,7 +1198,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-04-26T11:55:35"
@@ -766,7 +1219,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -780,7 +1234,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-04-26T11:30:00"
@@ -801,7 +1255,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -815,7 +1270,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-08-16T14:09:20"
@@ -836,7 +1291,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -850,7 +1306,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-09-27T15:00:24"
@@ -871,7 +1327,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -885,7 +1342,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-10-18T14:07:02"
@@ -906,7 +1363,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -920,7 +1378,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-09-05T14:20:51"
@@ -941,7 +1399,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -955,8 +1414,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mrs M. Savu"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-12-04T14:00:00"
 				}
@@ -976,7 +1453,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -990,8 +1468,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mrs M. Savu"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-08-06T11:15:00"
 				}
@@ -1011,7 +1507,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1025,8 +1522,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mrs M. Savu"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-08-13T09:00:00"
 				}
@@ -1046,7 +1561,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1060,8 +1576,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mrs M. Savu"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-08-13T11:15:00"
 				}
@@ -1081,7 +1615,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1095,7 +1630,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-11-14T11:30:10"
@@ -1116,7 +1651,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1130,7 +1666,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-12-12T11:21:13"
@@ -1151,7 +1687,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1165,7 +1702,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-10-31T09:36:31"
@@ -1186,7 +1723,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1200,8 +1738,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Joint Replacement Follow Up (Liz Morton/Helen Murray)"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-11-05T14:20:00"
 				}
@@ -1221,7 +1777,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1235,8 +1792,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr M. Jones"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-05-22T14:27:00"
 				}
@@ -1256,7 +1831,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1270,8 +1846,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr M. Jones"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-07-22T14:40:00"
 				}
@@ -1291,7 +1885,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1305,7 +1900,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-09-02T13:52:16"
@@ -1326,7 +1921,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1340,7 +1936,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-11-04T14:18:04"
@@ -1361,7 +1957,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1375,8 +1972,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 1"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-04-05T10:15:00"
 				}
@@ -1396,7 +2011,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1410,8 +2026,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 1"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-08-23T11:15:00"
 				}
@@ -1431,7 +2065,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1445,8 +2080,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 1"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-11-21T13:45:00"
 				}
@@ -1466,7 +2119,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1480,8 +2134,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 1"
+						}
+					}
+				],
 				"period": {
 					"start": "2015-04-20T14:00:00"
 				}
@@ -1501,7 +2173,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1515,8 +2188,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 2"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-05-23T09:45:00"
 				}
@@ -1536,7 +2227,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1550,8 +2242,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 2"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-04-16T13:15:00"
 				}
@@ -1571,7 +2281,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1585,8 +2296,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Clinic Nurse Led 2"
+						}
+					}
+				],
 				"period": {
 					"start": "2016-05-13T14:00:00"
 				}
@@ -1606,7 +2335,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1620,8 +2350,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Pre Assessment Saturday Clinic"
+						}
+					}
+				],
 				"period": {
 					"start": "2012-10-27T10:40:00"
 				}
@@ -1641,7 +2389,8 @@
 				"status": "finished",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1655,7 +2404,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2016-07-27T14:06:03"
@@ -1676,7 +2425,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1690,8 +2440,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Group Physio Knee"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-08-01T16:00:00"
 				}
@@ -1711,11 +2479,30 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "eRS 2WW Referrals"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-07-30T00:01:00"
 				}
@@ -1735,7 +2522,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1749,8 +2537,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr P Porter"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-08-06T15:20:00"
 				}
@@ -1770,7 +2576,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1784,8 +2591,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-02-05T14:15:00"
 				}
@@ -1805,7 +2630,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1819,8 +2645,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-05-07T15:12:00"
 				}
@@ -1840,7 +2684,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1854,8 +2699,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-08-06T13:52:00"
 				}
@@ -1875,7 +2738,8 @@
 				"status": "cancelled",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1889,8 +2753,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-12-03T14:15:00"
 				}
@@ -1910,7 +2792,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1924,8 +2807,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2013-11-27T14:05:00"
 				}
@@ -1945,7 +2846,8 @@
 				"status": "arrived",
 				"class": {
 					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
-					"display": "outpatient"
+					"code": "AMB",
+					"display": "ambulatory"
 				},
 				"type": [
 					{
@@ -1959,8 +2861,26 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "CON",
+										"display": "consultant"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr G. Smibert"
+						}
+					}
+				],
 				"period": {
 					"start": "2014-05-07T16:15:00"
 				}
@@ -1984,7 +2904,7 @@
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2017-04-08T16:04:00",
@@ -2010,7 +2930,7 @@
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2019-04-16T16:50:00",
@@ -2036,7 +2956,7 @@
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
 				"period": {
 					"start": "2019-05-18T04:47:00",
@@ -2073,11 +2993,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr OW Donaldson"
+						}
+					}
+				],
 				"period": {
 					"start": "2016-07-07T15:00:00",
 					"end": "2016-07-12T14:13:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "12",
+										"display": "Elective Booked"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -2110,11 +3103,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Dr K Rashed"
+						}
+					}
+				],
 				"period": {
 					"start": "2017-04-08T18:23:00",
 					"end": "2017-04-26T18:41:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -2147,11 +3213,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr A Allison"
+						}
+					}
+				],
 				"period": {
 					"start": "2019-04-16T20:50:00",
 					"end": "2019-05-03T16:20:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "1",
+										"display": "Discharged on clinical advice or with clinical consent"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "19",
+								"display": "A Usual place of residence includes patients with no fixed abode."
+							}
+						]
+					}
 				}
 			}
 		},
@@ -2184,11 +3323,84 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
 				},
+				"participant": [
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "ADM",
+										"display": "admitter"
+									}
+								]
+							},
+							{
+								"coding": [
+									{
+										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"display": "Mr N Francis"
+						}
+					}
+				],
 				"period": {
 					"start": "2019-05-18T08:45:00",
 					"end": "2019-05-19T23:51:00"
+				},
+				"hospitalization": {
+					"extension": [
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+										"code": "21",
+										"display": "Accident and Emergency or Dental Casualty Department of Health Care Provider"
+									}
+								]
+							}
+						},
+						{
+							"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+							"valueCodeableConcept": {
+								"coding": [
+									{
+										"system": "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+										"code": "4",
+										"display": "Died"
+									}
+								]
+							}
+						}
+					],
+					"admitSource": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+								"code": "19",
+								"display": "Usual place of residence"
+							}
+						]
+					},
+					"dischargeDisposition": {
+						"coding": [
+							{
+								"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+								"code": "79",
+								"display": "Not applicable - patient died or still birth"
+							}
+						]
+					}
 				}
 			}
 		}
