@@ -1,0 +1,357 @@
+{
+    "resourceType": "Bundle",
+    "type": "searchset",
+    "total": 8,
+    "link": [
+      {
+        "relation": "self",
+        "url": "https://sider.ydh.nhs.uk/3_0_1/Flag?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+      }
+    ],
+    "entry": [
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-2",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-2",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "active",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "YDHALT",
+                "display": "Altered Mental State"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DEME",
+                "display": "Dementia Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "52448006",
+                "display": "Dementia"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2017-07-31T12:53:29",
+            "end": "2017-07-31T12:53:29"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-12",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-12",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "ENXXDNR",
+                "display": "Do not Resuscitate"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DNR",
+                "display": "Do Not Resuscitate Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "304253006",
+                "display": "Not for resuscitation"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2019-02-20T23:41:46",
+            "end": "2019-02-20T23:41:46"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-14",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-14",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "ENXXDNR",
+                "display": "Do not Resuscitate"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DNR",
+                "display": "Do Not Resuscitate Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "304253006",
+                "display": "Not for resuscitation"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2019-02-22T13:58:18",
+            "end": "2019-02-22T13:58:18"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-16",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-16",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "ENXXDNR",
+                "display": "Do not Resuscitate"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DNR",
+                "display": "Do Not Resuscitate Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "304253006",
+                "display": "Not for resuscitation"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2019-03-11T19:10:12",
+            "end": "2019-03-11T19:10:12"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-6",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-6",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "ENXXDNR",
+                "display": "Do not Resuscitate"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DNR",
+                "display": "Do Not Resuscitate Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "304253006",
+                "display": "Not for resuscitation"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2017-09-30T09:04:26",
+            "end": "2017-09-30T09:04:26"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-8",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-8",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "ENXXDNR",
+                "display": "Do not Resuscitate"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "DNR",
+                "display": "Do Not Resuscitate Pt"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "304253006",
+                "display": "Not for resuscitation"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2018-03-30T04:01:30",
+            "end": "2018-03-30T04:01:30"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-10",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-10",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "inactive",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "YDHTEP",
+                "display": "Treatment Escalation Plan"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "TEP",
+                "display": "Treatment Escalation Plan"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "735324008",
+                "display": "Treatment escalation plan"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2019-02-20T23:41:32",
+            "end": "2019-02-20T23:41:32"
+          }
+        }
+      },
+      {
+        "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/51900-4",
+        "resource": {
+          "resourceType": "Flag",
+          "id": "51900-4",
+          "meta": {
+            "profile": [
+              "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+            ]
+          },
+          "status": "active",
+          "category": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "YDHFALL",
+                "display": "Fall Risk Alert"
+              }
+            ]
+          },
+          "code": {
+            "coding": [
+              {
+                "system": "https://trakcare.ydh.nhs.uk",
+                "code": "YDHFALL",
+                "display": "Fall Risk Alert"
+              },
+              {
+                "system": "http://snomed.info/sct",
+                "code": "129839007",
+                "display": "At risk for falls"
+              }
+            ]
+          },
+          "subject": {
+            "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+          },
+          "period": {
+            "start": "2017-07-31T12:53:42",
+            "end": "2017-07-31T12:53:42"
+          }
+        }
+      }
+    ]
+  }

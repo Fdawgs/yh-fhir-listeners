@@ -1,11 +1,1333 @@
 {
 	"resourceType": "Bundle",
 	"type": "searchset",
-	"total": 0,
+	"total": 23,
 	"link": [
-		{
-			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement?patient=9999999"
+	  {
+		"relation": "self",
+		"url": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+	  }
+	],
+	"entry": [
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1006326-1",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1006326-1",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "11599-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1308711000001102",
+					"display": "Trimethoprim 200mg tablets 14 tablet"
+				  }
+				],
+				"text": "trimethoprim, tablets,200mg,tablet(s) [14 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#11599-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2018-03-31T14:55:00",
+			"end": "2018-04-02T14:54:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Space doses evenly through day until course finished, unless told to stop.",
+			  "timing": {
+				"repeat": {
+				  "duration": 2.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
 		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-1",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1419463-1",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "12595-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "7891011000001108",
+					"display": "Pregabalin 150mg capsules 56 capsule"
+				  }
+				],
+				"text": "pregABALIN, capsules,150mg,capsule(s) [56 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#12595-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-02-21T11:15:00",
+			"end": "2019-03-21T11:14:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-2",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1419463-2",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "4425-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1112911000001109",
+					"display": "Citalopram 20mg tablets 28 tablet"
+				  }
+				],
+				"text": "citalopram, tablets,20mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#4425-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-02-22T10:34:00",
+			"end": "2019-03-08T10:33:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 14.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-3",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1419463-3",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "11494-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1082611000001109",
+					"display": "Tramadol 50mg capsules 30 capsule"
+				  }
+				],
+				"text": "tramadol, capsules,50mg,capsule(s) [30 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#11494-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-04T10:25:00",
+			"end": "2019-03-14T10:24:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
+			  "timing": {
+				"repeat": {
+				  "duration": 10.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-4",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1419463-4",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "17166-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "26395611000001103",
+					"display": "TheiCal-D3 1000mg/880unit chewable tablets (Stirling Anglian Pharmaceuticals Ltd) 30 tablet 3 x 10 tablets"
+				  }
+				],
+				"text": "THEICAL-D3, chewable tablet,2.5g + 880 units,tablet(s) [30 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#17166-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-04T10:47:00",
+			"end": "2019-04-03T10:46:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Suck or chew this medicine.",
+			  "timing": {
+				"repeat": {
+				  "duration": 30.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-1",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-1",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "4424-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1104311000001103",
+					"display": "Citalopram 40mg/ml oral drops sugar free 15 ml"
+				  }
+				],
+				"text": "citalopram, oral drops,40mg/ml,15 mls pack [15 mls pack]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#4424-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-08T14:07:00",
+			"end": "2019-04-05T14:06:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 8,
+				"unit": "drop(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-2",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-2",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "101117-1",
+			  "code": {
+				"text": "pregABALIN, oral solution sugar-free,20mg/ml,250 mls pack [250 mls pack]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#101117-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-08T14:08:00",
+			"end": "2019-04-05T14:07:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 7.5,
+				"unit": "ml"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-3",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-3",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "5452-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1074511000001105",
+					"display": "Docusate 50mg/5ml oral solution sugar free 300 ml"
+				  }
+				],
+				"text": "docusate sodium, oral solution sugar-free,50mg/5ml,300 mls pack [300 mls pack]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#5452-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-08T14:10:00",
+			"end": "2019-04-05T14:09:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 20,
+				"unit": "ml"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-4",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-4",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "70596-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1476811000001105",
+					"display": "Losec MUPS 20mg gastro-resistant tablets (AstraZeneca UK Ltd) 28 tablet 2 x 14 tablets"
+				  }
+				],
+				"text": "LOSEC MUPS, dispersible tablet,20mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#70596-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-08T15:24:00",
+			"end": "2019-03-15T15:23:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Swallow this medicine whole. Do not chew or crush.",
+			  "timing": {
+				"repeat": {
+				  "duration": 7.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-5",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-5",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "3026-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "18680011000001101",
+					"display": "Alendronic acid 70mg/100ml oral solution unit dose sugar free 4 unit dose"
+				  }
+				],
+				"text": "alendronic acid (as sodium salt), oral solution,70mg/100ml,100ml bottle [4 X 100ml bottle]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#3026-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-08T15:30:00",
+			"end": "2019-03-15T15:29:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 1.0,
+				  "durationUnit": "wk"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 70,
+				"unit": "mg"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-6",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "1439361-6",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "3028-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1273311000001106",
+					"display": "Alendronic acid 70mg tablets 4 tablet"
+				  }
+				],
+				"text": "alendronic acid (as sodium salt), tablets,70mg,tablet(s) [4 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#3028-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2019-03-18T12:44:00",
+			"end": "2019-04-15T12:43:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 4.0,
+				  "durationUnit": "wk"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-1",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "857155-1",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "4425-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1112911000001109",
+					"display": "Citalopram 20mg tablets 28 tablet"
+				  }
+				],
+				"text": "citalopram, tablets,20mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#4425-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-03T10:12:00",
+			"end": "2017-12-31T10:11:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-2",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "857155-2",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "12595-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "7891011000001108",
+					"display": "Pregabalin 150mg capsules 56 capsule"
+				  }
+				],
+				"text": "pregABALIN, capsules,150mg,capsule(s) [56 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#12595-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-05T10:06:00",
+			"end": "2018-01-02T10:05:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-3",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "857155-3",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "9406-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1251111000001105",
+					"display": "Paracetamol 500mg tablets 100 tablet"
+				  }
+				],
+				"text": "paracetamol, tablets,500mg,tablet(s) [100 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#9406-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-05T10:07:00",
+			"end": "2018-01-02T10:06:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Do not take more than 2 at any one time, or more than 8 in 24 hours., Contains paracetamol. Do not take anything else containing paracetamol., Talk to a doctor at once if you take too much, even if you feel well",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 2,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-1",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-1",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "12595-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "7891011000001108",
+					"display": "Pregabalin 150mg capsules 56 capsule"
+				  }
+				],
+				"text": "pregABALIN, capsules,150mg,capsule(s) [56 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#12595-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-14T09:30:00",
+			"end": "2018-01-11T09:29:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-10",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-10",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "9173-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1082911000001103",
+					"display": "Omeprazole 10mg gastro-resistant capsules 28 capsule"
+				  }
+				],
+				"text": "omeprazole, gastro-resistant capsules,10mg,capsule(s) [28 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#9173-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-24T09:25:00",
+			"end": "2018-01-07T09:24:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 14.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-14",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-14",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "15433-1",
+			  "code": {
+				"text": "lidocaine with chlorhexidine, gel,2% + 0.25%,6ml syringe [10 X 6ml syringe]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#15433-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-24T09:35:00",
+			"end": "2018-01-21T09:34:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "For external use only.",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Topical"
+			  },
+			  "doseQuantity": {
+				"value": 6,
+				"unit": "ml"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-2",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-2",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "17166-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "26395611000001103",
+					"display": "TheiCal-D3 1000mg/880unit chewable tablets (Stirling Anglian Pharmaceuticals Ltd) 30 tablet 3 x 10 tablets"
+				  }
+				],
+				"text": "THEICAL-D3, chewable tablet,2.5g + 880 units,tablet(s) [30 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#17166-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-14T09:31:00",
+			"end": "2018-01-13T09:30:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Chew thoroughly before swallowing.",
+			  "timing": {
+				"repeat": {
+				  "duration": 30.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-3",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-3",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "3028-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1273311000001106",
+					"display": "Alendronic acid 70mg tablets 4 tablet"
+				  }
+				],
+				"text": "alendronic acid (as sodium salt), tablets,70mg,tablet(s) [4 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#3028-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-14T09:32:00",
+			"end": "2018-01-11T09:31:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-4",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-4",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "3416-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1271511000001104",
+					"display": "Atorvastatin 20mg tablets 28 tablet"
+				  }
+				],
+				"text": "atorvastatin, tablets,20mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#3416-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-14T09:33:00",
+			"end": "2018-01-11T09:32:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-6",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-6",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "3416-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1271511000001104",
+					"display": "Atorvastatin 20mg tablets 28 tablet"
+				  }
+				],
+				"text": "atorvastatin, tablets,20mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#3416-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-15T08:32:00",
+			"end": "2018-01-12T08:31:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "no instruction",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-7",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-7",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "7799-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "986911000001109",
+					"display": "Loperamide 2mg capsules 30 capsule"
+				  }
+				],
+				"text": "loperamide, capsules,2mg,capsule(s) [30 capsule(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#7799-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-16T10:08:00",
+			"end": "2017-12-30T10:07:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Do not exceed the prescribed dose.",
+			  "timing": {
+				"repeat": {
+				  "duration": 14.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 1,
+				"unit": "capsule(s)"
+			  }
+			}
+		  ]
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-9",
+		"resource": {
+		  "resourceType": "MedicationStatement",
+		  "id": "872871-9",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+			]
+		  },
+		  "contained": [
+			{
+			  "resourceType": "Medication",
+			  "id": "4704-1",
+			  "code": {
+				"coding": [
+				  {
+					"system": "http://snomed.info/sct",
+					"code": "1316211000001105",
+					"display": "Codeine 15mg tablets 28 tablet"
+				  }
+				],
+				"text": "codeine phosphate, tablets,15mg,tablet(s) [28 tablet(s)]"
+			  }
+			}
+		  ],
+		  "status": "completed",
+		  "medicationReference": {
+			"reference": "#4704-1"
+		  },
+		  "effectivePeriod": {
+			"start": "2017-12-18T15:00:00",
+			"end": "2018-01-15T14:59:00"
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+		  },
+		  "taken": "unk",
+		  "dosage": [
+			{
+			  "patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
+			  "timing": {
+				"repeat": {
+				  "duration": 28.0,
+				  "durationUnit": "d"
+				}
+			  },
+			  "route": {
+				"text": "Oral"
+			  },
+			  "doseQuantity": {
+				"value": 2,
+				"unit": "tablet(s)"
+			  }
+			}
+		  ]
+		}
+	  }
 	]
-}
+  }
