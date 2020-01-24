@@ -47,29 +47,29 @@ function buildFlagResource(data) {
 
 	if (getResultSetString(data, 'flagCodeCodingCode') != undefined) {
 		var ydhCode = {
-					system: 'https://trakcare.ydh.nhs.uk',
-					code: newStringOrUndefined(
-						getResultSetString(data, 'flagCodeCodingCode')
-					),
-					display: newStringOrUndefined(
-						getResultSetString(data, 'flagCodeCodingDisplay')
-					)
-				}
+			system: 'https://trakcare.ydh.nhs.uk',
+			code: newStringOrUndefined(
+				getResultSetString(data, 'flagCodeCodingCode')
+			),
+			display: newStringOrUndefined(
+				getResultSetString(data, 'flagCodeCodingDisplay')
+			)
+		};
 		resource.code.coding.push(ydhCode);
 	}
 
 	if (getResultSetString(data, 'flagCodeCodingSnomedCode') != undefined) {
 		var snomedCode = {
-					system: 'http://snomed.info/sct',
-					code: newStringOrUndefined(
-						getResultSetString(data, 'flagCodeCodingSnomedCode')
-					),
-					display: newStringOrUndefined(
-						getResultSetString(data, 'flagCodeCodingSnomedDisplay')
-					)
-				}
+			system: 'http://snomed.info/sct',
+			code: newStringOrUndefined(
+				getResultSetString(data, 'flagCodeCodingSnomedCode')
+			),
+			display: newStringOrUndefined(
+				getResultSetString(data, 'flagCodeCodingSnomedDisplay')
+			)
+		};
 		resource.code.coding.push(snomedCode);
-	}	
+	}
 
 	resource.period = {};
 	if (
