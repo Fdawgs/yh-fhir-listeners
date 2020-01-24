@@ -1,0 +1,137 @@
+{
+  "resourceType": "Bundle",
+  "type": "searchset",
+  "total": 3,
+  "link": [
+    {
+      "relation": "self",
+      "url": "https://sider.ydh.nhs.uk/3_0_1/Flag?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
+    }
+  ],
+  "entry": [
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/87903-4",
+      "resource": {
+        "resourceType": "Flag",
+        "id": "87903-4",
+        "meta": {
+          "profile": [
+            "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+          ]
+        },
+        "status": "inactive",
+        "category": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "ENXXDNR",
+              "display": "Do not Resuscitate"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "DNR",
+              "display": "Do Not Resuscitate Pt"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304253006",
+              "display": "Not for resuscitation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+        },
+        "period": {
+          "start": "2019-04-16T23:52:10",
+          "end": "2019-04-16T23:52:10"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/87903-6",
+      "resource": {
+        "resourceType": "Flag",
+        "id": "87903-6",
+        "meta": {
+          "profile": [
+            "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+          ]
+        },
+        "status": "inactive",
+        "category": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "ENXXDNR",
+              "display": "Do not Resuscitate"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "DNR",
+              "display": "Do Not Resuscitate Pt"
+            },
+            {
+              "system": "http://snomed.info/sct",
+              "code": "304253006",
+              "display": "Not for resuscitation"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+        },
+        "period": {
+          "start": "2019-04-17T11:20:16",
+          "end": "2019-04-17T11:20:16"
+        }
+      }
+    },
+    {
+      "fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/87903-2",
+      "resource": {
+        "resourceType": "Flag",
+        "id": "87903-2",
+        "meta": {
+          "profile": [
+            "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+          ]
+        },
+        "status": "active",
+        "category": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "SASEC",
+              "display": "Safety and Security"
+            }
+          ]
+        },
+        "code": {
+          "coding": [
+            {
+              "system": "https://trakcare.ydh.nhs.uk",
+              "code": "EDCP",
+              "display": "ED Care Plan"
+            }
+          ]
+        },
+        "subject": {
+          "reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+        },
+        "period": {
+          "start": "2019-03-13T14:17:17",
+          "end": "2019-03-13T14:17:17"
+        }
+      }
+    }
+  ]
+}
