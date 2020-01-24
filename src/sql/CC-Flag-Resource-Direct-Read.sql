@@ -34,6 +34,10 @@ WITH
          AND (alert.ALM_PAPMI_ParRef->PAPMI_No = ''5484125'')
          ')
   )
-SELECT *
+SELECT flag_CTE.*,
+       snom.SNOMED_Code AS flagCodeCodingSnomedCode,
+       snom.SNOMED_Display AS flagCodeCodingSnomedDisplay
 FROM flag_CTE
+     LEFT JOIN lookup.dbo.ydh_alert_list snom
+     ON flag_CTE.flagCodeCodingCode = snom.YDH_TrakCare_Code
 WHERE flagStatusCode IS NOT NULL;
