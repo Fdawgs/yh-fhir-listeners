@@ -17,7 +17,7 @@ Other processes and specifications that are in use in this repository are:
 
 As noted in the prerequisites section of the readme file, this project requires that you have Node.js, Yarn, and Mirth Connect installed for development.
 
-With those in place you can fork the repo and clone it, and then run `yarn install` to install all dependencies.
+With those in place you can fork the repo and clone it, and then run `yarn install` to install all development dependencies.
 
 ### Development Workflow
 
@@ -37,7 +37,7 @@ Mirth Connect however, does not support the following features:
 Prior to submitting a pull request back to the main repository, please make sure you have completed the following steps:
 
 1. Pull request base branch is set to `master`. All pull requests should be forked from and merged back to `master`
-2. Run `yarn test` to check the code adheres to the defined style and that it passes the Jest tests
+2. Run `yarn test` to check the code adheres to the defined style and has no errors
 3. Run `yarn prettier` to run the Prettier code formatter over the code
 
 ## Release process
@@ -53,4 +53,4 @@ When cutting a release, the following steps need to be performed:
 
 ## Issues
 
-Please file your issues [here](https://github.com/Fdawgs/ydh-fhir-listeners) and try to provide as much information in the template as possible/relevant.
+Please file your issues [here](https://github.com/Fdawgs/ydh-fhir-listeners/issues) and try to provide as much information in the template as possible/relevant.
