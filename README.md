@@ -1,8 +1,8 @@
 # Yeovil District Hospital - SIDeR FHIR Listener Endpoints
 
-> Yeovil Distict Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystem's TrakCare PAS (v2017.2 MR8.2)
-
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) [![Build Status](https://travis-ci.org/Fdawgs/ydh-fhir-listeners.svg?branch=master)](https://travis-ci.org/Fdawgs/ydh-fhir-listeners) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=217485645)](https://dependabot.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
+
+> Yeovil Distict Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystem's TrakCare PAS (v2017.2 MR8.2)
 
 # Introduction
 
@@ -14,13 +14,13 @@ Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-
 
 The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (TST) have successfully taken this and refactored it for use with their PAS, Maxims.
 
-This documentation has been written under the assumption that the reader has prior experience using Mirth Connect.
+This documentation has been written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
 ## Background
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/your-health/sharing-your-information/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Shareholders (as of 2019-04-03) are:
+Shareholders (at time of writing on 2019-04-03) are:
 
 -   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
 -   [Taunton and Somerset NHS Foundation Trust](https://www.tsft.nhs.uk/) (TST)
@@ -39,7 +39,7 @@ Shareholders (as of 2019-04-03) are:
 
 Black Pear have built a web front-end (eSP) for a shared care record, which will retrieve data relating to a patient from each shareholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
-Black Pear need to be able to make GET requests to a RESTful FHIR API endpoints to retrieve a set of six FHIR resources that adhere to their respective [Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
+Black Pear need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
 ### Contextual Link
 
@@ -55,7 +55,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 # Deployment
 
-This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2017 being used as the database backend.
+This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2017 being used as the database backend for Mirth Connect.
 
 ## Setting up Mirth Connect Channel
 
@@ -64,6 +64,10 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and 
 3. Import the FHIR Listener channel from [src](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/src) into Mirth Connect
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
+
+# Contributing
+
+Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/CONTRIBUTING.md) for more details regarding contributing to this project.
 
 # License
 
