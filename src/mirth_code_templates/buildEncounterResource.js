@@ -447,6 +447,63 @@ function buildEncounterResource(data) {
 		};
 	}
 
+	// Add location details
+	if (
+		getResultSetString(data, 'encounterClassCode') != undefined &&
+		getResultSetString(data, 'encounterClassCode') == 'IMP'
+	) {
+		resource.location = [];
+
+		var emptyLocation = {
+			location: {
+				identifier: {
+					value: undefined
+				},
+				display: undefined
+			},
+			period: {
+				start: undefined,
+				end: undefined
+			}
+		};
+
+		if (
+			getResultSetString(data, 'encounterLocation1Identifier') !=
+				undefined &&
+			typeof resource.period.start !== 'undefined'
+		) {
+			var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
+
+			admittingWard.location.identifier.value = newStringOrUndefined(
+				getResultSetString(data, 'encounterLocation1Identifier')
+			);
+			admittingWard.location.display = newStringOrUndefined(
+				getResultSetString(data, 'encounterLocation1Display')
+			);
+
+			admittingWard.period.start = resource.period.start;
+			resource.location.push(admittingWard);
+		}
+
+		if (
+			getResultSetString(data, 'encounterLocation2Identifier') !=
+				undefined &&
+			typeof resource.period.end !== 'undefined'
+		) {
+			var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
+
+			dischargeWard.location.identifier.value = newStringOrUndefined(
+				getResultSetString(data, 'encounterLocation2Identifier')
+			);
+			dischargeWard.location.display = newStringOrUndefined(
+				getResultSetString(data, 'encounterLocation2Display')
+			);
+
+			dischargeWard.period.end = resource.period.end;
+			resource.location.push(dischargeWard);
+		}
+	}
+
 	resource.subject = {
 		reference:
 			$cfg('apiUrl') +
