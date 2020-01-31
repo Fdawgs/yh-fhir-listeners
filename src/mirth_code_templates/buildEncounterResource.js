@@ -61,17 +61,17 @@ function buildEncounterResource(data) {
 		extension: [
 			{
 				url:
-				'https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1',
-			valueCodeableConcept: {
-				coding: [
-					{
-						system:
-							'https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1',
-						code: undefined,
-						display: undefined
-					}
-				]
-			}
+					'https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1',
+				valueCodeableConcept: {
+					coding: [
+						{
+							system:
+								'https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1',
+							code: undefined,
+							display: undefined
+						}
+					]
+				}
 			}
 		]
 	};
@@ -91,9 +91,9 @@ function buildEncounterResource(data) {
 				getResultSetString(data, 'encounterTypeDescAdm')
 			);
 			admType.extension[0].valueCodeableConcept.coding[0].code = 'ADM';
-			admType.extension[0].valueCodeableConcept.coding[0].display = 'Admitting';
+			admType.extension[0].valueCodeableConcept.coding[0].display =
+				'Admitting';
 			resource.type.push(admType);
-
 		} else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
 			admType.coding[0].code = newStringOrUndefined(
 				getResultSetString(data, 'encounterTypeCode')
@@ -115,7 +115,8 @@ function buildEncounterResource(data) {
 			);
 
 			disType.extension[0].valueCodeableConcept.coding[0].code = 'DIS';
-			disType.extension[0].valueCodeableConcept.coding[0].display = 'Discharging';
+			disType.extension[0].valueCodeableConcept.coding[0].display =
+				'Discharging';
 			resource.type.push(disType);
 		} else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
 			disType.coding[0].code = newStringOrUndefined(
@@ -136,7 +137,6 @@ function buildEncounterResource(data) {
 				delete resource.type[1];
 			}
 		}
-
 	} else {
 		var outType = JSON.parse(JSON.stringify(emptyType));
 		if (getResultSetString(data, 'encounterTypeCode') != undefined) {
@@ -146,7 +146,7 @@ function buildEncounterResource(data) {
 			outType.coding[0].display = newStringOrUndefined(
 				getResultSetString(data, 'encounterTypeDesc')
 			);
-			
+
 			delete outType.extension;
 			resource.type.push(outType);
 		}
@@ -194,10 +194,13 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(
-					data,
-					'encounterParticipantIndividualCode_admitting'
-				),
+				identifier: {
+					value: getResultSetString(
+						data,
+						'encounterParticipantIndividualCode_admitting'
+					)
+				},
+
 				display: getResultSetString(
 					data,
 					'encounterParticipantIndividualDisplay_admitting'
@@ -228,10 +231,12 @@ function buildEncounterResource(data) {
 					}
 				],
 				individual: {
-					identifier: getResultSetString(
-						data,
-						'encounterParticipantIndividualCode_admitting'
-					),
+					identifier: {
+						value: getResultSetString(
+							data,
+							'encounterParticipantIndividualCode_admitting'
+						)
+					},
 					display: getResultSetString(
 						data,
 						'encounterParticipantIndividualDisplay_admitting'
@@ -260,10 +265,12 @@ function buildEncounterResource(data) {
 					}
 				],
 				individual: {
-					identifier: getResultSetString(
-						data,
-						'encounterParticipantIndividualCode_discharging'
-					),
+					identifier: {
+						value: getResultSetString(
+							data,
+							'encounterParticipantIndividualCode_discharging'
+						)
+					},
 					display: getResultSetString(
 						data,
 						'encounterParticipantIndividualDisplay_discharging'
