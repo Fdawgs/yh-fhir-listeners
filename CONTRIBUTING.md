@@ -44,7 +44,7 @@ Prior to submitting a pull request back to the main repository, please make sure
 
 When cutting a release, the following steps need to be performed:
 
-1. Both `package.json` and `src/CapabilityStatement.xml` needs to have a version update based on the content being released, remembering to adhere to semantic versioning
+1. Both `package.json` and `dist/CapabilityStatement.xml` needs to have a version update based on the content being released, remembering to adhere to semantic versioning
 2. Generate the changelog with `yarn changelog`
 3. Create a release branch with the convention `release/x.x.x`
 4. Create a tag for the version; the naming convention is the version (vx.x.x)

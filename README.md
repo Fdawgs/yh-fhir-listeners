@@ -61,7 +61,7 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and 
 
 1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
 2. Install the FHIR Connector extension from the file system
-3. Import the FHIR Listener channel from [src](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/src) into Mirth Connect
+3. Import the FHIR Listener channel from [dist](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/dist) into Mirth Connect
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
