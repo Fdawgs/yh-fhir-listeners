@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) [![Build Status](https://travis-ci.org/Fdawgs/ydh-fhir-listeners.svg?branch=master)](https://travis-ci.org/Fdawgs/ydh-fhir-listeners) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=217485645)](https://dependabot.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-> Yeovil Distict Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystem's TrakCare PAS (v2017.2 MR8.2)
+> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystem's TrakCare PAS (v2017.2 MR8.2)
 
 # Introduction
 
