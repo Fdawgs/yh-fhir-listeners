@@ -36,13 +36,13 @@ try {
 	Object.keys($('parameters')).forEach((key) => {
 		if (
 			supportedTypeParams[type.toLowerCase()].indexOf(
-				`${key.toLowerCase() }`
+				`${key.toLowerCase()}`
 			) < 0
 		) {
 			return createOperationOutcome(
 				'error',
 				'invalid',
-				`Unknown or unsupported parameter ${ key }.`
+				`Unknown or unsupported parameter ${key}.`
 			);
 		}
 	});
@@ -70,7 +70,7 @@ try {
 			};
 			clinicalStatus = clinicalStatusCode[clinicalStatus.toLowerCase()];
 
-			whereParts.push(`(alle.ALG_Status = ''${ clinicalStatus }'')`);
+			whereParts.push(`(alle.ALG_Status = ''${clinicalStatus}'')`);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
@@ -89,18 +89,16 @@ try {
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
 					}
-					whereParts.push(
-						`(alle.ALG_Date ${ operator } ''${ date }'')`
-					);
+					whereParts.push(`(alle.ALG_Date ${operator} ''${date}'')`);
 				});
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereParts.push(
-				`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${$(
+					'parameters'
+				).getParameter('patient')}'')`
 			);
 		}
 
@@ -118,9 +116,7 @@ try {
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						`(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''${ 
-							allergyPatIdParam[1] 
-							}'')`
+						`(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''${allergyPatIdParam[1]}'')`
 					);
 				}
 				if (
@@ -128,9 +124,7 @@ try {
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
-						`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${ 
-							allergyPatIdParam[1] 
-							}'')`
+						`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${allergyPatIdParam[1]}'')`
 					);
 				}
 			}
@@ -182,23 +176,23 @@ try {
 		if ($('parameters').contains('patient')) {
 			// Build where clause for first query (outpats) in union
 			whereArray[0].push(
-				`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					'parameters'
+				).getParameter('patient')}'')`
 			);
 
 			// Build where clause for second query (inpats, emerg) in union
 			whereArray[1].push(
-				`(PAADM_PAPMI_DR->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(PAADM_PAPMI_DR->PAPMI_No = ''${$('parameters').getParameter(
+					'patient'
+				)}'')`
 			);
 
 			// Build where clause for subquery for inpat consultants
 			whereArray[2].push(
-				`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					'parameters'
+				).getParameter('patient')}'')`
 			);
 		}
 
@@ -217,19 +211,13 @@ try {
 					'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
 					);
 					whereArray[1].push(
-						`(PAADM_PAPMI_DR->PAPMI_ID = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
 					);
 					whereArray[2].push(
-						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
 					);
 				}
 				if (
@@ -237,19 +225,13 @@ try {
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
-						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${encounterPatIdParam[1]}'')`
 					);
 					whereArray[1].push(
-						`(PAADM_PAPMI_DR->PAPMI_No = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(PAADM_PAPMI_DR->PAPMI_No = ''${encounterPatIdParam[1]}'')`
 					);
 					whereArray[2].push(
-						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-							encounterPatIdParam[1] 
-							}'')`
+						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''${encounterPatIdParam[1]}'')`
 					);
 				}
 			}
@@ -278,16 +260,12 @@ try {
 
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
-						`(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) ${ 
-							operator 
-							} ''${ 
-							date 
-							}'')`
+						`(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) ${operator} ''${date}'')`
 					);
 
 					// Build where clause for second query (inpats, emerg) in union
 					whereArray[1].push(
-						`(PAADM_AdmDate${ operator } ''${ date }'')`
+						`(PAADM_AdmDate${operator} ''${date}'')`
 					);
 				});
 		}
@@ -311,16 +289,14 @@ try {
 
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
-						`(''AMB'' = ''${ 
-							classCode[paramclass.toLowerCase()] 
-							}'')`
+						`(''AMB'' = ''${classCode[paramclass.toLowerCase()]}'')`
 					);
 
 					// Build where clause for second query (inpats, emerg) in union
 					whereArray[1].push(
-						`(PAADM_Type = ''${ 
-							classCode[paramclass.toLowerCase()] 
-							}'')`
+						`(PAADM_Type = ''${
+							classCode[paramclass.toLowerCase()]
+						}'')`
 					);
 				});
 		}
@@ -338,14 +314,12 @@ try {
 				.forEach((paramType) => {
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
-						`(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''${ 
-							paramType 
-							}'')`
+						`(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''${paramType}'')`
 					);
 
 					// Build where clause for second query (inpats, emerg) in union
 					whereArray[1].push(
-						`(PAADM_DepCode_DR->CTLOC_Code = ''${ paramType }'')`
+						`(PAADM_DepCode_DR->CTLOC_Code = ''${paramType}'')`
 					);
 				});
 		}
@@ -363,9 +337,9 @@ try {
 		// GET [baseUrl]/Flag?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
-				`(alert.ALM_PAPMI_ParRef->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(alert.ALM_PAPMI_ParRef->PAPMI_No = ''${$(
+					'parameters'
+				).getParameter('patient')}'')`
 			);
 		}
 
@@ -381,9 +355,7 @@ try {
 				).split('|');
 				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
 					whereArray[0].push(
-						`(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''${ 
-							flagPatIdParam[1] 
-							}'')`
+						`(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''${flagPatIdParam[1]}'')`
 					);
 				}
 				if (
@@ -391,9 +363,7 @@ try {
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
-						`(alert.ALM_PAPMI_ParRef->PAPMI_No = ''${ 
-							flagPatIdParam[1] 
-							}'')`
+						`(alert.ALM_PAPMI_ParRef->PAPMI_No = ''${flagPatIdParam[1]}'')`
 					);
 				}
 			}
@@ -406,9 +376,9 @@ try {
 			$('parameters').contains('status')
 		) {
 			whereArray[1].push(
-				`(flagStatusCode = ''${ 
-					$('parameters').getParameter('status') 
-					}'')`
+				`(flagStatusCode = ''${$('parameters').getParameter(
+					'status'
+				)}'')`
 			);
 		}
 	}
@@ -443,11 +413,7 @@ try {
 						date = date.substring(2, date.length);
 					}
 					whereArray[1].push(
-						`(medstatEffectiveStart ${ 
-							operator 
-							} ''${ 
-							date 
-							}'')`
+						`(medstatEffectiveStart ${operator} ''${date}'')`
 					);
 				});
 		}
@@ -455,9 +421,9 @@ try {
 		// GET [baseUrl]/MedicationStatement?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
-				`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-					$('parameters').getParameter('patient') 
-					}'')`
+				`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					'parameters'
+				).getParameter('patient')}'')`
 			);
 		}
 
@@ -475,9 +441,7 @@ try {
 					medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${ 
-							medStatPatIdParam[1] 
-							}'')`
+						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${medStatPatIdParam[1]}'')`
 					);
 				}
 				if (
@@ -485,9 +449,7 @@ try {
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
-						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${ 
-							medStatPatIdParam[1] 
-							}'')`
+						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${medStatPatIdParam[1]}'')`
 					);
 				}
 			}
@@ -500,9 +462,9 @@ try {
 			$('parameters').contains('status')
 		) {
 			whereArray[1].push(
-				`(medstatStatusCode = ''${ 
-					$('parameters').getParameter('status') 
-					}'')`
+				`(medstatStatusCode = ''${$('parameters').getParameter(
+					'status'
+				)}'')`
 			);
 		}
 	}
@@ -516,36 +478,36 @@ try {
 		// GET [baseUrl]/Patient?birthdate=[date]
 		if ($('parameters').contains('birthdate')) {
 			whereParts.push(
-				`(patmas.PAPMI_DOB = ''${ 
-					$('parameters').getParameter('birthdate') 
-					}'')`
+				`(patmas.PAPMI_DOB = ''${$('parameters').getParameter(
+					'birthdate'
+				)}'')`
 			);
 		}
 
 		// GET [baseUrl]/Patient?family=[family]
 		if ($('parameters').contains('family')) {
 			whereParts.push(
-				`(patmas.PAPMI_PAPER_DR->PAPER_Name = ''${ 
-					$('parameters').getParameter('family') 
-					}'')`
+				`(patmas.PAPMI_PAPER_DR->PAPER_Name = ''${$(
+					'parameters'
+				).getParameter('family')}'')`
 			);
 		}
 
 		// GET [baseUrl]/Patient?gender=[code]
 		if ($('parameters').contains('gender')) {
 			whereParts.push(
-				`(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''${ 
-					$('parameters').getParameter('gender') 
-					}'')`
+				`(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''${$(
+					'parameters'
+				).getParameter('gender')}'')`
 			);
 		}
 
 		// GET [baseUrl]/Patient?given=[given]
 		if ($('parameters').contains('given')) {
 			whereParts.push(
-				`(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''${ 
-					$('parameters').getParameter('given') 
-					}'')`
+				`(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''${$(
+					'parameters'
+				).getParameter('given')}'')`
 			);
 		}
 
@@ -564,7 +526,7 @@ try {
 				).split('|');
 				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
 					whereParts.push(
-						`(patmas.PAPMI_ID = ''${ identifierParam[1] }'')`
+						`(patmas.PAPMI_ID = ''${identifierParam[1]}'')`
 					);
 				}
 				if (
@@ -572,14 +534,14 @@ try {
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereParts.push(
-						`(patmas.PAPMI_No = ''${ identifierParam[1] }'')`
+						`(patmas.PAPMI_No = ''${identifierParam[1]}'')`
 					);
 				}
 			} else {
 				whereParts.push(
-					`(patmas.PAPMI_No = ''${ 
-						$('parameters').getParameter('identifier') 
-						}'')`
+					`(patmas.PAPMI_No = ''${$('parameters').getParameter(
+						'identifier'
+					)}'')`
 				);
 			}
 		}
@@ -588,11 +550,7 @@ try {
 		if ($('parameters').contains('name')) {
 			const name = $('parameters').getParameter('name');
 			whereParts.push(
-				`(patmas.PAPMI_PAPER_DR->PAPER_Name = ''${ 
-					name 
-					}'' OR patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''${ 
-					name 
-					}'')`
+				`(patmas.PAPMI_PAPER_DR->PAPER_Name = ''${name}'' OR patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''${name}'')`
 			);
 		}
 		whereArray.push(whereParts);
@@ -600,7 +558,7 @@ try {
 
 	// Aggregrate all predicates in whereArray and build SQL WHERE clause from it
 	const wherePredicates = [];
-	for (let index = 0; index < whereArray.length; index+= 1) {
+	for (let index = 0; index < whereArray.length; index += 1) {
 		const element = whereArray[index];
 		if (element.length > 0) {
 			wherePredicates[index] = element.join(' AND ');
@@ -618,13 +576,13 @@ try {
 	}
 
 	logger.debug(
-		`SQL WHERE clause predicate(s): ${ wherePredicates.toString()}`
+		`SQL WHERE clause predicate(s): ${wherePredicates.toString()}`
 	);
 
 	const result = buildResourceQuery(type, wherePredicates);
 	while (result.next()) {
 		let data;
-		switch (`${type }`) {
+		switch (`${type}`) {
 			case 'allergyintolerance':
 				data = buildAllergyIntoleranceResource(result);
 				break;
@@ -653,8 +611,9 @@ try {
 		// Add returned FHIR resources to bundle resource
 		const resourceOuter = {};
 		resourceOuter.resource = data;
-		resourceOuter.fullUrl =
-			`${$cfg('apiUrl') + $('contextPath') }/${ data.id}`;
+		resourceOuter.fullUrl = `${$cfg('apiUrl') + $('contextPath')}/${
+			data.id
+		}`;
 		bundle.entry.push(resourceOuter);
 	}
 

@@ -8,10 +8,10 @@ try {
 
 	// Build up WHERE clause then pass to buildResourceQuery to be called
 	let wherePredicate;
-	switch (`${type }`) {
+	switch (`${type}`) {
 		case 'allergyintolerance':
 			wherePredicate = [
-				`(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''${ id }'')`
+				`(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''${id}'')`
 			];
 			break;
 		case 'condition':
@@ -20,22 +20,20 @@ try {
 			break;
 		case 'encounter':
 			wherePredicate = [
-				`(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''${ id }'')`,
-				`(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''${ id }'')`,
-				`(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''${ 
-					id 
-					}'')`
+				`(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''${id}'')`,
+				`(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`,
+				`(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
 			];
 			break;
 		case 'medicationstatement':
 			wherePredicate = [
-				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${ id }'')`,
+				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`,
 				''
 			];
 
 			break;
 		case 'patient':
-			wherePredicate = [`(patmas.PAPMI_No = ''${ id }'')`];
+			wherePredicate = [`(patmas.PAPMI_No = ''${id}'')`];
 			break;
 
 		default:
@@ -47,7 +45,7 @@ try {
 		// Pass it out to external channel that will transform into
 		// Care Connect FHIR Resource and return
 		let data;
-		switch (`${type }`) {
+		switch (`${type}`) {
 			case 'allergyintolerance':
 				data = buildAllergyIntoleranceResource(result);
 				break;
@@ -75,7 +73,9 @@ try {
 
 		// Hard coded version as we don't keep past versions of records, only one
 		const version = '1';
-		const lastModified = new Date(getResultSetString(result, 'lastUpdated'));
+		const lastModified = new Date(
+			getResultSetString(result, 'lastUpdated')
+		);
 		const response = FhirResponseFactory.getReadResponse(
 			JSON.stringify(data),
 			version,
@@ -89,7 +89,7 @@ try {
 	return createOperationOutcome(
 		'error',
 		'processing',
-		`${$('fhirType') } ID ${ id } not found.`,
+		`${$('fhirType')} ID ${id} not found.`,
 		404
 	);
 } catch (error) {
