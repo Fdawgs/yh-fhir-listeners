@@ -7,76 +7,25 @@
 	@return {Object} Patient FHIR resource.
  */
 function buildPatientResource(data) {
-	const result = {};
-	result.lastUpdated = getResultSetString(data, 'lastUpdated');
-	result.nhsNumber = getResultSetString(data, 'nhsNumber');
-	result.nhsNumberTraceStatusCode = getResultSetString(
-		data,
-		'nhsNumberTraceStatusCode'
-	);
-	result.nhsNumberTraceStatusDesc = getResultSetString(
-		data,
-		'nhsNumberTraceStatusDesc'
-	);
+	const result = getResultSet(data);
+
 	if (result.nhsNumberTraceStatusCode == undefined) {
 		result.nhsNumberTraceStatusCode = '2';
 		result.nhsNumberTraceStatusDesc = 'Number present but not traced';
 	}
-	result.gpName = getResultSetString(data, 'gpDesc');
-	result.gpAddressLine1 = getResultSetString(data, 'gpAddressLine1');
-	result.gpAddressLine2 = getResultSetString(data, 'gpAddressLine2');
-	result.gpCity = getResultSetString(data, 'gpCity');
-	result.gpPostalCode = getResultSetString(data, 'gpPostalCode');
-	result.gpIdentifier = getResultSetString(data, 'gpIdentifier');
-	result.patientNo = getResultSetString(data, 'PatientNo');
-	result.active = getResultSetString(data, 'active');
-	result.ethnicCategoryDesc = getResultSetString(data, 'ethnicCategoryDesc');
-	result.ethnicCategoryCode = getResultSetString(data, 'ethnicCategoryCode');
-	result.homePhone = getResultSetString(data, 'homePhone');
-	result.businessPhone = getResultSetString(data, 'businessPhone');
-	result.mobilePhone = getResultSetString(data, 'mobilePhone');
-	result.appointmentSMS = getResultSetString(data, 'appointmentSMS');
-	result.email = getResultSetString(data, 'email');
-	result.preferredContactMethod = getResultSetString(
-		data,
-		'preferredContactMethod'
-	);
-	result.preferredLanguage = getResultSetString(data, 'preferredLanguage');
-	result.interpreterRequired = getResultSetString(
-		data,
-		'interpreterRequired'
-	);
-	result.nameFamily = getResultSetString(data, 'nameFamily');
-	result.nameGiven1First = getResultSetString(data, 'nameGiven1First');
-	result.nameGiven2Middle = getResultSetString(data, 'nameGiven2Middle');
-	result.namePrefix = getResultSetString(data, 'namePrefix');
-	result.maritalStatusDesc = getResultSetString(data, 'maritalStatusDesc');
-	result.maritalStatusCode = getResultSetString(data, 'maritalStatusCode');
-	result.addressLine1 = getResultSetString(data, 'addressLine1');
-	result.addressLine2 = getResultSetString(data, 'addressLine2');
-	result.city = getResultSetString(data, 'city');
-	result.district = getResultSetString(data, 'district');
-	result.postalCode = getResultSetString(data, 'postalCode');
-	result.gender = getResultSetString(data, 'gender');
-	result.birthdate = getResultSetString(data, 'birthdate');
-	result.deceased = getResultSetString(data, 'deceased');
+
 	if (result.deceased == undefined) {
 		result.deceased = false;
 	} else {
 		result.deceased = true;
 	}
 
-	result.contactName = getResultSetString(data, 'contactName');
-	result.contactPhone = getResultSetString(data, 'contactPhone');
-	result.contactText = getResultSetString(data, 'contactText');
-	result.DND = getResultSetString(data, 'DND'); // restricted patient
-
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
 	const resource = {
-		fullUrl: `${$cfg('apiUrl') + $('contextPath') }/${ result.patientNo}`,
+		fullUrl: `${$cfg('apiUrl') + $('contextPath')}/${result.patientNo}`,
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1'
@@ -283,7 +232,7 @@ function buildPatientResource(data) {
 	const generalPractitioner = [];
 	if (result.gpIdentifier != undefined) {
 		const gpReference = {
-			reference: newStringOrUndefined(`#${ result.gpIdentifier}`),
+			reference: newStringOrUndefined(`#${result.gpIdentifier}`),
 			display: newStringOrUndefined(result.gpName)
 		};
 		generalPractitioner.push(gpReference);
