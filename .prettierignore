@@ -1,9 +1,10 @@
 # blacklist all files
 *
 
-# only format js files in src
+# only format js files in src and dist
 !*/
 !src/**/*.js
+!dist/**/*.js
 
 !*.json
 !*.md
