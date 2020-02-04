@@ -7,9 +7,7 @@
 	@return {Object} The ResultSet as a JSON object.
 */
 function getResultSet(resultSet) {
-	const json = [];
 	const rsmd = resultSet.getMetaData();
-
 	const numColumns = rsmd.getColumnCount();
 	const obj = {};
 
@@ -47,6 +45,5 @@ function getResultSet(resultSet) {
 		}
 	}
 
-	json.push(obj);
-	return json;
+	return obj;
 }
