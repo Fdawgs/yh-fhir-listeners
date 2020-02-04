@@ -1,5 +1,3 @@
-"use strict";
-
 /**
  * @author Frazer Smith
  * @description Rewritten example FHIR read destination to be usable for TrakCare calls.

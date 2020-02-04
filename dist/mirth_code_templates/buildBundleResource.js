@@ -1,5 +1,3 @@
-"use strict";
-
 /**
 	Builds Bundle FHIR Resource that adheres to the HL7 spec,
 	see https://www.hl7.org/fhir/STU3/bundle.html for more info.

@@ -1,5 +1,3 @@
-"use strict";
-
 /**
 	Builds Patient FHIR resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 for more info.
