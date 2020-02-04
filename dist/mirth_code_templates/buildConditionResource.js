@@ -7,10 +7,12 @@
 	@return {Object} Condition FHIR resource.
  */
 function buildConditionResource(data) {
+	var result = getResultSet(data);
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
+
 	var resource = {
 		meta: {
 			profile: [
