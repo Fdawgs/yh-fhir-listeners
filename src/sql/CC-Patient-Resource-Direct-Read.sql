@@ -5,7 +5,7 @@ Patient Resource
 SELECT DISTINCT nhsNumber,
 	nhsNumberTraceStatusDesc,
 	nhsNumberTraceStatusCode,
-	PatientNo,
+	patientNo,
 	active,
 	ethnicCategoryDesc,
 	ethnicCategoryCode,
@@ -47,7 +47,7 @@ FROM OPENQUERY(
 									patmas.PAPMI_PAPER_DR->PAPER_ID AS nhsNumber,
 									patmas.PAPMI_TraceStatus_DR->TRACE_Desc AS nhsNumberTraceStatusDesc,
 									patmas.PAPMI_TraceStatus_DR AS nhsNumberTraceStatusCode, -- TODO: Add leading zeros in transformer in Mirth
-									patmas.PAPMI_No AS PatientNo, -- MRN apparently
+									patmas.PAPMI_No AS patientNo, -- MRN apparently
 									patmas.PAPMI_Active,	
 									CASE
 									WHEN patmas.PAPMI_Active IS NULL THEN ''true''
