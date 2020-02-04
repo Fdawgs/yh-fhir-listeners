@@ -7,7 +7,7 @@
 	@return {Object} Patient FHIR resource.
  */
 function buildPatientResource(data) {
-	var result = {};
+	const result = {};
 	result.lastUpdated = getResultSetString(data, 'lastUpdated');
 	result.nhsNumber = getResultSetString(data, 'nhsNumber');
 	result.nhsNumberTraceStatusCode = getResultSetString(
@@ -75,8 +75,8 @@ function buildPatientResource(data) {
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-	var resource = {
-		fullUrl: $cfg('apiUrl') + $('contextPath') + '/' + result.patientNo,
+	const resource = {
+		fullUrl: `${$cfg('apiUrl') + $('contextPath') }/${ result.patientNo}`,
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1'
@@ -131,7 +131,7 @@ function buildPatientResource(data) {
 
 	// Add NHS No
 	if (result.nhsNumber != undefined) {
-		var nhsIdentifier = {
+		const nhsIdentifier = {
 			use: newStringOrUndefined('official'),
 			system: newStringOrUndefined('https://fhir.nhs.uk/Id/nhs-number'),
 			value: newStringOrUndefined(result.nhsNumber),
@@ -163,7 +163,7 @@ function buildPatientResource(data) {
 
 	// Add Next of kin contact details
 	if (result.contactName != undefined) {
-		var contact = {
+		const contact = {
 			relationship: {
 				coding: [
 					{
@@ -182,7 +182,7 @@ function buildPatientResource(data) {
 		};
 
 		if (result.contactPhone != undefined) {
-			var contactTelecom = [
+			const contactTelecom = [
 				{
 					system: 'phone',
 					value: newStringOrUndefined(result.contactPhone)
@@ -195,9 +195,9 @@ function buildPatientResource(data) {
 	}
 
 	// Add Telecom contact details
-	var telecom = [];
+	const telecom = [];
 	if (result.homePhone != undefined) {
-		var homePhone = {
+		const homePhone = {
 			system: newStringOrUndefined('phone'),
 			value: newStringOrUndefined(result.homePhone),
 			use: newStringOrUndefined('home')
@@ -205,7 +205,7 @@ function buildPatientResource(data) {
 		telecom.push(homePhone);
 	}
 	if (result.mobilePhone != undefined) {
-		var mobilePhone = {
+		const mobilePhone = {
 			system: newStringOrUndefined('phone'),
 			value: newStringOrUndefined(result.mobilePhone),
 			use: newStringOrUndefined('mobile')
@@ -213,7 +213,7 @@ function buildPatientResource(data) {
 		telecom.push(mobilePhone);
 	}
 	if (result.email != undefined) {
-		var email = {
+		const email = {
 			system: newStringOrUndefined('email'),
 			value: newStringOrUndefined(result.email)
 		};
@@ -224,9 +224,9 @@ function buildPatientResource(data) {
 	}
 
 	// Add Ethnical Category
-	var extension = [];
+	const extension = [];
 	if (result.ethnicCategoryCode != undefined) {
-		var ethCatExtension = {
+		const ethCatExtension = {
 			url: newStringOrUndefined(
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1'
 			),
@@ -249,9 +249,9 @@ function buildPatientResource(data) {
 	}
 
 	// Add contained GP organization resource
-	var contained = [];
+	const contained = [];
 	if (result.gpIdentifier != undefined) {
-		var containedOrganisation = {
+		const containedOrganisation = {
 			resourceType: 'Organization',
 			id: newStringOrUndefined(result.gpIdentifier),
 			meta: {
@@ -280,10 +280,10 @@ function buildPatientResource(data) {
 	}
 
 	// Add GP
-	var generalPractitioner = [];
+	const generalPractitioner = [];
 	if (result.gpIdentifier != undefined) {
-		var gpReference = {
-			reference: newStringOrUndefined('#' + result.gpIdentifier),
+		const gpReference = {
+			reference: newStringOrUndefined(`#${ result.gpIdentifier}`),
 			display: newStringOrUndefined(result.gpName)
 		};
 		generalPractitioner.push(gpReference);

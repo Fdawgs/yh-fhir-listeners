@@ -11,7 +11,7 @@ function buildEncounterResource(data) {
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-	var resource = {
+	const resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1'
@@ -79,13 +79,13 @@ function buildEncounterResource(data) {
 		getResultSetString(
 			data,
 			'encounterParticipantIndividualCode_discharging'
-		) ==
+		) ===
 			getResultSetString(
 				data,
 				'encounterParticipantIndividualCode_admitting'
 			)
 	) {
-		var participantCombo = {
+		const participantCombo = {
 			type: [
 				{
 					coding: [
@@ -124,7 +124,7 @@ function buildEncounterResource(data) {
 			'encounterParticipantIndividualCode_admitting'
 		) != undefined
 	) {
-		var participantAdmitter = {
+		const participantAdmitter = {
 			type: [
 				{
 					coding: [
@@ -154,7 +154,7 @@ function buildEncounterResource(data) {
 			'encounterParticipantIndividualCode_discharging'
 		) != undefined
 	) {
-		var participantDischarger = {
+		const participantDischarger = {
 			type: [
 				{
 					coding: [
@@ -184,7 +184,7 @@ function buildEncounterResource(data) {
 			'encounterParticipantIndividualCode_opattending'
 		) != undefined
 	) {
-		var participantConsultant = {
+		const participantConsultant = {
 			type: [
 				{
 					coding: [
@@ -247,7 +247,7 @@ function buildEncounterResource(data) {
 		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
 		undefined
 	) {
-		var admissionMethod = {
+		const admissionMethod = {
 			url:
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1',
 			valueCodeableConcept: {
@@ -276,7 +276,7 @@ function buildEncounterResource(data) {
 		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
 		undefined
 	) {
-		var dischargeMethod = {
+		const dischargeMethod = {
 			url:
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1',
 			valueCodeableConcept: {
@@ -354,9 +354,9 @@ function buildEncounterResource(data) {
 
 	resource.subject = {
 		reference:
-			$cfg('apiUrl') +
-			'/r3/Patient/' +
-			getResultSetString(data, 'subjectReference')
+			`${$cfg('apiUrl') 
+			}/r3/Patient/${ 
+			getResultSetString(data, 'subjectReference')}`
 	};
 
 	return resource;

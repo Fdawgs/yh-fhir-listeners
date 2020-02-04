@@ -11,7 +11,7 @@ function buildMedicationStatementResource(data) {
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-	var resource = {
+	const resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1'
@@ -27,14 +27,14 @@ function buildMedicationStatementResource(data) {
 
 	resource.medicationReference = {
 		reference: newStringOrUndefined(
-			'#' + getResultSetString(data, 'medicationId')
+			`#${ getResultSetString(data, 'medicationId')}`
 		)
 	};
 
 	// Add contained Medication resource
-	var contained = [];
+	const contained = [];
 	if (getResultSetString(data, 'medicationId') != undefined) {
-		var containedMedication = {
+		const containedMedication = {
 			resourceType: 'Medication',
 			id: getResultSetString(data, 'medicationId'),
 			code: {
@@ -70,8 +70,8 @@ function buildMedicationStatementResource(data) {
 	}
 
 	// Add dosages
-	var dosage = [];
-	var dosageObject = {
+	const dosage = [];
+	const dosageObject = {
 		patientInstruction: newStringOrUndefined(
 			getResultSetString(data, 'medstatDosagePatientinstruction')
 		),
@@ -155,9 +155,9 @@ function buildMedicationStatementResource(data) {
 
 	resource.subject = {
 		reference:
-			$cfg('apiUrl') +
-			'/r3/Patient/' +
-			getResultSetString(data, 'medstatSubjectReference')
+			`${$cfg('apiUrl') 
+			}/r3/Patient/${ 
+			getResultSetString(data, 'medstatSubjectReference')}`
 	};
 	// Hard-coded as TrakCare doesn't record whether a patient has taken medication
 	resource.taken = 'unk';

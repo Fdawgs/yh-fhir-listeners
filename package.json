@@ -7,6 +7,7 @@
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"license": "MIT",
 	"scripts": {
+		"build": "babel src --out-dir dist --ignore \"src/sql/\"",
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
 		"lint": "eslint src/**/*.js",
 		"prettier": "prettier ** --write",
@@ -23,6 +24,10 @@
 		"useTabs": true
 	},
 	"devDependencies": {
+		"@babel/cli": "^7.8.4",
+		"@babel/core": "^7.8.4",
+		"@babel/node": "^7.8.4",
+		"@babel/preset-env": "^7.8.4",
 		"@commitlint/config-conventional": "^8.3.4",
 		"conventional-changelog-cli": "^2.0.31",
 		"eslint": "^6.8.0",

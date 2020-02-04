@@ -11,7 +11,7 @@ function buildFlagResource(data) {
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-	var resource = {
+	const resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1'
@@ -46,7 +46,7 @@ function buildFlagResource(data) {
 	};
 
 	if (getResultSetString(data, 'flagCodeCodingCode') != undefined) {
-		var ydhCode = {
+		const ydhCode = {
 			system: 'https://trakcare.ydh.nhs.uk',
 			code: newStringOrUndefined(
 				getResultSetString(data, 'flagCodeCodingCode')
@@ -59,7 +59,7 @@ function buildFlagResource(data) {
 	}
 
 	if (getResultSetString(data, 'flagCodeCodingSnomedCode') != undefined) {
-		var snomedCode = {
+		const snomedCode = {
 			system: 'http://snomed.info/sct',
 			code: newStringOrUndefined(
 				getResultSetString(data, 'flagCodeCodingSnomedCode')
@@ -89,9 +89,9 @@ function buildFlagResource(data) {
 
 	resource.subject = {
 		reference:
-			$cfg('apiUrl') +
-			'/r3/Patient/' +
-			getResultSetString(data, 'flagSubjectReference')
+			`${$cfg('apiUrl') 
+			}/r3/Patient/${ 
+			getResultSetString(data, 'flagSubjectReference')}`
 	};
 
 	return resource;
