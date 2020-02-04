@@ -50,7 +50,7 @@ function buildEncounterResource(data) {
 
 	resource.type = [];
 
-	var emptyType = {
+	const emptyType = {
 		coding: [
 			{
 				system: 'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
@@ -80,8 +80,8 @@ function buildEncounterResource(data) {
 		getResultSetString(data, 'encounterClassCode') != undefined &&
 		getResultSetString(data, 'encounterClassCode') == 'IMP'
 	) {
-		var admType = JSON.parse(JSON.stringify(emptyType));
-		var disType = JSON.parse(JSON.stringify(emptyType));
+		const admType = JSON.parse(JSON.stringify(emptyType));
+		const disType = JSON.parse(JSON.stringify(emptyType));
 
 		if (getResultSetString(data, 'encounterTypeCodeAdm') != undefined) {
 			admType.coding[0].code = newStringOrUndefined(
@@ -138,7 +138,7 @@ function buildEncounterResource(data) {
 			}
 		}
 	} else {
-		var outType = JSON.parse(JSON.stringify(emptyType));
+		const outType = JSON.parse(JSON.stringify(emptyType));
 		if (getResultSetString(data, 'encounterTypeCode') != undefined) {
 			outType.coding[0].code = newStringOrUndefined(
 				getResultSetString(data, 'encounterTypeCode')
@@ -217,7 +217,7 @@ function buildEncounterResource(data) {
 				'encounterParticipantIndividualCode_admitting'
 			) != undefined
 		) {
-			var participantAdmitter = {
+			const participantAdmitter = {
 				type: [
 					{
 						coding: [
@@ -251,7 +251,7 @@ function buildEncounterResource(data) {
 				'encounterParticipantIndividualCode_discharging'
 			) != undefined
 		) {
-			var participantDischarger = {
+			const participantDischarger = {
 				type: [
 					{
 						coding: [
@@ -461,7 +461,7 @@ function buildEncounterResource(data) {
 	) {
 		resource.location = [];
 
-		var emptyLocation = {
+		const emptyLocation = {
 			location: {
 				identifier: {
 					value: undefined
@@ -479,7 +479,7 @@ function buildEncounterResource(data) {
 				undefined &&
 			typeof resource.period.start !== 'undefined'
 		) {
-			var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
+			const admittingWard = JSON.parse(JSON.stringify(emptyLocation));
 
 			admittingWard.location.identifier.value = newStringOrUndefined(
 				getResultSetString(data, 'encounterLocation1Identifier')
@@ -497,7 +497,7 @@ function buildEncounterResource(data) {
 				undefined &&
 			typeof resource.period.end !== 'undefined'
 		) {
-			var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
+			const dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
 
 			dischargeWard.location.identifier.value = newStringOrUndefined(
 				getResultSetString(data, 'encounterLocation2Identifier')

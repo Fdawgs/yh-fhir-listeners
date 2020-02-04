@@ -34,14 +34,69 @@ function buildEncounterResource(data) {
     };
   }
 
-  if (getResultSetString(data, 'encounterTypeCode') != undefined) {
-    resource.type = {
-      coding: [{
-        system: 'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
-        code: newStringOrUndefined(getResultSetString(data, 'encounterTypeCode')),
-        display: newStringOrUndefined(getResultSetString(data, 'encounterTypeDesc'))
-      }]
-    };
+  resource.type = [];
+  var emptyType = {
+    coding: [{
+      system: 'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
+      code: undefined,
+      display: undefined
+    }],
+    extension: [{
+      url: 'https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1',
+      valueCodeableConcept: {
+        coding: [{
+          system: 'https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1',
+          code: undefined,
+          display: undefined
+        }]
+      }
+    }]
+  };
+
+  if (getResultSetString(data, 'encounterClassCode') != undefined && getResultSetString(data, 'encounterClassCode') == 'IMP') {
+    var admType = JSON.parse(JSON.stringify(emptyType));
+    var disType = JSON.parse(JSON.stringify(emptyType));
+
+    if (getResultSetString(data, 'encounterTypeCodeAdm') != undefined) {
+      admType.coding[0].code = newStringOrUndefined(getResultSetString(data, 'encounterTypeCodeAdm'));
+      admType.coding[0].display = newStringOrUndefined(getResultSetString(data, 'encounterTypeDescAdm'));
+      admType.extension[0].valueCodeableConcept.coding[0].code = 'ADM';
+      admType.extension[0].valueCodeableConcept.coding[0].display = 'Admitting';
+      resource.type.push(admType);
+    } else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+      admType.coding[0].code = newStringOrUndefined(getResultSetString(data, 'encounterTypeCode'));
+      admType.coding[0].display = newStringOrUndefined(getResultSetString(data, 'encounterTypeDesc'));
+      delete admType.extension;
+      resource.type.push(admType);
+    }
+
+    if (getResultSetString(data, 'encounterTypeCodeDis') != undefined) {
+      disType.coding[0].code = newStringOrUndefined(getResultSetString(data, 'encounterTypeCodeDis'));
+      disType.coding[0].display = newStringOrUndefined(getResultSetString(data, 'encounterTypeDescDis'));
+      disType.extension[0].valueCodeableConcept.coding[0].code = 'DIS';
+      disType.extension[0].valueCodeableConcept.coding[0].display = 'Discharging';
+      resource.type.push(disType);
+    } else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+      disType.coding[0].code = newStringOrUndefined(getResultSetString(data, 'encounterTypeCode'));
+      disType.coding[0].display = newStringOrUndefined(getResultSetString(data, 'encounterTypeDesc'));
+      delete disType.extension;
+      resource.type.push(disType);
+    }
+
+    if (resource.type.length > 1) {
+      if (JSON.stringify(resource.type[0]) == JSON.stringify(resource.type[1])) {
+        delete resource.type[1];
+      }
+    }
+  } else {
+    var outType = JSON.parse(JSON.stringify(emptyType));
+
+    if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+      outType.coding[0].code = newStringOrUndefined(getResultSetString(data, 'encounterTypeCode'));
+      outType.coding[0].display = newStringOrUndefined(getResultSetString(data, 'encounterTypeDesc'));
+      delete outType.extension;
+      resource.type.push(outType);
+    }
   } // Add participants
 
 
@@ -63,42 +118,56 @@ function buildEncounterResource(data) {
         }]
       }],
       individual: {
-        identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
-        display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
+        identifier: {
+          value: getResultSetString(data, 'encounterParticipantIndividualCode_admitting')
+        },
+        display: getResultSetString(data, 'encounterParticipantIndividualDisplay_admitting')
       }
     };
     resource.participant.push(participantCombo);
-  } else if (getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined) {
-    var participantAdmitter = {
-      type: [{
-        coding: [{
-          system: 'http://hl7.org/fhir/v3/ParticipationType',
-          code: 'ADM',
-          display: 'admitter'
-        }]
-      }],
-      individual: {
-        identifier: getResultSetString(data, 'encounterParticipantIndividualCode_admitting'),
-        display: getResultSetString(data, 'encounterParticipantIndividualDesc_admitting')
-      }
-    };
-    resource.participant.push(participantAdmitter);
-  } else if (getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined) {
-    var participantDischarger = {
-      type: [{
-        coding: [{
-          system: 'http://hl7.org/fhir/v3/ParticipationType',
-          code: 'DIS',
-          display: 'discharger'
-        }]
-      }],
-      individual: {
-        identifier: getResultSetString(data, 'encounterParticipantIndividualCode_discharging'),
-        display: getResultSetString(data, 'encounterParticipantIndividualDesc_discharging')
-      }
-    };
-    resource.participant.push(participantDischarger);
-  } else if (getResultSetString(data, 'encounterParticipantIndividualCode_opattending') != undefined) {
+  }
+
+  if (resource.participant.length == 0) {
+    if (getResultSetString(data, 'encounterParticipantIndividualCode_admitting') != undefined) {
+      var participantAdmitter = {
+        type: [{
+          coding: [{
+            system: 'http://hl7.org/fhir/v3/ParticipationType',
+            code: 'ADM',
+            display: 'admitter'
+          }]
+        }],
+        individual: {
+          identifier: {
+            value: getResultSetString(data, 'encounterParticipantIndividualCode_admitting')
+          },
+          display: getResultSetString(data, 'encounterParticipantIndividualDisplay_admitting')
+        }
+      };
+      resource.participant.push(participantAdmitter);
+    }
+
+    if (getResultSetString(data, 'encounterParticipantIndividualCode_discharging') != undefined) {
+      var participantDischarger = {
+        type: [{
+          coding: [{
+            system: 'http://hl7.org/fhir/v3/ParticipationType',
+            code: 'DIS',
+            display: 'discharger'
+          }]
+        }],
+        individual: {
+          identifier: {
+            value: getResultSetString(data, 'encounterParticipantIndividualCode_discharging')
+          },
+          display: getResultSetString(data, 'encounterParticipantIndividualDisplay_discharging')
+        }
+      };
+      resource.participant.push(participantDischarger);
+    }
+  }
+
+  if (getResultSetString(data, 'encounterParticipantIndividualCode_opattending') != undefined) {
     var participantConsultant = {
       type: [{
         coding: [{
@@ -109,7 +178,7 @@ function buildEncounterResource(data) {
       }],
       individual: {
         identifier: getResultSetString(data, 'encounterParticipantIndividualCode_opattending'),
-        display: getResultSetString(data, 'encounterParticipantIndividualDesc_opattending')
+        display: getResultSetString(data, 'encounterParticipantIndividualDisplay_opattending')
       }
     };
     resource.participant.push(participantConsultant);
@@ -178,6 +247,39 @@ function buildEncounterResource(data) {
         display: newStringOrUndefined(getResultSetString(data, 'encounterHospitalizationDischargedispositionCodingDesc'))
       }]
     };
+  } // Add location details
+
+
+  if (getResultSetString(data, 'encounterClassCode') != undefined && getResultSetString(data, 'encounterClassCode') == 'IMP') {
+    resource.location = [];
+    var emptyLocation = {
+      location: {
+        identifier: {
+          value: undefined
+        },
+        display: undefined
+      },
+      period: {
+        start: undefined,
+        end: undefined
+      }
+    };
+
+    if (getResultSetString(data, 'encounterLocation1Identifier') != undefined && typeof resource.period.start !== 'undefined') {
+      var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
+      admittingWard.location.identifier.value = newStringOrUndefined(getResultSetString(data, 'encounterLocation1Identifier'));
+      admittingWard.location.display = newStringOrUndefined(getResultSetString(data, 'encounterLocation1Display'));
+      admittingWard.period.start = resource.period.start;
+      resource.location.push(admittingWard);
+    }
+
+    if (getResultSetString(data, 'encounterLocation2Identifier') != undefined && typeof resource.period.end !== 'undefined') {
+      var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
+      dischargeWard.location.identifier.value = newStringOrUndefined(getResultSetString(data, 'encounterLocation2Identifier'));
+      dischargeWard.location.display = newStringOrUndefined(getResultSetString(data, 'encounterLocation2Display'));
+      dischargeWard.period.end = resource.period.end;
+      resource.location.push(dischargeWard);
+    }
   }
 
   resource.subject = {
