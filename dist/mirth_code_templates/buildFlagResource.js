@@ -7,10 +7,12 @@
 	@return {Object} Flag FHIR resource.
  */
 function buildFlagResource(data) {
+	var result = getResultSet(data);
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
+
 	var resource = {
 		meta: {
 			profile: [
@@ -19,21 +21,17 @@ function buildFlagResource(data) {
 		},
 		resourceType: 'Flag'
 	};
-	resource.id = newStringOrUndefined(getResultSetString(data, 'flagId'));
-	resource.status = newStringOrUndefined(
-		getResultSetString(data, 'flagStatusCode')
-	);
+	resource.id = newStringOrUndefined(result.flagId);
+	resource.status = newStringOrUndefined(result.flagStatusCode);
 
-	if (getResultSetString(data, 'flagCategoryCodingCode') != undefined) {
+	if (result.flagCategoryCodingCode != undefined) {
 		resource.category = {
 			coding: [
 				{
 					system: 'https://trakcare.ydh.nhs.uk',
-					code: newStringOrUndefined(
-						getResultSetString(data, 'flagCategoryCodingCode')
-					),
+					code: newStringOrUndefined(result.flagCategoryCodingCode),
 					display: newStringOrUndefined(
-						getResultSetString(data, 'flagCategoryCodingDisplay')
+						result.flagCategoryCodingDisplay
 					)
 				}
 			]
@@ -44,28 +42,20 @@ function buildFlagResource(data) {
 		coding: []
 	};
 
-	if (getResultSetString(data, 'flagCodeCodingCode') != undefined) {
+	if (result.flagCodeCodingCode != undefined) {
 		var ydhCode = {
 			system: 'https://trakcare.ydh.nhs.uk',
-			code: newStringOrUndefined(
-				getResultSetString(data, 'flagCodeCodingCode')
-			),
-			display: newStringOrUndefined(
-				getResultSetString(data, 'flagCodeCodingDisplay')
-			)
+			code: newStringOrUndefined(result.flagCodeCodingCode),
+			display: newStringOrUndefined(result.flagCodeCodingDisplay)
 		};
 		resource.code.coding.push(ydhCode);
 	}
 
-	if (getResultSetString(data, 'flagCodeCodingSnomedCode') != undefined) {
+	if (result.flagCodeCodingSnomedCode != undefined) {
 		var snomedCode = {
 			system: 'http://snomed.info/sct',
-			code: newStringOrUndefined(
-				getResultSetString(data, 'flagCodeCodingSnomedCode')
-			),
-			display: newStringOrUndefined(
-				getResultSetString(data, 'flagCodeCodingSnomedDisplay')
-			)
+			code: newStringOrUndefined(result.flagCodeCodingSnomedCode),
+			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay)
 		};
 		resource.code.coding.push(snomedCode);
 	}
@@ -73,25 +63,25 @@ function buildFlagResource(data) {
 	resource.period = {};
 
 	if (
-		getResultSetString(data, 'periodStart') != undefined &&
-		getResultSetString(data, 'periodStart').substring(0, 1) != 'T' &&
-		getResultSetString(data, 'periodStart').substring(0, 4) != '1900'
+		result.periodStart != undefined &&
+		result.periodStart.substring(0, 1) != 'T' &&
+		result.periodStart.substring(0, 4) != '1900'
 	) {
-		resource.period.start = getResultSetString(data, 'periodStart');
+		resource.period.start = result.periodStart;
 	}
 
 	if (
-		getResultSetString(data, 'periodStart') != undefined &&
-		getResultSetString(data, 'periodStart').substring(0, 1) != 'T' &&
-		getResultSetString(data, 'periodStart').substring(0, 4) != '1900'
+		result.periodStart != undefined &&
+		result.periodStart.substring(0, 1) != 'T' &&
+		result.periodStart.substring(0, 4) != '1900'
 	) {
-		resource.period.end = getResultSetString(data, 'periodStart');
+		resource.period.end = result.periodStart;
 	}
 
 	resource.subject = {
 		reference: ''
 			.concat($cfg('apiUrl'), '/r3/Patient/')
-			.concat(getResultSetString(data, 'flagSubjectReference'))
+			.concat(result.flagSubjectReference)
 	};
 	return resource;
 }
