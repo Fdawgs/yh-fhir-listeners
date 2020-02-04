@@ -11,7 +11,7 @@ function buildAllergyIntoleranceResource(data) {
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-	var resource = {
+	const resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1'
@@ -36,7 +36,7 @@ function buildAllergyIntoleranceResource(data) {
 
 	// Very unlikely that an allergy record will have multiple components like this
 	// but better to be safe than sorry
-	var result = [];
+	let result = [];
 	result.push(
 		newStringOrUndefined(getResultSetString(data, 'allergyGroupDesc'))
 	);
@@ -74,9 +74,9 @@ function buildAllergyIntoleranceResource(data) {
 
 	resource.patient = {
 		reference:
-			$cfg('apiUrl') +
-			'/r3/Patient/' +
-			getResultSetString(data, 'patientReference')
+			`${$cfg('apiUrl') 
+			}/r3/Patient/${ 
+			getResultSetString(data, 'patientReference')}`
 	};
 
 	resource.clinicalStatus = newStringOrUndefined(

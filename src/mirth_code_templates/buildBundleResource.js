@@ -7,7 +7,7 @@
 	@return {Object} Bundle FHIR resource.
  */
 function buildBundleResource(requestUrl) {
-	var resource = {
+	const resource = {
 		resourceType: newStringOrUndefined('Bundle'),
 		type: newStringOrUndefined('searchset'),
 		total: 0,
@@ -16,7 +16,7 @@ function buildBundleResource(requestUrl) {
 	};
 	// Add link URL
 	if (requestUrl) {
-		var linkEntry = {
+		const linkEntry = {
 			relation: newStringOrUndefined('self'),
 			url: newStringOrUndefined(requestUrl)
 		};
