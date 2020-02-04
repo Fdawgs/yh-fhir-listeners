@@ -21,8 +21,8 @@ With those in place you can fork the repo and clone it, and then run `yarn insta
 
 ### Development Workflow
 
-Mirth Connect uses the [Rhino Engine](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) which supports a select number of EcmaScript ES6/ES2015 features.
-`.eslintrc.json` has ESLint rules relating to the features that Mirth Connect doesn't support turned off.
+Mirth Connect uses the [Rhino Engine](https://developer.mozilla.org/en-US/docs/Mozilla/Projects/Rhino) that supports a select number of EcmaScript ES6/ES2015 features.
+`.eslintrc.json` has ESLint rules relating to the features that Mirth Connect does not support turned off.
 The channel code is transcompiled to be backwards compatible with Mirth Connect using [Babel](https://babeljs.io/).
 
 The workflow steps are as follows:
