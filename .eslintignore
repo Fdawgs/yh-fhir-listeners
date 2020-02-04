@@ -1,0 +1,6 @@
+# blacklist all files
+*
+
+# only format js files in src
+!*/
+!src/**/*.js
