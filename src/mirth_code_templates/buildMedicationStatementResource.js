@@ -7,6 +7,8 @@
 	@return {Object} MedicationStatement FHIR resource.
  */
 function buildMedicationStatementResource(data) {
+	const result = getResultSet(data);
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
@@ -20,45 +22,38 @@ function buildMedicationStatementResource(data) {
 		resourceType: 'MedicationStatement'
 	};
 
-	resource.id = newStringOrUndefined(getResultSetString(data, 'medstatId'));
-	resource.status = newStringOrUndefined(
-		getResultSetString(data, 'medstatStatusCode')
-	);
+	resource.id = newStringOrUndefined(result.medstatId);
+	resource.status = newStringOrUndefined(result.medstatStatusCode);
 
 	resource.medicationReference = {
-		reference: newStringOrUndefined(
-			`#${ getResultSetString(data, 'medicationId')}`
-		)
+		reference: newStringOrUndefined(`#${result.medicationId}`)
 	};
 
 	// Add contained Medication resource
 	const contained = [];
-	if (getResultSetString(data, 'medicationId') != undefined) {
+	if (result.medicationId != undefined) {
 		const containedMedication = {
 			resourceType: 'Medication',
-			id: getResultSetString(data, 'medicationId'),
+			id: result.medicationId,
 			code: {
 				coding: [
 					{
 						code: newStringOrUndefined(
-							getResultSetString(data, 'medicationCodeCodingCode')
+							result.medicationCodeCodingCode
 						),
 						display: newStringOrUndefined(
-							getResultSetString(
-								data,
-								'medicationCodeCodingDisplay'
-							)
+							result.medicationCodeCodingDisplay
 						)
 					}
 				],
-				text: getResultSetString(data, 'medicationCodeText')
+				text: result.medicationCodeText
 			}
 		};
 		contained.push(containedMedication);
 
 		if (
-			getResultSetString(data, 'medicationCodeCodingCode') != undefined &&
-			getResultSetString(data, 'medicationCodeCodingDisplay') != undefined
+			result.medicationCodeCodingCode != undefined &&
+			result.medicationCodeCodingDisplay != undefined
 		) {
 			containedMedication.code.coding[0].system =
 				'http://snomed.info/sct';
@@ -73,50 +68,36 @@ function buildMedicationStatementResource(data) {
 	const dosage = [];
 	const dosageObject = {
 		patientInstruction: newStringOrUndefined(
-			getResultSetString(data, 'medstatDosagePatientinstruction')
+			result.medstatDosagePatientinstruction
 		),
 		route: {
-			text: newStringOrUndefined(
-				getResultSetString(data, 'medstatDosageRouteText')
-			)
+			text: newStringOrUndefined(result.medstatDosageRouteText)
 		}
 	};
 
 	if (
-		getResultSetString(data, 'medstatDosageDoseQuantityValue') !=
-			undefined &&
-		getResultSetString(data, 'medstatDosageDoseQuantityUnit') != undefined
+		result.medstatDosageDoseQuantityValue != undefined &&
+		result.medstatDosageDoseQuantityUnit != undefined
 	) {
 		dosageObject.doseQuantity = {
-			value: newStringOrUndefined(
-				getResultSetString(data, 'medstatDosageDoseQuantityValue')
-			),
+			value: newStringOrUndefined(result.medstatDosageDoseQuantityValue),
 			unit: newStringOrUndefined(
-				getResultSetString(data, 'medstatDosageDoseQuantityUnit')
+				result.medstatDosageDoseQuantityUnit
 			).toLowerCase()
 		};
 	}
 	if (
-		getResultSetString(data, 'medstatDosageTimingRepeatDuration') !=
-			undefined &&
-		getResultSetString(data, 'medstatDosageTimingRepeatDurationUnit') !=
-			undefined &&
-		getResultSetString(data, 'medstatDosageTimingRepeatDurationUnit') !=
-			'DO'
+		result.medstatDosageTimingRepeatDuration != undefined &&
+		result.medstatDosageTimingRepeatDurationUnit != undefined &&
+		result.medstatDosageTimingRepeatDurationUnit != 'DO'
 	) {
 		dosageObject.timing = {
 			repeat: {
 				duration: newStringOrUndefined(
-					getResultSetString(
-						data,
-						'medstatDosageTimingRepeatDuration'
-					)
+					result.medstatDosageTimingRepeatDuration
 				),
 				durationUnit: newStringOrUndefined(
-					getResultSetString(
-						data,
-						'medstatDosageTimingRepeatDurationUnit'
-					)
+					result.medstatDosageTimingRepeatDurationUnit
 				).toLowerCase()
 			}
 		};
@@ -129,35 +110,24 @@ function buildMedicationStatementResource(data) {
 
 	resource.effectivePeriod = {};
 	if (
-		getResultSetString(data, 'medstatEffectiveStart') != undefined &&
-		getResultSetString(data, 'medstatEffectiveStart').substring(0, 1) !=
-			'T' &&
-		getResultSetString(data, 'medstatEffectiveStart').substring(0, 4) !=
-			'1900'
+		result.medstatEffectiveStart != undefined &&
+		result.medstatEffectiveStart.substring(0, 1) != 'T' &&
+		result.medstatEffectiveStart.substring(0, 4) != '1900'
 	) {
-		resource.effectivePeriod.start = getResultSetString(
-			data,
-			'medstatEffectiveStart'
-		);
+		resource.effectivePeriod.start = result.medstatEffectiveStart;
 	}
 	if (
-		getResultSetString(data, 'medstatEffectiveEnd') != undefined &&
-		getResultSetString(data, 'medstatEffectiveEnd').substring(0, 1) !=
-			'T' &&
-		getResultSetString(data, 'medstatEffectiveEnd').substring(0, 4) !=
-			'1900'
+		result.medstatEffectiveEnd != undefined &&
+		result.medstatEffectiveEnd.substring(0, 1) != 'T' &&
+		result.medstatEffectiveEnd.substring(0, 4) != '1900'
 	) {
-		resource.effectivePeriod.end = getResultSetString(
-			data,
-			'medstatEffectiveEnd'
-		);
+		resource.effectivePeriod.end = result.medstatEffectiveEnd;
 	}
 
 	resource.subject = {
-		reference:
-			`${$cfg('apiUrl') 
-			}/r3/Patient/${ 
-			getResultSetString(data, 'medstatSubjectReference')}`
+		reference: `${$cfg('apiUrl')}/r3/Patient/${
+			result.medstatSubjectReference
+		}`
 	};
 	// Hard-coded as TrakCare doesn't record whether a patient has taken medication
 	resource.taken = 'unk';
