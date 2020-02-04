@@ -7,10 +7,12 @@
 	@return {Object} Encounter FHIR resource.
  */
 function buildEncounterResource(data) {
+	var result = getResultSet(data);
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
+
 	var resource = {
 		meta: {
 			profile: [
@@ -19,30 +21,22 @@ function buildEncounterResource(data) {
 		},
 		resourceType: 'Encounter'
 	};
-	resource.id = newStringOrUndefined(
-		getResultSetString(data, 'encounterIdentifier')
-	);
-	resource.status = newStringOrUndefined(
-		getResultSetString(data, 'encounterStatusMapped')
-	); // Add meta data
+	resource.id = newStringOrUndefined(result.encounterIdentifier);
+	resource.status = newStringOrUndefined(result.encounterStatusMapped); // Add meta data
 
 	if (
-		getResultSetString(data, 'lastUpdated') != undefined &&
-		getResultSetString(data, 'lastUpdated').substring(0, 1) != 'T' &&
-		getResultSetString(data, 'lastUpdated').substring(0, 4) != '1900'
+		result.lastUpdated != undefined &&
+		result.lastUpdated.substring(0, 1) != 'T' &&
+		result.lastUpdated.substring(0, 4) != '1900'
 	) {
-		resource.meta.lastUpdated = getResultSetString(data, 'lastUpdated');
+		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
-	if (getResultSetString(data, 'encounterClassDesc') != undefined) {
+	if (result.encounterClassDesc != undefined) {
 		resource['class'] = {
 			system: 'http://hl7.org/fhir/v3/ActEncounterCode',
-			code: newStringOrUndefined(
-				getResultSetString(data, 'encounterClassCode')
-			),
-			display: newStringOrUndefined(
-				getResultSetString(data, 'encounterClassDesc')
-			)
+			code: newStringOrUndefined(result.encounterClassCode),
+			display: newStringOrUndefined(result.encounterClassDesc)
 		};
 	}
 
@@ -74,51 +68,51 @@ function buildEncounterResource(data) {
 	};
 
 	if (
-		getResultSetString(data, 'encounterClassCode') != undefined &&
-		getResultSetString(data, 'encounterClassCode') == 'IMP'
+		result.encounterClassCode != undefined &&
+		result.encounterClassCode == 'IMP'
 	) {
 		var admType = JSON.parse(JSON.stringify(emptyType));
 		var disType = JSON.parse(JSON.stringify(emptyType));
 
-		if (getResultSetString(data, 'encounterTypeCodeAdm') != undefined) {
+		if (result.encounterTypeCodeAdm != undefined) {
 			admType.coding[0].code = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeCodeAdm')
+				result.encounterTypeCodeAdm
 			);
 			admType.coding[0].display = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeDescAdm')
+				result.encounterTypeDescAdm
 			);
 			admType.extension[0].valueCodeableConcept.coding[0].code = 'ADM';
 			admType.extension[0].valueCodeableConcept.coding[0].display =
 				'Admitting';
 			resource.type.push(admType);
-		} else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+		} else if (result.encounterTypeCode != undefined) {
 			admType.coding[0].code = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeCode')
+				result.encounterTypeCode
 			);
 			admType.coding[0].display = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeDesc')
+				result.encounterTypeDesc
 			);
 			delete admType.extension;
 			resource.type.push(admType);
 		}
 
-		if (getResultSetString(data, 'encounterTypeCodeDis') != undefined) {
+		if (result.encounterTypeCodeDis != undefined) {
 			disType.coding[0].code = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeCodeDis')
+				result.encounterTypeCodeDis
 			);
 			disType.coding[0].display = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeDescDis')
+				result.encounterTypeDescDis
 			);
 			disType.extension[0].valueCodeableConcept.coding[0].code = 'DIS';
 			disType.extension[0].valueCodeableConcept.coding[0].display =
 				'Discharging';
 			resource.type.push(disType);
-		} else if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+		} else if (result.encounterTypeCode != undefined) {
 			disType.coding[0].code = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeCode')
+				result.encounterTypeCode
 			);
 			disType.coding[0].display = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeDesc')
+				result.encounterTypeDesc
 			);
 			delete disType.extension;
 			resource.type.push(disType);
@@ -135,12 +129,12 @@ function buildEncounterResource(data) {
 	} else {
 		var outType = JSON.parse(JSON.stringify(emptyType));
 
-		if (getResultSetString(data, 'encounterTypeCode') != undefined) {
+		if (result.encounterTypeCode != undefined) {
 			outType.coding[0].code = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeCode')
+				result.encounterTypeCode
 			);
 			outType.coding[0].display = newStringOrUndefined(
-				getResultSetString(data, 'encounterTypeDesc')
+				result.encounterTypeDesc
 			);
 			delete outType.extension;
 			resource.type.push(outType);
@@ -150,22 +144,10 @@ function buildEncounterResource(data) {
 	resource.participant = [];
 
 	if (
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualCode_admitting'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualCode_discharging'
-		) != undefined &&
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualCode_discharging'
-		) ===
-			getResultSetString(
-				data,
-				'encounterParticipantIndividualCode_admitting'
-			)
+		result.encounterParticipantIndividualCode_admitting != undefined &&
+		result.encounterParticipantIndividualCode_discharging != undefined &&
+		result.encounterParticipantIndividualCode_discharging ===
+			result.encounterParticipantIndividualCode_admitting
 	) {
 		var participantCombo = {
 			type: [
@@ -190,27 +172,16 @@ function buildEncounterResource(data) {
 			],
 			individual: {
 				identifier: {
-					value: getResultSetString(
-						data,
-						'encounterParticipantIndividualCode_admitting'
-					)
+					value: result.encounterParticipantIndividualCode_admitting
 				},
-				display: getResultSetString(
-					data,
-					'encounterParticipantIndividualDisplay_admitting'
-				)
+				display: result.encounterParticipantIndividualDisplay_admitting
 			}
 		};
 		resource.participant.push(participantCombo);
 	}
 
 	if (resource.participant.length == 0) {
-		if (
-			getResultSetString(
-				data,
-				'encounterParticipantIndividualCode_admitting'
-			) != undefined
-		) {
+		if (result.encounterParticipantIndividualCode_admitting != undefined) {
 			var participantAdmitter = {
 				type: [
 					{
@@ -226,25 +197,18 @@ function buildEncounterResource(data) {
 				],
 				individual: {
 					identifier: {
-						value: getResultSetString(
-							data,
-							'encounterParticipantIndividualCode_admitting'
-						)
+						value:
+							result.encounterParticipantIndividualCode_admitting
 					},
-					display: getResultSetString(
-						data,
-						'encounterParticipantIndividualDisplay_admitting'
-					)
+					display:
+						result.encounterParticipantIndividualDisplay_admitting
 				}
 			};
 			resource.participant.push(participantAdmitter);
 		}
 
 		if (
-			getResultSetString(
-				data,
-				'encounterParticipantIndividualCode_discharging'
-			) != undefined
+			result.encounterParticipantIndividualCode_discharging != undefined
 		) {
 			var participantDischarger = {
 				type: [
@@ -261,27 +225,18 @@ function buildEncounterResource(data) {
 				],
 				individual: {
 					identifier: {
-						value: getResultSetString(
-							data,
-							'encounterParticipantIndividualCode_discharging'
-						)
+						value:
+							result.encounterParticipantIndividualCode_discharging
 					},
-					display: getResultSetString(
-						data,
-						'encounterParticipantIndividualDisplay_discharging'
-					)
+					display:
+						result.encounterParticipantIndividualDisplay_discharging
 				}
 			};
 			resource.participant.push(participantDischarger);
 		}
 	}
 
-	if (
-		getResultSetString(
-			data,
-			'encounterParticipantIndividualCode_opattending'
-		) != undefined
-	) {
+	if (result.encounterParticipantIndividualCode_opattending != undefined) {
 		var participantConsultant = {
 			type: [
 				{
@@ -295,14 +250,10 @@ function buildEncounterResource(data) {
 				}
 			],
 			individual: {
-				identifier: getResultSetString(
-					data,
-					'encounterParticipantIndividualCode_opattending'
-				),
-				display: getResultSetString(
-					data,
-					'encounterParticipantIndividualDisplay_opattending'
-				)
+				identifier:
+					result.encounterParticipantIndividualCode_opattending,
+				display:
+					result.encounterParticipantIndividualDisplay_opattending
 			}
 		};
 		resource.participant.push(participantConsultant);
@@ -311,41 +262,31 @@ function buildEncounterResource(data) {
 	resource.period = {};
 
 	if (
-		getResultSetString(data, 'encounterPeriodStart') != undefined &&
-		getResultSetString(data, 'encounterPeriodStart').substring(0, 1) !=
-			'T' &&
-		getResultSetString(data, 'encounterPeriodStart').substring(0, 4) !=
-			'1900'
+		result.encounterPeriodStart != undefined &&
+		result.encounterPeriodStart.substring(0, 1) != 'T' &&
+		result.encounterPeriodStart.substring(0, 4) != '1900'
 	) {
-		resource.period.start = getResultSetString(
-			data,
-			'encounterPeriodStart'
-		);
+		resource.period.start = result.encounterPeriodStart;
 	}
 
 	if (
-		getResultSetString(data, 'encounterPeriodEnd') != undefined &&
-		getResultSetString(data, 'encounterPeriodEnd').substring(0, 1) != 'T' &&
-		getResultSetString(data, 'encounterPeriodEnd').substring(0, 4) != '1900'
+		result.encounterPeriodEnd != undefined &&
+		result.encounterPeriodEnd.substring(0, 1) != 'T' &&
+		result.encounterPeriodEnd.substring(0, 4) != '1900'
 	) {
-		resource.period.end = getResultSetString(data, 'encounterPeriodEnd');
+		resource.period.end = result.encounterPeriodEnd;
 	} // Add admission and discharge inpatient details
 
 	resource.hospitalization = {};
 
 	if (
-		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
-			undefined ||
-		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
-			undefined
+		result.encounterAdmissionmethodCodingCode != undefined ||
+		result.encounterDischargemethodCodingCode != undefined
 	) {
 		resource.hospitalization.extension = [];
 	}
 
-	if (
-		getResultSetString(data, 'encounterAdmissionmethodCodingCode') !=
-		undefined
-	) {
+	if (result.encounterAdmissionmethodCodingCode != undefined) {
 		var admissionMethod = {
 			url:
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1',
@@ -354,15 +295,9 @@ function buildEncounterResource(data) {
 					{
 						system:
 							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1',
-						code: getResultSetString(
-							data,
-							'encounterAdmissionmethodCodingCode'
-						),
+						code: result.encounterAdmissionmethodCodingCode,
 						display: newStringOrUndefined(
-							getResultSetString(
-								data,
-								'encounterAdmissionmethodCodingDesc'
-							)
+							result.encounterAdmissionmethodCodingDesc
 						)
 					}
 				]
@@ -371,10 +306,7 @@ function buildEncounterResource(data) {
 		resource.hospitalization.extension.push(admissionMethod);
 	}
 
-	if (
-		getResultSetString(data, 'encounterDischargemethodCodingCode') !=
-		undefined
-	) {
+	if (result.encounterDischargemethodCodingCode != undefined) {
 		var dischargeMethod = {
 			url:
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1',
@@ -383,15 +315,9 @@ function buildEncounterResource(data) {
 					{
 						system:
 							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1',
-						code: getResultSetString(
-							data,
-							'encounterDischargemethodCodingCode'
-						),
+						code: result.encounterDischargemethodCodingCode,
 						display: newStringOrUndefined(
-							getResultSetString(
-								data,
-								'encounterDischargemethodCodingDesc'
-							)
+							result.encounterDischargemethodCodingDesc
 						)
 					}
 				]
@@ -400,26 +326,15 @@ function buildEncounterResource(data) {
 		resource.hospitalization.extension.push(dischargeMethod);
 	}
 
-	if (
-		getResultSetString(
-			data,
-			'encounterHospitalizationAdmitsourceCodingCode'
-		) != undefined
-	) {
+	if (result.encounterHospitalizationAdmitsourceCodingCode != undefined) {
 		resource.hospitalization.admitSource = {
 			coding: [
 				{
 					system:
 						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1',
-					code: getResultSetString(
-						data,
-						'encounterHospitalizationAdmitsourceCodingCode'
-					),
+					code: result.encounterHospitalizationAdmitsourceCodingCode,
 					display: newStringOrUndefined(
-						getResultSetString(
-							data,
-							'encounterHospitalizationAdmitsourceCodingDesc'
-						)
+						result.encounterHospitalizationAdmitsourceCodingDesc
 					)
 				}
 			]
@@ -427,25 +342,18 @@ function buildEncounterResource(data) {
 	}
 
 	if (
-		getResultSetString(
-			data,
-			'encounterHospitalizationDischargedispositionCodingCode'
-		) != undefined
+		result.encounterHospitalizationDischargedispositionCodingCode !=
+		undefined
 	) {
 		resource.hospitalization.dischargeDisposition = {
 			coding: [
 				{
 					system:
 						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1',
-					code: getResultSetString(
-						data,
-						'encounterHospitalizationDischargedispositionCodingCode'
-					),
+					code:
+						result.encounterHospitalizationDischargedispositionCodingCode,
 					display: newStringOrUndefined(
-						getResultSetString(
-							data,
-							'encounterHospitalizationDischargedispositionCodingDesc'
-						)
+						result.encounterHospitalizationDischargedispositionCodingDesc
 					)
 				}
 			]
@@ -453,8 +361,8 @@ function buildEncounterResource(data) {
 	} // Add location details
 
 	if (
-		getResultSetString(data, 'encounterClassCode') != undefined &&
-		getResultSetString(data, 'encounterClassCode') == 'IMP'
+		result.encounterClassCode != undefined &&
+		result.encounterClassCode == 'IMP'
 	) {
 		resource.location = [];
 		var emptyLocation = {
@@ -471,32 +379,30 @@ function buildEncounterResource(data) {
 		};
 
 		if (
-			getResultSetString(data, 'encounterLocation1Identifier') !=
-				undefined &&
+			result.encounterLocation1Identifier != undefined &&
 			typeof resource.period.start !== 'undefined'
 		) {
 			var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
 			admittingWard.location.identifier.value = newStringOrUndefined(
-				getResultSetString(data, 'encounterLocation1Identifier')
+				result.encounterLocation1Identifier
 			);
 			admittingWard.location.display = newStringOrUndefined(
-				getResultSetString(data, 'encounterLocation1Display')
+				result.encounterLocation1Display
 			);
 			admittingWard.period.start = resource.period.start;
 			resource.location.push(admittingWard);
 		}
 
 		if (
-			getResultSetString(data, 'encounterLocation2Identifier') !=
-				undefined &&
+			result.encounterLocation2Identifier != undefined &&
 			typeof resource.period.end !== 'undefined'
 		) {
 			var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
 			dischargeWard.location.identifier.value = newStringOrUndefined(
-				getResultSetString(data, 'encounterLocation2Identifier')
+				result.encounterLocation2Identifier
 			);
 			dischargeWard.location.display = newStringOrUndefined(
-				getResultSetString(data, 'encounterLocation2Display')
+				result.encounterLocation2Display
 			);
 			dischargeWard.period.end = resource.period.end;
 			resource.location.push(dischargeWard);
@@ -506,7 +412,7 @@ function buildEncounterResource(data) {
 	resource.subject = {
 		reference: ''
 			.concat($cfg('apiUrl'), '/r3/Patient/')
-			.concat(getResultSetString(data, 'subjectReference'))
+			.concat(result.subjectReference)
 	};
 	return resource;
 }

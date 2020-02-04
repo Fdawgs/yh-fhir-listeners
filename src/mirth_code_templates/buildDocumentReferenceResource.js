@@ -7,6 +7,7 @@
 	@return {Object} DocumentReference FHIR resource.
  */
 function buildDocumentReferenceResource(data) {
+	const result = getResultSet(data);
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
