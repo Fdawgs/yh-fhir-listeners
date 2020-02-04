@@ -31,7 +31,6 @@ The workflow steps are as follows:
 2. Run `yarn build` to migrate files from `/src` to `/dist` and transcompile the changes
 3. Copy code from `/dist` into Mirth Connect channel and test in Mirth
 
-
 ## Pull Request Checklist
 
 Prior to submitting a pull request back to the main repository, please make sure you have completed the following steps:
