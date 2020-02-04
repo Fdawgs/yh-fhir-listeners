@@ -12,7 +12,6 @@ function buildResourceQuery(type, params) {
 	var firstParams = '';
 	var secondParams = '';
 	var thirdParams = '';
-	var fourthParams = '';
 
 	if (params[0]) {
 		firstParams = 'AND '.concat(params[0]);

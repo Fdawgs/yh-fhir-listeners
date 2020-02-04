@@ -12,7 +12,6 @@ function buildResourceQuery(type, params) {
 	let firstParams = '';
 	let secondParams = '';
 	let thirdParams = '';
-	const fourthParams = '';
 
 	if (params[0]) {
 		firstParams = `AND ${params[0]}`;
