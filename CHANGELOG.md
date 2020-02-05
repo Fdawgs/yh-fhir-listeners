@@ -1,3 +1,8 @@
+## <small>2.2.1 (2020-02-05)</small>
+
+-   fix(patient-res): correct name of gp display column ([8de1e5c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8de1e5c))
+-   fix(res-query): fix case of column name ([4ff1a92](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4ff1a92))
+
 ## 2.2.0 (2020-02-04)
 
 -   feat: add getResultSet function ([df7dc2e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/df7dc2e))

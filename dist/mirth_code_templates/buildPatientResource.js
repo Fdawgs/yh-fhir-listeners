@@ -211,7 +211,7 @@ function buildPatientResource(data) {
 					'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1'
 				]
 			},
-			name: newStringOrUndefined(result.gpName),
+			name: newStringOrUndefined(result.gpDesc),
 			address: [
 				{
 					use: newStringOrUndefined('work'),
@@ -237,7 +237,7 @@ function buildPatientResource(data) {
 	if (result.gpIdentifier != undefined) {
 		var gpReference = {
 			reference: newStringOrUndefined('#'.concat(result.gpIdentifier)),
-			display: newStringOrUndefined(result.gpName)
+			display: newStringOrUndefined(result.gpDesc)
 		};
 		generalPractitioner.push(gpReference);
 	}
