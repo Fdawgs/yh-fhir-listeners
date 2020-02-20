@@ -122,12 +122,11 @@ function buildPatientResource(data) {
 					}
 				]
 			},
-			name: [
-				{
+			name: {
 					use: 'usual',
 					text: newStringOrUndefined(result.contactName)
 				}
-			]
+			
 		};
 
 		if (result.contactPhone != undefined) {
