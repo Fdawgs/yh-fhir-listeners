@@ -1,3 +1,12 @@
+## 2.3.0 (2020-02-24)
+
+-   feat(patient-res): add school code ([722cf5f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/722cf5f))
+-   feat(patient-res): add school contact ([4aa28c3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4aa28c3))
+-   feat(patient-res): add school subquery ([a1a990d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a1a990d))
+-   build(deps-dev): bump eslint-plugin-json from 2.0.1 to 2.1.0 ([2e2a10b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2e2a10b))
+-   fix(patient-res): change contact.name from array to object ([fe1ca5f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fe1ca5f))
+-   docs(flag): add coronavirus / Covid-19 flag code ([52fb8f8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/52fb8f8))
+
 ## <small>2.2.1 (2020-02-05)</small>
 
 -   fix(patient-res): correct name of gp display column ([8de1e5c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8de1e5c))
