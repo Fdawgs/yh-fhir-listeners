@@ -108,10 +108,12 @@ function buildPatientResource(data) {
 			]
 		};
 		resource.identifier.push(nhsIdentifier);
-	} // Add Next of kin contact details
+	}
+
+	resource.contact = []; // Add Next of kin contact details
 
 	if (result.contactName != undefined) {
-		var contact = {
+		var nokContact = {
 			relationship: {
 				coding: [
 					{
@@ -121,12 +123,10 @@ function buildPatientResource(data) {
 					}
 				]
 			},
-			name: [
-				{
-					use: 'usual',
-					text: newStringOrUndefined(result.contactName)
-				}
-			]
+			name: {
+				use: 'usual',
+				text: newStringOrUndefined(result.contactName)
+			}
 		};
 
 		if (result.contactPhone != undefined) {
@@ -136,10 +136,46 @@ function buildPatientResource(data) {
 					value: newStringOrUndefined(result.contactPhone)
 				}
 			];
-			contact.telecom = contactTelecom;
+			nokContact.telecom = contactTelecom;
 		}
 
-		resource.contact = contact;
+		resource.contact.push(nokContact);
+	} // Add school contact details
+
+	if (result.schoolName != undefined) {
+		var schoolContact = {
+			relationship: {
+				coding: [
+					{
+						system: 'https://trakcare.ydh.nhs.uk',
+						code: 'SCH',
+						display: 'School'
+					}
+				]
+			},
+			name: {
+				use: 'usual'
+			},
+			organization: {
+				identifier: {
+					system: 'https://trakcare.ydh.nhs.uk',
+					value: newStringOrUndefined(result.schoolId)
+				},
+				display: newStringOrUndefined(result.schoolName)
+			}
+		};
+
+		if (result.schoolPhone != undefined) {
+			var _contactTelecom = [
+				{
+					system: 'phone',
+					value: newStringOrUndefined(result.schoolPhone)
+				}
+			];
+			schoolContact.telecom = _contactTelecom;
+		}
+
+		resource.contact.push(schoolContact);
 	} // Add Telecom contact details
 
 	var telecom = [];

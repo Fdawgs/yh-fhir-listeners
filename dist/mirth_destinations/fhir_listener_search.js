@@ -523,9 +523,11 @@ try {
 	 */
 
 	if (type == 'patient') {
-		// GET [baseUrl]/Patient?birthdate=[date]
+		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
+		whereArray = [[], [], []]; // GET [baseUrl]/Patient?birthdate=[date]
+
 		if ($('parameters').contains('birthdate')) {
-			whereParts.push(
+			whereArray[0].push(
 				"(patmas.PAPMI_DOB = ''".concat(
 					$('parameters').getParameter('birthdate'),
 					"'')"
@@ -534,7 +536,7 @@ try {
 		} // GET [baseUrl]/Patient?family=[family]
 
 		if ($('parameters').contains('family')) {
-			whereParts.push(
+			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name = ''".concat(
 					$('parameters').getParameter('family'),
 					"'')"
@@ -543,7 +545,7 @@ try {
 		} // GET [baseUrl]/Patient?gender=[code]
 
 		if ($('parameters').contains('gender')) {
-			whereParts.push(
+			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''".concat(
 					$('parameters').getParameter('gender'),
 					"'')"
@@ -552,7 +554,7 @@ try {
 		} // GET [baseUrl]/Patient?given=[given]
 
 		if ($('parameters').contains('given')) {
-			whereParts.push(
+			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''".concat(
 					$('parameters').getParameter('given'),
 					"'')"
@@ -575,8 +577,20 @@ try {
 				).split('|');
 
 				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
-					whereParts.push(
+					whereArray[0].push(
 						"(patmas.PAPMI_ID = ''".concat(
+							identifierParam[1],
+							"'')"
+						)
+					);
+					whereArray[1].push(
+						"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_ID = ''".concat(
+							identifierParam[1],
+							"'')"
+						)
+					);
+					whereArray[2].push(
+						"(NOK_PAPMI_ParRef->PAPMI_ID = ''".concat(
 							identifierParam[1],
 							"'')"
 						)
@@ -587,16 +601,40 @@ try {
 					identifierParam[0] ===
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
-					whereParts.push(
+					whereArray[0].push(
 						"(patmas.PAPMI_No = ''".concat(
+							identifierParam[1],
+							"'')"
+						)
+					);
+					whereArray[1].push(
+						"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''".concat(
+							identifierParam[1],
+							"'')"
+						)
+					);
+					whereArray[2].push(
+						"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
 							identifierParam[1],
 							"'')"
 						)
 					);
 				}
 			} else {
-				whereParts.push(
+				whereArray[0].push(
 					"(patmas.PAPMI_No = ''".concat(
+						$('parameters').getParameter('identifier'),
+						"'')"
+					)
+				);
+				whereArray[1].push(
+					"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''".concat(
+						$('parameters').getParameter('identifier'),
+						"'')"
+					)
+				);
+				whereArray[2].push(
+					"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
 						$('parameters').getParameter('identifier'),
 						"'')"
 					)
@@ -606,7 +644,7 @@ try {
 
 		if ($('parameters').contains('name')) {
 			var name = $('parameters').getParameter('name');
-			whereParts.push(
+			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name = ''"
 					.concat(
 						name,
@@ -615,8 +653,6 @@ try {
 					.concat(name, "'')")
 			);
 		}
-
-		whereArray.push(whereParts);
 	} // Aggregrate all predicates in whereArray and build SQL WHERE clause from it
 
 	var wherePredicates = [];

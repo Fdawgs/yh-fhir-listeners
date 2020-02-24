@@ -125,10 +125,9 @@ function buildPatientResource(data) {
 				]
 			},
 			name: {
-					use: 'usual',
-					text: newStringOrUndefined(result.contactName)
-				}
-			
+				use: 'usual',
+				text: newStringOrUndefined(result.contactName)
+			}
 		};
 
 		if (result.contactPhone != undefined) {
@@ -157,16 +156,15 @@ function buildPatientResource(data) {
 				]
 			},
 			name: {
-					use: 'usual'
+				use: 'usual'
+			},
+			organization: {
+				identifier: {
+					system: 'https://trakcare.ydh.nhs.uk',
+					value: newStringOrUndefined(result.schoolId)
 				},
-				organization: {
-					identifier: {
-						system: 'https://trakcare.ydh.nhs.uk',
-						value: newStringOrUndefined(result.schoolId)
-					},
-					display: newStringOrUndefined(result.schoolName)
-				}
-			
+				display: newStringOrUndefined(result.schoolName)
+			}
 		};
 
 		if (result.schoolPhone != undefined) {
