@@ -41,6 +41,9 @@ SELECT DISTINCT nhsNumber,
 	contactPhone,
 	contactText,
 	dnd.DND,
+	school.schoolName,
+	school.schoolId,
+	school.schoolPhone,
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY(
 		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT
@@ -144,6 +147,17 @@ FROM OPENQUERY(
                     WHERE ALM_Alert_DR->ALERT_Desc IN (''Do not disclose patient address'')
                          AND (ALM_ClosedDate IS NULL
                               OR ALM_ClosedDate < CURRENT_TIMESTAMP)
-
+						 AND ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''5484125''
                     ') AS dnd
-	ON patient.nhsNumber = dnd.DND;
+	ON 1 = 1
+
+	LEFT JOIN OPENQUERY([ENYH-PRD-ANALYTICS],
+                 'SELECT DISTINCT NOK_NonGovOrg_DR->NGO_Code AS schoolId,
+				 		 NOK_NonGovOrg_DR->NGO_Desc AS schoolName,
+						 NOK_NonGovOrg_DR->NGO_Phone AS schoolPhone
+                    FROM PA_NOK
+                   WHERE NOK_Relation_DR->CTRLT_Code = ''SCH''
+					 AND NOK_PAPMI_ParRef->PAPMI_No = ''5484125''
+					 AND NOK_Inactive = ''N''
+                   ') AS school
+	ON 1 = 1 
