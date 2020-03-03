@@ -109,6 +109,37 @@
 						"postalCode": "KT17 2BN"
 					}
 				],
+				"contact": [
+					{
+						"relationship": [
+							{
+								"coding": [
+									{
+										"system": "http://trakcare.ydh.nhs.uk",
+										"code": "SCH",
+										"display": "School"
+									}
+								]
+							}
+						],
+						"name": {
+							"use": "usual"
+						},
+						"telecom": [
+							{
+								"system": "phone",
+								"value": "01460260100"
+							}
+						],
+						"organisation": {
+							"identifier": {
+								"value": "EE136295",
+								"system": "http://trakcare.ydh.nhs.uk"
+							},
+							"display": "Holyrood Academy,Chard"
+						}
+					}
+				],				
 				"maritalStatus": {
 					"coding": [
 						{
