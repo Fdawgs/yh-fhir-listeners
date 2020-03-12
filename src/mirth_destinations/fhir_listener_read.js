@@ -59,7 +59,7 @@ try {
 				data = buildEncounterResource(result);
 				break;
 			case 'flag':
-				date = buildFlagResource(result);
+				data = buildFlagResource(result);
 				break;
 			case 'medicationstatement':
 				data = buildMedicationStatementResource(result);
