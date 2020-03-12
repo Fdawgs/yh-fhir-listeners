@@ -1,3 +1,15 @@
+## <small>2.3.1 (2020-03-12)</small>
+
+-   style: change whitespace indents ([b9f753d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b9f753d))
+-   fix(read): correct misspelled variable ([345f134](https://github.com/Fdawgs/ydh-fhir-listeners/commit/345f134))
+-   chore: add school contact and pregnancy flag to test resources ([9a1e3fd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9a1e3fd))
+-   chore: update lockfile ([7eaf5dc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7eaf5dc))
+-   build(deps-dev): bump @babel/core from 7.8.4 to 7.8.6 ([6d619d4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6d619d4))
+-   build(deps-dev): bump @babel/core from 7.8.6 to 7.8.7 ([48a4404](https://github.com/Fdawgs/ydh-fhir-listeners/commit/48a4404))
+-   build(deps-dev): bump @babel/node from 7.8.4 to 7.8.7 ([a343217](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a343217))
+-   build(deps-dev): bump @babel/preset-env from 7.8.4 to 7.8.6 ([1755080](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1755080))
+-   build(deps-dev): bump @babel/preset-env from 7.8.6 to 7.8.7 ([b3f0405](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b3f0405))
+
 ## 2.3.0 (2020-02-24)
 
 -   feat(patient-res): add school code ([722cf5f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/722cf5f))
