@@ -136,45 +136,45 @@
 		{
 			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/49533-2",
 			"resource": {
-			  "resourceType": "Flag",
-			  "id": "49533-2",
-			  "meta": {
-				"profile": [
-				  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
-				]
-			  },
-			  "status": "active",
-			  "category": {
-				"coding": [
-				  {
-					"system": "https://trakcare.ydh.nhs.uk",
-					"code": "YDHMATR",
-					"display": "Maternity"
-				  }
-				]
-			  },
-			  "code": {
-				"coding": [
-				  {
-					"system": "https://trakcare.ydh.nhs.uk",
-					"code": "PRE",
-					"display": "Pregnancy"
-				  },
-				  {
-					"system": "http://snomed.info/sct",
-					"code": "77386006",
-					"display": "Pregnant"
-				  }
-				]
-			  },
-			  "subject": {
-				"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
-			  },
-			  "period": {
-				"start": "2017-07-24T18:38:11",
-				"end": "2017-07-24T18:38:11"
-			  }
+				"resourceType": "Flag",
+				"id": "49533-2",
+				"meta": {
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+					]
+				},
+				"status": "active",
+				"category": {
+					"coding": [
+						{
+							"system": "https://trakcare.ydh.nhs.uk",
+							"code": "YDHMATR",
+							"display": "Maternity"
+						}
+					]
+				},
+				"code": {
+					"coding": [
+						{
+							"system": "https://trakcare.ydh.nhs.uk",
+							"code": "PRE",
+							"display": "Pregnancy"
+						},
+						{
+							"system": "http://snomed.info/sct",
+							"code": "77386006",
+							"display": "Pregnant"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+				},
+				"period": {
+					"start": "2017-07-24T18:38:11",
+					"end": "2017-07-24T18:38:11"
+				}
 			}
-		  }
+		}
 	]
 }
