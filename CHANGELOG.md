@@ -1,3 +1,8 @@
+## <small>2.3.2 (2020-03-16)</small>
+
+-   chore(security): update dependencies ([d37748a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d37748a))
+-   build(deps-dev): bump eslint-plugin-json from 2.1.0 to 2.1.1 ([884f2f2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/884f2f2))
+
 ## <small>2.3.1 (2020-03-12)</small>
 
 -   style: change whitespace indents ([b9f753d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b9f753d))
