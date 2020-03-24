@@ -1,0 +1,99 @@
+{
+	"resourceType": "Bundle",
+	"type": "searchset",
+	"total": 2,
+	"link": [
+	  {
+		"relation": "self",
+		"url": "https://sider.ydh.nhs.uk/3_0_1/Flag?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449303789"
+	  }
+	],
+	"entry": [
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/130161-6",
+		"resource": {
+		  "resourceType": "Flag",
+		  "id": "130161-6",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+			]
+		  },
+		  "status": "active",
+		  "category": {
+			"coding": [
+			  {
+				"system": "https://trakcare.ydh.nhs.uk",
+				"code": "ICALERT",
+				"display": "Infection Control"
+			  }
+			]
+		  },
+		  "code": {
+			"coding": [
+			  {
+				"system": "https://trakcare.ydh.nhs.uk",
+				"code": "WIN-CoV-Positive",
+				"display": "WN-CoV: Positive"
+			  },
+			  {
+				"system": "http://snomed.info/sct",
+				"code": "840539006",
+				"display": "COVID-19"
+			  }
+			]
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/7777777"
+		  },
+		  "period": {
+			"start": "2020-03-20T17:05:42",
+			"end": "2020-03-20T17:05:42"
+		  }
+		}
+	  },
+	  {
+		"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Flag/130161-2",
+		"resource": {
+		  "resourceType": "Flag",
+		  "id": "130161-2",
+		  "meta": {
+			"profile": [
+			  "https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1"
+			]
+		  },
+		  "status": "inactive",
+		  "category": {
+			"coding": [
+			  {
+				"system": "https://trakcare.ydh.nhs.uk",
+				"code": "ICALERT",
+				"display": "Infection Control"
+			  }
+			]
+		  },
+		  "code": {
+			"coding": [
+			  {
+				"system": "https://trakcare.ydh.nhs.uk",
+				"code": "WN-CoV",
+				"display": "WN-CoV: Pending - Swab Taken"
+			  },
+			  {
+				"system": "http://snomed.info/sct",
+				"code": "840544004",
+				"display": "Suspected COVID-19"
+			  }
+			]
+		  },
+		  "subject": {
+			"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/7777777"
+		  },
+		  "period": {
+			"start": "2020-03-20T05:49:42",
+			"end": "2020-03-20T05:49:42"
+		  }
+		}
+	  }
+	]
+  }
