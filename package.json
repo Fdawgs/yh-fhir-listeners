@@ -8,7 +8,7 @@
 	"license": "MIT",
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\"",
-		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
+		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
 		"lint": "eslint src/**/*.js",
 		"prettier": "prettier ** --write",
 		"test": "yarn lint"
