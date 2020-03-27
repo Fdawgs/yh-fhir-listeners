@@ -1,3 +1,18 @@
+## <small>2.3.3 (2020-03-27)</small>
+
+-   style: parse with new prettier version ([313fba1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/313fba1))
+-   chore: add covid-19 test patient ([9e8bb4e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9e8bb4e))
+-   chore: compress supporting docs and images ([79a0a42](https://github.com/Fdawgs/ydh-fhir-listeners/commit/79a0a42))
+-   chore(package): add prettier call to build script ([a78e299](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a78e299))
+-   chore(package): add prettier call to changelog gen script ([9961d84](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9961d84))
+-   build(deps-dev): bump @babel/core from 7.8.7 to 7.9.0 ([12a0d9a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/12a0d9a))
+-   build(deps-dev): bump @babel/preset-env from 7.8.7 to 7.9.0 ([ffb2fc4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ffb2fc4))
+-   build(deps-dev): bump eslint-config-prettier from 6.10.0 to 6.10.1 ([a736292](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a736292))
+-   build(deps-dev): bump prettier from 1.19.1 to 2.0.1 ([45cea40](https://github.com/Fdawgs/ydh-fhir-listeners/commit/45cea40))
+-   build(deps-dev): bump prettier from 2.0.1 to 2.0.2 ([ce8d9d4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ce8d9d4))
+-   docs(flag): update covid-19 entries ([42a5d0b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/42a5d0b))
+-   feat(flag-res): tidy snomed table sql; add covid-19 values ([d2e3400](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d2e3400))
+
 ## <small>2.3.2 (2020-03-16)</small>
 
 -   chore(security): update dependencies ([d37748a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d37748a))
