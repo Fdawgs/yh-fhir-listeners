@@ -7,7 +7,7 @@
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"license": "MIT",
 	"scripts": {
-		"build": "babel src --out-dir dist --ignore \"src/sql/\"",
+		"build": "babel src --out-dir dist --ignore \"src/sql/\" && yarn prettier",
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
 		"lint": "eslint src/**/*.js",
 		"prettier": "prettier ** --write",
