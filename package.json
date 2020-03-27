@@ -1,14 +1,14 @@
 {
 	"name": "ydh-fhir-listeners",
-	"version": "2.3.2",
+	"version": "2.3.3",
 	"description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
 	"main": "index.js",
 	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"license": "MIT",
 	"scripts": {
-		"build": "babel src --out-dir dist --ignore \"src/sql/\"",
-		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md",
+		"build": "babel src --out-dir dist --ignore \"src/sql/\" && yarn prettier",
+		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
 		"lint": "eslint src/**/*.js",
 		"prettier": "prettier ** --write",
 		"test": "yarn lint"
@@ -35,6 +35,6 @@
 		"eslint-config-prettier": "^6.10.1",
 		"eslint-plugin-import": "^2.20.1",
 		"eslint-plugin-json": "^2.1.1",
-		"prettier": "2.0.1"
+		"prettier": "2.0.2"
 	}
 }

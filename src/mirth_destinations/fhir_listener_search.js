@@ -105,9 +105,7 @@ try {
 		// GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code]
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				const allergyPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -199,9 +197,7 @@ try {
 		// GET [baseUrl]/Encounter?patient.identifier=[system]|[code]
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				const encounterPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -346,9 +342,7 @@ try {
 		// GET [baseUrl]/Flag?patient.identifier=[system]|[code]
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				const flagPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -430,9 +424,7 @@ try {
 		// GET [baseUrl]/MedicationStatement?patient.identifier=[system]|[code]
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				const medStatPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -519,11 +511,7 @@ try {
 		 * GET [baseUrl]/Patient?identifier=[code]
 		 */
 		if ($('parameters').contains('identifier')) {
-			if (
-				$('parameters')
-					.getParameter('identifier')
-					.contains('|')
-			) {
+			if ($('parameters').getParameter('identifier').contains('|')) {
 				const identifierParam = String(
 					$('parameters').getParameter('identifier')
 				).split('|');

@@ -31,7 +31,7 @@ try {
 		]
 	}; // If any param not supported, reject request
 
-	Object.keys($('parameters')).forEach(function(key) {
+	Object.keys($('parameters')).forEach(function (key) {
 		if (
 			supportedTypeParams[type.toLowerCase()].indexOf(
 				''.concat(key.toLowerCase())
@@ -76,7 +76,7 @@ try {
 			$('parameters')
 				.getParameterList('date')
 				.toArray()
-				.forEach(function(paramDate) {
+				.forEach(function (paramDate) {
 					date = paramDate;
 					date += '';
 					var operator = convertFhirParameterOperator(
@@ -106,9 +106,7 @@ try {
 
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				var allergyPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -205,9 +203,7 @@ try {
 
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				var encounterPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -272,7 +268,7 @@ try {
 			$('parameters')
 				.getParameterList('date')
 				.toArray()
-				.forEach(function(paramDate) {
+				.forEach(function (paramDate) {
 					date = paramDate;
 					date += '';
 					var operator = convertFhirParameterOperator(
@@ -306,7 +302,7 @@ try {
 			$('parameters')
 				.getParameterList('class')
 				.toArray()
-				.forEach(function(paramclass) {
+				.forEach(function (paramclass) {
 					var classCode = {
 						inpatient: 'I',
 						outpatient: 'AMB',
@@ -338,7 +334,7 @@ try {
 			$('parameters')
 				.getParameterList('type')
 				.toArray()
-				.forEach(function(paramType) {
+				.forEach(function (paramType) {
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
 						"(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''".concat(
@@ -377,9 +373,7 @@ try {
 
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				var flagPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -440,7 +434,7 @@ try {
 			$('parameters')
 				.getParameterList('effective')
 				.toArray()
-				.forEach(function(paramDate) {
+				.forEach(function (paramDate) {
 					date = paramDate;
 					date += '';
 					var operator = convertFhirParameterOperator(
@@ -470,9 +464,7 @@ try {
 
 		if ($('parameters').contains('patient.identifier')) {
 			if (
-				$('parameters')
-					.getParameter('patient.identifier')
-					.contains('|')
+				$('parameters').getParameter('patient.identifier').contains('|')
 			) {
 				var medStatPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
@@ -567,11 +559,7 @@ try {
 		 */
 
 		if ($('parameters').contains('identifier')) {
-			if (
-				$('parameters')
-					.getParameter('identifier')
-					.contains('|')
-			) {
+			if ($('parameters').getParameter('identifier').contains('|')) {
 				var identifierParam = String(
 					$('parameters').getParameter('identifier')
 				).split('|');

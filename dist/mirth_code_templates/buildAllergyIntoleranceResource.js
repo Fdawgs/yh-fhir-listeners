@@ -43,7 +43,7 @@ function buildAllergyIntoleranceResource(data) {
 	allergyResult.push(newStringOrUndefined(result.allergyDrugFormDesc));
 	allergyResult.push(newStringOrUndefined(result.allergyDrugIngredientDesc));
 	allergyResult.push(newStringOrUndefined(result.allergyComment));
-	allergyResult = allergyResult.filter(function(element) {
+	allergyResult = allergyResult.filter(function (element) {
 		return element != null;
 	});
 
