@@ -8,27 +8,30 @@
  */
 function buildMedicationStatementResource(data) {
 	var result = getResultSet(data);
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-
 	var resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1'
 			]
 		},
+
 		resourceType: 'MedicationStatement'
 	};
+
 	resource.id = newStringOrUndefined(result.medstatId);
 	resource.status = newStringOrUndefined(result.medstatStatusCode);
+
 	resource.medicationReference = {
 		reference: newStringOrUndefined('#'.concat(result.medicationId))
-	}; // Add contained Medication resource
+	};
 
+	// Add contained Medication resource
 	var contained = [];
-
 	if (result.medicationId != undefined) {
 		var containedMedication = {
 			resourceType: 'Medication',
@@ -39,14 +42,17 @@ function buildMedicationStatementResource(data) {
 						code: newStringOrUndefined(
 							result.medicationCodeCodingCode
 						),
+
 						display: newStringOrUndefined(
 							result.medicationCodeCodingDisplay
 						)
 					}
 				],
+
 				text: result.medicationCodeText
 			}
 		};
+
 		contained.push(containedMedication);
 
 		if (
@@ -60,13 +66,15 @@ function buildMedicationStatementResource(data) {
 
 	if (contained.length > 0) {
 		resource.contained = contained;
-	} // Add dosages
+	}
 
+	// Add dosages
 	var dosage = [];
 	var dosageObject = {
 		patientInstruction: newStringOrUndefined(
 			result.medstatDosagePatientinstruction
 		),
+
 		route: {
 			text: newStringOrUndefined(result.medstatDosageRouteText)
 		}
@@ -83,7 +91,6 @@ function buildMedicationStatementResource(data) {
 			).toLowerCase()
 		};
 	}
-
 	if (
 		result.medstatDosageTimingRepeatDuration != undefined &&
 		result.medstatDosageTimingRepeatDurationUnit != undefined &&
@@ -94,6 +101,7 @@ function buildMedicationStatementResource(data) {
 				duration: newStringOrUndefined(
 					result.medstatDosageTimingRepeatDuration
 				),
+
 				durationUnit: newStringOrUndefined(
 					result.medstatDosageTimingRepeatDurationUnit
 				).toLowerCase()
@@ -102,13 +110,11 @@ function buildMedicationStatementResource(data) {
 	}
 
 	dosage.push(dosageObject);
-
 	if (dosage.length > 0) {
 		resource.dosage = dosage;
 	}
 
 	resource.effectivePeriod = {};
-
 	if (
 		result.medstatEffectiveStart != undefined &&
 		result.medstatEffectiveStart.substring(0, 1) != 'T' &&
@@ -116,7 +122,6 @@ function buildMedicationStatementResource(data) {
 	) {
 		resource.effectivePeriod.start = result.medstatEffectiveStart;
 	}
-
 	if (
 		result.medstatEffectiveEnd != undefined &&
 		result.medstatEffectiveEnd.substring(0, 1) != 'T' &&
@@ -129,8 +134,10 @@ function buildMedicationStatementResource(data) {
 		reference: ''
 			.concat($cfg('apiUrl'), '/r3/Patient/')
 			.concat(result.medstatSubjectReference)
-	}; // Hard-coded as TrakCare doesn't record whether a patient has taken medication
+	};
 
+	// Hard-coded as TrakCare doesn't record whether a patient has taken medication
 	resource.taken = 'unk';
+
 	return resource;
 }

@@ -13,13 +13,15 @@ function buildBundleResource(requestUrl) {
 		total: 0,
 		link: [],
 		entry: []
-	}; // Add link URL
+	};
 
+	// Add link URL
 	if (requestUrl) {
 		var linkEntry = {
 			relation: newStringOrUndefined('self'),
 			url: newStringOrUndefined(requestUrl)
 		};
+
 		resource.link.push(linkEntry);
 	}
 

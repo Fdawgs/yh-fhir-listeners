@@ -8,19 +8,21 @@
  */
 function buildFlagResource(data) {
 	var result = getResultSet(data);
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-
 	var resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1'
 			]
 		},
+
 		resourceType: 'Flag'
 	};
+
 	resource.id = newStringOrUndefined(result.flagId);
 	resource.status = newStringOrUndefined(result.flagStatusCode);
 
@@ -48,6 +50,7 @@ function buildFlagResource(data) {
 			code: newStringOrUndefined(result.flagCodeCodingCode),
 			display: newStringOrUndefined(result.flagCodeCodingDisplay)
 		};
+
 		resource.code.coding.push(ydhCode);
 	}
 
@@ -57,11 +60,11 @@ function buildFlagResource(data) {
 			code: newStringOrUndefined(result.flagCodeCodingSnomedCode),
 			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay)
 		};
+
 		resource.code.coding.push(snomedCode);
 	}
 
 	resource.period = {};
-
 	if (
 		result.periodStart != undefined &&
 		result.periodStart.substring(0, 1) != 'T' &&
@@ -69,7 +72,6 @@ function buildFlagResource(data) {
 	) {
 		resource.period.start = result.periodStart;
 	}
-
 	if (
 		result.periodStart != undefined &&
 		result.periodStart.substring(0, 1) != 'T' &&
@@ -83,5 +85,6 @@ function buildFlagResource(data) {
 			.concat($cfg('apiUrl'), '/r3/Patient/')
 			.concat(result.flagSubjectReference)
 	};
+
 	return resource;
 }

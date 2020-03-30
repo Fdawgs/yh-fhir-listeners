@@ -4,23 +4,21 @@
  */
 try {
 	var type = $('fhirType').toLowerCase();
-	var id = $('fhirId'); // Build up WHERE clause then pass to buildResourceQuery to be called
+	var id = $('fhirId');
 
+	// Build up WHERE clause then pass to buildResourceQuery to be called
 	var wherePredicate;
-
 	switch (''.concat(type)) {
 		case 'allergyintolerance':
 			wherePredicate = [
 				"(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''".concat(id, "'')")
 			];
-			break;
 
+			break;
 		case 'condition':
 			break;
-
 		case 'documentreference':
 			break;
-
 		case 'encounter':
 			wherePredicate = [
 				"(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''".concat(
@@ -33,8 +31,8 @@ try {
 					"'')"
 				)
 			];
-			break;
 
+			break;
 		case 'medicationstatement':
 			wherePredicate = [
 				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(
@@ -43,8 +41,8 @@ try {
 				),
 				''
 			];
-			break;
 
+			break;
 		case 'patient':
 			wherePredicate = ["(patmas.PAPMI_No = ''".concat(id, "'')")];
 			break;
@@ -59,42 +57,36 @@ try {
 		// Pass it out to external channel that will transform into
 		// Care Connect FHIR Resource and return
 		var data;
-
 		switch (''.concat(type)) {
 			case 'allergyintolerance':
 				data = buildAllergyIntoleranceResource(result);
 				break;
-
 			case 'condition':
 				// data = buildConditionResource(result);
 				break;
-
 			case 'documentreference':
 				// data = buildDocumentReferenceResource(result);
 				break;
-
 			case 'encounter':
 				data = buildEncounterResource(result);
 				break;
-
 			case 'flag':
 				data = buildFlagResource(result);
 				break;
-
 			case 'medicationstatement':
 				data = buildMedicationStatementResource(result);
 				break;
-
 			case 'patient':
 				data = buildPatientResource(result);
 				break;
-
 			default:
 				break;
-		} // Hard coded version as we don't keep past versions of records, only one
+		}
 
+		// Hard coded version as we don't keep past versions of records, only one
 		var version = '1';
 		var lastModified = new Date(getResultSetString(result, 'lastUpdated'));
+
 		var response = FhirResponseFactory.getReadResponse(
 			JSON.stringify(data),
 			version,
@@ -102,10 +94,10 @@ try {
 			200,
 			'application/fhir+json'
 		);
+
 		responseMap.put('response', response);
 		return response.getMessage();
 	}
-
 	return createOperationOutcome(
 		'error',
 		'processing',

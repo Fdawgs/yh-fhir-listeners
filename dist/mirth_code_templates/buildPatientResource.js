@@ -19,11 +19,11 @@ function buildPatientResource(data) {
 	} else {
 		result.deceased = true;
 	}
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-
 	var resource = {
 		fullUrl: ''
 			.concat($cfg('apiUrl') + $('contextPath'), '/')
@@ -33,6 +33,7 @@ function buildPatientResource(data) {
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1'
 			]
 		},
+
 		resourceType: newStringOrUndefined('Patient'),
 		identifier: [
 			{
@@ -40,9 +41,11 @@ function buildPatientResource(data) {
 				system: newStringOrUndefined(
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				),
+
 				value: newStringOrUndefined(result.patientNo)
 			}
 		],
+
 		name: [
 			{
 				use: newStringOrUndefined('usual'),
@@ -51,6 +54,7 @@ function buildPatientResource(data) {
 				prefix: result.namePrefix
 			}
 		],
+
 		gender: newStringOrUndefined(result.gender),
 		birthDate: newStringOrUndefined(result.birthdate),
 		deceasedBoolean: newBooleanOrUndefined(result.deceased),
@@ -62,23 +66,27 @@ function buildPatientResource(data) {
 					newStringOrUndefined(result.addressLine1),
 					newStringOrUndefined(result.addressLine2)
 				],
+
 				city: newStringOrUndefined(result.city),
 				district: newStringOrUndefined(result.district),
 				postalCode: newStringOrUndefined(result.postalCode)
 			}
 		],
+
 		id: newStringOrUndefined(result.patientNo),
 		language: newStringOrUndefined('English (Great Britain)')
-	}; // Add meta data
+	};
 
+	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
 		result.lastUpdated.substring(0, 1) != 'T' &&
 		result.lastUpdated.substring(0, 1) != '1900'
 	) {
 		resource.meta.lastUpdated = newStringOrUndefined(result.lastUpdated);
-	} // Add NHS No
+	}
 
+	// Add NHS No
 	if (result.nhsNumber != undefined) {
 		var nhsIdentifier = {
 			use: newStringOrUndefined('official'),
@@ -89,15 +97,18 @@ function buildPatientResource(data) {
 					url: newStringOrUndefined(
 						'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1'
 					),
+
 					valueCodeableConcept: {
 						coding: [
 							{
 								system: newStringOrUndefined(
 									'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1'
 								),
+
 								code: newStringOrUndefined(
 									result.nhsNumberTraceStatusCode
 								),
+
 								display: newStringOrUndefined(
 									result.nhsNumberTraceStatusDesc
 								)
@@ -107,11 +118,13 @@ function buildPatientResource(data) {
 				}
 			]
 		};
+
 		resource.identifier.push(nhsIdentifier);
 	}
 
-	resource.contact = []; // Add Next of kin contact details
+	resource.contact = [];
 
+	// Add Next of kin contact details
 	if (result.contactName != undefined) {
 		var nokContact = {
 			relationship: {
@@ -123,6 +136,7 @@ function buildPatientResource(data) {
 					}
 				]
 			},
+
 			name: {
 				use: 'usual',
 				text: newStringOrUndefined(result.contactName)
@@ -136,12 +150,14 @@ function buildPatientResource(data) {
 					value: newStringOrUndefined(result.contactPhone)
 				}
 			];
+
 			nokContact.telecom = contactTelecom;
 		}
 
 		resource.contact.push(nokContact);
-	} // Add school contact details
+	}
 
+	// Add school contact details
 	if (result.schoolName != undefined) {
 		var schoolContact = {
 			relationship: {
@@ -153,14 +169,17 @@ function buildPatientResource(data) {
 					}
 				]
 			},
+
 			name: {
 				use: 'usual'
 			},
+
 			organization: {
 				identifier: {
 					system: 'https://trakcare.ydh.nhs.uk',
 					value: newStringOrUndefined(result.schoolId)
 				},
+
 				display: newStringOrUndefined(result.schoolName)
 			}
 		};
@@ -172,72 +191,75 @@ function buildPatientResource(data) {
 					value: newStringOrUndefined(result.schoolPhone)
 				}
 			];
+
 			schoolContact.telecom = _contactTelecom;
 		}
 
 		resource.contact.push(schoolContact);
-	} // Add Telecom contact details
+	}
 
+	// Add Telecom contact details
 	var telecom = [];
-
 	if (result.homePhone != undefined) {
 		var homePhone = {
 			system: newStringOrUndefined('phone'),
 			value: newStringOrUndefined(result.homePhone),
 			use: newStringOrUndefined('home')
 		};
+
 		telecom.push(homePhone);
 	}
-
 	if (result.mobilePhone != undefined) {
 		var mobilePhone = {
 			system: newStringOrUndefined('phone'),
 			value: newStringOrUndefined(result.mobilePhone),
 			use: newStringOrUndefined('mobile')
 		};
+
 		telecom.push(mobilePhone);
 	}
-
 	if (result.email != undefined) {
 		var email = {
 			system: newStringOrUndefined('email'),
 			value: newStringOrUndefined(result.email)
 		};
+
 		telecom.push(email);
 	}
-
 	if (telecom.length > 0) {
 		resource.telecom = telecom;
-	} // Add Ethnical Category
+	}
 
+	// Add Ethnical Category
 	var extension = [];
-
 	if (result.ethnicCategoryCode != undefined) {
 		var ethCatExtension = {
 			url: newStringOrUndefined(
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1'
 			),
+
 			valueCodeableConcept: {
 				coding: [
 					{
 						system: newStringOrUndefined(
 							'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1'
 						),
+
 						code: newStringOrUndefined(result.ethnicCategoryCode),
 						display: newStringOrUndefined(result.ethnicCategoryDesc)
 					}
 				]
 			}
 		};
+
 		extension.push(ethCatExtension);
 	}
-
 	if (extension.length > 0) {
 		resource.extension = extension;
-	} // Add contained GP organization resource
+	}
 
+	// Add contained GP organization resource
 	var contained = [];
-
 	if (result.gpIdentifier != undefined) {
 		var containedOrganisation = {
 			resourceType: 'Organization',
@@ -247,6 +269,7 @@ function buildPatientResource(data) {
 					'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1'
 				]
 			},
+
 			name: newStringOrUndefined(result.gpDesc),
 			address: [
 				{
@@ -256,32 +279,35 @@ function buildPatientResource(data) {
 						newStringOrUndefined(result.gpAddressLine1),
 						newStringOrUndefined(result.gpAddressLine2)
 					],
+
 					city: newStringOrUndefined(result.gpCity),
 					postalCode: newStringOrUndefined(result.gpPostalCode)
 				}
 			]
 		};
+
 		contained.push(containedOrganisation);
 	}
-
 	if (contained.length > 0) {
 		resource.contained = contained;
-	} // Add GP
+	}
 
+	// Add GP
 	var generalPractitioner = [];
-
 	if (result.gpIdentifier != undefined) {
 		var gpReference = {
 			reference: newStringOrUndefined('#'.concat(result.gpIdentifier)),
 			display: newStringOrUndefined(result.gpDesc)
 		};
+
 		generalPractitioner.push(gpReference);
 	}
 
 	if (generalPractitioner.length > 0) {
 		resource.generalPractitioner = generalPractitioner;
-	} // Add Marital Status
+	}
 
+	// Add Marital Status
 	if (
 		result.maritalStatusCode != undefined &&
 		result.maritalStatusDesc != undefined
@@ -292,13 +318,15 @@ function buildPatientResource(data) {
 					system: newStringOrUndefined(
 						'http://hl7.org/fhir/stu3/v3/MaritalStatus'
 					),
+
 					code: newStringOrUndefined(result.maritalStatusCode),
 					display: newStringOrUndefined(result.maritalStatusDesc)
 				}
 			]
 		};
-	} // If patient has a 'Do Not Distribute Patient Address' alert, strip out contact details
+	}
 
+	// If patient has a 'Do Not Distribute Patient Address' alert, strip out contact details
 	if (result.DND != undefined) {
 		delete resource.telecom;
 		delete resource.address;
