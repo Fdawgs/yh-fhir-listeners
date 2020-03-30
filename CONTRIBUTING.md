@@ -17,7 +17,7 @@ Other processes and specifications that are in use in this repository are:
 
 As noted in the prerequisites section of the readme file, this project requires that you have Node.js, Yarn, and Mirth Connect installed for development.
 
-With those in place you can fork the repo and clone it, and then run `yarn install` to install all development dependencies.
+With those in place, you can fork the repository, clone it, and then run `yarn install` to install all development dependencies.
 
 ### Development Workflow
 
