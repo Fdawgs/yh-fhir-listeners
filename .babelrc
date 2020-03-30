@@ -2,6 +2,9 @@
 	"parserOpts": {
 		"allowReturnOutsideFunction": true
 	},
+	"generatorOpts": {
+		"retainLines": true
+	},
 	"presets": [
 		[
 			"@babel/preset-env",
