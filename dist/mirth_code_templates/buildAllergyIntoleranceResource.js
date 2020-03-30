@@ -8,20 +8,22 @@
  */
 function buildAllergyIntoleranceResource(data) {
 	var result = getResultSet(data);
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
 	 */
-
 	var resource = {
 		meta: {
 			profile: [
 				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1'
 			]
 		},
-		resourceType: 'AllergyIntolerance'
-	}; // Add meta data
 
+		resourceType: 'AllergyIntolerance'
+	};
+
+	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
 		result.lastUpdated.substring(0, 1) != 'T' &&
@@ -31,9 +33,10 @@ function buildAllergyIntoleranceResource(data) {
 	}
 
 	resource.id = newStringOrUndefined(result.id);
-	resource.assertedDate = newStringOrUndefined(result.assertedDate); // Very unlikely that an allergy record will have multiple components like this
-	// but better to be safe than sorry
+	resource.assertedDate = newStringOrUndefined(result.assertedDate);
 
+	// Very unlikely that an allergy record will have multiple components like this
+	// but better to be safe than sorry
 	var allergyResult = [];
 	allergyResult.push(newStringOrUndefined(result.allergyGroupDesc));
 	allergyResult.push(newStringOrUndefined(result.allergyCodingDesc));
@@ -46,7 +49,6 @@ function buildAllergyIntoleranceResource(data) {
 	allergyResult = allergyResult.filter(function (element) {
 		return element != null;
 	});
-
 	if (allergyResult.length > 0) {
 		resource.code = {
 			text: allergyResult.join('; ')
@@ -58,11 +60,14 @@ function buildAllergyIntoleranceResource(data) {
 			.concat($cfg('apiUrl'), '/r3/Patient/')
 			.concat(result.patientReference)
 	};
+
 	resource.clinicalStatus = newStringOrUndefined(result.clinicalStatusCode);
 	resource.verificationStatus = newStringOrUndefined(
 		result.verificationStatusCode
 	);
+
 	resource.type = newStringOrUndefined(result.typeCode);
 	resource.criticality = newStringOrUndefined(result.criticalityCode);
+
 	return resource;
 }

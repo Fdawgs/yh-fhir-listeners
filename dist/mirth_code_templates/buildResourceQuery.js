@@ -1,13 +1,13 @@
 /* eslint-disable quotes */
 
 /**
-	Queries database for data needed to build FHIR resource.
-
-	@author Frazer Smith
-	@param {string} type - Resource name.
-	@param {Object} params - An array of predicates to be added to SQL queries.
-	@return {Object} Java ResultSet object.
- */
+                            	Queries database for data needed to build FHIR resource.
+                            
+                            	@author Frazer Smith
+                            	@param {string} type - Resource name.
+                            	@param {Object} params - An array of predicates to be added to SQL queries.
+                            	@return {Object} Java ResultSet object.
+                             */
 function buildResourceQuery(type, params) {
 	var firstParams = '';
 	var secondParams = '';
@@ -16,15 +16,14 @@ function buildResourceQuery(type, params) {
 	if (params[0]) {
 		firstParams = 'AND '.concat(params[0]);
 	}
-
 	if (params[1]) {
 		secondParams = 'AND '.concat(params[1]);
 	}
-
 	if (params[2]) {
 		thirdParams = 'AND '.concat(params[2]);
-	} // type is Java object so has to be coerced to a JS object by adding an empty string
+	}
 
+	// type is Java object so has to be coerced to a JS object by adding an empty string
 	switch (''.concat(type)) {
 		case 'allergyintolerance':
 			return executeCachedQuery(
@@ -36,10 +35,8 @@ function buildResourceQuery(type, params) {
 
 		case 'condition':
 			return executeCachedQuery();
-
 		case 'documentreference':
 			return executeCachedQuery();
-
 		case 'encounter':
 			return executeCachedQuery(
 				"WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode, encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate, encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, encounterParticipantIndividualCode_opattending, encounterParticipantIndividualDisplay_opattending, encounterHospitalizationAdmitsourceCodingCode, encounterHospitalizationAdmitsourceCodingDesc, encounterHospitalizationDischargedispositionCodingCode, encounterHospitalizationDischargedispositionCodingDesc, encounterAdmissionmethodCodingCode, encounterAdmissionmethodCodingDesc, encounterDischargemethodCodingCode, encounterDischargemethodCodingDesc, subjectReference, encounterStatus, lastUpdateDate, lastUpdateTime) AS (SELECT DISTINCT * FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier, ''ambulatory'' AS encounterClassDesc, ''AMB'' AS encounterClassCode, app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Desc AS encounterTypeDesc, app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code AS encounterTypeCode, COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) AS encounterPeriodStartDate, COALESCE(app.APPT_ArrivalTime, app.APPT_TimeComp) AS encounterPeriodStartTime, NULL AS encounterPeriodEndDate, NULL AS encounterPeriodEndTime, app.APPT_SeenDoctor_DR->CTPCP_Code AS encounterParticipantIndividualCode_opattending, app.APPT_SeenDoctor_DR->CTPCP_Desc AS encounterParticipantIndividualDisplay_opattending, NULL AS encounterHospitalizationAdmitsourceCodingCode, NULL AS encounterHospitalizationAdmitsourceCodingDesc, NULL AS encounterHospitalizationDischargedispositionCodingCode, NULL AS encounterHospitalizationDischargedispositionCodingDesc, NULL AS encounterAdmissionmethodCodingCode, NULL AS encounterAdmissionmethodCodingDesc, NULL AS encounterDischargemethodCodingCode, NULL AS encounterDischargemethodCodingDesc, app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No AS subjectReference, app.APPT_Status AS encounterStatus, app.APPT_LastUpdateDate AS lastUpdateDate, NULL AS lastUpdateTime FROM RB_Appointment app WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No IS NOT NULL "
