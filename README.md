@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) [![Build Status](https://travis-ci.org/Fdawgs/ydh-fhir-listeners.svg?branch=master)](https://travis-ci.org/Fdawgs/ydh-fhir-listeners) [![Dependabot Status](https://api.dependabot.com/badges/status?host=github&identifier=217485645)](https://dependabot.com) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystem's TrakCare PAS (v2017.2 MR8.2)
+> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)
 
 ## Introduction
 
@@ -48,7 +48,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 ## Prerequisites
 
 -   Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
--   Latest release of Mirth Connect's [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
+-   Latest release of the Mirth Connect [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
 -   Latest release of [ydh-sider-authentication-service](https://github.com/Fdawgs/ydh-sider-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) (optional, for development)
 -   [Yarn](https://yarnpkg.com) (optional, for development)
