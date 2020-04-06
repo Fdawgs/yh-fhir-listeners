@@ -1,3 +1,12 @@
+## <small>2.3.4 (2020-04-06)</small>
+
+-   chore: prep release ([fcba033](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fcba033))
+-   chore: rebuild with retained lines ([e3e8fc4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e3e8fc4))
+-   build(babel): add retainlines generator option ([b78421c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b78421c))
+-   build(deps-dev): bump eslint-plugin-import from 2.20.1 to 2.20.2 ([a760db7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a760db7))
+-   docs: grammar and spelling fixes ([da318b0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/da318b0))
+-   docs(readme): correct section sizes ([f06ca59](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f06ca59))
+
 ## <small>2.3.3 (2020-03-27)</small>
 
 -   style: parse with new prettier version ([313fba1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/313fba1))
