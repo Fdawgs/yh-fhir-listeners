@@ -25,12 +25,16 @@ try {
 				`(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
 			];
 			break;
+		case 'flag':
+			wherePredicate = [
+				`REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
+			];
+			break;
 		case 'medicationstatement':
 			wherePredicate = [
 				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`,
 				''
 			];
-
 			break;
 		case 'patient':
 			wherePredicate = [
