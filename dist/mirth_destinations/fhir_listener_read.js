@@ -33,6 +33,12 @@ try {
 			];
 
 			break;
+		case 'flag':
+			wherePredicate = [
+				"REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''".concat(id, "'')")
+			];
+
+			break;
 		case 'medicationstatement':
 			wherePredicate = [
 				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(
@@ -44,9 +50,16 @@ try {
 
 			break;
 		case 'patient':
-			wherePredicate = ["(patmas.PAPMI_No = ''".concat(id, "'')")];
-			break;
+			wherePredicate = [
+				"(patmas.PAPMI_No = ''".concat(id, "'')"),
+				"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''".concat(
+					id,
+					"'')"
+				),
+				"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(id, "'')")
+			];
 
+			break;
 		default:
 			break;
 	}
