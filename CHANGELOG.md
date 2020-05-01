@@ -1,3 +1,14 @@
+## <small>2.3.5 (2020-05-01)</small>
+
+-   chore: convert channel to be compatible with mirth connect v3.9.0 ([b2c205b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b2c205b))
+-   build(deps-dev): bump @babel/core from 7.9.0 to 7.9.6 ([72b929a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/72b929a))
+-   build(deps-dev): bump @babel/preset-env from 7.9.0 to 7.9.5 ([7932131](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7932131))
+-   build(deps-dev): bump @babel/preset-env from 7.9.5 to 7.9.6 ([df7b999](https://github.com/Fdawgs/ydh-fhir-listeners/commit/df7b999))
+-   build(deps-dev): bump eslint-config-prettier from 6.10.1 to 6.11.0 ([d259973](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d259973))
+-   build(deps-dev): bump prettier from 2.0.4 to 2.0.5 ([8d779ed](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8d779ed))
+-   fix: add missing read support for flag resources ([5eab8bb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5eab8bb))
+-   fix: read for patient resources that were showing all as restricted ([9b370b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9b370b8))
+
 ## <small>2.3.4 (2020-04-06)</small>
 
 -   chore: prep release ([fcba033](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fcba033))
