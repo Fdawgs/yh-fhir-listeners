@@ -6,6 +6,9 @@
 	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"license": "MIT",
+	"engines": {
+		"node": ">=12.16.3"
+	},
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\" && yarn prettier",
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
@@ -33,7 +36,6 @@
 		"eslint": "^6.8.0",
 		"eslint-config-airbnb-base": "^14.1.0",
 		"eslint-config-prettier": "^6.11.0",
-		"eslint-plugin-import": "^2.20.2",
 		"eslint-plugin-json": "^2.1.1",
 		"prettier": "2.0.5"
 	}
