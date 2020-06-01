@@ -1,3 +1,15 @@
+## <small>2.3.6 (2020-06-01)</small>
+
+-   build(deps-dev): bump @babel/cli from 7.8.4 to 7.10.1 ([1d7faf5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1d7faf5))
+-   build(deps-dev): bump @babel/core from 7.9.6 to 7.10.2 ([75545d9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/75545d9))
+-   build(deps-dev): bump @babel/node from 7.8.7 to 7.10.1 ([8d4cc71](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8d4cc71))
+-   build(deps-dev): bump @babel/preset-env from 7.9.6 to 7.10.2 ([446d70d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/446d70d))
+-   build(deps-dev): bump conventional-changelog-cli from 2.0.31 to 2.0.34 ([d7c760a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d7c760a))
+-   chore: update gitignore with latest github version ([f7eeb2b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f7eeb2b))
+-   chore(eslintrc): enable json plugin ([c483ef9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c483ef9))
+-   chore(package): set minimum engine version ([17b7633](https://github.com/Fdawgs/ydh-fhir-listeners/commit/17b7633))
+-   docs(contributing): update conventional commit link to latest version ([8e998b9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8e998b9))
+
 ## <small>2.3.5 (2020-05-01)</small>
 
 -   chore: convert channel to be compatible with mirth connect v3.9.0 ([b2c205b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b2c205b))
