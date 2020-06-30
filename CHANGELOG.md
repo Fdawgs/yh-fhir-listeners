@@ -1,3 +1,17 @@
+## <small>2.3.7 (2020-06-30)</small>
+
+-   chore: create code_of_conduct.md ([ed76036](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed76036))
+-   chore(eslint): convert from json to js file format ([f6c9b06](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f6c9b06))
+-   chore(scripts): expand coverage of eslint and prettier ([0061395](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0061395))
+-   build(deps-dev): bump @babel/cli from 7.10.1 to 7.10.3 ([5d7806a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5d7806a))
+-   build(deps-dev): bump @babel/core from 7.10.2 to 7.10.3 ([25173e3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/25173e3))
+-   build(deps-dev): bump @babel/node from 7.10.1 to 7.10.3 ([4c6bdb5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4c6bdb5))
+-   build(deps-dev): bump @babel/preset-env from 7.10.2 to 7.10.3 ([be83809](https://github.com/Fdawgs/ydh-fhir-listeners/commit/be83809))
+-   build(deps-dev): bump @commitlint/config-conventional ([b45c589](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b45c589))
+-   build(deps-dev): bump eslint-plugin-import from 2.20.2 to 2.22.0 ([9a7f9b9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9a7f9b9))
+-   Create Dependabot config file ([567824d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/567824d))
+-   style: add whitespace ([eb6f9cb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/eb6f9cb))
+
 ## <small>2.3.6 (2020-06-01)</small>
 
 -   build(deps-dev): bump @babel/cli from 7.8.4 to 7.10.1 ([1d7faf5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1d7faf5))
