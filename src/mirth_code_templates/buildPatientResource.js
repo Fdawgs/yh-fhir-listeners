@@ -118,7 +118,7 @@ function buildPatientResource(data) {
 			relationship: {
 				coding: [
 					{
-						system: 'http://hl7.org/fhir/v2/0131',
+						system: 'https://hl7.org/fhir/v2/0131',
 						code: 'N',
 						display: 'Next-of-kin'
 					}
@@ -288,7 +288,7 @@ function buildPatientResource(data) {
 			coding: [
 				{
 					system: newStringOrUndefined(
-						'http://hl7.org/fhir/stu3/v3/MaritalStatus'
+						'https://hl7.org/fhir/stu3/v3/MaritalStatus'
 					),
 					code: newStringOrUndefined(result.maritalStatusCode),
 					display: newStringOrUndefined(result.maritalStatusDesc)
@@ -303,7 +303,7 @@ function buildPatientResource(data) {
 		delete resource.address;
 		resource.meta.security = [
 			{
-				system: 'http://hl7.org/fhir/ValueSet/v3-Confidentiality',
+				system: 'https://hl7.org/fhir/ValueSet/v3-Confidentiality',
 				code: 'R',
 				display: 'restricted'
 			}

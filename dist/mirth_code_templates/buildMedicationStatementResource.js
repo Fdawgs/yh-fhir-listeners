@@ -60,7 +60,7 @@ function buildMedicationStatementResource(data) {
 			result.medicationCodeCodingDisplay != undefined
 		) {
 			containedMedication.code.coding[0].system =
-				'http://snomed.info/sct';
+				'https://snomed.info/sct';
 		}
 	}
 
