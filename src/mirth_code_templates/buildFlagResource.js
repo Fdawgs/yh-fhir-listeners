@@ -54,7 +54,7 @@ function buildFlagResource(data) {
 
 	if (result.flagCodeCodingSnomedCode != undefined) {
 		const snomedCode = {
-			system: 'http://snomed.info/sct',
+			system: 'https://snomed.info/sct',
 			code: newStringOrUndefined(result.flagCodeCodingSnomedCode),
 			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay)
 		};

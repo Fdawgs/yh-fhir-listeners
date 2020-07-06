@@ -35,7 +35,7 @@ function buildEncounterResource(data) {
 
 	if (result.encounterClassDesc != undefined) {
 		resource.class = {
-			system: 'http://hl7.org/fhir/v3/ActEncounterCode',
+			system: 'https://hl7.org/fhir/v3/ActEncounterCode',
 			code: newStringOrUndefined(result.encounterClassCode),
 			display: newStringOrUndefined(result.encounterClassDesc)
 		};
@@ -158,7 +158,7 @@ function buildEncounterResource(data) {
 				{
 					coding: [
 						{
-							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							system: 'https://hl7.org/fhir/v3/ParticipationType',
 							code: 'ADM',
 							display: 'admitter'
 						}
@@ -167,7 +167,7 @@ function buildEncounterResource(data) {
 				{
 					coding: [
 						{
-							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							system: 'https://hl7.org/fhir/v3/ParticipationType',
 							code: 'DIS',
 							display: 'discharger'
 						}
@@ -193,7 +193,7 @@ function buildEncounterResource(data) {
 						coding: [
 							{
 								system:
-									'http://hl7.org/fhir/v3/ParticipationType',
+									'https://hl7.org/fhir/v3/ParticipationType',
 								code: 'ADM',
 								display: 'admitter'
 							}
@@ -220,7 +220,7 @@ function buildEncounterResource(data) {
 						coding: [
 							{
 								system:
-									'http://hl7.org/fhir/v3/ParticipationType',
+									'https://hl7.org/fhir/v3/ParticipationType',
 								code: 'DIS',
 								display: 'discharger'
 							}
@@ -245,7 +245,7 @@ function buildEncounterResource(data) {
 				{
 					coding: [
 						{
-							system: 'http://hl7.org/fhir/v3/ParticipationType',
+							system: 'https://hl7.org/fhir/v3/ParticipationType',
 							code: 'CON',
 							display: 'consultant'
 						}
