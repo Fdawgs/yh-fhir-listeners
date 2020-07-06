@@ -12,7 +12,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (TST) have successfully taken this and refactored it for use with their PAS, Maxims.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (part of SFT) have successfully taken this and refactored it for use with their PAS, Maxims.
 
 This documentation has been written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
@@ -20,12 +20,11 @@ This documentation has been written under the assumption that the reader has pri
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/your-health/sharing-your-information/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Shareholders (at time of writing on 2019-04-03) are:
+Shareholders (as of 2020-07-06) are:
 
 -   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
--   [Taunton and Somerset NHS Foundation Trust](https://www.tsft.nhs.uk/) (TST)
--   [Somerset Partnership NHS Foundation Trust](http://www.sompar.nhs.uk/) (SOMPAR)
--   [Somerset County Council](http://www.somerset.gov.uk/) (SCC)
+-   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
+-   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
 -   [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
 -   [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
