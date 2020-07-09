@@ -8,11 +8,6 @@
             <system value="email"/>
             <value value="frazer.smith@ydh.nhs.uk"/>
         </telecom>
-        <name value="Solutions Development Team"/>
-        <telecom>
-            <system value="email"/>
-            <value value="solutions.development@ydh.nhs.uk"/>
-        </telecom>
     </contact>
     <contact>
         <name value="Solutions Development Team"/>
