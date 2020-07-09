@@ -1,5 +1,5 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <version value="2.3.7"/>
+    <version value="2.4.0"/>
     <status value="active"/>
     <publisher value="Yeovil District NHS Foundation Trust"/>
     <contact>
@@ -7,6 +7,11 @@
         <telecom>
             <system value="email"/>
             <value value="frazer.smith@ydh.nhs.uk"/>
+        </telecom>
+        <name value="Solutions Development Team"/>
+        <telecom>
+            <system value="email"/>
+            <value value="solutions.development@ydh.nhs.uk"/>
         </telecom>
     </contact>
     <implementationGuide value="https://nhsconnect.github.io/CareConnectAPI/"/>

@@ -1,3 +1,13 @@
+## 2.4.0 (2020-07-09)
+
+-   build(deps-dev): bump development dependencies ([8c88121](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8c88121))
+-   build(travis): set linux dist ([0c79dce](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0c79dce))
+-   chore: add solutions development team contact to capability statement ([09d5a49](https://github.com/Fdawgs/ydh-fhir-listeners/commit/09d5a49))
+-   chore: replace http links with https ([ffce9ca](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ffce9ca))
+-   chore: tidy medicationstatement sql comments ([e75c68e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e75c68e))
+-   feat(patient): add care connect ethnicity coding support ([becd830](https://github.com/Fdawgs/ydh-fhir-listeners/commit/becd830))
+-   docs(readme): replace tst and sompar with new sft ([0b18629](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0b18629))
+
 ## <small>2.3.7 (2020-06-30)</small>
 
 -   chore: create code_of_conduct.md ([ed76036](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed76036))
