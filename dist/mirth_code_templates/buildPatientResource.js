@@ -248,6 +248,7 @@ function buildPatientResource(data) {
 						code: newStringOrUndefined(
 							result.ethnicCategoryCareConnectCode
 						),
+
 						display: newStringOrUndefined(
 							result.ethnicCategoryCareConnectDesc
 						)

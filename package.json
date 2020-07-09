@@ -1,6 +1,6 @@
 {
 	"name": "ydh-fhir-listeners",
-	"version": "2.3.7",
+	"version": "2.4.0",
 	"description": "Yeovil District Hospital - FHIR listeners for SIDeR programme",
 	"main": "index.js",
 	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
