@@ -7,8 +7,10 @@ SELECT DISTINCT nhsNumber,
 	nhsNumberTraceStatusCode,
 	patientNo,
 	active,
-	ethnicCategoryDesc,
 	ethnicCategoryCode,
+	ethnicCategoryDesc,
+	ethnic.CareConnect_Code AS ethnicCategoryCareConnectCode,
+	ethnic.CareConnect_Display AS ethnicCategoryCareConnectDesc,
 	homePhone,
 	businessPhone,
 	mobilePhone,
@@ -161,3 +163,6 @@ FROM OPENQUERY(
 					 AND NOK_Inactive = ''N''
                    ') AS school
 	ON 1 = 1 
+
+	LEFT JOIN lookup.dbo.ydh_ethnicity_list ethnic
+	ON patient.ethnicCategoryCode = ethnic.YDH_TrakCare_Code;

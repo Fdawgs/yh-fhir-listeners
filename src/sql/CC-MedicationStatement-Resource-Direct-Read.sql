@@ -9,7 +9,7 @@ oi.OEORI_Unit_DR->CTUOM_Desc dosage units:
      W = Week(s) - map to wk
 
 
-Status value	|    TrakCare value to map
+FHIR Status value	|    TrakCare value
 ============================================================================
 Active  	          Current date between start date and end date
 Completed	          Current date after end date and status not discontinued
