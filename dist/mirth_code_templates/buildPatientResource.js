@@ -230,7 +230,7 @@ function buildPatientResource(data) {
 		resource.telecom = telecom;
 	}
 
-	// Add Ethnical Category
+	// Add Ethnicity Category
 	var extension = [];
 	if (result.ethnicCategoryCode != undefined) {
 		var ethCatExtension = {
@@ -243,6 +243,19 @@ function buildPatientResource(data) {
 					{
 						system: newStringOrUndefined(
 							'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1'
+						),
+
+						code: newStringOrUndefined(
+							result.ethnicCategoryCareConnectCode
+						),
+						display: newStringOrUndefined(
+							result.ethnicCategoryCareConnectDesc
+						)
+					},
+
+					{
+						system: newStringOrUndefined(
+							'https://trakcare.ydh.nhs.uk'
 						),
 
 						code: newStringOrUndefined(result.ethnicCategoryCode),
