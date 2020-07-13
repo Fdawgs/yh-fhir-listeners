@@ -13,7 +13,7 @@
         <name value="Solutions Development Team"/>
         <telecom>
             <system value="email"/>
-            <value value="solutions.development@ydh.nhs.uk"/>
+            <value value="solutionsdevelopment@ydh.nhs.uk"/>
         </telecom>
     </contact>
     <implementationGuide value="https://nhsconnect.github.io/CareConnectAPI/"/>
