@@ -4,6 +4,9 @@ cache: yarn
 
 dist: bionic
 
+git:
+    quiet: true
+
 node_js:
     - 'lts/*'
     - 'node'
