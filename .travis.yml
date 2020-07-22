@@ -2,7 +2,7 @@ language: node_js
 
 cache: yarn
 
-dist: bionic
+dist: focal
 
 git:
     quiet: true
