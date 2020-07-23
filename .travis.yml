@@ -29,3 +29,7 @@ branches:
         - master
         - /^feat/.*$/
         - /^dependabot/.*$/
+
+script: 
+    - echo "Running tests against $(node -v)..."
+    - yarn test
