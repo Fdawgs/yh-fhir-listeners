@@ -28,6 +28,7 @@ branches:
     only:
         - master
         - /^feat/.*$/
+        - /^v\d*\.\d*\.\d*$/
         - /^dependabot/.*$/
 
 script: 
