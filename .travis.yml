@@ -2,8 +2,6 @@ language: node_js
 
 cache: yarn
 
-dist: focal
-
 git:
     quiet: true
 
@@ -11,9 +9,15 @@ node_js:
     - 'lts/*'
     - 'node'
 
+# os
+dist: focal
+
 os:
-    - windows
     - linux
+    - osx
+    - windows
+
+osx_image: xcode12
 
 # See https://travis-ci.community/t/build-doesnt-finish-after-completing-tests/288/9
 env:
