@@ -31,6 +31,6 @@ branches:
         - /^v\d*\.\d*\.\d*$/
         - /^dependabot/.*$/
 
-script: 
+script:
     - echo "Running tests against $(node -v)..."
     - yarn test
