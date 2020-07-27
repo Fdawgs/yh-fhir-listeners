@@ -1,3 +1,20 @@
+## <small>2.4.1 (2020-07-27)</small>
+
+-   build(deps-dev): bump dev dependencies ([39d4052](https://github.com/Fdawgs/ydh-fhir-listeners/commit/39d4052))
+-   build(travis): add osx image ([e70dcd4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e70dcd4))
+-   build(travis): add test script ([491215e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/491215e))
+-   build(travis): add version branches to safelist ([24179b6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/24179b6))
+-   build(travis): suppress git log ([b98e49c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b98e49c))
+-   build(travis): update linux dist to latest lts ([d503c0d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d503c0d))
+-   chore: update contact email ([9423d05](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9423d05))
+-   chore: update team contact email again ([fce512b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fce512b))
+-   chore(scripts): use gitignore for ignore-path options ([3edd42f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3edd42f))
+-   fix(capabilitystatement): correct publisher value ([6d7b6cd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6d7b6cd))
+-   fix(capabilitystatement): move sol dev email to seperate contact ([44f05cf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/44f05cf))
+-   fix(capabilitystatement): remove sol dev email from my contact ([559cd10](https://github.com/Fdawgs/ydh-fhir-listeners/commit/559cd10))
+-   fix(capabilitystatement): remove stray period ([77e83ee](https://github.com/Fdawgs/ydh-fhir-listeners/commit/77e83ee))
+-   docs(readme): remove inactive dependabot badge ([4b829d2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4b829d2))
+
 ## 2.4.0 (2020-07-09)
 
 -   build(deps-dev): bump development dependencies ([8c88121](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8c88121))
