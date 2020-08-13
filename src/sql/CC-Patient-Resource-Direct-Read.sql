@@ -5,7 +5,7 @@ Patient Resource
 SELECT DISTINCT nhsNumber,
 	nhsNumberTraceStatusDesc,
 	nhsNumberTraceStatusCode,
-	patientNo,
+	patient.patientNo,
 	active,
 	ethnicCategoryCode,
 	ethnicCategoryDesc,
@@ -144,25 +144,27 @@ FROM OPENQUERY(
 								AND COALESCE(PAPMI_Active,''Y'') = ''Y''
 								AND (patmas.PAPMI_PAPER_DR->PAPER_ID IS NOT NULL OR patmas.PAPMI_No IS NOT NULL)') AS patient
 	LEFT JOIN OPENQUERY([ENYH-PRD-ANALYTICS],
-                 'SELECT DISTINCT ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_ID AS DND
+                 'SELECT DISTINCT ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_ID AS DND,
+				 		 ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No AS patientNo
                     FROM PA_AlertMsg
                     WHERE ALM_Alert_DR->ALERT_Desc IN (''Do not disclose patient address'')
                          AND (ALM_ClosedDate IS NULL
                               OR ALM_ClosedDate < CURRENT_TIMESTAMP)
 						 AND ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''5484125''
                     ') AS dnd
-	ON 1 = 1
+	ON patient.patientNo = dnd.patientNo
 
 	LEFT JOIN OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT NOK_NonGovOrg_DR->NGO_Code AS schoolId,
 				 		 NOK_NonGovOrg_DR->NGO_Desc AS schoolName,
-						 NOK_NonGovOrg_DR->NGO_Phone AS schoolPhone
+						 NOK_NonGovOrg_DR->NGO_Phone AS schoolPhone,
+						 NOK_PAPMI_ParRef->PAPMI_No AS patientNo
                     FROM PA_NOK
                    WHERE NOK_Relation_DR->CTRLT_Code = ''SCH''
 					 AND NOK_PAPMI_ParRef->PAPMI_No = ''5484125''
 					 AND NOK_Inactive = ''N''
                    ') AS school
-	ON 1 = 1 
+	ON patient.patientNo = school.patientNo
 
 	LEFT JOIN lookup.dbo.ydh_ethnicity_list ethnic
 	ON patient.ethnicCategoryCode = ethnic.YDH_TrakCare_Code;

@@ -1,3 +1,9 @@
+## 2.5.0 (2020-08-13)
+
+-   fix(patient): fix crashes when searching without mrn or nhs no ([162a273](https://github.com/Fdawgs/ydh-fhir-listeners/commit/162a273))
+-   feat(patient): add address-postalcode search param ([f29af71](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f29af71))
+-   build(deps-dev): bump dev dependencies to resolve security cve ([2cf3b7b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2cf3b7b))
+
 ## <small>2.4.1 (2020-07-27)</small>
 
 -   build(deps-dev): bump dev dependencies ([39d4052](https://github.com/Fdawgs/ydh-fhir-listeners/commit/39d4052))
