@@ -544,6 +544,16 @@ try {
 		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
 		whereArray = [[], [], []];
 
+		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
+		if ($('parameters').contains('address-postalcode')) {
+			whereArray[0].push(
+				"(patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code = ''".concat(
+					$('parameters').getParameter('address-postalcode'),
+					"'')"
+				)
+			);
+		}
+
 		// GET [baseUrl]/Patient?birthdate=[date]
 		if ($('parameters').contains('birthdate')) {
 			whereArray[0].push(

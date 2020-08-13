@@ -130,6 +130,11 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
+                <name value="address-postalcode"/>
+                <type value="string"/>
+                <documentation value="A postalCode specified in an address"/>
+            </searchParam>
+            <searchParam>
                 <name value="birthdate"/>
                 <type value="date"/>
                 <documentation value="The patient's date of birth"/>
