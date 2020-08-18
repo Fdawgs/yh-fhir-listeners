@@ -7,7 +7,7 @@
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"license": "MIT",
 	"engines": {
-		"node": ">=12.16.3"
+		"node": ">=10.22.0"
 	},
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\" && yarn prettier",
