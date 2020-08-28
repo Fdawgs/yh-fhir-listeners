@@ -39,7 +39,6 @@ try {
 		case 'patient':
 			wherePredicate = [
 				`(patmas.PAPMI_No = ''${id}'')`,
-				`(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''${id}'')`,
 				`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`
 			];
 			break;
