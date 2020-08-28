@@ -2,7 +2,7 @@
 Patient Resource
 */
 
-SELECT DISTINCT nhsNumber,
+SELECT nhsNumber,
 	nhsNumberTraceStatusDesc,
 	nhsNumberTraceStatusCode,
 	patient.patientNo,
@@ -48,7 +48,7 @@ SELECT DISTINCT nhsNumber,
 	school.schoolPhone,
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY(
-		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT
+		[ENYH-PRD-ANALYTICS], 'SELECT 
 									patmas.PAPMI_PAPER_DR->PAPER_ID AS nhsNumber,
 									patmas.PAPMI_TraceStatus_DR->TRACE_Desc AS nhsNumberTraceStatusDesc,
 									patmas.PAPMI_TraceStatus_DR AS nhsNumberTraceStatusCode, -- TODO: Add leading zeros in transformer in Mirth
@@ -60,18 +60,14 @@ FROM OPENQUERY(
 									ELSE NULL
 									END AS active,
 
-									--mergepers.PAPER_ID AS mergeNhsNumber,
-									--mergepatmas.PAPMI_TraceStatus_DR->TRACE_Desc AS mergeNhsNumberTraceStatusDesc,
-									--mergepatmas.PAPMI_TraceStatus_DR mergeNhsNumberTraceStatusCode,
-
-									-- ethnicCategory -- done
+									-- ethnicCategory
 									patmas.PAPMI_PAPER_DR->PAPER_IndigStat_DR->INDST_Desc AS ethnicCategoryDesc,
 									patmas.PAPMI_PAPER_DR->PAPER_IndigStat_DR->INDST_Code AS ethnicCategoryCode,
 
 									-- nhsCommunication/Telecoms
-									patmas.PAPMI_PAPER_DR->PAPER_TelH AS "homePhone", -- TODO: Resolve mobile numbers in here?
+									patmas.PAPMI_PAPER_DR->PAPER_TelH AS "homePhone",
 									patmas.PAPMI_PAPER_DR->PAPER_TelO AS "businessPhone",
-									patmas.PAPMI_PAPER_DR->PAPER_MobPhone AS "mobilePhone", -- TODO: Resolve non-mobile numbers in here?
+									patmas.PAPMI_PAPER_DR->PAPER_MobPhone AS "mobilePhone",
 									patmas.PAPMI_PAPER_DR->PAPER_AppointmentSMS AS "appointmentSMS",
 									patmas.PAPMI_PAPER_DR->PAPER_Email AS "Email",
 									patmas.PAPMI_PAPER_DR->PAPER_PreferredContactMethod AS "PreferredContactMethod",
@@ -80,7 +76,7 @@ FROM OPENQUERY(
 
 									patmas.PAPMI_PAPER_DR->PAPER_UpdateDate AS lastUpdateDate,
 									patmas.PAPMI_PAPER_DR->PAPER_UpdateTime AS lastUpdateTime,
-								
+
 									-- name (official)
 									patmas.PAPMI_PAPER_DR->PAPER_Name AS nameFamily,
 									patmas.PAPMI_PAPER_DR->PAPER_Name2 AS nameGiven1First,
@@ -123,8 +119,6 @@ FROM OPENQUERY(
 									WHEN 4 THEN ''male''
 									END AS gender,
 
-
-
 									patmas.PAPMI_DOB AS birthDate,
 									CASE
 									WHEN patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''Y'' THEN ''true''
@@ -143,15 +137,7 @@ FROM OPENQUERY(
 								WHERE (patmas.PAPMI_No = ''5484125'')
 								AND COALESCE(PAPMI_Active,''Y'') = ''Y''
 								AND (patmas.PAPMI_PAPER_DR->PAPER_ID IS NOT NULL OR patmas.PAPMI_No IS NOT NULL)') AS patient
-	LEFT JOIN OPENQUERY([ENYH-PRD-ANALYTICS],
-                 'SELECT DISTINCT ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_ID AS DND,
-				 		 ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No AS patientNo
-                    FROM PA_AlertMsg
-                    WHERE ALM_Alert_DR->ALERT_Desc IN (''Do not disclose patient address'')
-                         AND (ALM_ClosedDate IS NULL
-                              OR ALM_ClosedDate < CURRENT_TIMESTAMP)
-						 AND ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''5484125''
-                    ') AS dnd
+	LEFT JOIN lookup.dbo.ydh_dnd AS dnd WITH (NOLOCK)
 	ON patient.patientNo = dnd.patientNo
 
 	LEFT JOIN OPENQUERY([ENYH-PRD-ANALYTICS],
@@ -166,5 +152,5 @@ FROM OPENQUERY(
                    ') AS school
 	ON patient.patientNo = school.patientNo
 
-	LEFT JOIN lookup.dbo.ydh_ethnicity_list ethnic
+	LEFT JOIN lookup.dbo.ydh_ethnicity_list ethnic WITH (NOLOCK)
 	ON patient.ethnicCategoryCode = ethnic.YDH_TrakCare_Code;

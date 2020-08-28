@@ -542,7 +542,7 @@ try {
 	 */
 	if (type == 'patient') {
 		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
-		whereArray = [[], [], []];
+		whereArray = [[], []];
 
 		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
 		if ($('parameters').contains('address-postalcode')) {
@@ -612,13 +612,6 @@ try {
 					);
 
 					whereArray[1].push(
-						"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_ID = ''".concat(
-							identifierParam[1],
-							"'')"
-						)
-					);
-
-					whereArray[2].push(
 						"(NOK_PAPMI_ParRef->PAPMI_ID = ''".concat(
 							identifierParam[1],
 							"'')"
@@ -637,13 +630,6 @@ try {
 					);
 
 					whereArray[1].push(
-						"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''".concat(
-							identifierParam[1],
-							"'')"
-						)
-					);
-
-					whereArray[2].push(
 						"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
 							identifierParam[1],
 							"'')"
@@ -659,13 +645,6 @@ try {
 				);
 
 				whereArray[1].push(
-					"(ALM_PAPMI_ParRef->PAPMI_PAPER_DR->PAPER_PAPMI_DR->PAPMI_No = ''".concat(
-						$('parameters').getParameter('identifier'),
-						"'')"
-					)
-				);
-
-				whereArray[2].push(
 					"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
 						$('parameters').getParameter('identifier'),
 						"'')"
