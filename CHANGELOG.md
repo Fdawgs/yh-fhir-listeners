@@ -1,3 +1,10 @@
+## <small>2.5.1 (2020-08-28)</small>
+
+-   build(deps-dev): bump dev dependencies ([05b7bee](https://github.com/Fdawgs/ydh-fhir-listeners/commit/05b7bee))
+-   refactor(patient): remove restricted patient table join bottleneck ([4f365bc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4f365bc))
+-   chore: reduce minimum nodejs engine version from 12.x to 10.x ([2c6ad52](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2c6ad52))
+-   chore(github): add issue templates ([5c5281b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5c5281b))
+
 ## 2.5.0 (2020-08-13)
 
 -   fix(patient): fix crashes when searching without mrn or nhs no ([162a273](https://github.com/Fdawgs/ydh-fhir-listeners/commit/162a273))

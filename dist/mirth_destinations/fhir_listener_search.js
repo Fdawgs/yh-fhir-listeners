@@ -541,7 +541,7 @@ try {
 	 * =====================
 	 */
 	if (type == 'patient') {
-		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
+		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
 
 		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
