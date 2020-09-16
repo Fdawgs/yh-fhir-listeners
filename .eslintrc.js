@@ -1,33 +1,37 @@
 module.exports = {
 	env: {
-		es6: true,
+		es2021: true,
 		node: true
 	},
-	extends: ['airbnb-base', 'prettier'],
+	extends: [
+		'airbnb-base',
+		'plugin:jsdoc/recommended',
+		'plugin:security/recommended',
+		'prettier'
+	],
 	parserOptions: {
-		ecmaVersion: 2020,
 		sourceType: 'script',
 		ecmaFeatures: {
 			globalReturn: true
 		}
 	},
-	plugins: ['json'],
+	plugins: ['jsdoc', 'json', 'security'],
+	root: true,
 	rules: {
-		'lines-between-class-members': 'error',
 		'no-multiple-empty-lines': [
 			'error',
 			{
-				max: 1,
-				maxBOF: 0,
-				maxEOF: 0
+				max: 1
 			}
 		],
 		// Mirth specific settings
 		'consistent-return': 'off', // Mirth has global returns
 		eqeqeq: 'off', // Mirth errors with ===
+		'no-param-reassign': 'warn',
 		'no-plusplus': 'off',
 		'no-undef': 'off',
 		'no-unused-vars': 'off',
+		'no-useless-return': 'warn',
 		'prefer-destructuring': 'off',
 		'vars-on-top': 'off'
 	}
