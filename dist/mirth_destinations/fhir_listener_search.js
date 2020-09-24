@@ -123,9 +123,9 @@ try {
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereParts.push(
-						"(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''".concat(
+						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							allergyPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 				}
@@ -225,23 +225,23 @@ try {
 					'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''".concat(
+						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							encounterPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 
 					whereArray[1].push(
-						"(PAADM_PAPMI_DR->PAPMI_ID = ''".concat(
+						"(PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							encounterPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 
 					whereArray[2].push(
-						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''".concat(
+						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							encounterPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 				}
@@ -405,9 +405,9 @@ try {
 				).split('|');
 				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
 					whereArray[0].push(
-						"(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''".concat(
+						"(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							flagPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 				}
@@ -500,9 +500,9 @@ try {
 					medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''".concat(
+						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							medStatPatIdParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 				}
@@ -612,9 +612,9 @@ try {
 					);
 
 					whereArray[1].push(
-						"(NOK_PAPMI_ParRef->PAPMI_ID = ''".concat(
+						"(NOK_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							identifierParam[1],
-							"'')"
+							"'' AND PAPMI_Active IS NULL))"
 						)
 					);
 				}
