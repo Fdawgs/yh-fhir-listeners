@@ -114,7 +114,7 @@ try {
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereParts.push(
-						`(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''${allergyPatIdParam[1]}'')`
+						`(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${allergyPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
@@ -207,13 +207,13 @@ try {
 					'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
+						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${encounterPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 					whereArray[1].push(
-						`(PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
+						`(PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${encounterPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 					whereArray[2].push(
-						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_ID = ''${encounterPatIdParam[1]}'')`
+						`(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${encounterPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
@@ -349,7 +349,7 @@ try {
 				).split('|');
 				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
 					whereArray[0].push(
-						`(alert.ALM_PAPMI_ParRef->PAPMI_Id = ''${flagPatIdParam[1]}'')`
+						`(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${flagPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
@@ -433,7 +433,7 @@ try {
 					medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
-						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_ID = ''${medStatPatIdParam[1]}'')`
+						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${medStatPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
@@ -530,7 +530,7 @@ try {
 					);
 
 					whereArray[1].push(
-						`(NOK_PAPMI_ParRef->PAPMI_ID = ''${identifierParam[1]}'')`
+						`(NOK_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${identifierParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
