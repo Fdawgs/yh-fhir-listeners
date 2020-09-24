@@ -19,7 +19,7 @@ Mirth Connect, a trust integration engine (TIE) is used extensively at Yeovil Di
 Mirth Connect provides official FHIR support through a [FHIR Connector Extension](http://www.mirthcorp.com/community/wiki/pages/viewpage.action?pageId=36504815) introduced in version 3.6 and these provide all the functionality needed to successfully develop and deploy RESTful FHIR API endpoints. [Example channels](http://www.mirthcorp.com/community/wiki/display/mirth/Example+Channel) that were provided have been adapted for use with YDH's PAS, Intersystem's TrakCare.
 
 SSL/HTTPS support is not available out of the box and there was no apparent way to add an API key requirement to the listener.
-A [Node.js application using the Express framework, running as a Windows service](https://github.com/Fdawgs/ydh-sider-authentication-service), was developed and deployed to provide this.
+A [Node.js application using the Express framework, running as a Windows service](https://github.com/Fdawgs/ydh-authentication-service), was developed and deployed to provide this.
 
 TrakCare does not hold either conditions or documents.
 Documents are held in PatientCentre, whilst Conditions are held in SimpleCode.

@@ -27,4 +27,4 @@ With the server in place, test end points were set up using a fork of Asymmetrik
 
 Asymmetrik’s server was chosen over HAPI FHIR (that NHS Digital are using for their FHIR Server reference implementation for Care Connect) due to it being built in JavaScript as opposed to Java. Time would have to be spent relearning Java, and JavaScript is now more prevalent, allowing the project to be taken up and maintained by someone else with relative ease.
 
-For the live end points this was replaced by Mirth Connect and its new [FHIR extensions](http://www.mirthcorp.com/community/wiki/pages/viewpage.action?pageId=36504815), with a [Node.js service](https://github.com/Fdawgs/ydh-sider-authentication-service) providing security and authentication middleware.
+For the live end points this was replaced by Mirth Connect and its new [FHIR extensions](http://www.mirthcorp.com/community/wiki/pages/viewpage.action?pageId=36504815), with a [Node.js service](https://github.com/Fdawgs/ydh-authentication-service) providing security and authentication middleware.
