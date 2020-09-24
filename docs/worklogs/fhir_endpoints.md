@@ -27,10 +27,14 @@ A [Node.js application using the Express framework, running as a Windows service
 -   Unable to provide DocumentReference resources as these are held in Patient Centre, not TrakCare (this can be potentially be revisited when the new Patient Centre is in place)
 -   Discharge/end dates for outpatient Encounter resources are not provided due to poor data quality. Staff in outpatients misuse these input fields in TrakCare to mark when “all admin has been completed for that outpatient encounter” and not when the encounter actually finished
 -   Unable to provide Condition resources as conditions are held in SimpleCode, not TrakCare
--   SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (to revisit)
+-   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (to revisit)
 -   Sizeable number of patient records without postcodes
 -   Unable to provide clinician contact details for Encounter resources due to the following:
     -   In TrakCare a care provider has a mobile number field against them, but it is rarely populated
     -   There is not an internal contact number field in TrakCare
     -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
     -   Teams do not have contact number
+
+## Known performance issues
+
+-   Using an NHS number to search resources takes up to 20 times longer to return a result than with a local identifier
