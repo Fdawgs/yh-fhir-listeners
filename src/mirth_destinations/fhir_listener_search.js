@@ -113,7 +113,7 @@ try {
 				if (
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
-					whereArray[0].push(
+					whereParts.push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_ID = ''${allergyPatIdParam[1]}'')`
 					);
 				}
@@ -121,7 +121,7 @@ try {
 					allergyPatIdParam[0] ===
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
-					whereArray[0].push(
+					whereParts.push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${allergyPatIdParam[1]}'')`
 					);
 				}
