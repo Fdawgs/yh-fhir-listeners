@@ -1,3 +1,18 @@
+## <small>2.5.2 (2020-09-24)</small>
+
+-   docs: correct link to auth service ([1b78111](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1b78111))
+-   docs(readme): add snyk badge ([48363dd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/48363dd))
+-   docs(readme): repoint travis-ci badge from .org to .com ([d52cde2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d52cde2))
+-   docs(worklogs): add list of known data quality issues ([94f2245](https://github.com/Fdawgs/ydh-fhir-listeners/commit/94f2245))
+-   docs(worklogs): add list of known performance issues ([c617b88](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c617b88))
+-   docs(worklogs): add nhw as contributor ([d7a5d59](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d7a5d59))
+-   fix(allergyintolerance): use correct array for patient id search ([7ee26e3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7ee26e3))
+-   chore(allergyintolerance): add example mrn ([254db7e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/254db7e))
+-   build(dependabot): remove assignment of pull requests to user ([3183ff7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3183ff7))
+-   build(deps-dev): add jsdoc and security eslint plugins ([2649877](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2649877))
+-   build(deps-dev): bump dev dependencies ([e07b7a7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e07b7a7))
+-   style: tidy jsdoc tags ([a2cee0c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a2cee0c))
+
 ## <small>2.5.1 (2020-08-28)</small>
 
 -   build(deps-dev): bump dev dependencies ([05b7bee](https://github.com/Fdawgs/ydh-fhir-listeners/commit/05b7bee))

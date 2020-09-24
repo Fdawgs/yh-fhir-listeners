@@ -1,10 +1,10 @@
 /**
 	Builds Patient FHIR resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 for more info.
-
+ 
 	@author Frazer Smith
-	@param {Object} data - Java RowSet object.
-	@return {Object} Patient FHIR resource.
+	@param {object} data - Java RowSet object.
+	@returns {object} Patient FHIR resource.
  */
 function buildPatientResource(data) {
 	var result = getResultSet(data);
