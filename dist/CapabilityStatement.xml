@@ -68,6 +68,11 @@
                 <documentation value="The patient or group present at the encounter"/>
             </searchParam>
             <searchParam>
+                <name value="status"/>
+                <type value="token"/>
+                <documentation value="planned | arrived | triaged | in-progress | onleave | finished | cancelled"/>
+            </searchParam>
+            <searchParam>
                 <name value="type"/>
                 <type value="token"/>
                 <documentation value="Specific type of encounter using codes defined by DCH Specialty"/>

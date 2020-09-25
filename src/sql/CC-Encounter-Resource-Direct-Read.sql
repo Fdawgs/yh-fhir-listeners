@@ -41,8 +41,21 @@ WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode,
 	encounterHospitalizationAdmitsourceCodingCode, encounterHospitalizationAdmitsourceCodingDesc, encounterHospitalizationDischargedispositionCodingCode,
 	encounterHospitalizationDischargedispositionCodingDesc, encounterAdmissionmethodCodingCode, encounterAdmissionmethodCodingDesc,
 	encounterDischargemethodCodingCode, encounterDischargemethodCodingDesc, subjectReference,
-	encounterStatus, lastUpdateDate, lastUpdateTime)
-AS (SELECT DISTINCT *
+	encounterStatus, lastUpdateDate, lastUpdateTime, encounterStatusMapped)
+AS (SELECT DISTINCT *,
+		CASE
+		WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled'
+		WHEN encounterStatus IN ('D', 'R')
+			 OR (encounterStatus IN ('A')
+			 AND encounterPeriodStartDate IS NOT NULL
+			 AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
+		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
+			 AND encounterPeriodStartDate IS NOT NULL)
+			 OR encounterStatus IN ('P') THEN 'planned'
+	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
+		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
+		ELSE 'unknown'
+		END AS encounterStatusMapped
   	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
   				'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier,
 						''ambulatory'' AS encounterClassDesc,
@@ -72,7 +85,20 @@ AS (SELECT DISTINCT *
 				  	AND app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 				  ')
 	 UNION
-	SELECT DISTINCT *
+	SELECT DISTINCT *,
+		CASE
+		WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled'
+		WHEN encounterStatus IN ('D', 'R')
+			 OR (encounterStatus IN ('A')
+			 AND encounterPeriodStartDate IS NOT NULL
+			 AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
+		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
+			 AND encounterPeriodStartDate IS NOT NULL)
+			 OR encounterStatus IN ('P') THEN 'planned'
+	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
+		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
+		ELSE 'unknown'
+		END AS encounterStatusMapped
   	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 				 'SELECT REPLACE(PAADM_ADMNo, ''/'', ''-'') AS encounterIdentifier,
 						 CASE PAADM_Type
@@ -123,19 +149,7 @@ AS (SELECT DISTINCT *
 				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 					  '))
 SELECT  encounterIdentifier,
-		CASE
-		WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled'
-		WHEN encounterStatus IN ('D', 'R')
-			 OR (encounterStatus IN ('A')
-			 AND encounterPeriodStartDate IS NOT NULL
-			 AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
-		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
-			 AND encounterPeriodStartDate IS NOT NULL)
-			 OR encounterStatus IN ('P') THEN 'planned'
-	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
-		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
-		ELSE 'unknown'
-		END AS encounterStatusMapped,
+		encounterStatusMapped,
 		encounterStatus,
 		encounterClassDesc,
 		encounterClassCode,

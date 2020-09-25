@@ -182,8 +182,8 @@ try {
 	 * =======================
 	 */
 	if (type == 'encounter') {
-		// Turn array into multi-dimensional one to allow for three seperate WHERE clauses to be built
-		whereArray = [[], [], []];
+		// Turn array into multi-dimensional one to allow for four seperate WHERE clauses to be built
+		whereArray = [[], [], [], []];
 
 		// GET [baseUrl]/Encounter?patient=[id]
 		if ($('parameters').contains('patient')) {
@@ -321,7 +321,7 @@ try {
 			$('parameters')
 				.getParameterList('class')
 				.toArray()
-				.forEach(function (paramclass) {
+				.forEach(function (paramClass) {
 					var classCode = {
 						inpatient: 'I',
 						outpatient: 'AMB',
@@ -331,7 +331,7 @@ try {
 					// Build where clause for first query (outpats) in union
 					whereArray[0].push(
 						"(''AMB'' = ''".concat(
-							classCode[paramclass.toLowerCase()],
+							classCode[paramClass.toLowerCase()],
 							"'')"
 						)
 					);
@@ -339,7 +339,7 @@ try {
 					// Build where clause for second query (inpats, emerg) in union
 					whereArray[1].push(
 						"(PAADM_Type = ''".concat(
-							classCode[paramclass.toLowerCase()],
+							classCode[paramClass.toLowerCase()],
 							"'')"
 						)
 					);
@@ -371,6 +371,24 @@ try {
 							paramType,
 							"'')"
 						)
+					);
+				});
+		}
+
+		// GET [baseUrl]/Encounter?patient=[id]&status=[token]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('status')
+		) {
+			// Loop through each type param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('status')
+				.toArray()
+				.forEach(function (paramStatus) {
+					// Build where clause for fourth query
+					whereArray[3].push(
+						"(encounterStatusMapped = '".concat(paramStatus, "')")
 					);
 				});
 		}
