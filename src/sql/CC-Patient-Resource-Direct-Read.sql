@@ -51,8 +51,8 @@ FROM OPENQUERY(
 		[ENYH-PRD-ANALYTICS], 'SELECT 
 									patmas.PAPMI_PAPER_DR->PAPER_ID AS nhsNumber,
 									patmas.PAPMI_TraceStatus_DR->TRACE_Desc AS nhsNumberTraceStatusDesc,
-									patmas.PAPMI_TraceStatus_DR AS nhsNumberTraceStatusCode, -- TODO: Add leading zeros in transformer in Mirth
-									patmas.PAPMI_No AS patientNo, -- MRN apparently
+									patmas.PAPMI_TraceStatus_DR AS nhsNumberTraceStatusCode,
+									patmas.PAPMI_No AS patientNo, -- MRN
 									patmas.PAPMI_Active,	
 									CASE
 									WHEN patmas.PAPMI_Active IS NULL THEN ''true''
@@ -105,7 +105,6 @@ FROM OPENQUERY(
 
 									-- address (home)
 									patmas.PAPMI_PAPER_DR->PAPER_StName AS "addressLine1",
-									--patmas.PAPMI_PAPER_DR->PAPER_StNameLine1 AS "addressLine2",
 									patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress AS "addressLine2",
 									patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc AS "city",
 									patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc AS "district",

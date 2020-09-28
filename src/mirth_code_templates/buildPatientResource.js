@@ -96,7 +96,7 @@ function buildPatientResource(data) {
 									'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1'
 								),
 								code: newStringOrUndefined(
-									result.nhsNumberTraceStatusCode
+									pad(result.nhsNumberTraceStatusCode, 2)
 								),
 								display: newStringOrUndefined(
 									result.nhsNumberTraceStatusDesc

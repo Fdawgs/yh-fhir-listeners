@@ -106,7 +106,7 @@ function buildPatientResource(data) {
 								),
 
 								code: newStringOrUndefined(
-									result.nhsNumberTraceStatusCode
+									pad(result.nhsNumberTraceStatusCode, 2)
 								),
 
 								display: newStringOrUndefined(
