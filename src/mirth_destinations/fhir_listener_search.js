@@ -27,13 +27,13 @@ try {
 			'address-city',
 			'address-postalcode',
 			'birthdate',
+			'deceased',
 			'email',
 			'family',
 			'gender',
 			'given',
 			'identifier',
-			'name',
-			'phone'
+			'name'
 		]
 	};
 
