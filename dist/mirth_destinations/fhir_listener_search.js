@@ -562,7 +562,7 @@ try {
 		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
 
-		// GET [baseUrl]/Patient?address=address
+		// GET [baseUrl]/Patient?address=[address]
 		if ($('parameters').contains('address')) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_StName = ''"
