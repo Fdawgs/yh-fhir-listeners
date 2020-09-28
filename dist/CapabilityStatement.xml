@@ -145,6 +145,11 @@
                 <documentation value="The patient's date of birth"/>
             </searchParam>
             <searchParam>
+                <name value="email"/>
+                <type value="token"/>
+                <documentation value="A value in an email contact"/>
+            </searchParam>
+            <searchParam>
                 <name value="family"/>
                 <type value="string"/>
                 <documentation value="A portion of the family name of the patient"/>

@@ -506,6 +506,15 @@ try {
 			);
 		}
 
+		// GET [baseUrl]/Patient?email=[email]
+		if ($('parameters').contains('email')) {
+			whereArray[0].push(
+				`(patmas.PAPMI_PAPER_DR->PAPER_Email = ''${$(
+					'parameters'
+				).getParameter('email')}'')`
+			);
+		}
+
 		// GET [baseUrl]/Patient?family=[family]
 		if ($('parameters').contains('family')) {
 			whereArray[0].push(
