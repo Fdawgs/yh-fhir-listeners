@@ -135,6 +135,11 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
+                <name value="address"/>
+                <type value="string"/>
+                <documentation value="A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text"/>
+            </searchParam>
+            <searchParam>
                 <name value="address-postalcode"/>
                 <type value="string"/>
                 <documentation value="A postalCode specified in an address"/>

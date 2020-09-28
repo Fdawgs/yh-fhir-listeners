@@ -562,6 +562,30 @@ try {
 		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
 		whereArray = [[], []];
 
+		// GET [baseUrl]/Patient?address=address
+		if ($('parameters').contains('address')) {
+			whereArray[0].push(
+				"(patmas.PAPMI_PAPER_DR->PAPER_StName = ''"
+					.concat(
+						$('parameters').getParameter('address'),
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress = ''"
+					)
+					.concat(
+						$('parameters').getParameter('address'),
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc = ''"
+					)
+					.concat(
+						$('parameters').getParameter('address'),
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc = ''"
+					)
+					.concat(
+						$('parameters').getParameter('address'),
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code = ''"
+					)
+					.concat($('parameters').getParameter('address'), "'')")
+			);
+		}
+
 		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
 		if ($('parameters').contains('address-postalcode')) {
 			whereArray[0].push(
