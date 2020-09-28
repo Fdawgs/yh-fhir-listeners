@@ -19,16 +19,21 @@ try {
 	var supportedTypeParams = {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
 		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
-		encounter: ['date', 'patient'],
-		flag: ['date', 'patient', 'status'],
+		encounter: ['class', 'date', 'patient', 'status'],
+		flag: ['patient', 'status'],
 		medicationstatement: ['effective', 'patient', 'status'],
 		patient: [
+			'address',
+			'address-city',
+			'address-postalcode',
 			'birthdate',
+			'email',
 			'family',
 			'gender',
 			'given',
 			'identifier',
-			'name'
+			'name',
+			'phone'
 		]
 	};
 
@@ -564,25 +569,18 @@ try {
 
 		// GET [baseUrl]/Patient?address=[address]
 		if ($('parameters').contains('address')) {
+			var address = $('parameters').getParameter('address');
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_StName = ''"
 					.concat(
-						$('parameters').getParameter('address'),
+						address,
 						"'' OR patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress = ''"
 					)
 					.concat(
-						$('parameters').getParameter('address'),
-						"'' OR patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc = ''"
-					)
-					.concat(
-						$('parameters').getParameter('address'),
+						address,
 						"'' OR patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc = ''"
 					)
-					.concat(
-						$('parameters').getParameter('address'),
-						"'' OR patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code = ''"
-					)
-					.concat($('parameters').getParameter('address'), "'')")
+					.concat(address, "'')")
 			);
 		}
 
@@ -614,6 +612,28 @@ try {
 					"'')"
 				)
 			);
+		}
+
+		// GET [baseUrl]/Patient?deceased=[deceased]
+		if ($('parameters').contains('deceased')) {
+			var deceased = $('parameters').getParameter('deceased');
+
+			switch (deceased) {
+				case 'false':
+					whereArray[0].push(
+						"(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'')"
+					);
+
+					break;
+				case 'true':
+					whereArray[0].push(
+						"(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''Y'')"
+					);
+
+					break;
+				default:
+					break;
+			}
 		}
 
 		// GET [baseUrl]/Patient?email=[email]

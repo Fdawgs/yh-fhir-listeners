@@ -19,16 +19,21 @@ try {
 	const supportedTypeParams = {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
 		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
-		encounter: ['date', 'patient'],
-		flag: ['date', 'patient', 'status'],
+		encounter: ['class', 'date', 'patient', 'status'],
+		flag: ['patient', 'status'],
 		medicationstatement: ['effective', 'patient', 'status'],
 		patient: [
+			'address',
+			'address-city',
+			'address-postalcode',
 			'birthdate',
+			'email',
 			'family',
 			'gender',
 			'given',
 			'identifier',
-			'name'
+			'name',
+			'phone'
 		]
 	};
 
@@ -490,26 +495,9 @@ try {
 
 		// GET [baseUrl]/Patient?address=[address]
 		if ($('parameters').contains('address')) {
+			const address = $('parameters').getParameter('address');
 			whereArray[0].push(
-				`(patmas.PAPMI_PAPER_DR->PAPER_StName = ''${$(
-					'parameters'
-				).getParameter(
-					'address'
-				)}'' OR patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress = ''${$(
-					'parameters'
-				).getParameter(
-					'address'
-				)}'' OR patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc = ''${$(
-					'parameters'
-				).getParameter(
-					'address'
-				)}'' OR patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc = ''${$(
-					'parameters'
-				).getParameter(
-					'address'
-				)}'' OR patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code = ''${$(
-					'parameters'
-				).getParameter('address')}'')`
+				`(patmas.PAPMI_PAPER_DR->PAPER_StName = ''${address}'' OR patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress = ''${address}'' OR patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc = ''${address}'')`
 			);
 		}
 
@@ -538,6 +526,26 @@ try {
 					'birthdate'
 				)}'')`
 			);
+		}
+
+		// GET [baseUrl]/Patient?deceased=[deceased]
+		if ($('parameters').contains('deceased')) {
+			const deceased = $('parameters').getParameter('deceased');
+
+			switch (deceased) {
+				case 'false':
+					whereArray[0].push(
+						`(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'')`
+					);
+					break;
+				case 'true':
+					whereArray[0].push(
+						`(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''Y'')`
+					);
+					break;
+				default:
+					break;
+			}
 		}
 
 		// GET [baseUrl]/Patient?email=[email]
