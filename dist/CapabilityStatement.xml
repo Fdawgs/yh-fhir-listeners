@@ -132,7 +132,7 @@
             <searchParam>
                 <name value="address"/>
                 <type value="string"/>
-                <documentation value="A server defined search that may match any of the string fields in the Address, including line, city, state, country, postalCode, and/or text"/>
+                <documentation value="A line or county specified in an address"/>
             </searchParam>
             <searchParam>
                 <name value="address-city"/>
