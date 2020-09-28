@@ -513,6 +513,15 @@ try {
 			);
 		}
 
+		// GET [baseUrl]/Patient?address-city=[address-city]
+		if ($('parameters').contains('address-city')) {
+			whereArray[0].push(
+				`(patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc = ''${$(
+					'parameters'
+				).getParameter('address-city')}'')`
+			);
+		}
+
 		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
 		if ($('parameters').contains('address-postalcode')) {
 			whereArray[0].push(
