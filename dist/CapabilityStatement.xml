@@ -87,11 +87,6 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
-                <name value="date"/>
-                <type value="date"/>
-                <documentation value="Time period when flag is active"/>
-            </searchParam>
-            <searchParam>
                 <name value="patient"/>
                 <type value="reference"/>
                 <documentation value="The identity of a subject to list flags for"/>
@@ -135,6 +130,16 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
+                <name value="address"/>
+                <type value="string"/>
+                <documentation value="A line or county specified in an address"/>
+            </searchParam>
+            <searchParam>
+                <name value="address-city"/>
+                <type value="string"/>
+                <documentation value="A city specified in an address"/>
+            </searchParam>
+            <searchParam>
                 <name value="address-postalcode"/>
                 <type value="string"/>
                 <documentation value="A postalCode specified in an address"/>
@@ -143,6 +148,16 @@
                 <name value="birthdate"/>
                 <type value="date"/>
                 <documentation value="The patient's date of birth"/>
+            </searchParam>
+            <searchParam>
+                <name value="deceased"/>
+                <type value="token"/>
+                <documentation value="This patient has been marked as deceased, or has a death date entered"/>
+            </searchParam>
+            <searchParam>
+                <name value="email"/>
+                <type value="token"/>
+                <documentation value="A value in an email contact"/>
             </searchParam>
             <searchParam>
                 <name value="family"/>
