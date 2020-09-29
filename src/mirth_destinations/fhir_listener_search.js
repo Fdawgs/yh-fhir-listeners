@@ -33,7 +33,8 @@ try {
 			'gender',
 			'given',
 			'identifier',
-			'name'
+			'name',
+			'phone'
 		]
 	};
 
@@ -634,6 +635,14 @@ try {
 			const name = $('parameters').getParameter('name');
 			whereArray[0].push(
 				`(patmas.PAPMI_PAPER_DR->PAPER_Name = ''${name}'' OR patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''${name}'')`
+			);
+		}
+
+		// GET [baseUrl]/Patient?phone=[phone]
+		if ($('parameters').contains('phone')) {
+			const phone = $('parameters').getParameter('phone');
+			whereArray[0].push(
+				`(patmas.PAPMI_PAPER_DR->PAPER_TelH = ''${phone}'' OR patmas.PAPMI_PAPER_DR->PAPER_TelO = ''${phone}'' OR patmas.PAPMI_PAPER_DR->PAPER_MobPhone = ''${phone}'')`
 			);
 		}
 	}
