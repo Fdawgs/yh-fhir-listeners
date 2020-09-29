@@ -33,7 +33,8 @@ try {
 			'gender',
 			'given',
 			'identifier',
-			'name'
+			'name',
+			'phone'
 		]
 	};
 
@@ -745,6 +746,23 @@ try {
 						"'' OR patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''"
 					)
 					.concat(name, "'')")
+			);
+		}
+
+		// GET [baseUrl]/Patient?phone=[phone]
+		if ($('parameters').contains('phone')) {
+			var phone = $('parameters').getParameter('phone');
+			whereArray[0].push(
+				"(patmas.PAPMI_PAPER_DR->PAPER_TelH = ''"
+					.concat(
+						phone,
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_TelO = ''"
+					)
+					.concat(
+						phone,
+						"'' OR patmas.PAPMI_PAPER_DR->PAPER_MobPhone = ''"
+					)
+					.concat(phone, "'')")
 			);
 		}
 	}

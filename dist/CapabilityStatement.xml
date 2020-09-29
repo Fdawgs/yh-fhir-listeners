@@ -184,6 +184,11 @@
                 <type value="string"/>
                 <documentation value="A portion of the given name or family name of the patient"/>
             </searchParam>
+            <searchParam>
+                <name value="phone"/>
+                <type value="string"/>
+                <documentation value="A value in a phone contact"/>
+            </searchParam>
         </resource>
     </rest>
     <document>
