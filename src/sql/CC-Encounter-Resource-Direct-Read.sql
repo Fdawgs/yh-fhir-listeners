@@ -199,7 +199,7 @@ SELECT  encounterIdentifier,
 								  admissionConsultantDesc,
 								  admissionConsultantSpecCode,
 								  admissionConsultantSpecDesc,
-								  row_number() over (partition by PAADM_ADMNo order by TRANS_ChildSub)	AS transOrder
+								  row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
 							 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 							 		'SELECT TRANS_ParRef->PAADM_AdmDocCodeDR->CTPCP_Code AS dischargeConsultantCode,
 									 		TRANS_ParRef->PAADM_AdmDocCodeDR->CTPCP_Desc AS dischargeConsultantDesc,
@@ -225,7 +225,7 @@ SELECT  encounterIdentifier,
 								  dischargeWardDesc,
 								  admissionWardCode,
 								  admissionWardDesc,
-								  row_number() over (partition by PAADM_ADMNo order by TRANS_ChildSub)	AS transOrder
+								  row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
 							 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 							 		'SELECT TRANS_ParRef->PAADM_CurrentWard_DR->WARD_Code AS dischargeWardCode,
 									 		TRANS_ParRef->PAADM_CurrentWard_DR->WARD_Desc AS dischargeWardDesc,
@@ -240,5 +240,4 @@ SELECT  encounterIdentifier,
                                         AND TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 									')
 						   ) a  WHERE transOrder = 1) wards
-		ON encounter_CTE.encounterIdentifier = wards.PAADM_ADMNo	
-		;
+		ON encounter_CTE.encounterIdentifier = wards.PAADM_ADMNo;
