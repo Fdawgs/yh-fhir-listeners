@@ -34,6 +34,11 @@
                 <documentation value="active | inactive | resolved"/>
             </searchParam>
             <searchParam>
+                <name value="criticality"/>
+                <type value="token"/>
+                <documentation value="low | high | unable-to-assess"/>
+            </searchParam>
+            <searchParam>
                 <name value="date"/>
                 <type value="date"/>
                 <documentation value="Date record was believed accurate"/>
@@ -42,6 +47,11 @@
                 <name value="patient"/>
                 <type value="reference"/>
                 <documentation value="Who the sensitivity is for"/>
+            </searchParam>
+            <searchParam>
+                <name value="type"/>
+                <type value="token"/>
+                <documentation value="allergy | intolerance - Underlying mechanism (if known)"/>
             </searchParam>
         </resource>
         <resource>

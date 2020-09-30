@@ -102,11 +102,11 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('clinical-status')
 		) {
-			const clinicalStatus = $('parameters').getParameter(
-				'clinical-status'
+			whereArray[3].push(
+				`(clinicalStatusCode = '${$('parameters').getParameter(
+					'clinical-status'
+				)}')`
 			);
-
-			whereArray[3].push(`(clinicalStatusCode = ''${clinicalStatus}'')`);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
@@ -115,11 +115,11 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('criticality')
 		) {
-			const criticality = $('parameters').getParameter(
-				'criticality'
+			whereArray[3].push(
+				`(criticalityCode = '${$('parameters').getParameter(
+					'criticality'
+				)}')`
 			);
-
-			whereArray[3].push(`(criticalityCode = ''${criticality}'')`);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
@@ -146,6 +146,17 @@ try {
 						`(alle.ALG_Date ${operator} ''${date}'')`
 					);
 				});
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&type=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('type')
+		) {
+			whereArray[3].push(
+				`(typeCode = '${$('parameters').getParameter('type')}')`
+			);
 		}
 	}
 

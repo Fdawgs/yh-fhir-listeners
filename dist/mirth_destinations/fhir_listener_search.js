@@ -17,7 +17,6 @@ try {
 	var bundle = buildBundleResource(new java.net.URI(requestURL));
 	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
 	var whereArray = [[], [], [], []];
-	var whereParts = [];
 
 	var supportedTypeParams = {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
@@ -62,26 +61,73 @@ try {
 	 * ================================
 	 */
 	if (type == 'allergyintolerance') {
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]
+		if ($('parameters').contains('patient')) {
+			whereArray[0].push(
+				"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
+					$('parameters').getParameter('patient'),
+					"'')"
+				)
+			);
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code]
+		if ($('parameters').contains('patient.identifier')) {
+			if (
+				$('parameters').getParameter('patient.identifier').contains('|')
+			) {
+				var allergyPatIdParam = String(
+					$('parameters').getParameter('patient.identifier')
+				).split('|');
+				if (
+					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
+				) {
+					whereArray[0].push(
+						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+							allergyPatIdParam[1],
+							"'' AND PAPMI_Active IS NULL))"
+						)
+					);
+				}
+				if (
+					allergyPatIdParam[0] ===
+					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+				) {
+					whereArray[0].push(
+						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
+							allergyPatIdParam[1],
+							"'')"
+						)
+					);
+				}
+			}
+		}
+
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
 		if (
 			($('parameters').contains('patient') ||
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('clinical-status')
 		) {
-			var clinicalStatus = $('parameters').getParameter(
-				'clinical-status'
+			whereArray[3].push(
+				"(clinicalStatusCode = '".concat(
+					$('parameters').getParameter('clinical-status'),
+					"')"
+				)
 			);
+		}
 
-			var clinicalStatusCode = {
-				active: 'A',
-				inactive: 'I',
-				resolved: 'R'
-			};
-
-			clinicalStatus = clinicalStatusCode[clinicalStatus.toLowerCase()];
-
-			whereParts.push(
-				"(alle.ALG_Status = ''".concat(clinicalStatus, "'')")
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('criticality')
+		) {
+			whereArray[3].push(
+				"(criticalityCode = '".concat(
+					$('parameters').getParameter('criticality'),
+					"')"
+				)
 			);
 		}
 
@@ -105,7 +151,7 @@ try {
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
 					}
-					whereParts.push(
+					whereArray[0].push(
 						'(alle.ALG_Date '
 							.concat(operator, " ''")
 							.concat(date, "'')")
@@ -113,49 +159,19 @@ try {
 				});
 		}
 
-		// GET [baseUrl]/AllergyIntolerance?patient=[id]
-		if ($('parameters').contains('patient')) {
-			whereParts.push(
-				"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
-					"'')"
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&type=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('type')
+		) {
+			whereArray[3].push(
+				"(typeCode = '".concat(
+					$('parameters').getParameter('type'),
+					"')"
 				)
 			);
 		}
-
-		// GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code]
-		if ($('parameters').contains('patient.identifier')) {
-			if (
-				$('parameters').getParameter('patient.identifier').contains('|')
-			) {
-				var allergyPatIdParam = String(
-					$('parameters').getParameter('patient.identifier')
-				).split('|');
-				if (
-					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
-				) {
-					whereParts.push(
-						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							allergyPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
-						)
-					);
-				}
-				if (
-					allergyPatIdParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
-				) {
-					whereParts.push(
-						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
-							allergyPatIdParam[1],
-							"'')"
-						)
-					);
-				}
-			}
-		}
-
-		whereArray[0].push(whereParts);
 	}
 
 	/**
@@ -166,17 +182,17 @@ try {
 	if (type == 'condition') {
 		// GET [baseUrl]/Condition?patient=[id]&asserted-date=[date]
 		if ($('parameters').contains('asserted-date')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&category=[code]
 		if ($('parameters').contains('category')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		/**
@@ -184,7 +200,7 @@ try {
 		 * GET [baseUrl]/Condition?patient=[id]
 		 */
 		if ($('parameters').contains('patient')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 	}
 
@@ -536,7 +552,7 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('effective')
 		) {
-			// Only handle first two `date` search params, any extra will be ignored
+			// Only handle first two `effective` search params, any extra will be ignored
 			var _dateArray2 = $('parameters')
 				.getParameterList('effective')
 				.toArray();
