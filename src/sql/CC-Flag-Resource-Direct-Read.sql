@@ -16,7 +16,7 @@ WITH
       CONCAT(COALESCE(periodStartDate, ''),'T', COALESCE(periodStartTime, '')) AS periodStart,
       CONCAT(COALESCE(periodEndDate, ''),'T00:00:00') AS periodEnd
     FROM OPENQUERY(
-		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT TOP 100
+		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT
             ALM_Status,
             COALESCE(ALM_OnsetDate, ALM_CreateDate) AS periodStartDate,
             COALESCE(ALM_OnsetTime, ALM_CreateTime) AS periodStartTime,
