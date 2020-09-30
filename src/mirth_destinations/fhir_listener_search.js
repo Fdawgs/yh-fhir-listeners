@@ -83,7 +83,11 @@ try {
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
-		if ($('parameters').contains('date')) {
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
 			// Loop through each date param and build SQL WHERE clause
 			$('parameters')
 				.getParameterList('date')
@@ -245,31 +249,46 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
+			// Only handle first two `date` search params, any extra will be ignored
+			const dateArray = $('parameters')
 				.getParameterList('date')
-				.toArray()
-				.forEach((paramDate) => {
-					date = paramDate;
-					date += '';
-					const operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+				.toArray();
 
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
+			// Search with start date
+			if (dateArray[0]) {
+				let date = dateArray[0];
+				date += '';
 
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						`(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) ${operator} ''${date}'')`
-					);
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						`(PAADM_AdmDate ${operator} ''${date}'')`
-					);
-				});
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[3].push(
+					`(CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) ${operator} '${date}')`
+				);
+			}
+
+			// Search with end date
+			if (dateArray[1]) {
+				let date = dateArray[1];
+				date += '';
+
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[3].push(
+					`(CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) ${operator} '${date}')`
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
@@ -390,23 +409,42 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
+			// Only handle first two `date` search params, any extra will be ignored
+			const dateArray = $('parameters')
 				.getParameterList('date')
-				.toArray()
-				.forEach((paramDate) => {
-					date = paramDate;
-					date += '';
-					const operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+				.toArray();
 
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
+			// Search with start date
+			if (dateArray[0]) {
+				let date = dateArray[0];
+				date += '';
 
-					whereArray[1].push(`(periodStart ${operator} ''${date}'')`);
-				});
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[1].push(`(periodStart ${operator} '${date}')`);
+			}
+
+			// Search with end date
+			if (dateArray[1]) {
+				let date = dateArray[1];
+				date += '';
+
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[1].push(`(periodEnd ${operator} '${date}')`);
+			}
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
@@ -435,24 +473,46 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('effective')
 		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
+			// Only handle first two `effective` search params, any extra will be ignored
+			const dateArray = $('parameters')
 				.getParameterList('effective')
-				.toArray()
-				.forEach((paramDate) => {
-					date = paramDate;
-					date += '';
-					const operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+				.toArray();
 
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereArray[1].push(
-						`(medstatEffectiveStart ${operator} ''${date}'')`
-					);
-				});
+			// Search with start date
+			if (dateArray[0]) {
+				let date = dateArray[0];
+				date += '';
+
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[1].push(
+					`(medstatEffectiveStart ${operator} '${date}')`
+				);
+			}
+
+			// Search with end date
+			if (dateArray[1]) {
+				let date = dateArray[1];
+				date += '';
+
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[1].push(
+					`(medstatEffectiveEnd ${operator} '${date}')`
+				);
+			}
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]
