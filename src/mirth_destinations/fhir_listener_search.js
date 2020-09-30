@@ -17,7 +17,6 @@ try {
 	const bundle = buildBundleResource(new java.net.URI(requestURL));
 	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
 	const whereArray = [[], [], [], []];
-	const whereParts = [];
 
 	const supportedTypeParams = {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
@@ -79,7 +78,7 @@ try {
 			};
 			clinicalStatus = clinicalStatusCode[clinicalStatus.toLowerCase()];
 
-			whereParts.push(`(alle.ALG_Status = ''${clinicalStatus}'')`);
+			whereArray[0].push(`(alle.ALG_Status = ''${clinicalStatus}'')`);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
@@ -102,13 +101,13 @@ try {
 					if (isNaN(date.substring(0, 2))) {
 						date = date.substring(2, date.length);
 					}
-					whereParts.push(`(alle.ALG_Date ${operator} ''${date}'')`);
+					whereArray[0].push(`(alle.ALG_Date ${operator} ''${date}'')`);
 				});
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
 		if ($('parameters').contains('patient')) {
-			whereParts.push(
+			whereArray[0].push(
 				`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${$(
 					'parameters'
 				).getParameter('patient')}'')`
@@ -126,7 +125,7 @@ try {
 				if (
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
-					whereParts.push(
+					whereArray[0].push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${allergyPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
@@ -134,14 +133,12 @@ try {
 					allergyPatIdParam[0] ===
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
-					whereParts.push(
+					whereArray[0].push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${allergyPatIdParam[1]}'')`
 					);
 				}
 			}
 		}
-
-		whereArray[0].push(whereParts);
 	}
 
 	/**
@@ -152,17 +149,17 @@ try {
 	if (type == 'condition') {
 		// GET [baseUrl]/Condition?patient=[id]&asserted-date=[date]
 		if ($('parameters').contains('asserted-date')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&category=[code]
 		if ($('parameters').contains('category')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		/**
@@ -170,7 +167,7 @@ try {
 		 * GET [baseUrl]/Condition?patient=[id]
 		 */
 		if ($('parameters').contains('patient')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 	}
 
