@@ -61,50 +61,6 @@ try {
 	 * ================================
 	 */
 	if (type == 'allergyintolerance') {
-		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
-		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('clinical-status')
-		) {
-			let clinicalStatus = $('parameters').getParameter(
-				'clinical-status'
-			);
-
-			const clinicalStatusCode = {
-				active: 'A',
-				inactive: 'I',
-				resolved: 'R'
-			};
-			clinicalStatus = clinicalStatusCode[clinicalStatus.toLowerCase()];
-
-			whereArray[0].push(`(alle.ALG_Status = ''${clinicalStatus}'')`);
-		}
-
-		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
-		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('date')
-		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
-				.getParameterList('date')
-				.toArray()
-				.forEach((paramDate) => {
-					date = paramDate;
-					date += '';
-					const operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
-
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereArray[0].push(`(alle.ALG_Date ${operator} ''${date}'')`);
-				});
-		}
-
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
@@ -138,6 +94,58 @@ try {
 					);
 				}
 			}
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('clinical-status')
+		) {
+			const clinicalStatus = $('parameters').getParameter(
+				'clinical-status'
+			);
+
+			whereArray[3].push(`(clinicalStatusCode = ''${clinicalStatus}'')`);
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('criticality')
+		) {
+			const criticality = $('parameters').getParameter(
+				'criticality'
+			);
+
+			whereArray[3].push(`(criticalityCode = ''${criticality}'')`);
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
+			// Loop through each date param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('date')
+				.toArray()
+				.forEach((paramDate) => {
+					date = paramDate;
+					date += '';
+					const operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
+
+					if (isNaN(date.substring(0, 2))) {
+						date = date.substring(2, date.length);
+					}
+					whereArray[0].push(
+						`(alle.ALG_Date ${operator} ''${date}'')`
+					);
+				});
 		}
 	}
 
