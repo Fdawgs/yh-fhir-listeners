@@ -15,7 +15,8 @@ try {
 		requestURL += '/';
 	}
 	const bundle = buildBundleResource(new java.net.URI(requestURL));
-	let whereArray = [];
+	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
+	const whereArray = [[], [], [], []];
 	const whereParts = [];
 
 	const supportedTypeParams = {
@@ -136,7 +137,7 @@ try {
 			}
 		}
 
-		whereArray.push(whereParts);
+		whereArray[0].push(whereParts);
 	}
 
 	/**
@@ -175,9 +176,6 @@ try {
 	 * =======================
 	 */
 	if (type == 'encounter') {
-		// Turn array into multi-dimensional one to allow for four seperate WHERE clauses to be built
-		whereArray = [[], [], [], []];
-
 		// GET [baseUrl]/Encounter?patient=[id]
 		if ($('parameters').contains('patient')) {
 			// Build where clause for first query (outpats) in union
@@ -353,9 +351,6 @@ try {
 	 * =======================
 	 */
 	if (type == 'flag') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/Flag?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
@@ -434,9 +429,6 @@ try {
 	 * =================================
 	 */
 	if (type == 'medicationstatement') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/MedicationStatement?patient=[id]&effective=[date]
 		if (
 			($('parameters').contains('patient') ||
@@ -518,9 +510,6 @@ try {
 	 * =====================
 	 */
 	if (type == 'patient') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/Patient?address=[address]
 		if ($('parameters').contains('address')) {
 			const address = $('parameters').getParameter('address');
