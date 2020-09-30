@@ -43,6 +43,6 @@ SELECT flag_CTE.*,
        snom.SNOMED_Code AS flagCodeCodingSnomedCode,
        snom.SNOMED_Display AS flagCodeCodingSnomedDisplay
 FROM flag_CTE
-     LEFT JOIN lookup.dbo.ydh_alert_list snom
+     LEFT JOIN lookup.dbo.ydh_alert_list AS snom WITH (NOLOCK)
      ON flag_CTE.flagCodeCodingCode = snom.YDH_TrakCare_Code
 WHERE flagStatusCode IS NOT NULL;
