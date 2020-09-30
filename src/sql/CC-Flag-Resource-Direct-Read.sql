@@ -1,3 +1,8 @@
+/*
+Flag Resource
+Joins to SQL table created by CC-Flag-Resource-Snomed-Lookup-Table.sql
+*/
+
 WITH
   flag_CTE
   AS

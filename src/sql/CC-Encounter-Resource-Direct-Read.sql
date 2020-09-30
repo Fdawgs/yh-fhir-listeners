@@ -1,6 +1,7 @@
 /*
 Encounter Resource
-Encounters types: inpatient | outpatient | ambulatory | emergency
+
+FHIR Encounter types: inpatient | outpatient | ambulatory | emergency
 FHIR status types:  planned | arrived | triaged | in-progress | onleave |
 					finished | cancelled | entered-in-error | unknown
 PA_Adm Visit status types: Admit (A) | Cancel (C) | Discharged (D) | Pre-Admission (P) |
@@ -16,7 +17,11 @@ Encounter structures within TrakCare
 The 'Patient Enquiry Display' is actually regarding RTT pathways, the 'Date' is the day the referral was recieved for outpatient appointments
 An episode can have 0..* appointments under it as children
 
-RB_Appointment holds outpatient appointments ONLY
+RB_Appointment holds outpatient appointments ONLY.
+Staff misuse the discharge date in outpatients as 'time all admin complete', not the time patient left.
+This will be set to NULL to account for data quality issue.
+
+
 PA_Adm holds inpatient and emergency encounters, AND the top level episode for outpatient appointments (but won't be used)
 PA_Adm2 holds additional details and is 1:1 with PA_Adm
 
@@ -29,10 +34,6 @@ SNOMED CT codes:
 Accident and Emergency department: 225728007
 Outpatient environment: 440655000
 Inpatient environment: 440654001
-
-18/04/2019:
-Apparently they use the discharge date in outpatients as the 'time all admin complete', not actual discharge.
-Converting this to NULL.
 */
 
 WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode,

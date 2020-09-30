@@ -20,7 +20,7 @@ SELECT TOP 1000
 	CONCAT(COALESCE(assertedDate, ''), 'T', COALESCE(assertedTime, '')) AS assertedDate,
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
-  				'SELECT  REPLACE(alle.ALG_RowId, ''||'', ''-'') AS id,
+  				'SELECT REPLACE(alle.ALG_RowId, ''||'', ''-'') AS id,
 				  		-- patient reference
 				  		alle.ALG_PAPMI_ParRef->PAPMI_No AS patientReference,
 
@@ -28,7 +28,7 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 						alle.ALG_AllergyGrp_DR->ALGR_Desc AS allergyGroupDesc,
 						alle.ALG_TYPE_DR->ALG_Desc AS allergyCodingDesc,
 						alle.ALG_PHCDM_DR->PHCD_ProductName AS allergyDrugDesc, -- Drug Master
-						alle.ALG_PHCGE_DR->PHCGE_Name AS allergyDrugGenericDesc,   -- Drug Generic
+						alle.ALG_PHCGE_DR->PHCGE_Name AS allergyDrugGenericDesc, -- Drug Generic
 						alle.ALG_PHCSC_DR->PHCSC_Desc AS allergyDrugCategoryDesc, -- Drug Category
 						alle.ALG_PHCDRGForm_DR->PHCDF_Description AS allergyDrugFormDesc, -- Drug Form
 						alle.ALG_Ingred_DR->INGR_Desc AS allergyDrugIngredientDesc, -- Drug Ingredient
