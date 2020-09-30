@@ -1,3 +1,8 @@
+/*
+Flag Resource
+Joins to SQL table created by CC-Flag-Resource-Snomed-Lookup-Table.sql
+*/
+
 WITH
   flag_CTE
   AS
@@ -16,7 +21,7 @@ WITH
       CONCAT(COALESCE(periodStartDate, ''),'T', COALESCE(periodStartTime, '')) AS periodStart,
       CONCAT(COALESCE(periodEndDate, ''),'T00:00:00') AS periodEnd
     FROM OPENQUERY(
-		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT TOP 100
+		[ENYH-PRD-ANALYTICS], 'SELECT DISTINCT
             ALM_Status,
             COALESCE(ALM_OnsetDate, ALM_CreateDate) AS periodStartDate,
             COALESCE(ALM_OnsetTime, ALM_CreateTime) AS periodStartTime,
@@ -38,6 +43,6 @@ SELECT flag_CTE.*,
        snom.SNOMED_Code AS flagCodeCodingSnomedCode,
        snom.SNOMED_Display AS flagCodeCodingSnomedDisplay
 FROM flag_CTE
-     LEFT JOIN lookup.dbo.ydh_alert_list snom
+     LEFT JOIN lookup.dbo.ydh_alert_list AS snom WITH (NOLOCK)
      ON flag_CTE.flagCodeCodingCode = snom.YDH_TrakCare_Code
 WHERE flagStatusCode IS NOT NULL;

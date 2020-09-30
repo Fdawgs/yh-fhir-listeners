@@ -30,7 +30,7 @@ SELECT nhsNumber,
 	city,
 	district,
 	postalCode,
-	LOWER(gender) AS gender,
+	gender,
 	birthdate,
 	deceased,
 	gpDesc,
@@ -132,7 +132,7 @@ FROM OPENQUERY(
 									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Zip_DR->CTZIP_Code AS "gpPostalCode",
 									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Code AS "gpIdentifier"
 
-								FROM %ALLINDEX PA_PatMas patmas
+								FROM PA_PatMas patmas
 								WHERE (patmas.PAPMI_No = ''5484125'')
 								AND COALESCE(PAPMI_Active,''Y'') = ''Y''
 								AND (patmas.PAPMI_PAPER_DR->PAPER_ID IS NOT NULL OR patmas.PAPMI_No IS NOT NULL)') AS patient

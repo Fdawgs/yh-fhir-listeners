@@ -1,3 +1,5 @@
+/* eslint-disable no-restricted-globals */
+
 /**
  * @author Frazer Smith
  * @description Rewritten example FHIR search destination to be usable for TrakCare calls.
@@ -13,14 +15,14 @@ try {
 		requestURL += '/';
 	}
 	var bundle = buildBundleResource(new java.net.URI(requestURL));
-	var whereArray = [];
-	var whereParts = [];
+	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
+	var whereArray = [[], [], [], []];
 
 	var supportedTypeParams = {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
 		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
 		encounter: ['class', 'date', 'patient', 'status'],
-		flag: ['patient', 'status'],
+		flag: ['date', 'patient', 'status'],
 		medicationstatement: ['effective', 'patient', 'status'],
 		patient: [
 			'address',
@@ -59,57 +61,9 @@ try {
 	 * ================================
 	 */
 	if (type == 'allergyintolerance') {
-		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
-		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('clinical-status')
-		) {
-			var clinicalStatus = $('parameters').getParameter(
-				'clinical-status'
-			);
-
-			var clinicalStatusCode = {
-				active: 'A',
-				inactive: 'I',
-				resolved: 'R'
-			};
-
-			clinicalStatus = clinicalStatusCode[clinicalStatus.toLowerCase()];
-
-			whereParts.push(
-				"(alle.ALG_Status = ''".concat(clinicalStatus, "'')")
-			);
-		}
-
-		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
-		if ($('parameters').contains('date')) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
-				.getParameterList('date')
-				.toArray()
-				.forEach(function (paramDate) {
-					date = paramDate;
-					date += '';
-					var operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
-
-					// eslint-disable-next-line no-restricted-globals
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereParts.push(
-						'(alle.ALG_Date '
-							.concat(operator, " ''")
-							.concat(date, "'')")
-					);
-				});
-		}
-
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
 		if ($('parameters').contains('patient')) {
-			whereParts.push(
+			whereArray[0].push(
 				"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
 					$('parameters').getParameter('patient'),
 					"'')"
@@ -128,7 +82,7 @@ try {
 				if (
 					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
-					whereParts.push(
+					whereArray[0].push(
 						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
 							allergyPatIdParam[1],
 							"'' AND PAPMI_Active IS NULL))"
@@ -139,7 +93,7 @@ try {
 					allergyPatIdParam[0] ===
 					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
-					whereParts.push(
+					whereArray[0].push(
 						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
 							allergyPatIdParam[1],
 							"'')"
@@ -149,7 +103,75 @@ try {
 			}
 		}
 
-		whereArray.push(whereParts);
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('clinical-status')
+		) {
+			whereArray[3].push(
+				"(clinicalStatusCode = '".concat(
+					$('parameters').getParameter('clinical-status'),
+					"')"
+				)
+			);
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('criticality')
+		) {
+			whereArray[3].push(
+				"(criticalityCode = '".concat(
+					$('parameters').getParameter('criticality'),
+					"')"
+				)
+			);
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
+			// Loop through each date param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('date')
+				.toArray()
+				.forEach(function (paramDate) {
+					date = paramDate;
+					date += '';
+					var operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
+
+					if (isNaN(date.substring(0, 2))) {
+						date = date.substring(2, date.length);
+					}
+					whereArray[0].push(
+						'(alle.ALG_Date '
+							.concat(operator, " ''")
+							.concat(date, "'')")
+					);
+				});
+		}
+
+		// GET [baseUrl]/AllergyIntolerance?patient=[id]&type=[code]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('type')
+		) {
+			whereArray[3].push(
+				"(typeCode = '".concat(
+					$('parameters').getParameter('type'),
+					"')"
+				)
+			);
+		}
 	}
 
 	/**
@@ -160,17 +182,17 @@ try {
 	if (type == 'condition') {
 		// GET [baseUrl]/Condition?patient=[id]&asserted-date=[date]
 		if ($('parameters').contains('asserted-date')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&category=[code]
 		if ($('parameters').contains('category')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&clinical-status=[code]
 		if ($('parameters').contains('clinical-status')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 
 		/**
@@ -178,7 +200,7 @@ try {
 		 * GET [baseUrl]/Condition?patient=[id]
 		 */
 		if ($('parameters').contains('patient')) {
-			whereParts.push('');
+			whereArray[0].push('');
 		}
 	}
 
@@ -188,9 +210,6 @@ try {
 	 * =======================
 	 */
 	if (type == 'encounter') {
-		// Turn array into multi-dimensional one to allow for four seperate WHERE clauses to be built
-		whereArray = [[], [], [], []];
-
 		// GET [baseUrl]/Encounter?patient=[id]
 		if ($('parameters').contains('patient')) {
 			// Build where clause for first query (outpats) in union
@@ -285,36 +304,48 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
-				.getParameterList('date')
-				.toArray()
-				.forEach(function (paramDate) {
-					date = paramDate;
-					date += '';
-					var operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+			// Only handle first two `date` search params, any extra will be ignored
+			var dateArray = $('parameters').getParameterList('date').toArray();
 
-					// eslint-disable-next-line no-restricted-globals
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
+			// Search with start date
+			if (dateArray[0]) {
+				var _date = dateArray[0];
+				_date += '';
 
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						'(COALESCE(app.APPT_ArrivalDate, app.APPT_DateComp) '
-							.concat(operator, " ''")
-							.concat(date, "'')")
-					);
+				var operator = convertFhirParameterOperator(
+					_date.substring(0, 2)
+				);
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						'(PAADM_AdmDate'
-							.concat(operator, " ''")
-							.concat(date, "'')")
-					);
-				});
+				if (isNaN(_date.substring(0, 2))) {
+					_date = _date.substring(2, _date.length);
+				}
+
+				whereArray[3].push(
+					"(CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) "
+						.concat(operator, " '")
+						.concat(_date, "')")
+				);
+			}
+
+			// Search with end date
+			if (dateArray[1]) {
+				var _date2 = dateArray[1];
+				_date2 += '';
+
+				var _operator = convertFhirParameterOperator(
+					_date2.substring(0, 2)
+				);
+
+				if (isNaN(_date2.substring(0, 2))) {
+					_date2 = _date2.substring(2, _date2.length);
+				}
+
+				whereArray[3].push(
+					"(CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) "
+						.concat(_operator, " '")
+						.concat(_date2, "')")
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
@@ -406,9 +437,6 @@ try {
 	 * =======================
 	 */
 	if (type == 'flag') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/Flag?patient=[id]
 		if ($('parameters').contains('patient')) {
 			whereArray[0].push(
@@ -449,6 +477,54 @@ try {
 			}
 		}
 
+		// GET [baseUrl]/Flag?patient=[id]&date=[date]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
+			// Only handle first two `date` search params, any extra will be ignored
+			var _dateArray = $('parameters').getParameterList('date').toArray();
+
+			// Search with start date
+			if (_dateArray[0]) {
+				var _date3 = _dateArray[0];
+				_date3 += '';
+
+				var _operator2 = convertFhirParameterOperator(
+					_date3.substring(0, 2)
+				);
+
+				if (isNaN(_date3.substring(0, 2))) {
+					_date3 = _date3.substring(2, _date3.length);
+				}
+
+				whereArray[1].push(
+					'(periodStart '
+						.concat(_operator2, " '")
+						.concat(_date3, "')")
+				);
+			}
+
+			// Search with end date
+			if (_dateArray[1]) {
+				var _date4 = _dateArray[1];
+				_date4 += '';
+
+				var _operator3 = convertFhirParameterOperator(
+					_date4.substring(0, 2)
+				);
+
+				if (isNaN(_date4.substring(0, 2))) {
+					_date4 = _date4.substring(2, _date4.length);
+				}
+
+				whereArray[1].push(
+					'(periodEnd '.concat(_operator3, " '").concat(_date4, "')")
+				);
+			}
+		}
+
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
 		if (
 			($('parameters').contains('patient') ||
@@ -470,36 +546,56 @@ try {
 	 * =================================
 	 */
 	if (type == 'medicationstatement') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/MedicationStatement?patient=[id]&effective=[date]
 		if (
 			($('parameters').contains('patient') ||
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('effective')
 		) {
-			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
+			// Only handle first two `effective` search params, any extra will be ignored
+			var _dateArray2 = $('parameters')
 				.getParameterList('effective')
-				.toArray()
-				.forEach(function (paramDate) {
-					date = paramDate;
-					date += '';
-					var operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+				.toArray();
 
-					// eslint-disable-next-line no-restricted-globals
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereArray[1].push(
-						'(medstatEffectiveStart '
-							.concat(operator, " ''")
-							.concat(date, "'')")
-					);
-				});
+			// Search with start date
+			if (_dateArray2[0]) {
+				var _date5 = _dateArray2[0];
+				_date5 += '';
+
+				var _operator4 = convertFhirParameterOperator(
+					_date5.substring(0, 2)
+				);
+
+				if (isNaN(_date5.substring(0, 2))) {
+					_date5 = _date5.substring(2, _date5.length);
+				}
+
+				whereArray[1].push(
+					'(medstatEffectiveStart '
+						.concat(_operator4, " '")
+						.concat(_date5, "')")
+				);
+			}
+
+			// Search with end date
+			if (_dateArray2[1]) {
+				var _date6 = _dateArray2[1];
+				_date6 += '';
+
+				var _operator5 = convertFhirParameterOperator(
+					_date6.substring(0, 2)
+				);
+
+				if (isNaN(_date6.substring(0, 2))) {
+					_date6 = _date6.substring(2, _date6.length);
+				}
+
+				whereArray[1].push(
+					'(medstatEffectiveEnd '
+						.concat(_operator5, " '")
+						.concat(_date6, "')")
+				);
+			}
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]
@@ -565,9 +661,6 @@ try {
 	 * =====================
 	 */
 	if (type == 'patient') {
-		// Turn array into multi-dimensional one to allow for two seperate WHERE clauses to be built
-		whereArray = [[], []];
-
 		// GET [baseUrl]/Patient?address=[address]
 		if ($('parameters').contains('address')) {
 			var address = $('parameters').getParameter('address');
