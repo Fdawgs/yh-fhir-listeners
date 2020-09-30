@@ -87,6 +87,11 @@
             <readHistory value="false"/>
             <updateCreate value="false"/>
             <searchParam>
+                <name value="date"/>
+                <type value="date"/>
+                <documentation value="Time period when flag is active"/>
+            </searchParam>
+            <searchParam>
                 <name value="patient"/>
                 <type value="reference"/>
                 <documentation value="The identity of a subject to list flags for"/>

@@ -22,7 +22,7 @@ try {
 		allergyintolerance: ['clinical-status', 'date', 'patient'],
 		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
 		encounter: ['class', 'date', 'patient', 'status'],
-		flag: ['patient', 'status'],
+		flag: ['date', 'patient', 'status'],
 		medicationstatement: ['effective', 'patient', 'status'],
 		patient: [
 			'address',
@@ -269,7 +269,7 @@ try {
 
 					// Build where clause for second query (inpats, emerg) in union
 					whereArray[1].push(
-						`(PAADM_AdmDate${operator} ''${date}'')`
+						`(PAADM_AdmDate ${operator} ''${date}'')`
 					);
 				});
 		}
@@ -387,6 +387,31 @@ try {
 					);
 				}
 			}
+		}
+
+		// GET [baseUrl]/Flag?patient=[id]&date=[date]
+		if (
+			($('parameters').contains('patient') ||
+				$('parameters').contains('patient.identifier')) &&
+			$('parameters').contains('date')
+		) {
+			// Loop through each date param and build SQL WHERE clause
+			$('parameters')
+				.getParameterList('date')
+				.toArray()
+				.forEach((paramDate) => {
+					date = paramDate;
+					date += '';
+					const operator = convertFhirParameterOperator(
+						date.substring(0, 2)
+					);
+
+					if (isNaN(date.substring(0, 2))) {
+						date = date.substring(2, date.length);
+					}
+
+					whereArray[1].push(`(periodStart ${operator} ''${date}'')`);
+				});
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
