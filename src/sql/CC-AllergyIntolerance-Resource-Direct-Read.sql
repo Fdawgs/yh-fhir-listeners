@@ -2,8 +2,7 @@
 AllergyIntolerance Resource
 */
 
-SELECT TOP 1000
-	id,
+SELECT id,
 	patientReference,
 	allergyGroupDesc,
 	allergyCodingDesc,
