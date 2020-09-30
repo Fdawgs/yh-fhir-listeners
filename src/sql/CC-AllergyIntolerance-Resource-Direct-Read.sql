@@ -67,8 +67,7 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 						alle.ALG_Time AS assertedTime,
 						alle.ALG_LastUpdateDate AS lastUpdateDate,
 						alle.ALG_LastUpdateTime as lastUpdateTime
-						
-				   FROM %ALLINDEX PA_Allergy alle
+				   FROM PA_Allergy alle
 				  WHERE (alle.ALG_PAPMI_ParRef->PAPMI_No IS NOT NULL)
 				    AND (alle.ALG_PAPMI_ParRef->PAPMI_No = ''5484125'')'
 );
