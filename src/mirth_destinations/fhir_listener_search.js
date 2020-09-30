@@ -19,7 +19,13 @@ try {
 	const whereArray = [[], [], [], []];
 
 	const supportedTypeParams = {
-		allergyintolerance: ['clinical-status', 'date', 'patient'],
+		allergyintolerance: [
+			'clinical-status',
+			'criticality',
+			'date',
+			'patient',
+			'type'
+		],
 		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
 		encounter: ['class', 'date', 'patient', 'status'],
 		flag: ['date', 'patient', 'status'],
