@@ -1,6 +1,6 @@
 /**
-    Converts ResultSet into JSON object for single result.
-    This makes it easier to parse for FHIR resources builder code templates.
+	Converts ResultSet into JSON object for single result.
+	This makes it easier to parse for FHIR resources builder code templates.
  
 	@author Frazer Smith
 	@param {object} resultSet - The ResultSet object to retrieve from.
