@@ -579,9 +579,9 @@ try {
 			$('parameters').contains('status')
 		) {
 			whereArray[1].push(
-				`(medstatStatusCode = ''${$('parameters').getParameter(
+				`(medstatStatusCode = '${$('parameters').getParameter(
 					'status'
-				)}'')`
+				)}')`
 			);
 		}
 	}

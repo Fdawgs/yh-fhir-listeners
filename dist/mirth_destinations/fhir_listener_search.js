@@ -654,9 +654,9 @@ try {
 			$('parameters').contains('status')
 		) {
 			whereArray[1].push(
-				"(medstatStatusCode = ''".concat(
+				"(medstatStatusCode = '".concat(
 					$('parameters').getParameter('status'),
-					"'')"
+					"')"
 				)
 			);
 		}
