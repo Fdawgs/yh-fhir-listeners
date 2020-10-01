@@ -87,7 +87,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
     -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare
     -   Sizeable number of patient records without postcodes
 
-## Search caveats
+### Search caveats
 
 -   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long running SQL queries:
     -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error
