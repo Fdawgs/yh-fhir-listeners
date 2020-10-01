@@ -1,3 +1,10 @@
+## <small>2.6.1 (2020-10-01)</small>
+
+-   docs: add data quality issue section ([c0483a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c0483a2))
+-   docs(contributing): correct eslintrc file extension reference ([4afcfe2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4afcfe2))
+-   docs(contributing): correct release step order ([f1f3c8d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f1f3c8d))
+-   fix(medicationstatement-res): status search param had too many quotes ([5a08afc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5a08afc))
+
 ## 2.6.0 (2020-10-01)
 
 -   build(deps-dev): bump dev dependencies ([faac1fa](https://github.com/Fdawgs/ydh-fhir-listeners/commit/faac1fa))
