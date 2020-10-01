@@ -20,17 +20,3 @@ Mirth Connect provides official FHIR support through a [FHIR Connector Extension
 
 SSL/HTTPS support is not available out of the box and there was no apparent way to add an API key requirement to the listener.
 A [Node.js application using the Express framework, running as a Windows service](https://github.com/Fdawgs/ydh-authentication-service), was developed and deployed to provide this.
-
-## Known data quality issues
-
--   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
--   Unable to provide DocumentReference resources as these are held in Patient Centre, not TrakCare (this can be potentially be revisited when the new Patient Centre is in place)
--   Discharge/end dates for outpatient Encounter resources are not provided due to poor data quality. Staff in outpatients misuse these input fields in TrakCare to mark when “all admin has been completed for that outpatient encounter” and not when the encounter actually finished
--   Unable to provide Condition resources as conditions are held in SimpleCode, not TrakCare
--   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (to revisit)
--   Sizeable number of patient records without postcodes
--   Unable to provide clinician contact details for Encounter resources due to the following:
-    -   In TrakCare a care provider has a mobile number field against them, but it is rarely populated
-    -   There is not an internal contact number field in TrakCare
-    -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
-    -   Teams do not have contact number

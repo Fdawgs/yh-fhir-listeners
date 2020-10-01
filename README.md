@@ -64,6 +64,37 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and 
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
+## Known issues and caveats
+
+Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have impacted how the data presented in the endpoints, and how searches can be performed.
+
+### Data quality
+
+-   AllergyIntolerance resources:
+    -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
+-   Condition resources:
+    -   Unable to provide Condition resources as conditions are held in SimpleCode, not TrakCare
+-   DocumentReference resources:
+    -   Unable to provide DocumentReference resources as these are held in Patient Centre, not TrakCare
+-   Encounter resources:
+    -   Discharge/end dates for outpatient Encounter resources are not provided due to poor data quality. Staff in outpatients misuse these input fields in TrakCare to mark when “all admin has been completed for that outpatient encounter” and not when the encounter actually finished
+    -   Unable to provide clinician contact details for Encounter resources due to the following:
+        -   In TrakCare a care provider has a mobile number field against them, but it is rarely populated
+        -   There is not an internal contact number field in TrakCare
+        -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
+        -   Teams do not have contact number
+-   Patient resources:
+    -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare
+    -   Sizeable number of patient records without postcodes
+
+## Search caveats
+
+-   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long running SQL queries:
+    -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error
+    -   `GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]` will work
+
+This is due to YDH not having direct control over the underlying databases of the PAS, so cannot add indexes or make appropriate performance tweaks to support searches without also filtering by patient.
+
 ## Contributing
 
 Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/CONTRIBUTING.md) for more details regarding contributing to this project.
