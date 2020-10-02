@@ -104,6 +104,6 @@ try {
 		'transient',
 		'Error reading resource.',
 		500,
-		e
+		error
 	);
 }
