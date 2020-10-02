@@ -35,17 +35,16 @@ try {
 			break;
 		case 'flag':
 			wherePredicate = [
-				"REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''".concat(id, "'')")
+				"(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''".concat(
+					id,
+					"'')"
+				)
 			];
 
 			break;
 		case 'medicationstatement':
 			wherePredicate = [
-				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(
-					id,
-					"'')"
-				),
-				''
+				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(id, "'')")
 			];
 
 			break;

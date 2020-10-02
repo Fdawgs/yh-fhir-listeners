@@ -27,13 +27,12 @@ try {
 			break;
 		case 'flag':
 			wherePredicate = [
-				`REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
+				`(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
 			];
 			break;
 		case 'medicationstatement':
 			wherePredicate = [
-				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`,
-				''
+				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`
 			];
 			break;
 		case 'patient':
