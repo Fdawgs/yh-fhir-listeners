@@ -1,3 +1,16 @@
+## <small>2.6.2 (2020-10-05)</small>
+
+-   refactor(listeners): declare fhir standard in operationoutcome ([70d2d2f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/70d2d2f))
+-   refactor(listeners): read functionality to have same style as search ([15d04bf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15d04bf))
+-   fix(flag-res): add lastupdated meta value ([3ba2001](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3ba2001))
+-   fix(listeners): correct flag and medicationstatement read query strings ([17d6d86](https://github.com/Fdawgs/ydh-fhir-listeners/commit/17d6d86))
+-   fix(listeners): fix error variable name for read operationoutcomes ([27590d7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/27590d7))
+-   fix(listeners): looping through java object, not param array ([4d825a4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4d825a4))
+-   fix(listeners): search operationoutcomes using deprecated function ([a08fedc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a08fedc))
+-   fix(medicationstatement-res): add lastupdated meta value ([5caa2d2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5caa2d2))
+-   fix(templates): add support for nchar and char columntypes ([9fa7a7b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9fa7a7b))
+-   docs: spelling and grammar fixes ([44e4de4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/44e4de4))
+
 ## <small>2.6.1 (2020-10-01)</small>
 
 -   docs: add data quality issue section ([c0483a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c0483a2))

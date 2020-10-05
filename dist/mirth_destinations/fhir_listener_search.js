@@ -68,7 +68,7 @@ try {
 		.forEach(function (key) {
 			if (
 				supportedTypeParams[type.toLowerCase()].indexOf(
-					''.concat(key.toLowerCase())
+					''.concat(key.toLowerCase().trim())
 				) < 0
 			) {
 				throw Error(

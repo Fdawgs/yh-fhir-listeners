@@ -65,7 +65,7 @@ try {
 		.forEach((key) => {
 			if (
 				supportedTypeParams[type.toLowerCase()].indexOf(
-					`${key.toLowerCase()}`
+					`${key.toLowerCase().trim()}`
 				) < 0
 			) {
 				throw Error(`${key} is not a valid search query parameter`);
