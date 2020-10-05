@@ -24,12 +24,24 @@ try {
 			'criticality',
 			'date',
 			'patient',
+			'patient.identifier',
 			'type'
 		],
-		condition: ['asserted-date', 'category', 'clinical-status', 'patient'],
-		encounter: ['class', 'date', 'patient', 'status'],
-		flag: ['date', 'patient', 'status'],
-		medicationstatement: ['effective', 'patient', 'status'],
+		condition: [
+			'asserted-date',
+			'category',
+			'clinical-status',
+			'patient',
+			'patient.identifier'
+		],
+		encounter: ['class', 'date', 'patient', 'patient.identifier', 'status'],
+		flag: ['date', 'patient', 'patient.identifier', 'status'],
+		medicationstatement: [
+			'effective',
+			'patient',
+			'patient.identifier',
+			'status'
+		],
 		patient: [
 			'address',
 			'address-city',
@@ -47,21 +59,24 @@ try {
 	};
 
 	// If any param not supported, reject request
-	Object.keys($('parameters')).forEach((key) => {
-		if (
-			supportedTypeParams[type.toLowerCase()].indexOf(
-				`${key.toLowerCase()}`
-			) < 0
-		) {
-			return createOperationOutcome(
-				'error',
-				'invalid',
-				'Error searching resources.',
-				500,
-				`${key} is not a valid search query parameter`
-			);
-		}
-	});
+	$('parameters')
+		.getKeys()
+		.toArray()
+		.forEach((key) => {
+			if (
+				supportedTypeParams[type.toLowerCase()].indexOf(
+					`${key.toLowerCase()}`
+				) < 0
+			) {
+				return createOperationOutcome(
+					'error',
+					'invalid',
+					'Error searching resources.',
+					500,
+					`${key} is not a valid search query parameter`
+				);
+			}
+		});
 
 	/**
 	 * ================================
