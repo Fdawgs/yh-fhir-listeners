@@ -6,13 +6,14 @@ try {
 	var type = $('fhirType').toLowerCase();
 	var id = $('fhirId');
 
-	// Build up WHERE clause then pass to buildResourceQuery to be called
-	var wherePredicate;
+	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
+	var whereArray = [[], [], [], []];
+
 	switch (''.concat(type)) {
 		case 'allergyintolerance':
-			wherePredicate = [
+			whereArray[0].push(
 				"(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''".concat(id, "'')")
-			];
+			);
 
 			break;
 		case 'condition':
@@ -20,51 +21,63 @@ try {
 		case 'documentreference':
 			break;
 		case 'encounter':
-			wherePredicate = [
-				"(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''".concat(
-					id,
-					"'')"
-				),
-				"(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''".concat(id, "'')"),
+			whereArray[0].push(
+				"(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''".concat(id, "'')")
+			);
+
+			whereArray[1].push(
+				"(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''".concat(id, "'')")
+			);
+
+			whereArray[2].push(
 				"(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''".concat(
 					id,
 					"'')"
 				)
-			];
+			);
 
 			break;
 		case 'flag':
-			wherePredicate = [
+			whereArray[0].push(
 				"(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''".concat(
 					id,
 					"'')"
 				)
-			];
+			);
 
 			break;
 		case 'medicationstatement':
-			wherePredicate = [
+			whereArray[0].push(
 				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(id, "'')")
-			];
+			);
 
 			break;
 		case 'patient':
-			wherePredicate = [
-				"(patmas.PAPMI_No = ''".concat(id, "'')"),
+			whereArray[0].push("(patmas.PAPMI_No = ''".concat(id, "'')"));
+			whereArray[1].push(
 				"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(id, "'')")
-			];
-
+			);
 			break;
 		default:
 			break;
 	}
 
-	var result = buildResourceQuery(type, wherePredicate);
+	// Aggregrate all predicates in whereArray and build SQL WHERE clause from it
+	var wherePredicates = [];
+	for (var index = 0; index < whereArray.length; index += 1) {
+		var element = whereArray[index];
+		if (element.length > 0) {
+			wherePredicates[index] = element.join(' AND ');
+		}
+	}
 
-	if (result.next()) {
-		// Pass it out to external channel that will transform into
-		// Care Connect FHIR Resource and return
-		var data;
+	logger.debug(
+		'SQL WHERE clause predicate(s): '.concat(wherePredicates.toString())
+	);
+
+	var result = buildResourceQuery(type, wherePredicates);
+	while (result.next()) {
+		var data = void 0;
 		switch (''.concat(type)) {
 			case 'allergyintolerance':
 				data = buildAllergyIntoleranceResource(result);
