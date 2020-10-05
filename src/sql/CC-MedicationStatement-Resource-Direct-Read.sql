@@ -53,8 +53,8 @@ SELECT DISTINCT medstatId,
      medicationId,
      medicationCodeText,
      medicationCodeCodingDisplay,
-     medicationCodeCodingCode
-
+     medicationCodeCodingCode,
+     CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT
                          -- MedicationStatement Resource Area
@@ -74,7 +74,9 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                          oi.OEORI_Unit_DR->CTUOM_Desc AS medstatDosageDoseQuantityUnit,
                          oi.OEORI_ItemStat_DR->OSTAT_Desc AS orderItemStatus,
                          oi.OEORI_VarianceReason_DR->VR_Code AS orderItemVariance,
-                        NULL AS RESOURCE_LINEBREAK,
+                         oi.OEORI_UpdateDate AS lastUpdateDate,
+                         oi.OEORI_UpdateTime AS lastUpdateTime,
+                         NULL AS RESOURCE_LINEBREAK,
 
                          -- Contained inline Medication Resource Area
                          oi.OEORI_ItmMast_DR->ARCIM_Abbrev AS medicationCodeText,
