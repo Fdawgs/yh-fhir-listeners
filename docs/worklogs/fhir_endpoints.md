@@ -1,4 +1,4 @@
-# FHIR End Points
+# FHIR Endpoints
 
 ## Key Tasks
 
