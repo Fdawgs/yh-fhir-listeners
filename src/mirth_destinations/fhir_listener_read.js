@@ -109,6 +109,7 @@ try {
 		'error',
 		'processing',
 		`${$('fhirType')} ID ${id} not found.`,
+		'STU3',
 		404
 	);
 } catch (error) {
@@ -116,6 +117,7 @@ try {
 		'error',
 		'transient',
 		'Error reading resource.',
+		'STU3',
 		500,
 		error
 	);

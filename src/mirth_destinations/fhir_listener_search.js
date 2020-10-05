@@ -68,13 +68,7 @@ try {
 					`${key.toLowerCase()}`
 				) < 0
 			) {
-				return createOperationOutcome(
-					'error',
-					'invalid',
-					'Error searching resources.',
-					500,
-					`${key} is not a valid search query parameter`
-				);
+				throw Error(`${key} is not a valid search query parameter`);
 			}
 		});
 
@@ -772,13 +766,7 @@ try {
 	}
 
 	if (wherePredicates.length == 0) {
-		return createOperationOutcome(
-			'error',
-			'transient',
-			'Error searching resources.',
-			500,
-			''
-		);
+		throw Error('Error searching resources.');
 	}
 
 	logger.debug(
@@ -839,6 +827,7 @@ try {
 		'error',
 		'transient',
 		'Error searching resources.',
+		'STU3',
 		500,
 		error
 	);
