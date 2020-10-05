@@ -26,6 +26,15 @@ function buildMedicationStatementResource(data) {
 	resource.id = newStringOrUndefined(result.medstatId);
 	resource.status = newStringOrUndefined(result.medstatStatusCode);
 
+	// Add meta data
+	if (
+		result.lastUpdated != undefined &&
+		result.lastUpdated.substring(0, 1) != 'T' &&
+		result.lastUpdated.substring(0, 4) != '1900'
+	) {
+		resource.meta.lastUpdated = result.lastUpdated;
+	}
+
 	resource.medicationReference = {
 		reference: newStringOrUndefined('#'.concat(result.medicationId))
 	};

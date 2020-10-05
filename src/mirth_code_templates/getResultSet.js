@@ -22,6 +22,10 @@ function getResultSet(resultSet) {
 			obj[`${columnName}`] = resultSet.getBoolean(columnName);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.BLOB) {
 			obj[`${columnName}`] = resultSet.getBlob(columnName);
+		} else if (rsmd.getColumnType(index) == java.sql.Types.NCHAR) {
+			obj[`${columnName}`] = resultSet.getNString(columnName);
+		} else if (rsmd.getColumnType(index) == java.sql.Types.CHAR) {
+			obj[`${columnName}`] = resultSet.getString(columnName);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.DOUBLE) {
 			obj[`${columnName}`] = resultSet.getDouble(columnName);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.FLOAT) {

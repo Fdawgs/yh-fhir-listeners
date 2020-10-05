@@ -56,7 +56,9 @@ try {
 			return createOperationOutcome(
 				'error',
 				'invalid',
-				`Unknown or unsupported parameter ${key}.`
+				'Error searching resources.',
+				500,
+				`${key} is not a valid search query parameter`
 			);
 		}
 	});

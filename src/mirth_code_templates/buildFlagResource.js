@@ -22,6 +22,15 @@ function buildFlagResource(data) {
 		resourceType: 'Flag'
 	};
 
+	// Add meta data
+	if (
+		result.lastUpdated != undefined &&
+		result.lastUpdated.substring(0, 1) != 'T' &&
+		result.lastUpdated.substring(0, 4) != '1900'
+	) {
+		resource.meta.lastUpdated = result.lastUpdated;
+	}
+
 	resource.id = newStringOrUndefined(result.flagId);
 	resource.status = newStringOrUndefined(result.flagStatusCode);
 

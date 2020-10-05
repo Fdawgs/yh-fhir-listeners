@@ -6,50 +6,63 @@ try {
 	const type = $('fhirType').toLowerCase();
 	const id = $('fhirId');
 
-	// Build up WHERE clause then pass to buildResourceQuery to be called
-	let wherePredicate;
+	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
+	const whereArray = [[], [], [], []];
+
 	switch (`${type}`) {
 		case 'allergyintolerance':
-			wherePredicate = [
+			whereArray[0].push(
 				`(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''${id}'')`
-			];
+			);
 			break;
 		case 'condition':
 			break;
 		case 'documentreference':
 			break;
 		case 'encounter':
-			wherePredicate = [
-				`(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''${id}'')`,
-				`(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`,
+			whereArray[0].push(
+				`(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''${id}'')`
+			);
+			whereArray[1].push(
+				`(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
+			);
+			whereArray[2].push(
 				`(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
-			];
+			);
 			break;
 		case 'flag':
-			wherePredicate = [
-				`REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
-			];
+			whereArray[0].push(
+				`(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
+			);
 			break;
 		case 'medicationstatement':
-			wherePredicate = [
-				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`,
-				''
-			];
+			whereArray[0].push(
+				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`
+			);
 			break;
 		case 'patient':
-			wherePredicate = [
-				`(patmas.PAPMI_No = ''${id}'')`,
-				`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`
-			];
+			whereArray[0].push(`(patmas.PAPMI_No = ''${id}'')`);
+			whereArray[1].push(`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`);
 			break;
 		default:
 			break;
 	}
-	const result = buildResourceQuery(type, wherePredicate);
 
-	if (result.next()) {
-		// Pass it out to external channel that will transform into
-		// Care Connect FHIR Resource and return
+	// Aggregrate all predicates in whereArray and build SQL WHERE clause from it
+	const wherePredicates = [];
+	for (let index = 0; index < whereArray.length; index += 1) {
+		const element = whereArray[index];
+		if (element.length > 0) {
+			wherePredicates[index] = element.join(' AND ');
+		}
+	}
+
+	logger.debug(
+		`SQL WHERE clause predicate(s): ${wherePredicates.toString()}`
+	);
+
+	const result = buildResourceQuery(type, wherePredicates);
+	while (result.next()) {
 		let data;
 		switch (`${type}`) {
 			case 'allergyintolerance':
@@ -104,6 +117,6 @@ try {
 		'transient',
 		'Error reading resource.',
 		500,
-		e
+		error
 	);
 }

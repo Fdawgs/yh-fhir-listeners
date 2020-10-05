@@ -57,7 +57,9 @@ try {
 			return createOperationOutcome(
 				'error',
 				'invalid',
-				'Unknown or unsupported parameter '.concat(key, '.')
+				'Error searching resources.',
+				500,
+				''.concat(key, ' is not a valid search query parameter')
 			);
 		}
 	});

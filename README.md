@@ -14,7 +14,7 @@ Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-
 
 The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (part of SFT) have successfully taken this and refactored it for use with their PAS, Maxims.
 
-This documentation has been written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
+This documentation is written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
 ### Background
 
@@ -66,7 +66,7 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and 
 
 ## Known issues and caveats
 
-Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have impacted how the data presented in the endpoints, and how searches can be performed.
+Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints, and how searches can be performed.
 
 ### Data quality
 
