@@ -72,7 +72,12 @@ try {
 				) < 0
 			) {
 				throw Error(
-					''.concat(key, ' is not a valid search query parameter')
+					''
+						.concat(
+							key,
+							' is not a valid search query parameter for '
+						)
+						.concat(type.toLowerCase(), 's')
 				);
 			}
 		});

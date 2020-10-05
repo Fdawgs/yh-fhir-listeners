@@ -68,7 +68,9 @@ try {
 					`${key.toLowerCase().trim()}`
 				) < 0
 			) {
-				throw Error(`${key} is not a valid search query parameter`);
+				throw Error(
+					`${key} is not a valid search query parameter for ${type.toLowerCase()}s`
+				);
 			}
 		});
 
