@@ -12,7 +12,7 @@ try {
 	switch (`${type}`) {
 		case 'allergyintolerance':
 			whereArray[0].push(
-				`(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''${id}'')`
+				`(alle.ALG_RowId = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
 		case 'condition':
@@ -21,23 +21,23 @@ try {
 			break;
 		case 'encounter':
 			whereArray[0].push(
-				`(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''${id}'')`
+				`(app.APPT_RowId = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			whereArray[1].push(
-				`(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
+				`(PAADM_ADMNo = REPLACE(''${id}'', ''-'', ''/''))`
 			);
 			whereArray[2].push(
-				`(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''${id}'')`
+				`(TRANS_ParRef->PAADM_ADMNo = REPLACE(''${id}'', ''-'', ''/''))`
 			);
 			break;
 		case 'flag':
 			whereArray[0].push(
-				`(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''${id}'')`
+				`(alert.ALM_RowID = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
 		case 'medicationstatement':
 			whereArray[0].push(
-				`(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''${id}'')`
+				`(oi.OEORI_RowID = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
 		case 'patient':

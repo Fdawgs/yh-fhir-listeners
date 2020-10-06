@@ -12,7 +12,7 @@ try {
 	switch (''.concat(type)) {
 		case 'allergyintolerance':
 			whereArray[0].push(
-				"(REPLACE(alle.ALG_RowId, ''||'', ''-'') = ''".concat(id, "'')")
+				"(alle.ALG_RowId = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
 
 			break;
@@ -22,33 +22,33 @@ try {
 			break;
 		case 'encounter':
 			whereArray[0].push(
-				"(REPLACE(app.APPT_RowId, ''||'', ''-'') = ''".concat(id, "'')")
+				"(app.APPT_RowId = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
 
 			whereArray[1].push(
-				"(REPLACE(PAADM_ADMNo, ''/'', ''-'') = ''".concat(id, "'')")
+				"(PAADM_ADMNo = REPLACE(''".concat(id, "'', ''-'', ''/''))")
 			);
 
 			whereArray[2].push(
-				"(REPLACE(TRANS_ParRef->PAADM_ADMNo, ''/'', ''-'') = ''".concat(
+				"(TRANS_ParRef->PAADM_ADMNo = REPLACE(''".concat(
 					id,
-					"'')"
+					"'', ''-'', ''/''))"
 				)
 			);
 
 			break;
 		case 'flag':
 			whereArray[0].push(
-				"(REPLACE(alert.ALM_RowID, ''||'', ''-'') = ''".concat(
+				"(alert.ALM_RowID = REPLACE(''".concat(
 					id,
-					"'')"
+					"'', ''-'', ''||''))"
 				)
 			);
 
 			break;
 		case 'medicationstatement':
 			whereArray[0].push(
-				"(REPLACE(oi.OEORI_RowID, ''||'', ''-'') = ''".concat(id, "'')")
+				"(oi.OEORI_RowID = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
 
 			break;
