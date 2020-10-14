@@ -1,3 +1,12 @@
+## <small>2.6.3 (2020-10-14)</small>
+
+-   docs: replace xlsx with ods file ([18556f8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/18556f8))
+-   chore: convert channel to target mirth connect v3.9.1 ([58880c5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/58880c5))
+-   build: create codeql-analysis.yml workflow file ([42a3007](https://github.com/Fdawgs/ydh-fhir-listeners/commit/42a3007))
+-   build(deps-dev): bump dev dependencies ([c47a6f0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c47a6f0))
+-   perf(listeners): reduce response time for read requests ([223b5e1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/223b5e1))
+-   refactor(listeners): specify resource type in error message ([e54389b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e54389b))
+
 ## <small>2.6.2 (2020-10-05)</small>
 
 -   refactor(listeners): declare fhir standard in operationoutcome ([70d2d2f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/70d2d2f))
