@@ -22,6 +22,7 @@ On-hold	          | N/A
 WITH medicationStatement_CTE
   AS (
 SELECT DISTINCT medstatId,
+     COALESCE(medStatContextEncounterReferenceIPEmerg, medStatContextEncounterReferenceOutpatient) AS medStatContextEncounterReference,
      CONCAT(COALESCE(medstatDateassertedDate, ''),'T', COALESCE(medstatDateassertedTime, '')) AS medstatDateasserted,
      CONCAT(COALESCE(medstatEffectiveStart_Datepart, ''),'T', COALESCE(medstatEffectiveStart_Timepart, '')) AS medstatEffectiveStart,
      CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
@@ -59,6 +60,8 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT
                          -- MedicationStatement Resource Area
                          REPLACE(oi.OEORI_RowID, ''||'', ''-'') AS medstatId,
+                         REPLACE(adm.PAADM_ADMNo, ''/'', ''-'') AS medStatContextEncounterReferenceIPEmerg,
+                         REPLACE(oi.OEORI_APPT_DR->APPT_RowId, ''||'', ''-'') AS medStatContextEncounterReferenceOutpatient,
                          oi.OEORI_Date AS medstatDateassertedDate,
                          oi.OEORI_TimeOrd AS medstatDateassertedTime,
                          oi.OEORI_SttDat AS medstatEffectiveStart_Datepart,
@@ -89,8 +92,13 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                          ON oi.OEORI_ItmMast_DR = arc.ARCIM_RowId
                          LEFT JOIN ARC_ItemExternalCodes arcex
                          ON arc.ARCIM_RowId = arcex.EXT_ParRef
-                         AND EXT_HL7SendingFacility = ''FDB''
-                         AND EXT_HL7SendingApp IN (''AMPP'', ''VMPP'')
+                         AND arcex.EXT_HL7SendingFacility = ''FDB''
+                         AND arcex.EXT_HL7SendingApp IN (''AMPP'', ''VMPP'')
+                         LEFT JOIN OE_ORDER ord
+                         ON oi.OEORI_OEORD_ParRef = ord.OEORD_RowId
+                         LEFT JOIN PA_ADM adm
+                         ON ord.OEORD_Adm_DR = adm.PAADM_RowId
+                         AND adm.PAADM_Type IN (''I'', ''E'')
                    WHERE oi.OEORI_Categ_DR->ORCAT_Desc IN (''PHARMACY'', ''PHARM'')
                      AND oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No =''5484125''
                      ')

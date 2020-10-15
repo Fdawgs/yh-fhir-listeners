@@ -139,6 +139,14 @@ function buildMedicationStatementResource(data) {
 		resource.effectivePeriod.end = result.medstatEffectiveEnd;
 	}
 
+	if (result.medStatContextEncounterReference != undefined) {
+		resource.context = {
+			reference: ''
+				.concat($cfg('apiUrl'), '/r3/Encounter/')
+				.concat(result.medStatContextEncounterReference)
+		};
+	}
+
 	resource.subject = {
 		reference: ''
 			.concat($cfg('apiUrl'), '/r3/Patient/')
