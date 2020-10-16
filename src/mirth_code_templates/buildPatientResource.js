@@ -9,12 +9,16 @@
 function buildPatientResource(data) {
 	const result = getResultSet(data);
 
-	if (result.nhsNumberTraceStatusCode == undefined) {
+	if (
+		result.nhsNumberTraceStatusCode == undefined ||
+		result.nhsNumberTraceStatusCode == null ||
+		result.nhsNumberTraceStatusCode == '0'
+	) {
 		result.nhsNumberTraceStatusCode = '2';
 		result.nhsNumberTraceStatusDesc = 'Number present but not traced';
 	}
 
-	if (result.deceased == undefined) {
+	if (result.deceased == undefined || result.deceased == null) {
 		result.deceased = false;
 	} else {
 		result.deceased = true;
