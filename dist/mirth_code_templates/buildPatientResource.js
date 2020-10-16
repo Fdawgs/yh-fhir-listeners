@@ -230,8 +230,8 @@ function buildPatientResource(data) {
 		resource.telecom = telecom;
 	}
 
-	// Add Ethnicity Category
 	var extension = [];
+	// Add Ethnicity Category
 	if (result.ethnicCategoryCode != undefined) {
 		var ethCatExtension = {
 			url: newStringOrUndefined(
@@ -268,6 +268,36 @@ function buildPatientResource(data) {
 
 		extension.push(ethCatExtension);
 	}
+
+	// Add Religious Affiliation
+	if (result.religiousAffiliationCode != undefined) {
+		var relAffExtension = {
+			url: newStringOrUndefined(
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1'
+			),
+
+			valueCodeableConcept: {
+				coding: [
+					{
+						system: newStringOrUndefined(
+							'https://datadictionary.nhs.uk'
+						),
+
+						code: newStringOrUndefined(
+							result.religiousAffiliationCode
+						),
+
+						display: newStringOrUndefined(
+							result.religiousAffiliationDesc
+						)
+					}
+				]
+			}
+		};
+
+		extension.push(relAffExtension);
+	}
+
 	if (extension.length > 0) {
 		resource.extension = extension;
 	}
