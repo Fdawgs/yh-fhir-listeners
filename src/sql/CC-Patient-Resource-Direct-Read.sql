@@ -11,13 +11,16 @@ SELECT nhsNumber,
 	ethnicCategoryDesc,
 	ethnic.CareConnect_Code AS ethnicCategoryCareConnectCode,
 	ethnic.CareConnect_Display AS ethnicCategoryCareConnectDesc,
+	UPPER(religiousAffiliationCode) AS religiousAffiliationCode,
+	religiousAffiliationDesc,
 	homePhone,
 	businessPhone,
 	mobilePhone,
 	appointmentSMS,
 	email,
 	preferredContactMethod,
-	preferredLanguage,
+	preferredLanguageCode,
+	preferredLanguageDesc,
 	interpreterRequired,
 	nameFamily,
 	nameGiven1First,
@@ -64,15 +67,20 @@ FROM OPENQUERY(
 									patmas.PAPMI_PAPER_DR->PAPER_IndigStat_DR->INDST_Desc AS ethnicCategoryDesc,
 									patmas.PAPMI_PAPER_DR->PAPER_IndigStat_DR->INDST_Code AS ethnicCategoryCode,
 
+									--religiousAffiliation
+									patmas.PAPMI_PAPER_DR->PAPER_Religion_DR->CTRLG_Desc AS religiousAffiliationDesc,
+									patmas.PAPMI_PAPER_DR->PAPER_Religion_DR->CTRLG_Code AS religiousAffiliationCode,
+
 									-- nhsCommunication/Telecoms
-									patmas.PAPMI_PAPER_DR->PAPER_TelH AS "homePhone",
-									patmas.PAPMI_PAPER_DR->PAPER_TelO AS "businessPhone",
-									patmas.PAPMI_PAPER_DR->PAPER_MobPhone AS "mobilePhone",
-									patmas.PAPMI_PAPER_DR->PAPER_AppointmentSMS AS "appointmentSMS",
-									patmas.PAPMI_PAPER_DR->PAPER_Email AS "Email",
-									patmas.PAPMI_PAPER_DR->PAPER_PreferredContactMethod AS "PreferredContactMethod",
-									patmas.PAPMI_PAPER_DR->PAPER_PrefLanguage_DR->PREFL_Desc AS "PreferredLanguage",
-									patmas.PAPMI_PAPER_DR->PAPER_InterpreterRequired AS "InterpreterRequired",
+									patmas.PAPMI_PAPER_DR->PAPER_TelH AS homePhone,
+									patmas.PAPMI_PAPER_DR->PAPER_TelO AS businessPhone,
+									patmas.PAPMI_PAPER_DR->PAPER_MobPhone AS mobilePhone,
+									patmas.PAPMI_PAPER_DR->PAPER_AppointmentSMS AS appointmentSMS,
+									patmas.PAPMI_PAPER_DR->PAPER_Email AS Email,
+									patmas.PAPMI_PAPER_DR->PAPER_PreferredContactMethod AS preferredContactMethod,
+									patmas.PAPMI_PAPER_DR->PAPER_PrefLanguage_DR->PREFL_Desc AS preferredLanguageDesc,
+									patmas.PAPMI_PAPER_DR->PAPER_PrefLanguage_DR->PREFL_Code AS preferredLanguageCode,									
+									patmas.PAPMI_PAPER_DR->PAPER_InterpreterRequired AS interpreterRequired,
 
 									patmas.PAPMI_PAPER_DR->PAPER_UpdateDate AS lastUpdateDate,
 									patmas.PAPMI_PAPER_DR->PAPER_UpdateTime AS lastUpdateTime,
@@ -104,11 +112,11 @@ FROM OPENQUERY(
 									END AS maritalStatusCode,
 
 									-- address (home)
-									patmas.PAPMI_PAPER_DR->PAPER_StName AS "addressLine1",
-									patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress AS "addressLine2",
-									patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc AS "city",
-									patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc AS "district",
-									patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code AS "postalCode",
+									patmas.PAPMI_PAPER_DR->PAPER_StName AS addressLine1,
+									patmas.PAPMI_PAPER_DR->PAPER_ForeignAddress AS addressLine2,
+									patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc AS city,
+									patmas.PAPMI_PAPER_DR->PAPER_CT_Province_DR->PROV_Desc AS district,
+									patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code AS postalCode,
 
 									-- Misc extensions and data
 									CASE patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_RowId
@@ -125,12 +133,12 @@ FROM OPENQUERY(
 									END AS deceased,
 
 									-- GP Practice
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctor_DR->REFD_Desc AS "gpDesc",
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Address1 AS "gpAddressLine1",
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Address2 AS "gpAddressLine2",
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_City_DR->CTCIT_Desc AS "gpCity",
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Zip_DR->CTZIP_Code AS "gpPostalCode",
-									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Code AS "gpIdentifier"
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctor_DR->REFD_Desc AS gpDesc,
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Address1 AS gpAddressLine1,
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Address2 AS gpAddressLine2,
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_City_DR->CTCIT_Desc AS gpCity,
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Zip_DR->CTZIP_Code AS gpPostalCode,
+									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Code AS gpIdentifier
 
 								FROM PA_PatMas patmas
 								WHERE (patmas.PAPMI_No = ''5484125'')
