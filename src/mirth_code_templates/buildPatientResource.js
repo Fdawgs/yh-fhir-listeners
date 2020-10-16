@@ -209,8 +209,9 @@ function buildPatientResource(data) {
 		resource.telecom = telecom;
 	}
 
+	// Extensions (Care Connect or otherwise)
 	const extension = [];
-	// Add Ethnicity Category
+	// Add Ethnic Category extension
 	if (result.ethnicCategoryCode != undefined) {
 		const ethCatExtension = {
 			url: newStringOrUndefined(
@@ -242,7 +243,7 @@ function buildPatientResource(data) {
 		extension.push(ethCatExtension);
 	}
 
-	// Add Religious Affiliation
+	// Add Religious Affiliation extension
 	if (result.religiousAffiliationCode != undefined) {
 		const relAffExtension = {
 			url: newStringOrUndefined(
@@ -265,6 +266,55 @@ function buildPatientResource(data) {
 			}
 		};
 		extension.push(relAffExtension);
+	}
+
+	// Add NHS Communication extension
+	if (result.preferredLanguageCode != undefined) {
+		const nhsComExtension = {
+			url: newStringOrUndefined(
+				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1'
+			),
+			extension: [
+				{
+					url: 'language',
+					valueCodeableConcept: {
+						coding: [
+							{
+								system: newStringOrUndefined(
+									'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1'
+								),
+								code: newStringOrUndefined(
+									result.preferredLanguageCode
+								),
+								display: newStringOrUndefined(
+									result.preferredLanguageDesc
+								)
+							}
+						]
+					}
+				}
+			]
+		};
+
+		// Add interpreterRequired extension to NHS Communication extensions array
+		if (
+			result.interpreterRequired != undefined &&
+			result.interpreterRequired != 'NS'
+		) {
+			const intReqExtension = {
+				url: 'interpreterRequired'
+			};
+
+			if (result.interpreterRequired == 'Y') {
+				intReqExtension.valueBoolean = true;
+			} else {
+				intReqExtension.valueBoolean = false;
+			}
+
+			nhsComExtension.extension.push(intReqExtension);
+		}
+
+		extension.push(nhsComExtension);
 	}
 
 	if (extension.length > 0) {
