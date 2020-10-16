@@ -1,3 +1,11 @@
+## 2.7.0 (2020-10-16)
+
+-   build(deps-dev): bump dev dependencies ([4d05ebb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4d05ebb))
+-   fix(patient-res): catch empty nhs number trace status codes and deceased ([64db3c9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/64db3c9))
+-   feat(medicationstatement-res): add encounter context reference ([dac39d6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/dac39d6))
+-   feat(patient-res): add nhs communication extension ([302798a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/302798a))
+-   feat(patient-res): add religious affiliation extension ([6457c45](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6457c45))
+
 ## <small>2.6.3 (2020-10-14)</small>
 
 -   docs: replace xlsx with ods file ([18556f8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/18556f8))
