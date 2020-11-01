@@ -41,7 +41,7 @@
       <contextPath>r3</contextPath>
       <timeout>0</timeout>
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-    &lt;version value=&quot;2.7.0&quot;/&gt;
+    &lt;version value=&quot;2.7.1&quot;/&gt;
     &lt;status value=&quot;active&quot;/&gt;
     &lt;publisher value=&quot;Yeovil District Hospital NHS Foundation Trust&quot;/&gt;
     &lt;contact&gt;
