@@ -36,9 +36,9 @@ stakeholders (as of 2020-11-01) are:
 
 #### Care Connect RESTful FHIR API endpoints
 
-Black Pear have built a web front-end (eSP) for a shared care record, which will retrieve data relating to a patient from each shareholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
+Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
-Black Pear need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
+Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
 #### Contextual Link
 
@@ -54,7 +54,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 ## Deployment
 
-This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2017 being used as the database backend for Mirth Connect.
+This Mirth Connect channel has been tested on a Mirth Connect instance (v3.9.1) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
 
 ### Setting up Mirth Connect Channel
 
