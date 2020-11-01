@@ -22,15 +22,15 @@ This documentation is written under the assumption that the reader has prior exp
 
 stakeholders (as of 2020-11-01) are:
 
--   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
--   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
--   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
+-   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
+-   [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
+-   GP practices within Somerset (GPs)
+-   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
+-   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
 -   [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
 -   [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
--   [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
--   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
--   GP practices within Somerset (GPs)
+-   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
 
 ### Deliverables
 
