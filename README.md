@@ -12,7 +12,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other shareholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (part of SFT) have successfully taken this and refactored it for use with their PAS, Maxims.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (part of SFT) have successfully taken this and refactored it for use with their PAS, Maxims.
 
 This documentation is written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
@@ -20,25 +20,25 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/your-health/sharing-your-information/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Shareholders (as of 2020-07-06) are:
+stakeholders (as of 2020-11-01) are:
 
--   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
--   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
--   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
+-   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
+-   [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
+-   GP practices within Somerset (GPs)
+-   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
+-   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
 -   [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
 -   [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
--   [Dorothy House Hospice](https://www.dorothyhouse.org.uk/) (DHH)
--   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
--   GP practices within Somerset (GPs)
+-   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
 
 ### Deliverables
 
 #### Care Connect RESTful FHIR API endpoints
 
-Black Pear have built a web front-end (eSP) for a shared care record, which will retrieve data relating to a patient from each shareholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
+Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
-Black Pear need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
+Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
 #### Contextual Link
 
@@ -54,7 +54,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 ## Deployment
 
-This Mirth Connect channel has been tested on a Mirth Connect instance (3.6 and greater) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2017 being used as the database backend for Mirth Connect.
+This Mirth Connect channel has been tested on a Mirth Connect instance (v3.9.1) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
 
 ### Setting up Mirth Connect Channel
 

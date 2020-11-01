@@ -1,3 +1,10 @@
+## <small>2.7.1 (2020-11-01)</small>
+
+-   build(deps-dev): bump dev dependencies ([be4d993](https://github.com/Fdawgs/ydh-fhir-listeners/commit/be4d993))
+-   docs(readme): change 'shareholder' to correct 'stakeholder' ([4a181c1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4a181c1))
+-   docs(readme): correct descriptions of purpose and deployments ([e764edc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e764edc))
+-   docs(readme): sort stakeholders alphabetically ([2fed6b2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2fed6b2))
+
 ## 2.7.0 (2020-10-16)
 
 -   build(deps-dev): bump dev dependencies ([4d05ebb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4d05ebb))
