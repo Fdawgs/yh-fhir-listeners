@@ -98,15 +98,18 @@ try {
 					$('parameters').getParameter('patient.identifier')
 				).split('|');
 				if (
-					allergyPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						allergyPatIdParam[0]
+					) == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${allergyPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
-					allergyPatIdParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						allergyPatIdParam[0]
+					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
 						`(alle.ALG_PAPMI_ParRef->PAPMI_No = ''${allergyPatIdParam[1]}'')`
@@ -248,8 +251,9 @@ try {
 					$('parameters').getParameter('patient.identifier')
 				).split('|');
 				if (
-					encounterPatIdParam[0] ===
-					'https://fhir.nhs.uk/Id/nhs-number'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						encounterPatIdParam[0]
+					) == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
 						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${encounterPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
@@ -262,8 +266,9 @@ try {
 					);
 				}
 				if (
-					encounterPatIdParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						encounterPatIdParam[0]
+					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
 						`(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${encounterPatIdParam[1]}'')`
@@ -422,14 +427,19 @@ try {
 				const flagPatIdParam = String(
 					$('parameters').getParameter('patient.identifier')
 				).split('|');
-				if (flagPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+				if (
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						flagPatIdParam[0]
+					) == 'https://fhir.nhs.uk/Id/nhs-number'
+				) {
 					whereArray[0].push(
 						`(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${flagPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
-					flagPatIdParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						flagPatIdParam[0]
+					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
 						`(alert.ALM_PAPMI_ParRef->PAPMI_No = ''${flagPatIdParam[1]}'')`
@@ -568,15 +578,18 @@ try {
 					$('parameters').getParameter('patient.identifier')
 				).split('|');
 				if (
-					medStatPatIdParam[0] == 'https://fhir.nhs.uk/Id/nhs-number'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						medStatPatIdParam[0]
+					) == 'https://fhir.nhs.uk/Id/nhs-number'
 				) {
 					whereArray[0].push(
 						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${medStatPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 					);
 				}
 				if (
-					medStatPatIdParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						medStatPatIdParam[0]
+					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
 						`(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''${medStatPatIdParam[1]}'')`
@@ -705,7 +718,11 @@ try {
 				const identifierParam = String(
 					$('parameters').getParameter('identifier')
 				).split('|');
-				if (identifierParam[0] == 'https://fhir.nhs.uk/Id/nhs-number') {
+				if (
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						identifierParam[0]
+					) == 'https://fhir.nhs.uk/Id/nhs-number'
+				) {
 					whereArray[0].push(
 						`(patmas.PAPMI_ID = ''${identifierParam[1]}'')`
 					);
@@ -715,8 +732,9 @@ try {
 					);
 				}
 				if (
-					identifierParam[0] ===
-					'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						identifierParam[0]
+					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
 				) {
 					whereArray[0].push(
 						`(patmas.PAPMI_No = ''${identifierParam[1]}'')`
