@@ -1,3 +1,8 @@
+## <small>2.7.2 (2020-11-02)</small>
+
+-   fix(listeners): unescape system part of [system]|[code] search params ([8f6f588](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8f6f588))
+-   docs(readme): capitalise beginning of sentence ([ad8ee3e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ad8ee3e))
+
 ## <small>2.7.1 (2020-11-01)</small>
 
 -   build(deps-dev): bump dev dependencies ([be4d993](https://github.com/Fdawgs/ydh-fhir-listeners/commit/be4d993))
