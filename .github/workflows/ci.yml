@@ -1,0 +1,32 @@
+name: Node.js CI
+
+on:
+    push:
+        branches:
+            - master
+            - dependabot/**
+            - feat/**
+        tags:
+            - v*.*.*
+    pull_request:
+        # The branches below must be a subset of the branches above
+        branches:
+            - master
+
+jobs:
+    build:
+        strategy:
+            matrix:
+                node-version: [10.x, 12.x, 14.x]
+                os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
+
+        runs-on: ${{ matrix.os }}
+        steps:
+            - uses: actions/checkout@v2
+            - name: Use Node.js ${{ matrix.node-version }} on ${{ matrix.os }}
+              uses: actions/setup-node@v1
+              with:
+                  node-version: ${{ matrix.node-version }}
+            - run: yarn install
+            - name: Run tests
+              run: yarn test
