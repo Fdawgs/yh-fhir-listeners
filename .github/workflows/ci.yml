@@ -1,4 +1,4 @@
-name: Node.js CI
+name: CI
 
 on:
     push:
@@ -7,6 +7,7 @@ on:
             - dependabot/**
             - feat/**
         tags:
+            # Wait for push events with tags matching v*, e.g. v1.0, v20.15.10, v0.3.1
             - v*.*.*
     pull_request:
         # The branches below must be a subset of the branches above
@@ -15,10 +16,11 @@ on:
 
 jobs:
     build:
+        name: Build
         strategy:
             matrix:
                 node-version: [10.x, 12.x, 14.x]
-                os: ['macos-latest', 'ubuntu-latest', 'windows-latest']
+                os: [macos-latest, ubuntu-latest, windows-latest]
 
         runs-on: ${{ matrix.os }}
         steps:
@@ -28,5 +30,5 @@ jobs:
               with:
                   node-version: ${{ matrix.node-version }}
             - run: yarn install
-            - name: Run tests
+            - name: Run Tests
               run: yarn test
