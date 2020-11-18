@@ -1,3 +1,13 @@
+## <small>2.7.3 (2020-11-18)</small>
+
+-   chore: convert channel to target mirth connect v3.10.0 ([00159da](https://github.com/Fdawgs/ydh-fhir-listeners/commit/00159da))
+-   style: fix build name ([f76f444](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f76f444))
+-   style: fix comment spacing ([665d419](https://github.com/Fdawgs/ydh-fhir-listeners/commit/665d419))
+-   style: format codeql.yml ([99f4c8b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/99f4c8b))
+-   build(deps-dev): bump dev dependencies ([606486e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/606486e))
+-   ci: clean up config ([19d819b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/19d819b))
+-   ci: replace travis-ci with github actions ([44e6888](https://github.com/Fdawgs/ydh-fhir-listeners/commit/44e6888))
+
 ## <small>2.7.2 (2020-11-02)</small>
 
 -   fix(listeners): unescape system part of [system]|[code] search params ([8f6f588](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8f6f588))
