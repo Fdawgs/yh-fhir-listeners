@@ -1,5 +1,5 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <version value="2.7.2"/>
+    <version value="2.7.3"/>
     <status value="active"/>
     <publisher value="Yeovil District Hospital NHS Foundation Trust"/>
     <contact>

@@ -1,13 +1,13 @@
 /* eslint-disable quotes */
 
 /**
-                            	Queries database for data needed to build FHIR resource.
-                             
-                            	@author Frazer Smith
-                            	@param {string} type - Resource name.
-                            	@param {object} params - An array of predicates to be added to SQL queries.
-                            	@returns {object} Java ResultSet object.
-                             */
+	Queries database for data needed to build FHIR resource.
+ 
+	@author Frazer Smith
+	@param {string} type - Resource name.
+	@param {object} params - An array of predicates to be added to SQL queries.
+	@returns {object} Java ResultSet object.
+ */
 function buildResourceQuery(type, params) {
 	var firstParams = '';
 	var secondParams = '';
