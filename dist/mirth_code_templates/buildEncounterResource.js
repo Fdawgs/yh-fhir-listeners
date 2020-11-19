@@ -42,6 +42,49 @@ function buildEncounterResource(data) {
 		};
 	}
 
+	//	Add SIDeR specific tags
+	if (
+		result.encounterPeriodStart != undefined &&
+		result.encounterPeriodStart.substring(0, 1) != 'T' &&
+		result.encounterPeriodStart.substring(0, 4) != '1900' &&
+		Math.ceil(
+			(new Date(result.encounterPeriodStart) - new Date()) /
+				(24 * 60 * 60 * 1000)
+		) >= -30
+	) {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'summary',
+				display: 'Display in Summary and Detail View'
+			}
+		];
+	} else {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'detail',
+				display: 'Display in Detail View'
+			}
+		];
+	}
+
+	if (
+		result.encounterStatusMapped != undefined &&
+		result.encounterStatusMapped == 'planned'
+	) {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'none',
+				display: 'Do not Display'
+			}
+		];
+	}
+
 	resource.type = [];
 
 	var emptyType = {
