@@ -31,6 +31,36 @@ function buildFlagResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	// Add SIDeR specific tags
+	const siderAcceptedFlagSnomedCodes = [
+		'13790001000004100',
+		'15188001',
+		'32000005',
+		'713673000'
+	];
+	if (
+		result.flagStatusCode == 'inactive' ||
+		!siderAcceptedFlagSnomedCodes.includes(result.flagCodeCodingSnomedCode)
+	) {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'none',
+				display: 'Do not Display'
+			}
+		];
+	} else {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'summary',
+				display: 'Display in Summary and Detail View'
+			}
+		];
+	}
+
 	resource.id = newStringOrUndefined(result.flagId);
 	resource.status = newStringOrUndefined(result.flagStatusCode);
 
