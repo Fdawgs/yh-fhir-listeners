@@ -31,6 +31,16 @@ function buildAllergyIntoleranceResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	//	Add SIDeR specific tag
+	resource.meta.tag = [
+		{
+			system:
+				'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+			code: 'none',
+			display: 'Do not Display'
+		}
+	];
+
 	resource.id = newStringOrUndefined(result.id);
 	resource.assertedDate = newStringOrUndefined(result.assertedDate);
 
