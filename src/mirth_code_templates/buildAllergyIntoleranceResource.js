@@ -31,6 +31,20 @@ function buildAllergyIntoleranceResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	/**
+	 * Add SIDeR specific tags
+	 * Set tag to 'Do not Display' for all resources; decided by Paul Foster CCIO on 2020-11-19
+	 * due to low number of allergies recorded in TrakCare PAS
+	 */
+	resource.meta.tag = [
+		{
+			system:
+				'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+			code: 'none',
+			display: 'Do not Display'
+		}
+	];
+
 	resource.id = newStringOrUndefined(result.id);
 	resource.assertedDate = newStringOrUndefined(result.assertedDate);
 
