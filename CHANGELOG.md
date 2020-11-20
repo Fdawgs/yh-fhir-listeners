@@ -1,3 +1,12 @@
+## 2.8.0 (2020-11-20)
+
+-   build(deps-dev): bump dev dependencies ([c5ea129](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c5ea129))
+-   docs: clarify on sider specific meta tags ([a6e5fa7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a6e5fa7))
+-   fix(flag-res): change snomed codes from int to varchar for lead zeroes ([0860d4d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0860d4d))
+-   feat(allergyintolerance-res): add sider specific meta tags ([66749cd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/66749cd))
+-   feat(encounter-res): add sider specific meta tags ([72e347c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/72e347c))
+-   feat(flag-res): add sider specific meta tags ([55f4814](https://github.com/Fdawgs/ydh-fhir-listeners/commit/55f4814))
+
 ## <small>2.7.3 (2020-11-18)</small>
 
 -   chore: convert channel to target mirth connect v3.10.0 ([00159da](https://github.com/Fdawgs/ydh-fhir-listeners/commit/00159da))
