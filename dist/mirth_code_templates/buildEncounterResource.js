@@ -42,7 +42,11 @@ function buildEncounterResource(data) {
 		};
 	}
 
-	//	Add SIDeR specific tags
+	/**
+	 * Add SIDeR specific tags
+	 * Only display in summary and detail view if within last 30 days,
+	 * don't display any planned/future encounters as they're out of scope
+	 */
 	if (
 		result.encounterPeriodStart != undefined &&
 		result.encounterPeriodStart.substring(0, 1) != 'T' &&

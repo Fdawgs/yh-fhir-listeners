@@ -31,7 +31,10 @@ function buildFlagResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
-	// Add SIDeR specific tags
+	/**
+	 * Add SIDeR specific tags
+	 * Set tag to 'Do not Display' if not in set of accepted SNOMED codes or if inactive
+	 */
 	const siderAcceptedFlagSnomedCodes = [
 		'13790001000004100',
 		'15188001',

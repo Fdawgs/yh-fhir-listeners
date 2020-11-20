@@ -31,7 +31,11 @@ function buildAllergyIntoleranceResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
-	//	Add SIDeR specific tag
+	/**
+	 * Add SIDeR specific tags
+	 * Set tag to 'Do not Display' for all resources; decided by Paul Foster CCIO on 2020-11-19
+	 * due to low number of allergies recorded in TrakCare PAS
+	 */
 	resource.meta.tag = [
 		{
 			system:
