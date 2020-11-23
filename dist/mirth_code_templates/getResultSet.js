@@ -26,6 +26,11 @@ function getResultSet(resultSet) {
 			obj[''.concat(columnName)] = resultSet.getNString(columnName);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.CHAR) {
 			obj[''.concat(columnName)] = resultSet.getString(columnName);
+		} else if (rsmd.getColumnType(index) == java.sql.Types.CLOB) {
+			obj[''.concat(columnName)] = getResultSetString(
+				resultSet,
+				columnName
+			);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.DOUBLE) {
 			obj[''.concat(columnName)] = resultSet.getDouble(columnName);
 		} else if (rsmd.getColumnType(index) == java.sql.Types.FLOAT) {
