@@ -2201,128 +2201,6 @@ try {
       <waitForPrevious>true</waitForPrevious>
     </connector>
     <connector version="3.10.0">
-      <metaDataId>5</metaDataId>
-      <name>vread</name>
-      <properties class="com.mirth.connect.connectors.js.JavaScriptDispatcherProperties" version="3.10.0">
-        <pluginProperties/>
-        <destinationConnectorProperties version="3.10.0">
-          <queueEnabled>false</queueEnabled>
-          <sendFirst>false</sendFirst>
-          <retryIntervalMillis>10000</retryIntervalMillis>
-          <regenerateTemplate>false</regenerateTemplate>
-          <retryCount>0</retryCount>
-          <rotate>false</rotate>
-          <includeFilterTransformer>false</includeFilterTransformer>
-          <threadCount>1</threadCount>
-          <threadAssignmentVariable></threadAssignmentVariable>
-          <validateResponse>false</validateResponse>
-          <resourceIds class="linked-hash-map">
-            <entry>
-              <string>Default Resource</string>
-              <string>[Default Resource]</string>
-            </entry>
-          </resourceIds>
-          <queueBufferSize>1000</queueBufferSize>
-          <reattachAttachments>true</reattachAttachments>
-        </destinationConnectorProperties>
-        <script>try {
-	var type = $(&apos;fhirType&apos;).toLowerCase();
-	var id = $(&apos;fhirId&apos;);
-	var versionId = $(&apos;fhirVid&apos;);
-	
-	var result = getResourceVersion(type, id, versionId);
-	
-	if (result.next()) {
-		var data = getResultSetString(result, &apos;data&apos;);
-		var contentType = getResultSetString(result, &apos;mimetype&apos;);
-		var lastModified = getResultSetDate(result, &apos;last_modified&apos;);
-		var deleted = result.getBoolean(&apos;deleted&apos;);
-
-		if (deleted) {
-			return createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, $(&apos;fhirType&apos;) + &apos; ID &apos; + id + &apos; at version &apos; + versionId + &apos; has been deleted.&apos;, 410);
-		} else {
-			var response = FhirResponseFactory.getVreadResponse(data, lastModified, 200, contentType);
-			responseMap.put(&apos;response&apos;, response);
-			return response.getMessage();
-		}
-	} else {
-		return createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, $(&apos;fhirType&apos;) + &apos; ID &apos; + id + &apos; at version &apos; + versionId + &apos; not found.&apos;, 404);
-	}
-} catch (e) {
-	return createOperationOutcome(&apos;error&apos;, &apos;transient&apos;, &apos;Error reading resource.&apos;, 500, e);
-}</script>
-      </properties>
-      <transformer version="3.10.0">
-        <elements/>
-        <inboundDataType>FHIR</inboundDataType>
-        <outboundDataType>FHIR</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.10.0">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.10.0">
-            <serializationType>XML</serializationType>
-            <fhirVersion>STU3</fhirVersion>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.10.0">
-            <serializationType>JSON</serializationType>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.10.0">
-            <splitType>JavaScript</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-        </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.10.0">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.10.0">
-            <serializationType>XML</serializationType>
-            <fhirVersion>STU3</fhirVersion>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.10.0">
-            <serializationType>XML</serializationType>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.10.0">
-            <splitType>JavaScript</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-        </outboundProperties>
-      </transformer>
-      <responseTransformer version="3.10.0">
-        <elements/>
-        <inboundDataType>FHIR</inboundDataType>
-        <outboundDataType>FHIR</outboundDataType>
-        <inboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.10.0">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.10.0">
-            <serializationType>RAW</serializationType>
-            <fhirVersion>STU3</fhirVersion>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.10.0">
-            <serializationType>JSON</serializationType>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.10.0">
-            <splitType>JavaScript</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-        </inboundProperties>
-        <outboundProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDataTypeProperties" version="3.10.0">
-          <serializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirSerializationProperties" version="3.10.0">
-            <serializationType>RAW</serializationType>
-            <fhirVersion>STU3</fhirVersion>
-          </serializationProperties>
-          <deserializationProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirDeserializationProperties" version="3.10.0">
-            <serializationType>RAW</serializationType>
-          </deserializationProperties>
-          <batchProperties class="com.mirth.connect.plugins.datatypes.fhir.shared.FhirBatchProperties" version="3.10.0">
-            <splitType>JavaScript</splitType>
-            <batchScript></batchScript>
-          </batchProperties>
-        </outboundProperties>
-      </responseTransformer>
-      <filter version="3.10.0">
-        <elements/>
-      </filter>
-      <transportName>JavaScript Writer</transportName>
-      <mode>DESTINATION</mode>
-      <enabled>true</enabled>
-      <waitForPrevious>false</waitForPrevious>
-    </connector>
-    <connector version="3.10.0">
       <metaDataId>7</metaDataId>
       <name>search</name>
       <properties class="com.mirth.connect.connectors.js.JavaScriptDispatcherProperties" version="3.10.0">
@@ -3484,7 +3362,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1605880640587</time>
+        <time>1606146641058</time>
         <timezone>Europe/London</timezone>
       </lastModified>
       <pruningSettings>
