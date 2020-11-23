@@ -20,7 +20,7 @@
     <rest>
         <mode value="server"/>
         <documentation value="Main FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
-        <resource>
+        <!-- <resource>
             <type value="AllergyIntolerance"/>
             <profile>
                 <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1"/>
@@ -53,7 +53,7 @@
                 <type value="token"/>
                 <documentation value="allergy | intolerance - Underlying mechanism (if known)"/>
             </searchParam>
-        </resource>
+        </resource> -->
         <resource>
             <type value="Encounter"/>
             <profile>
