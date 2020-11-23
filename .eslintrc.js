@@ -29,10 +29,12 @@ module.exports = {
 		eqeqeq: 'off', // Mirth errors with ===
 		'no-param-reassign': 'warn',
 		'no-plusplus': 'off',
+		'no-restricted-globals': 'off',
 		'no-undef': 'off',
 		'no-unused-vars': 'off',
 		'no-useless-return': 'warn',
 		'prefer-destructuring': 'off',
+		quotes: 'off',
 		'vars-on-top': 'off'
 	}
 };

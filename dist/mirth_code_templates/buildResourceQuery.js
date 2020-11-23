@@ -1,5 +1,3 @@
-/* eslint-disable quotes */
-
 /**
 	Queries database for data needed to build FHIR resource.
  
