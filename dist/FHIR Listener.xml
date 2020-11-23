@@ -3413,9 +3413,9 @@ return message;</preprocessingScript>
 // Return an OperationOutcome if no destinations or anything else already handled the response
 if (!responseMap.containsKey(&apos;response&apos;)) {
 	if (sourceMap.get(&apos;fhirInteraction&apos;) == &apos;operation&apos;) {
-		createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, &apos;Invalid or unsupported operation: &apos; + sourceMap.get(&apos;fhirOperationName&apos;));
+		createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, &apos;Invalid or unsupported operation: &apos; + sourceMap.get(&apos;fhirOperationName&apos;), &apos;STU3&apos;);
 	} else {
-		createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, &apos;Invalid request URI.&apos;);
+		createOperationOutcome(&apos;error&apos;, &apos;processing&apos;, &apos;Invalid request URI.&apos;, &apos;STU3&apos;);
 	}
 }
 return;</postprocessingScript>
