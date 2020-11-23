@@ -1,5 +1,3 @@
-/* eslint-disable no-restricted-globals */
-
 /**
  * @author Frazer Smith
  * @description Rewritten example FHIR search destination to be usable for TrakCare calls.
