@@ -176,14 +176,14 @@ function buildMedicationStatementResource(data) {
 	if (result.medStatContextEncounterReference != undefined) {
 		resource.context = {
 			reference: ''
-				.concat($cfg('apiUrl'), '/r3/Encounter/')
+				.concat($cfg('apiUrl'), '/STU3/Encounter/')
 				.concat(result.medStatContextEncounterReference)
 		};
 	}
 
 	resource.subject = {
 		reference: ''
-			.concat($cfg('apiUrl'), '/r3/Patient/')
+			.concat($cfg('apiUrl'), '/STU3/Patient/')
 			.concat(result.medstatSubjectReference)
 	};
 

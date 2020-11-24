@@ -169,14 +169,14 @@ function buildMedicationStatementResource(data) {
 
 	if (result.medStatContextEncounterReference != undefined) {
 		resource.context = {
-			reference: `${$cfg('apiUrl')}/r3/Encounter/${
+			reference: `${$cfg('apiUrl')}/STU3/Encounter/${
 				result.medStatContextEncounterReference
 			}`
 		};
 	}
 
 	resource.subject = {
-		reference: `${$cfg('apiUrl')}/r3/Patient/${
+		reference: `${$cfg('apiUrl')}/STU3/Patient/${
 			result.medstatSubjectReference
 		}`
 	};

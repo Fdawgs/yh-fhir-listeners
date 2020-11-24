@@ -464,7 +464,7 @@ function buildEncounterResource(data) {
 	}
 
 	resource.subject = {
-		reference: `${$cfg('apiUrl')}/r3/Patient/${result.subjectReference}`
+		reference: `${$cfg('apiUrl')}/STU3/Patient/${result.subjectReference}`
 	};
 
 	return resource;
