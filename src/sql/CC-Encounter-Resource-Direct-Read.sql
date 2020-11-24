@@ -36,28 +36,31 @@ Outpatient environment: 440655000
 Inpatient environment: 440654001
 */
 
-WITH encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode,
-	encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate,
-	encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, encounterParticipantIndividualCode_opattending, encounterParticipantIndividualDisplay_opattending,
-	encounterHospitalizationAdmitsourceCodingCode, encounterHospitalizationAdmitsourceCodingDesc, encounterHospitalizationDischargedispositionCodingCode,
-	encounterHospitalizationDischargedispositionCodingDesc, encounterAdmissionmethodCodingCode, encounterAdmissionmethodCodingDesc,
-	encounterDischargemethodCodingCode, encounterDischargemethodCodingDesc, subjectReference,
-	encounterStatus, lastUpdateDate, lastUpdateTime, encounterStatusMapped)
-AS (SELECT DISTINCT *,
-		CASE
+WITH
+	encounter_CTE(encounterIdentifier, encounterClassDesc, encounterClassCode,
+		encounterTypeDesc, encounterTypeCode, encounterPeriodStartDate,
+		encounterPeriodStartTime, encounterPeriodEndDate, encounterPeriodEndTime, encounterParticipantIndividualCode_opattending, encounterParticipantIndividualDisplay_opattending,
+		encounterHospitalizationAdmitsourceCodingCode, encounterHospitalizationAdmitsourceCodingDesc, encounterHospitalizationDischargedispositionCodingCode,
+		encounterHospitalizationDischargedispositionCodingDesc, encounterAdmissionmethodCodingCode, encounterAdmissionmethodCodingDesc,
+		encounterDischargemethodCodingCode, encounterDischargemethodCodingDesc, subjectReference,
+		encounterStatus, lastUpdateDate, lastUpdateTime, encounterStatusMapped)
+	AS
+	(
+					SELECT DISTINCT *,
+				CASE
 		WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled'
 		WHEN encounterStatus IN ('D', 'R')
-			 OR (encounterStatus IN ('A')
-			 AND encounterPeriodStartDate IS NOT NULL
-			 AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
+					OR (encounterStatus IN ('A')
+					AND encounterPeriodStartDate IS NOT NULL
+					AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
 		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
-			 AND encounterPeriodStartDate IS NOT NULL)
-			 OR encounterStatus IN ('P') THEN 'planned'
+					AND encounterPeriodStartDate IS NOT NULL)
+					OR encounterStatus IN ('P') THEN 'planned'
 	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
 		ELSE 'unknown'
 		END AS encounterStatusMapped
-  	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+			FROM OPENQUERY([ENYH-PRD-ANALYTICS],
   				'SELECT REPLACE(app.APPT_RowId, ''||'', ''-'') AS encounterIdentifier,
 						''ambulatory'' AS encounterClassDesc,
 						''AMB'' AS encounterClassCode,
@@ -85,22 +88,22 @@ AS (SELECT DISTINCT *,
 				  WHERE app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
 				  	AND app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 				  ')
-	 UNION
-	SELECT DISTINCT *,
-		CASE
+		UNION
+			SELECT DISTINCT *,
+				CASE
 		WHEN encounterStatus IN ('C', 'N', 'X', 'T', 'J', 'H') THEN 'cancelled'
 		WHEN encounterStatus IN ('D', 'R')
-			 OR (encounterStatus IN ('A')
-			 AND encounterPeriodStartDate IS NOT NULL
-			 AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
+					OR (encounterStatus IN ('A')
+					AND encounterPeriodStartDate IS NOT NULL
+					AND encounterPeriodEndDate IS NOT NULL) THEN 'finished'
 		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
-			 AND encounterPeriodStartDate IS NOT NULL)
-			 OR encounterStatus IN ('P') THEN 'planned'
+					AND encounterPeriodStartDate IS NOT NULL)
+					OR encounterStatus IN ('P') THEN 'planned'
 	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
 		ELSE 'unknown'
 		END AS encounterStatusMapped
-  	  FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+			FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 				 'SELECT REPLACE(PAADM_ADMNo, ''/'', ''-'') AS encounterIdentifier,
 						 CASE PAADM_Type
 						 WHEN ''I'' THEN ''inpatient''
@@ -148,59 +151,60 @@ AS (SELECT DISTINCT *,
 				   WHERE PAADM_Type IN (''I'', ''E'')
 				   	 AND PAADM_PAPMI_DR->PAPMI_No IS NOT NULL
 				 	 AND PAADM_PAPMI_DR->PAPMI_No = ''5484125''
-					  '))
-SELECT  encounterIdentifier,
-		encounterStatusMapped,
-		encounterStatus,
-		encounterClassDesc,
-		encounterClassCode,
-		CASE
+					  ')
+	)
+SELECT encounterIdentifier,
+	encounterStatusMapped,
+	encounterStatus,
+	encounterClassDesc,
+	encounterClassCode,
+	CASE
 		WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL
 		ELSE UPPER(encounterTypeDesc)
 		END AS encounterTypeDesc,
-		CASE
+	CASE
 		WHEN ISNUMERIC(encounterTypeCode) <> 1 THEN NULL
 		ELSE encounterTypeCode
 		END AS encounterTypeCode,
-		CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) AS encounterPeriodStart,
-		CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) AS encounterPeriodEnd,
- 		encounterParticipantIndividualCode_opattending,
-		encounterParticipantIndividualDisplay_opattending,
-		wards.admissionWardCode AS encounterLocation1Identifier,
-		UPPER(wards.admissionWardDesc) AS encounterLocation1Display,
-		wards.dischargeWardCode AS encounterLocation2Identifier,
-		UPPER(wards.dischargeWardDesc) AS encounterLocation2Display,
-		consultants.admissionConsultantCode AS encounterParticipantIndividualCode_admitting,
-		consultants.admissionConsultantDesc AS encounterParticipantIndividualDisplay_admitting,
-		consultants.admissionConsultantSpecCode AS encounterTypeCodeAdm,
-		consultants.admissionConsultantSpecDesc AS encounterTypeDescAdm,
-		consultants.dischargeConsultantCode AS encounterParticipantIndividualCode_discharging,
-		consultants.dischargeConsultantDesc AS encounterParticipantIndividualDisplay_discharging,
-		consultants.dischargeConsultantSpecCode AS encounterTypeCodeDis,
-		consultants.dischargeConsultantSpecDesc AS encounterTypeDescDis,
-		encounterHospitalizationAdmitsourceCodingCode,
-		encounterHospitalizationAdmitsourceCodingDesc,
-		encounterHospitalizationDischargedispositionCodingCode,
-		encounterHospitalizationDischargedispositionCodingDesc,
-		encounterAdmissionmethodCodingCode,
-		encounterAdmissionmethodCodingDesc,
-		encounterDischargemethodCodingCode,
-		encounterDischargemethodCodingDesc,
-		subjectReference,
-		CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
-   FROM encounter_CTE
-		LEFT JOIN (SELECT *
-		   			 FROM (SELECT REPLACE(PAADM_ADMNo, '/', '-') AS PAADM_ADMNo,
-								  dischargeConsultantCode,
-								  dischargeConsultantDesc,
-								  dischargeConsultantSpecCode,
-								  dischargeConsultantSpecDesc,
-								  admissionConsultantCode,
-								  admissionConsultantDesc,
-								  admissionConsultantSpecCode,
-								  admissionConsultantSpecDesc,
-								  row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
-							 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+	CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) AS encounterPeriodStart,
+	CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) AS encounterPeriodEnd,
+	encounterParticipantIndividualCode_opattending,
+	encounterParticipantIndividualDisplay_opattending,
+	wards.admissionWardCode AS encounterLocation1Identifier,
+	UPPER(wards.admissionWardDesc) AS encounterLocation1Display,
+	wards.dischargeWardCode AS encounterLocation2Identifier,
+	UPPER(wards.dischargeWardDesc) AS encounterLocation2Display,
+	consultants.admissionConsultantCode AS encounterParticipantIndividualCode_admitting,
+	consultants.admissionConsultantDesc AS encounterParticipantIndividualDisplay_admitting,
+	consultants.admissionConsultantSpecCode AS encounterTypeCodeAdm,
+	consultants.admissionConsultantSpecDesc AS encounterTypeDescAdm,
+	consultants.dischargeConsultantCode AS encounterParticipantIndividualCode_discharging,
+	consultants.dischargeConsultantDesc AS encounterParticipantIndividualDisplay_discharging,
+	consultants.dischargeConsultantSpecCode AS encounterTypeCodeDis,
+	consultants.dischargeConsultantSpecDesc AS encounterTypeDescDis,
+	encounterHospitalizationAdmitsourceCodingCode,
+	encounterHospitalizationAdmitsourceCodingDesc,
+	encounterHospitalizationDischargedispositionCodingCode,
+	encounterHospitalizationDischargedispositionCodingDesc,
+	encounterAdmissionmethodCodingCode,
+	encounterAdmissionmethodCodingDesc,
+	encounterDischargemethodCodingCode,
+	encounterDischargemethodCodingDesc,
+	subjectReference,
+	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
+FROM encounter_CTE
+	LEFT JOIN (SELECT *
+	FROM (SELECT REPLACE(PAADM_ADMNo, '/', '-') AS PAADM_ADMNo,
+			dischargeConsultantCode,
+			dischargeConsultantDesc,
+			dischargeConsultantSpecCode,
+			dischargeConsultantSpecDesc,
+			admissionConsultantCode,
+			admissionConsultantDesc,
+			admissionConsultantSpecCode,
+			admissionConsultantSpecDesc,
+			row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
+		FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 							 		'SELECT TRANS_ParRef->PAADM_AdmDocCodeDR->CTPCP_Code AS dischargeConsultantCode,
 									 		TRANS_ParRef->PAADM_AdmDocCodeDR->CTPCP_Desc AS dischargeConsultantDesc,
 											TRANS_ParRef->PAADM_AdmDocCodeDR->CTPCP_Spec_DR->CTSPC_Code dischargeConsultantSpecCode,
@@ -216,17 +220,18 @@ SELECT  encounterIdentifier,
 									  	AND TRANS_ParRef->PAADM_Epissubtype_DR->SUBT_Code = ''1''
 										AND TRANS_CTCP_DR IS NOT NULL
                                         AND TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''5484125''')
-						   ) a  WHERE transOrder = 1) consultants
-		ON encounter_CTE.encounterIdentifier = consultants.PAADM_ADMNo
-		
-		LEFT JOIN (SELECT *
-		   			 FROM (SELECT REPLACE(PAADM_ADMNo, '/', '-') AS PAADM_ADMNo,
-								  dischargeWardCode,
-								  dischargeWardDesc,
-								  admissionWardCode,
-								  admissionWardDesc,
-								  row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
-							 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+						   ) a
+	WHERE transOrder = 1) consultants
+	ON encounter_CTE.encounterIdentifier = consultants.PAADM_ADMNo
+
+	LEFT JOIN (SELECT *
+	FROM (SELECT REPLACE(PAADM_ADMNo, '/', '-') AS PAADM_ADMNo,
+			dischargeWardCode,
+			dischargeWardDesc,
+			admissionWardCode,
+			admissionWardDesc,
+			row_number() OVER (PARTITION BY PAADM_ADMNo ORDER BY TRANS_ChildSub) AS transOrder
+		FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 							 		'SELECT TRANS_ParRef->PAADM_CurrentWard_DR->WARD_Code AS dischargeWardCode,
 									 		TRANS_ParRef->PAADM_CurrentWard_DR->WARD_Desc AS dischargeWardDesc,
 									 		TRANS_Ward_DR->WARD_Code AS admissionWardCode,
@@ -239,5 +244,6 @@ SELECT  encounterIdentifier,
 										AND TRANS_Ward_DR IS NOT NULL
                                         AND TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''5484125''
 									')
-						   ) a  WHERE transOrder = 1) wards
-		ON encounter_CTE.encounterIdentifier = wards.PAADM_ADMNo;
+						   ) a
+	WHERE transOrder = 1) wards
+	ON encounter_CTE.encounterIdentifier = wards.PAADM_ADMNo;
