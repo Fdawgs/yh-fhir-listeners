@@ -1,3 +1,23 @@
+## 3.0.0 (2020-11-24)
+
+-   build(deps-dev): bump dev dependencies ([b99ff28](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b99ff28))
+-   refactor: change path from `r3` to `STU3` ([af25c48](https://github.com/Fdawgs/ydh-fhir-listeners/commit/af25c48))
+-   refactor(code-templates): replace if... else chain with switch statement ([6e94be8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6e94be8))
+-   refactor(listeners): revoke access to allergyintolerance resources ([eb5dbd2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/eb5dbd2))
+-   feat(medicationstatement-res): add sider specific meta tags ([bf4e0f9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bf4e0f9))
+-   style(sql): tidy whitespace ([ddc2b4e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ddc2b4e))
+-   docs(readme): update links, dates, version numbers ([6bb0e0b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6bb0e0b))
+-   fix(code-templates): add support for clob types ([1fc4682](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1fc4682))
+-   fix(code-templates): import dstu3 model library instead of r4 ([e881340](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e881340))
+-   fix(listeners): declare fhir version in operationoutcome ([28cfec1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/28cfec1))
+-   chore(code-templates): remove unused templates ([0a3236e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0a3236e))
+-   chore(listeners): remove inline eslint rules ([926328e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/926328e))
+-   chore(listeners): remove unused vread destination ([df1c304](https://github.com/Fdawgs/ydh-fhir-listeners/commit/df1c304))
+
+### BREAKING CHANGE
+
+-   context path of listener url changed from `r3` to `STU3`
+
 ## 2.8.0 (2020-11-20)
 
 -   build(deps-dev): bump dev dependencies ([c5ea129](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c5ea129))
