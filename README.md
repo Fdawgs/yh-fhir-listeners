@@ -2,7 +2,7 @@
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners/badge.svg)](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)
+> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2020 MR: R1.ENYH.ADHOC5 Build #5)
 
 ## Introduction
 
@@ -10,7 +10,7 @@
 
 This repo outlines the steps that have been taken to provide the technical deliverables required by the SIDeR programme, alongside the issues that were encountered during development, and how to deploy the resulting Mirth Connect channel.
 
-Work logs and issues are found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
+Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
 The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems. Musgrove Park Hospital (part of SFT) have successfully taken this and refactored it for use with their PAS, Maxims.
 
@@ -20,7 +20,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/your-health/sharing-your-information/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Stakeholders (as of 2020-11-01) are:
+Stakeholders (as of 2020-11-24) are:
 
 -   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
@@ -47,14 +47,14 @@ A contextual link needs to be added to our PAS to allow care providers access to
 ## Prerequisites
 
 -   Latest release of [Mirth Connect](https://github.com/nextgenhealthcare/connect) installed (including supporting database instance)
--   Latest release of the Mirth Connect [FHIR Connector extension](https://ng.nextgen.com/l/488571/2018-03-16/6w3yr)
--   Latest release of [ydh-authentication-service](https://github.com/Fdawgs/ydh-authentication-service) (for securing endpoints with HTTPs and bearer tokens)
+-   Latest release of the Mirth Connect [FHIR Connector extension](http://downloads.mirthcorp.com/fhir/3.10.0/fhir-3.10.0.b1356.zip)
+-   Latest release of [ydh-authentication-service](https://github.com/Fdawgs/ydh-authentication-service) (for securing endpoints with HTTPs, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) (optional, for development)
 -   [Yarn](https://yarnpkg.com) (optional, for development)
 
 ## Deployment
 
-This Mirth Connect channel has been tested on a Mirth Connect instance (v3.9.1) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
+This Mirth Connect channel has been tested on a Mirth Connect instance (v3.10.0) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
 
 ### Setting up Mirth Connect Channel
 
@@ -72,10 +72,15 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
 
 -   AllergyIntolerance resources:
     -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
+    -   Low recordings of allergy and intolerance data in TrakCare:
+        -   350,513 non-deceased patients with records in TrakCare as of 2020-11-19
+            -   34,405 patients have ‘No Known Allergy’ recorded (9.8%)
+            -   13,139 patients have one or more allergies recorded (3.7%)
+    -   Due to the above issues, Paul Foster (CCIO at YDH) on 2020-11-19 suggested we **do not provide AllergyIntolerance resources** (functionality is still present in channel however)
 -   Condition resources:
-    -   Unable to provide Condition resources as conditions are held in SimpleCode, not TrakCare
+    -   **Unable to provide Condition resources** as conditions are held in SimpleCode, not TrakCare
 -   DocumentReference resources:
-    -   Unable to provide DocumentReference resources as these are held in Patient Centre, not TrakCare
+    -   **Unable to provide DocumentReference resources** as these are held in Patient Centre, not TrakCare
 -   Encounter resources:
     -   Discharge/end dates for outpatient Encounter resources are not provided due to poor data quality. Staff in outpatients misuse these input fields in TrakCare to mark when “all admin has been completed for that outpatient encounter” and not when the encounter actually finished
     -   Unable to provide clinician contact details for Encounter resources due to the following:
@@ -84,7 +89,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
         -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
         -   Teams do not have contact number
 -   Patient resources:
-    -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare
+    -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (NHS Data Dictionary coding is provided however)
     -   Sizeable number of patient records without postcodes
 
 ### Search caveats
