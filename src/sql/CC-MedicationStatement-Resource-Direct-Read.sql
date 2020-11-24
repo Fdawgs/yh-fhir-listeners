@@ -19,44 +19,47 @@ Stopped	          | Discontinued without entered in error
 On-hold	          | N/A
 */
 
-WITH medicationStatement_CTE
-  AS (
-SELECT DISTINCT medstatId,
-     COALESCE(medStatContextEncounterReferenceIPEmerg, medStatContextEncounterReferenceOutpatient) AS medStatContextEncounterReference,
-     CONCAT(COALESCE(medstatDateassertedDate, ''),'T', COALESCE(medstatDateassertedTime, '')) AS medstatDateasserted,
-     CONCAT(COALESCE(medstatEffectiveStart_Datepart, ''),'T', COALESCE(medstatEffectiveStart_Timepart, '')) AS medstatEffectiveStart,
-     CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
-     medstatSubjectReference,
-     medstatDosageTimingRepeatDuration,
-     CASE medstatDosageTimingRepeatDurationUnit
+WITH
+     medicationStatement_CTE
+     AS
+     (
+          SELECT DISTINCT medstatId,
+               COALESCE(medStatContextEncounterReferenceIPEmerg, medStatContextEncounterReferenceOutpatient) AS medStatContextEncounterReference,
+               encounterClassDesc,
+               CONCAT(COALESCE(medstatDateassertedDate, ''),'T', COALESCE(medstatDateassertedTime, '')) AS medstatDateasserted,
+               CONCAT(COALESCE(medstatEffectiveStart_Datepart, ''),'T', COALESCE(medstatEffectiveStart_Timepart, '')) AS medstatEffectiveStart,
+               CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
+               medstatSubjectReference,
+               medstatDosageTimingRepeatDuration,
+               CASE medstatDosageTimingRepeatDurationUnit
      WHEN 'DO' THEN NULL
      WHEN 'M' THEN 'min'
      WHEN 'H' THEN 'h'
      WHEN 'D' THEN 'd'
      WHEN 'W' THEN 'wk'
      END AS medstatDosageTimingRepeatDurationUnit,
-     medstatDosagePatientinstruction,
-     medstatDosageRouteText,
-     medstatDosageDoseQuantityValue,
-     medstatDosageDoseQuantityUnit,
-     CASE
+               medstatDosagePatientinstruction,
+               medstatDosageRouteText,
+               medstatDosageDoseQuantityValue,
+               medstatDosageDoseQuantityUnit,
+               CASE
      WHEN (CURRENT_TIMESTAMP BETWEEN CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
                AND CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME))
-          AND orderItemStatus != 'Discontinued' THEN 'active'
+                    AND orderItemStatus != 'Discontinued' THEN 'active'
      WHEN CURRENT_TIMESTAMP < CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
-          AND orderItemStatus != 'Discontinued' THEN 'intended'
+                    AND orderItemStatus != 'Discontinued' THEN 'intended'
      WHEN CURRENT_TIMESTAMP > CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME)
-          AND orderItemStatus != 'Discontinued' THEN 'completed'
+                    AND orderItemStatus != 'Discontinued' THEN 'completed'
      WHEN orderItemStatus = 'Discontinued'
-          AND orderItemVariance IN ('DATA', 'ERROR') THEN 'entered-in-error'
+                    AND orderItemVariance IN ('DATA', 'ERROR') THEN 'entered-in-error'
      WHEN orderItemStatus = 'Discontinued' THEN 'stopped'
      END AS medstatStatusCode,
-     medicationId,
-     medicationCodeText,
-     medicationCodeCodingDisplay,
-     medicationCodeCodingCode,
-     CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
-FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+               medicationId,
+               medicationCodeText,
+               medicationCodeCodingDisplay,
+               medicationCodeCodingCode,
+               CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
+          FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT
                          -- MedicationStatement Resource Area
                          REPLACE(oi.OEORI_RowID, ''||'', ''-'') AS medstatId,
@@ -85,8 +88,14 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                          oi.OEORI_ItmMast_DR->ARCIM_Abbrev AS medicationCodeText,
                          REPLACE(oi.OEORI_ItmMast_DR->ARCIM_RowID, ''||'', ''-'') AS medicationId,
                          arcex.EXT_Desc AS medicationCodeCodingDisplay,
-                         arcex.EXT_Code AS medicationCodeCodingCode
+                         arcex.EXT_Code AS medicationCodeCodingCode,
 
+                         -- Used to differentiate between Inpatient/OutPatient/Emergency meds for tags
+				     CASE
+					WHEN adm.PAADM_Type = ''I'' THEN ''inpatient''
+					WHEN adm.PAADM_Type = ''E'' THEN ''emergency''
+                         WHEN oi.OEORI_APPT_DR->APPT_RowId IS NOT NULL THEN ''outpatient''
+				     END as encounterClassDesc
                     FROM OE_OrdItem oi
                          LEFT JOIN ARC_ItmMast arc
                          ON oi.OEORI_ItmMast_DR = arc.ARCIM_RowId
@@ -102,7 +111,7 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                    WHERE oi.OEORI_Categ_DR->ORCAT_Desc IN (''PHARMACY'', ''PHARM'')
                      AND oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No =''5484125''
                      ')
-  )
+     )
 SELECT *
-  FROM medicationStatement_CTE
- WHERE medstatStatusCode IS NOT NULL;
+FROM medicationStatement_CTE
+WHERE medstatStatusCode IS NOT NULL;
