@@ -35,6 +35,40 @@ function buildMedicationStatementResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	/**
+	 * Add SIDeR specific tags
+	 * Set tag for only outpatient meds from within the last 60 days
+	 */
+	if (
+		result.medstatEffectiveStart != undefined &&
+		result.medstatEffectiveStart.substring(0, 1) != 'T' &&
+		result.medstatEffectiveStart.substring(0, 4) != '1900' &&
+		Math.ceil(
+			(new Date(result.medstatEffectiveStart) - new Date()) /
+				(24 * 60 * 60 * 1000)
+		) >= -60 &&
+		result.encounterClassDesc != undefined &&
+		result.encounterClassDesc == 'outpatient'
+	) {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'summary',
+				display: 'Display in Summary and Detail View'
+			}
+		];
+	} else {
+		resource.meta.tag = [
+			{
+				system:
+					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
+				code: 'none',
+				display: 'Do not Display'
+			}
+		];
+	}
+
 	resource.medicationReference = {
 		reference: newStringOrUndefined('#'.concat(result.medicationId))
 	};
@@ -142,14 +176,14 @@ function buildMedicationStatementResource(data) {
 	if (result.medStatContextEncounterReference != undefined) {
 		resource.context = {
 			reference: ''
-				.concat($cfg('apiUrl'), '/r3/Encounter/')
+				.concat($cfg('apiUrl'), '/STU3/Encounter/')
 				.concat(result.medStatContextEncounterReference)
 		};
 	}
 
 	resource.subject = {
 		reference: ''
-			.concat($cfg('apiUrl'), '/r3/Patient/')
+			.concat($cfg('apiUrl'), '/STU3/Patient/')
 			.concat(result.medstatSubjectReference)
 	};
 

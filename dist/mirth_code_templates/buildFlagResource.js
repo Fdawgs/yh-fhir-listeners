@@ -125,7 +125,7 @@ function buildFlagResource(data) {
 
 	resource.subject = {
 		reference: ''
-			.concat($cfg('apiUrl'), '/r3/Patient/')
+			.concat($cfg('apiUrl'), '/STU3/Patient/')
 			.concat(result.flagSubjectReference)
 	};
 

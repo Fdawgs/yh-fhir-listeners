@@ -67,7 +67,7 @@ function buildAllergyIntoleranceResource(data) {
 	}
 
 	resource.patient = {
-		reference: `${$cfg('apiUrl')}/r3/Patient/${result.patientReference}`
+		reference: `${$cfg('apiUrl')}/STU3/Patient/${result.patientReference}`
 	};
 
 	resource.clinicalStatus = newStringOrUndefined(result.clinicalStatusCode);

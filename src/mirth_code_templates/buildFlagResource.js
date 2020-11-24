@@ -120,7 +120,9 @@ function buildFlagResource(data) {
 	}
 
 	resource.subject = {
-		reference: `${$cfg('apiUrl')}/r3/Patient/${result.flagSubjectReference}`
+		reference: `${$cfg('apiUrl')}/STU3/Patient/${
+			result.flagSubjectReference
+		}`
 	};
 
 	return resource;

@@ -71,7 +71,7 @@ function buildAllergyIntoleranceResource(data) {
 
 	resource.patient = {
 		reference: ''
-			.concat($cfg('apiUrl'), '/r3/Patient/')
+			.concat($cfg('apiUrl'), '/STU3/Patient/')
 			.concat(result.patientReference)
 	};
 
