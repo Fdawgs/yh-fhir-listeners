@@ -19,7 +19,7 @@
     <implementationGuide value="https://nhsconnect.github.io/CareConnectAPI/"/>
     <rest>
         <mode value="server"/>
-        <documentation value="Main FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
+        <documentation value="Care Connect STU3 FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
         <!-- <resource>
             <type value="AllergyIntolerance"/>
             <profile>
