@@ -144,12 +144,31 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('clinical-status')
 		) {
-			whereArray[3].push(
-				"(clinicalStatusCode = '".concat(
-					$('parameters').getParameter('clinical-status'),
-					"')"
-				)
-			);
+			// Loop through each clinical-status param and build SQL WHERE clause
+			var clinicalStatusArray = $('parameters')
+				.getParameterList('clinical-status')
+				.toArray();
+
+			if (clinicalStatusArray[0].substring(0, 1) == '[') {
+				clinicalStatusArray = JSON.parse(clinicalStatusArray[0]);
+			}
+
+			allintClinicalStatusArray = [];
+
+			clinicalStatusArray.forEach(function (clinicalStatusParam) {
+				var clinicalStatus = clinicalStatusParam;
+				clinicalStatus += '';
+
+				allintClinicalStatusArray.push(
+					"(clinicalStatusCode = '".concat(clinicalStatus, "')")
+				);
+			});
+
+			if (allintClinicalStatusArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(allintClinicalStatusArray.join(' OR '), ')')
+				);
+			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
@@ -158,12 +177,31 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('criticality')
 		) {
-			whereArray[3].push(
-				"(criticalityCode = '".concat(
-					$('parameters').getParameter('criticality'),
-					"')"
-				)
-			);
+			// Loop through each criticality param and build SQL WHERE clause
+			var criticalityArray = $('parameters')
+				.getParameterList('criticality')
+				.toArray();
+
+			if (criticalityArray[0].substring(0, 1) == '[') {
+				criticalityArray = JSON.parse(criticalityArray[0]);
+			}
+
+			allintCriticalityArray = [];
+
+			criticalityArray.forEach(function (criticalityParam) {
+				var criticality = criticalityParam;
+				criticality += '';
+
+				allintCriticalityArray.push(
+					"(criticalityCode = '".concat(criticality, "')")
+				);
+			});
+
+			if (allintCriticalityArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(allintCriticalityArray.join(' OR '), ')')
+				);
+			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
@@ -205,12 +243,27 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('type')
 		) {
-			whereArray[3].push(
-				"(typeCode = '".concat(
-					$('parameters').getParameter('type'),
-					"')"
-				)
-			);
+			// Loop through each criticality param and build SQL WHERE clause
+			var typeArray = $('parameters').getParameterList('type').toArray();
+
+			if (typeArray[0].substring(0, 1) == '[') {
+				typeArray = JSON.parse(typeArray[0]);
+			}
+
+			allintTypeArray = [];
+
+			typeArray.forEach(function (typeParam) {
+				var typeP = typeParam;
+				typeP += '';
+
+				allintTypeArray.push("(typeCode = '".concat(typeP, "')"));
+			});
+
+			if (allintTypeArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(allintTypeArray.join(' OR '), ')')
+				);
+			}
 		}
 	}
 
@@ -422,15 +475,15 @@ try {
 			$('parameters').contains('type')
 		) {
 			// Loop through each type param and build SQL WHERE clause
-			var typeArray = $('parameters').getParameterList('type').toArray();
+			var _typeArray = $('parameters').getParameterList('type').toArray();
 
-			if (typeArray[0].substring(0, 1) == '[') {
-				typeArray = JSON.parse(typeArray[0]);
+			if (_typeArray[0].substring(0, 1) == '[') {
+				_typeArray = JSON.parse(_typeArray[0]);
 			}
 
 			encounterTypeArray = [];
 
-			typeArray.forEach(function (typeParam) {
+			_typeArray.forEach(function (typeParam) {
 				var typeP = typeParam;
 				typeP += '';
 

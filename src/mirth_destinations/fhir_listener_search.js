@@ -128,11 +128,31 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('clinical-status')
 		) {
-			whereArray[3].push(
-				`(clinicalStatusCode = '${$('parameters').getParameter(
-					'clinical-status'
-				)}')`
-			);
+			// Loop through each clinical-status param and build SQL WHERE clause
+			let clinicalStatusArray = $('parameters')
+				.getParameterList('clinical-status')
+				.toArray();
+
+			if (clinicalStatusArray[0].substring(0, 1) == '[') {
+				clinicalStatusArray = JSON.parse(clinicalStatusArray[0]);
+			}
+
+			allintClinicalStatusArray = [];
+
+			clinicalStatusArray.forEach((clinicalStatusParam) => {
+				let clinicalStatus = clinicalStatusParam;
+				clinicalStatus += '';
+
+				allintClinicalStatusArray.push(
+					`(clinicalStatusCode = '${clinicalStatus}')`
+				);
+			});
+
+			if (allintClinicalStatusArray.length > 0) {
+				whereArray[3].push(
+					`(${allintClinicalStatusArray.join(' OR ')})`
+				);
+			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
@@ -141,11 +161,29 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('criticality')
 		) {
-			whereArray[3].push(
-				`(criticalityCode = '${$('parameters').getParameter(
-					'criticality'
-				)}')`
-			);
+			// Loop through each criticality param and build SQL WHERE clause
+			let criticalityArray = $('parameters')
+				.getParameterList('criticality')
+				.toArray();
+
+			if (criticalityArray[0].substring(0, 1) == '[') {
+				criticalityArray = JSON.parse(criticalityArray[0]);
+			}
+
+			allintCriticalityArray = [];
+
+			criticalityArray.forEach((criticalityParam) => {
+				let criticality = criticalityParam;
+				criticality += '';
+
+				allintCriticalityArray.push(
+					`(criticalityCode = '${criticality}')`
+				);
+			});
+
+			if (allintCriticalityArray.length > 0) {
+				whereArray[3].push(`(${allintCriticalityArray.join(' OR ')})`);
+			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
@@ -183,9 +221,25 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('type')
 		) {
-			whereArray[3].push(
-				`(typeCode = '${$('parameters').getParameter('type')}')`
-			);
+			// Loop through each criticality param and build SQL WHERE clause
+			let typeArray = $('parameters').getParameterList('type').toArray();
+
+			if (typeArray[0].substring(0, 1) == '[') {
+				typeArray = JSON.parse(typeArray[0]);
+			}
+
+			allintTypeArray = [];
+
+			typeArray.forEach((typeParam) => {
+				let typeP = typeParam;
+				typeP += '';
+
+				allintTypeArray.push(`(typeCode = '${typeP}')`);
+			});
+
+			if (allintTypeArray.length > 0) {
+				whereArray[3].push(`(${allintTypeArray.join(' OR ')})`);
+			}
 		}
 	}
 
