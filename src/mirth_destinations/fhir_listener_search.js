@@ -329,26 +329,28 @@ try {
 				classArray = JSON.parse(classArray[0]);
 			}
 
+			encounterClassArray = [];
+
 			classArray.forEach((classParam) => {
 				let classP = classParam;
 				classP += '';
 
 				const classCode = {
-					inpatient: 'I',
+					inpatient: 'IMP',
 					outpatient: 'AMB',
-					emergency: 'E'
+					emergency: 'EMER'
 				};
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					`(''AMB'' = ''${classCode[classP.toLowerCase()]}'')`
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					`(PAADM_Type = ''${classCode[classP.toLowerCase()]}'')`
+				encounterClassArray.push(
+					`(encounterClassCode = '${
+						classCode[classP.toLowerCase()]
+					}')`
 				);
 			});
+
+			if (encounterClassArray.length > 0) {
+				whereArray[3].push(`(${encounterClassArray.join(' OR ')})`);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
@@ -364,20 +366,19 @@ try {
 				typeArray = JSON.parse(typeArray[0]);
 			}
 
+			encounterTypeArray = [];
+
 			typeArray.forEach((typeParam) => {
 				let typeP = typeParam;
 				typeP += '';
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					`(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''${typeP}'')`
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					`(PAADM_DepCode_DR->CTLOC_Code = ''${typeP}'')`
-				);
+				// Build where clause for fourth query
+				encounterTypeArray.push(`(encounterTypeCode = '${typeP}')`);
 			});
+
+			if (encounterTypeArray.length > 0) {
+				whereArray[3].push(`(${encounterTypeArray.join(' OR ')})`);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&status=[token]
@@ -395,13 +396,21 @@ try {
 				statusArray = JSON.parse(statusArray[0]);
 			}
 
+			encounterStatusArray = [];
+
 			statusArray.forEach((statusParam) => {
 				let status = statusParam;
 				status += '';
 
 				// Build where clause for fourth query
-				whereArray[3].push(`(encounterStatusMapped = '${status}')`);
+				encounterStatusArray.push(
+					`(encounterStatusMapped = '${status}')`
+				);
 			});
+
+			if (encounterStatusArray.length > 0) {
+				whereArray[3].push(`(${encounterStatusArray.join(' OR ')})`);
+			}
 		}
 	}
 
