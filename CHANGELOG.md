@@ -1,3 +1,8 @@
+## <small>3.0.1 (2020-11-25)</small>
+
+-   build(deps-dev): bump dev dependencies ([582a758](https://github.com/Fdawgs/ydh-fhir-listeners/commit/582a758))
+-   fix(medicationstatement-res): change tag predicates ([2329c40](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2329c40))
+
 ## 3.0.0 (2020-11-24)
 
 -   build(deps-dev): bump dev dependencies ([b99ff28](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b99ff28))
