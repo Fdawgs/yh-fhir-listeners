@@ -36,7 +36,7 @@ function buildMedicationStatementResource(data) {
 
 	/**
 	 * Add SIDeR specific tags
-	 * Set tag for only outpatient meds from within the last 60 days
+	 * Set tag for meds from within the last 60 days
 	 */
 	if (
 		result.medstatEffectiveStart != undefined &&
@@ -45,9 +45,7 @@ function buildMedicationStatementResource(data) {
 		Math.ceil(
 			(new Date(result.medstatEffectiveStart) - new Date()) /
 				(24 * 60 * 60 * 1000)
-		) >= -60 &&
-		result.encounterClassDesc != undefined &&
-		result.encounterClassDesc == 'outpatient'
+		) >= -60
 	) {
 		resource.meta.tag = [
 			{
