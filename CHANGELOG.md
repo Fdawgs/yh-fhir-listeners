@@ -1,3 +1,7 @@
+## <small>3.0.3 (2020-11-25)</small>
+
+-   fix(listeners): encounter search params ([0baf773](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0baf773))
+
 ## <small>3.0.2 (2020-11-25)</small>
 
 -   fix(listeners): date search params ([12549a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/12549a2))

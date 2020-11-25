@@ -51,7 +51,7 @@ An example SQL Server config:
       <contextPath>STU3</contextPath>
       <timeout>0</timeout>
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-    &lt;version value=&quot;3.0.2&quot;/&gt;
+    &lt;version value=&quot;3.0.3&quot;/&gt;
     &lt;status value=&quot;active&quot;/&gt;
     &lt;publisher value=&quot;Yeovil District Hospital NHS Foundation Trust&quot;/&gt;
     &lt;contact&gt;
@@ -2610,32 +2610,31 @@ try {
 				classArray = JSON.parse(classArray[0]);
 			}
 
+			encounterClassArray = [];
+
 			classArray.forEach(function (classParam) {
 				var classP = classParam;
 				classP += &apos;&apos;;
 
 				var classCode = {
-					inpatient: &apos;I&apos;,
+					inpatient: &apos;IMP&apos;,
 					outpatient: &apos;AMB&apos;,
-					emergency: &apos;E&apos;
+					emergency: &apos;EMER&apos;
 				};
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					&quot;(&apos;&apos;AMB&apos;&apos; = &apos;&apos;&quot;.concat(
+				encounterClassArray.push(
+					&quot;(encounterClassCode = &apos;&quot;.concat(
 						classCode[classP.toLowerCase()],
-						&quot;&apos;&apos;)&quot;
-					)
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					&quot;(PAADM_Type = &apos;&apos;&quot;.concat(
-						classCode[classP.toLowerCase()],
-						&quot;&apos;&apos;)&quot;
+						&quot;&apos;)&quot;
 					)
 				);
 			});
+
+			if (encounterClassArray.length &gt; 0) {
+				whereArray[3].push(
+					&apos;(&apos;.concat(encounterClassArray.join(&apos; OR &apos;), &apos;)&apos;)
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&amp;type=[code]
@@ -2651,23 +2650,23 @@ try {
 				typeArray = JSON.parse(typeArray[0]);
 			}
 
+			encounterTypeArray = [];
+
 			typeArray.forEach(function (typeParam) {
 				var typeP = typeParam;
 				typeP += &apos;&apos;;
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					&quot;(app.APPT_AS_ParRef-&gt;AS_RES_ParRef-&gt;RES_CTLOC_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(
-						typeP,
-						&quot;&apos;&apos;)&quot;
-					)
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					&quot;(PAADM_DepCode_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(typeP, &quot;&apos;&apos;)&quot;)
+				// Build where clause for fourth query
+				encounterTypeArray.push(
+					&quot;(encounterTypeCode = &apos;&quot;.concat(typeP, &quot;&apos;)&quot;)
 				);
 			});
+
+			if (encounterTypeArray.length &gt; 0) {
+				whereArray[3].push(
+					&apos;(&apos;.concat(encounterTypeArray.join(&apos; OR &apos;), &apos;)&apos;)
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&amp;status=[token]
@@ -2685,15 +2684,23 @@ try {
 				statusArray = JSON.parse(statusArray[0]);
 			}
 
+			encounterStatusArray = [];
+
 			statusArray.forEach(function (statusParam) {
 				var status = statusParam;
 				status += &apos;&apos;;
 
 				// Build where clause for fourth query
-				whereArray[3].push(
+				encounterStatusArray.push(
 					&quot;(encounterStatusMapped = &apos;&quot;.concat(status, &quot;&apos;)&quot;)
 				);
 			});
+
+			if (encounterStatusArray.length &gt; 0) {
+				whereArray[3].push(
+					&apos;(&apos;.concat(encounterStatusArray.join(&apos; OR &apos;), &apos;)&apos;)
+				);
+			}
 		}
 	}
 
@@ -3337,7 +3344,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1606311398798</time>
+        <time>1606316667083</time>
         <timezone>Europe/London</timezone>
       </lastModified>
       <pruningSettings>

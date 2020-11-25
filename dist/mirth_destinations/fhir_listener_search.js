@@ -380,32 +380,31 @@ try {
 				classArray = JSON.parse(classArray[0]);
 			}
 
+			encounterClassArray = [];
+
 			classArray.forEach(function (classParam) {
 				var classP = classParam;
 				classP += '';
 
 				var classCode = {
-					inpatient: 'I',
+					inpatient: 'IMP',
 					outpatient: 'AMB',
-					emergency: 'E'
+					emergency: 'EMER'
 				};
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					"(''AMB'' = ''".concat(
+				encounterClassArray.push(
+					"(encounterClassCode = '".concat(
 						classCode[classP.toLowerCase()],
-						"'')"
-					)
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					"(PAADM_Type = ''".concat(
-						classCode[classP.toLowerCase()],
-						"'')"
+						"')"
 					)
 				);
 			});
+
+			if (encounterClassArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(encounterClassArray.join(' OR '), ')')
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
@@ -421,23 +420,23 @@ try {
 				typeArray = JSON.parse(typeArray[0]);
 			}
 
+			encounterTypeArray = [];
+
 			typeArray.forEach(function (typeParam) {
 				var typeP = typeParam;
 				typeP += '';
 
-				// Build where clause for first query (outpats) in union
-				whereArray[0].push(
-					"(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''".concat(
-						typeP,
-						"'')"
-					)
-				);
-
-				// Build where clause for second query (inpats, emerg) in union
-				whereArray[1].push(
-					"(PAADM_DepCode_DR->CTLOC_Code = ''".concat(typeP, "'')")
+				// Build where clause for fourth query
+				encounterTypeArray.push(
+					"(encounterTypeCode = '".concat(typeP, "')")
 				);
 			});
+
+			if (encounterTypeArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(encounterTypeArray.join(' OR '), ')')
+				);
+			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&status=[token]
@@ -455,15 +454,23 @@ try {
 				statusArray = JSON.parse(statusArray[0]);
 			}
 
+			encounterStatusArray = [];
+
 			statusArray.forEach(function (statusParam) {
 				var status = statusParam;
 				status += '';
 
 				// Build where clause for fourth query
-				whereArray[3].push(
+				encounterStatusArray.push(
 					"(encounterStatusMapped = '".concat(status, "')")
 				);
 			});
+
+			if (encounterStatusArray.length > 0) {
+				whereArray[3].push(
+					'('.concat(encounterStatusArray.join(' OR '), ')')
+				);
+			}
 		}
 	}
 
