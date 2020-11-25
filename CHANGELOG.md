@@ -1,3 +1,9 @@
+## <small>3.0.2 (2020-11-25)</small>
+
+-   fix(listeners): date search params ([12549a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/12549a2))
+-   fix(listeners): param key checks ([87bffbd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87bffbd))
+-   fix(listeners): remaining search params ([f558e1c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f558e1c))
+
 ## <small>3.0.1 (2020-11-25)</small>
 
 -   build(deps-dev): bump dev dependencies ([582a758](https://github.com/Fdawgs/ydh-fhir-listeners/commit/582a758))
