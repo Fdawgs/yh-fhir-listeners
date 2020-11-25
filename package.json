@@ -1,6 +1,6 @@
 {
 	"name": "ydh-fhir-listeners",
-	"version": "3.0.0",
+	"version": "3.0.1",
 	"description": "Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)",
 	"main": "index.js",
 	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
@@ -28,7 +28,7 @@
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.12.8",
-		"@babel/core": "^7.12.8",
+		"@babel/core": "^7.12.9",
 		"@babel/node": "^7.12.6",
 		"@babel/preset-env": "^7.12.7",
 		"@commitlint/config-conventional": "^11.0.0",
