@@ -1,3 +1,10 @@
+## 3.1.0 (2020-11-25)
+
+-   chore(capabilitystatement): update documentation value ([9d0c1ed](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9d0c1ed))
+-   docs(readme): remove old info ([a0977af](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a0977af))
+-   feat(listeners): support multiple search params to allergyint resources ([95ad5fd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/95ad5fd))
+-   fix(listeners): add `type` to accepted encounter search params ([eff5c23](https://github.com/Fdawgs/ydh-fhir-listeners/commit/eff5c23))
+
 ## <small>3.0.3 (2020-11-25)</small>
 
 -   fix(listeners): encounter search params ([0baf773](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0baf773))
