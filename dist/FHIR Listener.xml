@@ -51,7 +51,7 @@ An example SQL Server config:
       <contextPath>STU3</contextPath>
       <timeout>0</timeout>
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-    &lt;version value=&quot;3.0.1&quot;/&gt;
+    &lt;version value=&quot;3.0.2&quot;/&gt;
     &lt;status value=&quot;active&quot;/&gt;
     &lt;publisher value=&quot;Yeovil District Hospital NHS Foundation Trust&quot;/&gt;
     &lt;contact&gt;
@@ -2292,7 +2292,6 @@ try {
 	// If any param not supported, reject request
 	$(&apos;parameters&apos;)
 		.getKeys()
-		.toArray()
 		.forEach(function (key) {
 			if (
 				supportedTypeParams[type.toLowerCase()].indexOf(
@@ -2396,25 +2395,30 @@ try {
 			$(&apos;parameters&apos;).contains(&apos;date&apos;)
 		) {
 			// Loop through each date param and build SQL WHERE clause
-			$(&apos;parameters&apos;)
-				.getParameterList(&apos;date&apos;)
-				.toArray()
-				.forEach(function (paramDate) {
-					date = paramDate;
-					date += &apos;&apos;;
-					var operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+			var dateArray = $(&apos;parameters&apos;).getParameterList(&apos;date&apos;).toArray();
 
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereArray[0].push(
-						&apos;(alle.ALG_Date &apos;
-							.concat(operator, &quot; &apos;&apos;&quot;)
-							.concat(date, &quot;&apos;&apos;)&quot;)
-					);
-				});
+			if (dateArray[0].substring(0, 1) == &apos;[&apos;) {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach(function (dateParam) {
+				var date = dateParam;
+				date += &apos;&apos;;
+
+				var operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[0].push(
+					&apos;(alle.ALG_Date &apos;
+						.concat(operator, &quot; &apos;&apos;&quot;)
+						.concat(date, &quot;&apos;&apos;)&quot;)
+				);
+			});
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&amp;type=[code]
@@ -2564,48 +2568,31 @@ try {
 				$(&apos;parameters&apos;).contains(&apos;patient.identifier&apos;)) &amp;&amp;
 			$(&apos;parameters&apos;).contains(&apos;date&apos;)
 		) {
-			// Only handle first two `date` search params, any extra will be ignored
-			var dateArray = $(&apos;parameters&apos;).getParameterList(&apos;date&apos;).toArray();
+			// Loop through each date param and build SQL WHERE clause
+			var _dateArray = $(&apos;parameters&apos;).getParameterList(&apos;date&apos;).toArray();
 
-			// Search with start date
-			if (dateArray[0]) {
-				var _date = dateArray[0];
-				_date += &apos;&apos;;
+			if (_dateArray[0].substring(0, 1) == &apos;[&apos;) {
+				_dateArray = JSON.parse(_dateArray[0]);
+			}
+
+			_dateArray.forEach(function (dateParam) {
+				var date = dateParam;
+				date += &apos;&apos;;
 
 				var operator = convertFhirParameterOperator(
-					_date.substring(0, 2)
+					date.substring(0, 2)
 				);
 
-				if (isNaN(_date.substring(0, 2))) {
-					_date = _date.substring(2, _date.length);
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
 				}
 
 				whereArray[3].push(
 					&quot;(CONCAT(COALESCE(encounterPeriodStartDate, &apos;&apos;), &apos;T&apos;, COALESCE(encounterPeriodStartTime, &apos;&apos;)) &quot;
 						.concat(operator, &quot; &apos;&quot;)
-						.concat(_date, &quot;&apos;)&quot;)
+						.concat(date, &quot;&apos;)&quot;)
 				);
-			}
-
-			// Search with end date
-			if (dateArray[1]) {
-				var _date2 = dateArray[1];
-				_date2 += &apos;&apos;;
-
-				var _operator = convertFhirParameterOperator(
-					_date2.substring(0, 2)
-				);
-
-				if (isNaN(_date2.substring(0, 2))) {
-					_date2 = _date2.substring(2, _date2.length);
-				}
-
-				whereArray[3].push(
-					&quot;(CONCAT(COALESCE(encounterPeriodEndDate, &apos;&apos;), &apos;T&apos;, COALESCE(encounterPeriodEndTime, &apos;&apos;)) &quot;
-						.concat(_operator, &quot; &apos;&quot;)
-						.concat(_date2, &quot;&apos;)&quot;)
-				);
-			}
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&amp;class=[token]
@@ -2615,32 +2602,40 @@ try {
 			$(&apos;parameters&apos;).contains(&apos;class&apos;)
 		) {
 			// Loop through each class param and build SQL WHERE clause
-			$(&apos;parameters&apos;)
+			var classArray = $(&apos;parameters&apos;)
 				.getParameterList(&apos;class&apos;)
-				.toArray()
-				.forEach(function (paramClass) {
-					var classCode = {
-						inpatient: &apos;I&apos;,
-						outpatient: &apos;AMB&apos;,
-						emergency: &apos;E&apos;
-					};
+				.toArray();
 
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						&quot;(&apos;&apos;AMB&apos;&apos; = &apos;&apos;&quot;.concat(
-							classCode[paramClass.toLowerCase()],
-							&quot;&apos;&apos;)&quot;
-						)
-					);
+			if (classArray[0].substring(0, 1) == &apos;[&apos;) {
+				classArray = JSON.parse(classArray[0]);
+			}
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						&quot;(PAADM_Type = &apos;&apos;&quot;.concat(
-							classCode[paramClass.toLowerCase()],
-							&quot;&apos;&apos;)&quot;
-						)
-					);
-				});
+			classArray.forEach(function (classParam) {
+				var classP = classParam;
+				classP += &apos;&apos;;
+
+				var classCode = {
+					inpatient: &apos;I&apos;,
+					outpatient: &apos;AMB&apos;,
+					emergency: &apos;E&apos;
+				};
+
+				// Build where clause for first query (outpats) in union
+				whereArray[0].push(
+					&quot;(&apos;&apos;AMB&apos;&apos; = &apos;&apos;&quot;.concat(
+						classCode[classP.toLowerCase()],
+						&quot;&apos;&apos;)&quot;
+					)
+				);
+
+				// Build where clause for second query (inpats, emerg) in union
+				whereArray[1].push(
+					&quot;(PAADM_Type = &apos;&apos;&quot;.concat(
+						classCode[classP.toLowerCase()],
+						&quot;&apos;&apos;)&quot;
+					)
+				);
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&amp;type=[code]
@@ -2650,26 +2645,29 @@ try {
 			$(&apos;parameters&apos;).contains(&apos;type&apos;)
 		) {
 			// Loop through each type param and build SQL WHERE clause
-			$(&apos;parameters&apos;)
-				.getParameterList(&apos;type&apos;)
-				.toArray()
-				.forEach(function (paramType) {
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						&quot;(app.APPT_AS_ParRef-&gt;AS_RES_ParRef-&gt;RES_CTLOC_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(
-							paramType,
-							&quot;&apos;&apos;)&quot;
-						)
-					);
+			var typeArray = $(&apos;parameters&apos;).getParameterList(&apos;type&apos;).toArray();
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						&quot;(PAADM_DepCode_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(
-							paramType,
-							&quot;&apos;&apos;)&quot;
-						)
-					);
-				});
+			if (typeArray[0].substring(0, 1) == &apos;[&apos;) {
+				typeArray = JSON.parse(typeArray[0]);
+			}
+
+			typeArray.forEach(function (typeParam) {
+				var typeP = typeParam;
+				typeP += &apos;&apos;;
+
+				// Build where clause for first query (outpats) in union
+				whereArray[0].push(
+					&quot;(app.APPT_AS_ParRef-&gt;AS_RES_ParRef-&gt;RES_CTLOC_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(
+						typeP,
+						&quot;&apos;&apos;)&quot;
+					)
+				);
+
+				// Build where clause for second query (inpats, emerg) in union
+				whereArray[1].push(
+					&quot;(PAADM_DepCode_DR-&gt;CTLOC_Code = &apos;&apos;&quot;.concat(typeP, &quot;&apos;&apos;)&quot;)
+				);
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&amp;status=[token]
@@ -2678,16 +2676,24 @@ try {
 				$(&apos;parameters&apos;).contains(&apos;patient.identifier&apos;)) &amp;&amp;
 			$(&apos;parameters&apos;).contains(&apos;status&apos;)
 		) {
-			// Loop through each type param and build SQL WHERE clause
-			$(&apos;parameters&apos;)
+			// Loop through each status param and build SQL WHERE clause
+			var statusArray = $(&apos;parameters&apos;)
 				.getParameterList(&apos;status&apos;)
-				.toArray()
-				.forEach(function (paramStatus) {
-					// Build where clause for fourth query
-					whereArray[3].push(
-						&quot;(encounterStatusMapped = &apos;&quot;.concat(paramStatus, &quot;&apos;)&quot;)
-					);
-				});
+				.toArray();
+
+			if (statusArray[0].substring(0, 1) == &apos;[&apos;) {
+				statusArray = JSON.parse(statusArray[0]);
+			}
+
+			statusArray.forEach(function (statusParam) {
+				var status = statusParam;
+				status += &apos;&apos;;
+
+				// Build where clause for fourth query
+				whereArray[3].push(
+					&quot;(encounterStatusMapped = &apos;&quot;.concat(status, &quot;&apos;)&quot;)
+				);
+			});
 		}
 	}
 
@@ -2748,46 +2754,31 @@ try {
 				$(&apos;parameters&apos;).contains(&apos;patient.identifier&apos;)) &amp;&amp;
 			$(&apos;parameters&apos;).contains(&apos;date&apos;)
 		) {
-			// Only handle first two `date` search params, any extra will be ignored
-			var _dateArray = $(&apos;parameters&apos;).getParameterList(&apos;date&apos;).toArray();
+			// Loop through each date param and build SQL WHERE clause
+			var _dateArray2 = $(&apos;parameters&apos;)
+				.getParameterList(&apos;date&apos;)
+				.toArray();
 
-			// Search with start date
-			if (_dateArray[0]) {
-				var _date3 = _dateArray[0];
-				_date3 += &apos;&apos;;
+			if (_dateArray2[0].substring(0, 1) == &apos;[&apos;) {
+				_dateArray2 = JSON.parse(_dateArray2[0]);
+			}
 
-				var _operator2 = convertFhirParameterOperator(
-					_date3.substring(0, 2)
+			_dateArray2.forEach(function (dateParam) {
+				var date = dateParam;
+				date += &apos;&apos;;
+
+				var operator = convertFhirParameterOperator(
+					date.substring(0, 2)
 				);
 
-				if (isNaN(_date3.substring(0, 2))) {
-					_date3 = _date3.substring(2, _date3.length);
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
 				}
 
 				whereArray[1].push(
-					&apos;(periodStart &apos;
-						.concat(_operator2, &quot; &apos;&quot;)
-						.concat(_date3, &quot;&apos;)&quot;)
+					&apos;(periodStart &apos;.concat(operator, &quot; &apos;&quot;).concat(date, &quot;&apos;)&quot;)
 				);
-			}
-
-			// Search with end date
-			if (_dateArray[1]) {
-				var _date4 = _dateArray[1];
-				_date4 += &apos;&apos;;
-
-				var _operator3 = convertFhirParameterOperator(
-					_date4.substring(0, 2)
-				);
-
-				if (isNaN(_date4.substring(0, 2))) {
-					_date4 = _date4.substring(2, _date4.length);
-				}
-
-				whereArray[1].push(
-					&apos;(periodEnd &apos;.concat(_operator3, &quot; &apos;&quot;).concat(_date4, &quot;&apos;)&quot;)
-				);
-			}
+			});
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&amp;status=[code]
@@ -2817,50 +2808,33 @@ try {
 				$(&apos;parameters&apos;).contains(&apos;patient.identifier&apos;)) &amp;&amp;
 			$(&apos;parameters&apos;).contains(&apos;effective&apos;)
 		) {
-			// Only handle first two `effective` search params, any extra will be ignored
-			var _dateArray2 = $(&apos;parameters&apos;)
+			// Loop through each effective param and build SQL WHERE clause
+			var _dateArray3 = $(&apos;parameters&apos;)
 				.getParameterList(&apos;effective&apos;)
 				.toArray();
 
-			// Search with start date
-			if (_dateArray2[0]) {
-				var _date5 = _dateArray2[0];
-				_date5 += &apos;&apos;;
+			if (_dateArray3[0].substring(0, 1) == &apos;[&apos;) {
+				_dateArray3 = JSON.parse(_dateArray3[0]);
+			}
 
-				var _operator4 = convertFhirParameterOperator(
-					_date5.substring(0, 2)
+			_dateArray3.forEach(function (dateParam) {
+				var date = dateParam;
+				date += &apos;&apos;;
+
+				var operator = convertFhirParameterOperator(
+					date.substring(0, 2)
 				);
 
-				if (isNaN(_date5.substring(0, 2))) {
-					_date5 = _date5.substring(2, _date5.length);
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
 				}
 
 				whereArray[1].push(
 					&apos;(medstatEffectiveStart &apos;
-						.concat(_operator4, &quot; &apos;&quot;)
-						.concat(_date5, &quot;&apos;)&quot;)
+						.concat(operator, &quot; &apos;&quot;)
+						.concat(date, &quot;&apos;)&quot;)
 				);
-			}
-
-			// Search with end date
-			if (_dateArray2[1]) {
-				var _date6 = _dateArray2[1];
-				_date6 += &apos;&apos;;
-
-				var _operator5 = convertFhirParameterOperator(
-					_date6.substring(0, 2)
-				);
-
-				if (isNaN(_date6.substring(0, 2))) {
-					_date6 = _date6.substring(2, _date6.length);
-				}
-
-				whereArray[1].push(
-					&apos;(medstatEffectiveEnd &apos;
-						.concat(_operator5, &quot; &apos;&quot;)
-						.concat(_date6, &quot;&apos;)&quot;)
-				);
-			}
+			});
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]
@@ -3363,7 +3337,7 @@ return;</undeployScript>
     <metadata>
       <enabled>true</enabled>
       <lastModified>
-        <time>1606291837404</time>
+        <time>1606311398798</time>
         <timezone>Europe/London</timezone>
       </lastModified>
       <pruningSettings>
@@ -5721,7 +5695,7 @@ function buildPatientResource(data) {
             <name>Build Resource Query</name>
             <revision>3</revision>
             <lastModified>
-              <time>1606228020424</time>
+              <time>1606311388886</time>
               <timezone>Europe/London</timezone>
             </lastModified>
             <contextSet>

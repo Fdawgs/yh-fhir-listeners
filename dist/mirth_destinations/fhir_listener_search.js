@@ -165,25 +165,30 @@ try {
 			$('parameters').contains('date')
 		) {
 			// Loop through each date param and build SQL WHERE clause
-			$('parameters')
-				.getParameterList('date')
-				.toArray()
-				.forEach(function (paramDate) {
-					date = paramDate;
-					date += '';
-					var operator = convertFhirParameterOperator(
-						date.substring(0, 2)
-					);
+			var dateArray = $('parameters').getParameterList('date').toArray();
 
-					if (isNaN(date.substring(0, 2))) {
-						date = date.substring(2, date.length);
-					}
-					whereArray[0].push(
-						'(alle.ALG_Date '
-							.concat(operator, " ''")
-							.concat(date, "'')")
-					);
-				});
+			if (dateArray[0].substring(0, 1) == '[') {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach(function (dateParam) {
+				var date = dateParam;
+				date += '';
+
+				var operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[0].push(
+					'(alle.ALG_Date '
+						.concat(operator, " ''")
+						.concat(date, "'')")
+				);
+			});
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&type=[code]
@@ -333,13 +338,14 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			var dateArray = $('parameters').getParameterList('date').toArray();
+			// Loop through each date param and build SQL WHERE clause
+			var _dateArray = $('parameters').getParameterList('date').toArray();
 
-			if (dateArray[0].substring(0, 1) == '[') {
-				dateArray = JSON.parse(dateArray[0]);
+			if (_dateArray[0].substring(0, 1) == '[') {
+				_dateArray = JSON.parse(_dateArray[0]);
 			}
 
-			dateArray.forEach(function (dateParam) {
+			_dateArray.forEach(function (dateParam) {
 				var date = dateParam;
 				date += '';
 
@@ -366,32 +372,40 @@ try {
 			$('parameters').contains('class')
 		) {
 			// Loop through each class param and build SQL WHERE clause
-			$('parameters')
+			var classArray = $('parameters')
 				.getParameterList('class')
-				.toArray()
-				.forEach(function (paramClass) {
-					var classCode = {
-						inpatient: 'I',
-						outpatient: 'AMB',
-						emergency: 'E'
-					};
+				.toArray();
 
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						"(''AMB'' = ''".concat(
-							classCode[paramClass.toLowerCase()],
-							"'')"
-						)
-					);
+			if (classArray[0].substring(0, 1) == '[') {
+				classArray = JSON.parse(classArray[0]);
+			}
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						"(PAADM_Type = ''".concat(
-							classCode[paramClass.toLowerCase()],
-							"'')"
-						)
-					);
-				});
+			classArray.forEach(function (classParam) {
+				var classP = classParam;
+				classP += '';
+
+				var classCode = {
+					inpatient: 'I',
+					outpatient: 'AMB',
+					emergency: 'E'
+				};
+
+				// Build where clause for first query (outpats) in union
+				whereArray[0].push(
+					"(''AMB'' = ''".concat(
+						classCode[classP.toLowerCase()],
+						"'')"
+					)
+				);
+
+				// Build where clause for second query (inpats, emerg) in union
+				whereArray[1].push(
+					"(PAADM_Type = ''".concat(
+						classCode[classP.toLowerCase()],
+						"'')"
+					)
+				);
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
@@ -401,26 +415,29 @@ try {
 			$('parameters').contains('type')
 		) {
 			// Loop through each type param and build SQL WHERE clause
-			$('parameters')
-				.getParameterList('type')
-				.toArray()
-				.forEach(function (paramType) {
-					// Build where clause for first query (outpats) in union
-					whereArray[0].push(
-						"(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''".concat(
-							paramType,
-							"'')"
-						)
-					);
+			var typeArray = $('parameters').getParameterList('type').toArray();
 
-					// Build where clause for second query (inpats, emerg) in union
-					whereArray[1].push(
-						"(PAADM_DepCode_DR->CTLOC_Code = ''".concat(
-							paramType,
-							"'')"
-						)
-					);
-				});
+			if (typeArray[0].substring(0, 1) == '[') {
+				typeArray = JSON.parse(typeArray[0]);
+			}
+
+			typeArray.forEach(function (typeParam) {
+				var typeP = typeParam;
+				typeP += '';
+
+				// Build where clause for first query (outpats) in union
+				whereArray[0].push(
+					"(app.APPT_AS_ParRef->AS_RES_ParRef->RES_CTLOC_DR->CTLOC_Code = ''".concat(
+						typeP,
+						"'')"
+					)
+				);
+
+				// Build where clause for second query (inpats, emerg) in union
+				whereArray[1].push(
+					"(PAADM_DepCode_DR->CTLOC_Code = ''".concat(typeP, "'')")
+				);
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&status=[token]
@@ -429,16 +446,24 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('status')
 		) {
-			// Loop through each type param and build SQL WHERE clause
-			$('parameters')
+			// Loop through each status param and build SQL WHERE clause
+			var statusArray = $('parameters')
 				.getParameterList('status')
-				.toArray()
-				.forEach(function (paramStatus) {
-					// Build where clause for fourth query
-					whereArray[3].push(
-						"(encounterStatusMapped = '".concat(paramStatus, "')")
-					);
-				});
+				.toArray();
+
+			if (statusArray[0].substring(0, 1) == '[') {
+				statusArray = JSON.parse(statusArray[0]);
+			}
+
+			statusArray.forEach(function (statusParam) {
+				var status = statusParam;
+				status += '';
+
+				// Build where clause for fourth query
+				whereArray[3].push(
+					"(encounterStatusMapped = '".concat(status, "')")
+				);
+			});
 		}
 	}
 
@@ -499,13 +524,16 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			var _dateArray = $('parameters').getParameterList('date').toArray();
+			// Loop through each date param and build SQL WHERE clause
+			var _dateArray2 = $('parameters')
+				.getParameterList('date')
+				.toArray();
 
-			if (_dateArray[0].substring(0, 1) == '[') {
-				_dateArray = JSON.parse(_dateArray[0]);
+			if (_dateArray2[0].substring(0, 1) == '[') {
+				_dateArray2 = JSON.parse(_dateArray2[0]);
 			}
 
-			_dateArray.forEach(function (dateParam) {
+			_dateArray2.forEach(function (dateParam) {
 				var date = dateParam;
 				date += '';
 
@@ -550,15 +578,16 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('effective')
 		) {
-			var _dateArray2 = $('parameters')
+			// Loop through each effective param and build SQL WHERE clause
+			var _dateArray3 = $('parameters')
 				.getParameterList('effective')
 				.toArray();
 
-			if (_dateArray2[0].substring(0, 1) == '[') {
-				_dateArray2 = JSON.parse(_dateArray2[0]);
+			if (_dateArray3[0].substring(0, 1) == '[') {
+				_dateArray3 = JSON.parse(_dateArray3[0]);
 			}
 
-			_dateArray2.forEach(function (dateParam) {
+			_dateArray3.forEach(function (dateParam) {
 				var date = dateParam;
 				date += '';
 
