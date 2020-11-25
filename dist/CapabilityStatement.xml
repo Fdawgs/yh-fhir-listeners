@@ -1,5 +1,5 @@
 <CapabilityStatement xmlns="http://hl7.org/fhir">
-    <version value="3.0.3"/>
+    <version value="3.1.0"/>
     <status value="active"/>
     <publisher value="Yeovil District Hospital NHS Foundation Trust"/>
     <contact>
@@ -19,7 +19,7 @@
     <implementationGuide value="https://nhsconnect.github.io/CareConnectAPI/"/>
     <rest>
         <mode value="server"/>
-        <documentation value="Main FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
+        <documentation value="Care Connect STU3 FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
         <!-- <resource>
             <type value="AllergyIntolerance"/>
             <profile>
