@@ -32,7 +32,14 @@ try {
 			'patient',
 			'patient.identifier'
 		],
-		encounter: ['class', 'date', 'patient', 'patient.identifier', 'status'],
+		encounter: [
+			'class',
+			'date',
+			'patient',
+			'patient.identifier',
+			'status',
+			'type'
+		],
 		flag: ['date', 'patient', 'patient.identifier', 'status'],
 		medicationstatement: [
 			'effective',
