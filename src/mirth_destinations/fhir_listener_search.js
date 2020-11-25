@@ -287,14 +287,14 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			// Only handle first two `date` search params, any extra will be ignored
-			const dateArray = $('parameters')
-				.getParameterList('date')
-				.toArray();
+			let dateArray = $('parameters').getParameterList('date').toArray();
 
-			// Search with start date
-			if (dateArray[0]) {
-				let date = dateArray[0];
+			if (dateArray[0].substring(0, 1) == '[') {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach((dateParam) => {
+				let date = dateParam;
 				date += '';
 
 				const operator = convertFhirParameterOperator(
@@ -308,25 +308,7 @@ try {
 				whereArray[3].push(
 					`(CONCAT(COALESCE(encounterPeriodStartDate, ''), 'T', COALESCE(encounterPeriodStartTime, '')) ${operator} '${date}')`
 				);
-			}
-
-			// Search with end date
-			if (dateArray[1]) {
-				let date = dateArray[1];
-				date += '';
-
-				const operator = convertFhirParameterOperator(
-					date.substring(0, 2)
-				);
-
-				if (isNaN(date.substring(0, 2))) {
-					date = date.substring(2, date.length);
-				}
-
-				whereArray[3].push(
-					`(CONCAT(COALESCE(encounterPeriodEndDate, ''), 'T', COALESCE(encounterPeriodEndTime, '')) ${operator} '${date}')`
-				);
-			}
+			});
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
@@ -452,14 +434,14 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('date')
 		) {
-			// Only handle first two `date` search params, any extra will be ignored
-			const dateArray = $('parameters')
-				.getParameterList('date')
-				.toArray();
+			let dateArray = $('parameters').getParameterList('date').toArray();
 
-			// Search with start date
-			if (dateArray[0]) {
-				let date = dateArray[0];
+			if (dateArray[0].substring(0, 1) == '[') {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach((dateParam) => {
+				let date = dateParam;
 				date += '';
 
 				const operator = convertFhirParameterOperator(
@@ -471,23 +453,7 @@ try {
 				}
 
 				whereArray[1].push(`(periodStart ${operator} '${date}')`);
-			}
-
-			// Search with end date
-			if (dateArray[1]) {
-				let date = dateArray[1];
-				date += '';
-
-				const operator = convertFhirParameterOperator(
-					date.substring(0, 2)
-				);
-
-				if (isNaN(date.substring(0, 2))) {
-					date = date.substring(2, date.length);
-				}
-
-				whereArray[1].push(`(periodEnd ${operator} '${date}')`);
-			}
+			});
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
@@ -516,14 +482,16 @@ try {
 				$('parameters').contains('patient.identifier')) &&
 			$('parameters').contains('effective')
 		) {
-			// Only handle first two `effective` search params, any extra will be ignored
-			const dateArray = $('parameters')
+			let dateArray = $('parameters')
 				.getParameterList('effective')
 				.toArray();
 
-			// Search with start date
-			if (dateArray[0]) {
-				let date = dateArray[0];
+			if (dateArray[0].substring(0, 1) == '[') {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach((dateParam) => {
+				let date = dateParam;
 				date += '';
 
 				const operator = convertFhirParameterOperator(
@@ -537,25 +505,7 @@ try {
 				whereArray[1].push(
 					`(medstatEffectiveStart ${operator} '${date}')`
 				);
-			}
-
-			// Search with end date
-			if (dateArray[1]) {
-				let date = dateArray[1];
-				date += '';
-
-				const operator = convertFhirParameterOperator(
-					date.substring(0, 2)
-				);
-
-				if (isNaN(date.substring(0, 2))) {
-					date = date.substring(2, date.length);
-				}
-
-				whereArray[1].push(
-					`(medstatEffectiveEnd ${operator} '${date}')`
-				);
-			}
+			});
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]
