@@ -62,7 +62,6 @@ try {
 	// If any param not supported, reject request
 	$('parameters')
 		.getKeys()
-		.toArray()
 		.forEach(function (key) {
 			if (
 				supportedTypeParams[type.toLowerCase()].indexOf(
