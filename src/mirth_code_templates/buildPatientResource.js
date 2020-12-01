@@ -160,7 +160,8 @@ function buildPatientResource(data) {
 				]
 			},
 			name: {
-				use: 'usual'
+				use: 'anonymous',
+				text: 'School nurse'
 			},
 			organization: {
 				identifier: {
