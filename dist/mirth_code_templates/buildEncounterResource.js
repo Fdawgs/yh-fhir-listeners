@@ -206,7 +206,7 @@ function buildEncounterResource(data) {
 	if (
 		result.encounterParticipantIndividualCode_admitting != undefined &&
 		result.encounterParticipantIndividualCode_discharging != undefined &&
-		result.encounterParticipantIndividualCode_discharging ===
+		result.encounterParticipantIndividualCode_discharging ==
 			result.encounterParticipantIndividualCode_admitting
 	) {
 		var participantCombo = {
