@@ -160,7 +160,8 @@ function buildPatientResource(data) {
 				]
 			},
 			name: {
-				use: 'usual'
+				use: 'anonymous',
+				text: 'School nurse'
 			},
 			organization: {
 				identifier: {
@@ -183,6 +184,27 @@ function buildPatientResource(data) {
 
 		resource.contact.push(schoolContact);
 	}
+
+	// Add YDH Switchboard contact details
+	const switchboardContact = {
+		name: {
+			use: 'anonymous',
+			text: 'Switchboard'
+		},
+		telecom: [
+			{
+				system: 'phone',
+				value: '01935475122'
+			}
+		],
+		organization: {
+			reference:
+				'https://directory.spineservices.nhs.uk/STU3/Organization/RA4',
+			display: 'YEOVIL DISTRICT HOSPITAL NHS FOUNDATION TRUST'
+		}
+	};
+
+	resource.contact.push(switchboardContact);
 
 	// Add Telecom contact details
 	const telecom = [];
