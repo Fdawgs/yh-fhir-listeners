@@ -1,3 +1,12 @@
+## <small>3.1.1 (2020-12-01)</small>
+
+-   docs(security): remove backticks ([3c06a2d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3c06a2d))
+-   fix(encounter-res): double equals ([2a25ef3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2a25ef3))
+-   fix(patient-res): add missing school contact name text ([99c795f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/99c795f))
+-   fix(patient-res): add missing switchboard contact ([aaf1d3a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/aaf1d3a))
+-   build(deps-dev): bump prettier from 2.2.0 to 2.2.1 ([e44e0e3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e44e0e3))
+-   chore: add security.md ([bede1e0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bede1e0))
+
 ## 3.1.0 (2020-11-25)
 
 -   chore(capabilitystatement): update documentation value ([9d0c1ed](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9d0c1ed))
