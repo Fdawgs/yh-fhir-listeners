@@ -5,12 +5,12 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7C9449307210"
+			"url": "https://sider.ydh.nhs.uk/STU3/Patient?identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
 		}
 	],
 	"entry": [
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Patient/9999999",
 			"resource": {
 				"resourceType": "Patient",
 				"id": "9999999",
@@ -56,7 +56,24 @@
 								{
 									"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1",
 									"code": "A",
+									"display": "British, Mixed British"
+								},
+								{
+									"system": "https://trakcare.ydh.nhs.uk",
+									"code": "A",
 									"display": "White British"
+								}
+							]
+						}
+					},
+					{
+						"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1",
+						"valueCodeableConcept": {
+							"coding": [
+								{
+									"system": "https://datadictionary.nhs.uk",
+									"code": "C22",
+									"display": "Church of England"
 								}
 							]
 						}
@@ -76,7 +93,7 @@
 									"coding": [
 										{
 											"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-											"code": "1",
+											"code": "01",
 											"display": "Number present and verified"
 										}
 									]
@@ -112,12 +129,53 @@
 				"maritalStatus": {
 					"coding": [
 						{
-							"system": "http://hl7.org/fhir/stu3/v3/MaritalStatus",
+							"system": "https://hl7.org/fhir/stu3/v3/MaritalStatus",
 							"code": "M",
 							"display": "Married"
 						}
 					]
 				},
+				"contact": [
+					{
+						"relationship": [
+							{
+								"coding": [
+									{
+										"system": "https://hl7.org/fhir/v2/0131",
+										"code": "N",
+										"display": "Next-of-kin"
+									}
+								]
+							}
+						],
+						"name": {
+							"use": "usual",
+							"text": "Tarang Ruth"
+						},
+						"telecom": [
+							{
+								"system": "phone",
+								"value": "0800001066"
+							}
+						]
+					},
+					{
+						"name": {
+							"use": "anonymous",
+							"text": "Switchboard"
+						},
+						"telecom": [
+							{
+								"system": "phone",
+								"value": "01935475122"
+							}
+						],
+						"organization": {
+							"reference": "https://directory.spineservices.nhs.uk/STU3/Organization/RA4",
+							"display": "YEOVIL DISTRICT HOSPITAL NHS FOUNDATION TRUST"
+						}
+					}
+				],
 				"generalPractitioner": [
 					{
 						"reference": "#L85066",
