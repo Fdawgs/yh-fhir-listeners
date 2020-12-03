@@ -5,12 +5,12 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/Encounter?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+			"url": "https://sider.ydh.nhs.uk/STU3/Encounter?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
 		}
 	],
 	"entry": [
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-399-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/1372-399-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "1372-399-1",
@@ -18,11 +18,18 @@
 					"lastUpdated": "2016-08-12T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -38,7 +45,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-08-12T11:27:48"
@@ -46,7 +53,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1372-835-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/1372-835-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "1372-835-1",
@@ -54,11 +61,18 @@
 					"lastUpdated": "2016-09-12T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -74,7 +88,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-09-12T14:08:50"
@@ -82,7 +96,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1641-22024-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/1641-22024-2",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "1641-22024-2",
@@ -90,11 +104,18 @@
 					"lastUpdated": "2019-01-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -110,7 +131,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2019-01-11T09:42:39"
@@ -118,7 +139,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8625-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/177-8625-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "177-8625-1",
@@ -126,11 +147,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -146,7 +174,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -154,7 +182,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -172,7 +200,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/177-8626-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/177-8626-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "177-8626-1",
@@ -180,11 +208,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -200,7 +235,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -208,7 +243,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -226,7 +261,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-1604-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/189-1604-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "189-1604-1",
@@ -234,11 +269,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -254,7 +296,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -262,7 +304,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -280,7 +322,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-221-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/189-221-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "189-221-1",
@@ -288,11 +330,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -308,7 +357,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -316,7 +365,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -334,7 +383,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-31-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/189-31-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "189-31-1",
@@ -342,11 +391,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -362,7 +418,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -370,7 +426,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -388,7 +444,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-319-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/189-319-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "189-319-1",
@@ -396,11 +452,18 @@
 					"lastUpdated": "2016-06-28T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -416,7 +479,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -424,7 +487,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -442,7 +505,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/189-72-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/189-72-2",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "189-72-2",
@@ -450,11 +513,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -470,7 +540,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -478,7 +548,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -496,7 +566,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/1990177",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/1990177",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "1990177",
@@ -504,11 +574,18 @@
 					"lastUpdated": "2016-06-11T01:44:27",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
@@ -524,7 +601,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2011-02-02T00:01:00",
@@ -579,7 +656,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2051-546-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/2051-546-2",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "2051-546-2",
@@ -587,11 +664,18 @@
 					"lastUpdated": "2019-01-09T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -607,7 +691,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2019-01-09T14:40:00"
@@ -615,7 +699,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2085934",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/2085934",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "2085934",
@@ -623,11 +707,18 @@
 					"lastUpdated": "2016-06-11T01:44:27",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
@@ -643,7 +734,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2011-10-12T00:01:00",
@@ -698,7 +789,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2139806",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/2139806",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "2139806",
@@ -706,11 +797,18 @@
 					"lastUpdated": "2016-06-11T01:44:27",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
@@ -726,7 +824,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2012-07-05T00:01:00",
@@ -781,7 +879,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/2141924",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/2141924",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "2141924",
@@ -789,11 +887,18 @@
 					"lastUpdated": "2016-06-11T01:44:27",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
@@ -809,7 +914,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2012-04-17T00:01:00",
@@ -864,7 +969,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/216-2071-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/216-2071-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "216-2071-1",
@@ -872,11 +977,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -892,7 +1004,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -900,7 +1012,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -918,7 +1030,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/248-12122-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/248-12122-2",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "248-12122-2",
@@ -926,11 +1038,18 @@
 					"lastUpdated": "2016-11-09T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -946,7 +1065,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-11-09T10:31:07"
@@ -954,7 +1073,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/251-4105-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/251-4105-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "251-4105-1",
@@ -962,11 +1081,18 @@
 					"lastUpdated": "2016-11-15T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -982,7 +1108,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-11-18T10:20:00"
@@ -990,7 +1116,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-274-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/278-274-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "278-274-1",
@@ -998,11 +1124,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1018,7 +1151,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1026,7 +1159,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1044,7 +1177,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-275-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/278-275-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "278-275-1",
@@ -1052,11 +1185,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1072,7 +1212,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1080,7 +1220,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1098,7 +1238,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/278-276-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/278-276-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "278-276-1",
@@ -1106,11 +1246,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1126,7 +1273,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1134,7 +1281,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1152,7 +1299,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/309-22374-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/309-22374-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "309-22374-1",
@@ -1160,11 +1307,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1180,7 +1334,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1188,7 +1342,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1206,7 +1360,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/313-8519-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/313-8519-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "313-8519-1",
@@ -1214,11 +1368,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1234,7 +1395,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1242,7 +1403,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1260,7 +1421,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9501-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/314-9501-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "314-9501-1",
@@ -1268,11 +1429,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1288,7 +1456,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1296,7 +1464,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1314,7 +1482,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9502-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/314-9502-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "314-9502-1",
@@ -1322,11 +1490,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1342,7 +1517,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1350,7 +1525,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1368,7 +1543,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/314-9503-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/314-9503-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "314-9503-1",
@@ -1376,11 +1551,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1396,7 +1578,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1404,7 +1586,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1422,7 +1604,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/674-231-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/674-231-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "674-231-1",
@@ -1430,11 +1612,18 @@
 					"lastUpdated": "2016-06-21T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"status": "planned",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1450,7 +1639,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-06-20T11:30:00"
@@ -1458,7 +1647,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-103174-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/692-103174-2",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "692-103174-2",
@@ -1466,11 +1655,18 @@
 					"lastUpdated": "2016-10-20T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1486,7 +1682,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-10-20T09:45:25"
@@ -1494,7 +1690,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-106656-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/692-106656-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "692-106656-1",
@@ -1502,11 +1698,18 @@
 					"lastUpdated": "2018-04-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1522,7 +1725,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2017-06-30T11:55:07"
@@ -1530,7 +1733,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/692-115756-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/692-115756-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "692-115756-1",
@@ -1538,11 +1741,18 @@
 					"lastUpdated": "2018-11-02T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1558,7 +1768,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2018-11-02T13:54:26"
@@ -1566,7 +1776,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/695-59571-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/695-59571-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "695-59571-1",
@@ -1574,11 +1784,18 @@
 					"lastUpdated": "2016-08-02T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1594,7 +1811,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-08-02T10:15:21"
@@ -1602,7 +1819,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/708-166-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/708-166-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "708-166-1",
@@ -1610,11 +1827,18 @@
 					"lastUpdated": "2016-10-03T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1630,7 +1854,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-10-03T13:45:00"
@@ -1638,7 +1862,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-20905-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/807-20905-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "807-20905-1",
@@ -1646,16 +1870,23 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1663,7 +1894,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1681,7 +1912,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-34155-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/807-34155-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "807-34155-1",
@@ -1689,16 +1920,23 @@
 					"lastUpdated": "2019-01-08T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2019-01-07T00:25:00"
@@ -1706,7 +1944,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/807-5808-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/807-5808-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "807-5808-1",
@@ -1714,16 +1952,23 @@
 					"lastUpdated": "2016-10-21T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-11-03T00:10:00"
@@ -1731,7 +1976,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/822-309-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/822-309-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "822-309-1",
@@ -1739,16 +1984,23 @@
 					"lastUpdated": "2016-10-26T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"status": "planned",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-10-26T14:30:00"
@@ -1756,7 +2008,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-25-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/930-25-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "930-25-1",
@@ -1764,11 +2016,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1784,7 +2043,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1792,7 +2051,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1810,7 +2069,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-26-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/930-26-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "930-26-1",
@@ -1818,11 +2077,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "cancelled",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1838,7 +2104,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1846,7 +2112,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1864,7 +2130,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/930-27-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/930-27-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "930-27-1",
@@ -1872,11 +2138,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1892,7 +2165,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1900,7 +2173,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1918,7 +2191,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/941-1728-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/941-1728-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "941-1728-1",
@@ -1926,11 +2199,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -1946,7 +2226,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -1954,7 +2234,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -1972,7 +2252,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/946-3687-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/946-3687-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "946-3687-1",
@@ -1980,11 +2260,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -2000,7 +2287,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2008,7 +2295,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -2026,7 +2313,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/947-2446-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/947-2446-1",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "947-2446-1",
@@ -2034,11 +2321,18 @@
 					"lastUpdated": "2016-06-11T00:00:00",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "arrived",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
 					"display": "ambulatory"
 				},
@@ -2054,7 +2348,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2062,7 +2356,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "CON",
 										"display": "consultant"
 									}
@@ -2080,7 +2374,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029408",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2017-029408",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2017-029408",
@@ -2088,16 +2382,23 @@
 					"lastUpdated": "2017-08-17T01:15:27",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2017-08-16T07:31:00",
@@ -2106,7 +2407,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-029783",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2017-029783",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2017-029783",
@@ -2114,16 +2415,23 @@
 					"lastUpdated": "2017-08-20T01:22:12",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2017-08-19T09:25:00",
@@ -2132,7 +2440,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2017-035398",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2017-035398",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2017-035398",
@@ -2140,16 +2448,23 @@
 					"lastUpdated": "2017-09-30T03:35:26",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2017-09-29T16:13:00",
@@ -2158,7 +2473,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2018-012296",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2018-012296",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2018-012296",
@@ -2166,16 +2481,23 @@
 					"lastUpdated": "2018-04-26T11:18:53",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2018-03-29T20:46:00",
@@ -2184,7 +2506,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-007821",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2019-007821",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2019-007821",
@@ -2192,16 +2514,23 @@
 					"lastUpdated": "2019-02-21T05:03:06",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2019-02-20T20:26:00",
@@ -2210,7 +2539,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/AE-2019-010133",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/AE-2019-010133",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "AE-2019-010133",
@@ -2218,16 +2547,23 @@
 					"lastUpdated": "2019-03-08T04:57:06",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "EMER",
 					"display": "emergency"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2019-03-07T11:07:00",
@@ -2236,7 +2572,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000022248",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000022248",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000022248",
@@ -2244,16 +2580,23 @@
 					"lastUpdated": "2016-10-27T17:13:02",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"period": {
 					"start": "2016-10-26T14:30:00",
@@ -2308,7 +2651,7 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000066790",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000066790",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000066790",
@@ -2316,16 +2659,60 @@
 					"lastUpdated": "2017-08-18T15:36:19",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
@@ -2336,7 +2723,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2344,7 +2731,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2353,7 +2740,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "DIS",
 										"display": "discharger"
 									}
@@ -2361,6 +2748,9 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "RSO"
+							},
 							"display": "Dr R Sophia"
 						}
 					}
@@ -2414,11 +2804,35 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "AECIP"
+							},
+							"display": "ACUTE ASSESSMENT UNIT"
+						},
+						"period": {
+							"start": "2017-08-16T11:29:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "FOPAS"
+							},
+							"display": "FRAIL OLDER PERSONS ASSESSMENT SERVICE"
+						},
+						"period": {
+							"end": "2017-08-16T17:45:00"
+						}
+					}
+				]
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000067286",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000067286",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000067286",
@@ -2426,16 +2840,60 @@
 					"lastUpdated": "2017-08-28T16:52:35",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
@@ -2446,7 +2904,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2454,7 +2912,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2462,7 +2920,29 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "KHS"
+							},
 							"display": "Dr K H Smith"
+						}
+					},
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"identifier": {
+								"value": "SEP"
+							},
+							"display": "Dr S Pramodh"
 						}
 					}
 				],
@@ -2515,11 +2995,35 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "EAU"
+							},
+							"display": "EMERGENCY ADMISSIONS UNIT"
+						},
+						"period": {
+							"start": "2017-08-19T13:17:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "7B"
+							},
+							"display": "WARD 7B"
+						},
+						"period": {
+							"end": "2017-08-28T14:51:00"
+						}
+					}
+				]
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000073231",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000073231",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000073231",
@@ -2527,16 +3031,60 @@
 					"lastUpdated": "2017-11-01T15:44:29",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "430",
+								"display": "GERIATRIC MEDICINE"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
@@ -2547,7 +3095,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2555,7 +3103,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2563,7 +3111,29 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "MRQ"
+							},
 							"display": "Dr M. Qadiri"
+						}
+					},
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"identifier": {
+								"value": "SEP"
+							},
+							"display": "Dr S Pramodh"
 						}
 					}
 				],
@@ -2616,11 +3186,35 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "EAU"
+							},
+							"display": "EMERGENCY ADMISSIONS UNIT"
+						},
+						"period": {
+							"start": "2017-09-29T20:12:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "9A"
+							},
+							"display": "WARD 9A"
+						},
+						"period": {
+							"end": "2017-10-10T20:48:00"
+						}
+					}
+				]
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000099577",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000099577",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000099577",
@@ -2628,16 +3222,60 @@
 					"lastUpdated": "2018-04-01T19:40:48",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
@@ -2648,7 +3286,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2656,7 +3294,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2665,7 +3303,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "DIS",
 										"display": "discharger"
 									}
@@ -2673,6 +3311,9 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "SEP"
+							},
 							"display": "Dr S Pramodh"
 						}
 					}
@@ -2726,11 +3367,35 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "CDU"
+							},
+							"display": "CLINICAL DECISIONS UNIT"
+						},
+						"period": {
+							"start": "2018-03-30T00:46:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "6B"
+							},
+							"display": "WARD 6B"
+						},
+						"period": {
+							"end": "2018-04-01T19:39:00"
+						}
+					}
+				]
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000148517",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000148517",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000148517",
@@ -2738,27 +3403,71 @@
 					"lastUpdated": "2019-03-04T13:44:42",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
-								"code": "300",
-								"display": "GENERAL MEDICINE"
+								"code": "301",
+								"display": "GASTROENTEROLOGY"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "301",
+								"display": "GASTROENTEROLOGY"
 							}
 						]
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2766,7 +3475,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2775,7 +3484,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "DIS",
 										"display": "discharger"
 									}
@@ -2783,6 +3492,9 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "ZHK"
+							},
 							"display": "Dr Z. Khan"
 						}
 					}
@@ -2836,11 +3548,35 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "CDU"
+							},
+							"display": "CLINICAL DECISIONS UNIT"
+						},
+						"period": {
+							"start": "2019-02-21T00:22:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "JASMINE"
+							},
+							"display": "JASMINE WARD"
+						},
+						"period": {
+							"end": "2019-03-04T13:44:00"
+						}
+					}
+				]
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Encounter/I0000150906",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906",
 			"resource": {
 				"resourceType": "Encounter",
 				"id": "I0000150906",
@@ -2848,16 +3584,60 @@
 					"lastUpdated": "2019-03-18T17:52:42",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "detail",
+							"display": "Display in Detail View"
+						}
 					]
 				},
 				"status": "finished",
 				"class": {
-					"system": "http://hl7.org/fhir/v3/ActEncounterCode",
+					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "IMP",
 					"display": "inpatient"
 				},
 				"type": [
 					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "ADM",
+											"display": "Admitting"
+										}
+									]
+								}
+							}
+						],
+						"coding": [
+							{
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"code": "300",
+								"display": "GENERAL MEDICINE"
+							}
+						]
+					},
+					{
+						"extension": [
+							{
+								"url": "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+								"valueCodeableConcept": {
+									"coding": [
+										{
+											"system": "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+											"code": "DIS",
+											"display": "Discharging"
+										}
+									]
+								}
+							}
+						],
 						"coding": [
 							{
 								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
@@ -2868,7 +3648,7 @@
 					}
 				],
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"participant": [
 					{
@@ -2876,7 +3656,7 @@
 							{
 								"coding": [
 									{
-										"system": "http://hl7.org/fhir/v3/ParticipationType",
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
 										"code": "ADM",
 										"display": "admitter"
 									}
@@ -2884,7 +3664,29 @@
 							}
 						],
 						"individual": {
+							"identifier": {
+								"value": "JOA"
+							},
 							"display": "Dr J Almaraz Marroquin"
+						}
+					},
+					{
+						"type": [
+							{
+								"coding": [
+									{
+										"system": "https://hl7.org/fhir/v3/ParticipationType",
+										"code": "DIS",
+										"display": "discharger"
+									}
+								]
+							}
+						],
+						"individual": {
+							"identifier": {
+								"value": "KHS"
+							},
+							"display": "Dr K H Smith"
 						}
 					}
 				],
@@ -2937,7 +3739,31 @@
 							}
 						]
 					}
-				}
+				},
+				"location": [
+					{
+						"location": {
+							"identifier": {
+								"value": "EAU"
+							},
+							"display": "EMERGENCY ADMISSIONS UNIT"
+						},
+						"period": {
+							"start": "2019-03-07T14:59:00"
+						}
+					},
+					{
+						"location": {
+							"identifier": {
+								"value": "JASMINE"
+							},
+							"display": "JASMINE WARD"
+						},
+						"period": {
+							"end": "2019-03-18T17:52:00"
+						}
+					}
+				]
 			}
 		}
 	]

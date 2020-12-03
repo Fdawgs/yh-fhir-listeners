@@ -5,18 +5,26 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+			"url": "https://sider.ydh.nhs.uk/STU3/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
 		}
 	],
 	"entry": [
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1006326-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1006326-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1006326-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:26:33",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -26,7 +34,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1308711000001102",
 									"display": "Trimethoprim 200mg tablets 14 tablet"
 								}
@@ -35,6 +43,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000099577"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#11599-1"
@@ -44,7 +55,7 @@
 					"end": "2018-04-02T14:54:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -52,7 +63,7 @@
 						"patientInstruction": "Space doses evenly through day until course finished, unless told to stop.",
 						"timing": {
 							"repeat": {
-								"duration": 2.0,
+								"duration": 2,
 								"durationUnit": "d"
 							}
 						},
@@ -68,13 +79,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1419463-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1419463-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:10",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -84,7 +103,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "7891011000001108",
 									"display": "Pregabalin 150mg capsules 56 capsule"
 								}
@@ -93,6 +112,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000148517"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#12595-1"
@@ -102,7 +124,7 @@
 					"end": "2019-03-21T11:14:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -110,7 +132,7 @@
 						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -126,13 +148,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1419463-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1419463-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:17",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -142,7 +172,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1112911000001109",
 									"display": "Citalopram 20mg tablets 28 tablet"
 								}
@@ -151,6 +181,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000148517"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#4425-1"
@@ -160,7 +193,7 @@
 					"end": "2019-03-08T10:33:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -168,7 +201,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 14.0,
+								"duration": 14,
 								"durationUnit": "d"
 							}
 						},
@@ -184,13 +217,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-3",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1419463-3",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1419463-3",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:15",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -200,7 +241,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1082611000001109",
 									"display": "Tramadol 50mg capsules 30 capsule"
 								}
@@ -209,6 +250,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000148517"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#11494-1"
@@ -218,7 +262,7 @@
 					"end": "2019-03-14T10:24:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -226,7 +270,7 @@
 						"patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
 						"timing": {
 							"repeat": {
-								"duration": 10.0,
+								"duration": 10,
 								"durationUnit": "d"
 							}
 						},
@@ -242,13 +286,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1419463-4",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1419463-4",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1419463-4",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:15",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -258,7 +310,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "26395611000001103",
 									"display": "TheiCal-D3 1000mg/880unit chewable tablets (Stirling Anglian Pharmaceuticals Ltd) 30 tablet 3 x 10 tablets"
 								}
@@ -267,6 +319,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000148517"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#17166-1"
@@ -276,7 +331,7 @@
 					"end": "2019-04-03T10:46:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -284,7 +339,7 @@
 						"patientInstruction": "Suck or chew this medicine.",
 						"timing": {
 							"repeat": {
-								"duration": 30.0,
+								"duration": 30,
 								"durationUnit": "d"
 							}
 						},
@@ -300,13 +355,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:57",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -316,7 +379,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1104311000001103",
 									"display": "Citalopram 40mg/ml oral drops sugar free 15 ml"
 								}
@@ -325,6 +388,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#4424-1"
@@ -334,7 +400,7 @@
 					"end": "2019-04-05T14:06:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -342,7 +408,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -358,13 +424,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:57",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -376,6 +450,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#101117-1"
@@ -385,7 +462,7 @@
 					"end": "2019-04-05T14:07:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -393,7 +470,7 @@
 						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -409,13 +486,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-3",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-3",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-3",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:57",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -425,7 +510,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1074511000001105",
 									"display": "Docusate 50mg/5ml oral solution sugar free 300 ml"
 								}
@@ -434,6 +519,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#5452-1"
@@ -443,7 +531,7 @@
 					"end": "2019-04-05T14:09:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -451,7 +539,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -467,13 +555,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-4",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-4",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-4",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:58",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -483,7 +579,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1476811000001105",
 									"display": "Losec MUPS 20mg gastro-resistant tablets (AstraZeneca UK Ltd) 28 tablet 2 x 14 tablets"
 								}
@@ -492,6 +588,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#70596-1"
@@ -501,7 +600,7 @@
 					"end": "2019-03-15T15:23:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -509,7 +608,7 @@
 						"patientInstruction": "Swallow this medicine whole. Do not chew or crush.",
 						"timing": {
 							"repeat": {
-								"duration": 7.0,
+								"duration": 7,
 								"durationUnit": "d"
 							}
 						},
@@ -525,13 +624,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-5",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-5",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-5",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:58",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -541,7 +648,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "18680011000001101",
 									"display": "Alendronic acid 70mg/100ml oral solution unit dose sugar free 4 unit dose"
 								}
@@ -550,6 +657,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#3026-1"
@@ -559,7 +669,7 @@
 					"end": "2019-03-15T15:29:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -567,7 +677,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 1.0,
+								"duration": 1,
 								"durationUnit": "wk"
 							}
 						},
@@ -583,13 +693,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1439361-6",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1439361-6",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1439361-6",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:28:57",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -599,7 +717,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1273311000001106",
 									"display": "Alendronic acid 70mg tablets 4 tablet"
 								}
@@ -608,6 +726,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000150906"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#3028-1"
@@ -617,7 +738,7 @@
 					"end": "2019-04-15T12:43:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -625,7 +746,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 4.0,
+								"duration": 4,
 								"durationUnit": "wk"
 							}
 						},
@@ -641,13 +762,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/857155-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "857155-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:34",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -657,7 +786,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1112911000001109",
 									"display": "Citalopram 20mg tablets 28 tablet"
 								}
@@ -675,7 +804,7 @@
 					"end": "2017-12-31T10:11:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -683,7 +812,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -699,13 +828,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/857155-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "857155-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:41",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -715,7 +852,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "7891011000001108",
 									"display": "Pregabalin 150mg capsules 56 capsule"
 								}
@@ -733,7 +870,7 @@
 					"end": "2018-01-02T10:05:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -741,7 +878,7 @@
 						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -757,13 +894,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/857155-3",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/857155-3",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "857155-3",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:41",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -773,7 +918,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1251111000001105",
 									"display": "Paracetamol 500mg tablets 100 tablet"
 								}
@@ -791,7 +936,7 @@
 					"end": "2018-01-02T10:06:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -799,7 +944,7 @@
 						"patientInstruction": "Do not take more than 2 at any one time, or more than 8 in 24 hours., Contains paracetamol. Do not take anything else containing paracetamol., Talk to a doctor at once if you take too much, even if you feel well",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -815,13 +960,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:48",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -831,7 +984,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "7891011000001108",
 									"display": "Pregabalin 150mg capsules 56 capsule"
 								}
@@ -849,7 +1002,7 @@
 					"end": "2018-01-11T09:29:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -857,7 +1010,7 @@
 						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -873,13 +1026,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-10",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-10",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-10",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:59",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -889,7 +1050,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1082911000001103",
 									"display": "Omeprazole 10mg gastro-resistant capsules 28 capsule"
 								}
@@ -907,7 +1068,7 @@
 					"end": "2018-01-07T09:24:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -915,7 +1076,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 14.0,
+								"duration": 14,
 								"durationUnit": "d"
 							}
 						},
@@ -931,13 +1092,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-14",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-14",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-14",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:59",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -958,7 +1127,7 @@
 					"end": "2018-01-21T09:34:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -966,7 +1135,7 @@
 						"patientInstruction": "For external use only.",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -982,13 +1151,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:48",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -998,7 +1175,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "26395611000001103",
 									"display": "TheiCal-D3 1000mg/880unit chewable tablets (Stirling Anglian Pharmaceuticals Ltd) 30 tablet 3 x 10 tablets"
 								}
@@ -1016,7 +1193,7 @@
 					"end": "2018-01-13T09:30:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1024,7 +1201,7 @@
 						"patientInstruction": "Chew thoroughly before swallowing.",
 						"timing": {
 							"repeat": {
-								"duration": 30.0,
+								"duration": 30,
 								"durationUnit": "d"
 							}
 						},
@@ -1040,13 +1217,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-3",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-3",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-3",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:48",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -1056,7 +1241,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1273311000001106",
 									"display": "Alendronic acid 70mg tablets 4 tablet"
 								}
@@ -1074,7 +1259,7 @@
 					"end": "2018-01-11T09:31:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1082,7 +1267,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -1098,13 +1283,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-4",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-4",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-4",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:48",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -1114,7 +1307,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1271511000001104",
 									"display": "Atorvastatin 20mg tablets 28 tablet"
 								}
@@ -1132,7 +1325,7 @@
 					"end": "2018-01-11T09:32:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1140,7 +1333,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -1156,13 +1349,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-6",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-6",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-6",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:55",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -1172,7 +1373,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1271511000001104",
 									"display": "Atorvastatin 20mg tablets 28 tablet"
 								}
@@ -1190,7 +1391,7 @@
 					"end": "2018-01-12T08:31:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1198,7 +1399,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -1214,13 +1415,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-7",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-7",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-7",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:26:04",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -1230,7 +1439,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "986911000001109",
 									"display": "Loperamide 2mg capsules 30 capsule"
 								}
@@ -1248,7 +1457,7 @@
 					"end": "2017-12-30T10:07:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1256,7 +1465,7 @@
 						"patientInstruction": "Do not exceed the prescribed dose.",
 						"timing": {
 							"repeat": {
-								"duration": 14.0,
+								"duration": 14,
 								"durationUnit": "d"
 							}
 						},
@@ -1272,13 +1481,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/872871-9",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/872871-9",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "872871-9",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:26:11",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -1288,7 +1505,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1316211000001105",
 									"display": "Codeine 15mg tablets 28 tablet"
 								}
@@ -1306,7 +1523,7 @@
 					"end": "2018-01-15T14:59:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/9999999"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -1314,7 +1531,7 @@
 						"patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},

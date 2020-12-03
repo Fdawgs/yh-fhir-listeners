@@ -5,18 +5,26 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
+			"url": "https://sider.ydh.nhs.uk/STU3/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
 		}
 	],
 	"entry": [
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-1",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-1",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-1",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:20",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -26,7 +34,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1235611000001100",
 									"display": "Piroxicam 0.5% gel 60 gram"
 								}
@@ -35,6 +43,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#9739-1"
@@ -44,7 +55,7 @@
 					"end": "2019-05-15T17:16:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -52,7 +63,7 @@
 						"patientInstruction": "For external use only.",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -68,13 +79,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:20",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -84,7 +103,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "957711000001103",
 									"display": "Hypromellose 0.3% eye drops 10 ml"
 								}
@@ -93,6 +112,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#7030-1"
@@ -102,7 +124,7 @@
 					"end": "2019-05-15T17:18:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -110,7 +132,7 @@
 						"patientInstruction": "Not to be taken orally., Discard four weeks after first opening",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -126,13 +148,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-3",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-3",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-3",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:16",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -142,7 +172,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "29094811000001105",
 									"display": "Magnaspartate 243mg (magnesium 10mmol) oral powder sachets (KoRa Healthcare) 10 sachet"
 								}
@@ -151,6 +181,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#17546-1"
@@ -160,7 +193,7 @@
 					"end": "2019-05-01T14:27:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -168,7 +201,7 @@
 						"patientInstruction": "Dissolve or mix with water before taking.",
 						"timing": {
 							"repeat": {
-								"duration": 5.0,
+								"duration": 5,
 								"durationUnit": "d"
 							}
 						},
@@ -184,13 +217,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-4",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-4",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-4",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:33",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -200,7 +241,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1182711000001105",
 									"display": "Folic acid 5mg tablets 28 tablet"
 								}
@@ -209,6 +250,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#6239-1"
@@ -218,7 +262,7 @@
 					"end": "2019-05-28T13:39:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -226,7 +270,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -242,13 +286,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-5",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-5",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-5",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:38",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -258,7 +310,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1068411000001105",
 									"display": "Omeprazole 20mg gastro-resistant capsules 28 capsule"
 								}
@@ -267,6 +319,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#9159-1"
@@ -276,7 +331,7 @@
 					"end": "2019-05-15T11:22:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -284,7 +339,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 14.0,
+								"duration": 14,
 								"durationUnit": "d"
 							}
 						},
@@ -300,13 +355,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-6",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-6",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-6",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:38",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -316,7 +379,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "2918311000001105",
 									"display": "Vitamin B compound strong tablets 28 tablet"
 								}
@@ -325,6 +388,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#11918-1"
@@ -334,7 +400,7 @@
 					"end": "2019-05-29T11:22:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -342,7 +408,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -358,13 +424,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-7",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-7",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-7",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:38",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -376,6 +450,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#70338-1"
@@ -385,7 +462,7 @@
 					"end": "2019-05-29T11:24:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -393,7 +470,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -409,13 +486,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/1494445-8",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/1494445-8",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "1494445-8",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:29:44",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -425,7 +510,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "1235611000001100",
 									"display": "Piroxicam 0.5% gel 60 gram"
 								}
@@ -434,6 +519,9 @@
 						}
 					}
 				],
+				"context": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Encounter/I0000157327"
+				},
 				"status": "completed",
 				"medicationReference": {
 					"reference": "#9739-1"
@@ -443,7 +531,7 @@
 					"end": "2019-05-17T11:06:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -451,7 +539,7 @@
 						"patientInstruction": "For external use only.",
 						"timing": {
 							"repeat": {
-								"duration": 14.0,
+								"duration": 14,
 								"durationUnit": "d"
 							}
 						},
@@ -467,13 +555,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/885592-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/885592-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "885592-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:25:57",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -483,7 +579,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "13452411000001101",
 									"display": "Xeomin 100unit powder for solution for injection vials (Merz Pharma UK Ltd) 1 vial"
 								}
@@ -501,7 +597,7 @@
 					"end": "2018-01-20T09:29:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [
@@ -509,7 +605,7 @@
 						"patientInstruction": "no instruction",
 						"timing": {
 							"repeat": {
-								"duration": 28.0,
+								"duration": 28,
 								"durationUnit": "d"
 							}
 						},
@@ -525,13 +621,21 @@
 			}
 		},
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/MedicationStatement/890007-2",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/MedicationStatement/890007-2",
 			"resource": {
 				"resourceType": "MedicationStatement",
 				"id": "890007-2",
 				"meta": {
+					"lastUpdated": "2020-11-24T01:26:04",
 					"profile": [
 						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1"
+					],
+					"tag": [
+						{
+							"system": "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+							"code": "none",
+							"display": "Do not Display"
+						}
 					]
 				},
 				"contained": [
@@ -541,7 +645,7 @@
 						"code": {
 							"coding": [
 								{
-									"system": "http://snomed.info/sct",
+									"system": "https://snomed.info/sct",
 									"code": "13452411000001101",
 									"display": "Xeomin 100unit powder for solution for injection vials (Merz Pharma UK Ltd) 1 vial"
 								}
@@ -559,7 +663,7 @@
 					"end": "2018-01-05T08:53:00"
 				},
 				"subject": {
-					"reference": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888"
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
 				},
 				"taken": "unk",
 				"dosage": [

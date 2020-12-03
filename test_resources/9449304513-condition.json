@@ -5,7 +5,7 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/Condition?patient=8888888"
+			"url": "https://sider.ydh.nhs.uk/STU3/Condition?patient=8888888"
 		}
 	]
 }
