@@ -5,12 +5,12 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/3_0_1/Patient?identifier=https://fhir.nhs.uk/Id/nhs-number%7C9449304513"
+			"url": "https://sider.ydh.nhs.uk/STU3/Patient?identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
 		}
 	],
 	"entry": [
 		{
-			"fullUrl": "https://sider.ydh.nhs.uk/3_0_1/Patient/8888888",
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Patient/8888888",
 			"resource": {
 				"resourceType": "Patient",
 				"id": "8888888",
@@ -56,7 +56,24 @@
 								{
 									"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1",
 									"code": "A",
+									"display": "British, Mixed British"
+								},
+								{
+									"system": "https://trakcare.ydh.nhs.uk",
+									"code": "A",
 									"display": "White British"
+								}
+							]
+						}
+					},
+					{
+						"url": "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1",
+						"valueCodeableConcept": {
+							"coding": [
+								{
+									"system": "https://datadictionary.nhs.uk",
+									"code": "N1",
+									"display": "Patient Religion Unknown"
 								}
 							]
 						}
@@ -76,7 +93,7 @@
 									"coding": [
 										{
 											"system": "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
-											"code": "1",
+											"code": "01",
 											"display": "Number present and verified"
 										}
 									]
@@ -93,7 +110,14 @@
 						"use": "usual",
 						"family": "Applegate",
 						"given": ["Romy"],
-						"prefix": ["Ms"]
+						"prefix": ["Mrs"]
+					}
+				],
+				"telecom": [
+					{
+						"system": "phone",
+						"value": "0800001066",
+						"use": "home"
 					}
 				],
 				"gender": "female",
@@ -109,46 +133,56 @@
 						"postalCode": "KT17 2BN"
 					}
 				],
+				"maritalStatus": {
+					"coding": [
+						{
+							"system": "https://hl7.org/fhir/stu3/v3/MaritalStatus",
+							"code": "U",
+							"display": "unknown"
+						}
+					]
+				},
 				"contact": [
 					{
 						"relationship": [
 							{
 								"coding": [
 									{
-										"system": "http://trakcare.ydh.nhs.uk",
-										"code": "SCH",
-										"display": "School"
+										"system": "https://hl7.org/fhir/v2/0131",
+										"code": "N",
+										"display": "Next-of-kin"
 									}
 								]
 							}
 						],
 						"name": {
-							"use": "usual"
+							"use": "usual",
+							"text": "Applegate Michael"
 						},
 						"telecom": [
 							{
 								"system": "phone",
 								"value": "01460260100"
 							}
+						]
+					},
+					{
+						"name": {
+							"use": "anonymous",
+							"text": "Switchboard"
+						},
+						"telecom": [
+							{
+								"system": "phone",
+								"value": "01935475122"
+							}
 						],
-						"organisation": {
-							"identifier": {
-								"value": "EE136295",
-								"system": "http://trakcare.ydh.nhs.uk"
-							},
-							"display": "Holyrood Academy,Chard"
+						"organization": {
+							"reference": "https://directory.spineservices.nhs.uk/STU3/Organization/RA4",
+							"display": "YEOVIL DISTRICT HOSPITAL NHS FOUNDATION TRUST"
 						}
 					}
 				],
-				"maritalStatus": {
-					"coding": [
-						{
-							"system": "http://hl7.org/fhir/stu3/v3/MaritalStatus",
-							"code": "U",
-							"display": "unknown"
-						}
-					]
-				},
 				"generalPractitioner": [
 					{
 						"reference": "#L85066",
