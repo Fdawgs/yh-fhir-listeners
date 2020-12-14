@@ -1,8 +1,8 @@
-# Yeovil District Hospital - SIDeR FHIR Listener Endpoints
+# Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener Endpoints
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners/badge.svg)](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2020 MR: R1.ENYH.ADHOC5 Build #5)
+> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2020 MR: R1.ENYH.ADHOC5 Build #5)
 
 ## Introduction
 
@@ -12,7 +12,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHS Foundation Trust, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems.
 
 This documentation is written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
