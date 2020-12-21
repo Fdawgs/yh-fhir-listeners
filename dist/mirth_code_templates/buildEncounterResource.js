@@ -454,38 +454,63 @@ function buildEncounterResource(data) {
 
 		if (
 			result.encounterLocation1Identifier != undefined &&
-			typeof resource.period.start !== 'undefined'
+			typeof resource.period.start !== 'undefined' &&
+			result.encounterLocation2Identifier != undefined &&
+			typeof resource.period.end !== 'undefined' &&
+			result.encounterLocation1Identifier ==
+				result.encounterLocation2Identifier
 		) {
-			var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
+			var ward = JSON.parse(JSON.stringify(emptyLocation));
 
-			admittingWard.location.identifier.value = newStringOrUndefined(
+			ward.location.identifier.value = newStringOrUndefined(
 				result.encounterLocation1Identifier
 			);
 
-			admittingWard.location.display = newStringOrUndefined(
+			ward.location.display = newStringOrUndefined(
 				result.encounterLocation1Display
 			);
 
-			admittingWard.period.start = resource.period.start;
-			resource.location.push(admittingWard);
+			ward.period.start = resource.period.start;
+			ward.period.end = resource.period.end;
+			resource.location.push(ward);
 		}
 
-		if (
-			result.encounterLocation2Identifier != undefined &&
-			typeof resource.period.end !== 'undefined'
-		) {
-			var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
+		if (resource.location.length == 0) {
+			if (
+				result.encounterLocation1Identifier != undefined &&
+				typeof resource.period.start !== 'undefined'
+			) {
+				var admittingWard = JSON.parse(JSON.stringify(emptyLocation));
 
-			dischargeWard.location.identifier.value = newStringOrUndefined(
-				result.encounterLocation2Identifier
-			);
+				admittingWard.location.identifier.value = newStringOrUndefined(
+					result.encounterLocation1Identifier
+				);
 
-			dischargeWard.location.display = newStringOrUndefined(
-				result.encounterLocation2Display
-			);
+				admittingWard.location.display = newStringOrUndefined(
+					result.encounterLocation1Display
+				);
 
-			dischargeWard.period.end = resource.period.end;
-			resource.location.push(dischargeWard);
+				admittingWard.period.start = resource.period.start;
+				resource.location.push(admittingWard);
+			}
+
+			if (
+				result.encounterLocation2Identifier != undefined &&
+				typeof resource.period.end !== 'undefined'
+			) {
+				var dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
+
+				dischargeWard.location.identifier.value = newStringOrUndefined(
+					result.encounterLocation2Identifier
+				);
+
+				dischargeWard.location.display = newStringOrUndefined(
+					result.encounterLocation2Display
+				);
+
+				dischargeWard.period.end = resource.period.end;
+				resource.location.push(dischargeWard);
+			}
 		}
 	}
 
