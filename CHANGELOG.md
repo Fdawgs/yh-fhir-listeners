@@ -1,3 +1,25 @@
+## <small>3.1.2 (2020-12-21)</small>
+
+-   fix(encounter-res): merge admitting and discharging location if same ([6a3ad57](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6a3ad57))
+-   build(deps-dev): bump @babel/cli from 7.12.8 to 7.12.10 ([918d4f5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/918d4f5))
+-   build(deps-dev): bump @babel/core from 7.12.9 to 7.12.10 ([6009fa3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6009fa3))
+-   build(deps-dev): bump @babel/node from 7.12.6 to 7.12.10 ([278c849](https://github.com/Fdawgs/ydh-fhir-listeners/commit/278c849))
+-   build(deps-dev): bump @babel/preset-env from 7.12.7 to 7.12.11 ([90db481](https://github.com/Fdawgs/ydh-fhir-listeners/commit/90db481))
+-   build(deps-dev): bump eslint from 7.14.0 to 7.16.0 ([1d6d9a7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1d6d9a7))
+-   build(deps-dev): bump eslint-config-prettier from 6.15.0 to 7.1.0 ([8e0ae14](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8e0ae14))
+-   build(deps-dev): bump eslint-plugin-jsdoc from 30.7.8 to 30.7.9 ([53b73ec](https://github.com/Fdawgs/ydh-fhir-listeners/commit/53b73ec))
+-   build(deps): bump ini from 1.3.5 to 1.3.8 ([7fd9938](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7fd9938))
+-   ci: add linting job; expand scope of jobs ([e4327f1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e4327f1))
+-   ci: automatically merge dependabot pull requests on pass build stage ([fa9f591](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa9f591))
+-   chore: add stale confg ([ed686bc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed686bc))
+-   chore: remove unused test resources ([c96dc64](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c96dc64))
+-   chore: update test resources for patient 9449304513 ([226073f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/226073f))
+-   chore: update test resources for patient 9449307210 ([76abac8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/76abac8))
+-   chore: update test resources for unknown patients ([4fa1736](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4fa1736))
+-   chore(scripts): rename test scripts ([dad2811](https://github.com/Fdawgs/ydh-fhir-listeners/commit/dad2811))
+-   docs(readme): state hospital's full name ([685ccbf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/685ccbf))
+-   [ImgBot] Optimize images ([492ef57](https://github.com/Fdawgs/ydh-fhir-listeners/commit/492ef57))
+
 ## <small>3.1.1 (2020-12-01)</small>
 
 -   docs(security): remove backticks ([3c06a2d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3c06a2d))
