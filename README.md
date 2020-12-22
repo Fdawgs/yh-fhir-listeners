@@ -106,8 +106,14 @@ Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/m
 
 ## Acknowledgements
 
--   [**Dunmail Hodkinson**](https://github.com/Dunmail) - Advising on HL7 FHIR STU3 specification adherence and best practices
--   [**Will Jehring**](https://github.com/wjehring) - Advising on HL7 FHIR STU3 specification adherence
+-   **Anthony Smith (YDH)**- Logo design
+-   **David Suckling (YDH)** - TrakCare database table structure and frontend advice
+-   [**Dunmail Hodkinson**](https://github.com/Dunmail) (BP) - HL7 FHIR STU3 specification adherence and best practices advice
+-   **George Dampier (YDH)** - MedicationStatement FHIR resources advice
+-   **Jessica Male (YDH)** - TrakCare frontend advice
+-   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - Optimising SQL queries
+-   **Nicolas Noblet (YDH)** - Optimising SQL queries, TrakCare database table structure advice
+-   [**Will Jehring**](https://github.com/wjehring) (BP) - HL7 FHIR STU3 specification adherence advice
 
 ## License
 
