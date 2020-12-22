@@ -104,6 +104,11 @@ This is due to YDH not having direct control over the underlying databases of th
 
 Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/CONTRIBUTING.md) for more details regarding contributing to this project.
 
+## Acknowledgements
+
+-   [**Dunmail Hodkinson**](https://github.com/Dunmail) - Advising on HL7 FHIR STU3 specification adherence and best practices
+-   [**Will Jehring**](https://github.com/wjehring) - Advising on HL7 FHIR STU3 specification adherence
+
 ## License
 
 `ydh-fhir-listeners` is licensed under the [MIT](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/LICENSE) license.
