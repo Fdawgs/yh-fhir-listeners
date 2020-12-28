@@ -16,17 +16,17 @@ function buildFlagResource(data) {
 	const resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1",
+			],
 		},
-		resourceType: 'Flag'
+		resourceType: "Flag",
 	};
 
 	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != 'T' &&
-		result.lastUpdated.substring(0, 4) != '1900'
+		result.lastUpdated.substring(0, 1) != "T" &&
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
@@ -36,31 +36,31 @@ function buildFlagResource(data) {
 	 * Set tag to 'Do not Display' if not in set of accepted SNOMED codes or if inactive
 	 */
 	const siderAcceptedFlagSnomedCodes = [
-		'13790001000004100',
-		'15188001',
-		'32000005',
-		'713673000'
+		"13790001000004100",
+		"15188001",
+		"32000005",
+		"713673000",
 	];
 	if (
-		result.flagStatusCode == 'inactive' ||
+		result.flagStatusCode == "inactive" ||
 		!siderAcceptedFlagSnomedCodes.includes(result.flagCodeCodingSnomedCode)
 	) {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'none',
-				display: 'Do not Display'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "none",
+				display: "Do not Display",
+			},
 		];
 	} else {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'summary',
-				display: 'Display in Summary and Detail View'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "summary",
+				display: "Display in Summary and Detail View",
+			},
 		];
 	}
 
@@ -71,34 +71,34 @@ function buildFlagResource(data) {
 		resource.category = {
 			coding: [
 				{
-					system: 'https://trakcare.ydh.nhs.uk',
+					system: "https://trakcare.ydh.nhs.uk",
 					code: newStringOrUndefined(result.flagCategoryCodingCode),
 					display: newStringOrUndefined(
 						result.flagCategoryCodingDisplay
-					)
-				}
-			]
+					),
+				},
+			],
 		};
 	}
 
 	resource.code = {
-		coding: []
+		coding: [],
 	};
 
 	if (result.flagCodeCodingCode != undefined) {
 		const ydhCode = {
-			system: 'https://trakcare.ydh.nhs.uk',
+			system: "https://trakcare.ydh.nhs.uk",
 			code: newStringOrUndefined(result.flagCodeCodingCode),
-			display: newStringOrUndefined(result.flagCodeCodingDisplay)
+			display: newStringOrUndefined(result.flagCodeCodingDisplay),
 		};
 		resource.code.coding.push(ydhCode);
 	}
 
 	if (result.flagCodeCodingSnomedCode != undefined) {
 		const snomedCode = {
-			system: 'https://snomed.info/sct',
+			system: "https://snomed.info/sct",
 			code: newStringOrUndefined(result.flagCodeCodingSnomedCode),
-			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay)
+			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay),
 		};
 		resource.code.coding.push(snomedCode);
 	}
@@ -106,23 +106,23 @@ function buildFlagResource(data) {
 	resource.period = {};
 	if (
 		result.periodStart != undefined &&
-		result.periodStart.substring(0, 1) != 'T' &&
-		result.periodStart.substring(0, 4) != '1900'
+		result.periodStart.substring(0, 1) != "T" &&
+		result.periodStart.substring(0, 4) != "1900"
 	) {
 		resource.period.start = result.periodStart;
 	}
 	if (
 		result.periodStart != undefined &&
-		result.periodStart.substring(0, 1) != 'T' &&
-		result.periodStart.substring(0, 4) != '1900'
+		result.periodStart.substring(0, 1) != "T" &&
+		result.periodStart.substring(0, 4) != "1900"
 	) {
 		resource.period.end = result.periodStart;
 	}
 
 	resource.subject = {
-		reference: `${$cfg('apiUrl')}/STU3/Patient/${
+		reference: `${$cfg("apiUrl")}/STU3/Patient/${
 			result.flagSubjectReference
-		}`
+		}`,
 	};
 
 	return resource;

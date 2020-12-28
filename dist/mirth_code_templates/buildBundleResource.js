@@ -8,18 +8,18 @@
  */
 function buildBundleResource(requestUrl) {
 	var resource = {
-		resourceType: newStringOrUndefined('Bundle'),
-		type: newStringOrUndefined('searchset'),
+		resourceType: newStringOrUndefined("Bundle"),
+		type: newStringOrUndefined("searchset"),
 		total: 0,
 		link: [],
-		entry: []
+		entry: [],
 	};
 
 	// Add link URL
 	if (requestUrl) {
 		var linkEntry = {
-			relation: newStringOrUndefined('self'),
-			url: newStringOrUndefined(requestUrl)
+			relation: newStringOrUndefined("self"),
+			url: newStringOrUndefined(requestUrl),
 		};
 
 		resource.link.push(linkEntry);

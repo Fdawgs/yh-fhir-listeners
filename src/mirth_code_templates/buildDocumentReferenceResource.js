@@ -15,10 +15,10 @@ function buildDocumentReferenceResource(data) {
 	const resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-DocumentReference-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-DocumentReference-1",
+			],
 		},
-		resourceType: 'DocumentReference'
+		resourceType: "DocumentReference",
 	};
 
 	return resource;

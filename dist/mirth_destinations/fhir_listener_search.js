@@ -5,12 +5,12 @@
  */
 
 try {
-	var type = $('fhirType').toLowerCase();
+	var type = $("fhirType").toLowerCase();
 
 	// Append URL with forward slash and build Java URL object
-	var requestURL = $('url');
-	if (!requestURL.endsWith('/')) {
-		requestURL += '/';
+	var requestURL = $("url");
+	if (!requestURL.endsWith("/")) {
+		requestURL += "/";
 	}
 	var bundle = buildBundleResource(new java.net.URI(requestURL));
 	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
@@ -18,71 +18,71 @@ try {
 
 	var supportedTypeParams = {
 		allergyintolerance: [
-			'clinical-status',
-			'criticality',
-			'date',
-			'patient',
-			'patient.identifier',
-			'type'
+			"clinical-status",
+			"criticality",
+			"date",
+			"patient",
+			"patient.identifier",
+			"type",
 		],
 
 		condition: [
-			'asserted-date',
-			'category',
-			'clinical-status',
-			'patient',
-			'patient.identifier'
+			"asserted-date",
+			"category",
+			"clinical-status",
+			"patient",
+			"patient.identifier",
 		],
 
 		encounter: [
-			'class',
-			'date',
-			'patient',
-			'patient.identifier',
-			'status',
-			'type'
+			"class",
+			"date",
+			"patient",
+			"patient.identifier",
+			"status",
+			"type",
 		],
 
-		flag: ['date', 'patient', 'patient.identifier', 'status'],
+		flag: ["date", "patient", "patient.identifier", "status"],
 		medicationstatement: [
-			'effective',
-			'patient',
-			'patient.identifier',
-			'status'
+			"effective",
+			"patient",
+			"patient.identifier",
+			"status",
 		],
 
 		patient: [
-			'address',
-			'address-city',
-			'address-postalcode',
-			'birthdate',
-			'deceased',
-			'email',
-			'family',
-			'gender',
-			'given',
-			'identifier',
-			'name',
-			'phone'
-		]
+			"address",
+			"address-city",
+			"address-postalcode",
+			"birthdate",
+			"deceased",
+			"email",
+			"family",
+			"gender",
+			"given",
+			"identifier",
+			"name",
+			"phone",
+		],
 	};
 
 	// If any param not supported, reject request
-	$('parameters')
+	$("parameters")
 		.getKeys()
 		.forEach(function (key) {
 			if (
 				supportedTypeParams[type.toLowerCase()].indexOf(
-					''.concat(key.toLowerCase().trim())
+					"".concat(key.toLowerCase().trim())
 				) < 0
 			) {
 				throw Error(
-					''
+					""
 						.concat(
 							key,
-							' is not a valid search query parameter for '
+							" is not a valid search query parameter for "
 						)
-						.concat(type.toLowerCase(), 's')
+						.concat(type.toLowerCase(), "s")
 				);
 			}
 		});
@@ -92,29 +92,29 @@ try {
 	 * AllergyIntolerance search params
 	 * ================================
 	 */
-	if (type == 'allergyintolerance') {
+	if (type == "allergyintolerance") {
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]
-		if ($('parameters').contains('patient')) {
+		if ($("parameters").contains("patient")) {
 			whereArray[0].push(
 				"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient.identifier=[system]|[code]
-		if ($('parameters').contains('patient.identifier')) {
+		if ($("parameters").contains("patient.identifier")) {
 			if (
-				$('parameters').getParameter('patient.identifier').contains('|')
+				$("parameters").getParameter("patient.identifier").contains("|")
 			) {
 				var allergyPatIdParam = String(
-					$('parameters').getParameter('patient.identifier')
-				).split('|');
+					$("parameters").getParameter("patient.identifier")
+				).split("|");
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						allergyPatIdParam[0]
-					) == 'https://fhir.nhs.uk/Id/nhs-number'
+					) == "https://fhir.nhs.uk/Id/nhs-number"
 				) {
 					whereArray[0].push(
 						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
@@ -126,7 +126,7 @@ try {
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						allergyPatIdParam[0]
-					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
 				) {
 					whereArray[0].push(
 						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
@@ -140,16 +140,16 @@ try {
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&clinical-status=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('clinical-status')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("clinical-status")
 		) {
 			// Loop through each clinical-status param and build SQL WHERE clause
-			var clinicalStatusArray = $('parameters')
-				.getParameterList('clinical-status')
+			var clinicalStatusArray = $("parameters")
+				.getParameterList("clinical-status")
 				.toArray();
 
-			if (clinicalStatusArray[0].substring(0, 1) == '[') {
+			if (clinicalStatusArray[0].substring(0, 1) == "[") {
 				clinicalStatusArray = JSON.parse(clinicalStatusArray[0]);
 			}
 
@@ -157,7 +157,7 @@ try {
 
 			clinicalStatusArray.forEach(function (clinicalStatusParam) {
 				var clinicalStatus = clinicalStatusParam;
-				clinicalStatus += '';
+				clinicalStatus += "";
 
 				allintClinicalStatusArray.push(
 					"(clinicalStatusCode = '".concat(clinicalStatus, "')")
@@ -166,23 +166,23 @@ try {
 
 			if (allintClinicalStatusArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(allintClinicalStatusArray.join(' OR '), ')')
+					"(".concat(allintClinicalStatusArray.join(" OR "), ")")
 				);
 			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('criticality')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("criticality")
 		) {
 			// Loop through each criticality param and build SQL WHERE clause
-			var criticalityArray = $('parameters')
-				.getParameterList('criticality')
+			var criticalityArray = $("parameters")
+				.getParameterList("criticality")
 				.toArray();
 
-			if (criticalityArray[0].substring(0, 1) == '[') {
+			if (criticalityArray[0].substring(0, 1) == "[") {
 				criticalityArray = JSON.parse(criticalityArray[0]);
 			}
 
@@ -190,7 +190,7 @@ try {
 
 			criticalityArray.forEach(function (criticalityParam) {
 				var criticality = criticalityParam;
-				criticality += '';
+				criticality += "";
 
 				allintCriticalityArray.push(
 					"(criticalityCode = '".concat(criticality, "')")
@@ -199,27 +199,27 @@ try {
 
 			if (allintCriticalityArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(allintCriticalityArray.join(' OR '), ')')
+					"(".concat(allintCriticalityArray.join(" OR "), ")")
 				);
 			}
 		}
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&date=[date]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('date')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("date")
 		) {
 			// Loop through each date param and build SQL WHERE clause
-			var dateArray = $('parameters').getParameterList('date').toArray();
+			var dateArray = $("parameters").getParameterList("date").toArray();
 
-			if (dateArray[0].substring(0, 1) == '[') {
+			if (dateArray[0].substring(0, 1) == "[") {
 				dateArray = JSON.parse(dateArray[0]);
 			}
 
 			dateArray.forEach(function (dateParam) {
 				var date = dateParam;
-				date += '';
+				date += "";
 
 				var operator = convertFhirParameterOperator(
 					date.substring(0, 2)
@@ -230,7 +230,7 @@ try {
 				}
 
 				whereArray[0].push(
-					'(alle.ALG_Date '
+					"(alle.ALG_Date "
 						.concat(operator, " ''")
 						.concat(date, "'')")
 				);
@@ -239,14 +239,14 @@ try {
 
 		// GET [baseUrl]/AllergyIntolerance?patient=[id]&type=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('type')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("type")
 		) {
 			// Loop through each criticality param and build SQL WHERE clause
-			var typeArray = $('parameters').getParameterList('type').toArray();
+			var typeArray = $("parameters").getParameterList("type").toArray();
 
-			if (typeArray[0].substring(0, 1) == '[') {
+			if (typeArray[0].substring(0, 1) == "[") {
 				typeArray = JSON.parse(typeArray[0]);
 			}
 
@@ -254,14 +254,14 @@ try {
 
 			typeArray.forEach(function (typeParam) {
 				var typeP = typeParam;
-				typeP += '';
+				typeP += "";
 
 				allintTypeArray.push("(typeCode = '".concat(typeP, "')"));
 			});
 
 			if (allintTypeArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(allintTypeArray.join(' OR '), ')')
+					"(".concat(allintTypeArray.join(" OR "), ")")
 				);
 			}
 		}
@@ -272,28 +272,28 @@ try {
 	 * Condition search params
 	 * =======================
 	 */
-	if (type == 'condition') {
+	if (type == "condition") {
 		// GET [baseUrl]/Condition?patient=[id]&asserted-date=[date]
-		if ($('parameters').contains('asserted-date')) {
-			whereArray[0].push('');
+		if ($("parameters").contains("asserted-date")) {
+			whereArray[0].push("");
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&category=[code]
-		if ($('parameters').contains('category')) {
-			whereArray[0].push('');
+		if ($("parameters").contains("category")) {
+			whereArray[0].push("");
 		}
 
 		// GET [baseUrl]/Condition?patient=[id]&clinical-status=[code]
-		if ($('parameters').contains('clinical-status')) {
-			whereArray[0].push('');
+		if ($("parameters").contains("clinical-status")) {
+			whereArray[0].push("");
 		}
 
 		/**
 		 * GET [baseUrl]/Condition?patient.identifier=[system]|[code]
 		 * GET [baseUrl]/Condition?patient=[id]
 		 */
-		if ($('parameters').contains('patient')) {
-			whereArray[0].push('');
+		if ($("parameters").contains("patient")) {
+			whereArray[0].push("");
 		}
 	}
 
@@ -302,13 +302,13 @@ try {
 	 * Encounter search params
 	 * =======================
 	 */
-	if (type == 'encounter') {
+	if (type == "encounter") {
 		// GET [baseUrl]/Encounter?patient=[id]
-		if ($('parameters').contains('patient')) {
+		if ($("parameters").contains("patient")) {
 			// Build where clause for first query (outpats) in union
 			whereArray[0].push(
 				"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
@@ -316,7 +316,7 @@ try {
 			// Build where clause for second query (inpats, emerg) in union
 			whereArray[1].push(
 				"(PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
@@ -324,24 +324,24 @@ try {
 			// Build where clause for subquery for inpat consultants
 			whereArray[2].push(
 				"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Encounter?patient.identifier=[system]|[code]
-		if ($('parameters').contains('patient.identifier')) {
+		if ($("parameters").contains("patient.identifier")) {
 			if (
-				$('parameters').getParameter('patient.identifier').contains('|')
+				$("parameters").getParameter("patient.identifier").contains("|")
 			) {
 				var encounterPatIdParam = String(
-					$('parameters').getParameter('patient.identifier')
-				).split('|');
+					$("parameters").getParameter("patient.identifier")
+				).split("|");
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						encounterPatIdParam[0]
-					) == 'https://fhir.nhs.uk/Id/nhs-number'
+					) == "https://fhir.nhs.uk/Id/nhs-number"
 				) {
 					whereArray[0].push(
 						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
@@ -367,7 +367,7 @@ try {
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						encounterPatIdParam[0]
-					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
 				) {
 					whereArray[0].push(
 						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
@@ -395,20 +395,20 @@ try {
 
 		// GET [baseUrl]/Encounter?patient=[id]&date=[date]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('date')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("date")
 		) {
 			// Loop through each date param and build SQL WHERE clause
-			var _dateArray = $('parameters').getParameterList('date').toArray();
+			var _dateArray = $("parameters").getParameterList("date").toArray();
 
-			if (_dateArray[0].substring(0, 1) == '[') {
+			if (_dateArray[0].substring(0, 1) == "[") {
 				_dateArray = JSON.parse(_dateArray[0]);
 			}
 
 			_dateArray.forEach(function (dateParam) {
 				var date = dateParam;
-				date += '';
+				date += "";
 
 				var operator = convertFhirParameterOperator(
 					date.substring(0, 2)
@@ -428,16 +428,16 @@ try {
 
 		// GET [baseUrl]/Encounter?patient=[id]&class=[token]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('class')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("class")
 		) {
 			// Loop through each class param and build SQL WHERE clause
-			var classArray = $('parameters')
-				.getParameterList('class')
+			var classArray = $("parameters")
+				.getParameterList("class")
 				.toArray();
 
-			if (classArray[0].substring(0, 1) == '[') {
+			if (classArray[0].substring(0, 1) == "[") {
 				classArray = JSON.parse(classArray[0]);
 			}
 
@@ -445,12 +445,12 @@ try {
 
 			classArray.forEach(function (classParam) {
 				var classP = classParam;
-				classP += '';
+				classP += "";
 
 				var classCode = {
-					inpatient: 'IMP',
-					outpatient: 'AMB',
-					emergency: 'EMER'
+					inpatient: "IMP",
+					outpatient: "AMB",
+					emergency: "EMER",
 				};
 
 				encounterClassArray.push(
@@ -463,21 +463,21 @@ try {
 
 			if (encounterClassArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(encounterClassArray.join(' OR '), ')')
+					"(".concat(encounterClassArray.join(" OR "), ")")
 				);
 			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&type=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('type')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("type")
 		) {
 			// Loop through each type param and build SQL WHERE clause
-			var _typeArray = $('parameters').getParameterList('type').toArray();
+			var _typeArray = $("parameters").getParameterList("type").toArray();
 
-			if (_typeArray[0].substring(0, 1) == '[') {
+			if (_typeArray[0].substring(0, 1) == "[") {
 				_typeArray = JSON.parse(_typeArray[0]);
 			}
 
@@ -485,7 +485,7 @@ try {
 
 			_typeArray.forEach(function (typeParam) {
 				var typeP = typeParam;
-				typeP += '';
+				typeP += "";
 
 				// Build where clause for fourth query
 				encounterTypeArray.push(
@@ -495,23 +495,23 @@ try {
 
 			if (encounterTypeArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(encounterTypeArray.join(' OR '), ')')
+					"(".concat(encounterTypeArray.join(" OR "), ")")
 				);
 			}
 		}
 
 		// GET [baseUrl]/Encounter?patient=[id]&status=[token]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('status')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("status")
 		) {
 			// Loop through each status param and build SQL WHERE clause
-			var statusArray = $('parameters')
-				.getParameterList('status')
+			var statusArray = $("parameters")
+				.getParameterList("status")
 				.toArray();
 
-			if (statusArray[0].substring(0, 1) == '[') {
+			if (statusArray[0].substring(0, 1) == "[") {
 				statusArray = JSON.parse(statusArray[0]);
 			}
 
@@ -519,7 +519,7 @@ try {
 
 			statusArray.forEach(function (statusParam) {
 				var status = statusParam;
-				status += '';
+				status += "";
 
 				// Build where clause for fourth query
 				encounterStatusArray.push(
@@ -529,7 +529,7 @@ try {
 
 			if (encounterStatusArray.length > 0) {
 				whereArray[3].push(
-					'('.concat(encounterStatusArray.join(' OR '), ')')
+					"(".concat(encounterStatusArray.join(" OR "), ")")
 				);
 			}
 		}
@@ -540,29 +540,29 @@ try {
 	 * Flag search params
 	 * =======================
 	 */
-	if (type == 'flag') {
+	if (type == "flag") {
 		// GET [baseUrl]/Flag?patient=[id]
-		if ($('parameters').contains('patient')) {
+		if ($("parameters").contains("patient")) {
 			whereArray[0].push(
 				"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Flag?patient.identifier=[system]|[code]
-		if ($('parameters').contains('patient.identifier')) {
+		if ($("parameters").contains("patient.identifier")) {
 			if (
-				$('parameters').getParameter('patient.identifier').contains('|')
+				$("parameters").getParameter("patient.identifier").contains("|")
 			) {
 				var flagPatIdParam = String(
-					$('parameters').getParameter('patient.identifier')
-				).split('|');
+					$("parameters").getParameter("patient.identifier")
+				).split("|");
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						flagPatIdParam[0]
-					) == 'https://fhir.nhs.uk/Id/nhs-number'
+					) == "https://fhir.nhs.uk/Id/nhs-number"
 				) {
 					whereArray[0].push(
 						"(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
@@ -574,7 +574,7 @@ try {
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						flagPatIdParam[0]
-					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
 				) {
 					whereArray[0].push(
 						"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''".concat(
@@ -588,22 +588,22 @@ try {
 
 		// GET [baseUrl]/Flag?patient=[id]&date=[date]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('date')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("date")
 		) {
 			// Loop through each date param and build SQL WHERE clause
-			var _dateArray2 = $('parameters')
-				.getParameterList('date')
+			var _dateArray2 = $("parameters")
+				.getParameterList("date")
 				.toArray();
 
-			if (_dateArray2[0].substring(0, 1) == '[') {
+			if (_dateArray2[0].substring(0, 1) == "[") {
 				_dateArray2 = JSON.parse(_dateArray2[0]);
 			}
 
 			_dateArray2.forEach(function (dateParam) {
 				var date = dateParam;
-				date += '';
+				date += "";
 
 				var operator = convertFhirParameterOperator(
 					date.substring(0, 2)
@@ -614,20 +614,20 @@ try {
 				}
 
 				whereArray[1].push(
-					'(periodStart '.concat(operator, " '").concat(date, "')")
+					"(periodStart ".concat(operator, " '").concat(date, "')")
 				);
 			});
 		}
 
 		// GET [baseUrl]/Flag?patient=[id]&status=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('status')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("status")
 		) {
 			whereArray[1].push(
 				"(flagStatusCode = ''".concat(
-					$('parameters').getParameter('status'),
+					$("parameters").getParameter("status"),
 					"'')"
 				)
 			);
@@ -639,25 +639,25 @@ try {
 	 * MedicationStatement search params
 	 * =================================
 	 */
-	if (type == 'medicationstatement') {
+	if (type == "medicationstatement") {
 		// GET [baseUrl]/MedicationStatement?patient=[id]&effective=[date]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('effective')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("effective")
 		) {
 			// Loop through each effective param and build SQL WHERE clause
-			var _dateArray3 = $('parameters')
-				.getParameterList('effective')
+			var _dateArray3 = $("parameters")
+				.getParameterList("effective")
 				.toArray();
 
-			if (_dateArray3[0].substring(0, 1) == '[') {
+			if (_dateArray3[0].substring(0, 1) == "[") {
 				_dateArray3 = JSON.parse(_dateArray3[0]);
 			}
 
 			_dateArray3.forEach(function (dateParam) {
 				var date = dateParam;
-				date += '';
+				date += "";
 
 				var operator = convertFhirParameterOperator(
 					date.substring(0, 2)
@@ -668,7 +668,7 @@ try {
 				}
 
 				whereArray[1].push(
-					'(medstatEffectiveStart '
+					"(medstatEffectiveStart "
 						.concat(operator, " '")
 						.concat(date, "')")
 				);
@@ -676,27 +676,27 @@ try {
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]
-		if ($('parameters').contains('patient')) {
+		if ($("parameters").contains("patient")) {
 			whereArray[0].push(
 				"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-					$('parameters').getParameter('patient'),
+					$("parameters").getParameter("patient"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/MedicationStatement?patient.identifier=[system]|[code]
-		if ($('parameters').contains('patient.identifier')) {
+		if ($("parameters").contains("patient.identifier")) {
 			if (
-				$('parameters').getParameter('patient.identifier').contains('|')
+				$("parameters").getParameter("patient.identifier").contains("|")
 			) {
 				var medStatPatIdParam = String(
-					$('parameters').getParameter('patient.identifier')
-				).split('|');
+					$("parameters").getParameter("patient.identifier")
+				).split("|");
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						medStatPatIdParam[0]
-					) == 'https://fhir.nhs.uk/Id/nhs-number'
+					) == "https://fhir.nhs.uk/Id/nhs-number"
 				) {
 					whereArray[0].push(
 						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
@@ -708,7 +708,7 @@ try {
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						medStatPatIdParam[0]
-					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
 				) {
 					whereArray[0].push(
 						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
@@ -722,13 +722,13 @@ try {
 
 		// GET [baseUrl]/MedicationStatement?patient=[id]&status=[code]
 		if (
-			($('parameters').contains('patient') ||
-				$('parameters').contains('patient.identifier')) &&
-			$('parameters').contains('status')
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("status")
 		) {
 			whereArray[1].push(
 				"(medstatStatusCode = '".concat(
-					$('parameters').getParameter('status'),
+					$("parameters").getParameter("status"),
 					"')"
 				)
 			);
@@ -740,10 +740,10 @@ try {
 	 * Patient search params
 	 * =====================
 	 */
-	if (type == 'patient') {
+	if (type == "patient") {
 		// GET [baseUrl]/Patient?address=[address]
-		if ($('parameters').contains('address')) {
-			var address = $('parameters').getParameter('address');
+		if ($("parameters").contains("address")) {
+			var address = $("parameters").getParameter("address");
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_StName = ''"
 					.concat(
@@ -759,47 +759,47 @@ try {
 		}
 
 		// GET [baseUrl]/Patient?address-city=[address-city]
-		if ($('parameters').contains('address-city')) {
+		if ($("parameters").contains("address-city")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_CityCode_DR->CTCIT_Desc = ''".concat(
-					$('parameters').getParameter('address-city'),
+					$("parameters").getParameter("address-city"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?address-postalcode=[address-postalcode]
-		if ($('parameters').contains('address-postalcode')) {
+		if ($("parameters").contains("address-postalcode")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Zip_DR->CTZIP_Code = ''".concat(
-					$('parameters').getParameter('address-postalcode'),
+					$("parameters").getParameter("address-postalcode"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?birthdate=[date]
-		if ($('parameters').contains('birthdate')) {
+		if ($("parameters").contains("birthdate")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_DOB = ''".concat(
-					$('parameters').getParameter('birthdate'),
+					$("parameters").getParameter("birthdate"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?deceased=[deceased]
-		if ($('parameters').contains('deceased')) {
-			var deceased = $('parameters').getParameter('deceased');
+		if ($("parameters").contains("deceased")) {
+			var deceased = $("parameters").getParameter("deceased");
 
 			switch (deceased) {
-				case 'false':
+				case "false":
 					whereArray[0].push(
 						"(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'')"
 					);
 
 					break;
-				case 'true':
+				case "true":
 					whereArray[0].push(
 						"(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''Y'')"
 					);
@@ -811,40 +811,40 @@ try {
 		}
 
 		// GET [baseUrl]/Patient?email=[email]
-		if ($('parameters').contains('email')) {
+		if ($("parameters").contains("email")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Email = ''".concat(
-					$('parameters').getParameter('email'),
+					$("parameters").getParameter("email"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?family=[family]
-		if ($('parameters').contains('family')) {
+		if ($("parameters").contains("family")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name = ''".concat(
-					$('parameters').getParameter('family'),
+					$("parameters").getParameter("family"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?gender=[code]
-		if ($('parameters').contains('gender')) {
+		if ($("parameters").contains("gender")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Sex_DR->CTSEX_Desc = ''".concat(
-					$('parameters').getParameter('gender'),
+					$("parameters").getParameter("gender"),
 					"'')"
 				)
 			);
 		}
 
 		// GET [baseUrl]/Patient?given=[given]
-		if ($('parameters').contains('given')) {
+		if ($("parameters").contains("given")) {
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name2 = ''".concat(
-					$('parameters').getParameter('given'),
+					$("parameters").getParameter("given"),
 					"'')"
 				)
 			);
@@ -854,15 +854,15 @@ try {
 		 * GET [baseUrl]/Patient?identifier=[system]|[code]
 		 * GET [baseUrl]/Patient?identifier=[code]
 		 */
-		if ($('parameters').contains('identifier')) {
-			if ($('parameters').getParameter('identifier').contains('|')) {
+		if ($("parameters").contains("identifier")) {
+			if ($("parameters").getParameter("identifier").contains("|")) {
 				var identifierParam = String(
-					$('parameters').getParameter('identifier')
-				).split('|');
+					$("parameters").getParameter("identifier")
+				).split("|");
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						identifierParam[0]
-					) == 'https://fhir.nhs.uk/Id/nhs-number'
+					) == "https://fhir.nhs.uk/Id/nhs-number"
 				) {
 					whereArray[0].push(
 						"(patmas.PAPMI_ID = ''".concat(
@@ -881,7 +881,7 @@ try {
 				if (
 					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						identifierParam[0]
-					) == 'https://fhir.ydh.nhs.uk/Id/local-patient-identifier'
+					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
 				) {
 					whereArray[0].push(
 						"(patmas.PAPMI_No = ''".concat(
@@ -900,14 +900,14 @@ try {
 			} else {
 				whereArray[0].push(
 					"(patmas.PAPMI_No = ''".concat(
-						$('parameters').getParameter('identifier'),
+						$("parameters").getParameter("identifier"),
 						"'')"
 					)
 				);
 
 				whereArray[1].push(
 					"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
-						$('parameters').getParameter('identifier'),
+						$("parameters").getParameter("identifier"),
 						"'')"
 					)
 				);
@@ -915,8 +915,8 @@ try {
 		}
 
 		// GET [baseUrl]/Patient?name=[name]
-		if ($('parameters').contains('name')) {
-			var name = $('parameters').getParameter('name');
+		if ($("parameters").contains("name")) {
+			var name = $("parameters").getParameter("name");
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_Name = ''"
 					.concat(
@@ -928,8 +928,8 @@ try {
 		}
 
 		// GET [baseUrl]/Patient?phone=[phone]
-		if ($('parameters').contains('phone')) {
-			var phone = $('parameters').getParameter('phone');
+		if ($("parameters").contains("phone")) {
+			var phone = $("parameters").getParameter("phone");
 			whereArray[0].push(
 				"(patmas.PAPMI_PAPER_DR->PAPER_TelH = ''"
 					.concat(
@@ -950,41 +950,41 @@ try {
 	for (var index = 0; index < whereArray.length; index += 1) {
 		var element = whereArray[index];
 		if (element.length > 0) {
-			wherePredicates[index] = element.join(' AND ');
+			wherePredicates[index] = element.join(" AND ");
 		}
 	}
 
 	if (wherePredicates.length == 0) {
-		throw Error('Error searching resources.');
+		throw Error("Error searching resources.");
 	}
 
 	logger.debug(
-		'SQL WHERE clause predicate(s): '.concat(wherePredicates.toString())
+		"SQL WHERE clause predicate(s): ".concat(wherePredicates.toString())
 	);
 
 	var result = buildResourceQuery(type, wherePredicates);
 	while (result.next()) {
 		var data = void 0;
-		switch (''.concat(type)) {
-			case 'allergyintolerance':
+		switch ("".concat(type)) {
+			case "allergyintolerance":
 				data = buildAllergyIntoleranceResource(result);
 				break;
-			case 'condition':
+			case "condition":
 				// data = buildConditionResource(result);
 				break;
-			case 'documentreference':
+			case "documentreference":
 				// data = buildDocumentReferenceResource(result);
 				break;
-			case 'encounter':
+			case "encounter":
 				data = buildEncounterResource(result);
 				break;
-			case 'flag':
+			case "flag":
 				data = buildFlagResource(result);
 				break;
-			case 'medicationstatement':
+			case "medicationstatement":
 				data = buildMedicationStatementResource(result);
 				break;
-			case 'patient':
+			case "patient":
 				data = buildPatientResource(result);
 				break;
 			default:
@@ -994,31 +994,31 @@ try {
 		// Add returned FHIR resources to bundle resource
 		var resourceOuter = {};
 		resourceOuter.resource = data;
-		resourceOuter.fullUrl = ''
-			.concat($cfg('apiUrl') + $('contextPath'), '/')
+		resourceOuter.fullUrl = ""
+			.concat($cfg("apiUrl") + $("contextPath"), "/")
 			.concat(data.id);
 
 		bundle.entry.push(resourceOuter);
 	}
 
 	bundle.total = bundle.entry.length;
-	bundle.link[0].url = $cfg('apiUrl') + $('uri');
+	bundle.link[0].url = $cfg("apiUrl") + $("uri");
 	logger.debug(JSON.stringify(bundle));
 
 	var response = FhirResponseFactory.getSearchResponse(
 		JSON.stringify(bundle),
 		200,
-		'application/fhir+json'
+		"application/fhir+json"
 	);
 
-	responseMap.put('response', response);
+	responseMap.put("response", response);
 	return response.getMessage();
 } catch (error) {
 	return createOperationOutcome(
-		'error',
-		'transient',
-		'Error searching resources.',
-		'STU3',
+		"error",
+		"transient",
+		"Error searching resources.",
+		"STU3",
 		500,
 		error
 	);

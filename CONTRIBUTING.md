@@ -37,7 +37,7 @@ Prior to submitting a pull request back to the main repository, please make sure
 
 1. Pull request base branch is set to `master`. All pull requests should be forked from and merged back to `master`
 2. Run `yarn lint` to check the code adheres to the defined style and has no errors
-3. Run `yarn prettier` to run the Prettier code formatter over the code
+3. Run `yarn lint:prettier` to run the Prettier code formatter over the code
 
 ## Release process
 

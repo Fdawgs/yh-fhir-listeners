@@ -15,11 +15,11 @@ function buildConditionResource(data) {
 	var resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Condition-1",
+			],
 		},
 
-		resourceType: 'Condition'
+		resourceType: "Condition",
 	};
 
 	return resource;

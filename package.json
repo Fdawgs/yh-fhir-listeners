@@ -17,13 +17,9 @@
 		"lint:prettier:ci": "prettier . --check --ignore-path .gitignore"
 	},
 	"prettier": {
-		"arrowParens": "always",
-		"bracketSpacing": true,
 		"endOfLine": "lf",
 		"semi": true,
-		"singleQuote": true,
 		"tabWidth": 4,
-		"trailingComma": "none",
 		"useTabs": true
 	},
 	"devDependencies": {
@@ -38,7 +34,6 @@
 		"eslint-config-prettier": "^7.1.0",
 		"eslint-plugin-import": "^2.22.1",
 		"eslint-plugin-jsdoc": "^30.7.9",
-		"eslint-plugin-json": "^2.1.2",
 		"eslint-plugin-security": "^1.4.0",
 		"prettier": "2.2.1"
 	}
