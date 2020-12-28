@@ -15,7 +15,7 @@ module.exports = {
 			globalReturn: true,
 		},
 	},
-	plugins: ["jsdoc", "json", "security"],
+	plugins: ["jsdoc", "security"],
 	root: true,
 	rules: {
 		"no-multiple-empty-lines": [
