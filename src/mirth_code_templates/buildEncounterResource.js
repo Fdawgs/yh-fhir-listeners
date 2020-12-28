@@ -15,10 +15,10 @@ function buildEncounterResource(data) {
 	const resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1",
+			],
 		},
-		resourceType: 'Encounter'
+		resourceType: "Encounter",
 	};
 
 	resource.id = newStringOrUndefined(result.encounterIdentifier);
@@ -27,17 +27,17 @@ function buildEncounterResource(data) {
 	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != 'T' &&
-		result.lastUpdated.substring(0, 4) != '1900'
+		result.lastUpdated.substring(0, 1) != "T" &&
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
 	if (result.encounterClassDesc != undefined) {
 		resource.class = {
-			system: 'https://hl7.org/fhir/v3/ActEncounterCode',
+			system: "https://hl7.org/fhir/v3/ActEncounterCode",
 			code: newStringOrUndefined(result.encounterClassCode),
-			display: newStringOrUndefined(result.encounterClassDesc)
+			display: newStringOrUndefined(result.encounterClassDesc),
 		};
 	}
 
@@ -48,8 +48,8 @@ function buildEncounterResource(data) {
 	 */
 	if (
 		result.encounterPeriodStart != undefined &&
-		result.encounterPeriodStart.substring(0, 1) != 'T' &&
-		result.encounterPeriodStart.substring(0, 4) != '1900' &&
+		result.encounterPeriodStart.substring(0, 1) != "T" &&
+		result.encounterPeriodStart.substring(0, 4) != "1900" &&
 		Math.ceil(
 			(new Date(result.encounterPeriodStart) - new Date()) /
 				(24 * 60 * 60 * 1000)
@@ -58,33 +58,33 @@ function buildEncounterResource(data) {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'summary',
-				display: 'Display in Summary and Detail View'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "summary",
+				display: "Display in Summary and Detail View",
+			},
 		];
 	} else {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'detail',
-				display: 'Display in Detail View'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "detail",
+				display: "Display in Detail View",
+			},
 		];
 	}
 
 	if (
 		result.encounterStatusMapped != undefined &&
-		result.encounterStatusMapped == 'planned'
+		result.encounterStatusMapped == "planned"
 	) {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'none',
-				display: 'Do not Display'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "none",
+				display: "Do not Display",
+			},
 		];
 	}
 
@@ -93,32 +93,32 @@ function buildEncounterResource(data) {
 	const emptyType = {
 		coding: [
 			{
-				system: 'https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1',
+				system: "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
 				code: undefined,
-				display: undefined
-			}
+				display: undefined,
+			},
 		],
 		extension: [
 			{
 				url:
-					'https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1',
+					"https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
 				valueCodeableConcept: {
 					coding: [
 						{
 							system:
-								'https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1',
+								"https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
 							code: undefined,
-							display: undefined
-						}
-					]
-				}
-			}
-		]
+							display: undefined,
+						},
+					],
+				},
+			},
+		],
 	};
 
 	if (
 		result.encounterClassCode != undefined &&
-		result.encounterClassCode == 'IMP'
+		result.encounterClassCode == "IMP"
 	) {
 		const admType = JSON.parse(JSON.stringify(emptyType));
 		const disType = JSON.parse(JSON.stringify(emptyType));
@@ -130,9 +130,9 @@ function buildEncounterResource(data) {
 			admType.coding[0].display = newStringOrUndefined(
 				result.encounterTypeDescAdm
 			);
-			admType.extension[0].valueCodeableConcept.coding[0].code = 'ADM';
+			admType.extension[0].valueCodeableConcept.coding[0].code = "ADM";
 			admType.extension[0].valueCodeableConcept.coding[0].display =
-				'Admitting';
+				"Admitting";
 			resource.type.push(admType);
 		} else if (result.encounterTypeCode != undefined) {
 			admType.coding[0].code = newStringOrUndefined(
@@ -154,9 +154,9 @@ function buildEncounterResource(data) {
 				result.encounterTypeDescDis
 			);
 
-			disType.extension[0].valueCodeableConcept.coding[0].code = 'DIS';
+			disType.extension[0].valueCodeableConcept.coding[0].code = "DIS";
 			disType.extension[0].valueCodeableConcept.coding[0].display =
-				'Discharging';
+				"Discharging";
 			resource.type.push(disType);
 		} else if (result.encounterTypeCode != undefined) {
 			disType.coding[0].code = newStringOrUndefined(
@@ -205,29 +205,29 @@ function buildEncounterResource(data) {
 				{
 					coding: [
 						{
-							system: 'https://hl7.org/fhir/v3/ParticipationType',
-							code: 'ADM',
-							display: 'admitter'
-						}
-					]
+							system: "https://hl7.org/fhir/v3/ParticipationType",
+							code: "ADM",
+							display: "admitter",
+						},
+					],
 				},
 				{
 					coding: [
 						{
-							system: 'https://hl7.org/fhir/v3/ParticipationType',
-							code: 'DIS',
-							display: 'discharger'
-						}
-					]
-				}
+							system: "https://hl7.org/fhir/v3/ParticipationType",
+							code: "DIS",
+							display: "discharger",
+						},
+					],
+				},
 			],
 			individual: {
 				identifier: {
-					value: result.encounterParticipantIndividualCode_admitting
+					value: result.encounterParticipantIndividualCode_admitting,
 				},
 
-				display: result.encounterParticipantIndividualDisplay_admitting
-			}
+				display: result.encounterParticipantIndividualDisplay_admitting,
+			},
 		};
 		resource.participant.push(participantCombo);
 	}
@@ -240,21 +240,21 @@ function buildEncounterResource(data) {
 						coding: [
 							{
 								system:
-									'https://hl7.org/fhir/v3/ParticipationType',
-								code: 'ADM',
-								display: 'admitter'
-							}
-						]
-					}
+									"https://hl7.org/fhir/v3/ParticipationType",
+								code: "ADM",
+								display: "admitter",
+							},
+						],
+					},
 				],
 				individual: {
 					identifier: {
 						value:
-							result.encounterParticipantIndividualCode_admitting
+							result.encounterParticipantIndividualCode_admitting,
 					},
 					display:
-						result.encounterParticipantIndividualDisplay_admitting
-				}
+						result.encounterParticipantIndividualDisplay_admitting,
+				},
 			};
 			resource.participant.push(participantAdmitter);
 		}
@@ -267,21 +267,21 @@ function buildEncounterResource(data) {
 						coding: [
 							{
 								system:
-									'https://hl7.org/fhir/v3/ParticipationType',
-								code: 'DIS',
-								display: 'discharger'
-							}
-						]
-					}
+									"https://hl7.org/fhir/v3/ParticipationType",
+								code: "DIS",
+								display: "discharger",
+							},
+						],
+					},
 				],
 				individual: {
 					identifier: {
 						value:
-							result.encounterParticipantIndividualCode_discharging
+							result.encounterParticipantIndividualCode_discharging,
 					},
 					display:
-						result.encounterParticipantIndividualDisplay_discharging
-				}
+						result.encounterParticipantIndividualDisplay_discharging,
+				},
 			};
 			resource.participant.push(participantDischarger);
 		}
@@ -292,19 +292,19 @@ function buildEncounterResource(data) {
 				{
 					coding: [
 						{
-							system: 'https://hl7.org/fhir/v3/ParticipationType',
-							code: 'CON',
-							display: 'consultant'
-						}
-					]
-				}
+							system: "https://hl7.org/fhir/v3/ParticipationType",
+							code: "CON",
+							display: "consultant",
+						},
+					],
+				},
 			],
 			individual: {
 				identifier:
 					result.encounterParticipantIndividualCode_opattending,
 				display:
-					result.encounterParticipantIndividualDisplay_opattending
-			}
+					result.encounterParticipantIndividualDisplay_opattending,
+			},
 		};
 		resource.participant.push(participantConsultant);
 	}
@@ -312,15 +312,15 @@ function buildEncounterResource(data) {
 	resource.period = {};
 	if (
 		result.encounterPeriodStart != undefined &&
-		result.encounterPeriodStart.substring(0, 1) != 'T' &&
-		result.encounterPeriodStart.substring(0, 4) != '1900'
+		result.encounterPeriodStart.substring(0, 1) != "T" &&
+		result.encounterPeriodStart.substring(0, 4) != "1900"
 	) {
 		resource.period.start = result.encounterPeriodStart;
 	}
 	if (
 		result.encounterPeriodEnd != undefined &&
-		result.encounterPeriodEnd.substring(0, 1) != 'T' &&
-		result.encounterPeriodEnd.substring(0, 4) != '1900'
+		result.encounterPeriodEnd.substring(0, 1) != "T" &&
+		result.encounterPeriodEnd.substring(0, 4) != "1900"
 	) {
 		resource.period.end = result.encounterPeriodEnd;
 	}
@@ -338,19 +338,19 @@ function buildEncounterResource(data) {
 	if (result.encounterAdmissionmethodCodingCode != undefined) {
 		const admissionMethod = {
 			url:
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1',
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
 			valueCodeableConcept: {
 				coding: [
 					{
 						system:
-							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1',
+							"https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
 						code: result.encounterAdmissionmethodCodingCode,
 						display: newStringOrUndefined(
 							result.encounterAdmissionmethodCodingDesc
-						)
-					}
-				]
-			}
+						),
+					},
+				],
+			},
 		};
 		resource.hospitalization.extension.push(admissionMethod);
 	}
@@ -358,19 +358,19 @@ function buildEncounterResource(data) {
 	if (result.encounterDischargemethodCodingCode != undefined) {
 		const dischargeMethod = {
 			url:
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1',
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
 			valueCodeableConcept: {
 				coding: [
 					{
 						system:
-							'https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1',
+							"https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
 						code: result.encounterDischargemethodCodingCode,
 						display: newStringOrUndefined(
 							result.encounterDischargemethodCodingDesc
-						)
-					}
-				]
-			}
+						),
+					},
+				],
+			},
 		};
 		resource.hospitalization.extension.push(dischargeMethod);
 	}
@@ -380,13 +380,13 @@ function buildEncounterResource(data) {
 			coding: [
 				{
 					system:
-						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1',
+						"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
 					code: result.encounterHospitalizationAdmitsourceCodingCode,
 					display: newStringOrUndefined(
 						result.encounterHospitalizationAdmitsourceCodingDesc
-					)
-				}
-			]
+					),
+				},
+			],
 		};
 	}
 	if (
@@ -397,42 +397,42 @@ function buildEncounterResource(data) {
 			coding: [
 				{
 					system:
-						'https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1',
+						"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
 					code:
 						result.encounterHospitalizationDischargedispositionCodingCode,
 					display: newStringOrUndefined(
 						result.encounterHospitalizationDischargedispositionCodingDesc
-					)
-				}
-			]
+					),
+				},
+			],
 		};
 	}
 
 	// Add location details
 	if (
 		result.encounterClassCode != undefined &&
-		result.encounterClassCode == 'IMP'
+		result.encounterClassCode == "IMP"
 	) {
 		resource.location = [];
 
 		const emptyLocation = {
 			location: {
 				identifier: {
-					value: undefined
+					value: undefined,
 				},
-				display: undefined
+				display: undefined,
 			},
 			period: {
 				start: undefined,
-				end: undefined
-			}
+				end: undefined,
+			},
 		};
 
 		if (
 			result.encounterLocation1Identifier != undefined &&
-			typeof resource.period.start !== 'undefined' &&
+			typeof resource.period.start !== "undefined" &&
 			result.encounterLocation2Identifier != undefined &&
-			typeof resource.period.end !== 'undefined' &&
+			typeof resource.period.end !== "undefined" &&
 			result.encounterLocation1Identifier ==
 				result.encounterLocation2Identifier
 		) {
@@ -453,7 +453,7 @@ function buildEncounterResource(data) {
 		if (resource.location.length == 0) {
 			if (
 				result.encounterLocation1Identifier != undefined &&
-				typeof resource.period.start !== 'undefined'
+				typeof resource.period.start !== "undefined"
 			) {
 				const admittingWard = JSON.parse(JSON.stringify(emptyLocation));
 
@@ -470,7 +470,7 @@ function buildEncounterResource(data) {
 
 			if (
 				result.encounterLocation2Identifier != undefined &&
-				typeof resource.period.end !== 'undefined'
+				typeof resource.period.end !== "undefined"
 			) {
 				const dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
 
@@ -488,7 +488,7 @@ function buildEncounterResource(data) {
 	}
 
 	resource.subject = {
-		reference: `${$cfg('apiUrl')}/STU3/Patient/${result.subjectReference}`
+		reference: `${$cfg("apiUrl")}/STU3/Patient/${result.subjectReference}`,
 	};
 
 	return resource;

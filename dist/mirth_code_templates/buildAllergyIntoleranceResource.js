@@ -16,18 +16,18 @@ function buildAllergyIntoleranceResource(data) {
 	var resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1",
+			],
 		},
 
-		resourceType: 'AllergyIntolerance'
+		resourceType: "AllergyIntolerance",
 	};
 
 	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != 'T' &&
-		result.lastUpdated.substring(0, 4) != '1900'
+		result.lastUpdated.substring(0, 1) != "T" &&
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
@@ -40,10 +40,10 @@ function buildAllergyIntoleranceResource(data) {
 	resource.meta.tag = [
 		{
 			system:
-				'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-			code: 'none',
-			display: 'Do not Display'
-		}
+				"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+			code: "none",
+			display: "Do not Display",
+		},
 	];
 
 	resource.id = newStringOrUndefined(result.id);
@@ -65,14 +65,14 @@ function buildAllergyIntoleranceResource(data) {
 	});
 	if (allergyResult.length > 0) {
 		resource.code = {
-			text: allergyResult.join('; ')
+			text: allergyResult.join("; "),
 		};
 	}
 
 	resource.patient = {
-		reference: ''
-			.concat($cfg('apiUrl'), '/STU3/Patient/')
-			.concat(result.patientReference)
+		reference: ""
+			.concat($cfg("apiUrl"), "/STU3/Patient/")
+			.concat(result.patientReference),
 	};
 
 	resource.clinicalStatus = newStringOrUndefined(result.clinicalStatusCode);

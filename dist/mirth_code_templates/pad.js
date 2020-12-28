@@ -7,9 +7,9 @@
 	@returns {string} - String with prepended zeros.
  */
 function pad(num, size) {
-	var s = ''.concat(num);
+	var s = "".concat(num);
 	while (s.length < size) {
-		s = '0'.concat(s);
+		s = "0".concat(s);
 	}
 	return s;
 }

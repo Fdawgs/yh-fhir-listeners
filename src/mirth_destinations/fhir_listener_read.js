@@ -3,23 +3,23 @@
  * @description Rewritten example FHIR read destination to be usable for TrakCare calls.
  */
 try {
-	const type = $('fhirType').toLowerCase();
-	const id = $('fhirId');
+	const type = $("fhirType").toLowerCase();
+	const id = $("fhirId");
 
 	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
 	const whereArray = [[], [], [], []];
 
 	switch (`${type}`) {
-		case 'allergyintolerance':
+		case "allergyintolerance":
 			whereArray[0].push(
 				`(alle.ALG_RowId = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
-		case 'condition':
+		case "condition":
 			break;
-		case 'documentreference':
+		case "documentreference":
 			break;
-		case 'encounter':
+		case "encounter":
 			whereArray[0].push(
 				`(app.APPT_RowId = REPLACE(''${id}'', ''-'', ''||''))`
 			);
@@ -30,17 +30,17 @@ try {
 				`(TRANS_ParRef->PAADM_ADMNo = REPLACE(''${id}'', ''-'', ''/''))`
 			);
 			break;
-		case 'flag':
+		case "flag":
 			whereArray[0].push(
 				`(alert.ALM_RowID = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
-		case 'medicationstatement':
+		case "medicationstatement":
 			whereArray[0].push(
 				`(oi.OEORI_RowID = REPLACE(''${id}'', ''-'', ''||''))`
 			);
 			break;
-		case 'patient':
+		case "patient":
 			whereArray[0].push(`(patmas.PAPMI_No = ''${id}'')`);
 			whereArray[1].push(`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`);
 			break;
@@ -53,7 +53,7 @@ try {
 	for (let index = 0; index < whereArray.length; index += 1) {
 		const element = whereArray[index];
 		if (element.length > 0) {
-			wherePredicates[index] = element.join(' AND ');
+			wherePredicates[index] = element.join(" AND ");
 		}
 	}
 
@@ -65,25 +65,25 @@ try {
 	while (result.next()) {
 		let data;
 		switch (`${type}`) {
-			case 'allergyintolerance':
+			case "allergyintolerance":
 				data = buildAllergyIntoleranceResource(result);
 				break;
-			case 'condition':
+			case "condition":
 				// data = buildConditionResource(result);
 				break;
-			case 'documentreference':
+			case "documentreference":
 				// data = buildDocumentReferenceResource(result);
 				break;
-			case 'encounter':
+			case "encounter":
 				data = buildEncounterResource(result);
 				break;
-			case 'flag':
+			case "flag":
 				data = buildFlagResource(result);
 				break;
-			case 'medicationstatement':
+			case "medicationstatement":
 				data = buildMedicationStatementResource(result);
 				break;
-			case 'patient':
+			case "patient":
 				data = buildPatientResource(result);
 				break;
 			default:
@@ -91,33 +91,33 @@ try {
 		}
 
 		// Hard coded version as we don't keep past versions of records, only one
-		const version = '1';
+		const version = "1";
 		const lastModified = new Date(
-			getResultSetString(result, 'lastUpdated')
+			getResultSetString(result, "lastUpdated")
 		);
 		const response = FhirResponseFactory.getReadResponse(
 			JSON.stringify(data),
 			version,
 			lastModified,
 			200,
-			'application/fhir+json'
+			"application/fhir+json"
 		);
-		responseMap.put('response', response);
+		responseMap.put("response", response);
 		return response.getMessage();
 	}
 	return createOperationOutcome(
-		'error',
-		'processing',
-		`${$('fhirType')} ID ${id} not found.`,
-		'STU3',
+		"error",
+		"processing",
+		`${$("fhirType")} ID ${id} not found.`,
+		"STU3",
 		404
 	);
 } catch (error) {
 	return createOperationOutcome(
-		'error',
-		'transient',
-		'Error reading resource.',
-		'STU3',
+		"error",
+		"transient",
+		"Error reading resource.",
+		"STU3",
 		500,
 		error
 	);

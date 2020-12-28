@@ -16,11 +16,11 @@ function buildMedicationStatementResource(data) {
 	var resource = {
 		meta: {
 			profile: [
-				'https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1'
-			]
+				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1",
+			],
 		},
 
-		resourceType: 'MedicationStatement'
+		resourceType: "MedicationStatement",
 	};
 
 	resource.id = newStringOrUndefined(result.medstatId);
@@ -29,8 +29,8 @@ function buildMedicationStatementResource(data) {
 	// Add meta data
 	if (
 		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != 'T' &&
-		result.lastUpdated.substring(0, 4) != '1900'
+		result.lastUpdated.substring(0, 1) != "T" &&
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
@@ -41,8 +41,8 @@ function buildMedicationStatementResource(data) {
 	 */
 	if (
 		result.medstatEffectiveStart != undefined &&
-		result.medstatEffectiveStart.substring(0, 1) != 'T' &&
-		result.medstatEffectiveStart.substring(0, 4) != '1900' &&
+		result.medstatEffectiveStart.substring(0, 1) != "T" &&
+		result.medstatEffectiveStart.substring(0, 4) != "1900" &&
 		Math.ceil(
 			(new Date(result.medstatEffectiveStart) - new Date()) /
 				(24 * 60 * 60 * 1000)
@@ -51,31 +51,31 @@ function buildMedicationStatementResource(data) {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'summary',
-				display: 'Display in Summary and Detail View'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "summary",
+				display: "Display in Summary and Detail View",
+			},
 		];
 	} else {
 		resource.meta.tag = [
 			{
 				system:
-					'https://fhir.blackpear.com/ui/shared-care-record-visibility',
-				code: 'none',
-				display: 'Do not Display'
-			}
+					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				code: "none",
+				display: "Do not Display",
+			},
 		];
 	}
 
 	resource.medicationReference = {
-		reference: newStringOrUndefined('#'.concat(result.medicationId))
+		reference: newStringOrUndefined("#".concat(result.medicationId)),
 	};
 
 	// Add contained Medication resource
 	var contained = [];
 	if (result.medicationId != undefined) {
 		var containedMedication = {
-			resourceType: 'Medication',
+			resourceType: "Medication",
 			id: result.medicationId,
 			code: {
 				coding: [
@@ -86,12 +86,12 @@ function buildMedicationStatementResource(data) {
 
 						display: newStringOrUndefined(
 							result.medicationCodeCodingDisplay
-						)
-					}
+						),
+					},
 				],
 
-				text: result.medicationCodeText
-			}
+				text: result.medicationCodeText,
+			},
 		};
 
 		contained.push(containedMedication);
@@ -101,7 +101,7 @@ function buildMedicationStatementResource(data) {
 			result.medicationCodeCodingDisplay != undefined
 		) {
 			containedMedication.code.coding[0].system =
-				'https://snomed.info/sct';
+				"https://snomed.info/sct";
 		}
 	}
 
@@ -117,8 +117,8 @@ function buildMedicationStatementResource(data) {
 		),
 
 		route: {
-			text: newStringOrUndefined(result.medstatDosageRouteText)
-		}
+			text: newStringOrUndefined(result.medstatDosageRouteText),
+		},
 	};
 
 	if (
@@ -129,13 +129,13 @@ function buildMedicationStatementResource(data) {
 			value: newStringOrUndefined(result.medstatDosageDoseQuantityValue),
 			unit: newStringOrUndefined(
 				result.medstatDosageDoseQuantityUnit
-			).toLowerCase()
+			).toLowerCase(),
 		};
 	}
 	if (
 		result.medstatDosageTimingRepeatDuration != undefined &&
 		result.medstatDosageTimingRepeatDurationUnit != undefined &&
-		result.medstatDosageTimingRepeatDurationUnit != 'DO'
+		result.medstatDosageTimingRepeatDurationUnit != "DO"
 	) {
 		dosageObject.timing = {
 			repeat: {
@@ -145,8 +145,8 @@ function buildMedicationStatementResource(data) {
 
 				durationUnit: newStringOrUndefined(
 					result.medstatDosageTimingRepeatDurationUnit
-				).toLowerCase()
-			}
+				).toLowerCase(),
+			},
 		};
 	}
 
@@ -158,35 +158,35 @@ function buildMedicationStatementResource(data) {
 	resource.effectivePeriod = {};
 	if (
 		result.medstatEffectiveStart != undefined &&
-		result.medstatEffectiveStart.substring(0, 1) != 'T' &&
-		result.medstatEffectiveStart.substring(0, 4) != '1900'
+		result.medstatEffectiveStart.substring(0, 1) != "T" &&
+		result.medstatEffectiveStart.substring(0, 4) != "1900"
 	) {
 		resource.effectivePeriod.start = result.medstatEffectiveStart;
 	}
 	if (
 		result.medstatEffectiveEnd != undefined &&
-		result.medstatEffectiveEnd.substring(0, 1) != 'T' &&
-		result.medstatEffectiveEnd.substring(0, 4) != '1900'
+		result.medstatEffectiveEnd.substring(0, 1) != "T" &&
+		result.medstatEffectiveEnd.substring(0, 4) != "1900"
 	) {
 		resource.effectivePeriod.end = result.medstatEffectiveEnd;
 	}
 
 	if (result.medStatContextEncounterReference != undefined) {
 		resource.context = {
-			reference: ''
-				.concat($cfg('apiUrl'), '/STU3/Encounter/')
-				.concat(result.medStatContextEncounterReference)
+			reference: ""
+				.concat($cfg("apiUrl"), "/STU3/Encounter/")
+				.concat(result.medStatContextEncounterReference),
 		};
 	}
 
 	resource.subject = {
-		reference: ''
-			.concat($cfg('apiUrl'), '/STU3/Patient/')
-			.concat(result.medstatSubjectReference)
+		reference: ""
+			.concat($cfg("apiUrl"), "/STU3/Patient/")
+			.concat(result.medstatSubjectReference),
 	};
 
 	// Hard-coded as TrakCare doesn't record whether a patient has taken medication
-	resource.taken = 'unk';
+	resource.taken = "unk";
 
 	return resource;
 }

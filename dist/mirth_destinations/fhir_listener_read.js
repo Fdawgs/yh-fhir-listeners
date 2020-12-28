@@ -3,24 +3,24 @@
  * @description Rewritten example FHIR read destination to be usable for TrakCare calls.
  */
 try {
-	var type = $('fhirType').toLowerCase();
-	var id = $('fhirId');
+	var type = $("fhirType").toLowerCase();
+	var id = $("fhirId");
 
 	// Turn array into multi-dimensional one to allow for up to four seperate WHERE clauses to be built
 	var whereArray = [[], [], [], []];
 
-	switch (''.concat(type)) {
-		case 'allergyintolerance':
+	switch ("".concat(type)) {
+		case "allergyintolerance":
 			whereArray[0].push(
 				"(alle.ALG_RowId = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
 
 			break;
-		case 'condition':
+		case "condition":
 			break;
-		case 'documentreference':
+		case "documentreference":
 			break;
-		case 'encounter':
+		case "encounter":
 			whereArray[0].push(
 				"(app.APPT_RowId = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
@@ -37,7 +37,7 @@ try {
 			);
 
 			break;
-		case 'flag':
+		case "flag":
 			whereArray[0].push(
 				"(alert.ALM_RowID = REPLACE(''".concat(
 					id,
@@ -46,13 +46,13 @@ try {
 			);
 
 			break;
-		case 'medicationstatement':
+		case "medicationstatement":
 			whereArray[0].push(
 				"(oi.OEORI_RowID = REPLACE(''".concat(id, "'', ''-'', ''||''))")
 			);
 
 			break;
-		case 'patient':
+		case "patient":
 			whereArray[0].push("(patmas.PAPMI_No = ''".concat(id, "'')"));
 			whereArray[1].push(
 				"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(id, "'')")
@@ -67,37 +67,37 @@ try {
 	for (var index = 0; index < whereArray.length; index += 1) {
 		var element = whereArray[index];
 		if (element.length > 0) {
-			wherePredicates[index] = element.join(' AND ');
+			wherePredicates[index] = element.join(" AND ");
 		}
 	}
 
 	logger.debug(
-		'SQL WHERE clause predicate(s): '.concat(wherePredicates.toString())
+		"SQL WHERE clause predicate(s): ".concat(wherePredicates.toString())
 	);
 
 	var result = buildResourceQuery(type, wherePredicates);
 	while (result.next()) {
 		var data = void 0;
-		switch (''.concat(type)) {
-			case 'allergyintolerance':
+		switch ("".concat(type)) {
+			case "allergyintolerance":
 				data = buildAllergyIntoleranceResource(result);
 				break;
-			case 'condition':
+			case "condition":
 				// data = buildConditionResource(result);
 				break;
-			case 'documentreference':
+			case "documentreference":
 				// data = buildDocumentReferenceResource(result);
 				break;
-			case 'encounter':
+			case "encounter":
 				data = buildEncounterResource(result);
 				break;
-			case 'flag':
+			case "flag":
 				data = buildFlagResource(result);
 				break;
-			case 'medicationstatement':
+			case "medicationstatement":
 				data = buildMedicationStatementResource(result);
 				break;
-			case 'patient':
+			case "patient":
 				data = buildPatientResource(result);
 				break;
 			default:
@@ -105,33 +105,33 @@ try {
 		}
 
 		// Hard coded version as we don't keep past versions of records, only one
-		var version = '1';
-		var lastModified = new Date(getResultSetString(result, 'lastUpdated'));
+		var version = "1";
+		var lastModified = new Date(getResultSetString(result, "lastUpdated"));
 
 		var response = FhirResponseFactory.getReadResponse(
 			JSON.stringify(data),
 			version,
 			lastModified,
 			200,
-			'application/fhir+json'
+			"application/fhir+json"
 		);
 
-		responseMap.put('response', response);
+		responseMap.put("response", response);
 		return response.getMessage();
 	}
 	return createOperationOutcome(
-		'error',
-		'processing',
-		''.concat($('fhirType'), ' ID ').concat(id, ' not found.'),
-		'STU3',
+		"error",
+		"processing",
+		"".concat($("fhirType"), " ID ").concat(id, " not found."),
+		"STU3",
 		404
 	);
 } catch (error) {
 	return createOperationOutcome(
-		'error',
-		'transient',
-		'Error reading resource.',
-		'STU3',
+		"error",
+		"transient",
+		"Error reading resource.",
+		"STU3",
 		500,
 		error
 	);
