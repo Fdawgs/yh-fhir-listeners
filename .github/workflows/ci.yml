@@ -20,7 +20,7 @@ jobs:
               with:
                   node-version: 14.x
             - name: Install
-              run: yarn --immutable
+              run: yarn --frozen-lockfile
             - name: Run ESLint
               run: yarn lint
             - name: Run Prettier
@@ -35,7 +35,7 @@ jobs:
               with:
                   node-version: 14.x
             - name: Install
-              run: yarn --immutable
+              run: yarn --frozen-lockfile
             - name: Run Babel
               run: yarn build
 
