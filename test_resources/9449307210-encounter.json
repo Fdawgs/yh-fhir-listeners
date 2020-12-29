@@ -37,7 +37,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -80,7 +80,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -123,7 +123,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -166,7 +166,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "502",
 								"display": "GYNAECOLOGY"
 							}
@@ -227,7 +227,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "502",
 								"display": "GYNAECOLOGY"
 							}
@@ -288,7 +288,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -349,7 +349,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -410,7 +410,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -471,7 +471,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -532,7 +532,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -593,7 +593,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -683,7 +683,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -726,7 +726,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "100",
 								"display": "GENERAL SURGERY"
 							}
@@ -816,7 +816,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "130",
 								"display": "OPHTHALMOLOGY"
 							}
@@ -906,7 +906,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "101",
 								"display": "UROLOGY"
 							}
@@ -996,7 +996,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "400",
 								"display": "NEUROLOGY"
 							}
@@ -1057,7 +1057,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "301",
 								"display": "GASTROENTEROLOGY"
 							}
@@ -1100,7 +1100,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "301",
 								"display": "GASTROENTEROLOGY"
 							}
@@ -1143,7 +1143,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -1204,7 +1204,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -1265,7 +1265,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -1326,7 +1326,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "104",
 								"display": "COLORECTAL SURGERY"
 							}
@@ -1387,7 +1387,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "101",
 								"display": "UROLOGY"
 							}
@@ -1448,7 +1448,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "101",
 								"display": "UROLOGY"
 							}
@@ -1509,7 +1509,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "101",
 								"display": "UROLOGY"
 							}
@@ -1570,7 +1570,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "101",
 								"display": "UROLOGY"
 							}
@@ -1631,7 +1631,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -1674,7 +1674,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -1717,7 +1717,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -1760,7 +1760,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -1803,7 +1803,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -1846,7 +1846,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "840",
 								"display": "AUDIOLOGY"
 							}
@@ -2035,7 +2035,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "007",
 								"display": "Z -NON-CONSULTANT"
 							}
@@ -2096,7 +2096,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "007",
 								"display": "Z -NON-CONSULTANT"
 							}
@@ -2157,7 +2157,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "007",
 								"display": "Z -NON-CONSULTANT"
 							}
@@ -2218,7 +2218,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2279,7 +2279,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "130",
 								"display": "OPHTHALMOLOGY"
 							}
@@ -2340,7 +2340,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "130",
 								"display": "OPHTHALMOLOGY"
 							}
@@ -2692,7 +2692,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -2715,7 +2715,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -2873,7 +2873,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -2896,7 +2896,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -3064,7 +3064,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -3087,7 +3087,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -3255,7 +3255,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -3278,7 +3278,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -3436,7 +3436,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "301",
 								"display": "GASTROENTEROLOGY"
 							}
@@ -3459,7 +3459,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "301",
 								"display": "GASTROENTEROLOGY"
 							}
@@ -3617,7 +3617,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
@@ -3640,7 +3640,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "300",
 								"display": "GENERAL MEDICINE"
 							}
