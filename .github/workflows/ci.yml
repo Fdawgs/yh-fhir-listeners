@@ -43,6 +43,7 @@ jobs:
 
     automerge:
         name: Automatically merge Dependabot pull requests
+        if: github.event.pull_request.draft == false
         needs: [lint, build]
         runs-on: ubuntu-latest
         steps:
