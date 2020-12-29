@@ -37,7 +37,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -80,7 +80,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -123,7 +123,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -166,7 +166,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "658",
 								"display": "ORTHOTICS"
 							}
@@ -223,7 +223,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -246,7 +246,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -404,7 +404,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -427,7 +427,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -571,7 +571,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -632,7 +632,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -707,7 +707,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -730,7 +730,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -888,7 +888,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -911,7 +911,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -1055,7 +1055,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1116,7 +1116,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1159,7 +1159,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1202,7 +1202,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1245,7 +1245,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1288,7 +1288,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1349,7 +1349,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1410,7 +1410,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1471,7 +1471,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -1532,7 +1532,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "107",
 								"display": "VASCULAR SURGERY"
 							}
@@ -1593,7 +1593,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "651",
 								"display": "OCCUPATIONAL THERAPY"
 							}
@@ -1636,7 +1636,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "651",
 								"display": "OCCUPATIONAL THERAPY"
 							}
@@ -1679,7 +1679,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -1722,7 +1722,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -1765,7 +1765,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -1808,7 +1808,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -1851,7 +1851,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -1912,7 +1912,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -1973,7 +1973,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -2034,7 +2034,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "330",
 								"display": "DERMATOLOGY"
 							}
@@ -2095,7 +2095,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -2138,7 +2138,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -2181,7 +2181,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "658",
 								"display": "ORTHOTICS"
 							}
@@ -2224,7 +2224,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2285,7 +2285,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2346,7 +2346,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2407,7 +2407,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2450,7 +2450,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -2493,7 +2493,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2554,7 +2554,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2615,7 +2615,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2676,7 +2676,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2737,7 +2737,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2798,7 +2798,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2859,7 +2859,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2920,7 +2920,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "190",
 								"display": "ANAESTHETICS"
 							}
@@ -2981,7 +2981,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3024,7 +3024,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "650",
 								"display": "PHYSIOTHERAPY"
 							}
@@ -3135,7 +3135,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "007",
 								"display": "Z -NON-CONSULTANT"
 							}
@@ -3196,7 +3196,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3257,7 +3257,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3318,7 +3318,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3379,7 +3379,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3440,7 +3440,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3501,7 +3501,7 @@
 					{
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA AND ORTHOPAEDICS"
 							}
@@ -3675,7 +3675,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -3698,7 +3698,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "110",
 								"display": "TRAUMA and ORTHOPAEDICS"
 							}
@@ -3856,7 +3856,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -3879,7 +3879,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "430",
 								"display": "GERIATRIC MEDICINE"
 							}
@@ -4037,7 +4037,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "100",
 								"display": "GENERAL SURGERY"
 							}
@@ -4060,7 +4060,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "100",
 								"display": "GENERAL SURGERY"
 							}
@@ -4218,7 +4218,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "100",
 								"display": "GENERAL SURGERY"
 							}
@@ -4241,7 +4241,7 @@
 						],
 						"coding": [
 							{
-								"system": "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+								"system": "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 								"code": "100",
 								"display": "GENERAL SURGERY"
 							}

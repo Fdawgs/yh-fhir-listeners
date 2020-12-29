@@ -93,7 +93,7 @@ function buildEncounterResource(data) {
 	const emptyType = {
 		coding: [
 			{
-				system: "https://fhir.nhs.uk/STU3/CodeSystem/DCH-Specialty-1",
+				system: "https://fhir.nhs.uk/STU3/CodeSystem/Specialty-1",
 				code: undefined,
 				display: undefined,
 			},
