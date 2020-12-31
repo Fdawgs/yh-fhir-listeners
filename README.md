@@ -1,3 +1,5 @@
+<img alttext="Yeovil District Hospital Logo" src="https://yeovilhospital.co.uk/wp-content/uploads/2017/03/Yeovil_Hospital_Logo.jpg" width="480" />
+
 # Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener Endpoints
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/) ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master) [![Known Vulnerabilities](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners/badge.svg)](https://snyk.io/test/github/Fdawgs/ydh-fhir-listeners) [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat-square)](https://github.com/prettier/prettier)
@@ -20,7 +22,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/about-us/digital-projects/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Stakeholders (as of 2020-11-24) are:
+Stakeholders (as of 2020-12-31) are:
 
 -   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
@@ -66,7 +68,7 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (v3.10.0)
 
 ## Known issues and caveats
 
-Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints, and how searches can be performed.
+Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints and how searches can be performed.
 
 ### Data quality
 
