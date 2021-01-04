@@ -1,3 +1,27 @@
+## 3.2.0 (2021-01-04)
+
+-   build: update github-actions with dependabot ([fa48dd3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa48dd3))
+-   build(deps-dev): bump eslint from 7.16.0 to 7.17.0 (#109) ([035bb68](https://github.com/Fdawgs/ydh-fhir-listeners/commit/035bb68)), closes [#109](https://github.com/Fdawgs/ydh-fhir-listeners/issues/109)
+-   build(deps-dev): bump eslint-plugin-jsdoc from 30.7.9 to 30.7.13 (#110) ([ff78661](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ff78661)), closes [#110](https://github.com/Fdawgs/ydh-fhir-listeners/issues/110)
+-   build(deps-dev): remove eslint-plugin-json ([e086d0a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e086d0a))
+-   build(deps): bump fastify/github-action-merge-dependabot (#104) ([8cce0b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8cce0b8)), closes [#104](https://github.com/Fdawgs/ydh-fhir-listeners/issues/104)
+-   chore: remove old .env files from gitignore ([4ba1611](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4ba1611))
+-   ci: do not run github actions for draft prs ([5651def](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5651def))
+-   ci: refactor `codeql-analysis.yml` ([3890db1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3890db1))
+-   ci: use yarn `--frozen-lockfile` flag for repro deps ([992cf4f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/992cf4f))
+-   ci: use yarn cache of node dependencies if present ([82c1b08](https://github.com/Fdawgs/ydh-fhir-listeners/commit/82c1b08))
+-   ci(codeql): specify more query suites ([6255af1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6255af1))
+-   docs: fix broken links ([8c240fc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8c240fc))
+-   docs(readme): add acknowledgements section ([3400506](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3400506))
+-   docs(readme): add ydh logo ([dd6b112](https://github.com/Fdawgs/ydh-fhir-listeners/commit/dd6b112))
+-   docs(readme): add ydh staff to acknowledgements section ([bab73aa](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bab73aa))
+-   docs(readme): grammar fix ([7a4dea6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7a4dea6))
+-   docs(readme): remove excess build information ([43abddf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/43abddf))
+-   feat(encounter-res): add expected/planned discharge datetimes ([90b2c34](https://github.com/Fdawgs/ydh-fhir-listeners/commit/90b2c34))
+-   fix(encounter-res): correct specialty system url ([b8dc489](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b8dc489))
+-   style: use default prettier options for trailing commas and quotes ([62dda75](https://github.com/Fdawgs/ydh-fhir-listeners/commit/62dda75))
+-   style(ci): add missing draft pr catch ([87960d0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87960d0))
+
 ## <small>3.1.2 (2020-12-21)</small>
 
 -   fix(encounter-res): merge admitting and discharging location if same ([6a3ad57](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6a3ad57))

@@ -113,8 +113,8 @@ Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/m
 -   [**Dunmail Hodkinson**](https://github.com/Dunmail) (BP) - HL7 FHIR STU3 specification adherence and best practices advice
 -   **George Dampier (YDH)** - MedicationStatement FHIR resources advice
 -   **Jessica Male (YDH)** - TrakCare frontend advice
--   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - Optimising SQL queries
--   **Nicolas Noblet (YDH)** - Optimising SQL queries, TrakCare database table structure advice
+-   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - SQL query optimisation
+-   **Nicolas Noblet (YDH)** - SQL query optimisation, TrakCare database table structure advice
 -   [**Will Jehring**](https://github.com/wjehring) (BP) - HL7 FHIR STU3 specification adherence advice
 
 ## License
