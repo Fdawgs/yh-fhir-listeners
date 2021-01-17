@@ -4,13 +4,17 @@
 	"description": "Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)",
 	"main": "index.js",
 	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
-	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
+	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners",
+	"bugs": {
+		"url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
+	},
 	"license": "MIT",
+	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"engines": {
 		"node": ">=10.22.0"
 	},
 	"scripts": {
-		"build": "babel src --out-dir dist --ignore \"src/sql/\" && yarn lint:prettier",
+		"build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
 		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
 		"lint:prettier": "prettier . --write --ignore-path .gitignore",

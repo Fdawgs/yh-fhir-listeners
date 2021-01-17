@@ -52,7 +52,6 @@ A contextual link needs to be added to our PAS to allow care providers access to
 -   Latest release of the Mirth Connect [FHIR Connector extension](http://downloads.mirthcorp.com/fhir/3.10.0/fhir-3.10.0.b1356.zip)
 -   Latest release of [ydh-authentication-service](https://github.com/Fdawgs/ydh-authentication-service) (for securing endpoints with HTTPs, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) (optional, for development)
--   [Yarn](https://classic.yarnpkg.com) (optional, for development)
 
 ## Deployment
 
