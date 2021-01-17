@@ -15,9 +15,9 @@ Other processes and specifications that are in use in this repository are:
 
 ## Getting Started
 
-As noted in the prerequisites section of the readme file, this project requires that you have Node.js, Yarn, and Mirth Connect installed for development.
+As noted in the prerequisites section of the readme file, this project requires that you have Node.js and Mirth Connect installed for development.
 
-With those in place, you can fork the repository, clone it, and then run `yarn install` to install all development dependencies.
+With those in place, you can fork the repository, clone it, and then run `npm install` to install all development dependencies.
 
 ### Development Workflow
 
@@ -28,7 +28,7 @@ The channel code is transcompiled to be backwards compatible with Mirth Connect 
 The workflow steps are as follows:
 
 1. Alter files in /src
-2. Run `yarn build` to migrate files from `/src` to `/dist` and transcompile the changes
+2. Run `npm run build` to migrate files from `/src` to `/dist` and transcompile the changes
 3. Copy code from `/dist` into Mirth Connect channel and test in Mirth
 
 ## Pull Request Checklist
@@ -36,8 +36,8 @@ The workflow steps are as follows:
 Prior to submitting a pull request back to the main repository, please make sure you have completed the following steps:
 
 1. Pull request base branch is set to `master`. All pull requests should be forked from and merged back to `master`
-2. Run `yarn lint` to check the code adheres to the defined style and has no errors
-3. Run `yarn lint:prettier` to run the Prettier code formatter over the code
+2. Run `npm run lint` to check the code adheres to the defined style and has no errors
+3. Run `npm run lint:prettier` to run the Prettier code formatter over the code
 
 ## Release process
 
@@ -45,7 +45,7 @@ When cutting a release, the following steps need to be performed:
 
 1. Create a release branch with the convention `release/x.x.x`
 2. Both `package.json` and `dist/CapabilityStatement.xml` needs to have a version update based on the content being released, remembering to adhere to semantic versioning
-3. Generate the changelog with `yarn changelog`
+3. Generate the changelog with `npm run changelog`
 4. Create a tag for the version; the naming convention is the version (vx.x.x)
 5. Push the tag to the repository
 6. Draft a release in the release tab with release notes, copying the notes from the changelog
