@@ -37,6 +37,8 @@ jobs:
               run: npm run lint
             - name: Run Prettier
               run: npm run lint:prettier:ci
+            - name: Run Lockfile Linter
+              run: npx lockfile-lint --path package-lock.json --type npm --allowed-hosts npm --validate-https
 
     build:
         name: Build
