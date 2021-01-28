@@ -1,3 +1,23 @@
+## <small>3.2.1 (2021-01-28)</small>
+
+-   build: add typoci config file ([ee3c451](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ee3c451))
+-   build: remove `yarn` as package manager, revert to `npm` ([6fc6490](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6fc6490))
+-   build(deps-dev): bump eslint-config-prettier from 7.1.0 to 7.2.0 (#114) ([169f405](https://github.com/Fdawgs/ydh-fhir-listeners/commit/169f405)), closes [#114](https://github.com/Fdawgs/ydh-fhir-listeners/issues/114)
+-   build(deps-dev): bump eslint-plugin-jsdoc from 30.7.13 to 31.4.0 (#115) ([e32b09b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e32b09b)), closes [#115](https://github.com/Fdawgs/ydh-fhir-listeners/issues/115)
+-   style(ci): capitalise jobs and job step names ([4b0f558](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4b0f558))
+-   style(docs): capitalise headings correctly ([79c60e1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/79c60e1))
+-   style(readme): prettier badge shape ([5acf932](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5acf932))
+-   docs: bump coc from v1.4.0 to v2.0.0 ([4f7f2c2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4f7f2c2))
+-   docs: update link to auth service ([51d3974](https://github.com/Fdawgs/ydh-fhir-listeners/commit/51d3974))
+-   docs(readme): update acknowledgements section ([144d87c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/144d87c))
+-   docs(readme): update yarn link ([4cafb56](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4cafb56))
+-   chore: add pull request template ([b2ea07b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b2ea07b))
+-   chore(package): add homepage and bug urls ([87c2ddb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87c2ddb))
+-   ci: cache on `node-version` as well as `os` ([42d652f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/42d652f))
+-   ci: lint lockfile ([9a65be7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9a65be7))
+-   ci: remove redundant javascript dictionary ([15e5fd3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15e5fd3))
+-   ci(typo-ci): add `ydh` to list of excluded words ([80befee](https://github.com/Fdawgs/ydh-fhir-listeners/commit/80befee))
+
 ## 3.2.0 (2021-01-04)
 
 -   build: update github-actions with dependabot ([fa48dd3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa48dd3))
