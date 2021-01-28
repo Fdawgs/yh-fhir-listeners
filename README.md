@@ -6,7 +6,7 @@
 
 > Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems TrakCare PAS (v2020)
 
-## Introduction
+## Intro
 
 ### Purpose
 
@@ -36,7 +36,7 @@ Stakeholders (as of 2020-12-31) are:
 
 ### Deliverables
 
-#### Care Connect RESTful FHIR API endpoints
+#### Care Connect RESTful FHIR API Endpoints
 
 Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
@@ -65,11 +65,11 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (v3.10.0)
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
-## Known issues and caveats
+## Known Issues and Caveats
 
 Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints and how searches can be performed.
 
-### Data quality
+### Data Quality
 
 -   AllergyIntolerance resources:
     -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
@@ -93,7 +93,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
     -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (NHS Data Dictionary coding is provided however)
     -   Sizeable number of patient records without postcodes
 
-### Search caveats
+### Search Caveats
 
 -   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long running SQL queries:
     -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error
@@ -107,14 +107,14 @@ Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/m
 
 ## Acknowledgements
 
--   **Anthony Smith (YDH)**- Logo design
--   **David Suckling (YDH)** - TrakCare database table structure and frontend advice
+-   **Anthony Smith** (YDH)- Logo design
+-   **David Suckling** (YDH) - TrakCare database table structure and frontend advice
 -   [**Dunmail Hodkinson**](https://github.com/Dunmail) (BP) - HL7 FHIR STU3 specification adherence and best practices advice
--   **George Dampier (YDH)** - MedicationStatement FHIR resources advice
--   **Jessica Male (YDH)** - TrakCare frontend
+-   **George Dampier** (YDH) - MedicationStatement FHIR resources advice
+-   **Jessica Male** (YDH) - TrakCare frontend
 -   [**Julian Matthews**](https://github.com/NHS-juju) (SFT) - Bug reports
 -   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - SQL query optimisation
--   **Nicolas Noblet (YDH)** - SQL query optimisation, TrakCare database table structure advice
+-   **Nicolas Noblet** (YDH) - SQL query optimisation, TrakCare database table structure advice
 -   [**Will Jehring**](https://github.com/wjehring) (BP) - HL7 FHIR STU3 specification adherence advice
 
 ## License
