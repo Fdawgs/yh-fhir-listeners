@@ -15,7 +15,7 @@
 
 This repo outlines the steps that have been taken to provide the technical deliverables required by the SIDeR programme, alongside the issues that were encountered during development, and how to deploy the resulting Mirth Connect channel.
 
-Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/docs/worklogs).
+Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](./docs/worklogs).
 
 The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems.
 
@@ -43,7 +43,7 @@ Stakeholders (as of 2020-12-31) are:
 
 Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
-Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
+Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](./docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
 #### Contextual Link
 
@@ -64,7 +64,7 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (v3.10.0)
 
 1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
 2. Install the FHIR Connector extension from the file system
-3. Import the FHIR Listener channel from [dist](https://github.com/Fdawgs/ydh-fhir-listeners/tree/master/dist) into Mirth Connect
+3. Import the FHIR Listener channel from [dist](./dist) into Mirth Connect
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
@@ -106,7 +106,7 @@ This is due to YDH not having direct control over the underlying databases of th
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/CONTRIBUTING.md) for more details regarding contributing to this project.
+Please see [CONTRIBUTING.md](./CONTRIBUTING) for more details regarding contributing to this project.
 
 ## Acknowledgements
 
@@ -122,4 +122,4 @@ Please see [CONTRIBUTING.md](https://github.com/Fdawgs/ydh-fhir-listeners/blob/m
 
 ## License
 
-`ydh-fhir-listeners` is licensed under the [MIT](https://github.com/Fdawgs/ydh-fhir-listeners/blob/master/LICENSE) license.
+`ydh-fhir-listeners` is licensed under the [MIT](./LICENSE) license.
