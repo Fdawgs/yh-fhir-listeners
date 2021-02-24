@@ -15,7 +15,7 @@
 
 This repo outlines the steps that have been taken to provide the technical deliverables required by the SIDeR programme, alongside the issues that were encountered during development, and how to deploy the resulting Mirth Connect channel.
 
-Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](./docs/worklogs).
+Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](./docs/worklogs/).
 
 The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems.
 
@@ -34,7 +34,7 @@ Stakeholders (as of 2020-12-31) are:
 -   [Somerset County Council](https://www.somerset.gov.uk/) (SCC)
 -   [Somerset NHS Foundation Trust](https://www.somersetft.nhs.uk/) (SFT)
 -   [South Western Ambulance Service NHS Foundation Trust](https://www.swast.nhs.uk/) (SWASFT)
--   [St Margaret’s Hospice](https://www.somerset-hospice.org.uk/) (SMH)
+-   [St Margaret’s Hospice](https://www.st-margarets-hospice.org.uk/) (SMH)
 -   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
 
 ### Deliverables
@@ -64,7 +64,7 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (v3.10.0)
 
 1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
 2. Install the FHIR Connector extension from the file system
-3. Import the FHIR Listener channel from [dist](./dist) into Mirth Connect
+3. Import the FHIR Listener channel from [dist](./dist/FHIRListener.xml) into Mirth Connect
 4. Declare variables listed in the channel description, in the configuration map
 5. Deploy channel
 
@@ -106,7 +106,7 @@ This is due to YDH not having direct control over the underlying databases of th
 
 ## Contributing
 
-Please see [CONTRIBUTING.md](./CONTRIBUTING) for more details regarding contributing to this project.
+Please see [CONTRIBUTING.md](./CONTRIBUTING.md) for more details regarding contributing to this project.
 
 ## Acknowledgements
 
