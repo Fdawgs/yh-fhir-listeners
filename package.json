@@ -15,9 +15,8 @@
 	},
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
-		"changelog": "conventional-changelog -p @commitlint/config-conventional -s -i CHANGELOG.md && prettier CHANGELOG.md --write",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
-		"lint:prettier": "prettier . --write --ignore-path .gitignore",
+		"lint:prettier": "prettier \"**/!(CHANGELOG.md|package.json)\" --write --ignore-path .gitignore --ignore-unknown",
 		"lint:prettier:ci": "prettier . --check --ignore-path .gitignore"
 	},
 	"commitlint": {
@@ -44,7 +43,6 @@
 		"@babel/preset-env": "^7.12.16",
 		"@commitlint/cli": "^11.0.0",
 		"@commitlint/config-conventional": "^11.0.0",
-		"conventional-changelog-cli": "^2.1.1",
 		"eslint": "^7.20.0",
 		"eslint-config-airbnb-base": "^14.2.1",
 		"eslint-config-prettier": "^7.2.0",
