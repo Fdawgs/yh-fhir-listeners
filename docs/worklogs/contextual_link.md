@@ -25,7 +25,7 @@ Will Jehring provided test records from Black Pear on 2018-11-28, which were the
 
 An existing contextual link in the test environment was repurposed to test the contextual link for the test records but had some issues due to TrakCare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
 
-This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in ISO 8601 format (YYYY-MM-DD) but was in DD/MM/YY format.
+This was eventually resolved on 2019-02-05 with the help of Will Jehring, only for the test environment to be upgraded by InterSystems the following week, breaking the contextual link DateOfBirth parameter. The parameter needs to be in RFC 3339 format (YYYY-MM-DD) but was in DD/MM/YY format.
 
 It was not until 2019-09-13 that this was finally added to our test environment of TrakCare, but still was not working as intended.
 On 2019-10-11, this was fixed.
