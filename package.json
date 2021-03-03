@@ -16,8 +16,8 @@
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
-		"lint:prettier": "prettier \"**/!(CHANGELOG.md|package.json)\" --write --ignore-path .gitignore --ignore-unknown",
-		"lint:prettier:ci": "prettier . --check --ignore-path .gitignore"
+		"lint:prettier": "prettier . --write --ignore-unknown",
+		"lint:prettier:ci": "prettier . --check --ignore-unknown"
 	},
 	"commitlint": {
 		"extends": [
@@ -29,12 +29,6 @@
 			"commit-msg": "commitlint -E HUSKY_GIT_PARAMS",
 			"pre-push": "npm run lint:prettier:ci"
 		}
-	},
-	"prettier": {
-		"endOfLine": "lf",
-		"semi": true,
-		"tabWidth": 4,
-		"useTabs": true
 	},
 	"devDependencies": {
 		"@babel/cli": "^7.13.0",
