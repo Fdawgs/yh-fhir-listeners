@@ -1,4 +1,8 @@
-## <small>3.2.1 (2021-01-28)</small>
+# Changelog
+
+All notable changes to this project will be documented in this file.
+
+### 3.2.1 (2021-01-28)
 
 -   build: add typoci config file ([ee3c451](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ee3c451))
 -   build: remove `yarn` as package manager, revert to `npm` ([6fc6490](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6fc6490))
@@ -42,7 +46,7 @@
 -   style: use default prettier options for trailing commas and quotes ([62dda75](https://github.com/Fdawgs/ydh-fhir-listeners/commit/62dda75))
 -   style(ci): add missing draft pr catch ([87960d0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87960d0))
 
-## <small>3.1.2 (2020-12-21)</small>
+### 3.1.2 (2020-12-21)
 
 -   fix(encounter-res): merge admitting and discharging location if same ([6a3ad57](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6a3ad57))
 -   build(deps-dev): bump @babel/cli from 7.12.8 to 7.12.10 ([918d4f5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/918d4f5))
@@ -64,7 +68,7 @@
 -   docs(readme): state hospital's full name ([685ccbf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/685ccbf))
 -   [ImgBot] Optimize images ([492ef57](https://github.com/Fdawgs/ydh-fhir-listeners/commit/492ef57))
 
-## <small>3.1.1 (2020-12-01)</small>
+### 3.1.1 (2020-12-01)
 
 -   docs(security): remove backticks ([3c06a2d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3c06a2d))
 -   fix(encounter-res): double equals ([2a25ef3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2a25ef3))
@@ -80,17 +84,17 @@
 -   feat(listeners): support multiple search params to allergyint resources ([95ad5fd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/95ad5fd))
 -   fix(listeners): add `type` to accepted encounter search params ([eff5c23](https://github.com/Fdawgs/ydh-fhir-listeners/commit/eff5c23))
 
-## <small>3.0.3 (2020-11-25)</small>
+### 3.0.3 (2020-11-25)
 
 -   fix(listeners): encounter search params ([0baf773](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0baf773))
 
-## <small>3.0.2 (2020-11-25)</small>
+### 3.0.2 (2020-11-25)
 
 -   fix(listeners): date search params ([12549a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/12549a2))
 -   fix(listeners): param key checks ([87bffbd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87bffbd))
 -   fix(listeners): remaining search params ([f558e1c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f558e1c))
 
-## <small>3.0.1 (2020-11-25)</small>
+### 3.0.1 (2020-11-25)
 
 -   build(deps-dev): bump dev dependencies ([582a758](https://github.com/Fdawgs/ydh-fhir-listeners/commit/582a758))
 -   fix(medicationstatement-res): change tag predicates ([2329c40](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2329c40))
@@ -124,7 +128,7 @@
 -   feat(encounter-res): add sider specific meta tags ([72e347c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/72e347c))
 -   feat(flag-res): add sider specific meta tags ([55f4814](https://github.com/Fdawgs/ydh-fhir-listeners/commit/55f4814))
 
-## <small>2.7.3 (2020-11-18)</small>
+### 2.7.3 (2020-11-18)
 
 -   chore: convert channel to target mirth connect v3.10.0 ([00159da](https://github.com/Fdawgs/ydh-fhir-listeners/commit/00159da))
 -   style: fix build name ([f76f444](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f76f444))
@@ -134,12 +138,12 @@
 -   ci: clean up config ([19d819b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/19d819b))
 -   ci: replace travis-ci with github actions ([44e6888](https://github.com/Fdawgs/ydh-fhir-listeners/commit/44e6888))
 
-## <small>2.7.2 (2020-11-02)</small>
+### 2.7.2 (2020-11-02)
 
 -   fix(listeners): unescape system part of [system]|[code] search params ([8f6f588](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8f6f588))
 -   docs(readme): capitalise beginning of sentence ([ad8ee3e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ad8ee3e))
 
-## <small>2.7.1 (2020-11-01)</small>
+### 2.7.1 (2020-11-01)
 
 -   build(deps-dev): bump dev dependencies ([be4d993](https://github.com/Fdawgs/ydh-fhir-listeners/commit/be4d993))
 -   docs(readme): change 'shareholder' to correct 'stakeholder' ([4a181c1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4a181c1))
@@ -154,7 +158,7 @@
 -   feat(patient-res): add nhs communication extension ([302798a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/302798a))
 -   feat(patient-res): add religious affiliation extension ([6457c45](https://github.com/Fdawgs/ydh-fhir-listeners/commit/6457c45))
 
-## <small>2.6.3 (2020-10-14)</small>
+### 2.6.3 (2020-10-14)
 
 -   docs: replace xlsx with ods file ([18556f8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/18556f8))
 -   chore: convert channel to target mirth connect v3.9.1 ([58880c5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/58880c5))
@@ -163,7 +167,7 @@
 -   perf(listeners): reduce response time for read requests ([223b5e1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/223b5e1))
 -   refactor(listeners): specify resource type in error message ([e54389b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e54389b))
 
-## <small>2.6.2 (2020-10-05)</small>
+### 2.6.2 (2020-10-05)
 
 -   refactor(listeners): declare fhir standard in operationoutcome ([70d2d2f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/70d2d2f))
 -   refactor(listeners): read functionality to have same style as search ([15d04bf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15d04bf))
@@ -176,7 +180,7 @@
 -   fix(templates): add support for nchar and char columntypes ([9fa7a7b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9fa7a7b))
 -   docs: spelling and grammar fixes ([44e4de4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/44e4de4))
 
-## <small>2.6.1 (2020-10-01)</small>
+### 2.6.1 (2020-10-01)
 
 -   docs: add data quality issue section ([c0483a2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c0483a2))
 -   docs(contributing): correct eslintrc file extension reference ([4afcfe2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4afcfe2))
@@ -212,7 +216,7 @@
 -   style(resources): tidy comments and whitespace ([173f9d3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/173f9d3))
 -   docs: fix uri structure ([4bf6f62](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4bf6f62))
 
-## <small>2.5.2 (2020-09-24)</small>
+### 2.5.2 (2020-09-24)
 
 -   docs: correct link to auth service ([1b78111](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1b78111))
 -   docs(readme): add snyk badge ([48363dd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/48363dd))
@@ -227,7 +231,7 @@
 -   build(deps-dev): bump dev dependencies ([e07b7a7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e07b7a7))
 -   style: tidy jsdoc tags ([a2cee0c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a2cee0c))
 
-## <small>2.5.1 (2020-08-28)</small>
+### 2.5.1 (2020-08-28)
 
 -   build(deps-dev): bump dev dependencies ([05b7bee](https://github.com/Fdawgs/ydh-fhir-listeners/commit/05b7bee))
 -   refactor(patient): remove restricted patient table join bottleneck ([4f365bc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4f365bc))
@@ -240,7 +244,7 @@
 -   feat(patient): add address-postalcode search param ([f29af71](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f29af71))
 -   build(deps-dev): bump dev dependencies to resolve security cve ([2cf3b7b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2cf3b7b))
 
-## <small>2.4.1 (2020-07-27)</small>
+### 2.4.1 (2020-07-27)
 
 -   build(deps-dev): bump dev dependencies ([39d4052](https://github.com/Fdawgs/ydh-fhir-listeners/commit/39d4052))
 -   build(travis): add osx image ([e70dcd4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e70dcd4))
@@ -267,7 +271,7 @@
 -   feat(patient): add care connect ethnicity coding support ([becd830](https://github.com/Fdawgs/ydh-fhir-listeners/commit/becd830))
 -   docs(readme): replace tst and sompar with new sft ([0b18629](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0b18629))
 
-## <small>2.3.7 (2020-06-30)</small>
+### 2.3.7 (2020-06-30)
 
 -   chore: create code_of_conduct.md ([ed76036](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed76036))
 -   chore(eslint): convert from json to js file format ([f6c9b06](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f6c9b06))
@@ -281,7 +285,7 @@
 -   Create Dependabot config file ([567824d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/567824d))
 -   style: add whitespace ([eb6f9cb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/eb6f9cb))
 
-## <small>2.3.6 (2020-06-01)</small>
+### 2.3.6 (2020-06-01)
 
 -   build(deps-dev): bump @babel/cli from 7.8.4 to 7.10.1 ([1d7faf5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1d7faf5))
 -   build(deps-dev): bump @babel/core from 7.9.6 to 7.10.2 ([75545d9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/75545d9))
@@ -293,7 +297,7 @@
 -   chore(package): set minimum engine version ([17b7633](https://github.com/Fdawgs/ydh-fhir-listeners/commit/17b7633))
 -   docs(contributing): update conventional commit link to latest version ([8e998b9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8e998b9))
 
-## <small>2.3.5 (2020-05-01)</small>
+### 2.3.5 (2020-05-01)
 
 -   chore: convert channel to be compatible with mirth connect v3.9.0 ([b2c205b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b2c205b))
 -   build(deps-dev): bump @babel/core from 7.9.0 to 7.9.6 ([72b929a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/72b929a))
@@ -304,7 +308,7 @@
 -   fix: add missing read support for flag resources ([5eab8bb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5eab8bb))
 -   fix: read for patient resources that were showing all as restricted ([9b370b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9b370b8))
 
-## <small>2.3.4 (2020-04-06)</small>
+### 2.3.4 (2020-04-06)
 
 -   chore: prep release ([fcba033](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fcba033))
 -   chore: rebuild with retained lines ([e3e8fc4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e3e8fc4))
@@ -313,7 +317,7 @@
 -   docs: grammar and spelling fixes ([da318b0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/da318b0))
 -   docs(readme): correct section sizes ([f06ca59](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f06ca59))
 
-## <small>2.3.3 (2020-03-27)</small>
+### 2.3.3 (2020-03-27)
 
 -   style: parse with new prettier version ([313fba1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/313fba1))
 -   chore: add covid-19 test patient ([9e8bb4e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9e8bb4e))
@@ -328,12 +332,12 @@
 -   docs(flag): update covid-19 entries ([42a5d0b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/42a5d0b))
 -   feat(flag-res): tidy snomed table sql; add covid-19 values ([d2e3400](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d2e3400))
 
-## <small>2.3.2 (2020-03-16)</small>
+### 2.3.2 (2020-03-16)
 
 -   chore(security): update dependencies ([d37748a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d37748a))
 -   build(deps-dev): bump eslint-plugin-json from 2.1.0 to 2.1.1 ([884f2f2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/884f2f2))
 
-## <small>2.3.1 (2020-03-12)</small>
+### 2.3.1 (2020-03-12)
 
 -   style: change whitespace indents ([b9f753d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b9f753d))
 -   fix(read): correct misspelled variable ([345f134](https://github.com/Fdawgs/ydh-fhir-listeners/commit/345f134))
@@ -354,7 +358,7 @@
 -   fix(patient-res): change contact.name from array to object ([fe1ca5f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fe1ca5f))
 -   docs(flag): add coronavirus / Covid-19 flag code ([52fb8f8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/52fb8f8))
 
-## <small>2.2.1 (2020-02-05)</small>
+### 2.2.1 (2020-02-05)
 
 -   fix(patient-res): correct name of gp display column ([8de1e5c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8de1e5c))
 -   fix(res-query): fix case of column name ([4ff1a92](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4ff1a92))
