@@ -16,8 +16,8 @@
 	"scripts": {
 		"build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
-		"lint:prettier": "prettier \"**/!(CHANGELOG.md|package.json)\" --write --ignore-path .gitignore --ignore-unknown",
-		"lint:prettier:ci": "prettier . --check --ignore-path .gitignore"
+		"lint:prettier": "prettier . --write --ignore-unknown",
+		"lint:prettier:ci": "prettier . --check --ignore-unknown"
 	},
 	"commitlint": {
 		"extends": [
