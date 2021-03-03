@@ -30,12 +30,6 @@
 			"pre-push": "npm run lint:prettier:ci"
 		}
 	},
-	"prettier": {
-		"endOfLine": "lf",
-		"semi": true,
-		"tabWidth": 4,
-		"useTabs": true
-	},
 	"devDependencies": {
 		"@babel/cli": "^7.13.0",
 		"@babel/core": "^7.13.8",
