@@ -2,6 +2,71 @@
 
 All notable changes to this project will be documented in this file.
 
+### [3.2.2](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v3.2.1...v3.2.2) (2021-03-03)
+
+
+### Documentation
+
+* **contributing:** add documentation style ([d170912](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d17091247b462a0449c2f9461c42e63e3ff60d2a))
+* **readme:** fix broken link ([526d52b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/526d52b807af95bdf918384caeda1b0e4d18f5a7))
+* **readme:** shorten links ([0d68edd](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/0d68edd7f8091615bc53e697c7e5e55254661765))
+* **worklog:** reference correct standard ([1673ca1](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1673ca1435c6170e49ecbfc46d97ea9828e4dff6))
+
+
+### Dependencies
+
+* **dependabot:** set commit message prefix; lower pull limit ([8ed9d81](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/8ed9d813aa64268e68e03a5a91c886438229daee))
+* **deps-dev:** add husky for git hook handling ([172476d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/172476dbe97aedf2c651b654a12bd9a28f57960f))
+* **deps-dev:** bump @babel/cli from 7.12.10 to 7.12.16 ([#128](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/128)) ([d12f5fc](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d12f5fce2b64d9634ae25f69a6b14ec54afa585a))
+* **deps-dev:** bump @babel/cli from 7.12.16 to 7.13.0 ([82308e6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/82308e646a11702bd5660cbd1d5dd71c2b69c42b))
+* **deps-dev:** bump @babel/core from 7.12.10 to 7.12.16 ([#125](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/125)) ([fdbcac2](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fdbcac26ed89b4a60fd07d186cf0f085b0bff78c))
+* **deps-dev:** bump @babel/core from 7.12.16 to 7.13.8 ([34f6fc2](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/34f6fc2fc2535d73a050a40ee0378322817a2cae))
+* **deps-dev:** bump @babel/node from 7.12.10 to 7.12.16 ([#127](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/127)) ([a633158](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a633158da5f54359c420c1723b25cf1435ddc68f))
+* **deps-dev:** bump @babel/node from 7.12.16 to 7.13.0 ([6919a07](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/6919a0722ee702dbbf36f83ccf5b9f433670d4bc))
+* **deps-dev:** bump @babel/preset-env from 7.12.11 to 7.12.16 ([#129](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/129)) ([34b7541](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/34b754120dcc22ff57f1e9018b7d9b47e41baeff))
+* **deps-dev:** bump @babel/preset-env from 7.12.16 to 7.13.8 ([9d439d8](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9d439d8fa2e27d991b13a17767d8fe259657a20c))
+* **deps-dev:** bump @commitlint/cli from 11.0.0 to 12.0.1 ([#133](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/133)) ([5576c8e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/5576c8ef252783fdc3a5d0ebfff1d3e3ad7c4260))
+* **deps-dev:** bump @commitlint/config-conventional ([509036a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/509036a517acd3d8906ce8670ed1755dfc07e297))
+* **deps-dev:** bump eslint from 7.18.0 to 7.19.0 ([#117](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/117)) ([bdd0093](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/bdd0093ef84c3cd3ca484581dcc57563a707fcdf))
+* **deps-dev:** bump eslint from 7.19.0 to 7.20.0 ([#126](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/126)) ([bfaa1bf](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/bfaa1bf6e7f7db4ae9987a6d43e1ecd5f2b941b7))
+* **deps-dev:** bump eslint from 7.20.0 to 7.21.0 ([#136](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/136)) ([f0d1671](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f0d16713c41bd692887f404730db25de0f99063f))
+* **deps-dev:** bump eslint-config-prettier from 7.2.0 to 8.1.0 ([5285c92](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/5285c9290a7ad925e9d5df8e3129234489f7b334))
+* **deps-dev:** bump eslint-plugin-jsdoc from 31.4.0 to 31.6.0 ([#116](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/116)) ([0fac348](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/0fac348cd755c82a55b844d130f6716d07538827))
+* **deps-dev:** bump eslint-plugin-jsdoc from 31.6.0 to 32.0.1 ([#124](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/124)) ([cb906f7](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/cb906f7dea0e523463383bc412a4815397a532bd))
+* **deps-dev:** bump eslint-plugin-jsdoc from 32.0.1 to 32.2.0 ([#135](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/135)) ([43694a0](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/43694a0b8b906d4e08414a8d19a9ec00e705913d))
+* **deps-dev:** pin husky major version ([5e2a3c9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/5e2a3c9c874d66931b61ef72877b41852719b5a7))
+* **deps:** bump actions/cache from v2 to v2.1.4 ([#123](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/123)) ([efdd036](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/efdd036df1c9f1b2d8c7f13e36032d3d7b08fa38))
+* **deps:** bump wagoid/commitlint-github-action from v2.0.3 to v2.2.3 ([#122](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/122)) ([5bae414](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/5bae414850cc0a9953ff17455a3a879d609b5ae4))
+* **deps:** bump wagoid/commitlint-github-action from v2.2.3 to v3.0.1 ([d9e419f](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d9e419fa890df1a03492fca6ef956d5a2b738e7f))
+* **deps:** specify minor and hotfix versions ([d7e707d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d7e707d15c1543f752145d2b97cb2b732bacc849))
+* **deps:** specify minor and hotfix versions ([ab5e83b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ab5e83bff7f9853103fb77190b4343be6f1c892b))
+
+
+### Miscellaneous
+
+* add commit-lint job ([197559d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/197559de951cc8037e5111746687118b873251ac))
+* add documentation style link to pr template ([08685d0](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/08685d0dabca4dc9158514c1a07940ee60706016))
+* add link check workflow ([76daeda](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/76daeda42950bb625f3b5c86702b50cfea1b30c9))
+* automate release and changelog generation ([d6afb8b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d6afb8b80e5a2d80fcebbc71e425f81d357c5d0d))
+* **codeql:** remove autobuild action ([c7878ef](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c7878efe2903c632dfcd6c55b3b331a5903e29b4))
+* **dependabot:** ignore husky updates ([32ab2ef](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/32ab2ef166e0dc2a0cf294de809d6ed9a27bb24e))
+* **linkcheck:** extend paths and ignored urls ([2e84277](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2e842778edd51e732a9affafc1109f21cfeaa22c))
+* **lint-check:** compress patterns ([d43c9bb](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d43c9bb4543074edb4244e5c534efa17595d062b))
+* **prettier:** create separate files to allow for CI/CD to use prettier config ([#143](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/143)) ([09c245a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/09c245a331c5e62bcbc96031a91d9b3e188e3343))
+* **readme:** add linebreaks between badges ([4da66a4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4da66a41cd208e3d2363e31cd8d8a55bcbea1fe9))
+* remove whitespace from filename ([52c0996](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/52c0996741768a11c0a3f6d8b089351454a76c44))
+* replace stalebot with github action ([2c0effc](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2c0effcdfde3804ea37019f98d395227a43e2d2a))
+* replace typo ci app with action ([679a728](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/679a72869258e78b7a5ce798940f2a2b4411b3a7))
+* require `commit-lint` job to pass before automerge ([b1e70a4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/b1e70a43b3105adcc8cf3e19a746dcba9be8ecbc))
+* **vscode:** add `redhat.vscode-yaml` as recommended extension ([c68f763](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c68f763b7bc8f2efac4f4cdf6d137a30ca5c0793))
+* **vscode:** add `updateImportsOnFileMove` setting ([4839e44](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4839e44010a6f2427153a47e50b7bf6285d68b3a))
+* **vscode:** add workspace settings and extensions ([a20fca3](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a20fca31b5b4db0686f26aa5218b4d1d0496270c))
+* **vscode:** remove conflicting prettier ext setting ([4de2575](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4de257564aa8accb4fbd3af221d2a545bdbfe214))
+* **workflows:** move release steps into `cd` workflow ([9e8e63c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9e8e63cb008518bbe313e5ea24b6fd3adc784260))
+* **workflows:** remove redundant comments ([13f63b2](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/13f63b298e4c2525ee06f0ac101134d7de0739b0))
+* **workflows:** rename spellcheck workflow ([f62756e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f62756e397dd9b20c2dc54e995083dac3f7737f3))
+* **workflows:** tidy node-version syntax ([89de90d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/89de90d18cb093c12be6b7a69ee7777eb30a3b14))
+
 ### 3.2.1 (2021-01-28)
 
 -   build: add typoci config file ([ee3c451](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ee3c451))
