@@ -116,5 +116,8 @@ out
 
 # Auto generated files
 package.json
-package-lock.json
 CHANGELOG.md
+
+# lock files
+package-lock.json
+yarn.lock
