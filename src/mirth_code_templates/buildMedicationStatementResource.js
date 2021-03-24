@@ -178,7 +178,7 @@ function buildMedicationStatementResource(data) {
 			result.medstatSubjectReference
 		}`,
 	};
-	// Hard-coded as TrakCare doesn't record whether a patient has taken medication
+	// Hard-coded as TrakCare does not record whether a patient has taken medication
 	resource.taken = "unk";
 
 	return resource;
