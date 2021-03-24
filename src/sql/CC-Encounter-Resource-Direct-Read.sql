@@ -22,7 +22,7 @@ Staff misuse the discharge date in outpatients as 'time all admin complete', not
 This will be set to NULL to account for data quality issue.
 
 
-PA_Adm holds inpatient and emergency encounters, AND the top level episode for outpatient appointments (but won't be used)
+PA_Adm holds inpatient and emergency encounters, AND the top level episode for outpatient appointments (but will not be used)
 PA_Adm2 holds additional details and is 1:1 with PA_Adm
 
 Unique Identifiers

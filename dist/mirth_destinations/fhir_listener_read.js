@@ -104,7 +104,7 @@ try {
 				break;
 		}
 
-		// Hard coded version as we don't keep past versions of records, only one
+		// Hard coded version as we do not keep past versions of records, only one
 		var version = "1";
 		var lastModified = new Date(getResultSetString(result, "lastUpdated"));
 
