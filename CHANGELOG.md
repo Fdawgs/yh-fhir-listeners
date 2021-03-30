@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+### [3.2.3](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v3.2.2...v3.2.3) (2021-03-29)
+
+
+### Miscellaneous
+
+* **prettierignore:** add yarn lock file ([51d9f52](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/51d9f525b3a0d4b97634ee5405418725c317a875))
+* **prettierignore:** remove `dist` ([9510df9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9510df97cf23dd5c0d025c97daa4511b6e26adc7))
+* **readme:** replace jpg ydh logo with svg ([09432c5](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/09432c5cf7cd9ed23ad81815ec6a226f69cb1851))
+* remove contraction usage in comments ([0833d37](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/0833d37ab92f9dd94f868f7c28c210c39a712781))
+* **workflows:** rename ci and perf sections ([7f6e00a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/7f6e00a144e7956eab939c916aa61e6e8fccb035))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.13.0 to 7.13.10 ([4057918](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/40579185c0344a651dd61f9d2b6ee17a851e74a5))
+* **deps-dev:** bump @babel/core from 7.13.8 to 7.13.13 ([e555593](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/e5555931336a586cb2e979e8db2e4398a4ae2d9f))
+* **deps-dev:** bump @babel/node from 7.13.0 to 7.13.13 ([213deb1](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/213deb16c011347102e12472f266970400c1a72f))
+* **deps-dev:** bump @babel/preset-env from 7.13.8 to 7.13.12 ([6938418](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/693841884ad9aae66ac5ed1fb8238e50753b397e))
+* **deps-dev:** bump eslint from 7.21.0 to 7.23.0 ([f9b7fb4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f9b7fb4784fa14fe9ddfd8e8a834936cd8be4fcc))
+* **deps-dev:** bump eslint-plugin-jsdoc from 32.2.0 to 32.3.0 ([9d0d926](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9d0d92625e82bd84211d1eba659cb35a3f36b730))
+* **deps-dev:** bump husky from 4.3.8 to 6.0.0 ([2951280](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2951280faee3d88fc742e943746ea73d8fd52c3d))
+* **deps:** bump actions/stale from v3.0.17 to v3.0.18 ([36823de](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/36823de4da3338abaf446c633f85047dc2360be8))
+* **deps:** bump GoogleCloudPlatform/release-please-action ([7ac5460](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/7ac5460acf5258c938a2d037371cc0e649325f5f))
+* **deps:** bump typoci/spellcheck-action from v0.3.0 to v0.4.0 ([067f5a8](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/067f5a88814b1c604489e7b07983e10c05788528))
+* **deps:** bump wagoid/commitlint-github-action from v3.0.1 to v3.0.6 ([2c090b9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2c090b9163aade7baf4ae8bafc061a396e7ffa4d))
+
+
+### Continuous Integration
+
+* **automerge:** move automerge job into new workflow ([845a4cd](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/845a4cd84a593d2b48e85191217a0981793f24d0))
+* **ci:** ignore dependabot prs for commit message linting ([aa406db](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/aa406dbdebe140810b0a7ecc0230322580871935))
+* **stale:** shorten workflow name ([f23da20](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f23da208e8e51ccc63a86937d03d27328056946c))
+* **workflows:** run only on push and pulls to master branch ([14afd4c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/14afd4c3eff051e419bdcb696f23a05fef2f60b2))
+
 ### [3.2.2](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v3.2.1...v3.2.2) (2021-03-03)
 
 

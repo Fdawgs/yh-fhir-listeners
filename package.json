@@ -1,44 +1,44 @@
 {
-	"name": "ydh-fhir-listeners",
-	"version": "3.2.2",
-	"description": "Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)",
-	"main": "index.js",
-	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
-	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners",
-	"bugs": {
-		"url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
-	},
-	"license": "MIT",
-	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
-	"engines": {
-		"node": ">=10.22.0"
-	},
-	"scripts": {
-		"build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
-		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
-		"lint:prettier": "prettier . --write --ignore-unknown",
-		"lint:prettier:ci": "prettier . --check --ignore-unknown",
-		"prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
-	},
-	"commitlint": {
-		"extends": [
-			"@commitlint/config-conventional"
-		]
-	},
-	"devDependencies": {
-		"@babel/cli": "^7.13.10",
-		"@babel/core": "^7.13.13",
-		"@babel/node": "^7.13.13",
-		"@babel/preset-env": "^7.13.12",
-		"@commitlint/cli": "^12.0.1",
-		"@commitlint/config-conventional": "^12.0.1",
-		"eslint": "^7.23.0",
-		"eslint-config-airbnb-base": "^14.2.1",
-		"eslint-config-prettier": "^8.1.0",
-		"eslint-plugin-import": "^2.22.1",
-		"eslint-plugin-jsdoc": "^32.3.0",
-		"eslint-plugin-security": "^1.4.0",
-		"husky": "^6.0.0",
-		"prettier": "2.2.1"
-	}
+  "name": "ydh-fhir-listeners",
+  "version": "3.2.3",
+  "description": "Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel adapted for use with InterSystems TrakCare PAS (v2017.2 MR8.2)",
+  "main": "index.js",
+  "repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
+  "homepage": "https://github.com/Fdawgs/ydh-fhir-listeners",
+  "bugs": {
+    "url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
+  },
+  "license": "MIT",
+  "author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
+  "engines": {
+    "node": ">=10.22.0"
+  },
+  "scripts": {
+    "build": "babel src --out-dir dist --ignore \"src/sql/\" && npm run lint:prettier",
+    "lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
+    "lint:prettier": "prettier . --write --ignore-unknown",
+    "lint:prettier:ci": "prettier . --check --ignore-unknown",
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
+  },
+  "commitlint": {
+    "extends": [
+      "@commitlint/config-conventional"
+    ]
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.13.10",
+    "@babel/core": "^7.13.13",
+    "@babel/node": "^7.13.13",
+    "@babel/preset-env": "^7.13.12",
+    "@commitlint/cli": "^12.0.1",
+    "@commitlint/config-conventional": "^12.0.1",
+    "eslint": "^7.23.0",
+    "eslint-config-airbnb-base": "^14.2.1",
+    "eslint-config-prettier": "^8.1.0",
+    "eslint-plugin-import": "^2.22.1",
+    "eslint-plugin-jsdoc": "^32.3.0",
+    "eslint-plugin-security": "^1.4.0",
+    "husky": "^6.0.0",
+    "prettier": "2.2.1"
+  }
 }
