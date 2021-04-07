@@ -93,7 +93,8 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
         -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
         -   Teams do not have contact number
 -   Patient resources:
-    -   Unable to provide SNOMED codes for religious affiliation for patient demographics due to these not being in TrakCare (NHS Data Dictionary coding is provided however)
+    -   Unable to provide SNOMED codes for religious affiliation as these are not in TrakCare (NHS Data Dictionary coding is provided however)
+    -   Unable to provide GP surgery/organisation `name` value for inline Organization FHIR resource as this data is also not held in TrakCare; using GP consultant name as placeholder
     -   Sizeable number of patient records without postcodes
 
 ### Search Caveats
