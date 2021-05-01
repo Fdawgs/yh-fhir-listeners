@@ -31,7 +31,7 @@
     "@babel/node": "^7.13.13",
     "@babel/preset-env": "^7.13.12",
     "@commitlint/cli": "^12.0.1",
-    "@commitlint/config-conventional": "^12.0.1",
+    "@commitlint/config-conventional": "^12.1.1",
     "eslint": "^7.23.0",
     "eslint-config-airbnb-base": "^14.2.1",
     "eslint-config-prettier": "^8.1.0",
