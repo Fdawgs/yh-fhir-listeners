@@ -38,8 +38,7 @@ function buildAllergyIntoleranceResource(data) {
 	 */
 	resource.meta.tag = [
 		{
-			system:
-				"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+			system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 			code: "none",
 			display: "Do not Display",
 		},

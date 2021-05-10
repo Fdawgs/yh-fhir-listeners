@@ -58,8 +58,7 @@ function buildEncounterResource(data) {
 	) {
 		resource.meta.tag = [
 			{
-				system:
-					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 				code: "summary",
 				display: "Display in Summary and Detail View",
 			},
@@ -67,8 +66,7 @@ function buildEncounterResource(data) {
 	} else {
 		resource.meta.tag = [
 			{
-				system:
-					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 				code: "detail",
 				display: "Display in Detail View",
 			},
@@ -81,8 +79,7 @@ function buildEncounterResource(data) {
 	) {
 		resource.meta.tag = [
 			{
-				system:
-					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 				code: "none",
 				display: "Do not Display",
 			},
@@ -102,13 +99,11 @@ function buildEncounterResource(data) {
 
 		extension: [
 			{
-				url:
-					"https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
+				url: "https://fhir.ydh.nhs.uk/STU3/StructureDefinition/Extension-YDH-SpecialtyContext-1",
 				valueCodeableConcept: {
 					coding: [
 						{
-							system:
-								"https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
+							system: "https://fhir.ydh.nhs.uk/STU3/ValueSet/Extension-YDH-SpecialtyContext-1",
 							code: undefined,
 							display: undefined,
 						},
@@ -251,8 +246,7 @@ function buildEncounterResource(data) {
 					{
 						coding: [
 							{
-								system:
-									"https://hl7.org/fhir/v3/ParticipationType",
+								system: "https://hl7.org/fhir/v3/ParticipationType",
 								code: "ADM",
 								display: "admitter",
 							},
@@ -262,8 +256,7 @@ function buildEncounterResource(data) {
 
 				individual: {
 					identifier: {
-						value:
-							result.encounterParticipantIndividualCode_admitting,
+						value: result.encounterParticipantIndividualCode_admitting,
 					},
 
 					display:
@@ -281,8 +274,7 @@ function buildEncounterResource(data) {
 					{
 						coding: [
 							{
-								system:
-									"https://hl7.org/fhir/v3/ParticipationType",
+								system: "https://hl7.org/fhir/v3/ParticipationType",
 								code: "DIS",
 								display: "discharger",
 							},
@@ -292,8 +284,7 @@ function buildEncounterResource(data) {
 
 				individual: {
 					identifier: {
-						value:
-							result.encounterParticipantIndividualCode_discharging,
+						value: result.encounterParticipantIndividualCode_discharging,
 					},
 
 					display:
@@ -357,13 +348,11 @@ function buildEncounterResource(data) {
 
 	if (result.encounterAdmissionmethodCodingCode != undefined) {
 		var admissionMethod = {
-			url:
-				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
+			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
 			valueCodeableConcept: {
 				coding: [
 					{
-						system:
-							"https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
+						system: "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-AdmissionMethod-1",
 						code: result.encounterAdmissionmethodCodingCode,
 						display: newStringOrUndefined(
 							result.encounterAdmissionmethodCodingDesc
@@ -378,13 +367,11 @@ function buildEncounterResource(data) {
 
 	if (result.encounterDischargemethodCodingCode != undefined) {
 		var dischargeMethod = {
-			url:
-				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
+			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
 			valueCodeableConcept: {
 				coding: [
 					{
-						system:
-							"https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
+						system: "https://fhir.hl7.org.uk/STU3/ValueSet/CareConnect-DischargeMethod-1",
 						code: result.encounterDischargemethodCodingCode,
 						display: newStringOrUndefined(
 							result.encounterDischargemethodCodingDesc
@@ -401,8 +388,7 @@ function buildEncounterResource(data) {
 		resource.hospitalization.admitSource = {
 			coding: [
 				{
-					system:
-						"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
+					system: "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-SourceOfAdmission-1",
 					code: result.encounterHospitalizationAdmitsourceCodingCode,
 					display: newStringOrUndefined(
 						result.encounterHospitalizationAdmitsourceCodingDesc
@@ -418,10 +404,8 @@ function buildEncounterResource(data) {
 		resource.hospitalization.dischargeDisposition = {
 			coding: [
 				{
-					system:
-						"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
-					code:
-						result.encounterHospitalizationDischargedispositionCodingCode,
+					system: "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-DischargeDestination-1",
+					code: result.encounterHospitalizationDischargedispositionCodingCode,
 					display: newStringOrUndefined(
 						result.encounterHospitalizationDischargedispositionCodingDesc
 					),
