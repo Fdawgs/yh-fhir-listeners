@@ -49,8 +49,7 @@ function buildFlagResource(data) {
 	) {
 		resource.meta.tag = [
 			{
-				system:
-					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 				code: "none",
 				display: "Do not Display",
 			},
@@ -58,8 +57,7 @@ function buildFlagResource(data) {
 	} else {
 		resource.meta.tag = [
 			{
-				system:
-					"https://fhir.blackpear.com/ui/shared-care-record-visibility",
+				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
 				code: "summary",
 				display: "Display in Summary and Detail View",
 			},
