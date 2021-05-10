@@ -56,8 +56,8 @@ WITH
 		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
 					AND encounterPeriodStartDate IS NOT NULL)
 					OR encounterStatus IN ('P') THEN 'planned'
-	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
+	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		ELSE 'unknown'
 		END AS encounterStatusMapped
 			FROM OPENQUERY([ENYH-PRD-ANALYTICS],
@@ -99,8 +99,8 @@ WITH
 		WHEN (encounterPeriodStartDate > CURRENT_TIMESTAMP
 					AND encounterPeriodStartDate IS NOT NULL)
 					OR encounterStatus IN ('P') THEN 'planned'
-	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		WHEN encounterPeriodStartDate IS NOT NULL AND encounterPeriodEndDate IS NULL THEN 'in-progress'
+	  	WHEN encounterStatus IN ('A', 'S', 'W') THEN 'arrived'
 		ELSE 'unknown'
 		END AS encounterStatusMapped
 			FROM OPENQUERY([ENYH-PRD-ANALYTICS],
