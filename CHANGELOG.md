@@ -2,6 +2,24 @@
 
 All notable changes to this project will be documented in this file.
 
+### [4.0.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v4.0.0...v4.0.1) (2021-05-11)
+
+
+### Bug Fixes
+
+* **encounters:** correct status case order ([1e75583](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1e755834c37b36d672e2b4a5e35aa244b99c99c7))
+
+
+### Miscellaneous
+
+* lint with new prettier version ([366d48c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/366d48c054562c5fcbf567e9a4ec69d86b41fd96))
+
+
+### Dependencies
+
+* **deps-dev:** bump dependencies ([40c6c0a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/40c6c0a79ad91e7c3d798cba3afa0b8028da34a4))
+* **deps:** bump wagoid/commitlint-github-action from v3.1.1 to v3.1.2 ([3653e87](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3653e87b299b185d7405556801b5675bc55ebd90))
+
 ## [4.0.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v3.2.3...v4.0.0) (2021-05-06)
 
 
