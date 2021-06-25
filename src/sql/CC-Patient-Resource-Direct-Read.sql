@@ -34,8 +34,8 @@ SELECT nhsNumber,
 	district,
 	postalCode,
 	gender,
-	birthdate,
-	deceased,
+	birthDate,
+	CONCAT(COALESCE(deceasedDate, ''), 'T', COALESCE(deceasedTime, '')) AS deceasedDateTime,
 	gpDesc,
 	gpAddressLine1,
 	gpAddressLine2,
@@ -127,10 +127,8 @@ FROM OPENQUERY(
 									END AS gender,
 
 									patmas.PAPMI_DOB AS birthDate,
-									CASE
-									WHEN patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''Y'' THEN ''true''
-									WHEN patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'' THEN NULL
-									END AS deceased,
+									patmas.PAPMI_Deceased_Date as deceasedDate,
+									patmas.PAPMI_DeceasedTime as deceasedTime,
 
 									-- GP Practice
 									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctor_DR->REFD_Desc AS gpDesc,
