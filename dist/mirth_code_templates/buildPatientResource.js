@@ -9,6 +9,16 @@
 function buildPatientResource(data) {
 	var result = getResultSet(data);
 
+	/**
+	 * Set keys with empty string values as undefined.
+	 * Unable to use `Object.keys(result).forEach` due to it being Java object
+	 */
+	for (var index = 0; index < Object.keys(result).length; index++) {
+		if ("".concat(result[Object.keys(result)[index]]).trim() == "") {
+			result[Object.keys(result)[index]] = undefined;
+		}
+	}
+
 	if (
 		result.nhsNumberTraceStatusCode == undefined ||
 		result.nhsNumberTraceStatusCode == null ||
@@ -245,6 +255,15 @@ function buildPatientResource(data) {
 		};
 
 		telecom.push(mobilePhone);
+	}
+	if (result.businessPhone != undefined) {
+		var businessPhone = {
+			system: newStringOrUndefined("phone"),
+			value: newStringOrUndefined(result.businessPhone),
+			use: newStringOrUndefined("work"),
+		};
+
+		telecom.push(businessPhone);
 	}
 	if (result.email != undefined) {
 		var email = {
