@@ -28,10 +28,11 @@ function buildPatientResource(data) {
 		result.nhsNumberTraceStatusDesc = "Number present but not traced";
 	}
 
-	if (result.deceased == undefined || result.deceased == null) {
-		result.deceased = false;
-	} else {
-		result.deceased = true;
+	if (
+		result.deceasedDateTime.substring(0, 1) == "T" ||
+		result.deceasedDateTime.substring(0, 4) == "1900"
+	) {
+		result.deceasedDateTime = undefined;
 	}
 
 	/**
@@ -70,8 +71,8 @@ function buildPatientResource(data) {
 		],
 
 		gender: newStringOrUndefined(result.gender),
-		birthDate: newStringOrUndefined(result.birthdate),
-		deceasedBoolean: newBooleanOrUndefined(result.deceased),
+		birthDate: newStringOrUndefined(result.birthDate),
+		deceasedDateTime: newStringOrUndefined(result.deceasedDateTime),
 		address: [
 			{
 				use: newStringOrUndefined("home"),
@@ -95,7 +96,7 @@ function buildPatientResource(data) {
 	if (
 		result.lastUpdated != undefined &&
 		result.lastUpdated.substring(0, 1) != "T" &&
-		result.lastUpdated.substring(0, 1) != "1900"
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = newStringOrUndefined(result.lastUpdated);
 	}
