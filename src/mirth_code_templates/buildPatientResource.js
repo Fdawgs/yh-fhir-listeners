@@ -87,7 +87,7 @@ function buildPatientResource(data) {
 	if (
 		result.lastUpdated != undefined &&
 		result.lastUpdated.substring(0, 1) != "T" &&
-		result.lastUpdated.substring(0, 1) != "1900"
+		result.lastUpdated.substring(0, 4) != "1900"
 	) {
 		resource.meta.lastUpdated = newStringOrUndefined(result.lastUpdated);
 	}
