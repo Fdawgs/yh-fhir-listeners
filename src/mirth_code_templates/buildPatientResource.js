@@ -234,6 +234,14 @@ function buildPatientResource(data) {
 		};
 		telecom.push(mobilePhone);
 	}
+	if (result.businessPhone != undefined) {
+		const businessPhone = {
+			system: newStringOrUndefined("phone"),
+			value: newStringOrUndefined(result.businessPhone),
+			use: newStringOrUndefined("work"),
+		};
+		telecom.push(businessPhone);
+	}
 	if (result.email != undefined) {
 		const email = {
 			system: newStringOrUndefined("email"),
