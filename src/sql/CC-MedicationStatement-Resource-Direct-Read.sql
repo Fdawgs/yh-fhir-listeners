@@ -38,6 +38,7 @@ WITH
      WHEN 'D' THEN 'd'
      WHEN 'W' THEN 'wk'
      END AS medstatDosageTimingRepeatDurationUnit,
+               medstatDosageAdditionalinstruction,
                medstatDosagePatientinstruction,
                medstatDosageRouteText,
                medstatDosageDoseQuantityValue,
@@ -58,6 +59,7 @@ WITH
                medicationCodeText,
                medicationCodeCodingDisplay,
                medicationCodeCodingCode,
+               note,
                CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
           FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT
@@ -74,12 +76,14 @@ WITH
                          oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No AS medstatSubjectReference,
                          oi.OEORI_OEOrdItem2_DR->ITM2_DurationValue AS medstatDosageTimingRepeatDuration,
                          oi.OEORI_OEOrdItem2_DR->ITM2_DurationUnit AS medstatDosageTimingRepeatDurationUnit,
-                         oi.OEORI_Instr_DR->PHCIN_Desc1 AS medstatDosagePatientinstruction,
+                         oi.OEORI_Instr_DR->PHCIN_Desc1 AS medstatDosageAdditionalinstruction,
+                         oi.OEORI_OEOrdItem2_DR->ITM2_LabelNotes AS medstatDosagePatientinstruction,
                          oi.OEORI_AdminRoute_DR->ADMR_Desc AS medstatDosageRouteText,
                          oi.OEORI_DoseQty AS medstatDosageDoseQuantityValue,
                          oi.OEORI_Unit_DR->CTUOM_Desc AS medstatDosageDoseQuantityUnit,
                          oi.OEORI_ItemStat_DR->OSTAT_Desc AS orderItemStatus,
                          oi.OEORI_VarianceReason_DR->VR_Code AS orderItemVariance,
+                         oi.OEORI_Remarks AS note,
                          oi.OEORI_UpdateDate AS lastUpdateDate,
                          oi.OEORI_UpdateTime AS lastUpdateTime,
                          NULL AS RESOURCE_LINEBREAK,

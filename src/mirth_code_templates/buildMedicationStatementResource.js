@@ -113,16 +113,24 @@ function buildMedicationStatementResource(data) {
 		resource.contained = contained;
 	}
 
+	// Add note
+	if (result.note != undefined) {
+		resource.note = [{ text: result.note.trim() }];
+	}
+
 	// Add dosages
 	const dosage = [];
 	const dosageObject = {
-		patientInstruction: newStringOrUndefined(
-			result.medstatDosagePatientinstruction
-		),
 		route: {
 			text: newStringOrUndefined(result.medstatDosageRouteText),
 		},
 	};
+
+	if (result.medstatDosagePatientinstruction != undefined) {
+		dosageObject.patientInstruction = result.medstatDosagePatientinstruction
+			.replace('"', "")
+			.trim();
+	}
 
 	if (
 		result.medstatDosageDoseQuantityValue != undefined &&
@@ -150,6 +158,14 @@ function buildMedicationStatementResource(data) {
 				).toLowerCase(),
 			},
 		};
+	}
+
+	if (result.medstatDosageAdditionalinstruction != undefined) {
+		dosageObject.additionalInstruction = [
+			{
+				text: result.medstatDosageAdditionalinstruction.trim(),
+			},
+		];
 	}
 
 	dosage.push(dosageObject);
