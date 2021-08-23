@@ -111,29 +111,32 @@ try {
 				var allergyPatIdParam = String(
 					$("parameters").getParameter("patient.identifier")
 				).split("|");
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						allergyPatIdParam[0]
-					) == "https://fhir.nhs.uk/Id/nhs-number"
-				) {
-					whereArray[0].push(
-						"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							allergyPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
+
+				switch (
+					"".concat(
+						Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+							allergyPatIdParam[0]
 						)
-					);
-				}
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						allergyPatIdParam[0]
-					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
+					)
 				) {
-					whereArray[0].push(
-						"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
-							allergyPatIdParam[1],
-							"'')"
-						)
-					);
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							"(alle.ALG_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								allergyPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(alle.ALG_PAPMI_ParRef->PAPMI_No = ''".concat(
+								allergyPatIdParam[1],
+								"'')"
+							)
+						);
 				}
 			}
 		}
@@ -338,57 +341,60 @@ try {
 				var encounterPatIdParam = String(
 					$("parameters").getParameter("patient.identifier")
 				).split("|");
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						encounterPatIdParam[0]
-					) == "https://fhir.nhs.uk/Id/nhs-number"
+
+				switch (
+					"".concat(
+						Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+							encounterPatIdParam[0]
+						)
+					)
 				) {
-					whereArray[0].push(
-						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							encounterPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
-						)
-					);
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								encounterPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
 
-					whereArray[1].push(
-						"(PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							encounterPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
-						)
-					);
+						whereArray[1].push(
+							"(PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								encounterPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
 
-					whereArray[2].push(
-						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							encounterPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
-						)
-					);
-				}
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						encounterPatIdParam[0]
-					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
-				) {
-					whereArray[0].push(
-						"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-							encounterPatIdParam[1],
-							"'')"
-						)
-					);
+						whereArray[2].push(
+							"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								encounterPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
 
-					whereArray[1].push(
-						"(PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-							encounterPatIdParam[1],
-							"'')"
-						)
-					);
+						break;
 
-					whereArray[2].push(
-						"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-							encounterPatIdParam[1],
-							"'')"
-						)
-					);
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(app.APPT_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+								encounterPatIdParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[1].push(
+							"(PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+								encounterPatIdParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[2].push(
+							"(TRANS_ParRef->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+								encounterPatIdParam[1],
+								"'')"
+							)
+						);
 				}
 			}
 		}
@@ -559,29 +565,32 @@ try {
 				var flagPatIdParam = String(
 					$("parameters").getParameter("patient.identifier")
 				).split("|");
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						flagPatIdParam[0]
-					) == "https://fhir.nhs.uk/Id/nhs-number"
-				) {
-					whereArray[0].push(
-						"(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							flagPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
+
+				switch (
+					"".concat(
+						Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+							flagPatIdParam[0]
 						)
-					);
-				}
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						flagPatIdParam[0]
-					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
+					)
 				) {
-					whereArray[0].push(
-						"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''".concat(
-							flagPatIdParam[1],
-							"'')"
-						)
-					);
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							"(alert.ALM_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								flagPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(alert.ALM_PAPMI_ParRef->PAPMI_No = ''".concat(
+								flagPatIdParam[1],
+								"'')"
+							)
+						);
 				}
 			}
 		}
@@ -693,29 +702,34 @@ try {
 				var medStatPatIdParam = String(
 					$("parameters").getParameter("patient.identifier")
 				).split("|");
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						medStatPatIdParam[0]
-					) == "https://fhir.nhs.uk/Id/nhs-number"
-				) {
-					whereArray[0].push(
-						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							medStatPatIdParam[1],
-							"'' AND PAPMI_Active IS NULL))"
+
+				switch (
+					"".concat(
+						Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+							medStatPatIdParam[0]
 						)
-					);
-				}
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						medStatPatIdParam[0]
-					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
+					)
 				) {
-					whereArray[0].push(
-						"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
-							medStatPatIdParam[1],
-							"'')"
-						)
-					);
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								medStatPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+								medStatPatIdParam[1],
+								"'')"
+							)
+						);
+
+						break;
 				}
 			}
 		}
@@ -792,7 +806,7 @@ try {
 		if ($("parameters").contains("deceased")) {
 			var deceased = $("parameters").getParameter("deceased");
 
-			switch (deceased) {
+			switch ("".concat(deceased)) {
 				case "false":
 					whereArray[0].push(
 						"(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'')"
@@ -859,43 +873,62 @@ try {
 				var identifierParam = String(
 					$("parameters").getParameter("identifier")
 				).split("|");
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						identifierParam[0]
-					) == "https://fhir.nhs.uk/Id/nhs-number"
-				) {
-					whereArray[0].push(
-						"(patmas.PAPMI_ID = ''".concat(
-							identifierParam[1],
-							"'')"
-						)
-					);
 
-					whereArray[1].push(
-						"(NOK_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
-							identifierParam[1],
-							"'' AND PAPMI_Active IS NULL))"
+				switch (
+					"".concat(
+						Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+							identifierParam[0]
 						)
-					);
-				}
-				if (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
-						identifierParam[0]
-					) == "https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
+					)
 				) {
-					whereArray[0].push(
-						"(patmas.PAPMI_No = ''".concat(
-							identifierParam[1],
-							"'')"
-						)
-					);
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							"(patmas.PAPMI_ID = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
 
-					whereArray[1].push(
-						"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
-							identifierParam[1],
-							"'')"
-						)
-					);
+						whereArray[1].push(
+							"(NOK_PAPMI_ParRef->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								identifierParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
+						whereArray[2].push(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								identifierParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(patmas.PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[1].push(
+							"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[2].push(
+							"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						break;
 				}
 			} else {
 				whereArray[0].push(

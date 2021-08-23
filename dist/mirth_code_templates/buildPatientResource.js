@@ -35,6 +35,13 @@ function buildPatientResource(data) {
 		result.deceasedDateTime = undefined;
 	}
 
+	if (
+		result.secondaryIdentifiers == undefined ||
+		result.secondaryIdentifiers == null
+	) {
+		result.secondaryIdentifiers = { identifier: [] };
+	}
+
 	/**
 	 * Hard-coding meta profile and resourceType into resource as this should not
 	 * be changed for this resource, ever.
@@ -50,17 +57,7 @@ function buildPatientResource(data) {
 		},
 
 		resourceType: newStringOrUndefined("Patient"),
-		identifier: [
-			{
-				use: newStringOrUndefined("usual"),
-				system: newStringOrUndefined(
-					"https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
-				),
-
-				value: newStringOrUndefined(result.patientNo),
-			},
-		],
-
+		identifier: JSON.parse(result.secondaryIdentifiers).identifier,
 		name: [
 			{
 				use: newStringOrUndefined("usual"),
@@ -100,6 +97,16 @@ function buildPatientResource(data) {
 	) {
 		resource.meta.lastUpdated = newStringOrUndefined(result.lastUpdated);
 	}
+
+	// Add Local Patient ID
+	resource.identifier.push({
+		use: newStringOrUndefined("usual"),
+		system: newStringOrUndefined(
+			"https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
+		),
+
+		value: newStringOrUndefined(result.patientNo),
+	});
 
 	// Add NHS No
 	if (result.nhsNumber != undefined) {
