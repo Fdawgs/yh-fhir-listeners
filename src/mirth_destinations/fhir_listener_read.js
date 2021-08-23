@@ -43,6 +43,7 @@ try {
 		case "patient":
 			whereArray[0].push(`(patmas.PAPMI_No = ''${id}'')`);
 			whereArray[1].push(`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`);
+			whereArray[2].push(`(RTMAS_PatNo_DR->PAPMI_No = ''${id}'')`);
 			break;
 		default:
 			break;

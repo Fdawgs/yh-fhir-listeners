@@ -57,6 +57,9 @@ try {
 			whereArray[1].push(
 				"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(id, "'')")
 			);
+			whereArray[2].push(
+				"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(id, "'')")
+			);
 			break;
 		default:
 			break;
