@@ -6,6 +6,7 @@ SELECT nhsNumber,
 	nhsNumberTraceStatusDesc,
 	nhsNumberTraceStatusCode,
 	patient.patientNo,
+	identifiers.secondaryIdentifiers,
 	active,
 	ethnicCategoryCode,
 	ethnicCategoryDesc,
@@ -158,4 +159,24 @@ FROM OPENQUERY(
 	ON patient.patientNo = school.patientNo
 
 	LEFT JOIN lookup.dbo.ydh_ethnicity_list ethnic WITH (NOLOCK)
-	ON patient.ethnicCategoryCode = ethnic.YDH_TrakCare_Code;
+	ON patient.ethnicCategoryCode = ethnic.YDH_TrakCare_Code
+
+	LEFT JOIN( SELECT (
+			SELECT 'secondary' AS "use",
+			CASE code
+			WHEN 'GEN' THEN 'https://fhir.ydh.nhs.uk/Id/medical-record-number'
+			WHEN 'HSP' THEN 'https://fhir.ydh.nhs.uk/Id/legacy-hospital-number'
+			WHEN 'KOR' THEN 'https://fhir.ydh.nhs.uk/Id/korner-number'
+			WHEN 'NHS' THEN 'https://fhir.ydh.nhs.uk/Id/legacy-nhs-number'
+			WHEN 'XRA' THEN 'https://fhir.ydh.nhs.uk/Id/x-ray-number'
+			ELSE NULL
+			END AS [system],
+			[value]
+		FROM OPENQUERY([ENYH-PRD-ANALYTICS],
+							'SELECT RTMAS_MRType_DR->TYP_Code AS code,
+									RTMAS_MRNo AS value
+									FROM RT_Master
+							  WHERE RTMAS_PatNo_DR->PAPMI_No = ''5484125''
+							  ')
+		FOR JSON PATH, ROOT('identifier')) AS secondaryIdentifiers) AS identifiers
+	ON 1 = 1
