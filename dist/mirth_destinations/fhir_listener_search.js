@@ -896,6 +896,13 @@ try {
 							)
 						);
 
+						whereArray[2].push(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								identifierParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
 						break;
 
 					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
@@ -909,6 +916,13 @@ try {
 
 						whereArray[1].push(
 							"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[2].push(
+							"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(
 								identifierParam[1],
 								"'')"
 							)
