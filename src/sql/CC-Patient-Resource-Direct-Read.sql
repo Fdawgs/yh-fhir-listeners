@@ -177,6 +177,7 @@ FROM OPENQUERY(
 									RTMAS_MRNo AS value
 									FROM RT_Master
 							  WHERE RTMAS_PatNo_DR->PAPMI_No = ''5484125''
+							  	AND RTMAS_Active = ''Y''
 							  ')
 		FOR JSON PATH, ROOT('identifier')) AS secondaryIdentifiers) AS identifiers
 	ON 1 = 1
