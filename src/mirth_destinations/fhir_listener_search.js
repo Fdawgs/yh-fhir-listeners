@@ -103,9 +103,9 @@ try {
 				).split("|");
 
 				switch (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						allergyPatIdParam[0]
-					)
+					)}`
 				) {
 					case "https://fhir.nhs.uk/Id/nhs-number":
 						whereArray[0].push(
@@ -313,9 +313,9 @@ try {
 				).split("|");
 
 				switch (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						encounterPatIdParam[0]
-					)
+					)}`
 				) {
 					case "https://fhir.nhs.uk/Id/nhs-number":
 						whereArray[0].push(
@@ -500,9 +500,9 @@ try {
 				).split("|");
 
 				switch (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						flagPatIdParam[0]
-					)
+					)}`
 				) {
 					case "https://fhir.nhs.uk/Id/nhs-number":
 						whereArray[0].push(
@@ -620,9 +620,9 @@ try {
 				).split("|");
 
 				switch (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						medStatPatIdParam[0]
-					)
+					)}`
 				) {
 					case "https://fhir.nhs.uk/Id/nhs-number":
 						whereArray[0].push(
@@ -699,7 +699,7 @@ try {
 		if ($("parameters").contains("deceased")) {
 			const deceased = $("parameters").getParameter("deceased");
 
-			switch (deceased) {
+			switch (`${deceased}`) {
 				case "false":
 					whereArray[0].push(
 						`(patmas.PAPMI_PAPER_DR->PAPER_Deceased = ''N'')`
@@ -762,9 +762,9 @@ try {
 				).split("|");
 
 				switch (
-					Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
 						identifierParam[0]
-					)
+					)}`
 				) {
 					case "https://fhir.nhs.uk/Id/nhs-number":
 						whereArray[0].push(
