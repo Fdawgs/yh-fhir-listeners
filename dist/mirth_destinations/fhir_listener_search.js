@@ -897,9 +897,9 @@ try {
 						);
 
 						whereArray[2].push(
-							"(RTMAS_MRType_DR->TYP_Code = ''KOR'' AND RTMAS_MRNo = ''".concat(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''KOR'' AND RTMAS_MRNo = ''".concat(
 								identifierParam[1],
-								"'')"
+								"''))"
 							)
 						);
 
@@ -921,9 +921,9 @@ try {
 						);
 
 						whereArray[2].push(
-							"(RTMAS_MRType_DR->TYP_Code = ''HSP'' AND RTMAS_MRNo = ''".concat(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''HSP'' AND RTMAS_MRNo = ''".concat(
 								identifierParam[1],
-								"'')"
+								"''))"
 							)
 						);
 
@@ -970,9 +970,9 @@ try {
 						);
 
 						whereArray[2].push(
-							"(RTMAS_MRType_DR->TYP_Code = ''GEN'' AND RTMAS_MRNo = ''".concat(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''GEN'' AND RTMAS_MRNo = ''".concat(
 								identifierParam[1],
-								"'')"
+								"''))"
 							)
 						);
 
@@ -1018,9 +1018,9 @@ try {
 						);
 
 						whereArray[2].push(
-							"(RTMAS_MRType_DR->TYP_Code = ''XRA'' AND RTMAS_MRNo = ''".concat(
+							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''XRA'' AND RTMAS_MRNo = ''".concat(
 								identifierParam[1],
-								"'')"
+								"''))"
 							)
 						);
 
