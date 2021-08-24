@@ -39,7 +39,7 @@ function buildPatientResource(data) {
 		result.secondaryIdentifiers == undefined ||
 		result.secondaryIdentifiers == null
 	) {
-		result.secondaryIdentifiers = { identifier: [] };
+		result.secondaryIdentifiers = JSON.stringify({ identifier: [] });
 	}
 
 	/**
