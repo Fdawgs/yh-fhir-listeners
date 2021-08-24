@@ -810,7 +810,9 @@ try {
 				);
 
 				whereArray[2].push(
-					`(RTMAS_PatNo_DR->PAPMI_No = ''${identifierParam[1]}'')`
+					`(RTMAS_PatNo_DR->PAPMI_No = ''${$(
+						"parameters"
+					).getParameter("identifier")}'')`
 				);
 			}
 		}

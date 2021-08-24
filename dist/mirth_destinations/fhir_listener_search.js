@@ -947,7 +947,7 @@ try {
 
 				whereArray[2].push(
 					"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(
-						identifierParam[1],
+						$("parameters").getParameter("identifier"),
 						"'')"
 					)
 				);
