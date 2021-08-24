@@ -808,6 +808,10 @@ try {
 						"parameters"
 					).getParameter("identifier")}'')`
 				);
+
+				whereArray[2].push(
+					`(RTMAS_PatNo_DR->PAPMI_No = ''${identifierParam[1]}'')`
+				);
 			}
 		}
 
