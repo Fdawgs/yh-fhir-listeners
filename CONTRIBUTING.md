@@ -53,7 +53,7 @@ Prior to submitting a pull request back to the main repository, please make sure
 
 ## Release Process
 
-Before a release, ensure the `dist/CapabilityStatement.xml` is using the semver generated in the latest automatic release pull request.
+Before a release, ensure the `dist/CapabilityStatement.xml` is using the semver generated in the latest automatic release pull request, and that `dist/FHIRListener.xml` has the latest changes.
 
 ## Issues
 
