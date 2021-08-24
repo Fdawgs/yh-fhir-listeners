@@ -140,9 +140,9 @@ FROM OPENQUERY(
 									patmas.PAPMI_PAPER_DR->PAPER_FamilyDoctorClinic_DR->CLN_Code AS gpIdentifier
 
 								FROM PA_PatMas patmas
-								WHERE (patmas.PAPMI_No = ''5484125'')
-								AND COALESCE(PAPMI_Active,''Y'') = ''Y''
-								AND (patmas.PAPMI_PAPER_DR->PAPER_ID IS NOT NULL OR patmas.PAPMI_No IS NOT NULL)') AS patient
+								WHERE COALESCE(PAPMI_Active,''Y'') = ''Y''
+								AND (patmas.PAPMI_PAPER_DR->PAPER_ID IS NOT NULL OR patmas.PAPMI_No IS NOT NULL)
+								AND (patmas.PAPMI_No = ''5484125'')') AS patient
 	LEFT JOIN lookup.dbo.ydh_dnd AS dnd WITH (NOLOCK)
 	ON patient.patientNo = dnd.patientNo
 
@@ -153,8 +153,8 @@ FROM OPENQUERY(
 						 NOK_PAPMI_ParRef->PAPMI_No AS patientNo
                     FROM PA_NOK
                    WHERE NOK_Relation_DR->CTRLT_Code = ''SCH''
-					 AND NOK_PAPMI_ParRef->PAPMI_No = ''5484125''
 					 AND NOK_Inactive = ''N''
+					 AND NOK_PAPMI_ParRef->PAPMI_No = ''5484125''
                    ') AS school
 	ON patient.patientNo = school.patientNo
 
@@ -167,7 +167,6 @@ FROM OPENQUERY(
 			WHEN 'GEN' THEN 'https://fhir.ydh.nhs.uk/Id/medical-record-number'
 			WHEN 'HSP' THEN 'https://fhir.ydh.nhs.uk/Id/legacy-hospital-number'
 			WHEN 'KOR' THEN 'https://fhir.ydh.nhs.uk/Id/korner-number'
-			WHEN 'NHS' THEN 'https://fhir.ydh.nhs.uk/Id/legacy-nhs-number'
 			WHEN 'XRA' THEN 'https://fhir.ydh.nhs.uk/Id/x-ray-number'
 			ELSE NULL
 			END AS [system],
@@ -176,8 +175,9 @@ FROM OPENQUERY(
 							'SELECT RTMAS_MRType_DR->TYP_Code AS code,
 									RTMAS_MRNo AS value
 									FROM RT_Master
-							  WHERE RTMAS_PatNo_DR->PAPMI_No = ''5484125''
-							  	AND RTMAS_Active = ''Y''
+							  WHERE RTMAS_Active = ''Y''
+							  	AND RTMAS_MRType_DR->TYP_Code != ''NHS''
+								AND (RTMAS_PatNo_DR->PAPMI_No = ''5484125'')
 							  ')
 		FOR JSON PATH, ROOT('identifier')) AS secondaryIdentifiers) AS identifiers
 	ON 1 = 1
