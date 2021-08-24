@@ -2,6 +2,67 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.1.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.0.0...v5.1.0) (2021-08-24)
+
+
+### Features
+
+* **medicationstatement:** add note and additionalinstruction key/values ([#221](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/221)) ([db5b06c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/db5b06c006d284e57789c3342fefb3d692742ca9))
+* **patient:** add secondary identifiers to resource ([2e23b34](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2e23b34cc37ec2b9dc5747dc5cf29b79f7bb0f20))
+* **search:** add additional patient identifier search params ([3ea6363](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3ea63636df84304f29b6fba5a7968523887db844))
+* **sql/patient:** add secondary identifiers ([3bb8c93](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3bb8c93ede1eece1206ab209034a935a6479019f))
+
+
+### Bug Fixes
+
+* **patient:** empty secondary identifier assignment ([b591e45](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/b591e459c8987785bfca8b55d4e786f9af928fe3))
+* **read:** add missing where predicates for patient reading ([1c52dd1](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1c52dd10a8ab298472e143fa07d699f2d43f9dc3))
+* **search:** add missing where clause for patient id search ([d961c69](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d961c698ac2bacd55b3df23999910d89cc84d302))
+* **search:** patient secondary assignment ([c6b4d5b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c6b4d5bffa2db249bd0b7a5a7beab76a1d0b30b8))
+* **search:** use correct identifier param for base patient id search ([404e0e6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/404e0e6bf046cedbfecd3e5db706728e4c07ad56))
+* **search:** wrap switch expressions in string to convert to js string ([de719df](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/de719dfd89613338925bcdc9f0ada71b73581018))
+* **sql/patient:** only retrieve active secondary ids ([ca51014](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ca51014a073e20d4bc3b86fc2098a745f78c4a28))
+
+
+### Continuous Integration
+
+* **cd:** move perf optimizations and refactoring into same section ([a070746](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a0707466507f185b56e8943f1f5a5582083bbb18))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.14.5 to 7.14.8 ([98864d4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/98864d4f7d5707b9a8f925d3655637b221aaeb9d))
+* **deps-dev:** bump @babel/core from 7.14.6 to 7.14.8 ([786394b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/786394bf483425d28c8315e22c1efff5e03de022))
+* **deps-dev:** bump @babel/preset-env from 7.14.7 to 7.14.8 ([193f7f5](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/193f7f5b8c675473eb4a05fa9c92700f67805a7d))
+* **deps-dev:** bump @commitlint/cli from 12.1.4 to 13.1.0 ([fd8161b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fd8161b28f3cb3db3bbfe6b9f3aff613ed898dc6))
+* **deps-dev:** bump @commitlint/config-conventional ([77c6250](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/77c62500d715a7436f78ea712fd32755ba803fbc))
+* **deps-dev:** bump eslint from 7.29.0 to 7.32.0 ([dcde894](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/dcde8942c23d9424e41e00a1a802d76ba2d962a7))
+* **deps-dev:** bump eslint-plugin-jsdoc from 35.4.0 to 35.4.1 ([d3a6a0e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d3a6a0e595c0892bc94c12fe3a0ebd41827c8073))
+* **deps-dev:** bump eslint-plugin-jsdoc from 35.4.1 to 36.0.6 ([3cfbf46](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3cfbf4654d764a0df00e645f21562ec46ad3cb77))
+* **deps-dev:** bump husky from 6.0.0 to 7.0.1 ([a9e9a00](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a9e9a000b8d9a8e788dfdb4f0588c696ee720f83))
+* **deps-dev:** bump prettier from 2.3.1 to 2.3.2 ([a3076d6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a3076d6f801dcfdbcaec258c08e33ddac1b660c9))
+* **deps:** bump actions/github-script from 4.0.2 to 4.1 ([285da58](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/285da5829add0c1b784c3e78d5d2bcab0b448c7e))
+* **deps:** bump actions/setup-node from 2.1.5 to 2.2.0 ([f36e60b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f36e60b3d9fc00660c35230f37f12e1c7f2d633b))
+* **deps:** bump actions/setup-node from 2.2.0 to 2.3.0 ([4512ff3](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4512ff3dad4ccd5577b431e2c4377c50824b1acd))
+* **deps:** bump actions/setup-node from 2.3.0 to 2.4.0 ([8dc6238](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/8dc6238f6b729a15859d5cd4f34f00081a07a8c8))
+* **deps:** bump GoogleCloudPlatform/release-please-action ([d7ee113](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d7ee113fe27cca3ed7f2a04a2e61bfd879cc7300))
+* **deps:** bump path-parse from 1.0.6 to 1.0.7 ([dd86ba9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/dd86ba954edfc29a917adc53dcfd5ce9a6929302))
+* **deps:** bump wagoid/commitlint-github-action from 3.1.4 to 4.1.1 ([fac2622](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fac26222ed29c3a7a6589e48554d2756ac890b06))
+
+
+### Miscellaneous
+
+* **sql/patient:** reorder predicates to reflect dynamic gen ([214d363](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/214d363df7b056301723d3b4e8a37737cef1ad51))
+* **vscode:** disable redhat telemetry ([08b89e8](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/08b89e8942274ae68b2c27cb5a7c7c366442c360))
+* **vscode:** remove user space config setting ([b4a6190](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/b4a619095bea07b6530e524138cebe6132043d00))
+
+
+### Improvements
+
+* **resource:** exclude legacy NHS numbers ([01b8e92](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/01b8e92993a35abe454d9d64dd5fb56874fd1271))
+* **search:** replace if...else statements with switch ([a33a3fb](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a33a3fb1b819a63463c41c04a7d7be180deb617c))
+* **sql/patient:** exclude legacy NHS numbers ([762c166](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/762c166ee90bd9f51e00b82ec3c7ab4f160918fe))
+
 ## [5.0.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v4.0.1...v5.0.0) (2021-06-25)
 
 
