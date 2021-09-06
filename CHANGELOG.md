@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.1.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.1.0...v5.1.1) (2021-09-06)
+
+
+### Bug Fixes
+
+* **resource/medicstat:** convert java string to js string for replace ([16fce06](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/16fce06ceb7e7dd21d09080e41c84baf2fba5da8))
+* **resource/medicstat:** incomplete string escaping or encoding ([#246](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/246)) ([a0ad542](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a0ad5424bdfaa2e2f1a092637859b82855e4c48d))
+
+
+### Documentation
+
+* **contributing:** fix rhino link ([31236f4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/31236f463dbcc11b75c05c7446f42316a92fdd19))
+
+
+### Miscellaneous
+
+* **.github:** use new YAML configured GitHub issue forms ([#244](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/244)) ([a2e5b76](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/a2e5b763bde7243d234a7f9545338db1f39f0474))
+
+
+### Continuous Integration
+
+* **ci:** replace workflow-run-cleanup-action with github concurrency ([#245](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/245)) ([dec8076](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/dec8076f39bf3839c0f1ccf59b26f127f869faaa))
+* **ci:** revert to workflow-run-clean-action from github concurrency ([bfe5de4](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/bfe5de457593b38d639a286a38e9599ed6a65b0f))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.14.8 to 7.15.4 ([f11a610](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f11a610687e91d5226ebfd27ba2a52ee641a44a0))
+* **deps-dev:** bump @babel/core from 7.14.8 to 7.15.0 ([77d690f](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/77d690f6684276c8525034517fed5627165c2c54))
+* **deps-dev:** bump @babel/core from 7.15.0 to 7.15.5 ([cd37d8d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/cd37d8d864893c8515d2ce1561065bcdf4edcd71))
+* **deps-dev:** bump @babel/node from 7.14.7 to 7.14.9 ([1d3fefd](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1d3fefd9ca7cb3760e545a9e27e5ad3d4a772002))
+* **deps-dev:** bump @babel/node from 7.14.9 to 7.15.4 ([393bff5](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/393bff59ccb235772820c3d2eb952120064015c3))
+* **deps-dev:** bump @babel/preset-env from 7.14.8 to 7.15.0 ([16f7174](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/16f71748fd98c5b4325c8d05636ed7fa4e23b768))
+* **deps-dev:** bump @babel/preset-env from 7.15.0 to 7.15.4 ([b552f42](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/b552f4229d612f6eb140bc6ebc3c6a79c7f405fc))
+* **deps-dev:** bump eslint-plugin-import from 2.23.4 to 2.24.2 ([f6bbf7a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f6bbf7aa16509ff4421e616c5d68413dcac10106))
+* **deps-dev:** bump eslint-plugin-jsdoc from 36.0.6 to 36.0.8 ([d10ff41](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d10ff4158cc6bafad81f7b3887f104bf976a6a5e))
+* **deps-dev:** bump husky from 7.0.1 to 7.0.2 ([c422f02](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c422f022606c0470b2cb4d9fe61a766b3fdb68f6))
+
 ## [5.1.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.0.0...v5.1.0) (2021-08-24)
 
 
