@@ -128,7 +128,7 @@ function buildMedicationStatementResource(data) {
 
 	if (result.medstatDosagePatientinstruction != undefined) {
 		dosageObject.patientInstruction = result.medstatDosagePatientinstruction
-			.replace('"', "")
+			.replace(/"/g, "")
 			.trim();
 	}
 
