@@ -131,7 +131,8 @@ function buildMedicationStatementResource(data) {
 	};
 
 	if (result.medstatDosagePatientinstruction != undefined) {
-		dosageObject.patientInstruction = result.medstatDosagePatientinstruction
+		dosageObject.patientInstruction = ""
+			.concat(result.medstatDosagePatientinstruction)
 			.replace(/"/g, "")
 			.trim();
 	}
