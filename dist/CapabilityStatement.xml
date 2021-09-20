@@ -205,6 +205,30 @@
                 <documentation value="A value in a phone contact"/>
             </searchParam>
         </resource>
+        <resource>
+            <type value="Procedure"/>
+            <profile>
+                <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"/>
+            </profile>
+            <versioning value="no-version"/>
+            <readHistory value="false"/>
+            <updateCreate value="false"/>
+            <searchParam>
+                <name value="date"/>
+                <type value="date"/>
+                <documentation value="Date/Period the procedure was performed"/>
+            </searchParam>
+            <searchParam>
+                <name value="identifier"/>
+                <type value="token"/>
+                <documentation value="A unique identifier for a procedure"/>
+            </searchParam>
+            <searchParam>
+                <name value="patient"/>
+                <type value="reference"/>
+                <documentation value="Search by subject - a patient"/>
+            </searchParam>
+        </resource>
     </rest>
     <document>
         <mode value="producer"/>
