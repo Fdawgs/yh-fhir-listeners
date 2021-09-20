@@ -61,6 +61,10 @@ try {
 				"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(id, "'')")
 			);
 			break;
+		case "procedure":
+			whereArray[0].push("(proc.PROC_ParRef = ''".concat(id, "'')"));
+			whereArray[1].push("(proc.PROC_ParRef = ''".concat(id, "'')"));
+			break;
 		default:
 			break;
 	}
@@ -102,6 +106,9 @@ try {
 				break;
 			case "patient":
 				data = buildPatientResource(result);
+				break;
+			case "procedure":
+				data = buildProcedureResource(result);
 				break;
 			default:
 				break;

@@ -45,6 +45,10 @@ try {
 			whereArray[1].push(`(NOK_PAPMI_ParRef->PAPMI_No = ''${id}'')`);
 			whereArray[2].push(`(RTMAS_PatNo_DR->PAPMI_No = ''${id}'')`);
 			break;
+		case "procedure":
+			whereArray[0].push(`(proc.PROC_ParRef = ''${id}'')`);
+			whereArray[1].push(`(proc.PROC_ParRef = ''${id}'')`);
+			break;
 		default:
 			break;
 	}
@@ -86,6 +90,9 @@ try {
 				break;
 			case "patient":
 				data = buildPatientResource(result);
+				break;
+			case "procedure":
+				data = buildProcedureResource(result);
 				break;
 			default:
 				break;
