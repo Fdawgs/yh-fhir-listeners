@@ -61,6 +61,7 @@ try {
 			"name",
 			"phone",
 		],
+		procedure: ["date", "identifier", "patient", "patient.identifier"],
 	};
 
 	// If any param not supported, reject request
@@ -890,6 +891,111 @@ try {
 		}
 	}
 
+	/**
+	 * =======================
+	 * Procedure search params
+	 * =======================
+	 */
+	if (type == "procedure") {
+		// GET [baseUrl]/Procedure?patient=[id]&date=[date]
+		if (
+			($("parameters").contains("patient") ||
+				$("parameters").contains("patient.identifier")) &&
+			$("parameters").contains("date")
+		) {
+			// Loop through each date param and build SQL WHERE clause
+			let dateArray = $("parameters").getParameterList("date").toArray();
+
+			if (dateArray[0].substring(0, 1) == "[") {
+				dateArray = JSON.parse(dateArray[0]);
+			}
+
+			dateArray.forEach((dateParam) => {
+				let date = dateParam;
+				date += "";
+
+				const operator = convertFhirParameterOperator(
+					date.substring(0, 2)
+				);
+
+				if (isNaN(date.substring(0, 2))) {
+					date = date.substring(2, date.length);
+				}
+
+				whereArray[0].push(
+					`(proc.PROC_ProcDate ${operator} ''${date}'')`
+				);
+				whereArray[1].push(
+					`(proc.PROC_ProcDate ${operator} ''${date}'')`
+				);
+			});
+		}
+
+		// GET [baseUrl]/Procedure?identifier=[id]
+		if ($("parameters").contains("identifier")) {
+			whereArray[0].push(
+				`(proc.PROC_ParRef = ''${$("parameters").getParameter(
+					"identifier"
+				)}'')`
+			);
+			whereArray[1].push(
+				`(proc.PROC_ParRef = ''${$("parameters").getParameter(
+					"identifier"
+				)}'')`
+			);
+		}
+
+		// GET [baseUrl]/Procedure?patient=[id]
+		if ($("parameters").contains("patient")) {
+			whereArray[0].push(
+				`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					"parameters"
+				).getParameter("patient")}'')`
+			);
+			whereArray[1].push(
+				`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					"parameters"
+				).getParameter("patient")}'')`
+			);
+		}
+
+		// GET [baseUrl]/Procedure?patient.identifier=[system]|[code]
+		if ($("parameters").contains("patient.identifier")) {
+			if (
+				$("parameters").getParameter("patient.identifier").contains("|")
+			) {
+				const procPatIdParam = String(
+					$("parameters").getParameter("patient.identifier")
+				).split("|");
+
+				switch (
+					`${Packages.org.apache.commons.lang3.StringEscapeUtils.unescapeHtml4(
+						procPatIdParam[0]
+					)}`
+				) {
+					case "https://fhir.nhs.uk/Id/nhs-number":
+						whereArray[0].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${procPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
+						);
+						whereArray[1].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${procPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
+						);
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${procPatIdParam[1]}'')`
+						);
+						whereArray[1].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${procPatIdParam[1]}'')`
+						);
+						break;
+				}
+			}
+		}
+	}
+
 	// Aggregrate all predicates in whereArray and build SQL WHERE clause from it
 	const wherePredicates = [];
 	for (let index = 0; index < whereArray.length; index += 1) {
@@ -931,6 +1037,9 @@ try {
 				break;
 			case "patient":
 				data = buildPatientResource(result);
+				break;
+			case "procedure":
+				data = buildProcedureResource(result);
 				break;
 			default:
 				break;
