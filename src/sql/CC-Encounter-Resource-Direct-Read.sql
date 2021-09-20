@@ -191,6 +191,7 @@ SELECT encounterIdentifier,
 	encounterDischargemethodCodingCode,
 	encounterDischargemethodCodingDesc,
 	subjectReference,
+	-- Every resource query must always have a lastUpdated column
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM encounter_CTE
 	LEFT JOIN (SELECT *

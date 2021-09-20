@@ -60,6 +60,7 @@ WITH
                medicationCodeCodingDisplay,
                medicationCodeCodingCode,
                note,
+               -- Every resource query must always have a lastUpdated column
                CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
           FROM OPENQUERY([ENYH-PRD-ANALYTICS],
                  'SELECT DISTINCT

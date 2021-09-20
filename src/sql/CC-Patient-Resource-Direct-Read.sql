@@ -50,6 +50,7 @@ SELECT nhsNumber,
 	school.schoolName,
 	school.schoolId,
 	school.schoolPhone,
+	-- Every resource query must always have a lastUpdated column
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY(
 		[ENYH-PRD-ANALYTICS], 'SELECT 
