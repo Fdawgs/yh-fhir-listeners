@@ -46,8 +46,15 @@ try {
 			whereArray[2].push(`(RTMAS_PatNo_DR->PAPMI_No = ''${id}'')`);
 			break;
 		case "procedure":
-			whereArray[0].push(`(proc.PROC_ParRef = ''${id}'')`);
-			whereArray[1].push(`(proc.PROC_ParRef = ''${id}'')`);
+			whereArray[0].push(
+				`(proc.PROC_RowID = REPLACE(''${id}'', ''-'', ''||''))`
+			);
+			whereArray[1].push(
+				`(proc.PROC_RowID = REPLACE(''${id}'', ''-'', ''||''))`
+			);
+			whereArray[2].push(
+				`(proc.PROC_RowID = REPLACE(''${id}'', ''-'', ''||''))`
+			);
 			break;
 		default:
 			break;

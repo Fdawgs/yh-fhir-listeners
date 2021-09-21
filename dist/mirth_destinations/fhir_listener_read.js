@@ -62,8 +62,27 @@ try {
 			);
 			break;
 		case "procedure":
-			whereArray[0].push("(proc.PROC_ParRef = ''".concat(id, "'')"));
-			whereArray[1].push("(proc.PROC_ParRef = ''".concat(id, "'')"));
+			whereArray[0].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
+					id,
+					"'', ''-'', ''||''))"
+				)
+			);
+
+			whereArray[1].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
+					id,
+					"'', ''-'', ''||''))"
+				)
+			);
+
+			whereArray[2].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
+					id,
+					"'', ''-'', ''||''))"
+				)
+			);
+
 			break;
 		default:
 			break;

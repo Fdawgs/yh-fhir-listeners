@@ -928,20 +928,24 @@ try {
 				whereArray[1].push(
 					`(proc.PROC_ProcDate ${operator} ''${date}'')`
 				);
+				whereArray[2].push(
+					`(proc.PROC_ProcDate ${operator} ''${date}'')`
+				);
 			});
 		}
 
 		// GET [baseUrl]/Procedure?identifier=[id]
 		if ($("parameters").contains("identifier")) {
 			whereArray[0].push(
-				`(proc.PROC_ParRef = ''${$("parameters").getParameter(
+				`(proc.PROC_RowID = REPLACE(''${$("parameters").getParameter(
 					"identifier"
-				)}'')`
+				)}'', ''-'', ''||''))`
 			);
-			whereArray[1].push(
-				`(proc.PROC_ParRef = ''${$("parameters").getParameter(
+			// whereArray[1] not needed as that is joined on operation ID, not procedure/rowID
+			whereArray[2].push(
+				`(proc.PROC_RowID = REPLACE(''${$("parameters").getParameter(
 					"identifier"
-				)}'')`
+				)}'', ''-'', ''||''))`
 			);
 		}
 
@@ -953,6 +957,11 @@ try {
 				).getParameter("patient")}'')`
 			);
 			whereArray[1].push(
+				`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
+					"parameters"
+				).getParameter("patient")}'')`
+			);
+			whereArray[2].push(
 				`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${$(
 					"parameters"
 				).getParameter("patient")}'')`
@@ -980,6 +989,9 @@ try {
 						whereArray[1].push(
 							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${procPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
 						);
+						whereArray[2].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''${procPatIdParam[1]}'' AND PAPMI_Active IS NULL))`
+						);
 						break;
 
 					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
@@ -988,6 +1000,9 @@ try {
 							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${procPatIdParam[1]}'')`
 						);
 						whereArray[1].push(
+							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${procPatIdParam[1]}'')`
+						);
+						whereArray[2].push(
 							`(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''${procPatIdParam[1]}'')`
 						);
 						break;

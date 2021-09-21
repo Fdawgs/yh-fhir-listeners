@@ -1127,22 +1127,29 @@ try {
 						.concat(operator, " ''")
 						.concat(date, "'')")
 				);
+
+				whereArray[2].push(
+					"(proc.PROC_ProcDate "
+						.concat(operator, " ''")
+						.concat(date, "'')")
+				);
 			});
 		}
 
 		// GET [baseUrl]/Procedure?identifier=[id]
 		if ($("parameters").contains("identifier")) {
 			whereArray[0].push(
-				"(proc.PROC_ParRef = ''".concat(
+				"(proc.PROC_RowID = REPLACE(''".concat(
 					$("parameters").getParameter("identifier"),
-					"'')"
+					"'', ''-'', ''||''))"
 				)
 			);
 
-			whereArray[1].push(
-				"(proc.PROC_ParRef = ''".concat(
+			// whereArray[1] not needed as that is joined on operation ID, not procedure/rowID
+			whereArray[2].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
 					$("parameters").getParameter("identifier"),
-					"'')"
+					"'', ''-'', ''||''))"
 				)
 			);
 		}
@@ -1157,6 +1164,13 @@ try {
 			);
 
 			whereArray[1].push(
+				"(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+					$("parameters").getParameter("patient"),
+					"'')"
+				)
+			);
+
+			whereArray[2].push(
 				"(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
 					$("parameters").getParameter("patient"),
 					"'')"
@@ -1195,6 +1209,13 @@ try {
 							)
 						);
 
+						whereArray[2].push(
+							"(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = (SELECT PAPMI_No FROM PA_PatMas pm WHERE pm.PAPMI_ID = ''".concat(
+								procPatIdParam[1],
+								"'' AND PAPMI_Active IS NULL))"
+							)
+						);
+
 						break;
 
 					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
@@ -1207,6 +1228,13 @@ try {
 						);
 
 						whereArray[1].push(
+							"(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
+								procPatIdParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[2].push(
 							"(proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No = ''".concat(
 								procPatIdParam[1],
 								"'')"
