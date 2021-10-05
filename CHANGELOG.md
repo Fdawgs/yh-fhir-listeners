@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.1.2](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.1.1...v5.1.2) (2021-10-05)
+
+
+### Continuous Integration
+
+* **automerge:** update location of octokit rest methods ([#265](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/265)) ([15f6ec6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/15f6ec646f3be8cdeda27d40b0072f5c7a9ee4c0))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.15.4 to 7.15.7 ([ed0e9e3](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ed0e9e399b75e65b97cf469c07da9a4b7fc925b9))
+* **deps-dev:** bump @babel/preset-env from 7.15.4 to 7.15.6 ([1bf3cab](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1bf3cab0b30b1e021c2193e563ff7166daae8e6c))
+* **deps-dev:** bump @commitlint/cli from 13.1.0 to 13.2.0 ([39079c8](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/39079c822a552b272e8b0b9bfdec2ec87ac1e69b))
+* **deps-dev:** bump @commitlint/config-conventional ([9b961a3](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9b961a3d57a5ce598bf2eb7daf03d69d6fc242dd))
+* **deps-dev:** bump eslint-plugin-jsdoc from 36.0.8 to 36.1.0 ([66a65cf](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/66a65cf2fa92507efcdc09e4c55f3600c16347a0))
+* **deps-dev:** bump prettier from 2.3.2 to 2.4.1 ([ece03d1](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ece03d188ba058ecfa8cf4d55569a6aa97bb359d))
+* **deps:** bump actions/github-script from 4.1 to 5 ([25d7d66](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/25d7d663a992e36d328ffaa46d7af982ac8677e1))
+* **deps:** bump actions/setup-node from 2.4.0 to 2.4.1 ([2f6f138](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2f6f1384b27c93da12d9948bee20c8dcae15614e))
+* **deps:** bump ansi-regex from 5.0.0 to 5.0.1 ([831e603](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/831e6037a088c64bdd2b666adaca89a3a65c1215))
+* **deps:** bump GoogleCloudPlatform/release-please-action ([fa7a981](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fa7a981e6fb761317c99624d7a44b3b1f5fa49f2))
+* **deps:** bump wagoid/commitlint-github-action from 4.1.1 to 4.1.4 ([79631db](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/79631db7c89db8941d4e4537492a9fb88b1f1f68))
+
+
+### Miscellaneous
+
+* **.husky/.gitignore:** remove now redundant file ([2461ca8](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2461ca8cb1b24b9c876b8fbb17a904ed3d50c808))
+* **.prettierrc:** enable `bracketsameline` option ([#266](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/266)) ([d021377](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/d0213773160d008bfbf4d841436d51138c284900))
+* **.prettierrc:** override defaults for html, css, and scss files ([#251](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/251)) ([fdc499e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fdc499e11f32a82cfe7b0ee9ebb11aeaa71efb95))
+* **.vscode:** add `mhutchie.git-graph` extension ([0541b24](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/0541b242de539416f88654f655b3b158e305d3d4))
+
+
+### Documentation
+
+* **readme:** add link to hospital logo ([c033a30](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c033a30004a0c3d85ee93be3964003633963f815))
+
 ### [5.1.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.1.0...v5.1.1) (2021-09-06)
 
 
