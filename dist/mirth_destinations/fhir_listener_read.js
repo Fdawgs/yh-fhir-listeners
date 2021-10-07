@@ -69,13 +69,7 @@ try {
 				)
 			);
 
-			whereArray[1].push(
-				"(proc.PROC_RowID = REPLACE(''".concat(
-					id,
-					"'', ''-'', ''||''))"
-				)
-			);
-
+			// whereArray[1] not needed as that is joined on operation ID, not procedure/rowID
 			whereArray[2].push(
 				"(proc.PROC_RowID = REPLACE(''".concat(
 					id,
