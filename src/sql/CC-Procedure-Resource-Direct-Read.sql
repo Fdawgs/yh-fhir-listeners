@@ -28,18 +28,20 @@ SELECT id as procedureId,
                                            AND (proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No=''548125'')') codes
   WHERE procedures.id = codes.id
   FOR JSON PATH) AS procedureCode,
-  ( SELECT 'https://fhir.nhs.uk/Id/opcs-4' AS [system],
-    code,
-    display
-  FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT 
-                                               proc.PROC_ParRef AS operationId,
-                                               proc.PROC_Operation_DR->OPER_Code AS code,
-                                               proc.PROC_Operation_DR->OPER_Desc AS display
-                                          FROM MR_Procedures proc
-                                         WHERE SUBSTRING(proc.PROC_Operation_DR->OPER_Code, 1, 1) = ''Z''
-                                           AND (proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No=''548125'')') codes
-  WHERE procedures.operationId = codes.operationId
-  FOR JSON PATH) AS procedureBodySiteCode,
+
+  -- TODO: Fix inaccurate groupings
+  -- ( SELECT 'https://fhir.nhs.uk/Id/opcs-4' AS [system],
+  --   code,
+  --   display
+  -- FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT 
+  --                                              proc.PROC_ParRef AS operationId,
+  --                                              proc.PROC_Operation_DR->OPER_Code AS code,
+  --                                              proc.PROC_Operation_DR->OPER_Desc AS display
+  --                                         FROM MR_Procedures proc
+  --                                        WHERE SUBSTRING(proc.PROC_Operation_DR->OPER_Code, 1, 1) = ''Z''
+  --                                          AND (proc.PROC_ParRef->MRADM_ADM_DR->PAADM_PAPMI_DR->PAPMI_No=''548125'')') codes
+  -- WHERE procedures.operationId = codes.operationId
+  -- FOR JSON PATH) AS procedureBodySiteCode,
   -- Every resource query must always have a lastUpdated column
   CONCAT(COALESCE(procedureDateRecordedDate, ''), 'T', COALESCE(procedureDateRecordedTime, '00:00:00')) AS lastUpdated
 FROM OPENQUERY([ENYH-PRD-ANALYTICS], 'SELECT DISTINCT REPLACE(proc.PROC_RowID, ''||'', ''-'') AS id,

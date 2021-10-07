@@ -65,15 +65,16 @@ function buildProcedureResource(data) {
 		resource.code = { coding: JSON.parse(result.procedureCode) };
 	}
 
+	// TODO: Fix inaccurate bodySite groupings in ./src/sql/CC-Procedure-Resource-Direct-Read.sql
 	// Add bodySite.coding[*]
-	if (
-		result.procedureBodySiteCode != undefined &&
-		result.procedureBodySiteCode != null
-	) {
-		resource.bodySite = {
-			coding: JSON.parse(result.procedureBodySiteCode),
-		};
-	}
+	// if (
+	// 	result.procedureBodySiteCode != undefined &&
+	// 	result.procedureBodySiteCode != null
+	// ) {
+	// 	resource.bodySite = {
+	// 		coding: JSON.parse(result.procedureBodySiteCode),
+	// 	};
+	// }
 
 	// Extensions (Care Connect or otherwise)
 	const extension = [];
