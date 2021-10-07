@@ -42,6 +42,7 @@ WITH
 SELECT flag_CTE.*,
   snom.SNOMED_Code AS flagCodeCodingSnomedCode,
   snom.SNOMED_Display AS flagCodeCodingSnomedDisplay,
+  -- Every resource query must always have a lastUpdated column
   CASE
        WHEN periodEnd > periodStart
        THEN periodEnd

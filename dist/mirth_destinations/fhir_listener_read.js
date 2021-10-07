@@ -61,6 +61,23 @@ try {
 				"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(id, "'')")
 			);
 			break;
+		case "procedure":
+			whereArray[0].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
+					id,
+					"'', ''-'', ''||''))"
+				)
+			);
+
+			// whereArray[1] not needed as that is joined on operation ID, not procedure/rowID
+			whereArray[2].push(
+				"(proc.PROC_RowID = REPLACE(''".concat(
+					id,
+					"'', ''-'', ''||''))"
+				)
+			);
+
+			break;
 		default:
 			break;
 	}
@@ -102,6 +119,9 @@ try {
 				break;
 			case "patient":
 				data = buildPatientResource(result);
+				break;
+			case "procedure":
+				data = buildProcedureResource(result);
 				break;
 			default:
 				break;

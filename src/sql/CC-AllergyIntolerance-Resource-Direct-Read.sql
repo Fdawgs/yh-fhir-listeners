@@ -17,6 +17,7 @@ SELECT id,
 	typeCode,
 	criticalityCode,
 	CONCAT(COALESCE(assertedDate, ''), 'T', COALESCE(assertedTime, '')) AS assertedDate,
+	-- Every resource query must always have a lastUpdated column
 	CONCAT(COALESCE(lastUpdateDate, ''), 'T', COALESCE(lastUpdateTime, '')) AS lastUpdated
 FROM OPENQUERY([ENYH-PRD-ANALYTICS],
   				'SELECT REPLACE(alle.ALG_RowId, ''||'', ''-'') AS id,
