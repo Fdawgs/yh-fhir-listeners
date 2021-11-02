@@ -27,7 +27,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/about-us/digital-projects/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Stakeholders (as of 2020-12-31) are:
+Stakeholders (as of 2021-11-02) are:
 
 -   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
@@ -53,7 +53,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 ## Prerequisites
 
--   [Mirth Connect v3.11.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.11.0) installed (including supporting database instance)
+-   [Mirth Connect v3.11.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.11.0) (including supporting database instance)
 -   [Mirth Connect FHIR Connector extension v3.11.0.b1424](./src/fhir-3.11.0.b1424.zip)
 -   Latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPs, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) (optional, for development)
