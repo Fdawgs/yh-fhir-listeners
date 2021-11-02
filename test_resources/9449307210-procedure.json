@@ -1,0 +1,244 @@
+{
+	"resourceType": "Bundle",
+	"type": "searchset",
+	"total": 7,
+	"link": [
+		{
+			"relation": "self",
+			"url": "https://sider.ydh.nhs.uk/STU3/Procedure?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449307210"
+		}
+	],
+	"entry": [
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/1193818-5",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "1193818-5",
+				"meta": {
+					"lastUpdated": "2019-03-20T09:20:56",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2019-03-20T09:20:56"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "O161",
+							"display": "Pelvis NEC"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2019-03-11T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/149628-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "149628-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:46",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:46"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "C751",
+							"display": "Insertion of prosthetic replacement for lens NEC"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2012-07-05T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/149628-2",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "149628-2",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:46",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:46"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "C712",
+							"display": "Phacoemulsification of lens"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2012-07-05T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/149696-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "149696-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:49",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:49"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "M459",
+							"display": "Unspecified diagnostic endoscopic examination of bladder"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2012-04-17T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/150528-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "150528-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:49",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:49"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "H251",
+							"display": "Diagnostic endoscopic examination of lower bowel and biopsy of lesion of lower bowel using fibreoptic sigmoidoscope"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2011-10-12T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/153845-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "153845-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:49",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:49"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W903",
+							"display": "Injection of therapeutic substance into joint"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2011-02-02T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/720690-3",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "720690-3",
+				"meta": {
+					"lastUpdated": "2016-11-29T14:39:08",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-11-29T14:39:08"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "G451",
+							"display": "Fibreoptic endoscopic examination of upper gastrointestinal tract and biopsy of lesion of upper gastrointestinal tract"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/9999999"
+				},
+				"performedDateTime": "2016-10-26T00:00:00"
+			}
+		}
+	]
+}

@@ -60,7 +60,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Space doses evenly through day until course finished, unless told to stop.",
+						"additionalInstruction": [
+							{
+								"text": "Space doses evenly through day until course finished, unless told to stop."
+							}
+						],
+						"patientInstruction": "Take ONE tablet TWICE daily to complete the course.",
 						"timing": {
 							"repeat": {
 								"duration": 2,
@@ -129,7 +134,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+						"additionalInstruction": [
+							{
+								"text": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to"
+							}
+						],
+						"patientInstruction": "Take ONE capsule at breakfast and take ONE capsule at suppertime",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -198,7 +208,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet ONCE a day",
 						"timing": {
 							"repeat": {
 								"duration": 14,
@@ -267,7 +282,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
+						"additionalInstruction": [
+							{
+								"text": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines"
+							}
+						],
+						"patientInstruction": "Take ONE capsule THREE times a day when required",
 						"timing": {
 							"repeat": {
 								"duration": 10,
@@ -336,7 +356,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Suck or chew this medicine.",
+						"additionalInstruction": [
+							{
+								"text": "Suck or chew this medicine."
+							}
+						],
+						"patientInstruction": "Take ONE tablet each morning",
 						"timing": {
 							"repeat": {
 								"duration": 30,
@@ -405,7 +430,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take EIGHT drops once a day as directed",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -467,7 +497,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+						"additionalInstruction": [
+							{
+								"text": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to"
+							}
+						],
+						"patientInstruction": "Take 7.5ml twice a day.",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -536,7 +571,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take 20ml twice a day",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -605,7 +645,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Swallow this medicine whole. Do not chew or crush.",
+						"additionalInstruction": [
+							{
+								"text": "Swallow this medicine whole. Do not chew or crush."
+							}
+						],
+						"patientInstruction": "Take ONE tablet in the morning",
 						"timing": {
 							"repeat": {
 								"duration": 7,
@@ -674,7 +719,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take 100mls ONCE WEEKLY on a Monday",
 						"timing": {
 							"repeat": {
 								"duration": 1,
@@ -743,7 +793,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet once a week on a monday morning.",
 						"timing": {
 							"repeat": {
 								"duration": 4,
@@ -809,7 +864,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet in the morning.",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -875,7 +935,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+						"additionalInstruction": [
+							{
+								"text": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to"
+							}
+						],
+						"patientInstruction": "Take ONE capsule TWICE daily",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -941,7 +1006,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Do not take more than 2 at any one time, or more than 8 in 24 hours., Contains paracetamol. Do not take anything else containing paracetamol., Talk to a doctor at once if you take too much, even if you feel well",
+						"additionalInstruction": [
+							{
+								"text": "Do not take more than 2 at any one time, or more than 8 in 24 hours., Contains paracetamol. Do not take anything else containing paracetamol., Talk to a doctor at once if you take too much, even if you feel well"
+							}
+						],
+						"patientInstruction": "Take TWO tablets FOUR times daily",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1007,7 +1077,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to",
+						"additionalInstruction": [
+							{
+								"text": "Warning. May make you sleepy. If so do not drive/use tools or machines., Warning. Do not stop taking this medicine unless your doctor tells you to"
+							}
+						],
+						"patientInstruction": "Take ONE capsule TWICE a day",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1073,7 +1148,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE capsule TWICE daily",
 						"timing": {
 							"repeat": {
 								"duration": 14,
@@ -1114,6 +1194,13 @@
 						"resourceType": "Medication",
 						"id": "15433-1",
 						"code": {
+							"coding": [
+								{
+									"system": "https://snomed.info/sct",
+									"code": "8551311000001108",
+									"display": "Lidocaine 2% and Chlorhexidine gel 60 ml"
+								}
+							],
 							"text": "lidocaine with chlorhexidine, gel,2% + 0.25%,6ml syringe [10 X 6ml syringe]"
 						}
 					}
@@ -1132,7 +1219,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "For external use only.",
+						"additionalInstruction": [
+							{
+								"text": "For external use only."
+							}
+						],
+						"patientInstruction": "Use when required as directed",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1198,7 +1290,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Chew thoroughly before swallowing.",
+						"additionalInstruction": [
+							{
+								"text": "Chew thoroughly before swallowing."
+							}
+						],
+						"patientInstruction": "Take ONE tablet each morning",
 						"timing": {
 							"repeat": {
 								"duration": 30,
@@ -1264,7 +1361,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet ONCE A WEEK on a SATURDAY as directed",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1330,7 +1432,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet at night",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1396,7 +1503,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet at night",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -1462,7 +1574,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Do not exceed the prescribed dose.",
+						"additionalInstruction": [
+							{
+								"text": "Do not exceed the prescribed dose."
+							}
+						],
+						"patientInstruction": "Take ONE capsule up to FOUR times a day when required as directed",
 						"timing": {
 							"repeat": {
 								"duration": 14,
@@ -1528,7 +1645,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines",
+						"additionalInstruction": [
+							{
+								"text": "Do not drink alcohol., Warning. May make you sleepy. If so do not drive/use tools or machines"
+							}
+						],
+						"patientInstruction": "Take one to two tablets four times a day when required",
 						"timing": {
 							"repeat": {
 								"duration": 28,
