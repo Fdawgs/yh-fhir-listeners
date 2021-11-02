@@ -38,9 +38,7 @@ Link expression: `"&"_##class(Custom.ENYH.Integration.ContextualLink.GenericPati
 
 ### Contextual link icon
 
-Whilst this was ongoing, the icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH at the time, with the final icon seen in the mock-up below (the S with a stalk, in a circle):
-
-<img src="https://raw.githubusercontent.com/Fdawgs/ydh-fhir-listeners/master/docs/images/YDH-TrakCare-SIDeR-Contextual-Link-Icon.png" width="800">
+Whilst this was ongoing, the icon to be used for the SIDeR contextual link was deliberated on with Tony Smith, CCIO at YDH at the time.
 
 ## Contextual link obfuscation
 
