@@ -81,6 +81,26 @@
 				],
 				"identifier": [
 					{
+						"use": "secondary",
+						"system": "https://fhir.ydh.nhs.uk/Id/legacy-hospital-number",
+						"value": "999999"
+					},
+					{
+						"use": "secondary",
+						"system": "https://fhir.ydh.nhs.uk/Id/x-ray-number",
+						"value": "X0199999"
+					},
+					{
+						"use": "secondary",
+						"system": "https://fhir.ydh.nhs.uk/Id/korner-number",
+						"value": "9999999"
+					},
+					{
+						"use": "secondary",
+						"system": "https://fhir.ydh.nhs.uk/Id/medical-record-number",
+						"value": "999999"
+					},
+					{
 						"use": "usual",
 						"system": "https://fhir.ydh.nhs.uk/Id/local-patient-identifier",
 						"value": "9999999"
@@ -115,7 +135,7 @@
 				],
 				"gender": "female",
 				"birthDate": "1930-05-30",
-				"deceasedBoolean": true,
+				"deceasedDateTime": "2019-04-08T12:00:00",
 				"address": [
 					{
 						"use": "home",
