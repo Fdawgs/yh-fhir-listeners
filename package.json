@@ -18,7 +18,8 @@
     "lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
     "lint:prettier": "prettier . --write --ignore-unknown",
     "lint:prettier:ci": "prettier . --check --ignore-unknown",
-    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks"
+    "prepare": "husky install && rm -rf .git/hooks && ln -s ../.husky .git/hooks",
+    "test": "npm run lint && npm run lint:prettier:ci"
   },
   "commitlint": {
     "extends": [
