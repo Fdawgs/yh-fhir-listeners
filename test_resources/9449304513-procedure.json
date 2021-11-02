@@ -1,0 +1,277 @@
+{
+	"resourceType": "Bundle",
+	"type": "searchset",
+	"total": 8,
+	"link": [
+		{
+			"relation": "self",
+			"url": "https://sider.ydh.nhs.uk/STU3/Procedure?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
+		}
+	],
+	"entry": [
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/1220275-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "1220275-1",
+				"meta": {
+					"lastUpdated": "2019-05-08T08:53:38",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2019-05-08T08:53:38"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "H248",
+							"display": "Other specified other therapeutic endoscopic operations on lower bowel using fibreoptic sigmoidoscope"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2019-04-17T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/1220275-2",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "1220275-2",
+				"meta": {
+					"lastUpdated": "2019-05-08T08:53:38",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2019-05-08T08:53:38"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "H303",
+							"display": "Passage of flatus tube to reduce volvulus of sigmoid colon"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2019-04-17T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/1239967-3",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "1239967-3",
+				"meta": {
+					"lastUpdated": "2019-06-19T09:17:32",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2019-06-19T09:17:32"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "M479",
+							"display": "Unspecified urethral catheterisation of bladder"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2019-05-19T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/228616-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "228616-1",
+				"meta": {
+					"lastUpdated": "2016-07-14T14:45:16",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-07-14T14:45:16"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W965",
+							"display": "Primary reverse polarity total prosthetic replacement of shoulder joint using cement"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2016-07-07T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/36459-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "36459-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:30",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:30"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W502",
+							"display": "Conversion to prosthetic replacement of head of humerus not using cement"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2015-05-01T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/36459-2",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "36459-2",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:30",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:30"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W960",
+							"display": "Conversion from total prosthetic replacement of shoulder joint using cement"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2015-05-01T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/41307-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "41307-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:33",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:33"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W401",
+							"display": "Primary total prosthetic replacement of knee joint using cement"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2013-08-12T00:00:00"
+			}
+		},
+		{
+			"fullUrl": "https://sider.ydh.nhs.uk/STU3/Procedure/44501-1",
+			"resource": {
+				"resourceType": "Procedure",
+				"id": "44501-1",
+				"meta": {
+					"lastUpdated": "2016-06-11T03:04:31",
+					"profile": [
+						"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1"
+					]
+				},
+				"extension": [
+					{
+						"url": "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
+						"valueDateTime": "2016-06-11T03:04:31"
+					}
+				],
+				"status": "completed",
+				"code": {
+					"coding": [
+						{
+							"system": "https://fhir.nhs.uk/Id/opcs-4",
+							"code": "W965",
+							"display": "Primary reverse polarity total prosthetic replacement of shoulder joint using cement"
+						}
+					]
+				},
+				"subject": {
+					"reference": "https://sider.ydh.nhs.uk/STU3/Patient/8888888"
+				},
+				"performedDateTime": "2012-12-19T00:00:00"
+			}
+		}
+	]
+}

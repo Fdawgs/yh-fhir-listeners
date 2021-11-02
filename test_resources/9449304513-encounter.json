@@ -70,7 +70,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -345,17 +345,7 @@
 							"display": "WARD 8B"
 						},
 						"period": {
-							"start": "2012-09-18T14:59:00"
-						}
-					},
-					{
-						"location": {
-							"identifier": {
-								"value": "8B"
-							},
-							"display": "WARD 8B"
-						},
-						"period": {
+							"start": "2012-09-18T14:59:00",
 							"end": "2012-09-19T08:30:00"
 						}
 					}
@@ -526,17 +516,7 @@
 							"display": "WARD 8B"
 						},
 						"period": {
-							"start": "2012-12-18T15:00:00"
-						}
-					},
-					{
-						"location": {
-							"identifier": {
-								"value": "8B"
-							},
-							"display": "WARD 8B"
-						},
-						"period": {
+							"start": "2012-12-18T15:00:00",
 							"end": "2012-12-21T18:20:00"
 						}
 					}
@@ -561,7 +541,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -622,7 +602,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -829,17 +809,7 @@
 							"display": "KINGSTON PRIVATE WING"
 						},
 						"period": {
-							"start": "2013-08-11T14:45:00"
-						}
-					},
-					{
-						"location": {
-							"identifier": {
-								"value": "KW"
-							},
-							"display": "KINGSTON PRIVATE WING"
-						},
-						"period": {
+							"start": "2013-08-11T14:45:00",
 							"end": "2013-08-17T17:00:00"
 						}
 					}
@@ -1045,7 +1015,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1339,7 +1309,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1400,7 +1370,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1461,7 +1431,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1522,7 +1492,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1583,7 +1553,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -1841,7 +1811,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2024,7 +1994,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2214,7 +2184,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2275,7 +2245,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2336,7 +2306,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2483,7 +2453,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2544,7 +2514,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2605,7 +2575,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2666,7 +2636,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2727,7 +2697,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2849,7 +2819,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -2910,7 +2880,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3125,7 +3095,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3186,7 +3156,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3247,7 +3217,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3308,7 +3278,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3430,7 +3400,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3491,7 +3461,7 @@
 						}
 					]
 				},
-				"status": "arrived",
+				"status": "in-progress",
 				"class": {
 					"system": "https://hl7.org/fhir/v3/ActEncounterCode",
 					"code": "AMB",
@@ -3797,17 +3767,7 @@
 							"display": "WARD 6A"
 						},
 						"period": {
-							"start": "2016-07-07T15:00:00"
-						}
-					},
-					{
-						"location": {
-							"identifier": {
-								"value": "6A"
-							},
-							"display": "WARD 6A"
-						},
-						"period": {
+							"start": "2016-07-07T15:00:00",
 							"end": "2016-07-12T14:13:00"
 						}
 					}
@@ -4159,17 +4119,7 @@
 							"display": "WARD 7A"
 						},
 						"period": {
-							"start": "2019-04-16T20:50:00"
-						}
-					},
-					{
-						"location": {
-							"identifier": {
-								"value": "7A"
-							},
-							"display": "WARD 7A"
-						},
-						"period": {
+							"start": "2019-04-16T20:50:00",
 							"end": "2019-05-03T16:20:00"
 						}
 					}

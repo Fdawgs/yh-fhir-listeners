@@ -5,7 +5,7 @@
 	"link": [
 		{
 			"relation": "self",
-			"url": "https://sider.ydh.nhs.uk/STU3/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C9449304513"
+			"url": "https://sider.ydh.nhs.uk/STU3/MedicationStatement?patient.identifier=https%3A%2F%2Ffhir.nhs.uk%2FId%2Fnhs-number%7C4746224323"
 		}
 	],
 	"entry": [
@@ -60,7 +60,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "For external use only.",
+						"additionalInstruction": [
+							{
+								"text": "For external use only."
+							}
+						],
+						"patientInstruction": "Apply the gel to the affected areas THREE times a day as directed",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -129,7 +134,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Not to be taken orally., Discard four weeks after first opening",
+						"additionalInstruction": [
+							{
+								"text": "Not to be taken orally., Discard four weeks after first opening"
+							}
+						],
+						"patientInstruction": "Instil ONE to TWO drops into the affected eye(s) when required. Expiry Date:15/5/19",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -198,7 +208,11 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "Dissolve or mix with water before taking.",
+						"additionalInstruction": [
+							{
+								"text": "Dissolve or mix with water before taking."
+							}
+						],
 						"timing": {
 							"repeat": {
 								"duration": 5,
@@ -267,7 +281,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet ONCE daily",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -336,7 +355,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take TWO capsules each morning",
 						"timing": {
 							"repeat": {
 								"duration": 14,
@@ -405,7 +429,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet THREE times a day",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -446,6 +475,13 @@
 						"resourceType": "Medication",
 						"id": "70338-1",
 						"code": {
+							"coding": [
+								{
+									"system": "https://snomed.info/sct",
+									"code": "32692811000001100",
+									"display": "Thiamine 100mg tablets 28 tablet"
+								}
+							],
 							"text": "thiamine, tablets,100mg,tablet(s) [28 tablet(s)]"
 						}
 					}
@@ -467,7 +503,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
+						"patientInstruction": "Take ONE tablet THREE times a day",
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -536,7 +577,12 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "For external use only.",
+						"additionalInstruction": [
+							{
+								"text": "For external use only."
+							}
+						],
+						"patientInstruction": "Apply the gel to the affected areas THREE times a day as directed",
 						"timing": {
 							"repeat": {
 								"duration": 14,
@@ -602,7 +648,11 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
 						"timing": {
 							"repeat": {
 								"duration": 28,
@@ -668,7 +718,11 @@
 				"taken": "unk",
 				"dosage": [
 					{
-						"patientInstruction": "no instruction",
+						"additionalInstruction": [
+							{
+								"text": "no instruction"
+							}
+						],
 						"route": {
 							"text": "Intramuscular Injection"
 						},
