@@ -2,6 +2,40 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.2.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.2.0...v5.2.1) (2021-11-03)
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.15.7 to 7.16.0 ([af3ac5d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/af3ac5df02a65b7fdc67df99fbd3cdb34a287212))
+* **deps-dev:** bump @babel/core from 7.15.8 to 7.16.0 ([5f949ec](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/5f949ec228f5971ece1f4aecf1b155091eb59e30))
+* **deps-dev:** bump @babel/node from 7.15.8 to 7.16.0 ([acfb5e7](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/acfb5e79b2f63fbe4a4e9d45b8b46a7eb7a0744d))
+* **deps-dev:** bump @babel/preset-env from 7.15.8 to 7.16.0 ([e964e96](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/e964e96d03c9d03580b7cea121dd5968595150d9))
+* **deps-dev:** bump @commitlint/cli from 13.2.0 to 13.2.1 ([3ecd377](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3ecd377b448ced7ff3e382705209280a3454ff5a))
+* **deps-dev:** bump eslint-plugin-import from 2.24.2 to 2.25.2 ([697df59](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/697df59cd7f4cb97d62ff30d873bb96a3968b45a))
+* **deps-dev:** bump eslint-plugin-jsdoc from 36.1.0 to 37.0.3 ([fc9312e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/fc9312ef5ee13d7482ebf78166a05bff4f9ebcc7))
+* **deps-dev:** bump husky from 7.0.2 to 7.0.4 ([3907328](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/39073282a572064c2395161e525c2da42a9ffae6))
+* **deps-dev:** fix husky pre-commit hook ([22357c2](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/22357c2346add903cbef83aefc8051d7629b961e))
+* **deps-dev:** update lockfile from v1 to v2; bump sub-dependencies ([9061c08](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/9061c082341f767a03d5530d121bc161f5ea1b78))
+* **deps:** bump actions/checkout from 2.3.4 to 2.3.5 ([863e618](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/863e6180c3841fac514334f7b9cc19d8d599765f))
+* **deps:** bump wagoid/commitlint-github-action from 4.1.5 to 4.1.9 ([16c070b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/16c070baa1c5fd06f4742919a0458f0557c1a264))
+
+
+### Documentation
+
+* bump coc from v2.0.0 to v2.1.0 ([#277](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/277)) ([4e336a0](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4e336a0585f43e5aaac391496fe633508ad5f7b8))
+* **readme:** increment dates ([f4b0cb9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f4b0cb918cdf5ce37c037e57307fa23beb3cd6ec))
+* remove contextual link media ([06d748d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/06d748d5c2ef47d3133f0450df7fcd5c4d6d8343))
+
+
+### Miscellaneous
+
+* **.eslintrc:** set correct ecmascript version ([69ce5f9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/69ce5f96062cf0861e157bbc64d8e0af84c4dc4b))
+* **.prettierrc:** only enable `bracketSameLine` for html ([#292](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/292)) ([31d5048](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/31d5048509ca311cfb57be278ac3348e1e06f458))
+* **.vscode:** remove deprecated settings ([#275](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/275)) ([58f6603](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/58f660306792246e9f939af652907e77040d264e))
+* add fhir extension ([451f8c9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/451f8c970415089fff5278f4f2b0181f94ec9d5f))
+* update example test resources ([#291](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/291)) ([0a76f18](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/0a76f18ffc9ac8762942385afbc7d25d98d22ad2))
+
 ## [5.2.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.1.1...v5.2.0) (2021-10-07)
 
 
