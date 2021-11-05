@@ -19,7 +19,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](./docs/worklogs/).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement into their own systems.
+The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement in their own systems.
 
 This documentation is written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
@@ -43,7 +43,7 @@ Stakeholders (as of 2021-11-02) are:
 
 #### Care Connect RESTful FHIR API Endpoints
 
-Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that have the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
+Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that has the capability to do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
 Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](./docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
@@ -55,7 +55,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 -   [Mirth Connect v3.11.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.11.0) (including supporting database instance)
 -   [Mirth Connect FHIR Connector extension v3.11.0.b1424](./src/fhir-3.11.0.b1424.zip)
--   Latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPs, OAuth, and bearer tokens)
+-   Latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) (optional, for development)
 
 ## Deployment
@@ -82,7 +82,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
         -   350,513 non-deceased patients with records in TrakCare as of 2020-11-19
             -   34,405 patients have ‘No Known Allergy’ recorded (9.8%)
             -   13,139 patients have one or more allergies recorded (3.7%)
-    -   Due to the above issues, Paul Foster (CCIO at YDH) on 2020-11-19 suggested we **do not provide AllergyIntolerance resources** (functionality is still present in channel however)
+    -   Due to the above issues, Paul Foster (CCIO at YDH) on 2020-11-19 suggested we **do not provide AllergyIntolerance resources** (functionality is still present in the channel, however)
 -   Condition resources:
     -   **Unable to provide Condition resources** as conditions are held in SimpleCode, not TrakCare
 -   DocumentReference resources:
@@ -93,15 +93,15 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
         -   In TrakCare a care provider has a mobile number field against them, but it is rarely populated
         -   There is not an internal contact number field in TrakCare
         -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
-        -   Teams do not have contact number
+        -   Teams do not have a contact number
 -   Patient resources:
-    -   Unable to provide SNOMED codes for religious affiliation as these are not in TrakCare (NHS Data Dictionary coding is provided however)
-    -   Unable to provide GP surgery/organisation `name` value for inline Organization FHIR resource as this data is also not held in TrakCare; using GP consultant name as placeholder
-    -   Sizeable number of patient records without postcodes
+    -   Unable to provide SNOMED codes for religious affiliation as these are not in TrakCare (NHS Data Dictionary coding is provided, however)
+    -   Unable to provide GP surgery/organisation `name` value for inline Organization FHIR resource as this data is also not held in TrakCare; using GP consultant name as a placeholder
+    -   A sizeable number of patient records without postcodes
 
 ### Search Caveats
 
--   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long running SQL queries:
+-   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long-running SQL queries:
     -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error
     -   `GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]` will work
 
@@ -118,10 +118,10 @@ Please adhere to this project's [Code of Conduct](./CODE_OF_CONDUCT.md) when con
 
 -   **Adam Wiles** (YDH) - Procedure FHIR resource advice
 -   **Anthony Smith** (YDH) - Logo design
--   **David Suckling** (YDH) - TrakCare database table structure and frontend advice
+-   **David Suckling** (YDH) - TrakCare database table structure and frontend support
 -   [**Dunmail Hodkinson**](https://github.com/Dunmail) (BP) - HL7 FHIR STU3 specification adherence and best practices advice
 -   **George Dampier** (YDH) - MedicationStatement FHIR resource advice
--   **Jessica Male** (YDH) - TrakCare frontend
+-   **Jessica Male** (YDH) - TrakCare frontend support
 -   [**Julian Matthews**](https://github.com/NHS-juju) (SFT) - Bug reports
 -   **John Simpson** (YDH) - MedicationStatement FHIR resource advice
 -   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - SQL query optimisation
