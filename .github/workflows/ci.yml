@@ -33,15 +33,15 @@ jobs:
         if: github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.5
-            - uses: actions/setup-node@v2.4.1
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
               with:
                   node-version: 16
             - name: Get NPM Cache Directory
               id: npm-cache-dir
               run: |
                   echo "::set-output name=dir::$(npm config get cache)"
-            - uses: actions/cache@v2.1.6
+            - uses: actions/cache@v2
               id: npm-cache
               with:
                   path: ${{ steps.npm-cache-dir.outputs.dir }}
@@ -64,10 +64,10 @@ jobs:
             github.actor != 'dependabot[bot]'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2
               with:
                   fetch-depth: 0
-            - uses: wagoid/commitlint-github-action@v4.1.9
+            - uses: wagoid/commitlint-github-action@v4
               with:
                   configFile: ./package.json
 
@@ -76,15 +76,15 @@ jobs:
         if: github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.5
-            - uses: actions/setup-node@v2.4.1
+            - uses: actions/checkout@v2
+            - uses: actions/setup-node@v2
               with:
                   node-version: 16
             - name: Get NPM Cache Directory
               id: npm-cache-dir
               run: |
                   echo "::set-output name=dir::$(npm config get cache)"
-            - uses: actions/cache@v2.1.6
+            - uses: actions/cache@v2
               id: npm-cache
               with:
                   path: ${{ steps.npm-cache-dir.outputs.dir }}
@@ -104,12 +104,12 @@ jobs:
             github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2.3.5
+            - uses: actions/checkout@v2
             - name: Save PR Number
               run: |
                   mkdir -p ./pr
                   echo ${{ github.event.number }} > ./pr/NR
-            - uses: actions/upload-artifact@v2.2.4
+            - uses: actions/upload-artifact@v2
               with:
                   name: pr
                   path: pr/

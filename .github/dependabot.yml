@@ -6,7 +6,7 @@ updates:
           prefix: build
       directory: /
       ignore:
-          - dependency-name: "*"
+          - dependency-name: "actions/*"
             update-types:
                 ["version-update:semver-minor", "version-update:semver-patch"]
       schedule:
