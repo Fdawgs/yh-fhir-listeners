@@ -95,8 +95,8 @@ try {
 	);
 
 	var result = buildResourceQuery(type, wherePredicates);
-	while (result.next()) {
-		var data = void 0;
+	if (result.next()) {
+		var data;
 		switch ("".concat(type)) {
 			case "allergyintolerance":
 				data = buildAllergyIntoleranceResource(result);

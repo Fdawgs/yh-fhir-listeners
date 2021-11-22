@@ -931,31 +931,6 @@ try {
 
 						break;
 
-					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
-					default:
-						whereArray[0].push(
-							"(patmas.PAPMI_No = ''".concat(
-								identifierParam[1],
-								"'')"
-							)
-						);
-
-						whereArray[1].push(
-							"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
-								identifierParam[1],
-								"'')"
-							)
-						);
-
-						whereArray[2].push(
-							"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(
-								identifierParam[1],
-								"'')"
-							)
-						);
-
-						break;
-
 					case "https://fhir.ydh.nhs.uk/Id/medical-record-number":
 						whereArray[0].push(
 							"(patmas.PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''GEN'' AND RTMAS_MRNo = ''".concat(
@@ -1023,6 +998,31 @@ try {
 							"(RTMAS_PatNo_DR->PAPMI_No = (SELECT RTMAS_PatNo_DR->PAPMI_No FROM RT_Master WHERE RTMAS_MRType_DR->TYP_Code = ''XRA'' AND RTMAS_MRNo = ''".concat(
 								identifierParam[1],
 								"''))"
+							)
+						);
+
+						break;
+
+					case "https://fhir.ydh.nhs.uk/Id/local-patient-identifier":
+					default:
+						whereArray[0].push(
+							"(patmas.PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[1].push(
+							"(NOK_PAPMI_ParRef->PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
+							)
+						);
+
+						whereArray[2].push(
+							"(RTMAS_PatNo_DR->PAPMI_No = ''".concat(
+								identifierParam[1],
+								"'')"
 							)
 						);
 
