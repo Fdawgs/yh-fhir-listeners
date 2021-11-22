@@ -71,7 +71,7 @@ try {
 	);
 
 	const result = buildResourceQuery(type, wherePredicates);
-	while (result.next()) {
+	if (result.next()) {
 		let data;
 		switch (`${type}`) {
 			case "allergyintolerance":
