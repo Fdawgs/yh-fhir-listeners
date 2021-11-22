@@ -20,40 +20,6 @@
     <rest>
         <mode value="server"/>
         <documentation value="Care Connect STU3 FHIR endpoint for Yeovil District Hospital NHS Foundation Trust"/>
-        <!-- <resource>
-            <type value="AllergyIntolerance"/>
-            <profile>
-                <reference value="https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1"/>
-            </profile>
-            <versioning value="no-version"/>
-            <readHistory value="false"/>
-            <updateCreate value="false"/>
-            <searchParam>
-                <name value="clinical-status"/>
-                <type value="token"/>
-                <documentation value="active | inactive | resolved"/>
-            </searchParam>
-            <searchParam>
-                <name value="criticality"/>
-                <type value="token"/>
-                <documentation value="low | high | unable-to-assess"/>
-            </searchParam>
-            <searchParam>
-                <name value="date"/>
-                <type value="date"/>
-                <documentation value="Date record was believed accurate"/>
-            </searchParam>
-            <searchParam>
-                <name value="patient"/>
-                <type value="reference"/>
-                <documentation value="Who the sensitivity is for"/>
-            </searchParam>
-            <searchParam>
-                <name value="type"/>
-                <type value="token"/>
-                <documentation value="allergy | intolerance - Underlying mechanism (if known)"/>
-            </searchParam>
-        </resource> -->
         <resource>
             <type value="Encounter"/>
             <profile>
