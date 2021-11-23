@@ -45,6 +45,13 @@ function buildMedicationStatementResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	resource.identifier = [];
+	resource.identifier.push({
+		use: newStringOrUndefined("usual"),
+		system: newStringOrUndefined("https://fhir.ydh.nhs.uk/Id/order-item"),
+		value: newStringOrUndefined(result.medstatId),
+	});
+
 	/**
 	 * Add SIDeR specific tags
 	 * Set tag for meds from within the last 60 days
@@ -193,6 +200,14 @@ function buildMedicationStatementResource(data) {
 		result.medstatEffectiveEnd.substring(0, 4) != "1900"
 	) {
 		resource.effectivePeriod.end = result.medstatEffectiveEnd;
+	}
+
+	if (
+		result.medstatDateasserted != undefined &&
+		result.medstatDateasserted.substring(0, 1) != "T" &&
+		result.medstatDateasserted.substring(0, 4) != "1900"
+	) {
+		resource.dateAsserted = result.medstatDateasserted;
 	}
 
 	if (result.medStatContextEncounterReference != undefined) {
