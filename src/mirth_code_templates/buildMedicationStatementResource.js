@@ -190,6 +190,14 @@ function buildMedicationStatementResource(data) {
 		resource.effectivePeriod.end = result.medstatEffectiveEnd;
 	}
 
+	if (
+		result.medstatDateasserted != undefined &&
+		result.medstatDateasserted.substring(0, 1) != "T" &&
+		result.medstatDateasserted.substring(0, 4) != "1900"
+	) {
+		resource.dateAsserted = result.medstatDateasserted;
+	}
+
 	if (result.medStatContextEncounterReference != undefined) {
 		resource.context = {
 			reference: `${$cfg("apiUrl")}/STU3/Encounter/${
