@@ -2,6 +2,48 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.2.2](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.2.1...v5.2.2) (2021-11-23)
+
+
+### Bug Fixes
+
+* **capabilitystatement:** stop comments appearing under `fhir_comments` ([#305](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/305)) ([ad95a61](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ad95a61ace7be0872f1356b950c20a2043841570))
+
+
+### Continuous Integration
+
+* **ci:** do not run clean-up on draft prs ([59e92bf](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/59e92bf49b9405d37603c7158bd276d69aec9860))
+* **spell-check:** do not run on draft prs ([59dbe96](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/59dbe962f92f896289235f5ae55a00c0c984e3f8))
+* trigger workflows when drafts marked as "ready to review" ([#296](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/296)) ([df523c6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/df523c6bf4ac62d27d147e013fa13d304ffb9db2))
+* use actions/setup-node's cache option ([#304](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/304)) ([7d47a8c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/7d47a8cac8669633856bf37f2bda15eb96e6871b))
+
+
+### Dependencies
+
+* **dependabot:** ignore minor and patch github-actions updates ([#297](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/297)) ([2e9ae7e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2e9ae7e8d054d12e3998e5769e4dae6ef7fb3297))
+* **dependabot:** ignore minor and patch github-actions updates ([#303](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/303)) ([42ae22a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/42ae22abdaa9962121660e4ba7569e03010b494c))
+* **deps-dev:** bump @babel/preset-env from 7.16.0 to 7.16.4 ([1b1fef5](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1b1fef502de9b9fa255b3f2a16e511dbf64a81d6))
+* **deps-dev:** bump @commitlint/cli from 13.2.1 to 14.1.0 ([29c6ba6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/29c6ba67a9014f6da86bf9910648fd07abd802e0))
+* **deps-dev:** bump @commitlint/cli from 14.1.0 to 15.0.0 ([e45f058](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/e45f05872da0439fa559ebc4ee689d9b53cace02))
+* **deps-dev:** bump @commitlint/config-conventional ([8f5893c](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/8f5893cccc4252dbfe686f8affc702d8f952d21b))
+* **deps-dev:** bump @commitlint/config-conventional ([3de23e9](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3de23e9072bd085402ce36a945098eca25db3be6))
+* **deps-dev:** bump eslint from 7.32.0 to 8.2.0 ([f329caa](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/f329caa14d41796801a4f30b4e64d6811999ea18))
+* **deps-dev:** bump eslint from 8.2.0 to 8.3.0 ([46ec2ac](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/46ec2ac1e92aa09c3b0ed3c20ce91424494e5a04))
+* **deps-dev:** bump eslint-config-airbnb-base from 14.2.1 to 15.0.0 ([2fb3331](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2fb33314766f3fcdb14979a949419d5e78ed674c))
+* **deps-dev:** bump eslint-plugin-import from 2.25.2 to 2.25.3 ([60414cf](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/60414cfa23875f636ba73769bbe1ebbe39b77019))
+
+
+### Improvements
+
+* **read:** use `if` over `while` for single returns ([1ac54a0](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/1ac54a0b1710834db997d2bee122167394628e02))
+* **search:** default clause should be the last clause ([b3e2105](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/b3e21052a0262cd06f9695bf32ef576a6310249e))
+
+
+### Documentation
+
+* **coc:** reduce verbosity ([e248429](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/e2484290f811e3a8a2cbe089e33a1719f2380025))
+* **readme:** grammar fixes ([#293](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/293)) ([c5f839b](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/c5f839b6113f94940a53187e0810ab4483c72d1e))
+
 ### [5.2.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.2.0...v5.2.1) (2021-11-03)
 
 
