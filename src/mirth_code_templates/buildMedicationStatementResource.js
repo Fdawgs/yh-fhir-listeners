@@ -44,6 +44,13 @@ function buildMedicationStatementResource(data) {
 		resource.meta.lastUpdated = result.lastUpdated;
 	}
 
+	resource.identifier = [];
+	resource.identifier.push({
+		use: newStringOrUndefined("usual"),
+		system: newStringOrUndefined("https://fhir.ydh.nhs.uk/Id/order-item"),
+		value: newStringOrUndefined(result.medstatId),
+	});
+
 	/**
 	 * Add SIDeR specific tags
 	 * Set tag for meds from within the last 60 days
