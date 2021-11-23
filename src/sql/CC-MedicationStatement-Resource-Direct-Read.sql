@@ -44,16 +44,15 @@ WITH
                medstatDosageDoseQuantityValue,
                medstatDosageDoseQuantityUnit,
                CASE
-     WHEN (CURRENT_TIMESTAMP BETWEEN CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
-               AND CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME))
-                    AND orderItemStatus != 'Discontinued' THEN 'active'
+     WHEN orderItemStatus = 'Discontinued'
+                    AND orderItemVariance IN ('DATA', 'ERROR') THEN 'entered-in-error'
+     WHEN orderItemStatus = 'Discontinued' THEN 'stopped'
      WHEN CURRENT_TIMESTAMP < CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
                     AND orderItemStatus != 'Discontinued' THEN 'intended'
      WHEN CURRENT_TIMESTAMP > CAST(medstatEffectiveEnd_Datepart AS DATETIME) + CAST(medstatEffectiveEnd_Timepart AS DATETIME)
                     AND orderItemStatus != 'Discontinued' THEN 'completed'
-     WHEN orderItemStatus = 'Discontinued'
-                    AND orderItemVariance IN ('DATA', 'ERROR') THEN 'entered-in-error'
-     WHEN orderItemStatus = 'Discontinued' THEN 'stopped'
+     WHEN CURRENT_TIMESTAMP > CAST(medstatEffectiveStart_Datepart AS DATETIME) + CAST(medstatEffectiveStart_Timepart AS DATETIME)
+                    AND orderItemStatus != 'Discontinued' THEN 'active'
      END AS medstatStatusCode,
                medicationId,
                medicationCodeText,
