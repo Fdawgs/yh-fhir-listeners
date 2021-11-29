@@ -107,9 +107,15 @@ out
 # Stores VSCode versions used for testing VSCode extensions
 .vscode-test
 
+# yarn v1
+.yarnclean
+
 # yarn v2
 .yarn/cache
 .yarn/unplugged
 .yarn/build-state.yml
 .yarn/install-state.gz
 .pnp.*
+
+# lock files
+yarn.lock
