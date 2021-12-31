@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.3.1](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.0...v5.3.1) (2021-12-31)
+
+
+### Miscellaneous
+
+* ignore `.yarnclean` and `yarn.lock` ([#314](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/314)) ([30df3ad](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/30df3adb94c3d502b83ab6b2c3f1c9b420e6207a))
+
+
+### Dependencies
+
+* **dependabot:** ignore minor and patch release-please-action updates ([#318](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/318)) ([3ca345e](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/3ca345ee3b498331e274f4482a20d97186d4c0ec))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.0.3 to 37.1.0 ([039b2e6](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/039b2e6344703d54b256678ed63f06f9acf8f6e0))
+* **deps-dev:** bump prettier from 2.4.1 to 2.5.0 ([62a3c1d](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/62a3c1d911fb2aee9fbb0938aa367dff586960b7))
+* **deps:** bump GoogleCloudPlatform/release-please-action ([ea4191a](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/ea4191af61e1554033b9bf7a3d32c48bb2f2e81c))
+
+
+### Documentation
+
+* **contributing:** add mention of husky pre-commit hook ([2645d46](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/2645d4620ea50769daabbf8aaa93b978e708cbe9))
+* **contributing:** clarify style ([#320](https://www.github.com/Fdawgs/ydh-fhir-listeners/issues/320)) ([4e113d0](https://www.github.com/Fdawgs/ydh-fhir-listeners/commit/4e113d043f617f423c5e0c54ba7e51fae59b6c86))
+
 ## [5.3.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.2.1...v5.3.0) (2021-11-24)
 
 
