@@ -48,7 +48,7 @@ Titles and headings should adhere to the [Associated Press (AP)](https://www.aps
 Prior to submitting a pull request back to the main repository, please make sure you have completed the following steps:
 
 1. Pull request base branch is set to `master`. All pull requests should be forked from and merged back to `master`
-2. Run `npm run lint` to check the code adheres to the defined style and has no errors
+2. Run `npm run lint` to check the code adheres to the defined ESLint style and has no errors
 3. Run `npm run lint:prettier` to run the Prettier code formatter over the code
 
 Steps 2. is automatically run by a pre-commit hook added by [Husky](https://typicode.github.io/husky/#/).
