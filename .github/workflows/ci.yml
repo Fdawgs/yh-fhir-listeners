@@ -1,5 +1,8 @@
 name: CI
 
+# **What it does**: Runs our tests.
+# **Why we have it**: We want our tests to pass before merging code.
+
 on:
     push:
         branches:
@@ -33,17 +36,24 @@ jobs:
         if: github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v3
+            - name: Check out repo
+              uses: actions/checkout@v2
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
               with:
                   cache: npm
                   node-version: 16
+
             - name: Install
               run: npm ci --ignore-scripts
+
             - name: Run ESLint
               run: npm run lint
+
             - name: Run Prettier
               run: npm run lint:prettier:ci
+
             - name: Run Lockfile Linter
               run: npx lockfile-lint --path package-lock.json --type npm --allowed-hosts npm --validate-https
 
@@ -54,10 +64,13 @@ jobs:
             github.actor != 'dependabot[bot]'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
+            - name: Check out repo
+              uses: actions/checkout@v2
               with:
                   fetch-depth: 0
-            - uses: wagoid/commitlint-github-action@v4
+
+            - name: Run Commitlint
+              uses: wagoid/commitlint-github-action@v4
               with:
                   configFile: ./package.json
 
@@ -66,13 +79,18 @@ jobs:
         if: github.event.pull_request.draft == false
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - uses: actions/setup-node@v3
+            - name: Check out repo
+              uses: actions/checkout@v2
+
+            - name: Setup Node
+              uses: actions/setup-node@v3
               with:
                   cache: npm
                   node-version: 16
+
             - name: Install
               run: npm ci --ignore-scripts
+
             - name: Run Babel
               run: npm run build
 
@@ -84,12 +102,16 @@ jobs:
             github.event_name == 'pull_request'
         runs-on: ubuntu-latest
         steps:
-            - uses: actions/checkout@v2
-            - name: Save PR Number
+            - name: Check out repo
+              uses: actions/checkout@v3
+
+            - name: Save PR number
               run: |
                   mkdir -p ./pr
                   echo ${{ github.event.number }} > ./pr/NR
-            - uses: actions/upload-artifact@v2
+
+            - name: Upload PR number in artifact
+              uses: actions/upload-artifact@v2
               with:
                   name: pr
                   path: pr/
