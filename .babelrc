@@ -9,7 +9,10 @@
 		[
 			"@babel/preset-env",
 			{
-				"modules": false
+				"modules": false,
+				"targets": {
+					"rhino": "1.7.12"
+				}
 			}
 		]
 	]
