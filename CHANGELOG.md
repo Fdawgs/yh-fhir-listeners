@@ -2,6 +2,85 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.3.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.0...v5.3.1) (2022-03-28)
+
+
+### Documentation
+
+* **contributing:** add mention of husky pre-commit hook ([2645d46](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2645d4620ea50769daabbf8aaa93b978e708cbe9))
+* **contributing:** clarify style ([#320](https://github.com/Fdawgs/ydh-fhir-listeners/issues/320)) ([4e113d0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4e113d043f617f423c5e0c54ba7e51fae59b6c86))
+* improve readability ([38471f7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/38471f7199adb1f9e702dc5d28aefc3a73e7987b))
+
+
+### Miscellaneous
+
+* **.github:** remove trailing whitespace ([4d78d73](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4d78d733afb3f491000640e20a9a7a267e99f286))
+* ignore `.yarnclean` and `yarn.lock` ([#314](https://github.com/Fdawgs/ydh-fhir-listeners/issues/314)) ([30df3ad](https://github.com/Fdawgs/ydh-fhir-listeners/commit/30df3adb94c3d502b83ab6b2c3f1c9b420e6207a))
+* **scripts:** remove redundant gitkraken fix from prepare script ([9b14cb0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9b14cb0602b32a16e39f86e0ab52abe1462f805b))
+* **scripts:** use shorter arg aliases ([9a190b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9a190b881870385f5515ae4ffbb336a5cc30ca46))
+
+
+### Continuous Integration
+
+* add job step names, workflow comments, and whitespace ([873502a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/873502ada08a88835f9a6772c8bb102058a49399))
+* **codeql-analysis:** remove unused autobuild step ([aba9db9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/aba9db9d3411961afa57108d5a73b30d2dac396e))
+* **codeql:** grant minimum permissions to run; rename file ([#359](https://github.com/Fdawgs/ydh-fhir-listeners/issues/359)) ([2cfecf1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2cfecf1de2691fc0ad7a023a32907ee079b74889))
+* only save pr number artifact for dependabot ([35406e2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/35406e2640ac04cb85fe8cd1cfff9b557a596235))
+* remove spellcheck workflow ([#331](https://github.com/Fdawgs/ydh-fhir-listeners/issues/331)) ([fa111e3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa111e3d0060e317c77c47249d138c490f0eda5d))
+
+
+### Dependencies
+
+* **.babelrc:** target rhino engine used by mirth connect ([#357](https://github.com/Fdawgs/ydh-fhir-listeners/issues/357)) ([ecdf8c4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ecdf8c413e080a07a04936c04f6fac70fa3dc1ab))
+* **dependabot:** ignore minor and patch commit-lint updates ([#333](https://github.com/Fdawgs/ydh-fhir-listeners/issues/333)) ([d21e86d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d21e86d11a80af8de5875bd57fdb6f815425cb3f))
+* **dependabot:** ignore minor and patch release-please-action updates ([#318](https://github.com/Fdawgs/ydh-fhir-listeners/issues/318)) ([3ca345e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3ca345ee3b498331e274f4482a20d97186d4c0ec))
+* **dependabot:** major tags no longer need ignore support ([b557ea9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b557ea9e52bca9570f3e48818774ecb059118b8d))
+* **dependabot:** use default open-pull-requests-limit value ([f3cfee3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f3cfee3fff935e1cbbd9c6f1d7fd216832c93dce))
+* **deps-dev:** bump @babel/cli from 7.16.0 to 7.16.7 ([7244225](https://github.com/Fdawgs/ydh-fhir-listeners/commit/724422569481db9fc6f4e94278e363abb79d4ec5))
+* **deps-dev:** bump @babel/cli from 7.16.7 to 7.16.8 ([8b668a8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8b668a8fbfb117666c5d4345abc6c4a68ccc33cb))
+* **deps-dev:** bump @babel/cli from 7.16.8 to 7.17.6 ([03273e8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/03273e8759baec2aecdb3e41377154c237eb173e))
+* **deps-dev:** bump @babel/core from 7.16.0 to 7.16.7 ([156b9e4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/156b9e4103f4d770570e229d3b6cb787aa6608d9))
+* **deps-dev:** bump @babel/core from 7.16.12 to 7.17.5 ([fa8a89b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa8a89bf8d53fbeb8ad1f5cf12a67105b2eaa49c))
+* **deps-dev:** bump @babel/core from 7.16.7 to 7.16.12 ([637d0fa](https://github.com/Fdawgs/ydh-fhir-listeners/commit/637d0fabdd7f76c09f7aebb4bf4938de4435198f))
+* **deps-dev:** bump @babel/core from 7.17.5 to 7.17.8 ([041d2ca](https://github.com/Fdawgs/ydh-fhir-listeners/commit/041d2ca1298fcc3000ed957d17ba11911df2f6f1))
+* **deps-dev:** bump @babel/node from 7.16.0 to 7.16.7 ([cf1a7ec](https://github.com/Fdawgs/ydh-fhir-listeners/commit/cf1a7ec86fb2637a1c8302211b678209e19145aa))
+* **deps-dev:** bump @babel/node from 7.16.7 to 7.16.8 ([da514f4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/da514f4ffa9a573f49ba0f0693bb7db336f25950))
+* **deps-dev:** bump @babel/preset-env from 7.16.4 to 7.16.7 ([718e415](https://github.com/Fdawgs/ydh-fhir-listeners/commit/718e415e2fc639d43a4806452a73292883dcd9fa))
+* **deps-dev:** bump @babel/preset-env from 7.16.7 to 7.16.11 ([ed3ccfb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed3ccfbb5793937bece8bdc0a203c8749be7a5f5))
+* **deps-dev:** bump @commitlint/cli from 15.0.0 to 16.0.1 ([bd9b939](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bd9b9397f6ef9aeff75214b683ae4c80935952bd))
+* **deps-dev:** bump @commitlint/cli from 16.0.1 to 16.1.0 ([f91bc1e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f91bc1e9f6ce1453e5ca68e97b2a74b11bb399d5))
+* **deps-dev:** bump @commitlint/cli from 16.1.0 to 16.2.1 ([83e51bd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/83e51bd2c0f826285634a5ef5db1f3021b25e7f8))
+* **deps-dev:** bump @commitlint/cli from 16.2.1 to 16.2.3 ([3a591ba](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3a591ba44169c82e995bac73c9d7503683d861a7))
+* **deps-dev:** bump @commitlint/config-conventional ([5729ab7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5729ab72d451006213d0d8440bd089f0a6a3a532))
+* **deps-dev:** bump @commitlint/config-conventional ([610caf2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/610caf29891e4693e2ccc3624b35a75a845f9aa5))
+* **deps-dev:** bump eslint from 8.10.0 to 8.11.0 ([48258fc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/48258fc751fff1a50e32609fb8d43e5a7d1a755b))
+* **deps-dev:** bump eslint from 8.11.0 to 8.12.0 ([dd02015](https://github.com/Fdawgs/ydh-fhir-listeners/commit/dd02015737e1f8624bd6c278d20032b05bc8c583))
+* **deps-dev:** bump eslint from 8.3.0 to 8.6.0 ([61e55d0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/61e55d0f3e78e395c9142566a802bc781825344e))
+* **deps-dev:** bump eslint from 8.6.0 to 8.7.0 ([9bbd675](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9bbd67577a62ba68bca09d0242ab4b96c1d08549))
+* **deps-dev:** bump eslint from 8.7.0 to 8.8.0 ([74c224a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/74c224a9600eeaa24224aacd1738fd8fca780be9))
+* **deps-dev:** bump eslint from 8.8.0 to 8.9.0 ([fce0bd3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fce0bd388a82446aa6f9c76b82110309bdc07246))
+* **deps-dev:** bump eslint from 8.9.0 to 8.10.0 ([38cacc3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/38cacc39743ecc1324ddcfeadde63f4a6b44b747))
+* **deps-dev:** bump eslint-config-prettier from 8.3.0 to 8.4.0 ([de691c4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/de691c421546edbc0bd53230b03178a8e3988829))
+* **deps-dev:** bump eslint-config-prettier from 8.4.0 to 8.5.0 ([c4ebc0e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c4ebc0ea1a181bf00a12709f647a367821f1a40c))
+* **deps-dev:** bump eslint-plugin-import from 2.25.3 to 2.25.4 ([a9af268](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a9af268b9ebb31ad1eb55179f1e6e839c7d215b3))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.0.3 to 37.1.0 ([039b2e6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/039b2e6344703d54b256678ed63f06f9acf8f6e0))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.1.0 to 37.5.0 ([d93494c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d93494cc618926c92285ea9df0eb279d5a3fef26))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.5.0 to 37.7.0 ([091807e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/091807e3169ed4f7cf5755e9d4cbbc161a1716df))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.7.0 to 37.9.4 ([553271f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/553271f2550fcde263a7eb536074805e3cd12908))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.9.4 to 37.9.5 ([98e14dc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/98e14dca5bdb931f6be88dbc3de84a8158613a65))
+* **deps-dev:** bump eslint-plugin-jsdoc from 37.9.5 to 38.0.6 ([26c0075](https://github.com/Fdawgs/ydh-fhir-listeners/commit/26c0075c29cbd5442542e81a41881d122e63a706))
+* **deps-dev:** bump eslint-plugin-jsdoc from 38.0.6 to 38.1.1 ([ee753a1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ee753a150f13fa1caa3f58a85659ef0db3d1833b))
+* **deps-dev:** bump prettier from 2.4.1 to 2.5.0 ([62a3c1d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/62a3c1d911fb2aee9fbb0938aa367dff586960b7))
+* **deps-dev:** bump prettier from 2.5.0 to 2.5.1 ([f7f86a3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f7f86a381c294f9020a5efb342512ff59559469c))
+* **deps-dev:** bump prettier from 2.5.1 to 2.6.0 ([7c9cf85](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7c9cf85032ff3a603801144f57d0f303aabc407c))
+* **deps-dev:** bump prettier from 2.6.0 to 2.6.1 ([e9ead3a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e9ead3aa576a6c712278cb9712387c01ae5e2aa4))
+* **deps:** bump actions/checkout from 2 to 3 ([b5b1d8b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b5b1d8bf6ff3a75b44cf7c67bd9e33a05c90c17c))
+* **deps:** bump actions/github-script from 5 to 6 ([2ecc800](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2ecc800b596c5ed91e18c24a8f38b4e8b835eacb))
+* **deps:** bump actions/setup-node from 2 to 3 ([634b93c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/634b93c90595965057207c2a9e996d1282e6ff88))
+* **deps:** bump GoogleCloudPlatform/release-please-action ([ea4191a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ea4191af61e1554033b9bf7a3d32c48bb2f2e81c))
+* **deps:** bump GoogleCloudPlatform/release-please-action from 2 to 3 ([2057b79](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2057b791f762cb3ed20364df36d5718ddd9cb24e))
+* **deps:** bump minimist from 1.2.5 to 1.2.6 ([198e45c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/198e45c1cd039421175227aaa2673e8e2a860920))
+
 ## [5.3.0](https://www.github.com/Fdawgs/ydh-fhir-listeners/compare/v5.2.1...v5.3.0) (2021-11-24)
 
 
