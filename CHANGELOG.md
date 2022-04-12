@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+### [5.3.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.1...v5.3.2) (2022-04-12)
+
+
+### Continuous Integration
+
+* **automerge:** squash automerge prs ([#372](https://github.com/Fdawgs/ydh-fhir-listeners/issues/372)) ([4b87691](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4b87691b89d6879a7f65e76d31d3f1457fdbf0f6))
+* **cd:** update org name for release-please-action ([5e25a82](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5e25a821b2cb470d4265e5f5bd37a11137a87b1d))
+* reduce workflow permissions to minimum ([4754839](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4754839e426d2c92dc4b1875f735d18abd8c7ed4))
+* replace workflow-run-cleanup-action with github concurrency ([b94da8c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b94da8c25e62ca77e5558091782617e031bfb039))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/core from 7.17.8 to 7.17.9 ([#376](https://github.com/Fdawgs/ydh-fhir-listeners/issues/376)) ([5334d59](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5334d596acc39193c455be7938a2db0f2f12b890))
+* **deps-dev:** bump eslint from 8.12.0 to 8.13.0 ([#380](https://github.com/Fdawgs/ydh-fhir-listeners/issues/380)) ([063a240](https://github.com/Fdawgs/ydh-fhir-listeners/commit/063a240a0314b0b1a3b8852a4eb19af653ce7185))
+* **deps-dev:** bump eslint-plugin-import from 2.25.4 to 2.26.0 ([#377](https://github.com/Fdawgs/ydh-fhir-listeners/issues/377)) ([10bd5b7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/10bd5b7dbfdb09e24a57d804659c9de94107c1f5))
+* **deps-dev:** bump eslint-plugin-jsdoc from 38.1.1 to 38.1.4 ([1d2b383](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1d2b3833e4fbf6971ffa024ae3236d35ae27a73c))
+* **deps-dev:** bump eslint-plugin-jsdoc from 38.1.4 to 39.1.1 ([#378](https://github.com/Fdawgs/ydh-fhir-listeners/issues/378)) ([9b2a199](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9b2a199e6b4cf120e6ffb0115691611f4aa0ef6b))
+* **deps-dev:** bump prettier from 2.6.1 to 2.6.2 ([#379](https://github.com/Fdawgs/ydh-fhir-listeners/issues/379)) ([4567feb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4567febcc94c2a6d9d5f4de7c375cc229a0ea2f9))
+* **deps:** bump actions/upload-artifact from 2 to 3 ([#375](https://github.com/Fdawgs/ydh-fhir-listeners/issues/375)) ([0ecc87e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0ecc87e3f3b4e9dac51a21d246fa8fbf50b3b713))
+
 ### [5.3.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.0...v5.3.1) (2022-03-28)
 
 
