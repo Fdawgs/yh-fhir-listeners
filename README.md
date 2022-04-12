@@ -1,3 +1,5 @@
+> **NOTE: Development of this repository has been discontinued as of 2022-04-12. Please use https://github.com/Fdawgs/ydh-fhir-api**
+
 <a href="https://yeovilhospital.co.uk/">
 	<img alttext="Yeovil District Hospital Logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
 </a>
