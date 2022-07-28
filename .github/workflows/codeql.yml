@@ -7,15 +7,13 @@ on:
     push:
         branches:
             - master
-        paths-ignore:
-            - "docs/**"
-            - "*.md"
     pull_request:
         branches:
             - master
-        paths-ignore:
-            - "docs/**"
-            - "*.md"
+        paths:
+            - "**/*.html"
+            - "**/*.js"
+            - "**/*.yml"
         types: [opened, ready_for_review, reopened, synchronize]
 
 permissions:
@@ -33,13 +31,15 @@ jobs:
         steps:
             - name: Check out repo
               uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
 
             # Initialises the CodeQL tools for scanning
             - name: Initialise CodeQL
               uses: github/codeql-action/init@v2
               with:
                   languages: javascript
-                  queries: security-and-quality
+                  config-file: ./.github/codeql-config.yml
 
             - name: Perform CodeQL analysis
               uses: github/codeql-action/analyze@v2
