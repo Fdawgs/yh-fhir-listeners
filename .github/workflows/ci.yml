@@ -27,6 +27,21 @@ concurrency:
     cancel-in-progress: true
 
 jobs:
+    dependency-review:
+        name: Dependency Review
+        if: >
+            github.event.pull_request.draft == false &&
+            github.event_name == 'pull_request'
+        runs-on: ubuntu-latest
+        steps:
+            - name: Check out repo
+              uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
+
+            - name: "Dependency review"
+              uses: actions/dependency-review-action@v2
+
     lint:
         name: Lint Code
         if: github.event.pull_request.draft == false
@@ -34,15 +49,20 @@ jobs:
         steps:
             - name: Check out repo
               uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
 
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
                   cache: npm
-                  node-version: 16
+                  node-version: lts/*
 
             - name: Install
               run: npm ci --ignore-scripts
+
+            - name: Audit NPM package signatures
+              run: npm audit signatures
 
             - name: Run ESLint
               run: npm run lint
@@ -51,7 +71,7 @@ jobs:
               run: npm run lint:prettier:ci
 
             - name: Run Lockfile Linter
-              run: npx lockfile-lint --path package-lock.json --type npm --allowed-hosts npm --validate-https
+              run: npx lockfile-lint -p package-lock.json -t npm -a npm -s -n
 
     commit-lint:
         name: Lint Commit Messages
@@ -64,6 +84,7 @@ jobs:
               uses: actions/checkout@v3
               with:
                   fetch-depth: 0
+                  persist-credentials: false
 
             - name: Run Commitlint
               uses: wagoid/commitlint-github-action@v5
@@ -77,12 +98,14 @@ jobs:
         steps:
             - name: Check out repo
               uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
 
             - name: Setup Node
               uses: actions/setup-node@v3
               with:
                   cache: npm
-                  node-version: 16
+                  node-version: lts/*
 
             - name: Install
               run: npm ci --ignore-scripts
@@ -96,11 +119,13 @@ jobs:
         if: >
             github.event.pull_request.draft == false &&
             github.event_name == 'pull_request' &&
-            github.actor == 'dependabot[bot]'
+            github.event.pull_request.user.login == 'dependabot[bot]'
         runs-on: ubuntu-latest
         steps:
             - name: Check out repo
               uses: actions/checkout@v3
+              with:
+                  persist-credentials: false
 
             - name: Save PR number
               run: |
