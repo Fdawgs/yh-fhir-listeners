@@ -61,7 +61,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 
 ## Deployment
 
-This Mirth Connect channel has been tested on a Mirth Connect instance (v3.11.0) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
+This Mirth Connect channel has been tested on a Mirth Connect instance (v3.12.0) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
 
 ### Setting up Mirth Connect Channel
 

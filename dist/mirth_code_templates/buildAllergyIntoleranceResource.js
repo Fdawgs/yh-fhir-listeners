@@ -58,24 +58,38 @@ function buildAllergyIntoleranceResource(data) {
 	resource.id = newStringOrUndefined(result.id);
 	resource.assertedDate = newStringOrUndefined(result.assertedDate);
 
-	// Very unlikely that an allergy record will have multiple components like this
-	// but better to be safe than sorry
-	var allergyResult = [];
-	allergyResult.push(newStringOrUndefined(result.allergyGroupDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyCodingDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyDrugDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyDrugGenericDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyDrugCategoryDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyDrugFormDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyDrugIngredientDesc));
-	allergyResult.push(newStringOrUndefined(result.allergyComment));
-	allergyResult = allergyResult.filter(function (element) {
-		return element != null;
-	});
-	if (allergyResult.length > 0) {
-		resource.code = {
-			text: allergyResult.join("; "),
+	resource.code = {
+		coding: [],
+	};
+
+	if (result.allergyCodeCodingGroupCode != undefined) {
+		var groupCode = {
+			system: "https://trakcare.ydh.nhs.uk/allergies/group",
+			code: newStringOrUndefined(result.allergyCodeCodingGroupCode),
+			display: newStringOrUndefined(result.allergyCodeCodingGroupDisplay),
 		};
+
+		resource.code.coding.push(groupCode);
+	}
+
+	if (result.allergyCodeCodingCode != undefined) {
+		var allergyCode = {
+			system: "https://trakcare.ydh.nhs.uk/allergies/allergen",
+			code: newStringOrUndefined(result.allergyCodeCodingCode),
+			display: newStringOrUndefined(result.allergyCodeCodingDisplay),
+		};
+
+		resource.code.coding.push(allergyCode);
+	}
+
+	if (result.allergyCodeCodingDrugCode != undefined) {
+		var drugCode = {
+			system: "https://trakcare.ydh.nhs.uk/allergies/allergen",
+			code: newStringOrUndefined(result.allergyCodeCodingDrugCode),
+			display: newStringOrUndefined(result.allergyCodeCodingDrugDisplay),
+		};
+
+		resource.code.coding.push(drugCode);
 	}
 
 	resource.patient = {
@@ -91,6 +105,11 @@ function buildAllergyIntoleranceResource(data) {
 
 	resource.type = newStringOrUndefined(result.typeCode);
 	resource.criticality = newStringOrUndefined(result.criticalityCode);
+
+	// Add note
+	if (result.note != undefined) {
+		resource.note = [{ text: result.note.trim() }];
+	}
 
 	return resource;
 }

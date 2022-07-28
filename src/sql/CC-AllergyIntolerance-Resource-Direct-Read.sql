@@ -2,16 +2,15 @@
 AllergyIntolerance Resource
 */
 
-SELECT id,
+SELECT DISTINCT id,
 	patientReference,
-	allergyGroupDesc,
-	allergyCodingDesc,
-	allergyDrugDesc,
-	allergyDrugGenericDesc,
-	allergyDrugCategoryDesc,
-	allergyDrugFormDesc,
-	allergyDrugIngredientDesc,
-	allergyComment,
+	allergyCodeCodingGroupCode,
+	allergyCodeCodingGroupDisplay,
+	allergyCodeCodingCode,
+	allergyCodeCodingDisplay,
+	allergyCodeCodingDrugCode,
+	allergyCodeCodingDrugDisplay,
+	note,
 	clinicalStatusCode,
 	verificationStatusCode,
 	typeCode,
@@ -24,15 +23,16 @@ FROM OPENQUERY([ENYH-PRD-ANALYTICS],
 				  		-- patient reference
 				  		alle.ALG_PAPMI_ParRef->PAPMI_No AS patientReference,
 
-						-- Concat these in resource builder to create code.text
-						alle.ALG_AllergyGrp_DR->ALGR_Desc AS allergyGroupDesc,
-						alle.ALG_TYPE_DR->ALG_Desc AS allergyCodingDesc,
-						alle.ALG_PHCDM_DR->PHCD_ProductName AS allergyDrugDesc, -- Drug Master
-						alle.ALG_PHCGE_DR->PHCGE_Name AS allergyDrugGenericDesc, -- Drug Generic
-						alle.ALG_PHCSC_DR->PHCSC_Desc AS allergyDrugCategoryDesc, -- Drug Category
-						alle.ALG_PHCDRGForm_DR->PHCDF_Description AS allergyDrugFormDesc, -- Drug Form
-						alle.ALG_Ingred_DR->INGR_Desc AS allergyDrugIngredientDesc, -- Drug Ingredient
-						alle.ALG_Comments AS allergyComment,
+						alle.ALG_AllergyGrp_DR->ALGR_Code AS allergyCodeCodingGroupCode,
+						alle.ALG_AllergyGrp_DR->ALGR_Desc AS allergyCodeCodingGroupDisplay,
+
+						alle.ALG_TYPE_DR->ALG_Code AS allergyCodeCodingCode,
+						alle.ALG_TYPE_DR->ALG_Desc AS allergyCodeCodingDisplay,
+
+						alle.ALG_PHCDM_DR->PHCD_Code AS allergyCodeCodingDrugCode,
+						alle.ALG_PHCDM_DR->PHCD_ProductName AS allergyCodeCodingDrugDisplay, -- Drug Master
+
+						alle.ALG_Comments AS note,
 
 						-- clinical status
 						CASE alle.ALG_Status
