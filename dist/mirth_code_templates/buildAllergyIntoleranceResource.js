@@ -64,7 +64,7 @@ function buildAllergyIntoleranceResource(data) {
 
 	if (result.allergyCodeCodingGroupCode != undefined) {
 		var groupCode = {
-			system: "https://trakcare.ydh.nhs.uk/allergies/group",
+			system: "https://trakcare.ydh.nhs.uk",
 			code: newStringOrUndefined(result.allergyCodeCodingGroupCode),
 			display: newStringOrUndefined(result.allergyCodeCodingGroupDisplay),
 		};
@@ -74,7 +74,7 @@ function buildAllergyIntoleranceResource(data) {
 
 	if (result.allergyCodeCodingCode != undefined) {
 		var allergyCode = {
-			system: "https://trakcare.ydh.nhs.uk/allergies/allergen",
+			system: "https://trakcare.ydh.nhs.uk",
 			code: newStringOrUndefined(result.allergyCodeCodingCode),
 			display: newStringOrUndefined(result.allergyCodeCodingDisplay),
 		};
@@ -84,7 +84,7 @@ function buildAllergyIntoleranceResource(data) {
 
 	if (result.allergyCodeCodingDrugCode != undefined) {
 		var drugCode = {
-			system: "https://trakcare.ydh.nhs.uk/allergies/allergen",
+			system: "https://trakcare.ydh.nhs.uk",
 			code: newStringOrUndefined(result.allergyCodeCodingDrugCode),
 			display: newStringOrUndefined(result.allergyCodeCodingDrugDisplay),
 		};
