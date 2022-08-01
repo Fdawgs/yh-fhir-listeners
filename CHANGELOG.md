@@ -2,6 +2,49 @@
 
 All notable changes to this project will be documented in this file.
 
+## [5.3.3](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.2...v5.3.3) (2022-08-01)
+
+
+### Bug Fixes
+
+* **allergyintolerance:** add local coding ([#393](https://github.com/Fdawgs/ydh-fhir-listeners/issues/393)) ([99c8897](https://github.com/Fdawgs/ydh-fhir-listeners/commit/99c8897f8406bacaa0b2d41f4d608a3b4d695347))
+
+
+### Documentation
+
+* **readme:** add deprecation note ([090b631](https://github.com/Fdawgs/ydh-fhir-listeners/commit/090b6318ef6d8ad648f2ebf8b309af395f6cc148))
+* **readme:** remove snyk badge ([149d6ac](https://github.com/Fdawgs/ydh-fhir-listeners/commit/149d6ac114fdf2c6dfd5fdeeeba4db0027edf9a7))
+
+
+### Continuous Integration
+
+* update workflows ([f7dfbf6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f7dfbf619867020c7909d3f1fe222f594ccc7d0c))
+
+
+### Miscellaneous
+
+* **.*ignore:** use latest github ignore template; add pnpm lockfile ([22800c7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/22800c7e28464d436ae05cc2442938c6d36c3eb4))
+* **.github:** add `FUNDING.yml` ([3c31cac](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3c31cac07ab17b9b4d4587629888227ba11bfb2a))
+* **allergyintolerance:** refine coding system ([c3ef3a6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c3ef3a6643fef5ad8c77bcbc455c88602a26e5dd))
+* **bug_report:** use node 18 as placeholder for `node-version` ([a26ed86](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a26ed86ea59b3bc8020b5dd0f1483eee773d06db))
+
+
+### Dependencies
+
+* **dependabot:** increase `open-pull-requests-limit` from 5 to 20 ([ab903cb](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ab903cb25f8f6281d6abfd528c6a0b011387a83b))
+* **deps-dev:** bump @babel/cli from 7.17.6 to 7.18.9 ([#388](https://github.com/Fdawgs/ydh-fhir-listeners/issues/388)) ([b225c25](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b225c25ec305213262572df299a8d0c2044c9bf6))
+* **deps-dev:** bump @commitlint/cli from 16.2.3 to 17.0.3 ([#385](https://github.com/Fdawgs/ydh-fhir-listeners/issues/385)) ([93d1a36](https://github.com/Fdawgs/ydh-fhir-listeners/commit/93d1a36e73394d90d068feafd1d0d0c1e375702a))
+* **deps-dev:** bump @commitlint/config-conventional ([#384](https://github.com/Fdawgs/ydh-fhir-listeners/issues/384)) ([c079e79](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c079e79103a7abeb7173bcfe68029dddc4650602))
+* **deps-dev:** bump eslint from 8.13.0 to 8.20.0 ([#387](https://github.com/Fdawgs/ydh-fhir-listeners/issues/387)) ([873509b](https://github.com/Fdawgs/ydh-fhir-listeners/commit/873509b84bb48388ea0b3e7491b4cfb79555825e))
+* **deps-dev:** bump eslint from 8.20.0 to 8.21.0 ([#395](https://github.com/Fdawgs/ydh-fhir-listeners/issues/395)) ([0c753d8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0c753d8568048df66d5765bc58f7235462e4b97b))
+* **deps-dev:** bump eslint-plugin-jsdoc from 39.1.1 to 39.3.3 ([#386](https://github.com/Fdawgs/ydh-fhir-listeners/issues/386)) ([ce64c6d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ce64c6db26cbf6c30ead7f5eb361fa422ae284bb))
+* **deps-dev:** bump eslint-plugin-jsdoc from 39.3.3 to 39.3.4 ([#394](https://github.com/Fdawgs/ydh-fhir-listeners/issues/394)) ([d3d36c6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d3d36c66c001b59422474fb9a2f29fc9e9a0be31))
+* **deps-dev:** bump husky from 7.0.4 to 8.0.1 ([#391](https://github.com/Fdawgs/ydh-fhir-listeners/issues/391)) ([be80dec](https://github.com/Fdawgs/ydh-fhir-listeners/commit/be80dec6d34317d2546d06307053feba02f87b27))
+* **deps-dev:** bump prettier from 2.6.2 to 2.7.1 ([#392](https://github.com/Fdawgs/ydh-fhir-listeners/issues/392)) ([cb25019](https://github.com/Fdawgs/ydh-fhir-listeners/commit/cb25019c0969b69e7272a8887c87d04c27180105))
+* **deps-dev:** bump sub-dependencies ([9af1863](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9af186349792e19ee193cafed3a3d6cf553df3e3))
+* **deps:** bump github/codeql-action from 1 to 2 ([#383](https://github.com/Fdawgs/ydh-fhir-listeners/issues/383)) ([b753d41](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b753d41e441336235808cdf49ac8415aae4c2676))
+* **deps:** bump wagoid/commitlint-github-action from 4 to 5 ([#382](https://github.com/Fdawgs/ydh-fhir-listeners/issues/382)) ([981e0ac](https://github.com/Fdawgs/ydh-fhir-listeners/commit/981e0ac7b5ec18f55275c36e050d4c602bea14b6))
+
 ### [5.3.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.1...v5.3.2) (2022-04-12)
 
 
