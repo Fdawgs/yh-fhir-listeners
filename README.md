@@ -57,7 +57,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 -   [Mirth Connect v3.12.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.12.0) (including supporting database instance)
 -   [Mirth Connect FHIR Connector extension v3.12.0.ydh001](./dist/fhir-3.12.0.ydh001.zip)
 -   Latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
--   [Node.js](https://nodejs.org/en/) >=12.0.0 (optional, for development)
+-   [Node.js](https://nodejs.org/en/) >=14.0.0 (optional, for development)
 
 ## Deployment
 
@@ -78,7 +78,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
 ### Data Quality
 
 -   AllergyIntolerance resources:
-    -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
+    -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to there being free text inputs in TrakCare
     -   Low recordings of allergy and intolerance data in TrakCare:
         -   350,513 non-deceased patients with records in TrakCare as of 2020-11-19
             -   34,405 patients have ‘No Known Allergy’ recorded (9.8%)
