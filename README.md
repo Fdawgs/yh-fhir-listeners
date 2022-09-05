@@ -1,4 +1,4 @@
-> **NOTE: Development of this repository has been discontinued as of 2022-04-12. Please use https://github.com/Fdawgs/ydh-fhir-api**
+> **NOTE: Development of this repository has been discontinued as of 2022-09-05. Please use https://github.com/Fdawgs/ydh-fhir-api**
 
 <a href="https://yeovilhospital.co.uk/">
 	<img alttext="Yeovil District Hospital Logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
@@ -28,7 +28,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/about-us/digital-projects/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Stakeholders (as of 2021-11-02) are:
+Stakeholders (as of 2022-09-05) are:
 
 -   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)

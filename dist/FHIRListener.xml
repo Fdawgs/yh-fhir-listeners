@@ -20,7 +20,7 @@ An example SQL Server config:
     fhirDBPassword: password
     fhirDBUrl: jdbc:jtds:sqlserver://localhost:1433/fhirdb
     fhirDBUsername: admin</description>
-  <revision>5</revision>
+  <revision>6</revision>
   <sourceConnector version="3.12.0">
     <metaDataId>0</metaDataId>
     <name>sourceConnector</name>
@@ -51,7 +51,7 @@ An example SQL Server config:
       <contextPath>STU3</contextPath>
       <timeout>0</timeout>
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-    &lt;version value=&quot;5.3.3&quot;/&gt;
+    &lt;version value=&quot;6.0.0&quot;/&gt;
     &lt;status value=&quot;active&quot;/&gt;
     &lt;publisher value=&quot;Yeovil District Hospital NHS Foundation Trust&quot;/&gt;
     &lt;contact&gt;
@@ -3739,7 +3739,7 @@ return;</undeployScript>
       <codeTemplateLibrary version="3.12.0">
         <id>1f350e29-158e-4645-8809-9e60d1a47854</id>
         <name>FHIR DB Operations</name>
-        <revision>5</revision>
+        <revision>6</revision>
         <lastModified>
           <time>1629790801854</time>
           <timezone>Europe/London</timezone>
@@ -3758,7 +3758,7 @@ servers, feel free to add your own database-specific operations and queries.</de
           <codeTemplate version="3.12.0">
             <id>13e82aac-df07-463e-b8ca-8f4b98243618</id>
             <name>FHIR DB - Execute Cached Query</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218829</time>
               <timezone>Europe/London</timezone>
@@ -3792,7 +3792,7 @@ function executeCachedQuery(expression, parameters, dbConn) {
           <codeTemplate version="3.12.0">
             <id>23d0fa52-0d56-4e9a-82a5-56a6a3d55e43</id>
             <name>FHIR DB - Get Connection</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1606145893824</time>
               <timezone>Europe/London</timezone>
@@ -3917,7 +3917,7 @@ function convertDateParameter(date) {
           <codeTemplate version="3.12.0">
             <id>32b7c5a3-67c2-46ea-88e3-d41230f77ff4</id>
             <name>Get ResultSet</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1609749075059</time>
               <timezone>Europe/London</timezone>
@@ -4020,7 +4020,7 @@ function getResultSet(resultSet) {
           <codeTemplate version="3.12.0">
             <id>278733a7-de15-4324-bfa0-2034ae868afd</id>
             <name>Get ResultSet String</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218772</time>
               <timezone>Europe/London</timezone>
@@ -4062,7 +4062,7 @@ function getResultSetString(resultSet, columnName) {
           <codeTemplate version="3.12.0">
             <id>f5c11e82-475f-4a53-a370-273a6027eba0</id>
             <name>Search Utility Methods</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218567</time>
               <timezone>Europe/London</timezone>
@@ -4213,7 +4213,7 @@ function addLimit(query, limit) {
           <codeTemplate version="3.12.0">
             <id>9411a28b-5f0d-4bc3-8acf-d892b5beb7db</id>
             <name>Select Resource Instance by Version</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1606145893793</time>
               <timezone>Europe/London</timezone>
@@ -4256,7 +4256,7 @@ function getResourceVersion(type, id, versionId) {
       <codeTemplateLibrary version="3.12.0">
         <id>a084db27-49e0-4c67-893b-ffcc9f1d6e94</id>
         <name>FHIR Helper Functions</name>
-        <revision>5</revision>
+        <revision>6</revision>
         <lastModified>
           <time>1629790801854</time>
           <timezone>Europe/London</timezone>
@@ -4272,7 +4272,7 @@ function getResourceVersion(type, id, versionId) {
           <codeTemplate version="3.12.0">
             <id>d8e6f7a5-aeec-4025-a6d2-e568eb48e647</id>
             <name>Convert Date</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218883</time>
               <timezone>Europe/London</timezone>
@@ -4359,7 +4359,7 @@ function convertDate(date, outpattern) {
           <codeTemplate version="3.12.0">
             <id>0e158aa1-77ee-465c-bb7a-13f4c8ecda13</id>
             <name>Create FHIR OperationOutcome</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218384</time>
               <timezone>Europe/London</timezone>
@@ -4441,7 +4441,7 @@ function createOperationOutcome(severity, code, details, fhirVersion, httpStatus
           <codeTemplate version="3.12.0">
             <id>18c799ae-3553-40b0-b8cc-8898fbad5f7d</id>
             <name>Import Common Packages</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1606143685290</time>
               <timezone>Europe/London</timezone>
@@ -4473,7 +4473,7 @@ importPackage(org.apache.commons.lang3.math);</code>
           <codeTemplate version="3.12.0">
             <id>ece0b77f-a9bc-43f1-ae57-96bb3a1b4143</id>
             <name>Update Resource Meta</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1605607218219</time>
               <timezone>Europe/London</timezone>
@@ -4512,7 +4512,7 @@ function updateResourceMeta(resource, id, versionId) {
       <codeTemplateLibrary version="3.12.0">
         <id>d01bb902-b30e-4a90-afb6-50a92077be13</id>
         <name>FHIR Resource Builders</name>
-        <revision>5</revision>
+        <revision>6</revision>
         <lastModified>
           <time>1632129613059</time>
           <timezone>Europe/London</timezone>
@@ -4527,7 +4527,7 @@ function updateResourceMeta(resource, id, versionId) {
           <codeTemplate version="3.12.0">
             <id>198baa1b-acc2-4cbe-ac18-c17943ae6e94</id>
             <name>Build AllergyIntolerance Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1659341638476</time>
               <timezone>Europe/London</timezone>
@@ -4664,7 +4664,7 @@ function buildAllergyIntoleranceResource(data) {
           <codeTemplate version="3.12.0">
             <id>6a29bff7-2149-4f8b-8ef0-143a46e7e1e6</id>
             <name>Build Bundle Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1609749075215</time>
               <timezone>Europe/London</timezone>
@@ -4715,7 +4715,7 @@ function buildBundleResource(requestUrl) {
           <codeTemplate version="3.12.0">
             <id>7c59c819-3b52-45f7-82c9-bb7991c5ac93</id>
             <name>Build Encounter Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1624864012773</time>
               <timezone>Europe/London</timezone>
@@ -5256,7 +5256,7 @@ function buildEncounterResource(data) {
           <codeTemplate version="3.12.0">
             <id>f47abb70-d48c-471e-9d07-6520e61159d9</id>
             <name>Build Flag Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1624864050591</time>
               <timezone>Europe/London</timezone>
@@ -5419,7 +5419,7 @@ function buildFlagResource(data) {
           <codeTemplate version="3.12.0">
             <id>42a8edc9-d0fa-440b-8e09-d9912b145edb</id>
             <name>Build MedicationStatement Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1637674375401</time>
               <timezone>Europe/London</timezone>
@@ -5672,7 +5672,7 @@ function buildMedicationStatementResource(data) {
           <codeTemplate version="3.12.0">
             <id>9ac27127-af98-4b4c-a878-1091e35071ab</id>
             <name>Build Patient Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1632213252186</time>
               <timezone>Europe/London</timezone>
@@ -6191,7 +6191,7 @@ function buildPatientResource(data) {
           <codeTemplate version="3.12.0">
             <id>87c9c20d-7951-40cf-9e76-1367633cf5a4</id>
             <name>Build Procedure Resource</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1633609281908</time>
               <timezone>Europe/London</timezone>
@@ -6317,7 +6317,7 @@ function buildProcedureResource(data) {
           <codeTemplate version="3.12.0">
             <id>c38be651-7ce9-47ef-9686-e837426e5372</id>
             <name>Build Resource Query</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1659016926981</time>
               <timezone>Europe/London</timezone>
@@ -6453,7 +6453,7 @@ function buildResourceQuery(type, params) {
           <codeTemplate version="3.12.0">
             <id>80086f8c-cf36-42cf-836d-d6b082fbd168</id>
             <name>Pad</name>
-            <revision>5</revision>
+            <revision>6</revision>
             <lastModified>
               <time>1609749075543</time>
               <timezone>Europe/London</timezone>
