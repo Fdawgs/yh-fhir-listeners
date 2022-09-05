@@ -1,4 +1,4 @@
-> **NOTE: Development of this repository has been discontinued as of 2022-04-12. Please use https://github.com/Fdawgs/ydh-fhir-api**
+> **NOTE: Development of this repository has been discontinued as of 2022-09-05. Please use https://github.com/Fdawgs/ydh-fhir-api**
 
 <a href="https://yeovilhospital.co.uk/">
 	<img alttext="Yeovil District Hospital Logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
@@ -10,7 +10,7 @@
 ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems TrakCare PAS (v2020)
+> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems TrakCare PAS (v2020 MR6.11)
 
 ## Intro
 
@@ -28,7 +28,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 [Somerset Clinical Commissioning Group](https://www.somersetccg.nhs.uk/#) (CCG) started the [SIDeR project](https://www.somersetccg.nhs.uk/about-us/digital-projects/sider/) with the purpose of linking up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://www.blackpear.com/) (BP) is the technical partner that supports the project.
 
-Stakeholders (as of 2021-11-02) are:
+Stakeholders (as of 2022-09-05) are:
 
 -   [Children's Hospice South West](https://www.chsw.org.uk/) (CHSW)
 -   [Devon Doctors](https://www.devondoctors.co.uk/) (DD)
@@ -57,7 +57,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 -   [Mirth Connect v3.12.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.12.0) (including supporting database instance)
 -   [Mirth Connect FHIR Connector extension v3.12.0.ydh001](./dist/fhir-3.12.0.ydh001.zip)
 -   Latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
--   [Node.js](https://nodejs.org/en/) >=12.0.0 (optional, for development)
+-   [Node.js](https://nodejs.org/en/) >=14.0.0 (optional, for development)
 
 ## Deployment
 
@@ -78,7 +78,7 @@ Issues with InterSystems TrakCare PAS (used by YDH) and staff misuse of the PAS 
 ### Data Quality
 
 -   AllergyIntolerance resources:
-    -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to these being free text inputs in TrakCare
+    -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to there being free text inputs in TrakCare
     -   Low recordings of allergy and intolerance data in TrakCare:
         -   350,513 non-deceased patients with records in TrakCare as of 2020-11-19
             -   34,405 patients have ‘No Known Allergy’ recorded (9.8%)
