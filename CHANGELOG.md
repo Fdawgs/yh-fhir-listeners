@@ -2,6 +2,32 @@
 
 All notable changes to this project will be documented in this file.
 
+## [6.0.0](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.3...v6.0.0) (2022-09-05)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop support for EOL node 12
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.18.9 to 7.18.10 ([#405](https://github.com/Fdawgs/ydh-fhir-listeners/issues/405)) ([4c15ae6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4c15ae61e0a94d914cb49805d500141197f900dc))
+* **deps-dev:** bump @babel/core from 7.18.9 to 7.18.13 ([#398](https://github.com/Fdawgs/ydh-fhir-listeners/issues/398)) ([a17edf7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a17edf72d6ebd3dbd6a9da20f7cf7f3d83134b23))
+* **deps-dev:** bump @babel/node from 7.18.9 to 7.18.10 ([#403](https://github.com/Fdawgs/ydh-fhir-listeners/issues/403)) ([d9d4f2c](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d9d4f2cfc2abe5003b4a39ee6f30af97cd4e7374))
+* **deps-dev:** bump @babel/preset-env from 7.18.9 to 7.18.10 ([#400](https://github.com/Fdawgs/ydh-fhir-listeners/issues/400)) ([277a68f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/277a68fae3b4a48a7ec44518b22c4115da84cfde))
+* **deps-dev:** bump @commitlint/cli from 17.0.3 to 17.1.2 ([#399](https://github.com/Fdawgs/ydh-fhir-listeners/issues/399)) ([c8a3333](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c8a33335dc928269fe4e6ddd22df32fb3f65bf99))
+* **deps-dev:** bump @commitlint/config-conventional ([#401](https://github.com/Fdawgs/ydh-fhir-listeners/issues/401)) ([154e7a5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/154e7a57c24fa072253c3e355f9c9fb48ad13e31))
+* **deps-dev:** bump eslint from 8.21.0 to 8.23.0 ([#402](https://github.com/Fdawgs/ydh-fhir-listeners/issues/402)) ([50cbe96](https://github.com/Fdawgs/ydh-fhir-listeners/commit/50cbe9686a502fb5fb3d41eac8e0567aa2e519b4))
+* **deps-dev:** bump eslint-plugin-jsdoc from 39.3.4 to 39.3.6 ([#404](https://github.com/Fdawgs/ydh-fhir-listeners/issues/404)) ([39c60b2](https://github.com/Fdawgs/ydh-fhir-listeners/commit/39c60b2f56ac164d2aec25fd08f5334ceb45de31))
+* **deps-dev:** bump transistive dependencies ([fa9e49d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fa9e49df0cf336e4181d23731a9ed7342af90392))
+
+
+### Miscellaneous
+
+* **.husky:** shell path and arg updates ([#396](https://github.com/Fdawgs/ydh-fhir-listeners/issues/396)) ([109408f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/109408f666760025dfe09f3eb7e22bf76bea20a8))
+* **.vscode/extensions:** remove unmaintained extension ([c246e95](https://github.com/Fdawgs/ydh-fhir-listeners/commit/c246e956bd77467c4a9199150e9ed389451abf18))
+* drop support for node 12 ([093e1fd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/093e1fd07ed59ce7483f8510ea86653521b401da))
+
 ## [5.3.3](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.2...v5.3.3) (2022-08-01)
 
 
