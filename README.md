@@ -10,7 +10,7 @@
 ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems TrakCare PAS (v2020)
+> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems TrakCare PAS (v2020 MR6.11)
 
 ## Intro
 
