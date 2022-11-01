@@ -5,11 +5,11 @@
 | Task                                          | Status    | Date       | By                                                                       |
 | --------------------------------------------- | --------- | ---------- | ------------------------------------------------------------------------ |
 | Add test records to PAS test environment      | Completed | 2018-12-12 | David Suckling, [Will Jehring](https://github.com/wjehring) (Black Pear) |
-| Add contextual link to PAS test environment   | Completed | 2019-10-21 | Gary England (Intersystems), David Suckling, Frazer Smith                |
+| Add a contextual link to PAS test environment | Completed | 2019-10-21 | Gary England (Intersystems), David Suckling, Frazer Smith                |
 | Test contextual link                          | Completed | 2019-10-21 | Frazer Smith, [Will Jehring](https://github.com/wjehring) (Black Pear)   |
 | Build contextual link obfuscator service      | Completed | 2019-03-04 | Frazer Smith                                                             |
 | Deploy contextual link obfuscator service     | Completed | 2019-09-25 | Frazer Smith                                                             |
-| Choose logo for link                          | Completed | 2019-03-19 | Anthony Smith                                                            |
+| Choose a logo for the link                    | Completed | 2019-03-19 | Anthony Smith                                                            |
 | Integrate Keycloak token retrieval middleware | Completed | 2019-11-21 | Frazer Smith                                                             |
 | Test Keycloak token retrieval middleware      | Completed | 2019-11-21 | Frazer Smith                                                             |
 | Test contextual link in test environment      | Completed | 2020-01-15 | Frazer Smith, David Suckling                                             |
