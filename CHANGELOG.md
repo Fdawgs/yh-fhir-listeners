@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 ### ⚠ BREAKING CHANGES
 
 * minimum required version of node increased from 14.0.0 to 18.12.1
-
+	* Node 14 and 16 becomes EOL in April and September 2023 respectively, which is the same time that [Yeovil District Hospital NHS Foundation Trust is due to merge with Somerset NHS Foundation Trust](https://yeovilhospital.co.uk/better-care-for-local-people-the-merger-of-yeovil-hospital-nhs-foundation-trust-with-somerset-nhs-foundation-trust/). Development will be focused on the merger at that point in time and I may have less time for this side-project, so this PR preemptively drops support to reduce work load in the future
 ### Bug Fixes
 
 * **buildresourcequery:** missing default return value ([934e3a8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/934e3a8a878c62fc320fcceecb717037d0ff1c64))
