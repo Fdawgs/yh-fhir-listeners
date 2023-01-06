@@ -55,7 +55,7 @@ Steps 2. is automatically run by a pre-commit hook added by [Husky](https://typi
 
 ## Release Process
 
-Before a release, ensure the `dist/CapabilityStatement.xml` is using the semver generated in the latest automatic release pull request, and that `dist/FHIRListener.xml` has the latest changes.
+Before a release, ensure the `CapabilityStatement` in the channel is using the semver generated in the latest automatic release pull request, and that `dist/FHIRListener.xml` has the latest changes, by saving and exporting the channel and code templates from Mirth.
 
 ## Issues
 
