@@ -14,7 +14,6 @@ function buildBundleResource(requestUrl) {
 		link: [],
 		entry: [],
 	};
-
 	// Add link URL
 	if (requestUrl) {
 		var linkEntry = {

@@ -109,6 +109,6 @@ function buildResourceQuery(type, params) {
 			);
 
 		default:
-			break;
+			return executeCachedQuery();
 	}
 }
