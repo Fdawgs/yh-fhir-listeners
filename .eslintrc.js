@@ -1,6 +1,6 @@
 module.exports = {
 	env: {
-		es2017: true,
+		es2022: true,
 		node: true,
 	},
 	extends: [
@@ -11,7 +11,7 @@ module.exports = {
 	],
 	parserOptions: {
 		sourceType: "script",
-		ecmaVersion: 2019,
+		ecmaVersion: 2022,
 		ecmaFeatures: {
 			globalReturn: true,
 		},

@@ -12,7 +12,7 @@
 	"license": "MIT",
 	"author": "Frazer Smith <frazer.smith@ydh.nhs.uk>",
 	"engines": {
-		"node": ">=14.0.0"
+		"node": ">=18.12.1"
 	},
 	"scripts": {
 		"build": "babel src -d dist --ignore \"src/sql/\" && npm run lint:prettier",
