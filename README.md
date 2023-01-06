@@ -56,21 +56,20 @@ A contextual link needs to be added to our PAS to allow care providers access to
 ## Prerequisites
 
 -   [Mirth Connect v3.12.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.12.0) (including supporting database instance)
--   [Mirth Connect FHIR Connector extension v3.12.0.ydh001](./dist/fhir-3.12.0.ydh001.zip)
 -   The latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) >=18.12.1 (optional, for development)
 
-## Deployment
+## Setup
 
 This Mirth Connect channel has been tested on a Mirth Connect instance (v3.12.0) running on Windows 10 and Windows Server 2019, with an instance of SQL Server 2019 being used as the database backend for Mirth Connect.
 
-### Setting up Mirth Connect Channel
+Perform the following steps before deployment:
 
-1. Ensure all prerequisites have been met, and you have a running instance of Mirth Connect
-2. Install the FHIR Connector extension from the file system
-3. Import the FHIR Listener channel from [dist](./dist/FHIRListener.xml) into Mirth Connect
-4. Declare variables listed in the channel description, in the configuration map
-5. Deploy channel
+1. Download and extract the [latest release asset](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest)
+2. Navigate to the extracted directory
+3. Install the FHIR Connector extension (dist/fhir-3.12.0.ydh001.zip) in Mirth Connect
+4. Import the FHIR Listener channel (dist/FHIRListener.xml) into Mirth Connect
+5. Declare variables listed in the channel description, in the configuration map
 
 ## Known Issues and Caveats
 
