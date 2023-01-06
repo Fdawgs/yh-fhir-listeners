@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 /**
 	Builds MedicationStatement FHIR Resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1 for more info.
@@ -29,7 +30,6 @@ function buildMedicationStatementResource(data) {
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-MedicationStatement-1",
 			],
 		},
-
 		resourceType: "MedicationStatement",
 	};
 
@@ -108,7 +108,6 @@ function buildMedicationStatementResource(data) {
 				text: result.medicationCodeText,
 			},
 		};
-
 		contained.push(containedMedication);
 
 		if (
@@ -223,7 +222,6 @@ function buildMedicationStatementResource(data) {
 			.concat($cfg("apiUrl"), "/STU3/Patient/")
 			.concat(result.medstatSubjectReference),
 	};
-
 	// Hard-coded as TrakCare does not record whether a patient has taken medication
 	resource.taken = "unk";
 

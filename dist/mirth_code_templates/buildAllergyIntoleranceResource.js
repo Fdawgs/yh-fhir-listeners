@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 /**
 	Builds AllergyIntolerance FHIR Resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1 for more info.
@@ -29,7 +30,6 @@ function buildAllergyIntoleranceResource(data) {
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-AllergyIntolerance-1",
 			],
 		},
-
 		resourceType: "AllergyIntolerance",
 	};
 
@@ -68,7 +68,6 @@ function buildAllergyIntoleranceResource(data) {
 			code: newStringOrUndefined(result.allergyCodeCodingGroupCode),
 			display: newStringOrUndefined(result.allergyCodeCodingGroupDisplay),
 		};
-
 		resource.code.coding.push(groupCode);
 	}
 
@@ -78,7 +77,6 @@ function buildAllergyIntoleranceResource(data) {
 			code: newStringOrUndefined(result.allergyCodeCodingCode),
 			display: newStringOrUndefined(result.allergyCodeCodingDisplay),
 		};
-
 		resource.code.coding.push(allergyCode);
 	}
 
@@ -88,7 +86,6 @@ function buildAllergyIntoleranceResource(data) {
 			code: newStringOrUndefined(result.allergyCodeCodingDrugCode),
 			display: newStringOrUndefined(result.allergyCodeCodingDrugDisplay),
 		};
-
 		resource.code.coding.push(drugCode);
 	}
 

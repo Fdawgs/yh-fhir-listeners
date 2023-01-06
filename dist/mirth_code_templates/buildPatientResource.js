@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 /**
 	Builds Patient FHIR resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 for more info.
@@ -55,7 +56,6 @@ function buildPatientResource(data) {
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1",
 			],
 		},
-
 		resourceType: newStringOrUndefined("Patient"),
 		identifier: JSON.parse(result.secondaryIdentifiers).identifier,
 		name: [
@@ -140,7 +140,6 @@ function buildPatientResource(data) {
 				},
 			],
 		};
-
 		resource.identifier.push(nhsIdentifier);
 	}
 
@@ -158,7 +157,6 @@ function buildPatientResource(data) {
 					},
 				],
 			},
-
 			name: {
 				use: "usual",
 				text: newStringOrUndefined(result.contactName),
@@ -191,18 +189,15 @@ function buildPatientResource(data) {
 					},
 				],
 			},
-
 			name: {
 				use: "anonymous",
 				text: "School nurse",
 			},
-
 			organization: {
 				identifier: {
 					system: "https://trakcare.ydh.nhs.uk",
 					value: newStringOrUndefined(result.schoolId),
 				},
-
 				display: newStringOrUndefined(result.schoolName),
 			},
 		};
@@ -227,7 +222,6 @@ function buildPatientResource(data) {
 			use: "anonymous",
 			text: "Switchboard",
 		},
-
 		telecom: [
 			{
 				system: "phone",
@@ -252,7 +246,6 @@ function buildPatientResource(data) {
 			value: newStringOrUndefined(result.homePhone),
 			use: newStringOrUndefined("home"),
 		};
-
 		telecom.push(homePhone);
 	}
 	if (result.mobilePhone != undefined) {
@@ -261,7 +254,6 @@ function buildPatientResource(data) {
 			value: newStringOrUndefined(result.mobilePhone),
 			use: newStringOrUndefined("mobile"),
 		};
-
 		telecom.push(mobilePhone);
 	}
 	if (result.businessPhone != undefined) {
@@ -270,7 +262,6 @@ function buildPatientResource(data) {
 			value: newStringOrUndefined(result.businessPhone),
 			use: newStringOrUndefined("work"),
 		};
-
 		telecom.push(businessPhone);
 	}
 	if (result.email != undefined) {
@@ -278,7 +269,6 @@ function buildPatientResource(data) {
 			system: newStringOrUndefined("email"),
 			value: newStringOrUndefined(result.email),
 		};
-
 		telecom.push(email);
 	}
 	if (telecom.length > 0) {
@@ -309,7 +299,6 @@ function buildPatientResource(data) {
 							result.ethnicCategoryCareConnectDesc
 						),
 					},
-
 					{
 						system: newStringOrUndefined(
 							"https://trakcare.ydh.nhs.uk"
@@ -323,7 +312,6 @@ function buildPatientResource(data) {
 				],
 			},
 		};
-
 		extension.push(ethCatExtension);
 	}
 
@@ -352,7 +340,6 @@ function buildPatientResource(data) {
 				],
 			},
 		};
-
 		extension.push(relAffExtension);
 	}
 
@@ -423,7 +410,6 @@ function buildPatientResource(data) {
 					"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Organization-1",
 				],
 			},
-
 			name: newStringOrUndefined(result.gpDesc),
 			address: [
 				{
@@ -439,7 +425,6 @@ function buildPatientResource(data) {
 				},
 			],
 		};
-
 		contained.push(containedOrganisation);
 	}
 	if (contained.length > 0) {
@@ -453,7 +438,6 @@ function buildPatientResource(data) {
 			reference: newStringOrUndefined("#".concat(result.gpIdentifier)),
 			display: newStringOrUndefined(result.gpDesc),
 		};
-
 		generalPractitioner.push(gpReference);
 	}
 

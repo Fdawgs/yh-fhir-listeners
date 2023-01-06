@@ -1,3 +1,4 @@
+/* eslint-disable security/detect-object-injection */
 /**
 	Builds Encounter FHIR Resource that adheres to its Care-Connect profile,
 	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1 for more info.
@@ -29,7 +30,6 @@ function buildEncounterResource(data) {
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1",
 			],
 		},
-
 		resourceType: "Encounter",
 	};
 
@@ -226,7 +226,6 @@ function buildEncounterResource(data) {
 						},
 					],
 				},
-
 				{
 					coding: [
 						{
@@ -246,7 +245,6 @@ function buildEncounterResource(data) {
 				display: result.encounterParticipantIndividualDisplay_admitting,
 			},
 		};
-
 		resource.participant.push(participantCombo);
 	}
 
@@ -269,12 +267,10 @@ function buildEncounterResource(data) {
 					identifier: {
 						value: result.encounterParticipantIndividualCode_admitting,
 					},
-
 					display:
 						result.encounterParticipantIndividualDisplay_admitting,
 				},
 			};
-
 			resource.participant.push(participantAdmitter);
 		}
 		if (
@@ -297,12 +293,10 @@ function buildEncounterResource(data) {
 					identifier: {
 						value: result.encounterParticipantIndividualCode_discharging,
 					},
-
 					display:
 						result.encounterParticipantIndividualDisplay_discharging,
 				},
 			};
-
 			resource.participant.push(participantDischarger);
 		}
 	}
@@ -327,7 +321,6 @@ function buildEncounterResource(data) {
 					result.encounterParticipantIndividualDisplay_opattending,
 			},
 		};
-
 		resource.participant.push(participantConsultant);
 	}
 
@@ -372,7 +365,6 @@ function buildEncounterResource(data) {
 				],
 			},
 		};
-
 		resource.hospitalization.extension.push(admissionMethod);
 	}
 
@@ -391,7 +383,6 @@ function buildEncounterResource(data) {
 				],
 			},
 		};
-
 		resource.hospitalization.extension.push(dischargeMethod);
 	}
 
@@ -437,10 +428,8 @@ function buildEncounterResource(data) {
 				identifier: {
 					value: undefined,
 				},
-
 				display: undefined,
 			},
-
 			period: {
 				start: undefined,
 				end: undefined,
