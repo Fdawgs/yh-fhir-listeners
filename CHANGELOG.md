@@ -2,6 +2,52 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.0](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v6.0.1...v7.0.0) (2023-01-06)
+
+
+### ⚠ BREAKING CHANGES
+
+* minimum required version of node increased from 14.0.0 to 18.12.1
+	* Node 14 and 16 becomes EOL in April and September 2023 respectively, which is the same time that [Yeovil District Hospital NHS Foundation Trust is due to merge with Somerset NHS Foundation Trust](https://yeovilhospital.co.uk/better-care-for-local-people-the-merger-of-yeovil-hospital-nhs-foundation-trust-with-somerset-nhs-foundation-trust/). Development will be focused on the merger at that point in time and I may have less time for this side-project, so this PR preemptively drops support to reduce work load in the future
+### Bug Fixes
+
+* **buildresourcequery:** missing default return value ([934e3a8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/934e3a8a878c62fc320fcceecb717037d0ff1c64))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.19.3 to 7.20.7 ([#429](https://github.com/Fdawgs/ydh-fhir-listeners/issues/429)) ([e2da1d0](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e2da1d00ff44aa2c89c5f2f09554dafd708734fe))
+* **deps-dev:** bump @babel/core from 7.19.6 to 7.20.12 ([#428](https://github.com/Fdawgs/ydh-fhir-listeners/issues/428)) ([05015a7](https://github.com/Fdawgs/ydh-fhir-listeners/commit/05015a79a0a1addd6da88c16227cd01232c7a111))
+* **deps-dev:** bump @babel/node from 7.20.0 to 7.20.7 ([#421](https://github.com/Fdawgs/ydh-fhir-listeners/issues/421)) ([87865ab](https://github.com/Fdawgs/ydh-fhir-listeners/commit/87865abc9e7828710c7f1661100eb65ac1416534))
+* **deps-dev:** bump @babel/preset-env from 7.19.4 to 7.20.2 ([#419](https://github.com/Fdawgs/ydh-fhir-listeners/issues/419)) ([4638109](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4638109c538ef4b456e4e1f90edc090c2b12f690))
+* **deps-dev:** bump @commitlint/cli from 17.2.0 to 17.4.0 ([#425](https://github.com/Fdawgs/ydh-fhir-listeners/issues/425)) ([ee94b8d](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ee94b8d6e39b74996e50254f8f49868a71b95149))
+* **deps-dev:** bump @commitlint/config-conventional ([#426](https://github.com/Fdawgs/ydh-fhir-listeners/issues/426)) ([653823f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/653823f0d5282500233f1eb4c675aeb615c786ca))
+* **deps-dev:** bump eslint from 8.26.0 to 8.31.0 ([#424](https://github.com/Fdawgs/ydh-fhir-listeners/issues/424)) ([fc97c14](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fc97c145ad363caa885cac6647bbe2503a1e902c))
+* **deps-dev:** bump eslint-config-prettier from 8.5.0 to 8.6.0 ([#427](https://github.com/Fdawgs/ydh-fhir-listeners/issues/427)) ([7921470](https://github.com/Fdawgs/ydh-fhir-listeners/commit/7921470dab24487dea14d495effeb0b6772b12e1))
+* **deps-dev:** bump eslint-plugin-jsdoc from 39.4.0 to 39.6.4 ([#422](https://github.com/Fdawgs/ydh-fhir-listeners/issues/422)) ([9ab0c27](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9ab0c2746027d088e57ceb04420bee82d3f7eb29))
+* **deps-dev:** bump husky from 8.0.1 to 8.0.3 ([#420](https://github.com/Fdawgs/ydh-fhir-listeners/issues/420)) ([18bb8a4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/18bb8a46c2fd19e156e4e7c385446203ee724988))
+* **deps-dev:** bump prettier from 2.7.1 to 2.8.1 ([#423](https://github.com/Fdawgs/ydh-fhir-listeners/issues/423)) ([fd0dee9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/fd0dee943418f9386a463d727e60870073e5b28f))
+* **deps:** bump actions/dependency-review-action from 2 to 3 ([#417](https://github.com/Fdawgs/ydh-fhir-listeners/issues/417)) ([e4e78bc](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e4e78bc87b99c76286be7bdc6bc06e5b766de2b2))
+* **deps:** bump json5 from 1.0.1 to 1.0.2 ([#418](https://github.com/Fdawgs/ydh-fhir-listeners/issues/418)) ([692dfe3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/692dfe37e4b7e65adbd2d94ea8abd8b589170538))
+
+
+### Miscellaneous
+
+* drop support for node 14 and 16 ([#431](https://github.com/Fdawgs/ydh-fhir-listeners/issues/431)) ([8e6a249](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8e6a24933dba3fd70deabffa6f58d09f591417be))
+* ignore false eslint warnings ([58ecb86](https://github.com/Fdawgs/ydh-fhir-listeners/commit/58ecb868611fd25ce07cca1639adbbba141da6bd))
+* **license:** update license year ([15e1b30](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15e1b30ca81290931cf61c9500671eadcb210c44))
+
+
+### Continuous Integration
+
+* **cd:** create release asset ([a3c58d5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a3c58d5a62fe04be789c7b71c65c5194970b8d16))
+
+
+### Documentation
+
+* **contributing:** update release steps ([74b5e28](https://github.com/Fdawgs/ydh-fhir-listeners/commit/74b5e28fb77eeb0326c0739efa3c910548f0acf9))
+* update contact details ([18326e8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/18326e80b7a4257eeb59c82e9753c879ed458933))
+
 ## [6.0.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v6.0.0...v6.0.1) (2022-11-01)
 
 
