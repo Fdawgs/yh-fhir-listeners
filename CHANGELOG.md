@@ -2,6 +2,23 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.0...v7.0.1) (2023-01-09)
+
+
+### Bug Fixes
+
+* **medicationstatement:** map dose count/period to correct keys ([#433](https://github.com/Fdawgs/ydh-fhir-listeners/issues/433)) ([4dfffdd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4dfffddc87fc5a5ebcc8249bb555f503f85dbbbe))
+
+
+### Dependencies
+
+* **deps-dev:** bump @commitlint/cli from 17.4.0 to 17.4.1 ([#437](https://github.com/Fdawgs/ydh-fhir-listeners/issues/437)) ([0d96f9f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/0d96f9fb8a92d9478fbc4d8331d51581110b93f4))
+* **deps-dev:** bump prettier from 2.8.1 to 2.8.2 ([#435](https://github.com/Fdawgs/ydh-fhir-listeners/issues/435)) ([2d22f60](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2d22f60e2bf2072607354a6464441a7c10f1136f))
+* **deps-dev:** bump transistive dependencies ([91d234e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/91d234ed2f5cfc80e9dab91c2d020a89a3208008))
+* minify build output; remove dist files from repo ([#436](https://github.com/Fdawgs/ydh-fhir-listeners/issues/436)) ([85d1fa4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/85d1fa48030a72bbc21c8a7c2ee6f149dab0142d))
+	* Minification has been introduced to discourage team members at YDH from editing deployed JavaScript in Mirth Connect, and for them to use the git repos to ensure changes are tracked
+* remove prettier from build script ([3e3b133](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3e3b1334608b41ae6030196da097281d82a8ba67))
+
 ## [7.0.0](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v6.0.1...v7.0.0) (2023-01-06)
 
 
