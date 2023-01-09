@@ -16,6 +16,7 @@ All notable changes to this project will be documented in this file.
 * **deps-dev:** bump prettier from 2.8.1 to 2.8.2 ([#435](https://github.com/Fdawgs/ydh-fhir-listeners/issues/435)) ([2d22f60](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2d22f60e2bf2072607354a6464441a7c10f1136f))
 * **deps-dev:** bump transistive dependencies ([91d234e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/91d234ed2f5cfc80e9dab91c2d020a89a3208008))
 * minify build output; remove dist files from repo ([#436](https://github.com/Fdawgs/ydh-fhir-listeners/issues/436)) ([85d1fa4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/85d1fa48030a72bbc21c8a7c2ee6f149dab0142d))
+	* Minification has been introduced to discourage team members at YDH from editing deployed JavaScript in Mirth Connect, and for them to use the git repos to ensure changes are tracked
 * remove prettier from build script ([3e3b133](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3e3b1334608b41ae6030196da097281d82a8ba67))
 
 ## [7.0.0](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v6.0.1...v7.0.0) (2023-01-06)
