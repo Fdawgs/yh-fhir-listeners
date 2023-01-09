@@ -30,14 +30,15 @@ WITH
                CONCAT(COALESCE(medstatEffectiveStart_Datepart, ''),'T', COALESCE(medstatEffectiveStart_Timepart, '')) AS medstatEffectiveStart,
                CONCAT(COALESCE(medstatEffectiveEnd_Datepart, ''),'T', COALESCE(medstatEffectiveEnd_Timepart, '')) AS medstatEffectiveEnd,
                medstatSubjectReference,
-               medstatDosageTimingRepeatDuration,
-               CASE medstatDosageTimingRepeatDurationUnit
+               medstatDosageTimingRepeatCount,
+               medstatDosageTimingRepeatType,
+               CASE medstatDosageTimingRepeatPeriodunit
      WHEN 'DO' THEN NULL
      WHEN 'M' THEN 'min'
      WHEN 'H' THEN 'h'
      WHEN 'D' THEN 'd'
      WHEN 'W' THEN 'wk'
-     END AS medstatDosageTimingRepeatDurationUnit,
+     END AS medstatDosageTimingRepeatPeriodunit,
                medstatDosageAdditionalinstruction,
                medstatDosagePatientinstruction,
                medstatDosageRouteText,
@@ -74,8 +75,9 @@ WITH
                          oi.OEORI_EndDate AS medstatEffectiveEnd_Datepart,
                          oi.OEORI_EndTime AS medstatEffectiveEnd_Timepart,
                          oi.OEORI_OEORD_ParRef->OEORD_Adm_DR->PAADM_PAPMI_DR->PAPMI_No AS medstatSubjectReference,
-                         oi.OEORI_OEOrdItem2_DR->ITM2_DurationValue AS medstatDosageTimingRepeatDuration,
-                         oi.OEORI_OEOrdItem2_DR->ITM2_DurationUnit AS medstatDosageTimingRepeatDurationUnit,
+                         oi.OEORI_OEOrdItem2_DR->ITM2_DurationType AS medstatDosageTimingRepeatType,
+                         oi.OEORI_OEOrdItem2_DR->ITM2_DurationValue AS medstatDosageTimingRepeatCount,
+                         oi.OEORI_OEOrdItem2_DR->ITM2_DurationUnit AS medstatDosageTimingRepeatPeriodunit,
                          oi.OEORI_Instr_DR->PHCIN_Desc1 AS medstatDosageAdditionalinstruction,
                          oi.OEORI_OEOrdItem2_DR->ITM2_LabelNotes AS medstatDosagePatientinstruction,
                          oi.OEORI_AdminRoute_DR->ADMR_Desc AS medstatDosageRouteText,

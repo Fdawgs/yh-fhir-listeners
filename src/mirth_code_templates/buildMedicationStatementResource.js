@@ -153,17 +153,19 @@ function buildMedicationStatementResource(data) {
 		};
 	}
 	if (
-		result.medstatDosageTimingRepeatDuration != undefined &&
-		result.medstatDosageTimingRepeatDurationUnit != undefined &&
-		result.medstatDosageTimingRepeatDurationUnit != "DO"
+		result.medstatDosageTimingRepeatCount != undefined &&
+		result.medstatDosageTimingRepeatPeriodunit != undefined &&
+		result.medstatDosageTimingRepeatPeriodunit != "DO"
 	) {
 		dosageObject.timing = {
 			repeat: {
-				duration: newStringOrUndefined(
-					result.medstatDosageTimingRepeatDuration
+				count: newStringOrUndefined(
+					result.medstatDosageTimingRepeatCount
 				),
-				durationUnit: newStringOrUndefined(
-					result.medstatDosageTimingRepeatDurationUnit
+				frequency: 1,
+				period: 1.0,
+				periodUnit: newStringOrUndefined(
+					result.medstatDosageTimingRepeatPeriodunit
 				).toLowerCase(),
 			},
 		};
