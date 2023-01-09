@@ -15,7 +15,7 @@
 		"node": ">=18.12.1"
 	},
 	"scripts": {
-		"build": "babel src -d temp --ignore \"src/sql/\" && npm run lint:prettier",
+		"build": "babel src -d temp --ignore \"src/sql/\"",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
 		"lint:prettier": "prettier . -w -u",
 		"lint:prettier:ci": "prettier . -c -u",
