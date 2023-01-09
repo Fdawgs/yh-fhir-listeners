@@ -28,8 +28,8 @@ The channel code is transcompiled to be backwards compatible with Mirth Connect 
 The workflow steps are as follows:
 
 1. Alter files in /src
-2. Run `npm run build` to migrate files from `/src` to `/dist` and transcompile the changes
-3. Copy code from `/dist` into Mirth Connect channel and test in Mirth
+2. Run `npm run build` to migrate files from `/src` to `/temp` and transcompile the changes
+3. Copy code from `/temp` into Mirth Connect channel and test in Mirth
 
 ## Documentation Style
 

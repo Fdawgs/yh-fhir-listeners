@@ -15,7 +15,7 @@
 		"node": ">=18.12.1"
 	},
 	"scripts": {
-		"build": "babel src -d dist --ignore \"src/sql/\" && npm run lint:prettier",
+		"build": "babel src -d temp --ignore \"src/sql/\" && npm run lint:prettier",
 		"lint": "eslint src/. --cache --ext js,jsx --ignore-path .gitignore",
 		"lint:prettier": "prettier . -w -u",
 		"lint:prettier:ci": "prettier . -c -u",
@@ -34,6 +34,7 @@
 		"@babel/preset-env": "^7.20.2",
 		"@commitlint/cli": "^17.4.0",
 		"@commitlint/config-conventional": "^17.4.0",
+		"babel-preset-minify": "^0.5.2",
 		"eslint": "^8.31.0",
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.6.0",

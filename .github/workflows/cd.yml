@@ -45,7 +45,7 @@ jobs:
               run: >
                   zip -r ${{ github.event.repository.name }}-${{ needs.release.outputs.tag_name }}.zip
                   LICENSE README.md
-                  dist/fhir-3.12.0.ydh001.zip dist/FHIRListener.xml
+                  dist
 
             - name: Upload release asset
               uses: actions/upload-release-asset@v1

@@ -3,7 +3,8 @@
 		"allowReturnOutsideFunction": true
 	},
 	"generatorOpts": {
-		"retainLines": true
+		"comments": false,
+		"retainLines": false
 	},
 	"presets": [
 		[
@@ -14,6 +15,7 @@
 					"rhino": "1.7.12"
 				}
 			}
-		]
+		],
+		["minify", { "builtIns": false }]
 	]
 }
