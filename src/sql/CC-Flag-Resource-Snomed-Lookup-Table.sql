@@ -40,16 +40,14 @@ VALUES
     (N'CPE', N'CPE  - Carbapenemase-producing Enterobacteriaceae', N'734351004', N'Carbapenemase-producing Enterobacteriaceae', NULL),
     (N'CTIMP', N'Drug Trial', N'713670002', N'Entered into drug clinical trial', NULL),
     (N'DDA', N'Do not disclose patient address', NULL, NULL, NULL),
-    (N'DELER', N'Delirium', N'2776000', N'
-Delirium', NULL),
+    (N'DELER', N'Delirium', N'2776000', N'Delirium', NULL),
     (N'DEME', N'Dementia Pt', N'52448006', N'Dementia', NULL),
     (N'DEP', N'Deprivation of Liberty
 (DOL)', NULL, NULL, NULL),
     (N'DIF', N'Difficult intubation or airway management', N'718447001', N'Difficult intubation', NULL),
     (N'DNR', N'Do Not Resuscitate Pt', N'304253006', N'Not for resuscitation', NULL),
     (N'EDCP', N'ED Care Plan', NULL, NULL, NULL),
-    (N'EOLCP', N'
-End of Life Care Plan', N'713673000', N'Has end of life care plan', NULL),
+    (N'EOLCP', N'End of Life Care Plan', N'713673000', N'Has end of life care plan', NULL),
     (N'EPI', N'Epileptic', N'84757009', N'Epilepsy', NULL),
     (N'FEEDASSIST', N'Needs Assistance with Feeding', N'129033007', N'Feeding assisted', NULL),
     (N'FETALAB', N'Fetal abnormality', NULL, NULL, N'Unable to map as there are multiple SNOMED codes for fetal abnormalities but not a singular general code'),
