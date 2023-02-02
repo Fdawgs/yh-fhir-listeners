@@ -43,6 +43,7 @@ jobs:
 
             - name: Create release asset
               run: >
+                  mkdir dist/sql && cp src/sql/**-Lookup-Table.sql dist/sql &&
                   zip -r ${{ github.event.repository.name }}-${{ needs.release.outputs.tag_name }}.zip
                   LICENSE README.md
                   dist
