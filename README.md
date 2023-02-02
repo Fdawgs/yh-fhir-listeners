@@ -70,6 +70,7 @@ Perform the following steps before deployment:
 3. Install the FHIR Connector extension (dist/fhir-3.12.0.ydh001.zip) in Mirth Connect
 4. Import the FHIR Listener channel (dist/FHIRListener.xml) into Mirth Connect
 5. Declare variables listed in the channel description, in the configuration map
+6. Run the SQL queries found in `dist/sql` to create lookup tables
 
 ## Known Issues and Caveats
 
