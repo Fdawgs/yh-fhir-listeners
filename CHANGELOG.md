@@ -2,6 +2,41 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.1...v7.0.2) (2023-02-02)
+
+
+### Bug Fixes
+
+* **sql/flag:** remove linebreaks ([#439](https://github.com/Fdawgs/ydh-fhir-listeners/issues/439)) ([640fc72](https://github.com/Fdawgs/ydh-fhir-listeners/commit/640fc7248aa40bf40c046fd083189cc43206cdbd))
+
+
+### Dependencies
+
+* **deps-dev:** bump @commitlint/cli from 17.4.1 to 17.4.2 ([#446](https://github.com/Fdawgs/ydh-fhir-listeners/issues/446)) ([5bf67c8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5bf67c87ddc9a59a84e38eab955966b47cbdcf9b))
+* **deps-dev:** bump @commitlint/config-conventional ([#442](https://github.com/Fdawgs/ydh-fhir-listeners/issues/442)) ([14d8f71](https://github.com/Fdawgs/ydh-fhir-listeners/commit/14d8f719f6dcbe2961097947b1d46de0e851c14a))
+* **deps-dev:** bump eslint from 8.31.0 to 8.33.0 ([#441](https://github.com/Fdawgs/ydh-fhir-listeners/issues/441)) ([20d5b1e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/20d5b1e71cee42de7d6affa14159a88e8ea7d0a8))
+* **deps-dev:** bump eslint-plugin-import from 2.26.0 to 2.27.5 ([#443](https://github.com/Fdawgs/ydh-fhir-listeners/issues/443)) ([72abc3a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/72abc3a393e7177c348540735f49c4f5d4ef9adf))
+* **deps-dev:** bump eslint-plugin-jsdoc from 39.6.4 to 39.7.5 ([#445](https://github.com/Fdawgs/ydh-fhir-listeners/issues/445)) ([f1156c5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f1156c518f883b10454b29068ef18f21636df6fa))
+* **deps-dev:** bump eslint-plugin-security from 1.5.0 to 1.7.0 ([#447](https://github.com/Fdawgs/ydh-fhir-listeners/issues/447)) ([11a440e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/11a440e4075358cbd5d683b9396a1915eb6d6a2f))
+* **deps-dev:** bump prettier from 2.8.2 to 2.8.3 ([#444](https://github.com/Fdawgs/ydh-fhir-listeners/issues/444)) ([ed56667](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ed566670bc0b93ac079bf12cb752832dcf99d1cc))
+* **deps-dev:** bump transistive dependencies ([baea790](https://github.com/Fdawgs/ydh-fhir-listeners/commit/baea79031190a56717143120b93096005a88b2dc))
+
+
+### Miscellaneous
+
+* **flags:** add cancer and visual impairment flags to visible list ([9e55876](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9e55876b882c10d636029b8b004f0df6c06ade44))
+* **sql:** remove redundant prefix in filenames ([8fc39c3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8fc39c357d503b2e1124232655139a6646255e6f))
+
+
+### Continuous Integration
+
+* **cd:** copy lookup tables to dist ([259369f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/259369fb02a7284a34529591a24f8964db6139f1))
+
+
+### Documentation
+
+* **readme:** add sql step ([b5b32a6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b5b32a67a582743cdd70dc7f554dad5615fc5fa3))
+
 ## [7.0.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.0...v7.0.1) (2023-01-09)
 
 
