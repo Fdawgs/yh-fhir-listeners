@@ -5,7 +5,7 @@
 	<img alttext="Yeovil District Hospital Logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
 </a>
 
-# Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener Endpoints
+# Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener endpoints
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/)
 ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master)
@@ -13,7 +13,7 @@
 
 > Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems' TrakCare PAS (v2020 MR6.11)
 
-## Intro
+## Overview
 
 ### Purpose
 
@@ -43,13 +43,13 @@ Stakeholders (as of 2022-11-01) are:
 
 ### Deliverables
 
-#### Care Connect RESTful FHIR API Endpoints
+#### Care Connect RESTful FHIR API endpoints
 
 Black Pear have built a single-page web application for a shared care record, which will retrieve data relating to a patient from each stakeholder that can do so, and amalgamate it into this record. The record is not stored in a cache anywhere and is built on the fly.
 Care providers can then access this record through a contextual link (an embedded link within the PAS).
 Clients using the web app need to be able to make GET requests to RESTful HL7® FHIR® API endpoints to retrieve a set of [seven FHIR resources](./docs/worklogs/fhir_endpoints.md) that adhere to their respective [NHS Care Connect API profiles](https://nhsconnect.github.io/CareConnectAPI/) to populate the record.
 
-#### Contextual Link
+#### Contextual link
 
 A contextual link needs to be added to our PAS to allow care providers access to the shared record. Refer to [Interoperability patterns - Contextual launch](https://github.com/Somerset-SIDeR-Programme/SIDeR-interop-patterns/wiki/contextual-launch) in the SIDeR wiki for more information.
 
@@ -72,11 +72,11 @@ Perform the following steps before deployment:
 5. Declare variables listed in the channel description, in the configuration map
 6. Run the SQL queries found in `dist/sql` to create lookup tables
 
-## Known Issues and Caveats
+## Known issues and caveats
 
 Issues with InterSystems' TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints and how searches can be performed.
 
-### Data Quality
+### Data quality
 
 -   AllergyIntolerance resources:
     -   Unable to provide SNOMED codes for allergies and intolerances in AllergyIntolerance resources due to there being free text inputs in TrakCare
@@ -101,7 +101,7 @@ Issues with InterSystems' TrakCare PAS (used by YDH) and staff misuse of the PAS
     -   Unable to provide GP surgery/organisation `name` value for inline Organization FHIR resource as this data is also not held in TrakCare; using GP consultant name as a placeholder
     -   A sizeable number of patient records without postcodes
 
-### Search Caveats
+### Search saveats
 
 -   Every search request to a FHIR resource endpoint that is **NOT** the Patient FHIR resource endpoint **MUST** have a `patient` search parameter, this is to stop intentional or unintentional DOS attacks due to long-running SQL queries:
     -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error

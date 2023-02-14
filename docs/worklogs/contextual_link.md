@@ -1,4 +1,4 @@
-# Contextual Link
+# Contextual link
 
 ## Key tasks
 
@@ -17,11 +17,11 @@
 
 ## Work log
 
-### Test Records
+### Test records
 
 Will Jehring provided test records from Black Pear on 2018-11-28, which were then passed onto the Application Support Manager (David Suckling) to be added to the test environment of our PAS, TrakCare.
 
-### Contextual Link in PAS
+### Contextual link in PAS
 
 An existing contextual link in the test environment was repurposed to test the contextual link for the test records but had some issues due to TrakCare adding extra parameters into the generated URL that was causing looping issues when attempting to authenticate and login to Black Pear's eSP.
 

@@ -1,8 +1,8 @@
-# FHIR Endpoints
+# FHIR endpoints
 
-## Key Tasks
+## Key tasks
 
-| Resource Name                                                                                              | SQL Query Status     | Resource Builder Status | Read Functionality Status | Search Functionality Status | [Capability Statement](https://hl7.org/fhir/STU3/capabilitystatement.html) | By                                                               |
+| Resource name                                                                                              | SQL query status     | Resource builder status | Read functionality status | Search functionality status | [Capability Statement](https://hl7.org/fhir/STU3/capabilitystatement.html) | By                                                               |
 | ---------------------------------------------------------------------------------------------------------- | -------------------- | ----------------------- | ------------------------- | --------------------------- | -------------------------------------------------------------------------- | ---------------------------------------------------------------- |
 | [AllergyIntolerance](https://nhsconnect.github.io/CareConnectAPI/api_clinical_allergyintolerance.html)     | Completed 2019-05-02 | Completed 2019-05-02    | Completed 2019-04-05      | Completed 2019-05-02        | Completed 2019-11-18                                                       | Frazer Smith, David Suckling, Neil Hayes-Webster                 |
 | [Condition](https://nhsconnect.github.io/CareConnectAPI/api_clinical_condition.html)                       | N/A                  | N/A                     | N/A                       | N/A                         | N/A                                                                        |
