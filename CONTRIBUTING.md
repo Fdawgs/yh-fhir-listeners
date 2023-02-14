@@ -13,13 +13,13 @@ Other processes and specifications that are in use in this repository are:
 -   [Conventional commits](https://conventionalcommits.org/en/v1.0.0/) following the @commitlint/config-conventional config
 -   [Prettier](https://prettier.io/) style guide
 
-## Getting Started
+## Getting started
 
 Ensure you have all prerequisites installed (including any optional ones), as noted in the [prerequisites section of the readme file](./README.md#prerequisites).
 
 With those in place, you can fork the repository, clone it, and then run `npm install` to install all dependencies.
 
-### Development Workflow
+### Development workflow
 
 Mirth Connect uses the [Rhino Engine](https://github.com/mozilla/rhino) that supports a select number of EcmaScript ES6/ES2015 features.
 `.eslintrc.js` has ESLint rules relating to the features that Mirth Connect does not support turned off.
@@ -31,7 +31,7 @@ The workflow steps are as follows:
 2. Run `npm run build` to migrate files from `/src` to `/temp` and transcompile the changes
 3. Copy code from `/temp` into Mirth Connect channel and test in Mirth
 
-## Documentation Style
+## Documentation style
 
 Documentation (both in markdown files and inline comments) should be written in **British English** where possible.
 
@@ -43,7 +43,7 @@ Titles and headings should adhere to the [Associated Press (AP)](https://apstyle
 -   Lowercase articles (a, an, the), coordinating conjunctions, and prepositions
 -   Capitalise words with four or more letters (including conjunctions and prepositions)
 
-## Pull Request Checklist
+## Pull request checklist
 
 Before submitting a pull request back to the main repository, please make sure you have completed the following steps:
 
@@ -53,7 +53,7 @@ Before submitting a pull request back to the main repository, please make sure y
 
 Steps 2. is automatically run by a pre-commit hook added by [Husky](https://typicode.github.io/husky/#/).
 
-## Release Process
+## Release process
 
 Before a release, ensure the `CapabilityStatement` in the channel is using the semver generated in the latest automatic release pull request, and that `dist/FHIRListener.xml` has the latest changes, by saving and exporting the channel and code templates from Mirth.
 

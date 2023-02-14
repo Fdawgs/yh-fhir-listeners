@@ -5,7 +5,7 @@ All notable changes to this project will be documented in this file.
 ## [7.0.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.1...v7.0.2) (2023-02-02)
 
 
-### Bug Fixes
+### Bug fixes
 
 * **sql/flag:** remove linebreaks ([#439](https://github.com/Fdawgs/ydh-fhir-listeners/issues/439)) ([640fc72](https://github.com/Fdawgs/ydh-fhir-listeners/commit/640fc7248aa40bf40c046fd083189cc43206cdbd))
 
@@ -28,7 +28,7 @@ All notable changes to this project will be documented in this file.
 * **sql:** remove redundant prefix in filenames ([8fc39c3](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8fc39c357d503b2e1124232655139a6646255e6f))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **cd:** copy lookup tables to dist ([259369f](https://github.com/Fdawgs/ydh-fhir-listeners/commit/259369fb02a7284a34529591a24f8964db6139f1))
 
@@ -40,7 +40,7 @@ All notable changes to this project will be documented in this file.
 ## [7.0.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.0...v7.0.1) (2023-01-09)
 
 
-### Bug Fixes
+### Bug fixes
 
 * **medicationstatement:** map dose count/period to correct keys ([#433](https://github.com/Fdawgs/ydh-fhir-listeners/issues/433)) ([4dfffdd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4dfffddc87fc5a5ebcc8249bb555f503f85dbbbe))
 
@@ -61,7 +61,7 @@ All notable changes to this project will be documented in this file.
 
 * minimum required version of node increased from 14.0.0 to 18.12.1
 	* Node 14 and 16 becomes EOL in April and September 2023 respectively, which is the same time that [Yeovil District Hospital NHS Foundation Trust is due to merge with Somerset NHS Foundation Trust](https://yeovilhospital.co.uk/better-care-for-local-people-the-merger-of-yeovil-hospital-nhs-foundation-trust-with-somerset-nhs-foundation-trust/). Development will be focused on the merger at that point in time and I may have less time for this side-project, so this PR preemptively drops support to reduce work load in the future
-### Bug Fixes
+### Bug fixes
 
 * **buildresourcequery:** missing default return value ([934e3a8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/934e3a8a878c62fc320fcceecb717037d0ff1c64))
 
@@ -90,7 +90,7 @@ All notable changes to this project will be documented in this file.
 * **license:** update license year ([15e1b30](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15e1b30ca81290931cf61c9500671eadcb210c44))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **cd:** create release asset ([a3c58d5](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a3c58d5a62fe04be789c7b71c65c5194970b8d16))
 
@@ -151,7 +151,7 @@ All notable changes to this project will be documented in this file.
 ## [5.3.3](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.2...v5.3.3) (2022-08-01)
 
 
-### Bug Fixes
+### Bug fixes
 
 * **allergyintolerance:** add local coding ([#393](https://github.com/Fdawgs/ydh-fhir-listeners/issues/393)) ([99c8897](https://github.com/Fdawgs/ydh-fhir-listeners/commit/99c8897f8406bacaa0b2d41f4d608a3b4d695347))
 
@@ -162,7 +162,7 @@ All notable changes to this project will be documented in this file.
 * **readme:** remove snyk badge ([149d6ac](https://github.com/Fdawgs/ydh-fhir-listeners/commit/149d6ac114fdf2c6dfd5fdeeeba4db0027edf9a7))
 
 
-### Continuous Integration
+### Continuous integration
 
 * update workflows ([f7dfbf6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/f7dfbf619867020c7909d3f1fe222f594ccc7d0c))
 
@@ -194,7 +194,7 @@ All notable changes to this project will be documented in this file.
 ### [5.3.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.3.1...v5.3.2) (2022-04-12)
 
 
-### Continuous Integration
+### Continuous integration
 
 * **automerge:** squash automerge prs ([#372](https://github.com/Fdawgs/ydh-fhir-listeners/issues/372)) ([4b87691](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4b87691b89d6879a7f65e76d31d3f1457fdbf0f6))
 * **cd:** update org name for release-please-action ([5e25a82](https://github.com/Fdawgs/ydh-fhir-listeners/commit/5e25a821b2cb470d4265e5f5bd37a11137a87b1d))
@@ -230,7 +230,7 @@ All notable changes to this project will be documented in this file.
 * **scripts:** use shorter arg aliases ([9a190b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9a190b881870385f5515ae4ffbb336a5cc30ca46))
 
 
-### Continuous Integration
+### Continuous integration
 
 * add job step names, workflow comments, and whitespace ([873502a](https://github.com/Fdawgs/ydh-fhir-listeners/commit/873502ada08a88835f9a6772c8bb102058a49399))
 * **codeql-analysis:** remove unused autobuild step ([aba9db9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/aba9db9d3411961afa57108d5a73b30d2dac396e))
@@ -300,13 +300,13 @@ All notable changes to this project will be documented in this file.
 * **medicationstatement:** add `identifier` array ([26f9b28](https://github.com/Fdawgs/ydh-fhir-listeners/commit/26f9b282eb37a1e71a5798fe4394e6d88badff11))
 
 
-### Bug Fixes
+### Bug fixes
 
 * **capabilitystatement:** stop comments appearing under `fhir_comments` ([#305](https://github.com/Fdawgs/ydh-fhir-listeners/issues/305)) ([ad95a61](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ad95a61ace7be0872f1356b950c20a2043841570))
 * **medicationstatement:** set statements with no end date as `active` ([e725db1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/e725db1b01f99d195e3667bbe84ae26ec585c8cd))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **ci:** do not run clean-up on draft prs ([59e92bf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/59e92bf49b9405d37603c7158bd276d69aec9860))
 * **spell-check:** do not run on draft prs ([59dbe96](https://github.com/Fdawgs/ydh-fhir-listeners/commit/59dbe962f92f896289235f5ae55a00c0c984e3f8))
@@ -387,7 +387,7 @@ All notable changes to this project will be documented in this file.
 * add support for procedure resources ([#253](https://github.com/Fdawgs/ydh-fhir-listeners/issues/253)) ([4e4738e](https://github.com/Fdawgs/ydh-fhir-listeners/commit/4e4738e9bba94341b5c9fdd542ff6d0e00d6cbb6))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **automerge:** update location of octokit rest methods ([#265](https://github.com/Fdawgs/ydh-fhir-listeners/issues/265)) ([15f6ec6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/15f6ec646f3be8cdeda27d40b0072f5c7a9ee4c0))
 
@@ -433,7 +433,7 @@ All notable changes to this project will be documented in this file.
 ### [5.1.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v5.1.0...v5.1.1) (2021-09-06)
 
 
-### Bug Fixes
+### Bug fixes
 
 * **resource/medicstat:** convert java string to js string for replace ([16fce06](https://github.com/Fdawgs/ydh-fhir-listeners/commit/16fce06ceb7e7dd21d09080e41c84baf2fba5da8))
 * **resource/medicstat:** incomplete string escaping or encoding ([#246](https://github.com/Fdawgs/ydh-fhir-listeners/issues/246)) ([a0ad542](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a0ad5424bdfaa2e2f1a092637859b82855e4c48d))
@@ -449,7 +449,7 @@ All notable changes to this project will be documented in this file.
 * **.github:** use new YAML configured GitHub issue forms ([#244](https://github.com/Fdawgs/ydh-fhir-listeners/issues/244)) ([a2e5b76](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a2e5b763bde7243d234a7f9545338db1f39f0474))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **ci:** replace workflow-run-cleanup-action with github concurrency ([#245](https://github.com/Fdawgs/ydh-fhir-listeners/issues/245)) ([dec8076](https://github.com/Fdawgs/ydh-fhir-listeners/commit/dec8076f39bf3839c0f1ccf59b26f127f869faaa))
 * **ci:** revert to workflow-run-clean-action from github concurrency ([bfe5de4](https://github.com/Fdawgs/ydh-fhir-listeners/commit/bfe5de457593b38d639a286a38e9599ed6a65b0f))
@@ -479,7 +479,7 @@ All notable changes to this project will be documented in this file.
 * **sql/patient:** add secondary identifiers ([3bb8c93](https://github.com/Fdawgs/ydh-fhir-listeners/commit/3bb8c93ede1eece1206ab209034a935a6479019f))
 
 
-### Bug Fixes
+### Bug fixes
 
 * **patient:** empty secondary identifier assignment ([b591e45](https://github.com/Fdawgs/ydh-fhir-listeners/commit/b591e459c8987785bfca8b55d4e786f9af928fe3))
 * **read:** add missing where predicates for patient reading ([1c52dd1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1c52dd10a8ab298472e143fa07d699f2d43f9dc3))
@@ -490,7 +490,7 @@ All notable changes to this project will be documented in this file.
 * **sql/patient:** only retrieve active secondary ids ([ca51014](https://github.com/Fdawgs/ydh-fhir-listeners/commit/ca51014a073e20d4bc3b86fc2098a745f78c4a28))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **cd:** move perf optimizations and refactoring into same section ([a070746](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a0707466507f185b56e8943f1f5a5582083bbb18))
 
@@ -541,7 +541,7 @@ All notable changes to this project will be documented in this file.
 * **patient:** use `deceasedDateTime` instead of `deceasedBoolean` ([8fd6eb1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8fd6eb1b6f12920e42124276ba75594e0677ad0d))
 
 
-### Bug Fixes
+### Bug fixes
 
 * **patient:** add work phone contact number ([8f9b0cf](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8f9b0cf94758ef8ed8a140799eef4aae30138642))
 * **patient:** meta.lastupdated substring check ([9892588](https://github.com/Fdawgs/ydh-fhir-listeners/commit/98925887d51437751d74dd4f38cb671439147ed3))
@@ -560,7 +560,7 @@ All notable changes to this project will be documented in this file.
 * **readme:** update contributing section ([1826517](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1826517af5777102bf9f91cd24e33fd3a8005a24))
 
 
-### Continuous Integration
+### Continuous integration
 
 * fix key usage in `action/setup-node` ([a8388b8](https://github.com/Fdawgs/ydh-fhir-listeners/commit/a8388b85e02eedd98378edf4d51c8dc3778faeae))
 * **link-check:** reduce frequency from daily to monthly ([#205](https://github.com/Fdawgs/ydh-fhir-listeners/issues/205)) ([47cc2e1](https://github.com/Fdawgs/ydh-fhir-listeners/commit/47cc2e1ebf231fcaee1b59d24753621b762f151e))
@@ -592,7 +592,7 @@ All notable changes to this project will be documented in this file.
 ### [4.0.1](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v4.0.0...v4.0.1) (2021-05-11)
 
 
-### Bug Fixes
+### Bug fixes
 
 * **encounters:** correct status case order ([1e75583](https://github.com/Fdawgs/ydh-fhir-listeners/commit/1e755834c37b36d672e2b4a5e35aa244b99c99c7))
 
@@ -619,7 +619,7 @@ All notable changes to this project will be documented in this file.
 * remove support for nodejs v10 ([abf7afd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/abf7afddd3463aded2046ded8d30fe706a3347de))
 
 
-### Continuous Integration
+### Continuous integration
 
 * add cleanup-run job ([45126ce](https://github.com/Fdawgs/ydh-fhir-listeners/commit/45126ce32001b97055b6e32ecb61758b5985652d))
 * **link-check:** fix skip regex ([9242c59](https://github.com/Fdawgs/ydh-fhir-listeners/commit/9242c590f784fe9ec9d86cb8e4f9ce70efe7d05d))
@@ -683,7 +683,7 @@ All notable changes to this project will be documented in this file.
 * **deps:** bump wagoid/commitlint-github-action from v3.0.1 to v3.0.6 ([2c090b9](https://github.com/Fdawgs/ydh-fhir-listeners/commit/2c090b9163aade7baf4ae8bafc061a396e7ffa4d))
 
 
-### Continuous Integration
+### Continuous integration
 
 * **automerge:** move automerge job into new workflow ([845a4cd](https://github.com/Fdawgs/ydh-fhir-listeners/commit/845a4cd84a593d2b48e85191217a0981793f24d0))
 * **ci:** ignore dependabot prs for commit message linting ([aa406db](https://github.com/Fdawgs/ydh-fhir-listeners/commit/aa406dbdebe140810b0a7ecc0230322580871935))
