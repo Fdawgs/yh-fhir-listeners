@@ -42,6 +42,6 @@
 		"eslint-plugin-jsdoc": "^40.0.0",
 		"eslint-plugin-security": "^1.7.1",
 		"husky": "^8.0.3",
-		"prettier": "2.8.3"
+		"prettier": "2.8.4"
 	}
 }
