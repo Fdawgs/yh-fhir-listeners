@@ -2,6 +2,18 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.3](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.2...v7.0.3) (2023-02-14)
+
+
+### Miscellaneous
+
+* use sentence case over ap style for titles and headings ([8086596](https://github.com/Fdawgs/ydh-fhir-listeners/commit/8086596f05323e3c7bf526f319211396cc62a343))
+
+
+### Continuous integration
+
+* **cd:** use sentence case for changelog headings ([d5ef9d6](https://github.com/Fdawgs/ydh-fhir-listeners/commit/d5ef9d650c456dc97126745feb3f07df3cff36cf))
+
 ## [7.0.2](https://github.com/Fdawgs/ydh-fhir-listeners/compare/v7.0.1...v7.0.2) (2023-02-02)
 
 
