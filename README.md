@@ -2,13 +2,13 @@
 > Development of this repository has been discontinued as of 2022-11-01. Please use https://github.com/Fdawgs/ydh-fhir-api
 
 <a href="https://yeovilhospital.co.uk/">
-	<img alttext="Yeovil District Hospital Logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
+	<img alttext="Yeovil District Hospital logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
 </a>
 
 # Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener endpoints
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/)
-![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=master)
+![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=main)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
 > Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems' TrakCare PAS (v2020 MR6.11)
