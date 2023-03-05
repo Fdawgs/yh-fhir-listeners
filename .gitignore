@@ -132,6 +132,7 @@ out
 .pnp.*
 
 # lock files
+bun.lockb
 pnpm-lock.yaml
 yarn.lock
 
