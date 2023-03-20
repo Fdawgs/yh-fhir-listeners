@@ -125,7 +125,7 @@ Please adhere to this project's [Code of Conduct](./CODE_OF_CONDUCT.md) when con
 -   **George Dampier** (YDH) - MedicationStatement FHIR resource advice
 -   **Jessica Male** (YDH) - TrakCare frontend support
 -   [**Julian Matthews**](https://github.com/NHS-juju) (SFT) - Bug reports
--   **John Simpson** (YDH) - MedicationStatement FHIR resource advice
+-   **Jon Simpson** (YDH) - MedicationStatement FHIR resource advice
 -   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - SQL query optimisation
 -   **Nicolas Noblet** (YDH) - SQL query optimisation, TrakCare database table structure advice
 -   [**Will Jehring**](https://github.com/wjehring) (BP) - HL7 FHIR STU3 specification adherence advice
