@@ -60,8 +60,8 @@ function buildPatientResource(data) {
 			{
 				use: "usual",
 				family: newStringOrUndefined(result.nameFamily),
-				given: result.nameGiven1First,
-				prefix: result.namePrefix,
+				given: newStringOrUndefined(result.nameGiven1First),
+				prefix: newStringOrUndefined(result.namePrefix),
 			},
 		],
 		gender: newStringOrUndefined(result.gender),

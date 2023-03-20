@@ -103,7 +103,7 @@ function buildMedicationStatementResource(data) {
 						),
 					},
 				],
-				text: result.medicationCodeText,
+				text: newStringOrUndefined(result.medicationCodeText),
 			},
 		};
 		contained.push(containedMedication);
