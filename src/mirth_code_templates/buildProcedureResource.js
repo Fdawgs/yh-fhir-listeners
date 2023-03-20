@@ -86,9 +86,7 @@ function buildProcedureResource(data) {
 		result.procedureDateRecordedDateTime.substring(0, 4) != "1900"
 	) {
 		extension.push({
-			url: newStringOrUndefined(
-				"https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1"
-			),
+			url: "https://fhir.hl7.org.uk/StructureDefinition/Extension-CareConnect-DateRecorded-1",
 			valueDateTime: newStringOrUndefined(
 				result.procedureDateRecordedDateTime
 			),

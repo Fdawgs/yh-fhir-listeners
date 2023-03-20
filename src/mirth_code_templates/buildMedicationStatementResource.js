@@ -47,8 +47,8 @@ function buildMedicationStatementResource(data) {
 
 	resource.identifier = [];
 	resource.identifier.push({
-		use: newStringOrUndefined("usual"),
-		system: newStringOrUndefined("https://fhir.ydh.nhs.uk/Id/order-item"),
+		use: "usual",
+		system: "https://fhir.ydh.nhs.uk/Id/order-item",
 		value: newStringOrUndefined(result.medstatId),
 	});
 
