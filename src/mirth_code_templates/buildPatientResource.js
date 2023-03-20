@@ -54,14 +54,14 @@ function buildPatientResource(data) {
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1",
 			],
 		},
-		resourceType: newStringOrUndefined("Patient"),
+		resourceType: "Patient",
 		identifier: JSON.parse(result.secondaryIdentifiers).identifier,
 		name: [
 			{
-				use: newStringOrUndefined("usual"),
+				use: "usual",
 				family: newStringOrUndefined(result.nameFamily),
-				given: result.nameGiven1First,
-				prefix: result.namePrefix,
+				given: newStringOrUndefined(result.nameGiven1First),
+				prefix: newStringOrUndefined(result.namePrefix),
 			},
 		],
 		gender: newStringOrUndefined(result.gender),
@@ -69,8 +69,8 @@ function buildPatientResource(data) {
 		deceasedDateTime: newStringOrUndefined(result.deceasedDateTime),
 		address: [
 			{
-				use: newStringOrUndefined("home"),
-				type: newStringOrUndefined("postal"),
+				use: "home",
+				type: "postal",
 				line: [
 					newStringOrUndefined(result.addressLine1),
 					newStringOrUndefined(result.addressLine2),
@@ -81,7 +81,7 @@ function buildPatientResource(data) {
 			},
 		],
 		id: newStringOrUndefined(result.patientNo),
-		language: newStringOrUndefined("English (Great Britain)"),
+		language: "English (Great Britain)",
 	};
 
 	// Add meta data
@@ -95,30 +95,24 @@ function buildPatientResource(data) {
 
 	// Add Local Patient ID
 	resource.identifier.push({
-		use: newStringOrUndefined("usual"),
-		system: newStringOrUndefined(
-			"https://fhir.ydh.nhs.uk/Id/local-patient-identifier"
-		),
+		use: "usual",
+		system: "https://fhir.ydh.nhs.uk/Id/local-patient-identifier",
 		value: newStringOrUndefined(result.patientNo),
 	});
 
 	// Add NHS No
 	if (result.nhsNumber != undefined) {
 		const nhsIdentifier = {
-			use: newStringOrUndefined("official"),
-			system: newStringOrUndefined("https://fhir.nhs.uk/Id/nhs-number"),
+			use: "official",
+			system: "https://fhir.nhs.uk/Id/nhs-number",
 			value: newStringOrUndefined(result.nhsNumber),
 			extension: [
 				{
-					url: newStringOrUndefined(
-						"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1"
-					),
+					url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSNumberVerificationStatus-1",
 					valueCodeableConcept: {
 						coding: [
 							{
-								system: newStringOrUndefined(
-									"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1"
-								),
+								system: "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-NHSNumberVerificationStatus-1",
 								code: newStringOrUndefined(
 									pad(result.nhsNumberTraceStatusCode, 2)
 								),
@@ -230,31 +224,31 @@ function buildPatientResource(data) {
 	const telecom = [];
 	if (result.homePhone != undefined) {
 		const homePhone = {
-			system: newStringOrUndefined("phone"),
+			system: "phone",
 			value: newStringOrUndefined(result.homePhone),
-			use: newStringOrUndefined("home"),
+			use: "home",
 		};
 		telecom.push(homePhone);
 	}
 	if (result.mobilePhone != undefined) {
 		const mobilePhone = {
-			system: newStringOrUndefined("phone"),
+			system: "phone",
 			value: newStringOrUndefined(result.mobilePhone),
-			use: newStringOrUndefined("mobile"),
+			use: "mobile",
 		};
 		telecom.push(mobilePhone);
 	}
 	if (result.businessPhone != undefined) {
 		const businessPhone = {
-			system: newStringOrUndefined("phone"),
+			system: "phone",
 			value: newStringOrUndefined(result.businessPhone),
-			use: newStringOrUndefined("work"),
+			use: "work",
 		};
 		telecom.push(businessPhone);
 	}
 	if (result.email != undefined) {
 		const email = {
-			system: newStringOrUndefined("email"),
+			system: "email",
 			value: newStringOrUndefined(result.email),
 		};
 		telecom.push(email);
@@ -268,15 +262,11 @@ function buildPatientResource(data) {
 	// Add Ethnic Category extension
 	if (result.ethnicCategoryCode != undefined) {
 		const ethCatExtension = {
-			url: newStringOrUndefined(
-				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1"
-			),
+			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1",
 			valueCodeableConcept: {
 				coding: [
 					{
-						system: newStringOrUndefined(
-							"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1"
-						),
+						system: "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-EthnicCategory-1",
 						code: newStringOrUndefined(
 							result.ethnicCategoryCareConnectCode
 						),
@@ -285,9 +275,7 @@ function buildPatientResource(data) {
 						),
 					},
 					{
-						system: newStringOrUndefined(
-							"https://trakcare.ydh.nhs.uk"
-						),
+						system: "https://trakcare.ydh.nhs.uk",
 						code: newStringOrUndefined(result.ethnicCategoryCode),
 						display: newStringOrUndefined(
 							result.ethnicCategoryDesc
@@ -302,15 +290,11 @@ function buildPatientResource(data) {
 	// Add Religious Affiliation extension
 	if (result.religiousAffiliationCode != undefined) {
 		const relAffExtension = {
-			url: newStringOrUndefined(
-				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1"
-			),
+			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1",
 			valueCodeableConcept: {
 				coding: [
 					{
-						system: newStringOrUndefined(
-							"https://datadictionary.nhs.uk"
-						),
+						system: "https://datadictionary.nhs.uk",
 						code: newStringOrUndefined(
 							result.religiousAffiliationCode
 						),
@@ -327,18 +311,14 @@ function buildPatientResource(data) {
 	// Add NHS Communication extension
 	if (result.preferredLanguageCode != undefined) {
 		const nhsComExtension = {
-			url: newStringOrUndefined(
-				"https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1"
-			),
+			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1",
 			extension: [
 				{
 					url: "language",
 					valueCodeableConcept: {
 						coding: [
 							{
-								system: newStringOrUndefined(
-									"https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1"
-								),
+								system: "https://fhir.hl7.org.uk/STU3/CodeSystem/CareConnect-HumanLanguage-1",
 								code: newStringOrUndefined(
 									result.preferredLanguageCode
 								),
@@ -391,8 +371,8 @@ function buildPatientResource(data) {
 			name: newStringOrUndefined(result.gpDesc),
 			address: [
 				{
-					use: newStringOrUndefined("work"),
-					type: newStringOrUndefined("both"),
+					use: "work",
+					type: "both",
 					line: [
 						newStringOrUndefined(result.gpAddressLine1),
 						newStringOrUndefined(result.gpAddressLine2),
@@ -430,9 +410,7 @@ function buildPatientResource(data) {
 		resource.maritalStatus = {
 			coding: [
 				{
-					system: newStringOrUndefined(
-						"https://hl7.org/fhir/stu3/v3/MaritalStatus"
-					),
+					system: "https://hl7.org/fhir/stu3/v3/MaritalStatus",
 					code: newStringOrUndefined(result.maritalStatusCode),
 					display: newStringOrUndefined(result.maritalStatusDesc),
 				},

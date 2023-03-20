@@ -8,8 +8,8 @@
  */
 function buildBundleResource(requestUrl) {
 	const resource = {
-		resourceType: newStringOrUndefined("Bundle"),
-		type: newStringOrUndefined("searchset"),
+		resourceType: "Bundle",
+		type: "searchset",
 		total: 0,
 		link: [],
 		entry: [],
@@ -17,7 +17,7 @@ function buildBundleResource(requestUrl) {
 	// Add link URL
 	if (requestUrl) {
 		const linkEntry = {
-			relation: newStringOrUndefined("self"),
+			relation: "self",
 			url: newStringOrUndefined(requestUrl),
 		};
 
