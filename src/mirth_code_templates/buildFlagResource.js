@@ -20,27 +20,45 @@ function buildFlagResource(data) {
 		}
 	}
 
-	/**
-	 * Hard-coding meta profile and resourceType into resource as this should not
-	 * be changed for this resource, ever.
-	 */
 	const resource = {
 		meta: {
 			profile: [
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1",
 			],
+			tag: [
+				{
+					system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+					code: "summary",
+					display: "Display in Summary and Detail View",
+				},
+			],
+			lastUpdated:
+				result.lastUpdated && !/^(T|1900)/m.test(result.lastUpdated)
+					? result.lastUpdated
+					: undefined,
 		},
 		resourceType: "Flag",
+		id: newStringOrUndefined(result.flagId),
+		status: newStringOrUndefined(result.flagStatusCode),
+		code: {
+			coding: [],
+		},
+		period: {
+			start:
+				result.periodStart && !/^(T|1900)/m.test(result.periodStart)
+					? result.periodStart
+					: undefined,
+			end:
+				result.periodStart && !/^(T|1900)/m.test(result.periodStart)
+					? result.periodStart
+					: undefined,
+		},
+		subject: {
+			reference: `${$cfg("apiUrl")}/STU3/Patient/${
+				result.flagSubjectReference
+			}`,
+		},
 	};
-
-	// Add meta data
-	if (
-		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != "T" &&
-		result.lastUpdated.substring(0, 4) != "1900"
-	) {
-		resource.meta.lastUpdated = result.lastUpdated;
-	}
 
 	/**
 	 * Add SIDeR specific tags
@@ -65,20 +83,9 @@ function buildFlagResource(data) {
 				display: "Do not Display",
 			},
 		];
-	} else {
-		resource.meta.tag = [
-			{
-				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
-				code: "summary",
-				display: "Display in Summary and Detail View",
-			},
-		];
 	}
 
-	resource.id = newStringOrUndefined(result.flagId);
-	resource.status = newStringOrUndefined(result.flagStatusCode);
-
-	if (result.flagCategoryCodingCode != undefined) {
+	if (result.flagCategoryCodingCode) {
 		resource.category = {
 			coding: [
 				{
@@ -92,49 +99,21 @@ function buildFlagResource(data) {
 		};
 	}
 
-	resource.code = {
-		coding: [],
-	};
-
-	if (result.flagCodeCodingCode != undefined) {
-		const ydhCode = {
+	if (result.flagCodeCodingCode) {
+		resource.code.coding.push({
 			system: "https://trakcare.ydh.nhs.uk",
 			code: newStringOrUndefined(result.flagCodeCodingCode),
 			display: newStringOrUndefined(result.flagCodeCodingDisplay),
-		};
-		resource.code.coding.push(ydhCode);
+		});
 	}
 
-	if (result.flagCodeCodingSnomedCode != undefined) {
-		const snomedCode = {
+	if (result.flagCodeCodingSnomedCode) {
+		resource.code.coding.push({
 			system: "https://snomed.info/sct",
 			code: newStringOrUndefined(result.flagCodeCodingSnomedCode),
 			display: newStringOrUndefined(result.flagCodeCodingSnomedDisplay),
-		};
-		resource.code.coding.push(snomedCode);
+		});
 	}
-
-	resource.period = {};
-	if (
-		result.periodStart != undefined &&
-		result.periodStart.substring(0, 1) != "T" &&
-		result.periodStart.substring(0, 4) != "1900"
-	) {
-		resource.period.start = result.periodStart;
-	}
-	if (
-		result.periodStart != undefined &&
-		result.periodStart.substring(0, 1) != "T" &&
-		result.periodStart.substring(0, 4) != "1900"
-	) {
-		resource.period.end = result.periodStart;
-	}
-
-	resource.subject = {
-		reference: `${$cfg("apiUrl")}/STU3/Patient/${
-			result.flagSubjectReference
-		}`,
-	};
 
 	return resource;
 }
