@@ -40,7 +40,7 @@
 		"eslint-config-airbnb-base": "^15.0.0",
 		"eslint-config-prettier": "^8.6.0",
 		"eslint-plugin-import": "^2.27.5",
-		"eslint-plugin-jsdoc": "^40.0.0",
+		"eslint-plugin-jsdoc": "^40.1.0",
 		"eslint-plugin-security": "^1.7.1",
 		"husky": "^8.0.3",
 		"prettier": "2.8.6"
