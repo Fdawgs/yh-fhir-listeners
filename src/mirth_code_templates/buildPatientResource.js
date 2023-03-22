@@ -32,10 +32,6 @@ function buildPatientResource(data) {
 		result.secondaryIdentifiers = JSON.stringify({ identifier: [] });
 	}
 
-	/**
-	 * Hard-coding meta profile and resourceType into resource as this should not
-	 * be changed for this resource, ever.
-	 */
 	const resource = {
 		fullUrl: `${$cfg("apiUrl") + $("contextPath")}/${result.patientNo}`,
 		meta: {
