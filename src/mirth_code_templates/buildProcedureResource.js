@@ -31,7 +31,7 @@ function buildProcedureResource(data) {
 					: undefined,
 		},
 		resourceType: "Procedure",
-		id: newStringOrUndefined(result.id),
+		id: newStringOrUndefined(result.procedureId),
 		status: newStringOrUndefined(result.procedureStatus),
 		subject: {
 			reference: `${$cfg("apiUrl")}/STU3/Patient/${
