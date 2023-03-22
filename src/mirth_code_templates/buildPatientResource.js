@@ -1,11 +1,9 @@
-/* eslint-disable security/detect-object-injection */
 /**
-	Builds Patient FHIR resource that adheres to its Care-Connect profile,
-	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 for more info.
- 
-	@author Frazer Smith
-	@param {object} data - Java RowSet object.
-	@returns {object} Patient FHIR resource.
+ * @author Frazer Smith
+ * @description Builds Patient FHIR resource that adheres to its Care-Connect profile,
+ * see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1 for more info.
+ * @param {object} data - Java RowSet object.
+ * @returns {object} Patient FHIR resource.
  */
 function buildPatientResource(data) {
 	const result = getResultSet(data);
@@ -21,40 +19,32 @@ function buildPatientResource(data) {
 	}
 
 	if (
-		result.nhsNumberTraceStatusCode == undefined ||
-		result.nhsNumberTraceStatusCode == null ||
+		!result.nhsNumberTraceStatusCode ||
 		result.nhsNumberTraceStatusCode == "0"
 	) {
 		result.nhsNumberTraceStatusCode = "2";
 		result.nhsNumberTraceStatusDesc = "Number present but not traced";
 	}
 
-	if (
-		result.deceasedDateTime.substring(0, 1) == "T" ||
-		result.deceasedDateTime.substring(0, 4) == "1900"
-	) {
-		result.deceasedDateTime = undefined;
-	}
-
-	if (
-		result.secondaryIdentifiers == undefined ||
-		result.secondaryIdentifiers == null
-	) {
+	if (!result.secondaryIdentifiers) {
 		result.secondaryIdentifiers = JSON.stringify({ identifier: [] });
 	}
 
-	/**
-	 * Hard-coding meta profile and resourceType into resource as this should not
-	 * be changed for this resource, ever.
-	 */
 	const resource = {
 		fullUrl: `${$cfg("apiUrl") + $("contextPath")}/${result.patientNo}`,
 		meta: {
 			profile: [
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Patient-1",
 			],
+			lastUpdated:
+				result.lastUpdated && !/^(T|1900)/m.test(result.lastUpdated)
+					? result.lastUpdated
+					: undefined,
 		},
 		resourceType: "Patient",
+		id: newStringOrUndefined(result.patientNo),
+		language: "English (Great Britain)",
+		contained: [],
 		identifier: JSON.parse(result.secondaryIdentifiers).identifier,
 		name: [
 			{
@@ -64,9 +54,14 @@ function buildPatientResource(data) {
 				prefix: newStringOrUndefined(result.namePrefix),
 			},
 		],
+		telecom: [],
 		gender: newStringOrUndefined(result.gender),
 		birthDate: newStringOrUndefined(result.birthDate),
-		deceasedDateTime: newStringOrUndefined(result.deceasedDateTime),
+		deceasedDateTime:
+			result.deceasedDateTime &&
+			!/^(T|1900)/m.test(result.deceasedDateTime)
+				? newStringOrUndefined(result.deceasedDateTime)
+				: undefined,
 		address: [
 			{
 				use: "home",
@@ -80,18 +75,29 @@ function buildPatientResource(data) {
 				postalCode: newStringOrUndefined(result.postalCode),
 			},
 		],
-		id: newStringOrUndefined(result.patientNo),
-		language: "English (Great Britain)",
+		contact: [
+			// YDH Switchboard always present
+			{
+				name: {
+					use: "anonymous",
+					text: "Switchboard",
+				},
+				telecom: [
+					{
+						system: "phone",
+						value: "01935475122",
+					},
+				],
+				organization: {
+					reference:
+						"https://directory.spineservices.nhs.uk/STU3/Organization/RA4",
+					display: "YEOVIL DISTRICT HOSPITAL NHS FOUNDATION TRUST",
+				},
+			},
+		],
+		generalPractitioner: [],
+		extension: [],
 	};
-
-	// Add meta data
-	if (
-		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != "T" &&
-		result.lastUpdated.substring(0, 4) != "1900"
-	) {
-		resource.meta.lastUpdated = newStringOrUndefined(result.lastUpdated);
-	}
 
 	// Add Local Patient ID
 	resource.identifier.push({
@@ -101,7 +107,7 @@ function buildPatientResource(data) {
 	});
 
 	// Add NHS No
-	if (result.nhsNumber != undefined) {
+	if (result.nhsNumber) {
 		const nhsIdentifier = {
 			use: "official",
 			system: "https://fhir.nhs.uk/Id/nhs-number",
@@ -128,10 +134,8 @@ function buildPatientResource(data) {
 		resource.identifier.push(nhsIdentifier);
 	}
 
-	resource.contact = [];
-
 	// Add Next of kin contact details
-	if (result.contactName != undefined) {
+	if (result.contactName) {
 		const nokContact = {
 			relationship: {
 				coding: [
@@ -148,7 +152,7 @@ function buildPatientResource(data) {
 			},
 		};
 
-		if (result.contactPhone != undefined) {
+		if (result.contactPhone) {
 			const contactTelecom = [
 				{
 					system: "phone",
@@ -162,7 +166,7 @@ function buildPatientResource(data) {
 	}
 
 	// Add school contact details
-	if (result.schoolName != undefined) {
+	if (result.schoolName) {
 		const schoolContact = {
 			relationship: {
 				coding: [
@@ -186,82 +190,52 @@ function buildPatientResource(data) {
 			},
 		};
 
-		if (result.schoolPhone != undefined) {
-			const contactTelecom = [
+		if (result.schoolPhone) {
+			schoolContact.telecom = [
 				{
 					system: "phone",
 					value: newStringOrUndefined(result.schoolPhone),
 				},
 			];
-			schoolContact.telecom = contactTelecom;
 		}
 
 		resource.contact.push(schoolContact);
 	}
 
-	// Add YDH Switchboard contact details
-	const switchboardContact = {
-		name: {
-			use: "anonymous",
-			text: "Switchboard",
-		},
-		telecom: [
-			{
-				system: "phone",
-				value: "01935475122",
-			},
-		],
-		organization: {
-			reference:
-				"https://directory.spineservices.nhs.uk/STU3/Organization/RA4",
-			display: "YEOVIL DISTRICT HOSPITAL NHS FOUNDATION TRUST",
-		},
-	};
-
-	resource.contact.push(switchboardContact);
-
 	// Add Telecom contact details
-	const telecom = [];
-	if (result.homePhone != undefined) {
-		const homePhone = {
+	if (result.homePhone) {
+		resource.telecom.push({
 			system: "phone",
 			value: newStringOrUndefined(result.homePhone),
 			use: "home",
-		};
-		telecom.push(homePhone);
+		});
 	}
-	if (result.mobilePhone != undefined) {
-		const mobilePhone = {
+	if (result.mobilePhone) {
+		resource.telecom.push({
 			system: "phone",
 			value: newStringOrUndefined(result.mobilePhone),
 			use: "mobile",
-		};
-		telecom.push(mobilePhone);
+		});
 	}
-	if (result.businessPhone != undefined) {
-		const businessPhone = {
+	if (result.businessPhone) {
+		resource.telecom.push({
 			system: "phone",
 			value: newStringOrUndefined(result.businessPhone),
 			use: "work",
-		};
-		telecom.push(businessPhone);
+		});
 	}
-	if (result.email != undefined) {
-		const email = {
+	if (result.email) {
+		resource.telecom.push({
 			system: "email",
 			value: newStringOrUndefined(result.email),
-		};
-		telecom.push(email);
-	}
-	if (telecom.length > 0) {
-		resource.telecom = telecom;
+		});
 	}
 
 	// Extensions (Care Connect or otherwise)
-	const extension = [];
+
 	// Add Ethnic Category extension
-	if (result.ethnicCategoryCode != undefined) {
-		const ethCatExtension = {
+	if (result.ethnicCategoryCode) {
+		resource.extension.push({
 			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-EthnicCategory-1",
 			valueCodeableConcept: {
 				coding: [
@@ -283,13 +257,12 @@ function buildPatientResource(data) {
 					},
 				],
 			},
-		};
-		extension.push(ethCatExtension);
+		});
 	}
 
 	// Add Religious Affiliation extension
-	if (result.religiousAffiliationCode != undefined) {
-		const relAffExtension = {
+	if (result.religiousAffiliationCode) {
+		resource.extension.push({
 			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-ReligiousAffiliation-1",
 			valueCodeableConcept: {
 				coding: [
@@ -304,12 +277,11 @@ function buildPatientResource(data) {
 					},
 				],
 			},
-		};
-		extension.push(relAffExtension);
+		});
 	}
 
 	// Add NHS Communication extension
-	if (result.preferredLanguageCode != undefined) {
+	if (result.preferredLanguageCode) {
 		const nhsComExtension = {
 			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-NHSCommunication-1",
 			extension: [
@@ -333,34 +305,19 @@ function buildPatientResource(data) {
 		};
 
 		// Add interpreterRequired extension to NHS Communication extensions array
-		if (
-			result.interpreterRequired != undefined &&
-			result.interpreterRequired != "NS"
-		) {
-			const intReqExtension = {
+		if (result.interpreterRequired && result.interpreterRequired != "NS") {
+			nhsComExtension.extension.push({
 				url: "interpreterRequired",
-			};
-
-			if (result.interpreterRequired == "Y") {
-				intReqExtension.valueBoolean = true;
-			} else {
-				intReqExtension.valueBoolean = false;
-			}
-
-			nhsComExtension.extension.push(intReqExtension);
+				valueBoolean: result.interpreterRequired == "Y",
+			});
 		}
 
-		extension.push(nhsComExtension);
-	}
-
-	if (extension.length > 0) {
-		resource.extension = extension;
+		resource.extension.push(nhsComExtension);
 	}
 
 	// Add contained GP organization resource
-	const contained = [];
-	if (result.gpIdentifier != undefined) {
-		const containedOrganisation = {
+	if (result.gpIdentifier) {
+		resource.contained.push({
 			resourceType: "Organization",
 			id: newStringOrUndefined(result.gpIdentifier),
 			meta: {
@@ -381,32 +338,19 @@ function buildPatientResource(data) {
 					postalCode: newStringOrUndefined(result.gpPostalCode),
 				},
 			],
-		};
-		contained.push(containedOrganisation);
-	}
-	if (contained.length > 0) {
-		resource.contained = contained;
+		});
 	}
 
 	// Add GP
-	const generalPractitioner = [];
-	if (result.gpIdentifier != undefined) {
-		const gpReference = {
+	if (result.gpIdentifier) {
+		resource.generalPractitioner.push({
 			reference: newStringOrUndefined(`#${result.gpIdentifier}`),
 			display: newStringOrUndefined(result.gpDesc),
-		};
-		generalPractitioner.push(gpReference);
-	}
-
-	if (generalPractitioner.length > 0) {
-		resource.generalPractitioner = generalPractitioner;
+		});
 	}
 
 	// Add Marital Status
-	if (
-		result.maritalStatusCode != undefined &&
-		result.maritalStatusDesc != undefined
-	) {
+	if (result.maritalStatusCode && result.maritalStatusDesc) {
 		resource.maritalStatus = {
 			coding: [
 				{
@@ -419,7 +363,7 @@ function buildPatientResource(data) {
 	}
 
 	// If patient has a 'Do Not Distribute Patient Address' alert, strip out contact details
-	if (result.DND != undefined) {
+	if (result.DND) {
 		delete resource.telecom;
 		delete resource.address;
 		resource.meta.security = [

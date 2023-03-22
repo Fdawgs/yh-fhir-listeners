@@ -1,11 +1,9 @@
-/* eslint-disable security/detect-object-injection */
 /**
-	Builds Encounter FHIR Resource that adheres to its Care-Connect profile,
-	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1 for more info.
- 
-	@author Frazer Smith
-	@param {object} data - Java RowSet object.
-	@returns {object} Encounter FHIR resource.
+ * @author Frazer Smith
+ * @description Builds Encounter FHIR Resource that adheres to its Care-Connect profile,
+ * see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1 for more info.
+ * @param {object} data - Java RowSet object.
+ * @returns {object} Encounter FHIR resource.
  */
 function buildEncounterResource(data) {
 	const result = getResultSet(data);
@@ -20,38 +18,55 @@ function buildEncounterResource(data) {
 		}
 	}
 
-	/**
-	 * Hard-coding meta profile and resourceType into resource as this should not
-	 * be changed for this resource, ever.
-	 */
 	const resource = {
 		meta: {
 			profile: [
 				"https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Encounter-1",
 			],
+			tag: [
+				{
+					system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
+					code: "detail",
+					display: "Display in Detail View",
+				},
+			],
+			lastUpdated:
+				result.lastUpdated && !/^(T|1900)/m.test(result.lastUpdated)
+					? result.lastUpdated
+					: undefined,
 		},
 		resourceType: "Encounter",
+		id: newStringOrUndefined(result.encounterIdentifier),
+		status: newStringOrUndefined(result.encounterStatusMapped),
+		class: result.encounterClassDesc
+			? {
+					system: "https://hl7.org/fhir/v3/ActEncounterCode",
+					code: newStringOrUndefined(result.encounterClassCode),
+					display: newStringOrUndefined(result.encounterClassDesc),
+			  }
+			: undefined,
+		type: [],
+		participant: [],
+		hospitalization: {},
+		location: [],
+		period: {
+			start:
+				result.encounterPeriodStart &&
+				!/^(T|1900)/m.test(result.encounterPeriodStart)
+					? result.encounterPeriodStart
+					: undefined,
+			end:
+				result.encounterPeriodEnd &&
+				!/^(T|1900)/m.test(result.encounterPeriodEnd)
+					? result.encounterPeriodEnd
+					: undefined,
+		},
+		subject: {
+			reference: `${$cfg("apiUrl")}/STU3/Patient/${
+				result.subjectReference
+			}`,
+		},
 	};
-
-	resource.id = newStringOrUndefined(result.encounterIdentifier);
-	resource.status = newStringOrUndefined(result.encounterStatusMapped);
-
-	// Add meta data
-	if (
-		result.lastUpdated != undefined &&
-		result.lastUpdated.substring(0, 1) != "T" &&
-		result.lastUpdated.substring(0, 4) != "1900"
-	) {
-		resource.meta.lastUpdated = result.lastUpdated;
-	}
-
-	if (result.encounterClassDesc != undefined) {
-		resource.class = {
-			system: "https://hl7.org/fhir/v3/ActEncounterCode",
-			code: newStringOrUndefined(result.encounterClassCode),
-			display: newStringOrUndefined(result.encounterClassDesc),
-		};
-	}
 
 	/**
 	 * Add SIDeR specific tags
@@ -59,9 +74,8 @@ function buildEncounterResource(data) {
 	 * Do not display any planned/future encounters as they're out of scope
 	 */
 	if (
-		result.encounterPeriodStart != undefined &&
-		result.encounterPeriodStart.substring(0, 1) != "T" &&
-		result.encounterPeriodStart.substring(0, 4) != "1900" &&
+		result.encounterPeriodStart &&
+		!/^(T|1900)/m.test(result.encounterPeriodStart) &&
 		Math.ceil(
 			(new Date(result.encounterPeriodStart) - new Date()) /
 				(24 * 60 * 60 * 1000)
@@ -74,20 +88,8 @@ function buildEncounterResource(data) {
 				display: "Display in Summary and Detail View",
 			},
 		];
-	} else {
-		resource.meta.tag = [
-			{
-				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
-				code: "detail",
-				display: "Display in Detail View",
-			},
-		];
 	}
-
-	if (
-		result.encounterStatusMapped != undefined &&
-		result.encounterStatusMapped == "planned"
-	) {
+	if (result.encounterStatusMapped == "planned") {
 		resource.meta.tag = [
 			{
 				system: "https://fhir.blackpear.com/ui/shared-care-record-visibility",
@@ -96,8 +98,6 @@ function buildEncounterResource(data) {
 			},
 		];
 	}
-
-	resource.type = [];
 
 	const emptyType = {
 		coding: [
@@ -123,14 +123,11 @@ function buildEncounterResource(data) {
 		],
 	};
 
-	if (
-		result.encounterClassCode != undefined &&
-		result.encounterClassCode == "IMP"
-	) {
+	if (result.encounterClassCode == "IMP") {
 		const admType = JSON.parse(JSON.stringify(emptyType));
 		const disType = JSON.parse(JSON.stringify(emptyType));
 
-		if (result.encounterTypeCodeAdm != undefined) {
+		if (result.encounterTypeCodeAdm) {
 			admType.coding[0].code = newStringOrUndefined(
 				result.encounterTypeCodeAdm
 			);
@@ -141,7 +138,7 @@ function buildEncounterResource(data) {
 			admType.extension[0].valueCodeableConcept.coding[0].display =
 				"Admitting";
 			resource.type.push(admType);
-		} else if (result.encounterTypeCode != undefined) {
+		} else if (result.encounterTypeCode) {
 			admType.coding[0].code = newStringOrUndefined(
 				result.encounterTypeCode
 			);
@@ -153,7 +150,7 @@ function buildEncounterResource(data) {
 			resource.type.push(admType);
 		}
 
-		if (result.encounterTypeCodeDis != undefined) {
+		if (result.encounterTypeCodeDis) {
 			disType.coding[0].code = newStringOrUndefined(
 				result.encounterTypeCodeDis
 			);
@@ -165,7 +162,7 @@ function buildEncounterResource(data) {
 			disType.extension[0].valueCodeableConcept.coding[0].display =
 				"Discharging";
 			resource.type.push(disType);
-		} else if (result.encounterTypeCode != undefined) {
+		} else if (result.encounterTypeCode) {
 			disType.coding[0].code = newStringOrUndefined(
 				result.encounterTypeCode
 			);
@@ -186,7 +183,7 @@ function buildEncounterResource(data) {
 		}
 	} else {
 		const outType = JSON.parse(JSON.stringify(emptyType));
-		if (result.encounterTypeCode != undefined) {
+		if (result.encounterTypeCode) {
 			outType.coding[0].code = newStringOrUndefined(
 				result.encounterTypeCode
 			);
@@ -200,10 +197,9 @@ function buildEncounterResource(data) {
 	}
 
 	// Add participants
-	resource.participant = [];
 	if (
-		result.encounterParticipantIndividualCode_admitting != undefined &&
-		result.encounterParticipantIndividualCode_discharging != undefined &&
+		result.encounterParticipantIndividualCode_admitting &&
+		result.encounterParticipantIndividualCode_discharging &&
 		result.encounterParticipantIndividualCode_discharging ==
 			result.encounterParticipantIndividualCode_admitting
 	) {
@@ -240,7 +236,7 @@ function buildEncounterResource(data) {
 	}
 
 	if (resource.participant.length == 0) {
-		if (result.encounterParticipantIndividualCode_admitting != undefined) {
+		if (result.encounterParticipantIndividualCode_admitting) {
 			const participantAdmitter = {
 				type: [
 					{
@@ -263,9 +259,7 @@ function buildEncounterResource(data) {
 			};
 			resource.participant.push(participantAdmitter);
 		}
-		if (
-			result.encounterParticipantIndividualCode_discharging != undefined
-		) {
+		if (result.encounterParticipantIndividualCode_discharging) {
 			const participantDischarger = {
 				type: [
 					{
@@ -289,7 +283,7 @@ function buildEncounterResource(data) {
 			resource.participant.push(participantDischarger);
 		}
 	}
-	if (result.encounterParticipantIndividualCode_opattending != undefined) {
+	if (result.encounterParticipantIndividualCode_opattending) {
 		const participantConsultant = {
 			type: [
 				{
@@ -312,33 +306,15 @@ function buildEncounterResource(data) {
 		resource.participant.push(participantConsultant);
 	}
 
-	resource.period = {};
-	if (
-		result.encounterPeriodStart != undefined &&
-		result.encounterPeriodStart.substring(0, 1) != "T" &&
-		result.encounterPeriodStart.substring(0, 4) != "1900"
-	) {
-		resource.period.start = result.encounterPeriodStart;
-	}
-	if (
-		result.encounterPeriodEnd != undefined &&
-		result.encounterPeriodEnd.substring(0, 1) != "T" &&
-		result.encounterPeriodEnd.substring(0, 4) != "1900"
-	) {
-		resource.period.end = result.encounterPeriodEnd;
-	}
-
 	// Add admission and discharge inpatient details
-	resource.hospitalization = {};
-
 	if (
-		result.encounterAdmissionmethodCodingCode != undefined ||
-		result.encounterDischargemethodCodingCode != undefined
+		result.encounterAdmissionmethodCodingCode ||
+		result.encounterDischargemethodCodingCode
 	) {
 		resource.hospitalization.extension = [];
 	}
 
-	if (result.encounterAdmissionmethodCodingCode != undefined) {
+	if (result.encounterAdmissionmethodCodingCode) {
 		const admissionMethod = {
 			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-AdmissionMethod-1",
 			valueCodeableConcept: {
@@ -356,7 +332,7 @@ function buildEncounterResource(data) {
 		resource.hospitalization.extension.push(admissionMethod);
 	}
 
-	if (result.encounterDischargemethodCodingCode != undefined) {
+	if (result.encounterDischargemethodCodingCode) {
 		const dischargeMethod = {
 			url: "https://fhir.hl7.org.uk/STU3/StructureDefinition/Extension-CareConnect-DischargeMethod-1",
 			valueCodeableConcept: {
@@ -374,7 +350,7 @@ function buildEncounterResource(data) {
 		resource.hospitalization.extension.push(dischargeMethod);
 	}
 
-	if (result.encounterHospitalizationAdmitsourceCodingCode != undefined) {
+	if (result.encounterHospitalizationAdmitsourceCodingCode) {
 		resource.hospitalization.admitSource = {
 			coding: [
 				{
@@ -387,10 +363,7 @@ function buildEncounterResource(data) {
 			],
 		};
 	}
-	if (
-		result.encounterHospitalizationDischargedispositionCodingCode !=
-		undefined
-	) {
+	if (result.encounterHospitalizationDischargedispositionCodingCode) {
 		resource.hospitalization.dischargeDisposition = {
 			coding: [
 				{
@@ -405,12 +378,7 @@ function buildEncounterResource(data) {
 	}
 
 	// Add location details
-	if (
-		result.encounterClassCode != undefined &&
-		result.encounterClassCode == "IMP"
-	) {
-		resource.location = [];
-
+	if (result.encounterClassCode == "IMP") {
 		const emptyLocation = {
 			location: {
 				identifier: {
@@ -425,10 +393,10 @@ function buildEncounterResource(data) {
 		};
 
 		if (
-			result.encounterLocation1Identifier != undefined &&
-			typeof resource.period.start !== "undefined" &&
-			result.encounterLocation2Identifier != undefined &&
-			typeof resource.period.end !== "undefined" &&
+			result.encounterLocation1Identifier &&
+			resource.period.start &&
+			result.encounterLocation2Identifier &&
+			resource.period.end &&
 			result.encounterLocation1Identifier ==
 				result.encounterLocation2Identifier
 		) {
@@ -447,10 +415,7 @@ function buildEncounterResource(data) {
 		}
 
 		if (resource.location.length == 0) {
-			if (
-				result.encounterLocation1Identifier != undefined &&
-				typeof resource.period.start !== "undefined"
-			) {
+			if (result.encounterLocation1Identifier && resource.period.start) {
 				const admittingWard = JSON.parse(JSON.stringify(emptyLocation));
 
 				admittingWard.location.identifier.value = newStringOrUndefined(
@@ -464,10 +429,7 @@ function buildEncounterResource(data) {
 				resource.location.push(admittingWard);
 			}
 
-			if (
-				result.encounterLocation2Identifier != undefined &&
-				typeof resource.period.end !== "undefined"
-			) {
+			if (result.encounterLocation2Identifier && resource.period.end) {
 				const dischargeWard = JSON.parse(JSON.stringify(emptyLocation));
 
 				dischargeWard.location.identifier.value = newStringOrUndefined(
@@ -482,10 +444,6 @@ function buildEncounterResource(data) {
 			}
 		}
 	}
-
-	resource.subject = {
-		reference: `${$cfg("apiUrl")}/STU3/Patient/${result.subjectReference}`,
-	};
 
 	return resource;
 }
