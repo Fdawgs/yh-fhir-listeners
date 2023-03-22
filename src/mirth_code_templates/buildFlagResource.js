@@ -47,8 +47,8 @@ function buildFlagResource(data) {
 					? result.periodStart
 					: undefined,
 			end:
-				result.periodStart && !/^(T|1900)/m.test(result.periodStart)
-					? result.periodStart
+				result.periodEnd && !/^(T|1900)/m.test(result.periodEnd)
+					? result.periodEnd
 					: undefined,
 		},
 		subject: {
