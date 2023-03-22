@@ -1,11 +1,9 @@
-/* eslint-disable security/detect-object-injection */
 /**
-	Builds Flag FHIR Resource that adheres to its Care-Connect profile,
-	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1 for more info.
- 
-	@author Frazer Smith
-	@param {object} data - Java RowSet object.
-	@returns {object} Flag FHIR resource.
+ * @author Frazer Smith
+ * @description Builds Flag FHIR Resource that adheres to its Care-Connect profile,
+ * see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Flag-1 for more info.
+ * @param {object} data - Java RowSet object.
+ * @returns {object} Flag FHIR resource.
  */
 function buildFlagResource(data) {
 	const result = getResultSet(data);

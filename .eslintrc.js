@@ -36,6 +36,7 @@ module.exports = {
 		"no-useless-return": "warn",
 		"prefer-destructuring": "off",
 		quotes: "off",
+		"security/detect-object-injection": "off",
 		"vars-on-top": "off",
 	},
 };

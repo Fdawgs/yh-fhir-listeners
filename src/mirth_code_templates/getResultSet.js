@@ -1,10 +1,9 @@
 /**
-	Converts ResultSet into JSON object for single result.
-	This makes it easier to parse for FHIR resources builder code templates.
- 
-	@author Frazer Smith
-	@param {object} resultSet - The ResultSet object to retrieve from.
-	@returns {object} The ResultSet as a JSON object.
+ * @author Frazer Smith
+ * @description Converts ResultSet into JSON object for single result.
+ * This makes it easier to parse for FHIR resources builder code templates.
+ * @param {object} resultSet - The ResultSet object to retrieve from.
+ * @returns {object} The ResultSet as a JSON object.
  */
 function getResultSet(resultSet) {
 	const rsmd = resultSet.getMetaData();

@@ -1,11 +1,9 @@
-/* eslint-disable security/detect-object-injection */
 /**
-	Builds Procedure FHIR Resource that adheres to its Care-Connect profile,
-	see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1 for more info.
- 
-	@author Frazer Smith
-	@param {object} data - Java RowSet object.
-	@returns {object} Procedure FHIR resource.
+ * @author Frazer Smith
+ * @description Builds Procedure FHIR Resource that adheres to its Care-Connect profile,
+ * see https://fhir.hl7.org.uk/STU3/StructureDefinition/CareConnect-Procedure-1 for more info.
+ * @param {object} data - Java RowSet object.
+ * @returns {object} Procedure FHIR resource.
  */
 function buildProcedureResource(data) {
 	const result = getResultSet(data);
@@ -51,10 +49,7 @@ function buildProcedureResource(data) {
 
 	// TODO: Fix inaccurate bodySite groupings in ./src/sql/CC-Procedure-Resource-Direct-Read.sql
 	// Add bodySite.coding[*]
-	// if (
-	// 	result.procedureBodySiteCode != undefined &&
-	// 	result.procedureBodySiteCode != null
-	// ) {
+	// if (result.procedureBodySiteCode) {
 	// 	resource.bodySite = {
 	// 		coding: JSON.parse(result.procedureBodySiteCode),
 	// 	};
