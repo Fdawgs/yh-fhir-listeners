@@ -11,18 +11,14 @@ function buildBundleResource(requestUrl) {
 		resourceType: "Bundle",
 		type: "searchset",
 		total: 0,
-		link: [],
+		link: [
+			{
+				relation: "self",
+				url: newStringOrUndefined(requestUrl),
+			},
+		],
 		entry: [],
 	};
-	// Add link URL
-	if (requestUrl) {
-		const linkEntry = {
-			relation: "self",
-			url: newStringOrUndefined(requestUrl),
-		};
-
-		resource.link.push(linkEntry);
-	}
 
 	return resource;
 }
