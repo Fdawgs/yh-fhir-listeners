@@ -24,7 +24,7 @@ This documentation is written under the assumption that the reader has prior exp
 
 ### Background
 
-[NHS Somerset](https://nhssomerset.nhs.uk/) (NHSSOM) started the [SIDeR project](https://nhssomerset.nhs.uk/about-us/digital-projects/sider/) to link up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://blackpear.com/) (BP) is the technical partner that supports the project.
+[NHS Somerset](https://nhssomerset.nhs.uk/) (SOMICB) started the [SIDeR project](https://nhssomerset.nhs.uk/about-us/digital-projects/sider/) to link up all main clinical and social care IT systems used in Somerset to improve and support direct care. [Black Pear Software Ltd.](https://blackpear.com/) (BP) is the technical partner that supports the project.
 
 Stakeholders (as of 2022-11-01) are:
 
