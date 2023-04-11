@@ -60,14 +60,14 @@
         &lt;name value=&quot;Frazer Smith&quot;/&gt;
         &lt;telecom&gt;
         &lt;system value=&quot;email&quot;/&gt;
-        &lt;value value=&quot;frazer.smith@ydh.nhs.uk&quot;/&gt;
+        &lt;value value=&quot;frazer.smith@somersetft.nhs.uk&quot;/&gt;
         &lt;/telecom&gt;
         &lt;/contact&gt;
         &lt;contact&gt;
         &lt;name value=&quot;Solutions Development Team&quot;/&gt;
         &lt;telecom&gt;
         &lt;system value=&quot;email&quot;/&gt;
-        &lt;value value=&quot;servicedesk@ydh.nhs.uk&quot;/&gt;
+        &lt;value value=&quot;servicedesk@somersetft.nhs.uk&quot;/&gt;
         &lt;/telecom&gt;
         &lt;/contact&gt;
         &lt;implementationGuide value=&quot;https://nhsconnect.github.io/CareConnectAPI/&quot;/&gt;
