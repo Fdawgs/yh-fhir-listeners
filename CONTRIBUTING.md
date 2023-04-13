@@ -35,13 +35,7 @@ The workflow steps are as follows:
 
 Documentation (both in markdown files and inline comments) should be written in **British English** where possible.
 
-Titles and headings should adhere to the [Associated Press (AP)](https://apstylebook.com/) style:
-
--   Capitalise words with three or more letters
--   Capitalise the first and the last word
--   Capitalise nouns, pronouns, adjectives, verbs, adverbs, and subordinate conjunctions
--   Lowercase articles (a, an, the), coordinating conjunctions, and prepositions
--   Capitalise words with four or more letters (including conjunctions and prepositions)
+Titles and headings should use sentence-style capitalisation, where only the first letter of a sentence and proper nouns are capitalised.
 
 ## Pull request checklist
 
