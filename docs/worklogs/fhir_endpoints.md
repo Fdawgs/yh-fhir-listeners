@@ -14,7 +14,7 @@
 
 ## Work log
 
-Mirth Connect, a trust integration engine (TIE) is used extensively at Yeovil District Hospital NHSFT. Due to this, it has been decided that it will be used for SIDeR. It is free, open source, and well documented. It also means that additional training for members of the Solutions Development Team at YDH is not needed due to existing familiarity.
+Mirth Connect, a trust integration engine (TIE) is used extensively at Yeovil Hospital. Due to this, it has been decided that it will be used for SIDeR. It is free, open source, and well documented. It also means that additional training for members of the Solutions Development Team at YDH is not needed due to existing familiarity.
 
 Mirth Connect provides official FHIR support through a [FHIR Connector Extension](http://www.mirthcorp.com/community/wiki/pages/viewpage.action?pageId=36504815) introduced in version 3.6 and these provide all the functionality needed to successfully develop and deploy RESTful FHIR API endpoints. [Example channels](http://www.mirthcorp.com/community/wiki/display/mirth/Example+Channel) that were provided have been adapted for use with YDH's PAS, Intersystems TrakCare.
 

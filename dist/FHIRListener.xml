@@ -55,7 +55,7 @@
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
         &lt;version value=&quot;7.0.3&quot;/&gt;
         &lt;status value=&quot;active&quot;/&gt;
-        &lt;publisher value=&quot;Yeovil District Hospital NHS Foundation Trust&quot;/&gt;
+        &lt;publisher value=&quot;Yeovil Hospital&quot;/&gt;
         &lt;contact&gt;
         &lt;name value=&quot;Frazer Smith&quot;/&gt;
         &lt;telecom&gt;
@@ -73,8 +73,7 @@
         &lt;implementationGuide value=&quot;https://nhsconnect.github.io/CareConnectAPI/&quot;/&gt;
         &lt;rest&gt;
         &lt;mode value=&quot;server&quot;/&gt;
-        &lt;documentation value=&quot;Care Connect STU3 FHIR endpoint for Yeovil District Hospital
-        NHS Foundation Trust&quot;/&gt;
+        &lt;documentation value=&quot;Care Connect STU3 FHIR endpoint for Yeovil Hospital&quot;/&gt;
         &lt;resource&gt;
         &lt;type value=&quot;AllergyIntolerance&quot;/&gt;
         &lt;profile&gt;
@@ -302,7 +301,7 @@
         &lt;/document&gt;
         &lt;/CapabilityStatement&gt;</conformanceTemplate>
       <conformanceURL></conformanceURL>
-      <conformanceName>Yeovil District Hospital NHS Foundation Trust FHIR Server</conformanceName>
+      <conformanceName>Yeovil Hospital FHIR Server</conformanceName>
       <supportsXML>false</supportsXML>
       <supportsJSON>true</supportsJSON>
       <systemInteractions />
