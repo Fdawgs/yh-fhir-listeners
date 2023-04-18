@@ -1,14 +1,14 @@
-<a href="https://yeovilhospital.co.uk/">
-	<img alttext="Yeovil District Hospital logo" src="https://github.com/Fdawgs/ydh-logos/raw/HEAD/images/ydh-full-logo-transparent-background.svg" width="480" />
+<a href="https://somersetft.nhs.uk/yeovilhospital/">
+	<img alttext="Somerset NHSFT logo" src="https://github.com/TauntonandSomersetNHSTrust/sft-logos/raw/HEAD/images/sft-nhsft-logo-left-aligned-transparent-background.png" width="480" />
 </a>
 
-# Yeovil District Hospital NHS Foundation Trust - SIDeR FHIR Listener endpoints
+# Yeovil Hospital - SIDeR FHIR Listener endpoints
 
 [![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/)
 ![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=main)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
-> Yeovil District Hospital NHSFT's Mirth Connect FHIR Listener channel for use with InterSystems' TrakCare PAS (v2020 MR6.11)
+> Yeovil Hospital's Mirth Connect FHIR Listener channel for use with InterSystems' TrakCare PAS (v2020 MR6.11)
 
 ## Overview
 
@@ -18,7 +18,7 @@ This repo outlines the steps that have been taken to provide the technical deliv
 
 Logs documenting the work undertaken to deploy these endpoints can be found in [docs/worklogs](./docs/worklogs/).
 
-The intended audience for this page are team members of the Solutions Development team at Yeovil District Hospital NHSFT, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement in their own systems.
+The intended audience for this page are team members of the Solutions Development team at Yeovil Hospital, alongside technical partners and developers from other stakeholders in the programme should they wish to use this and adapt it to implement in their own systems.
 
 This documentation is written under the assumption that the reader has prior experience using [Mirth Connect](https://github.com/nextgenhealthcare/connect).
 
@@ -36,7 +36,7 @@ Stakeholders (as of 2022-11-01) are:
 -   [Somerset NHS Foundation Trust](https://somersetft.nhs.uk/) (SFT)
 -   [South Western Ambulance Service NHS Foundation Trust](https://swast.nhs.uk/) (SWASFT)
 -   [St Margaret’s Hospice](https://www.st-margarets-hospice.org.uk/) (SMH)
--   [Yeovil District Hospital NHS Foundation Trust](https://yeovilhospital.co.uk/) (YDH)
+-   [Yeovil Hospital](https://somersetft.nhs.uk/yeovilhospital/) (YH)
 
 ### Deliverables
 
@@ -71,7 +71,7 @@ Perform the following steps before deployment:
 
 ## Known issues and caveats
 
-Issues with InterSystems' TrakCare PAS (used by YDH) and staff misuse of the PAS have affected how the data is presented in the endpoints and how searches can be performed.
+Issues with InterSystems' TrakCare PAS (used by YH) and staff misuse of the PAS have affected how the data is presented in the endpoints and how searches can be performed.
 
 ### Data quality
 
@@ -81,7 +81,7 @@ Issues with InterSystems' TrakCare PAS (used by YDH) and staff misuse of the PAS
         -   350,513 non-deceased patients with records in TrakCare as of 2020-11-19
             -   34,405 patients have ‘No Known Allergy’ recorded (9.8%)
             -   13,139 patients have one or more allergies recorded (3.7%)
-    -   Due to the above issues, Paul Foster (CCIO at YDH) on 2020-11-19 suggested we **do not provide AllergyIntolerance resources** (functionality is still present in the channel, however)
+    -   Due to the above issues, Paul Foster (CCIO at YH) on 2020-11-19 suggested we **do not provide AllergyIntolerance resources** (functionality is still present in the channel, however)
 -   Condition resources:
     -   **Unable to provide Condition resources** as conditions are held in SimpleCode, not TrakCare
 -   DocumentReference resources:
@@ -91,7 +91,7 @@ Issues with InterSystems' TrakCare PAS (used by YDH) and staff misuse of the PAS
     -   Unable to provide clinician contact details for Encounter resources due to the following:
         -   In TrakCare a care provider has a mobile number field against them, but it is rarely populated
         -   There is no internal contact number field in TrakCare
-        -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YDH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
+        -   If you want to reach say, a gynaecology consultant, you need to manually search a list on YH’s intranet for their secretary’s extension number, and there is no indication as to how current the list is
         -   Teams do not have a contact number
 -   Patient resources:
     -   Unable to provide SNOMED codes for religious affiliation as these are not in TrakCare (NHS Data Dictionary coding is provided, however)
@@ -115,16 +115,16 @@ Please adhere to this project's [Code of Conduct](./CODE_OF_CONDUCT.md) when con
 
 ## Acknowledgements
 
--   **Adam Wiles** (YDH) - Procedure FHIR resource advice
--   **Anthony Smith** (YDH) - Logo design
--   **David Suckling** (YDH) - TrakCare database table structure and frontend support
+-   **Adam Wiles** (YH) - Procedure FHIR resource advice
+-   **Anthony Smith** (YH) - Logo design
+-   **David Suckling** (YH) - TrakCare database table structure and frontend support
 -   [**Dunmail Hodkinson**](https://github.com/Dunmail) (BP) - HL7 FHIR STU3 specification adherence and best practices advice
--   **George Dampier** (YDH) - MedicationStatement FHIR resource advice
--   **Jessica Male** (YDH) - TrakCare frontend support
+-   **George Dampier** (YH) - MedicationStatement FHIR resource advice
+-   **Jessica Male** (YH) - TrakCare frontend support
 -   [**Julian Matthews**](https://github.com/NHS-juju) (SFT) - Bug reports
--   **Jon Simpson** (YDH) - MedicationStatement FHIR resource advice
--   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YDH) - SQL query optimisation
--   **Nicolas Noblet** (YDH) - SQL query optimisation, TrakCare database table structure advice
+-   **Jon Simpson** (YH) - MedicationStatement FHIR resource advice
+-   [**Neil Hayes-Webster**](https://github.com/NeilHW-YDH) (YH) - SQL query optimisation
+-   **Nicolas Noblet** (YH) - SQL query optimisation, TrakCare database table structure advice
 -   [**Will Jehring**](https://github.com/wjehring) (BP) - HL7 FHIR STU3 specification adherence advice
 
 ## License
