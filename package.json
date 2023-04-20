@@ -1,13 +1,13 @@
 {
-	"name": "ydh-fhir-listeners",
+	"name": "yh-fhir-listeners",
 	"version": "7.0.3",
 	"description": "Yeovil Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems' TrakCare PAS (v2020 MR6.11)",
 	"private": "true",
 	"main": "index.js",
-	"repository": "git+https://github.com/Fdawgs/ydh-fhir-listeners.git",
-	"homepage": "https://github.com/Fdawgs/ydh-fhir-listeners",
+	"repository": "git+https://github.com/Fdawgs/yh-fhir-listeners.git",
+	"homepage": "https://github.com/Fdawgs/yh-fhir-listeners",
 	"bugs": {
-		"url": "https://github.com/Fdawgs/ydh-fhir-listeners/issues"
+		"url": "https://github.com/Fdawgs/yh-fhir-listeners/issues"
 	},
 	"license": "MIT",
 	"author": "Frazer Smith <frazer.smith@somersetft.nhs.uk>",

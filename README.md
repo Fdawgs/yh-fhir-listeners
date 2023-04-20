@@ -4,8 +4,8 @@
 
 # Yeovil Hospital - SIDeR FHIR Listener endpoints
 
-[![GitHub Release](https://img.shields.io/github/release/Fdawgs/ydh-fhir-listeners.svg)](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest/)
-![Build Status](https://github.com/Fdawgs/ydh-fhir-listeners/workflows/CI/badge.svg?branch=main)
+[![GitHub Release](https://img.shields.io/github/release/Fdawgs/yh-fhir-listeners.svg)](https://github.com/Fdawgs/yh-fhir-listeners/releases/latest/)
+![Build Status](https://github.com/Fdawgs/yh-fhir-listeners/workflows/CI/badge.svg?branch=main)
 [![code style: prettier](https://img.shields.io/badge/code_style-prettier-ff69b4.svg?style=flat)](https://github.com/prettier/prettier)
 
 > Yeovil Hospital's Mirth Connect FHIR Listener channel for use with InterSystems' TrakCare PAS (v2020 MR6.11)
@@ -53,7 +53,7 @@ A contextual link needs to be added to our PAS to allow care providers access to
 ## Prerequisites
 
 -   [Mirth Connect v3.12.0](https://github.com/nextgenhealthcare/connect/releases/tag/3.12.0) (including supporting database instance)
--   The latest release of [ydh-fhir-authentication-service](https://github.com/Fdawgs/ydh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
+-   The latest release of [yh-fhir-authentication-service](https://github.com/Fdawgs/yh-fhir-authentication-service) (for securing endpoints with HTTPS, OAuth, and bearer tokens)
 -   [Node.js](https://nodejs.org/en/) >=18.12.1 (optional, for development)
 
 ## Setup
@@ -62,9 +62,9 @@ This Mirth Connect channel has been tested on a Mirth Connect instance (v3.12.0)
 
 Perform the following steps before deployment:
 
-1. Download and extract the [latest release asset](https://github.com/Fdawgs/ydh-fhir-listeners/releases/latest)
+1. Download and extract the [latest release asset](https://github.com/Fdawgs/yh-fhir-listeners/releases/latest)
 2. Navigate to the extracted directory
-3. Install the FHIR Connector extension (dist/fhir-3.12.0.ydh001.zip) in Mirth Connect
+3. Install the FHIR Connector extension (dist/fhir-3.12.0.yh001.zip) in Mirth Connect
 4. Import the FHIR Listener channel (dist/FHIRListener.xml) into Mirth Connect
 5. Declare variables listed in the channel description, in the configuration map
 6. Run the SQL queries found in `dist/sql` to create lookup tables
@@ -104,7 +104,7 @@ Issues with InterSystems' TrakCare PAS (used by YH) and staff misuse of the PAS 
     -   `GET [baseUrl]/AllergyIntolerance?criticality=[code]` will return a 500 error
     -   `GET [baseUrl]/AllergyIntolerance?patient=[id]&criticality=[code]` will work
 
-This is due to YDH not having direct control over the underlying databases of the PAS, so cannot add indexes or make appropriate performance tweaks to support searches without also filtering by a patient.
+This is due to YH not having direct control over the underlying databases of the PAS, so cannot add indexes or make appropriate performance tweaks to support searches without also filtering by a patient.
 
 ## Contributing
 
@@ -129,4 +129,4 @@ Please adhere to this project's [Code of Conduct](./CODE_OF_CONDUCT.md) when con
 
 ## License
 
-`ydh-fhir-listeners` is licensed under the [MIT](./LICENSE) license.
+`yh-fhir-listeners` is licensed under the [MIT](./LICENSE) license.
