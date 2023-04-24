@@ -1,6 +1,6 @@
 {
 	"name": "yh-fhir-listeners",
-	"version": "7.0.3",
+	"version": "7.0.4",
 	"description": "Yeovil Hospital's Mirth Connect FHIR Listener channel adapted for use with InterSystems' TrakCare PAS (v2020 MR6.11)",
 	"private": "true",
 	"main": "index.js",
