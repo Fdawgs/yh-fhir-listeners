@@ -2,6 +2,46 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.4](https://github.com/Fdawgs/yh-fhir-listeners/compare/v7.0.3...v7.0.4) (2023-04-24)
+
+
+### Continuous integration
+
+* **dependabot:** change commit message prefix for gh actions to `ci` ([#477](https://github.com/Fdawgs/yh-fhir-listeners/issues/477)) ([e2a3ca2](https://github.com/Fdawgs/yh-fhir-listeners/commit/e2a3ca2a1fa11f97d5323c300963373f8bb23738))
+
+
+### Miscellaneous
+
+* **.prettierrc:** enable `arrowParens` option ([#485](https://github.com/Fdawgs/yh-fhir-listeners/issues/485)) ([0c09fd5](https://github.com/Fdawgs/yh-fhir-listeners/commit/0c09fd5de6c023f2ff07a2ece07b59e2485168f3))
+* **license:** add somerset nhsft ([ac8676b](https://github.com/Fdawgs/yh-fhir-listeners/commit/ac8676b706ef405827115cf723d92960fc5d6a65))
+* rename repo to reflect organisation change ([#488](https://github.com/Fdawgs/yh-fhir-listeners/issues/488)) ([8248f4e](https://github.com/Fdawgs/yh-fhir-listeners/commit/8248f4e1fddb95da619f62894e80b0499752405a))
+* replace ydh nhsft branding and links with somerset nhsft ([#487](https://github.com/Fdawgs/yh-fhir-listeners/issues/487)) ([8e0481e](https://github.com/Fdawgs/yh-fhir-listeners/commit/8e0481e4e7005e6f2ef9706d0598aa720bb915bd))
+* update ydh org code and email domain ([379d8f1](https://github.com/Fdawgs/yh-fhir-listeners/commit/379d8f1336f625097ae33cd1f7d3be17c402cd8c))
+
+
+### Documentation
+
+* **contributing:** add link to conventional config ([#476](https://github.com/Fdawgs/yh-fhir-listeners/issues/476)) ([54b1c2a](https://github.com/Fdawgs/yh-fhir-listeners/commit/54b1c2ab28f68fc6f43b2b99e6f8491dc51e02ae))
+* **contributing:** remove ap style guide ([00a5735](https://github.com/Fdawgs/yh-fhir-listeners/commit/00a5735e9344d0179dafa04dfd37d5e50139edc1))
+* include logo in repo ([14cb002](https://github.com/Fdawgs/yh-fhir-listeners/commit/14cb002fe307eb0ae31557beee6346fcc881fa91))
+* **readme:** remove note ([52cd5d6](https://github.com/Fdawgs/yh-fhir-listeners/commit/52cd5d6a1b175ee2c0682fae7cbf2f50c8fed622))
+* **readme:** rename nhssom to somicb ([e8c0fd7](https://github.com/Fdawgs/yh-fhir-listeners/commit/e8c0fd7b17a43c4d0f4af95536c97fc1b824dbbe))
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/core from 7.21.3 to 7.21.4 ([#481](https://github.com/Fdawgs/yh-fhir-listeners/issues/481)) ([a81afa6](https://github.com/Fdawgs/yh-fhir-listeners/commit/a81afa65c0af13a0bfa88df5a8da4fe282109af9))
+* **deps-dev:** bump @babel/preset-env from 7.20.2 to 7.21.4 ([#480](https://github.com/Fdawgs/yh-fhir-listeners/issues/480)) ([dac2cef](https://github.com/Fdawgs/yh-fhir-listeners/commit/dac2cef0a4d1e88cb0ae8e9cfb5c4c035cbe8da0))
+* **deps-dev:** bump @commitlint/cli from 17.5.0 to 17.5.1 ([#479](https://github.com/Fdawgs/yh-fhir-listeners/issues/479)) ([b4b5c36](https://github.com/Fdawgs/yh-fhir-listeners/commit/b4b5c36bfd175fb22c9de50df09c596c8da28967))
+* **deps-dev:** bump @commitlint/cli from 17.5.1 to 17.6.1 ([#491](https://github.com/Fdawgs/yh-fhir-listeners/issues/491)) ([ffcf015](https://github.com/Fdawgs/yh-fhir-listeners/commit/ffcf01564de6ff0eab6a4f8d2b8f2360e8394ffb))
+* **deps-dev:** bump @commitlint/config-conventional ([#490](https://github.com/Fdawgs/yh-fhir-listeners/issues/490)) ([163ba2c](https://github.com/Fdawgs/yh-fhir-listeners/commit/163ba2c069d385007d4694d8d5de6c6a9a2a4e59))
+* **deps-dev:** bump eslint from 8.36.0 to 8.37.0 ([#483](https://github.com/Fdawgs/yh-fhir-listeners/issues/483)) ([c5c3892](https://github.com/Fdawgs/yh-fhir-listeners/commit/c5c38922e9f5a104c634d9604608c893383debe2))
+* **deps-dev:** bump eslint from 8.37.0 to 8.39.0 ([#494](https://github.com/Fdawgs/yh-fhir-listeners/issues/494)) ([1a671b5](https://github.com/Fdawgs/yh-fhir-listeners/commit/1a671b5c2baab259e9abadc03b87489a1939474a))
+* **deps-dev:** bump eslint-plugin-jsdoc from 40.1.0 to 40.1.1 ([#482](https://github.com/Fdawgs/yh-fhir-listeners/issues/482)) ([a6588ce](https://github.com/Fdawgs/yh-fhir-listeners/commit/a6588ce443c3970af96e91fe2027d3e5d10e5e2f))
+* **deps-dev:** bump eslint-plugin-jsdoc from 40.1.1 to 43.0.7 ([#492](https://github.com/Fdawgs/yh-fhir-listeners/issues/492)) ([e3a3f91](https://github.com/Fdawgs/yh-fhir-listeners/commit/e3a3f912076bb0254bef0fc0a217da0ee177eb0e))
+* **deps-dev:** bump prettier from 2.8.6 to 2.8.7 ([#484](https://github.com/Fdawgs/yh-fhir-listeners/issues/484)) ([58dcd8e](https://github.com/Fdawgs/yh-fhir-listeners/commit/58dcd8ea95a239fc2e5f89645c38957ec3521b50))
+* **deps-dev:** bump prettier from 2.8.7 to 2.8.8 ([#493](https://github.com/Fdawgs/yh-fhir-listeners/issues/493)) ([114f0df](https://github.com/Fdawgs/yh-fhir-listeners/commit/114f0df55d8087922f3214b3869ba67d96116b72))
+
 ## [7.0.3](https://github.com/Fdawgs/yh-fhir-listeners/compare/v7.0.2...v7.0.3) (2023-03-22)
 
 
