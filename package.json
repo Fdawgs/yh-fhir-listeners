@@ -33,7 +33,7 @@
 		"@babel/core": "^7.21.4",
 		"@babel/node": "^7.20.7",
 		"@babel/preset-env": "^7.21.4",
-		"@commitlint/cli": "^17.5.1",
+		"@commitlint/cli": "^17.6.1",
 		"@commitlint/config-conventional": "^17.6.1",
 		"babel-preset-minify": "^0.5.2",
 		"eslint": "^8.39.0",
