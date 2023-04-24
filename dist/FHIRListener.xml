@@ -53,7 +53,7 @@
       <contextPath>STU3</contextPath>
       <timeout>0</timeout>
       <conformanceTemplate>&lt;CapabilityStatement xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-        &lt;version value=&quot;7.0.3&quot;/&gt;
+        &lt;version value=&quot;7.0.4&quot;/&gt;
         &lt;status value=&quot;active&quot;/&gt;
         &lt;publisher value=&quot;Yeovil Hospital&quot;/&gt;
         &lt;contact&gt;
