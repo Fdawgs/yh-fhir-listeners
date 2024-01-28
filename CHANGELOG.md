@@ -2,6 +2,44 @@
 
 All notable changes to this project will be documented in this file.
 
+## [7.0.5](https://github.com/Fdawgs/yh-fhir-listeners/compare/v7.0.4...v7.0.5) (2024-01-28)
+
+
+### Dependencies
+
+* **deps-dev:** bump @babel/cli from 7.21.0 to 7.23.9 ([#526](https://github.com/Fdawgs/yh-fhir-listeners/issues/526)) ([7086f57](https://github.com/Fdawgs/yh-fhir-listeners/commit/7086f575714634f2f2acf16c720727faab9cd88f))
+* **deps-dev:** bump @babel/core from 7.21.4 to 7.23.9 ([#528](https://github.com/Fdawgs/yh-fhir-listeners/issues/528)) ([db29921](https://github.com/Fdawgs/yh-fhir-listeners/commit/db29921d42417ea5d148b2db612558f8f02d8485))
+* **deps-dev:** bump @babel/node from 7.20.7 to 7.23.9 ([#523](https://github.com/Fdawgs/yh-fhir-listeners/issues/523)) ([e2da82b](https://github.com/Fdawgs/yh-fhir-listeners/commit/e2da82bf3b6192d8ba8add97e10d58fabef51572))
+* **deps-dev:** bump @babel/preset-env from 7.21.4 to 7.23.9 ([#527](https://github.com/Fdawgs/yh-fhir-listeners/issues/527)) ([9cd61e8](https://github.com/Fdawgs/yh-fhir-listeners/commit/9cd61e89e86796d75480c5ff39841b916a62295d))
+* **deps-dev:** bump @babel/traverse from 7.21.4 to 7.23.9 ([#513](https://github.com/Fdawgs/yh-fhir-listeners/issues/513)) ([f1d3bfa](https://github.com/Fdawgs/yh-fhir-listeners/commit/f1d3bfaf84b0418f323cb738feefcc0dd37db68d))
+* **deps-dev:** bump @commitlint/cli from 17.6.1 to 18.6.0 ([#524](https://github.com/Fdawgs/yh-fhir-listeners/issues/524)) ([0550de9](https://github.com/Fdawgs/yh-fhir-listeners/commit/0550de9759483dce0b071d5894c9d8eda9c4e631))
+* **deps-dev:** bump @commitlint/config-conventional ([#518](https://github.com/Fdawgs/yh-fhir-listeners/issues/518)) ([4a4d4b4](https://github.com/Fdawgs/yh-fhir-listeners/commit/4a4d4b49755406bb02097fb21fedd95f9a966de8))
+* **deps-dev:** bump eslint from 8.39.0 to 8.56.0 ([#522](https://github.com/Fdawgs/yh-fhir-listeners/issues/522)) ([e64429e](https://github.com/Fdawgs/yh-fhir-listeners/commit/e64429e5c42f233e6670848937b8680b8b242b1c))
+* **deps-dev:** bump eslint-config-prettier from 8.8.0 to 9.1.0 ([#520](https://github.com/Fdawgs/yh-fhir-listeners/issues/520)) ([f70706a](https://github.com/Fdawgs/yh-fhir-listeners/commit/f70706a75164993d5b1f1c532df4a62644bf8022))
+* **deps-dev:** bump eslint-plugin-import from 2.27.5 to 2.29.1 ([#516](https://github.com/Fdawgs/yh-fhir-listeners/issues/516)) ([56a6fd0](https://github.com/Fdawgs/yh-fhir-listeners/commit/56a6fd0209a6a921579518545bfc4ba7e8fcc830))
+* **deps-dev:** bump eslint-plugin-jsdoc from 43.0.7 to 48.0.4 ([#529](https://github.com/Fdawgs/yh-fhir-listeners/issues/529)) ([eab90b5](https://github.com/Fdawgs/yh-fhir-listeners/commit/eab90b5014a0da85529912d324a5cdc1ce3841a9))
+* **deps-dev:** bump husky from 8.0.3 to 9.0.6 ([#521](https://github.com/Fdawgs/yh-fhir-listeners/issues/521)) ([0fba98f](https://github.com/Fdawgs/yh-fhir-listeners/commit/0fba98f0bec6037ec882895c8fc689f87d605c05))
+
+
+### Miscellaneous
+
+* **funding:** update link ([56d3d0c](https://github.com/Fdawgs/yh-fhir-listeners/commit/56d3d0c160b86a1954fef1f403bb313e287185b9))
+
+
+### Continuous integration
+
+* **deps:** bump actions/checkout from 3 to 4 ([#508](https://github.com/Fdawgs/yh-fhir-listeners/issues/508)) ([e54cce1](https://github.com/Fdawgs/yh-fhir-listeners/commit/e54cce171e7ded0b6ce1ebc3e9c1c9f90fc81c06))
+* **deps:** bump actions/dependency-review-action from 3 to 4 ([#515](https://github.com/Fdawgs/yh-fhir-listeners/issues/515)) ([49a34e6](https://github.com/Fdawgs/yh-fhir-listeners/commit/49a34e65f5fe5cec093bb4263ed9cadca035feef))
+* **deps:** bump actions/github-script from 6 to 7 ([#512](https://github.com/Fdawgs/yh-fhir-listeners/issues/512)) ([cd5abf5](https://github.com/Fdawgs/yh-fhir-listeners/commit/cd5abf5e9ad6d4b0f104478c424e3cc2b2758669))
+* **deps:** bump actions/setup-node from 3 to 4 ([#514](https://github.com/Fdawgs/yh-fhir-listeners/issues/514)) ([da567d9](https://github.com/Fdawgs/yh-fhir-listeners/commit/da567d9f50ceef72b1023300f1ee8d5fadd98831))
+* **deps:** bump actions/upload-artifact from 3 to 4 ([#510](https://github.com/Fdawgs/yh-fhir-listeners/issues/510)) ([6645737](https://github.com/Fdawgs/yh-fhir-listeners/commit/6645737140ced106c467c3b054b289f2907bfa58))
+* **deps:** bump github/codeql-action from 2 to 3 ([#509](https://github.com/Fdawgs/yh-fhir-listeners/issues/509)) ([6d3685a](https://github.com/Fdawgs/yh-fhir-listeners/commit/6d3685a1d2044c1908dd371dc0a0a5ef50db94dc))
+
+
+### Documentation
+
+* **readme:** add unmaintained note ([b2e4edd](https://github.com/Fdawgs/yh-fhir-listeners/commit/b2e4edd8b4b983e5fa22b436e857d05e86680640))
+
 ## [7.0.4](https://github.com/Fdawgs/yh-fhir-listeners/compare/v7.0.3...v7.0.4) (2023-04-24)
 
 
